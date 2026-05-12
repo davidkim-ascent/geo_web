@@ -42,7 +42,7 @@ Expected output: 패키지 설치 완료, `package.json`에 `resend`, `@react-em
 `.env.local`을 열어 아래 변수들이 있는지 확인. 없으면 추가:
 
 ```env
-RESEND_API_KEY=re_Ajggpp4S_KZ7mtJ7QkFpZQa4AocVbafAc
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 RESEND_FROM_EMAIL=onboarding@resend.dev
 CONTACT_ADMIN_EMAIL=geo-ascent@ascentnet.co.jp
 BLOCKED_EMAIL_DOMAINS=sex.com,spam.com
@@ -757,7 +757,7 @@ git commit -m "feat: update ContactForm to POST /api/contact and redirect to /co
 ```bash
 # Vercel CLI 사용
 vercel env add RESEND_API_KEY
-# 값 입력: re_Ajggpp4S_KZ7mtJ7QkFpZQa4AocVbafAc
+# 값 입력: re_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 # 환경: Production, Preview, Development 모두 선택
 
 vercel env add RESEND_FROM_EMAIL
