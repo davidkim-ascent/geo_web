@@ -1391,7 +1391,7 @@ span.accent {
   background: var(--ink);
   color: var(--paper);
   overflow: hidden;
-  padding: 100px 0 120px;
+  padding: 100px 0 48px;
   min-height: 80vh;
 }
 /* grid bg — 64px lattice faded by radial mask */
@@ -1427,7 +1427,7 @@ span.accent {
 }
 @media (max-width: 900px) {
   .ct-hero-wrap { grid-template-columns: 1fr; gap: 48px; }
-  .ct-hero { padding: 72px 0 80px; }
+  .ct-hero { padding: 72px 0 32px; }
 }
 .ct-hero-kicker {
   font-family: 'JetBrains Mono', monospace;
