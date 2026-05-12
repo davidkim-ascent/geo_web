@@ -68,33 +68,8 @@ export default function ContactPage() {
     <>
       {/* ── Hero ── */}
       <section className="ct-hero">
-        {/* grid bg */}
         <div className="ct-hero-grid-bg" />
-        {/* ambient glow */}
         <div className="ct-hero-ambient" />
-        {/* deco layer */}
-        <div className="ct-hero-deco" aria-hidden="true">
-          <div className="ct-arc ct-arc-1" />
-          <div className="ct-arc ct-arc-2" />
-          <div className="ct-arc ct-arc-3" />
-          <div className="ct-echo">GEO.</div>
-          <div className="ct-ticker">
-            <div className="ct-ticker-row">
-              <span className="ct-ticker-dot" />
-              <span>LIVE · AI VISIBILITY INDEX</span>
-            </div>
-            <div className="ct-ticker-row"><span>ChatGPT</span><span style={{ color: "rgba(255,255,255,0.7)" }}>78%</span></div>
-            <div className="ct-ticker-row"><span>Gemini</span><span style={{ color: "rgba(255,255,255,0.7)" }}>64%</span></div>
-            <div className="ct-ticker-row"><span>Perplexity</span><span style={{ color: "rgba(255,255,255,0.7)" }}>51%</span></div>
-            <div className="ct-ticker-row"><span>Copilot</span><span style={{ color: "rgba(255,255,255,0.7)" }}>42%</span></div>
-          </div>
-          <div className="ct-scan" />
-          <div className="ct-scan-v" />
-          <div className="ct-scan-v ct-scan-v-delay" />
-          <div className="ct-floating">
-            {`> SEARCH: "GEO とは何か"\n> INTENT: INFORMATIONAL\n> PASSAGE RANK: 0.94\n> CITATION: ASCENT GEO\n> ENGINE: ChatGPT · Perplexity\n> AI_VISIBILITY: 82%\n> STATUS: CITED ✓`}
-          </div>
-        </div>
 
         <div className="ct-hero-wrap">
           {/* Left */}
