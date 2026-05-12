@@ -14,8 +14,18 @@ function getBlockedDomains(): string[] {
 }
 
 export async function POST(req: NextRequest) {
-  const body = await req.json()
-  const { company, role, name, phone, email, industry, website, challenge } = body
+  if (!ADMIN_EMAIL) {
+    console.error('[contact] CONTACT_ADMIN_EMAIL is not configured')
+    return NextResponse.json({ error: 'server_config_error' }, { status: 500 })
+  }
+
+  let body: Record<string, unknown>
+  try {
+    body = await req.json()
+  } catch {
+    return NextResponse.json({ error: 'invalid_request' }, { status: 400 })
+  }
+  const { company, role, name, phone, email, industry, website, challenge } = body as Record<string, string>
 
   // 차단 도메인 체크
   const domain = email?.split('@')[1] ?? ''
