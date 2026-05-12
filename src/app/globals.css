@@ -52,7 +52,7 @@
 body {
   background: var(--bg);
   color: var(--fg);
-  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans JP', system-ui, sans-serif;
+  font-family: 'Pretendard JP Variable', 'Pretendard JP', Pretendard, system-ui, sans-serif;
   font-size: var(--fs-body);
   font-weight: 500;
   line-height: 1.6;
@@ -223,6 +223,30 @@ h2 {
   color: #fff;
 }
 
+.ui-detail-button {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 10px 16px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+.ui-detail-button:hover {
+  transform: translateY(-1px);
+}
+.ui-detail-button-dark {
+  background: #0B0B0E;
+  color: #FAFAF7;
+}
+.ui-detail-button-dark:hover {
+  background: #1452FF;
+  color: #FAFAF7;
+}
+
 .ui-cta-actions,
 .cta-actions {
   align-items: flex-end;
@@ -242,7 +266,7 @@ h2 {
   color: var(--muted-2);
 }
 .ui-section-title {
-  font-family: 'Pretendard Variable', 'Pretendard', 'Noto Sans JP', sans-serif;
+  font-family: 'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif;
   font-size: var(--fs-section-title);
   font-weight: 700;
   line-height: var(--lh-heading);
@@ -524,7 +548,7 @@ body.tweak-norotate .fw-ring g.node text {
   text-transform: uppercase;
 }
 .fw-center .ttl {
-  font-family: 'Pretendard Variable', 'Pretendard', 'Noto Sans JP', sans-serif;
+  font-family: 'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif;
   font-weight: 700;
   font-size: 28px;
   letter-spacing: -0.02em;

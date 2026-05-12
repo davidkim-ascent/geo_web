@@ -9,12 +9,10 @@ import { SplitSection } from "@/components/layout/SplitSection";
 /* ─────────────────────────────────────────────
    Section Label (공통 컴포넌트)
 ───────────────────────────────────────────── */
-function SectionLabel({ code, title, dark = false }: { code: string; title: string; dark?: boolean }) {
+function SectionLabel({ title, dark = false }: { title: string; dark?: boolean }) {
   return (
     <div className="flex items-center gap-3">
       <span className="w-[6px] h-[6px] rounded-full flex-shrink-0 bg-[#1452FF]" />
-      <span className={`ui-mono ui-section-kicker ${dark ? "ui-section-kicker-dark" : ""}`}>{code}</span>
-      <span className={`w-px h-3 ${dark ? "bg-white/15" : "bg-black/10"}`} />
       <span className={`ui-section-label-title ${dark ? "ui-section-label-title-dark" : ""}`}>{title}</span>
     </div>
   );
@@ -79,7 +77,7 @@ function HeroSection() {
                 position: "absolute",
                 left: -40,
                 bottom: -40,
-                fontFamily: "'Pretendard Variable', Pretendard, sans-serif",
+                fontFamily: "'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif",
                 fontWeight: 800,
                 fontSize: "clamp(180px, 22vw, 320px)",
                 letterSpacing: "-0.06em",
@@ -219,7 +217,7 @@ function SearchShiftSection() {
   return (
     <section className="bg-[#FAFAF7] pt-24 pb-12">
       <div className="max-w-[1280px] mx-auto px-10">
-        <SectionLabel code="S/01 — SEARCH SHIFT" title="AI 検索の地殻変動" />
+        <SectionLabel title="AI 検索の地殻変動" />
         <hr className="my-4 border-black/[0.07]" />
 
         <div className="mt-12">
@@ -227,7 +225,7 @@ function SearchShiftSection() {
             style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}>
             リンクから「答え」へ。検索のレイヤーが根本から書き換わる。
           </h2>
-          <p className="mt-4 text-[17px] text-[#4e4e51] max-w-[52ch] leading-[1.6]">
+            <p className="mt-4 text-[17px] text-[#4e4e51] max-w-[52ch] leading-[1.6] font-[inherit]">
             検索の主戦場は SERP から AI Answer Engine へ。Citation がブランド露出の新しい単位になる。
           </p>
         </div>
@@ -236,9 +234,8 @@ function SearchShiftSection() {
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* SEO Era */}
           <div className="bg-white border border-black/[0.07] rounded-2xl p-7 card-hover">
-            <div className="mono text-[11px] text-[#d3d3d8] tracking-[0.1em] mb-4">— 2018</div>
             <h3 className="text-[19px] font-bold text-[#0B0B0E] mb-3">SEO Era</h3>
-            <p className="text-[16px] text-[#4e4e51] leading-[1.6] mb-5">
+            <p className="text-[16px] text-[#4e4e51] leading-[1.6] mb-5 font-[inherit]">
               リンクとキーワードを軸に、SERPの上位を競った時代。
             </p>
             <div className="flex items-center gap-2 flex-wrap">
@@ -250,7 +247,6 @@ function SearchShiftSection() {
           {/* AI Answer Era */}
           <div className="bg-[#0B0B0E] border border-white/[0.07] rounded-2xl p-7 card-hover-dark relative overflow-hidden">
             <div className="absolute top-4 left-4 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-white/30 text-xs">→</div>
-            <div className="mono text-[11px] text-[#d3d3d8] tracking-[0.1em] mb-4">2024 —</div>
             <h3 className="text-[19px] font-bold text-[#FAFAF7] mb-3">AI Answer Era</h3>
             <p className="text-[16px] text-[#d3d3d8] leading-[1.6] mb-5">
               回答エンジンが直接回答する。Citationこそが露出。
@@ -269,7 +265,6 @@ function SearchShiftSection() {
           <div className="bg-white border border-black/[0.07] rounded-2xl p-6 card-hover">
             <div className="flex items-center justify-between mb-4">
               <div>
-                <div className="mono text-[10px] text-[#d3d3d8] tracking-[0.1em]">FIG.01 — CLICK THROUGH RATE</div>
                 <h3 className="text-[19px] font-semibold text-[#0B0B0E] mt-1">SERP クリック率の継続的減少</h3>
               </div>
               <div className="text-[24px] font-bold text-red-500 mono">−38%</div>
@@ -308,7 +303,6 @@ function SearchShiftSection() {
           <div className="bg-[#0B0B0E] border border-white/[0.07] rounded-2xl p-6 card-hover-dark">
             <div className="flex items-center justify-between mb-4">
               <div>
-                <div className="mono text-[10px] text-[#d3d3d8] tracking-[0.1em]">FIG.02 — AI ANSWER USAGE</div>
                 <h3 className="text-[19px] font-semibold text-[#FAFAF7] mt-1">AI 回答エンジン利用の指数的成長</h3>
               </div>
               <div className="text-[24px] font-bold text-[#1452FF] mono">+412%</div>
@@ -356,7 +350,6 @@ function SearchShiftSection() {
 function WhyAscentSection() {
   const pillars = [
     {
-      num: "01 / 04",
       icon: (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
           <rect x="3" y="3" width="18" height="18" rx="2" />
@@ -368,7 +361,6 @@ function WhyAscentSection() {
       desc: "Google / Microsoft の検索特許を解析し、Passage Ranking や Intent Ranking など内部メカニズムから GEO を逆算します。",
     },
     {
-      num: "02 / 04",
       icon: (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
           <circle cx="12" cy="12" r="3" />
@@ -379,7 +371,6 @@ function WhyAscentSection() {
       desc: "実消費者の検索質問データを基盤に、想定ではなく「実際に問われている問い」から戦略を組み立てます。",
     },
     {
-      num: "03 / 04",
       icon: (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
           <circle cx="18" cy="5" r="3" />
@@ -393,7 +384,6 @@ function WhyAscentSection() {
       desc: "一次検索だけでなく、後続買問の連鎖を可視化。CDJベースで購買経路上の AI 露出をデザインします。",
     },
     {
-      num: "04 / 04",
       icon: (
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
           <circle cx="12" cy="12" r="2" />
@@ -411,7 +401,7 @@ function WhyAscentSection() {
   return (
     <section id="why" className="bg-[#FAFAF7] pt-12 pb-24">
       <div className="max-w-[1280px] mx-auto px-10">
-        <SectionLabel code="S/02 — DIFFERENTIATION" title="WHY ASCENT" />
+        <SectionLabel title="WHY ASCENT" />
         <hr className="my-4 border-black/[0.07]" />
 
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -425,7 +415,7 @@ function WhyAscentSection() {
             </h2>
           </div>
           <div className="flex items-end">
-            <p className="text-[17px] text-[#4e4e51] leading-[1.6]">
+            <p className="text-[17px] text-[#4e4e51] leading-[1.6] font-[inherit]">
               4 本の柱が、AI 検索の中で「なぜ引用されるのか」を定量で説明します。
             </p>
           </div>
@@ -435,17 +425,16 @@ function WhyAscentSection() {
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {pillars.map((p) => (
             <div
-              key={p.num}
+              key={p.title}
               className="bg-white border border-black/[0.07] rounded-2xl p-6 flex flex-col card-hover group"
             >
-              <div className="mono text-[11px] text-[#d3d3d8] tracking-[0.08em] mb-5">{p.num}</div>
               <div className="w-[52px] h-[52px] rounded-xl border border-black/[0.08] flex items-center justify-center text-[#0B0B0E] mb-5 group-hover:border-[#1452FF]/30 group-hover:text-[#1452FF] transition-colors">
                 {p.icon}
               </div>
               <h3 className="text-[19px] font-bold text-[#0B0B0E] mb-3 leading-snug">{p.title}</h3>
-              <p className="text-[16px] text-[#4e4e51] leading-[1.6] flex-1">{p.desc}</p>
+              <p className="text-[16px] text-[#4e4e51] leading-[1.6] flex-1 font-[inherit]">{p.desc}</p>
               <div className="mt-6 pt-4 border-t border-black/[0.06]">
-                <Link href="#" className="bg-[#0B0B0E] text-white text-[11px] font-semibold px-4 py-2 rounded-full inline-flex items-center gap-1.5 hover:bg-[#1452FF] transition-colors">詳しく見る →</Link>
+                <Link href="#" className="ui-detail-button ui-detail-button-dark">詳しく見る →</Link>
               </div>
             </div>
           ))}
@@ -500,7 +489,7 @@ function FrameworkSection() {
   return (
     <section id="framework" className="section dark py-24">
       <div className="wrap max-w-[1280px] mx-auto px-10">
-        <SectionLabel code="F/01 — METHODOLOGY" title="GEO FRAMEWORK" dark />
+        <SectionLabel title="GEO FRAMEWORK" dark />
         <hr className="my-4 border-white/[0.06]" />
 
         <div className="mt-12 fw-grid">
@@ -555,7 +544,7 @@ function FrameworkSection() {
                         textAnchor="middle"
                         dominantBaseline="middle"
                         fill={isActive ? "white" : "rgba(255,255,255,0.78)"}
-                        fontFamily="'Pretendard Variable', Pretendard, sans-serif"
+                        fontFamily="'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif"
                         fontWeight="600"
                         fontSize="12"
                       >
@@ -613,13 +602,12 @@ function FrameworkSection() {
 function ServicesSection() {
   const services = [
     {
-      id: "S/01",
       title: "質問クラスター抽出",
       desc: "CDJ 5 段階 × 検索量 × 文脈データから、ブランドが応答すべき質問群をデータ基盤で導出。",
       bullets: ["CDJ 5 段階分類", "検索量による優先度化", "cluster・path 文脈結合"],
       visual: (
         <div className="bg-[#0B0B0E] rounded-xl p-4 text-left flex-1 flex flex-col justify-center">
-          <div className="mono text-[9px] text-[#d3d3d8] tracking-[0.1em] mb-3">QUESTION CLUSTER · CDJ 5</div>
+          <div className="mono text-[9px] text-[#d3d3d8] tracking-[0.1em] mb-3">QUESTION CLUSTER</div>
           {[
             { label: "初期探索", val: "202,333", w: "100%" },
             { label: "情報探索", val: "19,303", w: "58%" },
@@ -645,13 +633,12 @@ function ServicesSection() {
       ),
     },
     {
-      id: "S/02",
       title: "GAP Analysis",
       desc: "質問とコンテンツの間にある意味的ギャップを発見。",
       bullets: ["質問 ↔ コンテンツ GAP", "12 点 Semantic Score", "Cluster Mapping"],
       visual: (
         <div className="bg-[#0B0B0E] rounded-xl p-4 flex-1 flex flex-col">
-          <div className="mono text-[10px] text-[#d3d3d8] tracking-[0.1em] mb-3">SEMANTIC SCORE · 12 PT</div>
+          <div className="mono text-[10px] text-[#d3d3d8] tracking-[0.1em] mb-3">SEMANTIC SCORE</div>
           <div className="flex-1 flex items-center justify-center py-2">
             <div className="relative w-[120px] h-[120px]">
               <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
@@ -673,7 +660,6 @@ function ServicesSection() {
       ),
     },
     {
-      id: "S/03",
       title: "GEO コンテンツ制作",
       desc: "AI に「引用される」構造を設計するライティング。",
       bullets: ["Passage 最適化", "FAQ / Schema 設計", "GEO Writing"],
@@ -694,13 +680,12 @@ function ServicesSection() {
       ),
     },
     {
-      id: "S/04",
       title: "GEO モニタリング",
       desc: "可視性・引用・トラフィックを継続トラッキング。",
       bullets: ["Brand Visibility", "Citation Tracking", "AI Traffic 分析"],
       visual: (
         <div className="bg-[#0B0B0E] rounded-xl p-4 flex-1 flex flex-col justify-center">
-          <div className="mono text-[9px] text-[#d3d3d8] tracking-[0.1em] mb-3">CITATION TREND · 900</div>
+          <div className="mono text-[9px] text-[#d3d3d8] tracking-[0.1em] mb-3">CITATION TREND</div>
           <div className="flex items-end gap-1 h-[70px]">
             {[20, 28, 22, 35, 30, 42, 38, 55, 50, 68, 62, 80].map((v, i) => (
               <div
@@ -726,7 +711,7 @@ function ServicesSection() {
   return (
     <section id="services" className="bg-[#FAFAF7] pt-24 pb-12">
       <div className="max-w-[1280px] mx-auto px-10">
-        <SectionLabel code="S/03 — OFFERING" title="SERVICES" />
+        <SectionLabel title="SERVICES" />
         <hr className="my-4 border-black/[0.07]" />
 
         <div className="mt-12">
@@ -742,15 +727,14 @@ function ServicesSection() {
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
           {services.map((svc) => (
             <div
-              key={svc.id}
+              key={svc.title}
               className="bg-white border border-black/[0.07] rounded-2xl p-7 card-hover group flex flex-col"
             >
-              <div className="mono text-[11px] text-[#d3d3d8] tracking-[0.08em] mb-2">{svc.id}</div>
               <h3 className="text-[19px] font-bold text-[#0B0B0E] mb-2">{svc.title}</h3>
-              <p className="text-[16px] text-[#4e4e51] leading-[1.6] mb-4">{svc.desc}</p>
+              <p className="text-[16px] text-[#4e4e51] leading-[1.6] mb-4 font-[inherit]">{svc.desc}</p>
               <ul className="flex flex-col gap-2 mb-6">
                 {svc.bullets.map((b) => (
-                  <li key={b} className="flex items-center gap-2 text-[15px] text-[#4e4e51]">
+                  <li key={b} className="flex items-center gap-2 text-[15px] text-[#4e4e51] font-[inherit]">
                     <span className="w-4 h-[1px] bg-[#1452FF]" />
                     {b}
                   </li>
@@ -759,7 +743,7 @@ function ServicesSection() {
               {/* Visual — flex-1로 나머지 공간 채움 */}
               <div className="flex-1 flex flex-col">{svc.visual}</div>
               <div className="mt-5">
-                <button className="bg-[#0B0B0E] text-white text-[11px] font-semibold px-4 py-2 rounded-full inline-flex items-center gap-1.5 hover:bg-[#1452FF] transition-colors">詳しく見る →</button>
+                <button className="ui-detail-button ui-detail-button-dark">詳しく見る →</button>
               </div>
             </div>
           ))}
@@ -806,7 +790,7 @@ function GeoLabSection() {
   return (
     <section id="lab" className="bg-[#FAFAF7] pt-12 pb-24">
       <div className="max-w-[1280px] mx-auto px-10">
-        <SectionLabel code="L/01 — RESEARCH HUB" title="GEO LAB" />
+        <SectionLabel title="GEO LAB" />
         <hr className="my-4 border-black/[0.07]" />
 
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -819,7 +803,7 @@ function GeoLabSection() {
             </h2>
           </div>
           <div className="flex items-end">
-            <p className="text-[17px] text-[#4e4e51] leading-[1.6]">
+            <p className="text-[17px] text-[#4e4e51] leading-[1.6] font-[inherit]">
               特許分析・実データ検証・引用構造の研究。GEO Lab は実務に効くリサーチを発信します。
             </p>
           </div>

@@ -33,7 +33,14 @@ window.SharedFooter = function SharedFooter() {
           <div className="foot-col">
             <div className="foot-mark" style={{ fontWeight: 800, fontSize: 22, letterSpacing: '-0.02em', marginBottom: 16 }}>ASCENT<span style={{ color: 'var(--accent)' }}>/</span>GEO</div>
             <p className="foot-tagline" style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.6, marginBottom: 24 }}>特許 × 実消費者インテント × Embedding。<br />根拠ある GEO で、AI 検索のリーダーへ。</p>
-            <div className="foot-locale" style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.6 }}><span>東京都中央区晴海 1-8-10 トリトンスクエアタワーX 8階</span></div>
+            <div className="foot-locale" style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.6 }}>
+              <span>
+                運営会社：株式会社 Ascent Networks<br />
+                東京都中央区晴海1-8-10 晴海トリトンスクエア オフィスタワーX棟 8階<br />
+                TEL: 03-3527-3963<br />
+                <a href="https://www.ascentnet.co.jp/" target="_blank" rel="noopener noreferrer">https://www.ascentnet.co.jp/</a>
+              </span>
+            </div>
           </div>
           <div className="foot-col"><h5 style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 11, letterSpacing: '0.18em', color: 'var(--muted)', textTransform: 'uppercase', margin: '0 0 16px', fontWeight: 600 }}>SITEMAP</h5><ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 10 }}>
             <li><a href="index.html" style={{ fontSize: 14, color: 'var(--ink-2)' }}>Home</a></li>
