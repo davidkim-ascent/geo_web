@@ -1,10 +1,10 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { createClient } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/button'
 
 const INDUSTRIES = [
@@ -25,9 +25,7 @@ const WEBSITE_UNAVAILABLE_TEXT = '準備中'
 
 function isValidWebsiteValue(value: string) {
   const trimmed = value.trim()
-
   if (trimmed.includes(WEBSITE_UNAVAILABLE_TEXT)) return true
-
   try {
     const url = new URL(trimmed)
     return url.protocol === 'http:' || url.protocol === 'https:'
@@ -44,7 +42,7 @@ const schema = z.object({
   email: z.string().email('正しいメールアドレスを入力してください'),
   industry: z.string().min(1, '業種を選択してください'),
   website: z.string().refine(isValidWebsiteValue, {
-    message: "WebサイトURL または「準備中」を入力してください。",
+    message: 'WebサイトURL または「準備中」を入力してください。',
   }),
   challenge: z.string().min(10, '10文字以上で入力してください'),
   human: z.boolean().refine(v => v === true, 'チェックしてください'),
@@ -54,7 +52,7 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>
 
 export function ContactForm() {
-  const [submitted, setSubmitted] = useState(false)
+  const router = useRouter()
   const [serverError, setServerError] = useState<string | null>(null)
 
   const {
@@ -79,35 +77,33 @@ export function ContactForm() {
 
   async function onSubmit(values: FormValues) {
     setServerError(null)
-    const supabase = createClient()
-    const { error } = await supabase.from('whitepaper_downloads').insert({
-      company: values.company,
-      role: values.role,
-      name: values.name,
-      phone: values.phone,
-      email: values.email,
-      industry: values.industry,
-      website: values.website,
-      challenge: values.challenge,
+
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        company: values.company,
+        role: values.role,
+        name: values.name,
+        phone: values.phone,
+        email: values.email,
+        industry: values.industry,
+        website: values.website,
+        challenge: values.challenge,
+      }),
     })
 
-    if (error) {
-      setServerError('送信中にエラーが発生しました。しばらくしてから再度お試しください。')
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}))
+      if (data.error === 'blocked_domain') {
+        setServerError('許可されていないメールドメインです。')
+        return
+      }
+      setServerError('現在送信エラー状態です。しばらくしてから再度お試しいただくか、お電話ください：03-3527-3963')
       return
     }
-    setSubmitted(true)
-  }
 
-  if (submitted) {
-    return (
-      <div className="wp-form-card" style={{ textAlign: 'center', padding: '64px 36px' }}>
-        <div style={{ fontSize: 48, marginBottom: 16 }}>✓</div>
-        <h3 style={{ marginBottom: 8 }}>送信完了</h3>
-        <p style={{ fontSize: 14, color: 'var(--muted)' }}>
-          内容を確認のうえ、担当者よりご連絡いたします。
-        </p>
-      </div>
-    )
+    router.push('/contact/thanks')
   }
 
   return (
