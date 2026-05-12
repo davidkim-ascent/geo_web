@@ -56,7 +56,7 @@ export async function POST(req: NextRequest) {
     from: FROM,
     to: email,
     subject: '【ASCENT/GEO】お問い合わせを受け付けました',
-    react: ContactConfirmEmail({ name, company, challenge }),
+    react: ContactConfirmEmail({ data: formData }),
   })
 
   if (confirmError) {

@@ -8,14 +8,24 @@ import {
   Button,
   Section,
 } from '@react-email/components'
+import type { ContactFormData } from './ContactAdminEmail'
 
 type Props = {
-  name: string
-  company: string
-  challenge: string
+  data: ContactFormData
 }
 
-export function ContactConfirmEmail({ name, company, challenge }: Props) {
+const fieldLabels: Array<[keyof Pick<ContactFormData, 'company' | 'role' | 'name' | 'phone' | 'email' | 'industry' | 'website' | 'challenge'>, string]> = [
+  ['company', '会社名'],
+  ['role', '役職'],
+  ['name', 'お名前'],
+  ['phone', '電話番号'],
+  ['email', 'メールアドレス'],
+  ['industry', '業種'],
+  ['website', 'Webサイト'],
+  ['challenge', '現在の課題'],
+]
+
+export function ContactConfirmEmail({ data }: Props) {
   return (
     <Html lang="ja">
       <Head />
@@ -26,6 +36,9 @@ export function ContactConfirmEmail({ name, company, challenge }: Props) {
             <Text style={{ margin: 0, color: '#ffffff', fontWeight: 700, fontSize: 18, letterSpacing: '-0.02em' }}>
               ASCENT/GEO
             </Text>
+            <Text style={{ margin: '6px 0 0', color: '#a1a1aa', fontSize: 12 }}>
+              Logo placeholder
+            </Text>
           </Section>
 
           {/* Body */}
@@ -34,9 +47,9 @@ export function ContactConfirmEmail({ name, company, challenge }: Props) {
               お問い合わせを<br />受け付けました。
             </Text>
             <Text style={{ fontSize: 15, color: '#4e4e51', margin: '16px 0 0', lineHeight: 1.7 }}>
-              {name} 様<br />
+              {data.name || 'お客様'} 様<br />
               この度はお問い合わせいただき、ありがとうございます。<br />
-              内容を確認のうえ、<strong>24時間以内</strong>（土日祝は翌営業日）にご連絡いたします。
+              内容を確認のうえ、<strong>48時間以内</strong>（土日祝は翌営業日）にご連絡いたします。
             </Text>
 
             <Hr style={{ borderColor: '#e4e4e7', margin: '28px 0' }} />
@@ -45,15 +58,19 @@ export function ContactConfirmEmail({ name, company, challenge }: Props) {
               受付内容
             </Text>
 
-            {(
-              [
-                ['会社名', company],
-                ['ご相談内容', challenge],
-              ] as [string, string][]
-            ).map(([label, value]) => (
+            {fieldLabels.map(([key, label]) => (
               <Section key={label} style={{ marginBottom: 12 }}>
                 <Text style={{ margin: 0, fontSize: 12, color: '#71717a' }}>{label}</Text>
-                <Text style={{ margin: '2px 0 0', fontSize: 14, color: '#0B0B0E' }}>{value}</Text>
+                <Text
+                  style={{
+                    margin: '2px 0 0',
+                    fontSize: 14,
+                    color: '#0B0B0E',
+                    whiteSpace: key === 'challenge' ? 'pre-wrap' : 'normal',
+                  }}
+                >
+                  {data[key] || '未入力'}
+                </Text>
               </Section>
             ))}
 
