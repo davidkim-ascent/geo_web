@@ -36,24 +36,24 @@ function isValidWebsiteValue(value: string) {
   }
 }
 
-const schema = z
-  .object({
-    company:   z.string().min(1, '会社名を入力してください'),
-    role:      z.string().min(1, '役職を入力してください'),
-    name:      z.string().min(1, 'お名前を入力してください'),
-    phone:     z.string().regex(PHONE_RE, '正しい電話番号を入力してください（例：03-0000-0000）'),
-    email:     z.string().email('正しいメールアドレスを入力してください'),
-    industry:  z.string().min(1, '業種を選択してください'),
-    website:   z.string().refine(isValidWebsiteValue, {
-      message: "WebサイトURL または「準備中」を入力してください。",
-    }),
-    challenge: z.string().min(10, '10文字以上で入力してください'),
-    human:     z.boolean().refine(v => v === true, 'チェックしてください'),
-    agree:     z.boolean().refine(v => v === true, '個人情報保護方針への同意が必要です'),
-  })
+const schema = z.object({
+  company: z.string().min(1, '会社名を入力してください'),
+  role: z.string().min(1, '役職を入力してください'),
+  name: z.string().min(1, 'お名前を入力してください'),
+  phone: z.string().regex(PHONE_RE, '正しい電話番号を入力してください（例：03-0000-0000）'),
+  email: z.string().email('正しいメールアドレスを入力してください'),
+  industry: z.string().min(1, '業種を選択してください'),
+  website: z.string().refine(isValidWebsiteValue, {
+    message: "WebサイトURL または「準備中」を入力してください。",
+  }),
+  challenge: z.string().min(10, '10文字以上で入力してください'),
+  human: z.boolean().refine(v => v === true, 'チェックしてください'),
+  agree: z.boolean().refine(v => v === true, '個人情報保護方針への同意が必要です'),
+})
 
 type FormValues = z.infer<typeof schema>
-export function DownloadForm() {
+
+export function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
   const [serverError, setServerError] = useState<string | null>(null)
 
@@ -64,9 +64,16 @@ export function DownloadForm() {
   } = useForm<FormValues>({
     resolver: zodResolver(schema),
     defaultValues: {
-      company: '', role: '', name: '', phone: '', email: '',
-      industry: '', website: '',
-      challenge: '', human: false, agree: false,
+      company: '',
+      role: '',
+      name: '',
+      phone: '',
+      email: '',
+      industry: '',
+      website: '',
+      challenge: '',
+      human: false,
+      agree: false,
     },
   })
 
@@ -74,14 +81,14 @@ export function DownloadForm() {
     setServerError(null)
     const supabase = createClient()
     const { error } = await supabase.from('whitepaper_downloads').insert({
-      company:    values.company,
-      role:       values.role,
-      name:       values.name,
-      phone:      values.phone,
-      email:      values.email,
-      industry:   values.industry,
-      website:    values.website,
-      challenge:  values.challenge,
+      company: values.company,
+      role: values.role,
+      name: values.name,
+      phone: values.phone,
+      email: values.email,
+      industry: values.industry,
+      website: values.website,
+      challenge: values.challenge,
     })
 
     if (error) {
@@ -95,19 +102,19 @@ export function DownloadForm() {
     return (
       <div className="wp-form-card" style={{ textAlign: 'center', padding: '64px 36px' }}>
         <div style={{ fontSize: 48, marginBottom: 16 }}>✓</div>
-        <h3 style={{ marginBottom: 8 }}>ダウンロード準備完了</h3>
+        <h3 style={{ marginBottom: 8 }}>送信完了</h3>
         <p style={{ fontSize: 14, color: 'var(--muted)' }}>
-          ご登録のメールアドレスにダウンロードリンクをお送りしました。
+          内容を確認のうえ、担当者よりご連絡いたします。
         </p>
       </div>
     )
   }
 
   return (
-    <form className="wp-form-card" name="download_form" data-form-name="download_form" onSubmit={handleSubmit(onSubmit)} noValidate>
-      <h3>ダウンロードフォーム</h3>
+    <form className="wp-form-card" name="contact_form" data-form-name="contact_form" onSubmit={handleSubmit(onSubmit)} noValidate>
+      <h3>まずは、お気軽にご相談</h3>
       <p className="sub">
-        <span className="req">*</span> は必須です。送信後、メールにダウンロードリンクをお送りします。
+        <span className="req">*</span> は必須です。
       </p>
 
       <div className="field-row two">
@@ -173,7 +180,7 @@ export function DownloadForm() {
           <label>現在の課題 <span className="req">*</span></label>
           <textarea
             className="field"
-            rows={4}
+            rows={2}
             placeholder="10文字以上で入力してください / 例：AI検索からの流入が減少しており、GEO対策をどこから始めればよいか分からない"
             {...register('challenge')}
           />
@@ -190,7 +197,7 @@ export function DownloadForm() {
       <div className="check" style={{ marginTop: 0 }}>
         <input type="checkbox" id="agree" {...register('agree')} />
         <label htmlFor="agree">
-          <a href="/privacy" target="_blank" rel="noopener noreferrer">個人情報保護方針</a>に同意のうえ、ダウンロードします。
+          <a href="/privacy" target="_blank" rel="noopener noreferrer">個人情報保護方針</a>に同意のうえ、送信します。
         </label>
       </div>
       {errors.agree && <p className="field-error" style={{ marginTop: -14, marginBottom: 10 }}>{errors.agree.message}</p>}
@@ -198,7 +205,7 @@ export function DownloadForm() {
       {serverError && <p className="field-error" style={{ marginBottom: 8 }}>{serverError}</p>}
 
       <Button type="submit" variant="submit" disabled={isSubmitting}>
-        <span>{isSubmitting ? '送信中...' : isContactForm ? '送信' : '↓ ダウンロード（48 ページ · 12.4 MB）'}</span>
+        <span>{isSubmitting ? '送信中...' : '送信'}</span>
       </Button>
     </form>
   )

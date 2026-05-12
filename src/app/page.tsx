@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { DownloadForm } from "@/components/whitepaper/DownloadForm";
+import { ContactForm } from "@/components/contact/ContactForm";
 import { CTASection } from "@/components/layout/CTASection";
 import { SplitSection } from "@/components/layout/SplitSection";
 import { Button } from "@/components/ui/button";
@@ -204,7 +204,7 @@ function HeroSection() {
       }
       right={
         <div className="w-full max-w-[620px] mx-auto lg:ml-auto lg:mr-0">
-          <DownloadForm formName="contact_form" />
+          <ContactForm />
         </div>
       }
     />
