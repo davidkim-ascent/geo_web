@@ -26,7 +26,7 @@ function SectionLabel({ title, dark = false }: { title: string; dark?: boolean }
 function HeroSection() {
   return (
     <SplitSection
-      sectionClassName="relative bg-[#0B0B0E] overflow-hidden py-20 lg:py-24"
+      sectionClassName="relative bg-[#0B0B0E] overflow-hidden py-12 lg:py-16"
       sectionStyle={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}
       background={
         <>
@@ -195,7 +195,7 @@ function HeroSection() {
           </p>
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-[640px]">
             <Button asChild variant="ctaOutline">
-              <Link href="#">カレンダー予約（30分）</Link>
+              <Link href="/contact">カレンダー予約（30分）</Link>
             </Button>
             <Button asChild variant="ctaOutline">
               <Link href="/whitepaper">サービス資料をダウンロード</Link>
@@ -897,10 +897,10 @@ export default function Home() {
         kicker="CONTACT — START WITH A FREE AUDIT"
         title={<>AI 検索で、<br />あなたのブランドは<br /><span className="text-blue-gradient">何回引用されている</span>か？</>}
         description="まずは無料診断で、現在の AI Visibility と Citation 構造を可視化します。所要 30 分のオンライン MTG から。"
-        primaryButton={{ href: '#', label: '相談する' }}
+        primaryButton={{ href: '/contact', label: '相談する' }}
         secondaryButtons={[
           { href: '/whitepaper', label: 'サービス資料をダウンロード' },
-          { href: '#', label: 'カレンダー予約（30分）' },
+          { href: '/contact', label: 'カレンダー予約（30分）' },
         ]}
       />
     </div>

@@ -9,7 +9,7 @@ export default function Header() {
 
   return (
     <header className="ui-header-shell fixed top-0 left-0 right-0 z-50">
-      <div className="max-w-[1280px] mx-auto px-10 h-[52px] flex items-center justify-between">
+      <div className="max-w-[1280px] mx-auto px-10 h-[70px] pt-[15px] pb-2.5 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5">
           <span className="w-[22px] h-[22px] rounded-full border-[1.5px] border-[#0B0B0E] flex items-center justify-center relative flex-shrink-0">
@@ -27,7 +27,7 @@ export default function Header() {
             { label: "Framework", href: "#framework" },
             { label: "Services", href: "#services" },
             { label: "GEO Lab", href: "#lab" },
-            { label: "Contact", href: "#contact" },
+            { label: "Contact", href: "/contact" },
           ].map((item) => (
             <Link
               key={item.label}
@@ -42,7 +42,7 @@ export default function Header() {
         {/* CTA */}
         <div className="hidden md:flex">
           <Button asChild variant="header">
-            <Link href="#contact">
+            <Link href="/contact">
               相談する
               <span className="ui-header-cta-arrow">→</span>
             </Link>
@@ -73,7 +73,7 @@ export default function Header() {
             { label: "Framework", href: "#framework" },
             { label: "Services", href: "#services" },
             { label: "GEO Lab", href: "#lab" },
-            { label: "Contact", href: "#contact" },
+            { label: "Contact", href: "/contact" },
           ].map((item) => (
             <Link
               key={item.label}
@@ -85,7 +85,7 @@ export default function Header() {
             </Link>
           ))}
           <Button asChild variant="header" className="text-center justify-center">
-            <Link href="#contact" onClick={() => setMenuOpen(false)}>
+            <Link href="/contact" onClick={() => setMenuOpen(false)}>
               相談する
             </Link>
           </Button>

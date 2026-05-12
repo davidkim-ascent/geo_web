@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="ui-footer-shell">
-      <div className="max-w-[1280px] mx-auto px-10 py-16">
+      <div className="max-w-[1280px] mx-auto px-10 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-[5fr_2.5fr_2.5fr] gap-12">
           {/* Brand */}
           <div>
@@ -59,7 +59,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link href="#contact" className="ui-footer-link">
+                <Link href="/contact" className="ui-footer-link">
                   カレンダー予約（30分）
                 </Link>
               </li>
