@@ -3,6 +3,7 @@ import { Resend } from 'resend'
 import { createClient } from '@supabase/supabase-js'
 import { ContactConfirmEmail } from '@/emails/ContactConfirmEmail'
 import { ContactAdminEmail, type ContactFormData } from '@/emails/ContactAdminEmail'
+import { isBlockedEmailDomain } from '@/lib/contact-blocking'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -14,11 +15,6 @@ function getBlockedDomains(): string[] {
 }
 
 export async function POST(req: NextRequest) {
-  if (!ADMIN_EMAIL) {
-    console.error('[contact] CONTACT_ADMIN_EMAIL is not configured')
-    return NextResponse.json({ error: 'server_config_error' }, { status: 500 })
-  }
-
   let body: Record<string, unknown>
   try {
     body = await req.json()
@@ -28,9 +24,13 @@ export async function POST(req: NextRequest) {
   const { company, role, name, phone, email, industry, website, challenge } = body as Record<string, string>
 
   // 차단 도메인 체크
-  const domain = email?.split('@')[1] ?? ''
-  if (getBlockedDomains().includes(domain)) {
+  if (isBlockedEmailDomain(email ?? '', getBlockedDomains())) {
     return NextResponse.json({ error: 'blocked_domain' }, { status: 400 })
+  }
+
+  if (!ADMIN_EMAIL) {
+    console.error('[contact] CONTACT_ADMIN_EMAIL is not configured')
+    return NextResponse.json({ error: 'server_config_error' }, { status: 500 })
   }
 
   // Supabase INSERT
