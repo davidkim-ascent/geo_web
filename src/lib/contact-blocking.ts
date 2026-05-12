@@ -1,3 +1,5 @@
+export const DEFAULT_BLOCKED_EMAIL_DOMAINS = ['sex.com', 'spam.com']
+
 function normalizeDomain(value: string) {
   return value.trim().toLowerCase().replace(/\.+$/g, '')
 }
@@ -17,4 +19,8 @@ export function isBlockedEmailDomain(email: string, blockedDomains: string[]) {
     .map(normalizeDomain)
     .filter(Boolean)
     .some((blockedDomain) => domain === blockedDomain || domain.endsWith(`.${blockedDomain}`))
+}
+
+export function getBlockedEmailDomainError(email: string, blockedDomains: string[]) {
+  return isBlockedEmailDomain(email, blockedDomains) ? '許可されていないメールドメインです。' : null
 }

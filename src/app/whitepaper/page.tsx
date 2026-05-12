@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { DownloadForm } from '@/components/whitepaper/DownloadForm'
 import { SplitSection } from '@/components/layout/SplitSection'
+import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from '@/lib/contact-blocking'
 
 export const metadata = {
   title: 'AI 検索時代の、企業マーケティング白書 2026 — Ascent / GEO',
@@ -148,7 +149,7 @@ export default function WhitepaperPage() {
             </ul>
           </div>
 
-          <DownloadForm formName="downliad-form" />
+          <DownloadForm blockedEmailDomains={DEFAULT_BLOCKED_EMAIL_DOMAINS} />
         </div>
       </section>
     </div>

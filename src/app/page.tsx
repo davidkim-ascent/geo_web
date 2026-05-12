@@ -6,6 +6,7 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { CTASection } from "@/components/layout/CTASection";
 import { SplitSection } from "@/components/layout/SplitSection";
 import { Button } from "@/components/ui/button";
+import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 
 /* ─────────────────────────────────────────────
    Section Label (공통 컴포넌트)
@@ -204,7 +205,7 @@ function HeroSection() {
       }
       right={
         <div className="w-full max-w-[620px] mx-auto lg:ml-auto lg:mr-0">
-          <ContactForm />
+          <ContactForm blockedEmailDomains={DEFAULT_BLOCKED_EMAIL_DOMAINS} />
         </div>
       }
     />

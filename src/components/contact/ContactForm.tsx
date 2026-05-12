@@ -1,11 +1,12 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { useEffect, useState } from 'react'
+import { useForm, useWatch } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { Button } from '@/components/ui/button'
+import { getBlockedEmailDomainError } from '@/lib/contact-blocking'
 import { WEBSITE_UNAVAILABLE_COPY, isValidWebsiteValue } from '@/lib/website-validation'
 
 const INDUSTRIES = [
@@ -39,13 +40,20 @@ const schema = z.object({
 
 type FormValues = z.infer<typeof schema>
 
-export function ContactForm() {
+type Props = {
+  blockedEmailDomains: string[]
+}
+
+export function ContactForm({ blockedEmailDomains }: Props) {
   const router = useRouter()
   const [serverError, setServerError] = useState<string | null>(null)
 
   const {
     register,
     handleSubmit,
+    control,
+    setError,
+    clearErrors,
     formState: { errors, isSubmitting },
   } = useForm<FormValues>({
     resolver: zodResolver(schema),
@@ -62,6 +70,20 @@ export function ContactForm() {
       agree: false,
     },
   })
+  const emailValue = useWatch({ control, name: 'email' })
+
+  useEffect(() => {
+    const blockedEmailError = getBlockedEmailDomainError(emailValue ?? '', blockedEmailDomains)
+
+    if (blockedEmailError) {
+      setError('email', { type: 'validate', message: blockedEmailError })
+      return
+    }
+
+    if (errors.email?.type === 'validate' && errors.email.message === '許可されていないメールドメインです。') {
+      clearErrors('email')
+    }
+  }, [blockedEmailDomains, clearErrors, emailValue, errors.email?.message, errors.email?.type, setError])
 
   async function onSubmit(values: FormValues) {
     setServerError(null)
@@ -84,7 +106,7 @@ export function ContactForm() {
     if (!res.ok) {
       const data = await res.json().catch(() => ({}))
       if (data.error === 'blocked_domain') {
-        setServerError('許可されていないメールドメインです。')
+        setError('email', { type: 'server', message: '許可されていないメールドメインです。' })
         return
       }
       setServerError('現在送信エラー状態です。しばらくしてから再度お試しいただくか、お電話ください：03-3527-3963')

@@ -1,11 +1,12 @@
 'use client'
 
-import { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { useEffect, useState } from 'react'
+import { useForm, useWatch } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { createClient } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/button'
+import { getBlockedEmailDomainError } from '@/lib/contact-blocking'
 import { WEBSITE_UNAVAILABLE_COPY, isValidWebsiteValue } from '@/lib/website-validation'
 
 const INDUSTRIES = [
@@ -39,13 +40,21 @@ const schema = z
   })
 
 type FormValues = z.infer<typeof schema>
-export function DownloadForm() {
+
+type Props = {
+  blockedEmailDomains: string[]
+}
+
+export function DownloadForm({ blockedEmailDomains }: Props) {
   const [submitted, setSubmitted] = useState(false)
   const [serverError, setServerError] = useState<string | null>(null)
 
   const {
     register,
     handleSubmit,
+    control,
+    setError,
+    clearErrors,
     formState: { errors, isSubmitting },
   } = useForm<FormValues>({
     resolver: zodResolver(schema),
@@ -55,6 +64,20 @@ export function DownloadForm() {
       challenge: '', human: false, agree: false,
     },
   })
+  const emailValue = useWatch({ control, name: 'email' })
+
+  useEffect(() => {
+    const blockedEmailError = getBlockedEmailDomainError(emailValue ?? '', blockedEmailDomains)
+
+    if (blockedEmailError) {
+      setError('email', { type: 'validate', message: blockedEmailError })
+      return
+    }
+
+    if (errors.email?.type === 'validate' && errors.email.message === '許可されていないメールドメインです。') {
+      clearErrors('email')
+    }
+  }, [blockedEmailDomains, clearErrors, emailValue, errors.email?.message, errors.email?.type, setError])
 
   async function onSubmit(values: FormValues) {
     setServerError(null)
@@ -184,7 +207,7 @@ export function DownloadForm() {
       {serverError && <p className="field-error" style={{ marginBottom: 8 }}>{serverError}</p>}
 
       <Button type="submit" variant="submit" disabled={isSubmitting}>
-        <span>{isSubmitting ? '送信中...' : isContactForm ? '送信' : '↓ ダウンロード（48 ページ · 12.4 MB）'}</span>
+        <span>{isSubmitting ? '送信中...' : '↓ ダウンロード（48 ページ · 12.4 MB）'}</span>
       </Button>
     </form>
   )
