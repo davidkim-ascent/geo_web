@@ -26,8 +26,9 @@ const WEBSITE_UNAVAILABLE_TEXT = '準備中'
 function isValidWebsiteValue(value: string) {
   const trimmed = value.trim()
   if (trimmed.includes(WEBSITE_UNAVAILABLE_TEXT)) return true
+  const withProtocol = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`
   try {
-    const url = new URL(trimmed)
+    const url = new URL(withProtocol)
     return url.protocol === 'http:' || url.protocol === 'https:'
   } catch {
     return false
