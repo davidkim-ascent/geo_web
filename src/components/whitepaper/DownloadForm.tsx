@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { createClient } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/button'
+import { WEBSITE_UNAVAILABLE_COPY, isValidWebsiteValue } from '@/lib/website-validation'
 
 const INDUSTRIES = [
   '製造業',
@@ -21,21 +22,6 @@ const INDUSTRIES = [
 ]
 
 const PHONE_RE = /^[\d\-\+\(\)\s]{10,15}$/
-const WEBSITE_UNAVAILABLE_TEXT = '準備中'
-
-function isValidWebsiteValue(value: string) {
-  const trimmed = value.trim()
-
-  if (trimmed.includes(WEBSITE_UNAVAILABLE_TEXT)) return true
-
-  try {
-    const url = new URL(trimmed)
-    return url.protocol === 'http:' || url.protocol === 'https:'
-  } catch {
-    return false
-  }
-}
-
 const schema = z
   .object({
     company:   z.string().min(1, '会社名を入力してください'),
@@ -161,7 +147,7 @@ export function DownloadForm() {
           </label>
           <input
             className="field"
-            placeholder='URLが未確定の場合は「準備中」と入力してください。'
+            placeholder={`URLが未確定の場合は「${WEBSITE_UNAVAILABLE_COPY}」と入力してください。`}
             {...register('website')}
           />
           {errors.website && <p className="field-error">{errors.website.message}</p>}
