@@ -5,6 +5,7 @@ import { useForm, useWatch } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { createClient } from '@/lib/supabase/client'
+import { Button } from '@/components/ui/button'
 
 const INDUSTRIES = [
   '製造業',
@@ -223,9 +224,9 @@ export function DownloadForm({ formName = 'downliad-form' }: DownloadFormProps) 
 
       {serverError && <p className="field-error" style={{ marginBottom: 8 }}>{serverError}</p>}
 
-      <button type="submit" className="submit" disabled={isSubmitting}>
+      <Button type="submit" variant="submit" disabled={isSubmitting}>
         <span>{isSubmitting ? '送信中...' : isContactForm ? '送信' : '↓ ダウンロード（48 ページ · 12.4 MB）'}</span>
-      </button>
+      </Button>
     </form>
   )
 }

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -40,18 +41,19 @@ export default function Header() {
 
         {/* CTA */}
         <div className="hidden md:flex">
-          <Link
-            href="#contact"
-            className="ui-header-cta"
-          >
-            相談する
-            <span className="ui-header-cta-arrow">→</span>
-          </Link>
+          <Button asChild variant="header">
+            <Link href="#contact">
+              相談する
+              <span className="ui-header-cta-arrow">→</span>
+            </Link>
+          </Button>
         </div>
 
         {/* Mobile hamburger */}
-        <button
-          className="md:hidden p-1"
+        <Button
+          type="button"
+          variant="icon"
+          className="md:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="メニュー"
         >
@@ -60,7 +62,7 @@ export default function Header() {
             <span className={`block h-[1.5px] bg-[#0B0B0E] transition-all ${menuOpen ? "opacity-0" : ""}`} />
             <span className={`block h-[1.5px] bg-[#0B0B0E] transition-all origin-center ${menuOpen ? "-rotate-45 -translate-y-[6.5px]" : ""}`} />
           </div>
-        </button>
+        </Button>
       </div>
 
       {/* Mobile menu */}
@@ -82,13 +84,11 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <Link
-            href="#contact"
-            className="ui-header-cta text-center justify-center"
-            onClick={() => setMenuOpen(false)}
-          >
-            相談する
-          </Link>
+          <Button asChild variant="header" className="text-center justify-center">
+            <Link href="#contact" onClick={() => setMenuOpen(false)}>
+              相談する
+            </Link>
+          </Button>
         </div>
       )}
     </header>

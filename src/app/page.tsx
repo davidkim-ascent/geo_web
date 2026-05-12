@@ -5,6 +5,7 @@ import { useState } from "react";
 import { DownloadForm } from "@/components/whitepaper/DownloadForm";
 import { CTASection } from "@/components/layout/CTASection";
 import { SplitSection } from "@/components/layout/SplitSection";
+import { Button } from "@/components/ui/button";
 
 /* ─────────────────────────────────────────────
    Section Label (공통 컴포넌트)
@@ -192,12 +193,12 @@ function HeroSection() {
             Google・Microsoft の特許分析、リスニングマインドの実消費者インテント、Embeddingベースのセマンティック評価。GEO は推測ゲームではない。Ascent は根拠のあるフレームワークで設計する。
           </p>
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-[640px]">
-            <Link href="#" className="ui-cta-button-outline btn-outline-dark">
-              カレンダー予約（30分）
-            </Link>
-            <Link href="/whitepaper" className="ui-cta-button-outline btn-outline-dark">
-              サービス資料をダウンロード
-            </Link>
+            <Button asChild variant="ctaOutline">
+              <Link href="#">カレンダー予約（30分）</Link>
+            </Button>
+            <Button asChild variant="ctaOutline">
+              <Link href="/whitepaper">サービス資料をダウンロード</Link>
+            </Button>
           </div>
         </>
       }
@@ -434,7 +435,9 @@ function WhyAscentSection() {
               <h3 className="text-[19px] font-bold text-[#0B0B0E] mb-3 leading-snug">{p.title}</h3>
               <p className="text-[16px] text-[#4e4e51] leading-[1.6] flex-1 font-[inherit]">{p.desc}</p>
               <div className="mt-6 pt-4 border-t border-black/[0.06]">
-                <Link href="#" className="ui-detail-button ui-detail-button-dark">詳しく見る →</Link>
+                <Button asChild variant="detail">
+                  <Link href="#">詳しく見る →</Link>
+                </Button>
               </div>
             </div>
           ))}
@@ -573,9 +576,10 @@ function FrameworkSection() {
 
           <div className="fw-list">
             {steps.map((step, i) => (
-              <button
+              <Button
                 key={step.id}
                 type="button"
+                variant="bare"
                 onClick={() => setActive(i)}
                 className={`fw-step text-left ${active === i ? "active" : ""}`}
               >
@@ -587,7 +591,7 @@ function FrameworkSection() {
                   <div className="meta">{step.sub}</div>
                 </div>
                 <span className={`more text-[17px] ${active === i ? "text-[#1452FF]" : "text-white/20"}`}>→</span>
-              </button>
+              </Button>
             ))}
           </div>
         </div>
@@ -743,7 +747,9 @@ function ServicesSection() {
               {/* Visual — flex-1로 나머지 공간 채움 */}
               <div className="flex-1 flex flex-col">{svc.visual}</div>
               <div className="mt-5">
-                <button className="ui-detail-button ui-detail-button-dark">詳しく見る →</button>
+                <Button type="button" variant="detail">
+                  詳しく見る →
+                </Button>
               </div>
             </div>
           ))}

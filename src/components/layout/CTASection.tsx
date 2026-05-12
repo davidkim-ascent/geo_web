@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { SplitSection } from '@/components/layout/SplitSection'
+import { Button } from '@/components/ui/button'
 import type { ReactNode } from 'react'
 
 type CTAButton = {
@@ -61,18 +62,18 @@ export function CTASection({
             }
             right={
               <div className="ui-cta-actions">
-                <Link href={primaryButton.href} className="ui-cta-button btn-filled-dark">
-                  {primaryButton.label}
-                  <span>→</span>
-                </Link>
-                {secondaryButtons.map((button) => (
-                  <Link
-                    key={`${button.href}-${String(button.label)}`}
-                    href={button.href}
-                    className="ui-cta-button-outline btn-outline-dark"
-                  >
-                    {button.label}
+                <Button asChild variant="cta">
+                  <Link href={primaryButton.href}>
+                    {primaryButton.label}
+                    <span>→</span>
                   </Link>
+                </Button>
+                {secondaryButtons.map((button) => (
+                  <Button key={`${button.href}-${String(button.label)}`} asChild variant="ctaOutline">
+                    <Link href={button.href}>
+                      {button.label}
+                    </Link>
+                  </Button>
                 ))}
               </div>
             }
