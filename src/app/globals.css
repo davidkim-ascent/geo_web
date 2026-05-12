@@ -532,6 +532,17 @@ body.tweak-norotate .fw-ring g.node text {
   to { transform: rotate(-360deg); }
 }
 
+@media (max-width: 768px) {
+  .fw-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .fw-grid > div:first-child {
+    display: none;
+  }
+}
+
 .fw-center {
   position: absolute;
   left: 50%;
