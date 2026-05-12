@@ -1,0 +1,76 @@
+import Link from "next/link";
+
+export default function Footer() {
+  return (
+    <footer className="ui-footer-shell">
+      <div className="max-w-[1280px] mx-auto px-10 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-[5fr_2.5fr_2.5fr] gap-12">
+          {/* Brand */}
+          <div>
+            <span className="ui-footer-brand">
+              ASCENT/GEO
+            </span>
+            <p className="mt-4 ui-body-copy">
+              特許 × 実消費者インテント × Embedding。<br />
+              根拠ある GEO で、AI 検索のリーダーへ。
+            </p>
+            <p className="mt-4 ui-body-copy-sm">
+              東京都中央区晴海1-8-10 トリトンスクエアタワーX 8階
+            </p>
+          </div>
+
+          {/* Sitemap */}
+          <div>
+            <p className="ui-footer-heading mb-5">Sitemap</p>
+            <ul className="flex flex-col gap-3">
+              {[
+                { label: "Home", href: "/" },
+                { label: "Why Ascent", href: "#why" },
+                { label: "Framework", href: "#process" },
+                { label: "Services", href: "#services" },
+                { label: "GEO Lab", href: "#lab" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="ui-footer-link">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <p className="ui-footer-heading mb-5">Contact</p>
+            <ul className="flex flex-col gap-3">
+              <li>
+                <a href="mailto:geo@ascentnet.co.jp" className="ui-footer-link">
+                  geo@ascentnet.co.jp
+                </a>
+              </li>
+              <li>
+                <Link href="#contact" className="ui-footer-link">
+                  カレンダー予約（30分）
+                </Link>
+              </li>
+              <li>
+                <Link href="/whitepaper" className="ui-footer-link">
+                  資料ダウンロード
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-12 pt-6 border-t border-black/10 flex flex-col md:flex-row items-center justify-between gap-3">
+          <p className="ui-footer-meta">
+            © 2026 ASCENT NETWORK
+          </p>
+          <Link href="/privacy" className="ui-footer-link">
+            プライバシーポリシー
+          </Link>
+        </div>
+      </div>
+    </footer>
+  );
+}
