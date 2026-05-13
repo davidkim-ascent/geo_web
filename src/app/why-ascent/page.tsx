@@ -4,30 +4,14 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { CTASection } from "@/components/layout/CTASection";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 import { getCalendarBookingHref, getCalendarBookingLinkProps } from "@/lib/calendar-booking";
+import { Button } from "@/components/ui/button";
+import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
 
 export const metadata: Metadata = {
   title: "Why Ascent — GEO",
   description: "GEO は、推測ではなく設計の科学である。",
 };
 
-const heroPillars = [
-  {
-    num: "01",
-    title: "特許ベースの GEO 解析",
-  },
-  {
-    num: "02",
-    title: "実消費者インテント",
-  },
-  {
-    num: "03",
-    title: "Search Path Intelligence",
-  },
-  {
-    num: "04",
-    title: "Semantic GEO Framework",
-  },
-];
 
 const patentItems = [
   {
@@ -293,20 +277,11 @@ export default function WhyAscentPage() {
                 AI はどこから、なぜ引用するのか。Ascent は特許・実消費者インテント・Embedding 評価という 4 本の柱で、その問いに定量で答える GEO を構築します。
               </p>
 
-              <div className="mt-10 border-t border-white/10 pt-7">
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4 xl:gap-0">
-                  {heroPillars.map((pillar, index) => (
-                    <div
-                      key={pillar.num}
-                      className={`border-white/10 ${index < 3 ? "xl:border-r" : ""} pr-0 xl:pr-6`}
-                    >
-                      <div className="font-mono text-[10px] tracking-[0.24em] text-[#1452ff]">{pillar.num}</div>
-                      <h4 className="mt-4 whitespace-nowrap font-semibold leading-[1.35] text-white">
-                        {pillar.title}
-                      </h4>
-                    </div>
-                  ))}
-                </div>
+              <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-[640px]">
+                <CalendarBookingButton />
+                <Button asChild variant="ctaOutline">
+                  <Link href="/whitepaper">サービス資料をダウンロード</Link>
+                </Button>
               </div>
             </div>
 
