@@ -100,7 +100,7 @@ export default function ContactPage() {
                 </div>
                 <div className="ct-channel-body">
                   <div className="ct-channel-title">カレンダーで予約する</div>
-                  <div className="ct-channel-desc">30 分の無料相談 · Zoom / Google Meet</div>
+                  <div className="ct-channel-desc">30 分の無料相談 · Google Meet</div>
                 </div>
                 <span className="ct-channel-arrow">→</span>
               </a>

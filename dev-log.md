@@ -1,3 +1,9 @@
+## 2026-05-13 14:27
+- Google Calendar 예약 흐름 단순화: `/calendar-booking` 중간 페이지 삭제, CTA를 Google 예약 URL 직접 연결로 전환
+
+## 2026-05-13 14:23
+- /contact 예약 카드 설명에서 잔여 `Zoom` 문구 제거, Google Calendar 예약 흐름과 카피 일치시킴
+
 ## 2026-05-13 13:50
 - Google Calendar 예약 URL 환경변수 연결 완료: `NEXT_PUBLIC_GOOGLE_CALENDAR_BOOKING_URL` 반영 후 `/calendar-booking` 리다이렉트 경로 빌드 검증 완료
 
