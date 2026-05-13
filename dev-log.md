@@ -1,3 +1,8 @@
+## 2026-05-13 23:59 — ⭐ 레이아웃 디자인 완료 버전
+- **롤백 기준점** commit: `4449d8c`
+- 완료 범위: 전 페이지 히로 섹션 통일(배경 애니메이션, h1 타이포, 상단 여백), 네비 링크 정상화, whitepaper downloaded 페이지, ai-overview 페이지, services/lab/why-ascent/framework 신규 제작
+- 롤백 명령: `git checkout 4449d8c` (확인용) 또는 `git revert`
+
 ## 2026-05-13 20:30
 - `/whitepaper/downloaded` 페이지 신규 제작: 다운로드 완료 화면. 다크 배경(radial gradient + grid + scan line 애니메이션), 상태 스탬프, TicketId(client 랜덤 ID), 진행바 100% 애니메이션, 대체 링크, 전화 컨택 블록.
 - `DownloadForm.tsx` 리다이렉트 연결: 제출 성공 시 `setSubmitted(true)` 인라인 성공 표시 → `router.push('/whitepaper/downloaded')`로 교체.
