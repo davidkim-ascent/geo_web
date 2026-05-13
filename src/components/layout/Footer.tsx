@@ -61,7 +61,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href={getCalendarBookingHref()} className="ui-footer-link" {...getCalendarBookingLinkProps()}>
-                  カレンダー予約（30分）
+                  無料相談予約（Googleカレンダー）
                 </Link>
               </li>
               <li>

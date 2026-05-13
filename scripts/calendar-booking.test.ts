@@ -7,7 +7,7 @@ const {
   getCalendarBookingLinkProps,
 } = await import('../src/lib/calendar-booking.ts')
 
-assert.equal(CALENDAR_BOOKING_CONFIG.label, 'カレンダー予約（30分）')
+assert.equal(CALENDAR_BOOKING_CONFIG.label, '無料相談予約（Googleカレンダー）')
 assert.equal(CALENDAR_BOOKING_CONFIG.title, 'Ascent GEO オンライン相談予約')
 assert.equal(CALENDAR_BOOKING_CONFIG.location, 'オンライン')
 assert.equal(CALENDAR_BOOKING_CONFIG.timezone, 'Asia/Tokyo')

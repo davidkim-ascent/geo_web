@@ -1,5 +1,5 @@
 export const CALENDAR_BOOKING_CONFIG = {
-  label: 'カレンダー予約（30分）',
+  label: '無料相談予約（Googleカレンダー）',
   title: 'Ascent GEO オンライン相談予約',
   description: 'Ascent GEO のオンライン相談予約ページです。',
   location: 'オンライン',

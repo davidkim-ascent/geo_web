@@ -900,7 +900,7 @@ export default function Home() {
         primaryButton={{ href: '/contact', label: '相談する' }}
         secondaryButtons={[
           { href: '/whitepaper', label: 'サービス資料をダウンロード' },
-          { href: getCalendarBookingHref(), label: 'カレンダー予約（30分）' },
+          { href: getCalendarBookingHref(), label: '無料相談予約（Googleカレンダー）' },
         ]}
       />
     </div>

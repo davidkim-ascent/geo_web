@@ -3,13 +3,13 @@ Date: 2026-05-13 13:35
 
 ## 1. Goal
 
-`カレンダー予約` 클릭 시 사용자를 Google Calendar의 예약 페이지로 이동시켜,
+`無料相談予約（Googleカレンダー）` 클릭 시 사용자를 Google Calendar의 예약 페이지로 이동시켜,
 ASCENT GEO 온라인 상담 예약을 30분 단위로 받는다.
 
 ## 2. Scope
 
 ### In scope
-- 사이트의 `カレンダー予約` CTA를 Google Calendar booking page로 연결
+- 사이트의 `無料相談予約（Googleカレンダー）` CTA를 Google Calendar booking page로 연결
 - 예약 제목, 설명, 위치, 시간 정책 설정
 - Google Meet 링크 자동 생성
 - 일본 시간대 기준 예약 운영
@@ -26,7 +26,7 @@ ASCENT GEO 온라인 상담 예약을 30분 단위로 받는다.
 ## 3. Confirmed Requirements
 
 ### Booking entry
-- 사용자가 사이트에서 `カレンダー予約`를 클릭하면 Google Calendar 예약 페이지로 이동한다.
+- 사용자가 사이트에서 `無料相談予約（Googleカレンダー）`를 클릭하면 Google Calendar 예약 페이지로 이동한다.
 
 ### Calendar account
 - 예약을 받을 Google 계정: `davidkim@ascentnet.co.jp`

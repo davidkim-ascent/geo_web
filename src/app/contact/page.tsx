@@ -99,7 +99,7 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div className="ct-channel-body">
-                  <div className="ct-channel-title">カレンダーで予約する</div>
+                  <div className="ct-channel-title">無料相談予約（Googleカレンダー）</div>
                   <div className="ct-channel-desc">30 分の無料相談 · Google Meet</div>
                 </div>
                 <span className="ct-channel-arrow">→</span>
