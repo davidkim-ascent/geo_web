@@ -94,19 +94,19 @@ function VisualCard({ kind }: { kind: (typeof frameworkSteps)[number]["visual"] 
       <div className="relative min-h-[240px] overflow-hidden rounded-[18px] border border-black/10 bg-[#f3f0e8]">
         <div className="absolute left-4 top-4 text-[10px] tracking-[0.24em] text-black/30">F · 01</div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative h-[174px] w-[174px] rounded-full border border-[#1452ff]/55">
+          <div className="relative h-[170px] w-[170px] rounded-full border border-[#1452ff]">
             <span className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#1452ff]" />
-            <span className="absolute left-[16%] top-[18%] h-4 w-4 rounded-full border border-[#1452ff] bg-[#dbe4ff]" />
-            <span className="absolute right-[16%] top-[18%] h-4 w-4 rounded-full border border-[#1452ff] bg-[#dbe4ff]" />
-            <span className="absolute left-[10%] bottom-[18%] h-4 w-4 rounded-full border border-[#1452ff] bg-[#dbe4ff]" />
-            <span className="absolute right-[10%] bottom-[18%] h-4 w-4 rounded-full border border-[#1452ff] bg-[#dbe4ff]" />
-            <span className="absolute bottom-[4%] left-1/2 h-4 w-4 -translate-x-1/2 rounded-full border border-[#1452ff] bg-[#dbe4ff]" />
-            <span className="absolute left-1/2 top-[20%] h-px w-[60%] -translate-x-1/2 bg-[#1452ff]/55" />
-            <span className="absolute left-1/2 top-[20%] h-[60%] w-px -translate-x-1/2 bg-[#1452ff]/55" />
-            <span className="absolute left-[24%] top-[26%] h-px w-[32%] -rotate-[36deg] bg-[#1452ff]/55" />
-            <span className="absolute right-[24%] top-[26%] h-px w-[32%] rotate-[36deg] bg-[#1452ff]/55" />
-            <span className="absolute left-[24%] bottom-[28%] h-px w-[32%] rotate-[36deg] bg-[#1452ff]/55" />
-            <span className="absolute right-[24%] bottom-[28%] h-px w-[32%] -rotate-[36deg] bg-[#1452ff]/55" />
+            <span className="absolute left-[16%] top-[18%] h-4 w-4 rounded-full border border-[#1452ff] bg-[#dbe4ff] shadow-[0_0_20px_rgba(20,82,255,0.35)]" />
+            <span className="absolute right-[16%] top-[18%] h-4 w-4 rounded-full border border-[#1452ff] bg-[#dbe4ff] shadow-[0_0_20px_rgba(20,82,255,0.35)]" />
+            <span className="absolute left-[9%] bottom-[18%] h-4 w-4 rounded-full border border-[#1452ff] bg-[#dbe4ff] shadow-[0_0_20px_rgba(20,82,255,0.35)]" />
+            <span className="absolute right-[10%] bottom-[18%] h-4 w-4 rounded-full border border-[#1452ff] bg-[#dbe4ff] shadow-[0_0_20px_rgba(20,82,255,0.35)]" />
+            <span className="absolute bottom-[4%] left-1/2 h-4 w-4 -translate-x-1/2 rounded-full border border-[#1452ff] bg-[#dbe4ff] shadow-[0_0_20px_rgba(20,82,255,0.35)]" />
+            <span className="absolute left-1/2 top-[20%] h-px w-[60%] -translate-x-1/2 bg-[#1452ff]/60" />
+            <span className="absolute left-1/2 top-[20%] h-[60%] w-px -translate-x-1/2 bg-[#1452ff]/60" />
+            <span className="absolute left-[24%] top-[26%] h-px w-[32%] -rotate-[36deg] bg-[#1452ff]/60" />
+            <span className="absolute right-[24%] top-[26%] h-px w-[32%] rotate-[36deg] bg-[#1452ff]/60" />
+            <span className="absolute left-[24%] bottom-[28%] h-px w-[32%] rotate-[36deg] bg-[#1452ff]/60" />
+            <span className="absolute right-[24%] bottom-[28%] h-px w-[32%] -rotate-[36deg] bg-[#1452ff]/60" />
           </div>
         </div>
       </div>
@@ -118,27 +118,34 @@ function VisualCard({ kind }: { kind: (typeof frameworkSteps)[number]["visual"] 
       <div className="relative min-h-[240px] overflow-hidden rounded-[18px] border border-black/10 bg-[#f3f0e8]">
         <div className="absolute left-4 top-4 text-[10px] tracking-[0.24em] text-black/30">F · 02</div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="grid grid-cols-6 gap-1.5">
-            {[
-              [1, 2, 3, 4, 5, 0],
-              [4, 5, 4, 5, 3, 0],
-              [5, 4, 3, 2, 0, 2],
-              [3, 2, 0, 1, 4, 5],
-            ].flatMap((row, rowIdx) =>
-              row.map((value, colIdx) => (
-                <div
-                  key={`${rowIdx}-${colIdx}`}
-                  className="h-9 w-9"
-                  style={{
-                    backgroundColor:
-                      value === 0 ? "#efede5" : `rgba(20,82,255,${0.15 + value * 0.12})`,
-                  }}
-                />
-              ))
-            )}
+          <div className="w-[80%]">
+            <div className="mb-5 flex items-center justify-between text-[9px] tracking-[0.28em] text-black/30">
+              <span>SEMANTIC SIMILARITY</span>
+              <span>0—12</span>
+            </div>
+            <div className="space-y-3">
+              {[
+                { n: "Coverage", v: 9, weak: false },
+                { n: "Specificity", v: 7, weak: false },
+                { n: "Authority", v: 11, weak: false },
+                { n: "Recency", v: 4, weak: true },
+                { n: "Schema", v: 3, weak: true },
+                { n: "Passage Fit", v: 8, weak: false },
+              ].map((r) => (
+                <div key={r.n} className="flex items-center gap-3 text-[11px]">
+                  <span className="w-[72px] text-black/55">{r.n}</span>
+                  <div className="h-2.5 flex-1 rounded-full bg-black/[0.05]">
+                    <div
+                      className={`h-2.5 rounded-full ${r.weak ? "bg-[#E7A8A0]" : "bg-[#1452FF]"}`}
+                      style={{ width: `${(r.v / 12) * 100}%` }}
+                    />
+                  </div>
+                  <span className="w-[34px] text-right text-black/50">{r.v}/12</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-        <div className="absolute bottom-5 left-6 text-[9px] tracking-[0.32em] text-black/35">SCORE 0 → 12</div>
       </div>
     );
   }
@@ -148,16 +155,18 @@ function VisualCard({ kind }: { kind: (typeof frameworkSteps)[number]["visual"] 
       <div className="relative min-h-[240px] overflow-hidden rounded-[18px] border border-black/10 bg-[#f3f0e8]">
         <div className="absolute left-4 top-4 text-[10px] tracking-[0.24em] text-black/30">F · 03</div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-[72%] space-y-3">
-            <div className="h-3 w-[85%] bg-black" />
-            <div className="h-1.5 w-[92%] bg-black/20" />
-            <div className="h-1.5 w-[78%] bg-black/20" />
-            <div className="h-1.5 w-[83%] bg-black/20" />
-            <div className="h-1.5 w-[90%] bg-[#1452ff]" />
-            <div className="h-3 w-[58%] bg-[#1452ff]" />
-            <div className="h-1.5 w-[86%] bg-black/20" />
-            <div className="rounded border border-dashed border-[#1452ff] px-2 py-1 text-[9px] tracking-[0.28em] text-[#1452ff]">
-              PASSAGE · CITATION READY
+          <div className="w-[72%] text-[11px] leading-[1.45]">
+            <div className="mb-3 flex items-center justify-between text-[9px] tracking-[0.28em] text-black/35">
+              <span>PASSAGE.MD</span>
+              <span>OPTIMIZED</span>
+            </div>
+            <div className="space-y-2 text-[#1452FF]">
+              <div>## バッテリーは何時間持つか？</div>
+              <div className="text-[#0B0B0E]">5,000mAh 搭載、通常使用で 約 28 時間。</div>
+              <div className="pt-1 text-[#1452FF]">### 発熱はどう抑えるか？</div>
+              <div className="text-[#0B0B0E]">ベイパーチャンバー＋ AI 制御で 表面温度 -8℃。</div>
+              <div className="pt-1 text-[#1452FF]">### FAQ Schema</div>
+              <div className="text-[#0B0B0E]">@type: Question / acceptedAnswer</div>
             </div>
           </div>
         </div>
@@ -169,22 +178,29 @@ function VisualCard({ kind }: { kind: (typeof frameworkSteps)[number]["visual"] 
     return (
       <div className="relative min-h-[240px] overflow-hidden rounded-[18px] border border-black/10 bg-[#f3f0e8]">
         <div className="absolute left-4 top-4 text-[10px] tracking-[0.24em] text-black/30">F · 04</div>
-        <div className="absolute inset-0">
-          <div className="absolute inset-x-0 bottom-8 h-px bg-black/10" />
-          <div className="absolute inset-y-0 left-8 w-px bg-black/10" />
-          <div className="absolute inset-y-0 left-[36%] w-px bg-black/5" />
-          <div className="absolute inset-y-0 left-[64%] w-px bg-black/5" />
-          <svg viewBox="0 0 250 180" className="absolute inset-0 h-full w-full">
-            <defs>
-              <linearGradient id="framework-chart-fill" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#1452ff" stopOpacity="0.4" />
-                <stop offset="100%" stopColor="#1452ff" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-            <path d="M 20 142 C 72 136, 88 110, 115 92 C 145 71, 186 40, 228 24" fill="none" stroke="#1452ff" strokeWidth="2.5" />
-            <path d="M 20 142 C 72 136, 88 110, 115 92 C 145 71, 186 40, 228 24 L 228 150 L 20 150 Z" fill="url(#framework-chart-fill)" />
-            <circle cx="228" cy="24" r="7" fill="#dbe4ff" stroke="#1452ff" strokeWidth="2" />
-          </svg>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-[80%]">
+            <div className="mb-4 flex items-center justify-between text-[9px] tracking-[0.28em] text-black/35">
+              <span>VISIBILITY · 30D</span>
+              <span>LIVE</span>
+            </div>
+            <div className="space-y-3">
+              {[
+                ["BRAND VISIBILITY", "42.7%", "+8.4"],
+                ["CITATIONS / WK", "187", "+34"],
+                ["AI TRAFFIC", "12.4K", "+22%"],
+                ["SHARE OF VOICE", "31.2%", "+5.1"],
+              ].map(([label, value, delta]) => (
+                <div key={label} className="flex items-end justify-between border-b border-black/5 pb-2">
+                  <span className="text-[10px] tracking-[0.12em] text-black/50">{label}</span>
+                  <span className="text-[28px] leading-none font-semibold text-[#0B0B0E]">
+                    {value}
+                    <small className="ml-1 text-[11px] font-normal text-[#1452FF]">{delta}</small>
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -194,15 +210,100 @@ function VisualCard({ kind }: { kind: (typeof frameworkSteps)[number]["visual"] 
     <div className="relative min-h-[240px] overflow-hidden rounded-[18px] border border-black/10 bg-[#f3f0e8]">
       <div className="absolute left-4 top-4 text-[10px] tracking-[0.24em] text-black/30">F · 05</div>
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="relative h-[170px] w-[170px] rounded-full border border-[#1452ff]/60">
-          <div className="absolute inset-0 rounded-full border border-dashed border-[#1452ff]/25" />
-          <div className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#1452ff] text-[10px] font-semibold tracking-[0.24em] text-white">
-            LOOP
+        <div className="w-[80%]">
+          <div className="mb-4 flex items-center justify-between text-[9px] tracking-[0.28em] text-black/35">
+            <span>RECOMMENDATIONS</span>
+            <span>AUTO</span>
           </div>
-          <span className="absolute left-1/2 top-3 h-4 w-4 -translate-x-1/2 rounded-full border border-[#1452ff] bg-[#dbe4ff]" />
-          <span className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 rounded-full border border-[#1452ff] bg-[#dbe4ff]" />
-          <span className="absolute bottom-3 left-1/2 h-4 w-4 -translate-x-1/2 rounded-full border border-[#1452ff] bg-[#dbe4ff]" />
-          <span className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 rounded-full border border-[#1452ff] bg-[#dbe4ff]" />
+          <div className="space-y-3">
+            {[
+              ["PRIORITY 01", "「急速充電 vs 競合」記事の追加"],
+              ["PRIORITY 02", "FAQ Schema の再構造化（4 ページ）"],
+              ["PRIORITY 03", "Authority リンクの増強"],
+              ["PRIORITY 04", "新規質問クラスタの執筆計画"],
+            ].map(([title, body]) => (
+              <div key={title} className="rounded-[12px] border border-black/8 bg-white px-4 py-3 shadow-[0_8px_18px_rgba(0,0,0,0.03)]">
+                <div className="mb-1 text-[9px] tracking-[0.28em] text-black/35">{title}</div>
+                <div className="text-[12px] leading-[1.5] text-[#0B0B0E]">{body}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FrameworkLoopDiagram() {
+  const nodeData = [
+    { cx: 270, cy: 70, label: "Question\nIntelligence" },
+    { cx: 460.2, cy: 208.2, label: "Semantic\nGAP" },
+    { cx: 387.6, cy: 431.8, label: "GEO\nContent" },
+    { cx: 152.4, cy: 431.8, label: "AI\nVisibility" },
+    { cx: 79.8, cy: 208.2, label: "Optimization\nLoop" },
+  ];
+
+  return (
+    <div className="relative mx-auto mt-12 w-full max-w-[540px]">
+      <svg viewBox="0 0 540 540" width="100%" height="100%">
+        <defs>
+          <marker id="ar" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0 0 L6 3 L0 6 Z" fill="rgba(255,255,255,0.3)" />
+          </marker>
+        </defs>
+        <circle cx="270" cy="270" r="224" fill="none" stroke="#FAFAF7" strokeOpacity="0.28" strokeWidth="1" strokeDasharray="8 10" strokeLinecap="round" />
+        <circle cx="270" cy="270" r="200" fill="none" stroke="#FAFAF7" strokeOpacity="0.24" strokeWidth="1.25" />
+        <circle cx="270" cy="270" r="140" fill="none" stroke="#FAFAF7" strokeOpacity="0.18" strokeWidth="1" strokeDasharray="8 10" strokeLinecap="round" />
+        <path d="M 305.806,73.231 A 200,200 0 0,1 446.074,175.142" fill="none" stroke="#FAFAF7" strokeOpacity="0.24" strokeWidth="1.2" markerEnd="url(#ar)" />
+        <path d="M 468.203,243.249 A 200,200 0 0,1 414.625,408.143" fill="none" stroke="#FAFAF7" strokeOpacity="0.24" strokeWidth="1.2" markerEnd="url(#ar)" />
+        <path d="M 356.690,450.235 A 200,200 0 0,1 183.310,450.235" fill="none" stroke="#FAFAF7" strokeOpacity="0.24" strokeWidth="1.2" markerEnd="url(#ar)" />
+        <path d="M 125.375,408.143 A 200,200 0 0,1 71.797,243.249" fill="none" stroke="#FAFAF7" strokeOpacity="0.24" strokeWidth="1.2" markerEnd="url(#ar)" />
+        <path d="M 93.926,175.142 A 200,200 0 0,1 234.194,73.231" fill="none" stroke="#FAFAF7" strokeOpacity="0.24" strokeWidth="1.2" markerEnd="url(#ar)" />
+        {nodeData.map((node) => {
+          const lines = node.label.split("\n");
+          const lineHeight = 14;
+          const startOffset = -((lines.length - 1) * lineHeight) / 2;
+          return (
+            <g key={node.label}>
+              <circle
+                cx={node.cx}
+                cy={node.cy}
+                r="54"
+                fill="#0B0B0E"
+                stroke="rgba(255,255,255,0.2)"
+                strokeWidth="1.5"
+              />
+              <text
+                x={node.cx}
+                y={node.cy}
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fill="rgba(255,255,255,0.78)"
+                fontFamily="'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif"
+                fontWeight="600"
+                fontSize="12"
+              >
+                {lines.map((line, index) => (
+                  <tspan key={`${node.label}-${line}`} x={node.cx} dy={index === 0 ? startOffset : lineHeight}>
+                    {line}
+                  </tspan>
+                ))}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
+
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-[12px] tracking-[0.3em] text-white/55">GEO FRAMEWORK</div>
+          <div className="mt-3 text-[34px] font-bold tracking-[-0.05em] text-white">5 Phase</div>
+          <div className="text-[34px] font-bold tracking-[-0.05em] text-[#1452FF]">Loop</div>
+          <p className="mt-3 text-[14px] leading-[1.5] text-white/70">
+            5 つのフェーズが連動し、
+            <br />
+            継続的に最適化を回す
+          </p>
         </div>
       </div>
     </div>
@@ -279,7 +380,7 @@ function FrameworkHero() {
         </div>
 
         <div className="lg:pt-6">
-          <div className="rounded-[24px] border border-white/10 bg-[#f8f6f1] p-4 text-[#0B0B0E] shadow-[0_30px_90px_rgba(0,0,0,0.28)]">
+          <div className="w-full max-w-[620px] mx-auto lg:ml-auto">
             <ContactForm blockedEmailDomains={DEFAULT_BLOCKED_EMAIL_DOMAINS} />
           </div>
         </div>
@@ -306,33 +407,7 @@ function FrameworkOverview() {
             </p>
           </div>
 
-          <div className="relative min-h-[460px] overflow-hidden rounded-[28px] border border-black/10 bg-white p-8 shadow-[0_18px_50px_rgba(0,0,0,0.05)]">
-            <div className="absolute left-6 top-6 text-[10px] tracking-[0.24em] text-black/30">FRAMEWORK LOOP</div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="relative h-[360px] w-[360px]">
-                <div className="absolute inset-0 rounded-full border border-[#1452ff]/20" />
-                <div className="absolute inset-[46px] rounded-full border border-dashed border-[#1452ff]/18" />
-                <div className="absolute left-1/2 top-1/2 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#0B0B0E] text-[10px] font-semibold tracking-[0.3em] text-white">
-                  CORE
-                </div>
-                {[
-                  { top: 8, left: 50, label: "Question" },
-                  { top: 27, left: 82, label: "Semantic" },
-                  { top: 61, left: 73, label: "Content" },
-                  { top: 78, left: 19, label: "Visibility" },
-                  { top: 27, left: 15, label: "Loop" },
-                ].map((node) => (
-                  <div
-                    key={node.label}
-                    className="absolute flex h-[82px] w-[82px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#1452ff] bg-[#dbe4ff] text-center text-[10px] font-semibold tracking-[0.12em] text-[#0B0B0E]"
-                    style={{ top: `${node.top}%`, left: `${node.left}%` }}
-                  >
-                    {node.label}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          <FrameworkLoopDiagram />
         </div>
       </div>
     </section>
