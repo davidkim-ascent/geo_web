@@ -51,7 +51,7 @@ export default function WhitepaperDownloadedPage() {
         }
       `}</style>
 
-      <div className="relative z-10 mx-auto max-w-[1080px] px-10 py-20 pb-24">
+      <div className="relative z-10 mx-auto max-w-[1080px] px-10 py-20 pb-12">
         {/* Status stamp */}
         <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-[rgba(20,82,255,0.4)] bg-[rgba(20,82,255,0.08)] px-4 py-2 font-mono text-[11px] tracking-[0.22em] text-[#1452FF]">
           <span
