@@ -1,3 +1,7 @@
+## 2026-05-13 20:30
+- `/whitepaper/downloaded` 페이지 신규 제작: 다운로드 완료 화면. 다크 배경(radial gradient + grid + scan line 애니메이션), 상태 스탬프, TicketId(client 랜덤 ID), 진행바 100% 애니메이션, 대체 링크, 전화 컨택 블록.
+- `DownloadForm.tsx` 리다이렉트 연결: 제출 성공 시 `setSubmitted(true)` 인라인 성공 표시 → `router.push('/whitepaper/downloaded')`로 교체.
+
 ## 2026-05-13 18:10
 - Services 페이지 신규 제작: `/services` 라우트 추가. SubHero(다크 배경 + ContactForm), 4서비스 개요 quad, 4개 서비스 섹션(AuditVis/GapVis/ContentVis/MonitorVis 시각화 컴포넌트 포함), Packages(2 플랜), FAQ(아코디언), CTA까지 완성. `Services.html` 원본 구조 기준.
 

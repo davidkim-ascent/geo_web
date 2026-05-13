@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { useForm, useWatch } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -46,7 +47,7 @@ type Props = {
 }
 
 export function DownloadForm({ blockedEmailDomains }: Props) {
-  const [submitted, setSubmitted] = useState(false)
+  const router = useRouter()
   const [serverError, setServerError] = useState<string | null>(null)
 
   const {
@@ -97,19 +98,7 @@ export function DownloadForm({ blockedEmailDomains }: Props) {
       setServerError('送信中にエラーが発生しました。しばらくしてから再度お試しください。')
       return
     }
-    setSubmitted(true)
-  }
-
-  if (submitted) {
-    return (
-      <div className="wp-form-card" style={{ textAlign: 'center', padding: '64px 36px' }}>
-        <div style={{ fontSize: 48, marginBottom: 16 }}>✓</div>
-        <h3 style={{ marginBottom: 8 }}>ダウンロード準備完了</h3>
-        <p style={{ fontSize: 14, color: 'var(--muted)' }}>
-          ご登録のメールアドレスにダウンロードリンクをお送りしました。
-        </p>
-      </div>
-    )
+    router.push('/whitepaper/downloaded')
   }
 
   return (
