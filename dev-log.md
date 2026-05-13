@@ -1,3 +1,6 @@
+## 2026-05-13 18:10
+- Services 페이지 신규 제작: `/services` 라우트 추가. SubHero(다크 배경 + ContactForm), 4서비스 개요 quad, 4개 서비스 섹션(AuditVis/GapVis/ContentVis/MonitorVis 시각화 컴포넌트 포함), Packages(2 플랜), FAQ(아코디언), CTA까지 완성. `Services.html` 원본 구조 기준.
+
 ## 2026-05-13 16:44
 - Framework `fw-loop` 원본 재보정: `fw-loop` 컨테이너를 원본 HTML 좌표/크기로 되돌리고 중앙 링과 텍스트를 인라인 스타일로 정리해 서버 빌드 호환성을 유지함
 
