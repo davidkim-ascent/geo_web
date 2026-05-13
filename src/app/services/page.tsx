@@ -385,9 +385,28 @@ export default function ServicesPage() {
   return (
     <div className="bg-[#FAFAF7]">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#0B0B0E] py-[120px]">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 left-1/2 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-[#1452FF]/[0.06] blur-[120px]" />
+      <section className="relative overflow-hidden bg-[#0B0B0E] py-12 lg:py-16" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+        {/* Background — matches index hero */}
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
+        <div className="absolute right-[10%] top-[20%] w-[500px] h-[500px] bg-[#1452FF]/[0.08] rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+          <div className="arc-spin" style={{ position: "absolute", width: 1100, height: 1100, right: -480, top: -260, border: "1px dashed rgba(255,255,255,0.08)", borderRadius: "50%" }} />
+          <div style={{ position: "absolute", width: 720, height: 720, right: -200, top: 40, border: "1px solid rgba(20,82,255,0.18)", borderRadius: "50%" }} />
+          <div style={{ position: "absolute", width: 360, height: 360, right: 40, top: 200, border: "1px dashed rgba(20,82,255,0.32)", borderRadius: "50%" }} />
+          <div style={{ position: "absolute", left: -40, bottom: -40, fontFamily: "'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif", fontWeight: 800, fontSize: "clamp(180px, 22vw, 320px)", letterSpacing: "-0.06em", color: "transparent", WebkitTextStroke: "1px rgba(255,255,255,0.06)", lineHeight: 0.85, userSelect: "none", whiteSpace: "nowrap" }}>GEO.</div>
+          <div style={{ position: "absolute", right: 32, top: 28, fontFamily: "'JetBrains Mono', monospace", fontSize: 10, letterSpacing: "0.18em", color: "rgba(255,255,255,0.42)", display: "grid", gap: 4, textAlign: "right" }}>
+            <div style={{ display: "flex", gap: 10, justifyContent: "flex-end" }}>
+              <span style={{ display: "inline-block", width: 6, height: 6, borderRadius: "50%", background: "#1452FF", boxShadow: "0 0 8px #1452FF", alignSelf: "center" }} />
+              <span>LIVE · AI VISIBILITY INDEX</span>
+            </div>
+            <div style={{ display: "flex", gap: 10, justifyContent: "flex-end" }}><span>ChatGPT</span><span style={{ color: "rgba(255,255,255,0.7)" }}>78%</span></div>
+            <div style={{ display: "flex", gap: 10, justifyContent: "flex-end" }}><span>Gemini</span><span style={{ color: "rgba(255,255,255,0.7)" }}>64%</span></div>
+            <div style={{ display: "flex", gap: 10, justifyContent: "flex-end" }}><span>Perplexity</span><span style={{ color: "rgba(255,255,255,0.7)" }}>51%</span></div>
+            <div style={{ display: "flex", gap: 10, justifyContent: "flex-end" }}><span>Copilot</span><span style={{ color: "rgba(255,255,255,0.7)" }}>42%</span></div>
+          </div>
+          <div style={{ position: "absolute", left: 0, right: 0, height: 4, background: "linear-gradient(90deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scan 6s ease-in-out infinite" }} />
+          <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scanV 7s ease-in-out infinite" }} />
+          <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scanV 9s ease-in-out -3.5s infinite" }} />
         </div>
         <div className="relative mx-auto max-w-[1280px] px-10">
           <div className="grid items-start gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
