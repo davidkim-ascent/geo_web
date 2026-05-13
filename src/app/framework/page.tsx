@@ -307,7 +307,7 @@ function FrameworkHero() {
             <span className="h-2 w-2 rounded-full bg-[#1452FF]" />
             GEO FRAMEWORK
           </div>
-          <h1 className="max-w-[11ch] text-[clamp(46px,4.9vw,68px)] font-bold leading-[1.04] tracking-[-0.04em]">
+          <h1 className="max-w-[11ch] font-bold text-[#FAFAF7]" style={{ fontSize: "clamp(44px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em", wordBreak: "keep-all" }}>
             質問から最適化までを
             <br />
             <span className="text-[#6fa0ff]">ひと続きの設計</span>

@@ -421,8 +421,8 @@ export default function ServicesPage() {
                 Services
               </div>
               <h1
-                className="font-extrabold tracking-[-0.04em] text-white"
-                style={{ fontSize: "clamp(50px, 5.5vw, 82px)", lineHeight: 0.96 }}
+                className="font-bold text-white"
+                style={{ fontSize: "clamp(44px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em", wordBreak: "keep-all" }}
               >
                 <span className="block">データ基盤の、</span>
                 <span className="block text-[#1452FF]">フルスペック GEO</span>

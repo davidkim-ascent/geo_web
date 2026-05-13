@@ -285,8 +285,8 @@ export default function WhyAscentPage() {
                 Why Ascent
               </div>
               <h1
-                className="max-w-[13ch] font-extrabold tracking-[-0.04em] text-white"
-                style={{ fontSize: "clamp(50px, 5.5vw, 82px)", lineHeight: 0.96 }}
+                className="max-w-[13ch] font-bold text-white"
+                style={{ fontSize: "clamp(44px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em", wordBreak: "keep-all" }}
               >
                 <span className="block">GEO は、</span>
                 <span className="block">
