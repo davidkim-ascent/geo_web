@@ -1,3 +1,26 @@
+## 2026-05-14 — ⭐ 모바일 레이아웃까지 완료 버전
+- **롤백 기준점** commit: `981c3e1`
+- 완료 범위: 전 페이지 모바일 레이아웃 수정 (헤더, 히어로 h1, GEO Framework 카드, TOC, 5각형 다이어그램, CTASection, ct-hero-wrap)
+
+### 반복 버그 기록 (Bug Fix Rule)
+
+**fw-step 카드 모바일 오버플로우**
+
+**원인**
+- CSS grid에서 `1fr` 컬럼은 `minmax(0, 1fr)`이 아니면 content 크기만큼 팽창 가능. `Button`이 `inline-flex`라 폭 제한 없이 늘어남
+
+**영향 범위**
+1. 인덱스 GEO Framework 섹션 fw-step 카드 목록
+2. `fw-list > *` 자식 전체, `fw-step` grid 내부 텍스트 컬럼
+3. `whitespace-nowrap`이 Button 기본 cva에 있어 ellipsis가 무효화됨 (함께 수정)
+
+**재발 방지 테스트**
+- 모바일(360px) 뷰포트에서 fw-step 카드가 화면 밖으로 넘치지 않는지 확인
+- `fw-list > *`에 `min-width: 0; width: 100%` 유지 확인
+- Button cva 기본 클래스에 `whitespace-nowrap` 재추가 금지
+
+---
+
 ## 2026-05-14 — 모바일 뷰 잘림 버그 목록 (수정 예정)
 
 ### 페이지별 이슈
