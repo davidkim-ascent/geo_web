@@ -1,3 +1,6 @@
+## 2026-05-13 16:22
+- Why Ascent 세부 조정: 히로의 24H 리플레이 텍스트 제거 및 높이 축소, GEO Framework 하단 라인/여백 축소, CTA를 홈의 공통 CTASection으로 교체함
+
 ## 2026-05-13 16:30
 - 캘린더 예약 링크 프로덕션 미반영 수정: NEXT_PUBLIC_GOOGLE_CALENDAR_BOOKING_URL 환경변수를 Vercel 프로덕션에 등록 후 재배포
 

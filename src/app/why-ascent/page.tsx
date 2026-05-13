@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/ContactForm";
+import { CTASection } from "@/components/layout/CTASection";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 import { getCalendarBookingHref, getCalendarBookingLinkProps } from "@/lib/calendar-booking";
 
@@ -231,7 +232,7 @@ function DiagramCard({ kind }: { kind: "network" | "matrix" | "doc" | "chart" })
 export default function WhyAscentPage() {
   return (
     <div className="bg-[#FAFAF7] text-[#0B0B0E]">
-      <section className="relative overflow-hidden bg-[#0B0B0E] text-white pt-28 pb-20">
+      <section className="relative overflow-hidden bg-[#0B0B0E] text-white pt-24 pb-12 md:pt-24 md:pb-12">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -300,7 +301,7 @@ export default function WhyAscentPage() {
                 AI はどこから、なぜ引用するのか。Ascent は特許・実消費者インテント・Embedding 評価という 4 本の柱で、その問いに定量で答える GEO を構築します。
               </p>
 
-              <div className="mt-12 border-t border-white/10 pt-7">
+              <div className="mt-10 border-t border-white/10 pt-7">
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4 xl:gap-0">
                   {heroPillars.map((pillar, index) => (
                     <div
@@ -317,12 +318,8 @@ export default function WhyAscentPage() {
               </div>
             </div>
 
-            <div className="relative z-10 lg:pt-2">
+            <div className="relative z-10 lg:-mt-2">
               <div className="ml-auto max-w-[560px]">
-                <div className="mb-3 flex items-center justify-end gap-2 text-[10px] tracking-[0.22em] text-white/45 font-mono uppercase">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#1452ff] shadow-[0_0_8px_#1452ff]" />
-                  Contact · 24H 以内に返信
-                </div>
                 <ContactForm blockedEmailDomains={DEFAULT_BLOCKED_EMAIL_DOMAINS} />
                 <div className="mt-4 border-t border-white/10 pt-4">
                   <div className="flex items-center gap-4 text-[11px] tracking-[0.22em] text-white/35 font-mono">
@@ -500,7 +497,7 @@ export default function WhyAscentPage() {
         </div>
       </section>
 
-      <section id="framework" className="bg-[#FAFAF7] py-24 md:py-28">
+      <section id="framework" className="bg-[#FAFAF7] pt-24 pb-12 md:pt-28 md:pb-14">
         <div className="mx-auto max-w-[1280px] px-6 md:px-10">
           <SectionKicker overline="W/03 — Methodology Detail" label="GEO Framework — 4 本柱" />
           <div className="mt-5 h-px bg-black/10" />
@@ -517,11 +514,11 @@ export default function WhyAscentPage() {
             </p>
           </div>
 
-          <div className="mt-16 divide-y divide-black/10 border-y border-black/10">
+          <div className="mt-16 divide-y divide-black/10 border-t border-black/10">
             {frameworkRows.map((row) => (
               <div
                 key={row.num}
-                className="grid gap-8 py-10 lg:grid-cols-[72px_220px_1fr_280px] lg:gap-10"
+                className="grid gap-8 py-8 lg:grid-cols-[72px_220px_1fr_280px] lg:gap-10"
               >
                 <div className="font-mono text-[13px] tracking-[0.2em] text-[#1452ff]">{row.num}</div>
                 <div>
@@ -550,56 +547,24 @@ export default function WhyAscentPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#0B0B0E] py-24 text-white md:py-28">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
-            backgroundSize: "80px 80px",
-            maskImage: "radial-gradient(ellipse 62% 78% at 50% 50%, black 30%, transparent 82%)",
-            opacity: 0.45,
-          }}
-        />
-        <div className="relative mx-auto max-w-[1280px] px-6 md:px-10">
-          <div className="max-w-[22ch] text-[11px] tracking-[0.22em] text-white/55 uppercase">
-            Next Step — Start With A Free Audit
-          </div>
-          <h2 className="mt-6 max-w-[13ch] text-[clamp(42px,5.4vw,78px)] font-extrabold leading-[0.98] tracking-[-0.04em]">
+      <CTASection
+        kicker="CONTACT — START WITH A FREE AUDIT"
+        title={
+          <>
             AI 検索で、
             <br />
-            貴社のブランドは
-            <span className="text-blue-gradient">何回引用</span>
-            されていますか？
-          </h2>
-          <p className="mt-8 max-w-[32ch] text-[18px] leading-[1.75] text-white/64">
-            無料の GEO 診断で、ChatGPT / Gemini / Copilot 上のブランド可視性を測定します。
-          </p>
-
-          <div className="mt-12 flex flex-wrap gap-4">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-full border border-[#1452ff] bg-[#1452ff] px-6 py-4 text-[15px] font-semibold text-white transition hover:bg-[#0f3de0]"
-            >
-              相談する →
-            </Link>
-            <Link
-              href="/whitepaper"
-              className="inline-flex items-center justify-center rounded-full border border-white/18 px-6 py-4 text-[15px] font-semibold text-white transition hover:border-[#1452ff] hover:bg-[#1452ff]"
-            >
-              サービス資料をダウンロード
-            </Link>
-            <Link
-              href={getCalendarBookingHref()}
-              {...getCalendarBookingLinkProps()}
-              className="inline-flex items-center justify-center rounded-full border border-white/18 px-6 py-4 text-[15px] font-semibold text-white transition hover:border-[#1452ff] hover:bg-[#1452ff]"
-            >
-              カレンダー予約（30分）
-            </Link>
-          </div>
-        </div>
-      </section>
+            あなたのブランドは
+            <br />
+            <span className="text-blue-gradient">何回引用されている</span>か？
+          </>
+        }
+        description="まずは無料診断で、現在の AI Visibility と Citation 構造を可視化します。所要 30 分のオンライン MTG から。"
+        primaryButton={{ href: "/contact", label: "相談する" }}
+        secondaryButtons={[
+          { href: "/whitepaper", label: "サービス資料をダウンロード" },
+          { href: getCalendarBookingHref(), label: "無料相談予約（Googleカレンダー）" },
+        ]}
+      />
     </div>
   );
 }
