@@ -237,7 +237,7 @@ function VisualCard({ kind }: { kind: (typeof frameworkSteps)[number]["visual"] 
 
 function FrameworkHero() {
   return (
-    <section className="relative overflow-hidden bg-[#0B0B0E] text-white pt-16 pb-12">
+    <section className="relative overflow-hidden bg-[#0B0B0E] text-white py-12 lg:py-16">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"

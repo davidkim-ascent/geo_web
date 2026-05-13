@@ -216,7 +216,7 @@ function DiagramCard({ kind }: { kind: "network" | "matrix" | "doc" | "chart" })
 export default function WhyAscentPage() {
   return (
     <div className="bg-[#FAFAF7] text-[#0B0B0E]">
-      <section className="relative overflow-hidden bg-[#0B0B0E] text-white pt-16 pb-12 md:pt-16 md:pb-12">
+      <section className="relative overflow-hidden bg-[#0B0B0E] text-white py-12 lg:py-16">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
