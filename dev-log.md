@@ -1,3 +1,6 @@
+## 2026-05-13 16:32
+- Framework 독립 페이지 추가: `Framework.html` 원본 흐름을 바탕으로 히어로, 5단계 루프, 단계별 브레이크다운, FAQ, 공통 CTA를 구현하고 상단/푸터의 Framework 링크를 `/framework`로 연결함
+
 ## 2026-05-13 16:25
 - Why Ascent 히로 정리: breadcrumb(Home / Why Ascent) 삭제하고 상단 여백을 더 줄여 첫 화면 진입 높이를 압축함
 

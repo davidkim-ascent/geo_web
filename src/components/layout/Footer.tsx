@@ -37,7 +37,7 @@ export default function Footer() {
               {[
                 { label: "Home", href: "/" },
                 { label: "Why Ascent", href: "/why-ascent" },
-                { label: "Framework", href: "#process" },
+                { label: "Framework", href: "/framework" },
                 { label: "Services", href: "#services" },
                 { label: "GEO Lab", href: "#lab" },
               ].map((item) => (
