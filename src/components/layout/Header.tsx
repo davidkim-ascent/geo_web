@@ -23,7 +23,7 @@ export default function Header() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-7">
           {[
-            { label: "Why Ascent", href: "#why" },
+            { label: "Why Ascent", href: "/why-ascent" },
             { label: "Framework", href: "#framework" },
             { label: "Services", href: "#services" },
             { label: "GEO Lab", href: "#lab" },
@@ -69,7 +69,7 @@ export default function Header() {
       {menuOpen && (
         <div className="md:hidden bg-[#FAFAF7] border-t border-black/[0.06] px-6 py-5 flex flex-col gap-4">
           {[
-            { label: "Why Ascent", href: "#why" },
+            { label: "Why Ascent", href: "/why-ascent" },
             { label: "Framework", href: "#framework" },
             { label: "Services", href: "#services" },
             { label: "GEO Lab", href: "#lab" },
