@@ -4,6 +4,8 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { CTASection } from "@/components/layout/CTASection";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 import { getCalendarBookingHref } from "@/lib/calendar-booking";
+import { Button } from "@/components/ui/button";
+import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
 import { ServicesFAQ } from "./ServicesFAQ";
 
 export const metadata: Metadata = {
@@ -454,22 +456,11 @@ export default function ServicesPage() {
                 </div>
               </div>
 
-              <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[640px]">
-                <Link
-                  href="/contact"
-                  className="flex items-center justify-center gap-2 rounded-lg bg-[#1452FF] px-6 py-4 text-[15px] font-semibold text-white transition-opacity hover:opacity-90"
-                >
-                  無料診断を依頼する
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </Link>
-                <Link
-                  href="/whitepaper"
-                  className="flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-transparent px-6 py-4 text-[15px] font-semibold text-white transition-colors hover:border-white/40"
-                >
-                  サービス資料を見る
-                </Link>
+              <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-[640px]">
+                <CalendarBookingButton />
+                <Button asChild variant="ctaOutline">
+                  <Link href="/whitepaper">サービス資料をダウンロード</Link>
+                </Button>
               </div>
             </div>
 
