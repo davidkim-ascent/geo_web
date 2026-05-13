@@ -433,7 +433,7 @@ export default function ServicesPage() {
                 つのフェーズで切り出すこともできれば、ループとしてフルパッケージで運用することもできる。
               </p>
 
-              <div className="mt-10 border-t border-white/10 pt-7">
+              <div className="mt-10">
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4 xl:gap-0">
                   {[
                     { ix: "01", label: "質問クラスター\nデータ基盤抽出" },
