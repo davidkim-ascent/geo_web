@@ -6,6 +6,7 @@ import { CTASection } from "@/components/layout/CTASection";
 import { Button } from "@/components/ui/button";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 import { getCalendarBookingHref } from "@/lib/calendar-booking";
+import { FrameworkLoop } from "./FrameworkLoop";
 
 export const metadata: Metadata = {
   title: "Framework — GEO",
@@ -234,123 +235,6 @@ function VisualCard({ kind }: { kind: (typeof frameworkSteps)[number]["visual"] 
   );
 }
 
-function FrameworkLoop() {
-  const nodeData = [
-    { cx: 270, cy: 70, label: "Question\nIntelligence" },
-    { cx: 460.2, cy: 208.2, label: "Semantic\nGAP" },
-    { cx: 387.6, cy: 431.8, label: "GEO\nContent" },
-    { cx: 152.4, cy: 431.8, label: "AI\nVisibility" },
-    { cx: 79.8, cy: 208.2, label: "Optimization\nLoop" },
-  ];
-
-  return (
-    <div
-      className="fw-loop"
-      style={{
-        position: "relative",
-        margin: "80px auto 0",
-        maxWidth: "900px",
-        aspectRatio: "1 / 1",
-      }}
-    >
-      <svg viewBox="0 0 540 540" style={{ width: "100%", height: "100%", display: "block" }}>
-        <defs>
-          <marker id="ar" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-            <path d="M0 0 L6 3 L0 6 Z" fill="rgba(255,255,255,0.3)" />
-          </marker>
-        </defs>
-        <circle cx="270" cy="270" r="224" fill="none" stroke="#FAFAF7" strokeOpacity="0.28" strokeWidth="1" strokeDasharray="8 10" strokeLinecap="round" />
-        <circle cx="270" cy="270" r="200" fill="none" stroke="#FAFAF7" strokeOpacity="0.24" strokeWidth="1.25" />
-        <circle cx="270" cy="270" r="140" fill="none" stroke="#FAFAF7" strokeOpacity="0.18" strokeWidth="1" strokeDasharray="8 10" strokeLinecap="round" />
-        <path d="M 305.806,73.231 A 200,200 0 0,1 446.074,175.142" fill="none" stroke="#FAFAF7" strokeOpacity="0.24" strokeWidth="1.2" markerEnd="url(#ar)" />
-        <path d="M 468.203,243.249 A 200,200 0 0,1 414.625,408.143" fill="none" stroke="#FAFAF7" strokeOpacity="0.24" strokeWidth="1.2" markerEnd="url(#ar)" />
-        <path d="M 356.690,450.235 A 200,200 0 0,1 183.310,450.235" fill="none" stroke="#FAFAF7" strokeOpacity="0.24" strokeWidth="1.2" markerEnd="url(#ar)" />
-        <path d="M 125.375,408.143 A 200,200 0 0,1 71.797,243.249" fill="none" stroke="#FAFAF7" strokeOpacity="0.24" strokeWidth="1.2" markerEnd="url(#ar)" />
-        <path d="M 93.926,175.142 A 200,200 0 0,1 234.194,73.231" fill="none" stroke="#FAFAF7" strokeOpacity="0.24" strokeWidth="1.2" markerEnd="url(#ar)" />
-        {nodeData.map((node) => {
-          const lines = node.label.split("\n");
-          const lineHeight = 14;
-          const startOffset = -((lines.length - 1) * lineHeight) / 2;
-          return (
-            <g key={node.label}>
-              <circle
-                cx={node.cx}
-                cy={node.cy}
-                r="54"
-                fill="#0B0B0E"
-                stroke="rgba(255,255,255,0.2)"
-                strokeWidth="1.5"
-              />
-              <text
-                x={node.cx}
-                y={node.cy}
-                textAnchor="middle"
-                dominantBaseline="middle"
-                fill="rgba(255,255,255,0.78)"
-                fontFamily="'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif"
-                fontWeight="600"
-                fontSize="12"
-              >
-                {lines.map((line, index) => (
-                  <tspan key={`${node.label}-${line}`} x={node.cx} dy={index === 0 ? startOffset : lineHeight}>
-                    {line}
-                  </tspan>
-                ))}
-              </text>
-            </g>
-          );
-        })}
-      </svg>
-
-      <div
-        className="center"
-        style={{
-          position: "absolute",
-          left: "50%",
-          top: "50%",
-          transform: "translate(-50%, -50%)",
-          textAlign: "center",
-        }}
-      >
-        <div>
-          <div
-            className="ring"
-            style={{
-              width: "140px",
-              height: "140px",
-              borderRadius: "50%",
-              border: "1px dashed var(--hairline)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              margin: "0 auto 16px",
-              background: "radial-gradient(circle, var(--accent-soft), transparent 70%)",
-            }}
-          >
-            <span
-              className="ring-inner"
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: "11px",
-                letterSpacing: "0.18em",
-                color: "var(--accent)",
-              }}
-            >
-              CORE
-            </span>
-          </div>
-          <h3 style={{ fontSize: "22px", letterSpacing: "-0.02em" }}>GEO Framework</h3>
-          <p style={{ fontSize: "14px", color: "var(--muted)", marginTop: "4px", maxWidth: "28ch" }}>
-            5 つのフェーズが連動し、
-            <br />
-            継続的に最適化を回す
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function FrameworkHero() {
   return (
     <section className="relative overflow-hidden bg-[#0B0B0E] text-white pt-16 pb-12">
@@ -398,7 +282,7 @@ function FrameworkHero() {
             5つのフェーズを連動させ、AI 検索時代に「引用され続ける」状態をつくるための Ascent の設計です。
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-3">
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-[640px]">
             <CalendarBookingButton />
             <Button asChild variant="ctaOutline">
               <Link href="/whitepaper">サービス資料をダウンロード</Link>
@@ -432,24 +316,18 @@ function FrameworkHero() {
 
 function FrameworkOverview() {
   return (
-    <section className="bg-[#FAFAF7] py-24">
+    <section className="bg-[#FAFAF7] py-[100px]">
       <div className="mx-auto max-w-[1280px] px-10">
-        <SectionLabel title="Framework · Loop" />
-        <div className="mt-4 h-px bg-black/10" />
-
-        <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.02fr] lg:items-center">
-          <div>
-            <h2 className="max-w-[12ch] text-[clamp(34px,3.4vw,50px)] font-bold leading-[1.08] tracking-[-0.03em] text-[#0B0B0E]">
-              5フェーズが、ひとつのループとして回る。
-            </h2>
-            <p className="mt-6 max-w-[48ch] text-[17px] leading-[1.72] text-[#4e4e51]">
-              単発の施策ではなく、質問 → 分析 → 制作 → 計測 → 改善を継続的に循環させる。
-              そのサイクルを、ブランドごとに設計し直すのが Ascent の GEO Framework です。
-            </p>
-          </div>
-
-          <FrameworkLoop />
+        <div className="font-mono text-[12px] tracking-[0.18em] text-[#6B6B73] uppercase mb-6">
+          [ 01 ] FRAMEWORK · LOOP
         </div>
+        <h2 className="font-bold leading-[1.05] tracking-[-0.03em] mb-6 whitespace-nowrap text-[clamp(32px,3.2vw,48px)]">
+          5フェーズが、ひとつのループとして回る。
+        </h2>
+        <p className="text-[19px] text-[#6B6B73] max-w-[60ch] leading-[1.6] mb-16">
+          単発のSEO施策ではなく、データを起点に質問→分析→制作→計測→改善を継続的に循環させる。AI 検索時代に「持続的に引用される」状態をつくるための設計。
+        </p>
+        <FrameworkLoop />
       </div>
     </section>
   );
@@ -460,7 +338,7 @@ function FrameworkSteps() {
     <section className="bg-[#FAFAF7] pb-20">
       <div className="mx-auto max-w-[1280px] px-10">
         <SectionLabel title="Phase Breakdown" />
-        <h2 className="mt-4 text-[clamp(34px,3.4vw,50px)] font-bold leading-[1.08] tracking-[-0.03em] text-[#0B0B0E]">
+        <h2 className="mt-4 font-bold leading-[1.08] tracking-[-0.03em] text-[#0B0B0E] text-[clamp(32px,3.2vw,48px)]">
           各フェーズで、何が起きるか。
         </h2>
 
@@ -468,7 +346,7 @@ function FrameworkSteps() {
           {frameworkSteps.map((step) => (
             <article
               key={step.id}
-              className="grid grid-cols-1 gap-6 border-t border-black/10 pt-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10"
+              className="grid grid-cols-1 gap-6 border-t border-black/10 pt-8 lg:grid-cols-[3fr_2fr] lg:gap-10"
             >
               <div className="grid grid-cols-[auto_1fr] gap-4">
                 <div className="pt-1">
@@ -508,7 +386,7 @@ function FrameworkFAQ() {
     <section className="bg-[#FAFAF7] py-10">
       <div className="mx-auto max-w-[1280px] px-10">
         <SectionLabel title="Frequently Asked" />
-        <h2 className="mt-4 text-[clamp(32px,3vw,44px)] font-bold tracking-[-0.03em] text-[#0B0B0E]">
+        <h2 className="mt-4 font-bold tracking-[-0.03em] text-[#0B0B0E] text-[clamp(32px,3.2vw,48px)]">
           よくある質問。
         </h2>
 

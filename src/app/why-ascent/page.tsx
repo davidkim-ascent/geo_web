@@ -301,9 +301,9 @@ export default function WhyAscentPage() {
                       className={`border-white/10 ${index < 3 ? "xl:border-r" : ""} pr-0 xl:pr-6`}
                     >
                       <div className="font-mono text-[10px] tracking-[0.24em] text-[#1452ff]">{pillar.num}</div>
-                      <h2 className="mt-4 max-w-[12ch] text-[17px] font-semibold leading-[1.35] text-white">
+                      <h4 className="mt-4 whitespace-nowrap font-semibold leading-[1.35] text-white">
                         {pillar.title}
-                      </h2>
+                      </h4>
                     </div>
                   ))}
                 </div>
@@ -347,7 +347,7 @@ export default function WhyAscentPage() {
             <div>
               <SectionKicker overline="W/01 — Technical Foundation" label="特許ベースの GEO 解析" />
               <div className="mt-5 h-px bg-black/10" />
-              <h2 className="mt-14 max-w-[12ch] text-[clamp(38px,4.8vw,68px)] font-extrabold leading-[0.98] tracking-[-0.04em]">
+              <h2 className="mt-14 font-extrabold leading-[0.98] tracking-[-0.04em]">
                 AI が「なぜ引用するか」は、
                 <span className="text-blue-gradient">特許</span>
                 に書かれている。
@@ -364,7 +364,7 @@ export default function WhyAscentPage() {
                 <div key={item.num} className="grid grid-cols-[40px_1fr] gap-6 border-t border-black/10 py-10 first:border-t-0 first:pt-0">
                   <div className="font-mono text-[13px] tracking-[0.18em] text-[#1452ff]">{item.num}</div>
                   <div>
-                    <h3 className="text-[20px] font-bold tracking-[-0.02em] md:text-[24px]">{item.title}</h3>
+                    <h3 className="text-[20px] font-bold tracking-[-0.02em] md:text-[24px] whitespace-nowrap">{item.title}</h3>
                     <p className="mt-4 max-w-[42ch] text-[16px] leading-[1.7] text-[#4e4e51] md:text-[17px]">
                       {item.desc}
                     </p>
@@ -434,7 +434,7 @@ export default function WhyAscentPage() {
 
           <div className="mt-14 grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
             <div>
-              <h2 className="max-w-[12ch] text-[clamp(38px,4.8vw,68px)] font-extrabold leading-[0.98] tracking-[-0.04em]">
+              <h2 className="font-extrabold leading-[0.98] tracking-[-0.04em]">
                 実消費者の質問データから、
                 <br />
                 GEO を逆算する。
@@ -495,7 +495,7 @@ export default function WhyAscentPage() {
           <div className="mt-5 h-px bg-black/10" />
 
           <div className="mt-14 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-            <h2 className="max-w-[12ch] text-[clamp(38px,4.8vw,68px)] font-extrabold leading-[0.98] tracking-[-0.04em]">
+            <h2 className="font-extrabold leading-[0.98] tracking-[-0.04em]">
               診断、分析、設計、計測。
               <br />
               <span className="text-blue-gradient">4本</span>

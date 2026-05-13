@@ -78,7 +78,11 @@ h1 {
   line-height: var(--lh-display);
 }
 h2 {
+  font-size: var(--fs-section-title);
   line-height: var(--lh-heading);
+}
+h4 {
+  font-size: var(--fs-h4);
 }
 
 /* Dark variant — section-label-dark kept for reference */
