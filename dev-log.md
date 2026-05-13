@@ -1,8 +1,11 @@
-## 2026-05-13 16:04
-- Why Ascent 독립 페이지 추가: 상단/하단 공통 메뉴의 Why Ascent 링크를 `/why-ascent`로 연결하고, index의 공통 ContactForm을 그대로 재사용한 히어로 페이지를 구현함
-
 ## 2026-05-13 16:30
 - 캘린더 예약 링크 프로덕션 미반영 수정: NEXT_PUBLIC_GOOGLE_CALENDAR_BOOKING_URL 환경변수를 Vercel 프로덕션에 등록 후 재배포
+
+## 2026-05-13 16:15
+- Why Ascent 원본 재정렬: 실제 HTML 원본 구조에 맞춰 독립 페이지를 히어로, 특허, Listening Mind, 4본柱, CTA 순으로 재구성하고 공통 ContactForm은 그대로 재사용함
+
+## 2026-05-13 16:04
+- Why Ascent 독립 페이지 추가: 상단/하단 공통 메뉴의 Why Ascent 링크를 `/why-ascent`로 연결하고, index의 공통 ContactForm을 그대로 재사용한 히어로 페이지를 구현함
 
 ## 2026-05-13 16:10
 - 프라이버시 폴리시 전면 개정: 제1조~제9조 정식 방침으로 교체, 박스 레이아웃 → 바디 텍스트 레이아웃 변경, 연락처 privacy@ascentnet.co.jp 반영, 프로덕션 배포 완료
