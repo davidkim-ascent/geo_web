@@ -465,7 +465,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="relative">
-              <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+              <div className="w-full max-w-[620px] mx-auto lg:ml-auto lg:mr-0">
                 <ContactForm blockedEmailDomains={DEFAULT_BLOCKED_EMAIL_DOMAINS} />
               </div>
             </div>
