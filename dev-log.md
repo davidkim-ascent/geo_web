@@ -1,3 +1,18 @@
+## 2026-05-13 13:50
+- Google Calendar 예약 URL 환경변수 연결 완료: `NEXT_PUBLIC_GOOGLE_CALENDAR_BOOKING_URL` 반영 후 `/calendar-booking` 리다이렉트 경로 빌드 검증 완료
+
+## 2026-05-13 13:45
+- `/calendar-booking` 페이지 보강: 예약 요약 카드(시간/점심/주말/공휴일/Meet) 추가, booking config 요약 헬퍼 분리, 버튼/링크 흐름 재검증
+
+## 2026-05-13 13:35
+- Google Calendar 예약 링크 구조 조정: footer를 텍스트 링크로 롤백하고, 예약 CTA는 `/calendar-booking` 내부 경로로 고정해 실제 Google URL 리다이렉트가 가능하도록 변경
+
+## 2026-05-13 13:35
+- Google Calendar 예약 연동 요건정의 문서 추가: 무료 버전 기준, JST 시간대, 주말/점심시간/공휴일 제외, Meet 자동 생성, 메일 발송 검토 항목 정리
+
+## 2026-05-13 13:35
+- Google Calendar 예약 연동 1차 구현: 예약 설정 상수/공통 버튼 모듈 추가, 홈/푸터/컨택트 CTA를 예약 링크로 연결, 예약 설정 테스트 추가
+
 ## 2026-05-13 13:23
 - /contact 전화 상담 번호/시간 줄을 왼쪽 정렬로 조정해 카드 본문과 정렬 통일
 

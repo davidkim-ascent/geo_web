@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
+import { getCalendarBookingHref } from "@/lib/calendar-booking";
 
 /* ─── FAQ data ─── */
 const FAQS = [
@@ -88,7 +89,7 @@ export default function ContactPage() {
 
             {/* Channel cards */}
             <div className="ct-hero-channels">
-              <a href="#" className="ct-channel-card">
+              <a href={getCalendarBookingHref()} className="ct-channel-card">
                 <div className="ct-channel-icon">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <rect x="3" y="4" width="18" height="18" rx="2"/>

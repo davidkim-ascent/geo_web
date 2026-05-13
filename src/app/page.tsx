@@ -3,10 +3,12 @@
 import Link from "next/link";
 import { useState } from "react";
 import { ContactForm } from "@/components/contact/ContactForm";
+import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
 import { CTASection } from "@/components/layout/CTASection";
 import { SplitSection } from "@/components/layout/SplitSection";
 import { Button } from "@/components/ui/button";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
+import { getCalendarBookingHref } from "@/lib/calendar-booking";
 
 /* ─────────────────────────────────────────────
    Section Label (공통 컴포넌트)
@@ -194,9 +196,7 @@ function HeroSection() {
             Google・Microsoft の特許分析、リスニングマインドの実消費者インテント、Embeddingベースのセマンティック評価。GEO は推測ゲームではない。Ascent は根拠のあるフレームワークで設計する。
           </p>
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-[640px]">
-            <Button asChild variant="ctaOutline">
-              <Link href="/contact">カレンダー予約（30分）</Link>
-            </Button>
+            <CalendarBookingButton />
             <Button asChild variant="ctaOutline">
               <Link href="/whitepaper">サービス資料をダウンロード</Link>
             </Button>
@@ -900,7 +900,7 @@ export default function Home() {
         primaryButton={{ href: '/contact', label: '相談する' }}
         secondaryButtons={[
           { href: '/whitepaper', label: 'サービス資料をダウンロード' },
-          { href: '/contact', label: 'カレンダー予約（30分）' },
+          { href: getCalendarBookingHref(), label: 'カレンダー予約（30分）' },
         ]}
       />
     </div>
