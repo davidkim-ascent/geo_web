@@ -23,7 +23,7 @@ export default function AiOverviewPage() {
           <Image src="/lab-ai-overview-hero.png" alt="" fill className="object-cover opacity-[0.45]" priority />
         </div>
         {/* Gradient veil */}
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(11,11,14,0.55) 0%, rgba(11,11,14,0.72) 60%, rgba(11,11,14,0.92) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(11,11,14,0.75) 0%, rgba(11,11,14,0.88) 60%, rgba(11,11,14,0.97) 100%)" }} />
 
         <div className="relative z-10 mx-auto max-w-[1280px] px-10">
           <div className="grid items-start gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
