@@ -301,13 +301,13 @@ function FrameworkHero() {
         />
       </div>
 
-      <div className="relative mx-auto grid max-w-[1280px] grid-cols-1 gap-14 px-10 lg:grid-cols-[1.18fr_1fr] lg:items-start">
+      <div className="relative mx-auto grid max-w-[1280px] grid-cols-1 gap-14 px-4 sm:px-6 lg:px-10 lg:grid-cols-[1.18fr_1fr] lg:items-start">
         <div className="pt-8">
           <div className="mb-5 flex items-center gap-2 text-[10px] font-medium tracking-[0.22em] text-[#1452FF]">
             <span className="h-2 w-2 rounded-full bg-[#1452FF]" />
             GEO FRAMEWORK
           </div>
-          <h1 className="max-w-[11ch] font-bold text-[#FAFAF7]" style={{ fontSize: "clamp(44px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em", wordBreak: "keep-all" }}>
+          <h1 className="font-bold text-[#FAFAF7]" style={{ fontSize: "clamp(32px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em" }}>
             質問から最適化までを
             <br />
             <span className="text-[#6fa0ff]">ひと続きの設計</span>
@@ -353,17 +353,19 @@ function FrameworkHero() {
 function FrameworkOverview() {
   return (
     <section className="bg-[#FAFAF7] py-[100px]">
-      <div className="mx-auto max-w-[1280px] px-10">
+      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
         <div className="font-mono text-[12px] tracking-[0.18em] text-[#6B6B73] uppercase mb-6">
           [ 01 ] FRAMEWORK · LOOP
         </div>
-        <h2 className="font-bold leading-[1.05] tracking-[-0.03em] mb-6 whitespace-nowrap text-[clamp(32px,3.2vw,48px)]">
+        <h2 className="font-bold leading-[1.05] tracking-[-0.03em] mb-6 text-[clamp(28px,3.2vw,48px)]">
           5フェーズが、ひとつのループとして回る。
         </h2>
         <p className="text-[19px] text-[#6B6B73] max-w-[60ch] leading-[1.6] mb-16">
           単発のSEO施策ではなく、データを起点に質問→分析→制作→計測→改善を継続的に循環させる。AI 検索時代に「持続的に引用される」状態をつくるための設計。
         </p>
-        <FrameworkLoop />
+        <div className="hidden lg:block">
+          <FrameworkLoop />
+        </div>
       </div>
     </section>
   );
@@ -372,7 +374,7 @@ function FrameworkOverview() {
 function FrameworkSteps() {
   return (
     <section className="bg-[#FAFAF7] pb-20">
-      <div className="mx-auto max-w-[1280px] px-10">
+      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
         <SectionLabel title="Phase Breakdown" />
         <h2 className="mt-4 font-bold leading-[1.08] tracking-[-0.03em] text-[#0B0B0E] text-[clamp(32px,3.2vw,48px)]">
           各フェーズで、何が起きるか。
@@ -420,7 +422,7 @@ function FrameworkSteps() {
 function FrameworkFAQ() {
   return (
     <section className="bg-[#FAFAF7] py-10">
-      <div className="mx-auto max-w-[1280px] px-10">
+      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
         <SectionLabel title="Frequently Asked" />
         <h2 className="mt-4 font-bold tracking-[-0.03em] text-[#0B0B0E] text-[clamp(32px,3.2vw,48px)]">
           よくある質問。

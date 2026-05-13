@@ -174,7 +174,7 @@ function HeroSection() {
           </div>
         </>
       }
-      containerClassName="relative max-w-[1280px] mx-auto px-10 w-full grid grid-cols-1 lg:grid-cols-[1.22fr_1fr] gap-14 items-start"
+      containerClassName="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10 w-full grid grid-cols-1 lg:grid-cols-[1.22fr_1fr] gap-14 items-start"
       leftClassName="pt-8"
       rightClassName="lg:pt-8"
       left={
@@ -185,7 +185,7 @@ function HeroSection() {
           </div>
           <h1
             className="text-[#FAFAF7] font-bold"
-            style={{ fontSize: "clamp(44px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em", wordBreak: "keep-all" }}
+            style={{ fontSize: "clamp(32px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em" }}
           >
             推測ではなく、<br />
             データと特許に基づく<br />
@@ -218,7 +218,7 @@ function HeroSection() {
 function SearchShiftSection() {
   return (
     <section className="bg-[#FAFAF7] pt-24 pb-12">
-      <div className="max-w-[1280px] mx-auto px-10">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
         <SectionLabel title="AI 検索の地殻変動" />
         <hr className="my-4 border-black/[0.07]" />
 
@@ -402,7 +402,7 @@ function WhyAscentSection() {
 
   return (
     <section id="why" className="bg-[#FAFAF7] pt-12 pb-24">
-      <div className="max-w-[1280px] mx-auto px-10">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
         <SectionLabel title="WHY ASCENT" />
         <hr className="my-4 border-black/[0.07]" />
 
@@ -492,7 +492,7 @@ function FrameworkSection() {
 
   return (
     <section id="framework" className="section dark py-24">
-      <div className="wrap max-w-[1280px] mx-auto px-10">
+      <div className="wrap max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
         <SectionLabel title="GEO FRAMEWORK" dark />
         <hr className="my-4 border-white/[0.06]" />
 
@@ -715,7 +715,7 @@ function ServicesSection() {
 
   return (
     <section id="services" className="bg-[#FAFAF7] pt-24 pb-12">
-      <div className="max-w-[1280px] mx-auto px-10">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
         <SectionLabel title="SERVICES" />
         <hr className="my-4 border-black/[0.07]" />
 
@@ -796,14 +796,14 @@ function GeoLabSection() {
 
   return (
     <section id="lab" className="bg-[#FAFAF7] pt-12 pb-24">
-      <div className="max-w-[1280px] mx-auto px-10">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
         <SectionLabel title="GEO LAB" />
         <hr className="my-4 border-black/[0.07]" />
 
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
             <h2
-              className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em] whitespace-nowrap"
+              className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
               style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
             >
               AI 検索時代の <span className="text-blue-gradient">リサーチハブ</span>。

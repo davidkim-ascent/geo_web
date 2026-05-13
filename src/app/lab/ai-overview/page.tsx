@@ -80,10 +80,12 @@ export default function AiOverviewPage() {
 
       {/* Body */}
       <section className="bg-[#FAFAF7] py-[88px]">
-        <div className="mx-auto max-w-[1280px] px-10">
+        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
           <div className="grid items-start gap-14 lg:grid-cols-[220px_1fr]">
-            {/* TOC */}
-            <ArticleTOC />
+            {/* TOC — desktop only */}
+            <div className="hidden lg:block">
+              <ArticleTOC />
+            </div>
 
             {/* Prose */}
             <article className="text-[17px] leading-[1.85] tracking-[0.005em] text-[#0B0B0E]">

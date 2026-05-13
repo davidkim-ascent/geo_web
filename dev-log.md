@@ -1,3 +1,14 @@
+## 2026-05-14 — 모바일 뷰 잘림 버그 목록 (수정 예정)
+
+### 페이지별 이슈
+- **인덱스**: 히어로 h1 잘림, 햄버거 메뉴 화면 벗어남, GEO Framework 5개 요소 가로 잘림, GEO Lab h2 잘림
+- **why-ascent**: 문제 없음
+- **framework**: 히어로 h1 크게 잘림, 햄버거 메뉴 안 보임, 5페이즈 히토츠 카피 잘림, 5각형 다이어그램 → 모바일에서 숨김 처리 필요
+- **services**: 문제 없음
+- **geo lab**: 문제 없음
+- **개별 블로그 페이지**: 목차(TOC)가 본문을 덮음 (Design 폴더 스크린샷 참조)
+- **contact / thanks / whitepaper / downloaded**: 문제 없음
+
 ## 2026-05-14 — 모바일 레이아웃 버그 수정
 - CTASection 모바일 패딩 중첩 수정: `px-10 p-12` → `px-4 sm:px-6 lg:px-10` / `p-6 sm:p-8 lg:p-12`
 - ct-hero-wrap breakpoint 통일: 900px 이하에서 `padding: 0 20px` 적용 (기존 768px만 처리하여 900~768px 구간 오버플로우 발생)

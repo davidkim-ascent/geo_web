@@ -501,9 +501,15 @@ h4 {
 /* ===== FRAMEWORK RING ===== */
 .fw-grid {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 64px;
+  grid-template-columns: 1fr;
+  gap: 0;
   align-items: center;
+}
+@media (min-width: 1025px) {
+  .fw-grid {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 64px;
+  }
 }
 .fw-ring-wrap {
   aspect-ratio: 1/1;
@@ -536,7 +542,7 @@ body.tweak-norotate .fw-ring g.node text {
   to { transform: rotate(-360deg); }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .fw-grid {
     grid-template-columns: 1fr;
     gap: 0;
