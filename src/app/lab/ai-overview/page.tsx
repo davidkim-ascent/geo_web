@@ -1,7 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 import { CTASection } from "@/components/layout/CTASection";
+import { ContactForm } from "@/components/contact/ContactForm";
+import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 import { getCalendarBookingHref } from "@/lib/calendar-booking";
 import { ArticleTOC } from "./ArticleTOC";
 
@@ -15,28 +16,25 @@ export default function AiOverviewPage() {
   return (
     <div className="bg-[#FAFAF7]">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#0B0B0E] py-[88px] text-[#FAFAF7]">
-        <div className="absolute inset-0">
-          <Image
-            src="/lab-ai-overview-hero.png"
-            alt="AI Overview Hero"
-            fill
-            className="object-cover opacity-[0.92]"
-            priority
-          />
+      <section className="relative overflow-hidden bg-[#0B0B0E] py-12 lg:py-16" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+        {/* Background */}
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
+        <div className="absolute right-[10%] top-[20%] h-[500px] w-[500px] rounded-full bg-[#1452FF]/[0.08] blur-[100px] pointer-events-none" />
+        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+          <div className="arc-spin" style={{ position: "absolute", width: 1100, height: 1100, right: -480, top: -260, border: "1px dashed rgba(255,255,255,0.08)", borderRadius: "50%" }} />
+          <div style={{ position: "absolute", width: 720, height: 720, right: -200, top: 40, border: "1px solid rgba(20,82,255,0.18)", borderRadius: "50%" }} />
+          <div style={{ position: "absolute", width: 360, height: 360, right: 40, top: 200, border: "1px dashed rgba(20,82,255,0.32)", borderRadius: "50%" }} />
+          <div style={{ position: "absolute", left: -40, bottom: -40, fontFamily: "'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif", fontWeight: 800, fontSize: "clamp(180px, 22vw, 320px)", letterSpacing: "-0.06em", color: "transparent", WebkitTextStroke: "1px rgba(255,255,255,0.06)", lineHeight: 0.85, userSelect: "none", whiteSpace: "nowrap" }}>LAB.</div>
+          <div style={{ position: "absolute", left: 0, right: 0, height: 4, background: "linear-gradient(90deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scan 6s ease-in-out infinite" }} />
+          <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scanV 7s ease-in-out infinite" }} />
+          <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scanV 9s ease-in-out -3.5s infinite" }} />
         </div>
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(11,11,14,0.35) 0%, rgba(11,11,14,0.65) 70%, rgba(11,11,14,0.85) 100%)",
-          }}
-        />
+
         <div className="relative z-10 mx-auto max-w-[1280px] px-10">
-          <div className="grid items-start gap-16 lg:grid-cols-[1fr_380px]">
+          <div className="grid items-start gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
             <div>
               {/* Breadcrumb */}
-              <div className="mb-9 flex items-center gap-2.5 font-mono text-[11px] tracking-[0.16em] text-[#9A9AA0] uppercase">
+              <div className="mb-8 flex items-center gap-2.5 font-mono text-[11px] tracking-[0.16em] text-[#9A9AA0] uppercase">
                 <Link href="/" className="hover:text-[#FAFAF7] transition-colors">HOME</Link>
                 <span className="text-white/30">/</span>
                 <Link href="/lab" className="hover:text-[#FAFAF7] transition-colors">GEO LAB</Link>
@@ -45,47 +43,47 @@ export default function AiOverviewPage() {
               </div>
 
               {/* Category */}
-              <div className="mb-4 inline-flex items-center gap-2.5 font-mono text-[11px] tracking-[0.18em] text-[#1452FF]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#1452FF] shadow-[0_0_8px_#1452FF]" />
+              <div className="mb-4 inline-flex items-center gap-2.5 font-mono text-[10px] tracking-[0.24em] text-[#1452FF] uppercase">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#1452FF] opacity-75" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#1452FF]" />
+                </span>
                 FEATURED RESEARCH · 検索の変化
               </div>
 
               <h1
-                className="mb-7 max-w-[18ch] font-bold tracking-[-0.03em] leading-[1.06]"
-                style={{ fontSize: "clamp(36px, 4.6vw, 60px)" }}
+                className="mb-7 font-extrabold tracking-[-0.04em] text-white"
+                style={{ fontSize: "clamp(50px, 5.5vw, 82px)", lineHeight: 0.96 }}
               >
-                AI Overview が変えた、
-                <em className="text-[#1452FF] not-italic">検索結果ページの3秒間。</em>
+                <span className="block">AI Overview が変えた、</span>
+                <span className="block text-[#1452FF]">検索結果ページの3秒間。</span>
               </h1>
 
-              <p className="max-w-[42ch] text-[17px] leading-[1.65] text-[#9A9AA0]">
+              <p className="max-w-[52ch] text-[17px] leading-[1.75] text-white/[0.68]">
                 Google AI Overview の本格展開で、検索結果ページの上部に何が起きているのか。
                 12 業種・1,400 ページのクリックログと、4 つの AI 検索エンジンの引用ログを突き合わせ、
                 ユーザーが「ページを開く」までの 3 秒間にどんな意思決定が走っているのかを解剖する。
               </p>
-            </div>
 
-            {/* Byline card */}
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur-sm">
-              <div className="mb-5 grid grid-cols-2 gap-4">
+              {/* Byline */}
+              <div className="mt-8 grid grid-cols-3 gap-0 border-t border-white/10 pt-6">
                 {[
                   { l: "AUTHOR", v: "田中 涼" },
                   { l: "DATE", v: "2026.04.12" },
                   { l: "READ TIME", v: "8 MIN" },
-                  { l: "CATEGORY", v: "検索の変化" },
-                ].map((m) => (
-                  <div key={m.l}>
+                ].map((m, i) => (
+                  <div key={m.l} className={`pr-6 ${i < 2 ? "border-r border-white/10 mr-6" : ""}`}>
                     <div className="mb-1 font-mono text-[10px] tracking-[0.18em] text-[#9A9AA0]">{m.l}</div>
                     <div className="text-[14px] font-semibold text-[#FAFAF7]">{m.v}</div>
                   </div>
                 ))}
               </div>
-              <div className="border-t border-white/10 pt-5">
-                <div className="mb-2 font-mono text-[10px] tracking-[0.16em] text-[#9A9AA0]">TL;DR</div>
-                <p className="text-[13px] leading-[1.6] text-[#9A9AA0]">
-                  AI Overview により SERP のファーストビューは「答え」に書き換わった。CTR は平均 −38%、滞在は 3.2 秒。
-                  引用される側の条件は、構造・密度・権威の三層に集約される。
-                </p>
+            </div>
+
+            {/* ContactForm */}
+            <div className="relative z-10">
+              <div className="w-full max-w-[620px] mx-auto lg:ml-auto lg:mr-0">
+                <ContactForm blockedEmailDomains={DEFAULT_BLOCKED_EMAIL_DOMAINS} />
               </div>
             </div>
           </div>
