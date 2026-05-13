@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { CTASection } from "@/components/layout/CTASection";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
-import { getCalendarBookingHref, getCalendarBookingLinkProps } from "@/lib/calendar-booking";
+import { getCalendarBookingHref } from "@/lib/calendar-booking";
 import { Button } from "@/components/ui/button";
 import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
 
@@ -288,28 +288,6 @@ export default function WhyAscentPage() {
             <div className="relative z-10 lg:-mt-2">
               <div className="ml-auto max-w-[560px]">
                 <ContactForm blockedEmailDomains={DEFAULT_BLOCKED_EMAIL_DOMAINS} />
-                <div className="mt-4 border-t border-white/10 pt-4">
-                  <div className="flex items-center gap-4 text-[11px] tracking-[0.22em] text-white/35 font-mono">
-                    <span className="h-px flex-1 bg-white/10" />
-                    <span>OR</span>
-                    <span className="h-px flex-1 bg-white/10" />
-                  </div>
-                  <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
-                    <Link
-                      href={getCalendarBookingHref()}
-                      {...getCalendarBookingLinkProps()}
-                      className="inline-flex items-center justify-center rounded-full border border-white/14 px-5 py-3.5 text-[15px] font-semibold text-white transition-all hover:border-[#1452ff] hover:bg-[#1452ff]"
-                    >
-                      カレンダー予約（30分）
-                    </Link>
-                    <Link
-                      href="/whitepaper"
-                      className="inline-flex items-center justify-center rounded-full border border-white/14 px-5 py-3.5 text-[15px] font-semibold text-white transition-all hover:border-[#1452ff] hover:bg-[#1452ff]"
-                    >
-                      サービス資料をダウンロード
-                    </Link>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
