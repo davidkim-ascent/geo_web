@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import { TicketId } from "./TicketId";
 
 export const metadata: Metadata = {
@@ -75,81 +73,16 @@ export default function WhitepaperDownloadedPage() {
           className="mb-7 font-bold tracking-[-0.035em] leading-[1.06]"
           style={{ fontSize: "clamp(38px, 5.4vw, 72px)", maxWidth: "18ch" }}
         >
-          ダウンロードを
+          メールボックスを
           <br />
-          <em className="text-[#1452FF] not-italic">開始しました。</em>
+          <em className="text-[#1452FF] not-italic">ご確認ください。</em>
         </h1>
 
         {/* Lede */}
         <p className="mb-14 max-w-[56ch] text-[17px] leading-[1.7] text-white/72">
-          『AI 検索時代の、企業マーケティング白書 2026』のダウンロードを開始しました。
-          ご記入のメールアドレスにも、ダウンロードリンクと領収書を送付しています。
-          ダウンロードが自動的に始まらない場合は、下記の代替リンクからお進みください。
+          ご入力いただいたメールアドレス宛に、「Ascent GEOサービス紹介資料 PDF」のダウンロードリンクをお送りいたしました。
+          しばらく経ってもメールが届かない場合は、メールアドレスに誤りがないか、または迷惑メールフォルダに振り分けられていないかご確認をお願いいたします。
         </p>
-
-        {/* Download panel */}
-        <div className="mb-16 grid items-center gap-9 rounded-2xl border border-white/[0.14] bg-white/[0.03] p-8 lg:grid-cols-[auto_1fr_auto]">
-          {/* Mini cover */}
-          <div
-            className="relative h-[156px] w-[120px] flex-shrink-0 overflow-hidden rounded-[4px] p-3.5"
-            style={{
-              background: "linear-gradient(135deg, #0B0B0E 0%, #1A2752 60%, #1452FF 100%)",
-              boxShadow: "0 12px 28px -8px rgba(0,0,0,0.5)",
-            }}
-          >
-            <div className="absolute right-0 top-0 h-[50px] w-[50px]" style={{ background: "linear-gradient(135deg, transparent 50%, rgba(255,255,255,0.18) 50%)" }} />
-            <div className="flex h-full flex-col justify-between">
-              <div className="font-mono text-[9px] leading-[1.4] tracking-[0.2em] text-white/55">
-                ASCENT<br />GEO<br />WHITE<br />PAPER
-              </div>
-              <div className="text-[13px] font-bold leading-[1.2] tracking-[-0.01em] text-white">
-                AI 検索時代の企業マーケティング
-              </div>
-              <div className="border-t border-white/18 pt-2 font-mono text-[9px] tracking-[0.18em] text-[#DCE5FF]">
-                2026 · PDF
-              </div>
-            </div>
-          </div>
-
-          {/* Info */}
-          <div>
-            <div className="mb-2 font-mono text-[10px] tracking-[0.2em] text-[#1452FF]">
-              [ WHITEPAPER ]
-            </div>
-            <h3 className="mb-3 text-[22px] font-bold leading-[1.2] tracking-[-0.015em] text-[#FAFAF7]">
-              AI 検索時代の、企業マーケティング白書 2026
-            </h3>
-            <div className="flex gap-6 font-mono text-[11px] tracking-[0.14em] text-white/55">
-              <span>PDF <span className="text-[#FAFAF7]">48 PAGES</span></span>
-              <span>SIZE <span className="text-[#FAFAF7]">4.2 MB</span></span>
-              <span>LANG <span className="text-[#FAFAF7]">日本語</span></span>
-            </div>
-          </div>
-
-          {/* Progress */}
-          <div className="flex flex-col items-end gap-2">
-            <div className="font-mono text-[10px] tracking-[0.2em] text-white/50">PREPARING</div>
-            <div className="h-1 w-[220px] overflow-hidden rounded-full bg-white/10">
-              <div
-                className="h-full rounded-full bg-[#1452FF]"
-                style={{ width: 0, animation: "wpdFill 1.6s ease-out forwards 0.4s" }}
-              />
-            </div>
-            <div className="font-mono text-[14px] font-semibold text-[#FAFAF7]">100%</div>
-          </div>
-        </div>
-
-        {/* Fallback link */}
-        <div className="mb-14 flex items-center gap-4 rounded-xl border border-dashed border-white/[0.18] px-5 py-4 text-[13px] text-white/65">
-          <div className="font-mono text-[10px] tracking-[0.18em] text-white/40">ALT</div>
-          <span>
-            ダウンロードが始まらない場合は
-            <Link href="/whitepaper" className="ml-1 border-b border-[#1452FF] pb-px text-[#1452FF]">
-              こちらのリンク
-            </Link>
-            からもう一度お試しください。
-          </span>
-        </div>
 
         {/* Phone contact */}
         <div className="grid items-center gap-12 rounded-2xl border border-white/[0.14] bg-white/[0.03] px-10 py-9 lg:grid-cols-[1fr_auto]">
