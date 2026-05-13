@@ -1430,7 +1430,7 @@ span.accent {
   align-items: start;
 }
 @media (max-width: 900px) {
-  .ct-hero-wrap { grid-template-columns: 1fr; gap: 48px; }
+  .ct-hero-wrap { grid-template-columns: 1fr; gap: 48px; padding: 0 20px; }
   .ct-hero { padding: 72px 0 32px; }
 }
 .ct-hero-kicker {
@@ -1645,5 +1645,4 @@ a.ct-channel-card:hover {
   .ct-faq { padding: 64px 0; }
   .ct-faq-wrap { padding: 0 20px; }
   .ct-faq-qtext { font-size: 15px; }
-  .ct-hero-wrap { padding: 0 20px; }
 }

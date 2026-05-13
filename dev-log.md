@@ -1,3 +1,8 @@
+## 2026-05-14 — 모바일 레이아웃 버그 수정
+- CTASection 모바일 패딩 중첩 수정: `px-10 p-12` → `px-4 sm:px-6 lg:px-10` / `p-6 sm:p-8 lg:p-12`
+- ct-hero-wrap breakpoint 통일: 900px 이하에서 `padding: 0 20px` 적용 (기존 768px만 처리하여 900~768px 구간 오버플로우 발생)
+- 768px 중복 padding 선언 제거
+
 ## 2026-05-13 23:59 — ⭐ 레이아웃 디자인 완료 버전
 - **롤백 기준점** commit: `4449d8c`
 - 완료 범위: 전 페이지 히로 섹션 통일(배경 애니메이션, h1 타이포, 상단 여백), 네비 링크 정상화, whitepaper downloaded 페이지, ai-overview 페이지, services/lab/why-ascent/framework 신규 제작
