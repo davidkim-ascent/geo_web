@@ -1,3 +1,6 @@
+## 2026-05-13 16:25
+- Why Ascent 히로 정리: breadcrumb(Home / Why Ascent) 삭제하고 상단 여백을 더 줄여 첫 화면 진입 높이를 압축함
+
 ## 2026-05-13 16:22
 - Why Ascent 세부 조정: 히로의 24H 리플레이 텍스트 제거 및 높이 축소, GEO Framework 하단 라인/여백 축소, CTA를 홈의 공통 CTASection으로 교체함
 

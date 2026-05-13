@@ -232,7 +232,7 @@ function DiagramCard({ kind }: { kind: "network" | "matrix" | "doc" | "chart" })
 export default function WhyAscentPage() {
   return (
     <div className="bg-[#FAFAF7] text-[#0B0B0E]">
-      <section className="relative overflow-hidden bg-[#0B0B0E] text-white pt-24 pb-12 md:pt-24 md:pb-12">
+      <section className="relative overflow-hidden bg-[#0B0B0E] text-white pt-16 pb-12 md:pt-16 md:pb-12">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -273,14 +273,6 @@ export default function WhyAscentPage() {
         </div>
 
         <div className="relative mx-auto max-w-[1280px] px-6 md:px-10">
-          <div className="mb-10 flex items-center gap-2 text-[11px] tracking-[0.25em] text-white/45 font-mono uppercase">
-            <Link href="/" className="text-white/45 transition-colors hover:text-white">
-              Home
-            </Link>
-            <span className="text-white/20">/</span>
-            <span className="text-white">Why Ascent</span>
-          </div>
-
           <div className="grid items-start gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
             <div className="relative z-10">
               <div className="mb-5 flex items-center gap-2 text-[10px] tracking-[0.24em] text-[#1452ff] font-mono uppercase">
