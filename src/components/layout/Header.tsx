@@ -25,8 +25,8 @@ export default function Header() {
           {[
             { label: "Why Ascent", href: "/why-ascent" },
             { label: "Framework", href: "/framework" },
-            { label: "Services", href: "#services" },
-            { label: "GEO Lab", href: "#lab" },
+            { label: "Services", href: "/services" },
+            { label: "GEO Lab", href: "/lab" },
             { label: "Contact", href: "/contact" },
           ].map((item) => (
             <Link
@@ -71,8 +71,8 @@ export default function Header() {
           {[
             { label: "Why Ascent", href: "/why-ascent" },
             { label: "Framework", href: "/framework" },
-            { label: "Services", href: "#services" },
-            { label: "GEO Lab", href: "#lab" },
+            { label: "Services", href: "/services" },
+            { label: "GEO Lab", href: "/lab" },
             { label: "Contact", href: "/contact" },
           ].map((item) => (
             <Link
