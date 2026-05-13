@@ -243,9 +243,30 @@ export default function WhyAscentPage() {
           <div className="absolute left-[-4%] bottom-[-10%] select-none text-[clamp(180px,22vw,320px)] font-extrabold leading-none tracking-[-0.06em] text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.06)]">
             GEO
           </div>
-          <div className="absolute left-0 right-0 top-[44%] h-px bg-[#1452ff]/70 shadow-[0_0_18px_rgba(20,82,255,0.5)]" />
-          <div className="absolute left-[12%] top-0 bottom-0 w-px bg-[#1452ff]/70 shadow-[0_0_18px_rgba(20,82,255,0.5)]" />
-          <div className="absolute right-[14%] top-0 bottom-0 w-px bg-[#1452ff]/70 shadow-[0_0_18px_rgba(20,82,255,0.5)]" />
+          <div
+            style={{
+              position: "absolute", left: 0, right: 0, height: 4,
+              background: "linear-gradient(90deg, transparent, rgba(20,82,255,0.95), transparent)",
+              boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95,
+              animation: "scan 6s ease-in-out infinite",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute", top: 0, bottom: 0, width: 4,
+              background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)",
+              boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95,
+              animation: "scanV 7s ease-in-out infinite",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute", top: 0, bottom: 0, width: 4,
+              background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)",
+              boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95,
+              animation: "scanV 9s ease-in-out -3.5s infinite",
+            }}
+          />
           <div className="absolute right-8 top-7 text-right text-[10px] tracking-[0.2em] text-white/40 font-mono">
             <div className="flex items-center justify-end gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-[#1452ff] shadow-[0_0_8px_#1452ff]" />

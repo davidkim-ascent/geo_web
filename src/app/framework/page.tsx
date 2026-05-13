@@ -256,13 +256,49 @@ function FrameworkHero() {
             "radial-gradient(ellipse 55% 45% at 80% 22%, rgba(20,82,255,0.2), transparent 58%), radial-gradient(ellipse 45% 36% at 18% 86%, rgba(20,82,255,0.1), transparent 58%)",
         }}
       />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute right-[-16%] top-[-8%] h-[960px] w-[960px] rounded-full border border-white/8 border-dashed" />
-        <div className="absolute right-[4%] top-[8%] h-[620px] w-[620px] rounded-full border border-[#1452ff]/20 border-dashed" />
-        <div className="absolute right-[-1%] top-[18%] h-[320px] w-[320px] rounded-full border border-[#1452ff]/30 border-dashed" />
-        <div className="absolute left-[-6%] bottom-[-12%] select-none text-[clamp(180px,22vw,320px)] font-extrabold leading-none tracking-[-0.06em] text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.06)]">
-          GEO
+      <div className="absolute right-[10%] top-[20%] w-[500px] h-[500px] bg-[#1452FF]/[0.08] rounded-full blur-[100px] pointer-events-none" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div
+          className="arc-spin"
+          style={{ position: "absolute", width: 1100, height: 1100, right: -480, top: -260, border: "1px dashed rgba(255,255,255,0.08)", borderRadius: "50%" }}
+        />
+        <div style={{ position: "absolute", width: 720, height: 720, right: -200, top: 40, border: "1px solid rgba(20,82,255,0.18)", borderRadius: "50%" }} />
+        <div style={{ position: "absolute", width: 360, height: 360, right: 40, top: 200, border: "1px dashed rgba(20,82,255,0.32)", borderRadius: "50%" }} />
+        <div
+          style={{
+            position: "absolute", left: -40, bottom: -40,
+            fontWeight: 800, fontSize: "clamp(180px, 22vw, 320px)",
+            letterSpacing: "-0.06em", color: "transparent",
+            WebkitTextStroke: "1px rgba(255,255,255,0.06)",
+            lineHeight: 0.85, userSelect: "none", whiteSpace: "nowrap",
+          }}
+        >
+          GEO.
         </div>
+        <div
+          style={{
+            position: "absolute", left: 0, right: 0, height: 4,
+            background: "linear-gradient(90deg, transparent, rgba(20,82,255,0.95), transparent)",
+            boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95,
+            animation: "scan 6s ease-in-out infinite",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute", top: 0, bottom: 0, width: 4,
+            background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)",
+            boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95,
+            animation: "scanV 7s ease-in-out infinite",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute", top: 0, bottom: 0, width: 4,
+            background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)",
+            boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95,
+            animation: "scanV 9s ease-in-out -3.5s infinite",
+          }}
+        />
       </div>
 
       <div className="relative mx-auto grid max-w-[1280px] grid-cols-1 gap-14 px-10 lg:grid-cols-[1.18fr_1fr] lg:items-start">
