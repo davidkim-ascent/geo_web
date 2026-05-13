@@ -130,6 +130,7 @@ export default function LabPage() {
           </h2>
           <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
             {/* Main featured */}
+            <Link href="/lab/ai-overview" className="block">
             <article className="relative flex min-h-[420px] cursor-pointer flex-col justify-between overflow-hidden rounded-2xl bg-[#0B0B0E] p-14 text-[#FAFAF7] transition-opacity hover:opacity-90">
               <div
                 className="absolute inset-0"
@@ -163,6 +164,7 @@ export default function LabPage() {
                 <span className="text-[#FAFAF7]">READ · 8 MIN →</span>
               </div>
             </article>
+            </Link>
 
             {/* Side items */}
             <div className="grid gap-4">
