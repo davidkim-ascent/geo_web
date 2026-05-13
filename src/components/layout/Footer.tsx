@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getCalendarBookingHref } from "@/lib/calendar-booking";
+import { getCalendarBookingHref, getCalendarBookingLinkProps } from "@/lib/calendar-booking";
 
 export default function Footer() {
   return (
@@ -60,7 +60,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link href={getCalendarBookingHref()} className="ui-footer-link">
+                <Link href={getCalendarBookingHref()} className="ui-footer-link" {...getCalendarBookingLinkProps()}>
                   カレンダー予約（30分）
                 </Link>
               </li>

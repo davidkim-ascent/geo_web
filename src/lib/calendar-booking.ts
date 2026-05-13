@@ -22,3 +22,10 @@ export const CALENDAR_BOOKING_CONFIG = {
 export function getCalendarBookingHref() {
   return process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_BOOKING_URL?.trim() || '/contact'
 }
+
+export function getCalendarBookingLinkProps() {
+  return {
+    target: '_blank' as const,
+    rel: 'noopener noreferrer',
+  }
+}

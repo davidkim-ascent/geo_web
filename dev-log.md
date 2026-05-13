@@ -1,3 +1,6 @@
+## 2026-05-13 14:28
+- Google Calendar 예약 CTA를 새 탭으로 열도록 변경: 공통 링크 속성 헬퍼 추가 후 홈/컨택트/푸터 예약 진입점에 적용
+
 ## 2026-05-13 14:27
 - Google Calendar 예약 흐름 단순화: `/calendar-booking` 중간 페이지 삭제, CTA를 Google 예약 URL 직접 연결로 전환
 

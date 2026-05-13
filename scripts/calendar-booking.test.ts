@@ -4,6 +4,7 @@ process.env.NEXT_PUBLIC_GOOGLE_CALENDAR_BOOKING_URL = 'https://calendar.app.goog
 const {
   CALENDAR_BOOKING_CONFIG,
   getCalendarBookingHref,
+  getCalendarBookingLinkProps,
 } = await import('../src/lib/calendar-booking.ts')
 
 assert.equal(CALENDAR_BOOKING_CONFIG.label, 'カレンダー予約（30分）')
@@ -12,3 +13,7 @@ assert.equal(CALENDAR_BOOKING_CONFIG.location, 'オンライン')
 assert.equal(CALENDAR_BOOKING_CONFIG.timezone, 'Asia/Tokyo')
 assert.equal(CALENDAR_BOOKING_CONFIG.durationMinutes, 30)
 assert.equal(getCalendarBookingHref(), 'https://calendar.app.google/test-booking')
+assert.deepEqual(getCalendarBookingLinkProps(), {
+  target: '_blank',
+  rel: 'noopener noreferrer',
+})
