@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 import { CTASection } from "@/components/layout/CTASection";
 import { ContactForm } from "@/components/contact/ContactForm";
@@ -18,12 +17,6 @@ export default function AiOverviewPage() {
     <div className="bg-[#FAFAF7]">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0B0B0E] py-12 lg:py-16 text-[#FAFAF7]" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
-        {/* Background image */}
-        <div className="absolute inset-0">
-          <Image src="/lab-ai-overview-hero.png" alt="" fill className="object-cover opacity-[0.45]" priority />
-        </div>
-        {/* Gradient veil */}
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(11,11,14,0.75) 0%, rgba(11,11,14,0.88) 60%, rgba(11,11,14,0.97) 100%)" }} />
 
         <div className="relative z-10 mx-auto max-w-[1280px] px-10">
           <div className="grid items-start gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
