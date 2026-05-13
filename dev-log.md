@@ -1,41 +1,155 @@
 ## 2026-05-14 — ⭐ 모바일 레이아웃까지 완료 버전
 - **롤백 기준점** commit: `981c3e1`
-- 완료 범위: 전 페이지 모바일 레이아웃 수정 (헤더, 히어로 h1, GEO Framework 카드, TOC, 5각형 다이어그램, CTASection, ct-hero-wrap)
+- 완료 범위: 전 페이지 모바일 레이아웃 수정
 
-### 반복 버그 기록 (Bug Fix Rule)
+---
 
-**fw-step 카드 모바일 오버플로우**
+## 2026-05-14 — 모바일 뷰 버그 상세 기록 (재발 방지 포함)
+
+### 수정 파일 목록
+- `src/components/layout/Header.tsx`
+- `src/components/layout/CTASection.tsx`
+- `src/components/ui/button.tsx`
+- `src/app/globals.css`
+- `src/app/page.tsx`
+- `src/app/framework/page.tsx`
+- `src/app/lab/ai-overview/page.tsx`
+
+---
+
+### BUG-01 · 햄버거 메뉴 화면 벗어남 (인덱스, framework 공통)
 
 **원인**
-- CSS grid에서 `1fr` 컬럼은 `minmax(0, 1fr)`이 아니면 content 크기만큼 팽창 가능. `Button`이 `inline-flex`라 폭 제한 없이 늘어남
+- `Header.tsx` 내부 컨테이너에 `px-10`(40px) 고정 패딩 → 모바일 뷰포트(360px~)에서 햄버거 버튼이 오른쪽으로 밀려 잘림
 
-**영향 범위**
-1. 인덱스 GEO Framework 섹션 fw-step 카드 목록
-2. `fw-list > *` 자식 전체, `fw-step` grid 내부 텍스트 컬럼
-3. `whitespace-nowrap`이 Button 기본 cva에 있어 ellipsis가 무효화됨 (함께 수정)
+**수정**
+- `px-10` → `px-4 sm:px-6 lg:px-10` (반응형 패딩)
+- 파일: `src/components/layout/Header.tsx:12`
 
-**재발 방지 테스트**
-- 모바일(360px) 뷰포트에서 fw-step 카드가 화면 밖으로 넘치지 않는지 확인
-- `fw-list > *`에 `min-width: 0; width: 100%` 유지 확인
+**재발 방지**
+- Header 컨테이너에 고정 `px-10` 재사용 금지. 반드시 `px-4 sm:px-6 lg:px-10` 패턴 유지
+
+---
+
+### BUG-02 · 히어로 h1 오버플로우 (인덱스, framework)
+
+**원인**
+- `fontSize: clamp(44px, 4.86vw, 65px)` — 모바일 최솟값 44px가 360px 뷰포트에서 너무 큼
+- `wordBreak: "keep-all"` — 일본어에는 효과 없이 영문 단어만 묶어 레이아웃 파괴
+
+**수정**
+- clamp 하한 44px → 32px
+- `wordBreak: keep-all` 제거
+- 파일: `src/app/page.tsx:188`, `src/app/framework/page.tsx:310`
+
+**재발 방지**
+- 일본어 h1에 `wordBreak: keep-all` 사용 금지 (효과 없음)
+- 모바일 최솟값은 32px 이하로 설정
+
+---
+
+### BUG-03 · CTASection 버튼/텍스트 잘림 (전 페이지 공통 CTA)
+
+**원인**
+- 바깥 컨테이너 `px-10` + 카드 내부 `p-12` 이중 패딩 중첩 → 모바일에서 콘텐츠가 뷰포트 밖으로 밀림
+
+**수정**
+- `px-10` → `px-4 sm:px-6 lg:px-10`
+- `p-12` → `p-6 sm:p-8 lg:p-12`
+- 파일: `src/components/layout/CTASection.tsx:32-34`
+
+**재발 방지**
+- CTA 카드처럼 이중 패딩 구조에서는 반드시 양쪽 모두 반응형 패딩 적용
+
+---
+
+### BUG-04 · ct-hero-wrap 오버플로우 (contact 페이지)
+
+**원인**
+- `grid-template-columns: 1.1fr 1fr` → 단일 컬럼 전환 breakpoint가 `max-width: 900px`인데, padding 0 20px 적용은 `max-width: 768px`에만 있음
+- 900~768px 구간(대부분의 Android 기기)에서 패딩 40px 유지 → 오버플로우
+
+**수정**
+- 900px breakpoint에 `padding: 0 20px` 추가
+- 768px 중복 선언 제거
+- 파일: `src/app/globals.css:1432`
+
+**재발 방지**
+- grid-template-columns 변환 breakpoint와 padding 변환 breakpoint를 반드시 동일하게 맞출 것
+
+---
+
+### BUG-05 · GEO Framework 5각형 SVG + fw-step 카드 오버플로우 (인덱스)
+
+**원인 A — SVG 다이어그램**
+- `fw-grid`가 `grid-template-columns: 1.1fr 1fr` 고정 → 모바일에서 첫 번째 컬럼(SVG)이 절반 폭만 차지하고 잘림
+- `@media (max-width: 768px)`에서 첫 컬럼 숨김 처리했으나, 실제 모바일 기기는 768~1024px 구간도 포함
+
+**수정 A**
+- `fw-grid` 기본을 `grid-template-columns: 1fr`로, `@media (min-width: 1025px)`에서만 2컬럼 전환
+- `@media (max-width: 1024px)` 첫 컬럼 `display: none`
+- 파일: `src/app/globals.css:502-553`
+
+**원인 B — fw-step 카드**
+- `grid-template-columns: 56px 1fr auto`에서 `1fr`이 `minmax(0, 1fr)`이 아니어서 텍스트 콘텐츠 크기만큼 팽창
+- `Button` 컴포넌트가 `inline-flex` → 폭 제한 없이 늘어남
+- Button cva 기본 클래스에 `whitespace-nowrap` 전역 적용 → `.meta`의 `text-overflow: ellipsis` 무효화
+
+**수정 B**
+- `fw-step grid-template-columns: 56px minmax(0, 1fr) auto`
+- `fw-step`에 `width: 100%; box-sizing: border-box; min-width: 0` 추가
+- `fw-list`에 `overflow: hidden`, `> *`에 `min-width: 0; width: 100%` 추가
+- Button cva 기본 클래스에서 `whitespace-nowrap` 제거
+- 파일: `src/app/globals.css:580-590`, `src/components/ui/button.tsx:8`
+
+**재발 방지**
+- CSS grid에서 텍스트를 담는 컬럼은 반드시 `minmax(0, 1fr)` 사용
+- `inline-flex` 요소를 grid 셀 안에 넣을 때는 `min-width: 0; width: 100%` 명시
 - Button cva 기본 클래스에 `whitespace-nowrap` 재추가 금지
 
 ---
 
-## 2026-05-14 — 모바일 뷰 잘림 버그 목록 (수정 예정)
+### BUG-06 · GEO Lab h2 잘림 (인덱스)
 
-### 페이지별 이슈
-- **인덱스**: 히어로 h1 잘림, 햄버거 메뉴 화면 벗어남, GEO Framework 5개 요소 가로 잘림, GEO Lab h2 잘림
-- **why-ascent**: 문제 없음
-- **framework**: 히어로 h1 크게 잘림, 햄버거 메뉴 안 보임, 5페이즈 히토츠 카피 잘림, 5각형 다이어그램 → 모바일에서 숨김 처리 필요
-- **services**: 문제 없음
-- **geo lab**: 문제 없음
-- **개별 블로그 페이지**: 목차(TOC)가 본문을 덮음 (Design 폴더 스크린샷 참조)
-- **contact / thanks / whitepaper / downloaded**: 문제 없음
+**원인**
+- `whitespace-nowrap` 클래스가 h2에 적용되어 한 줄 강제 → 모바일에서 뷰포트 밖으로 넘침
 
-## 2026-05-14 — 모바일 레이아웃 버그 수정
-- CTASection 모바일 패딩 중첩 수정: `px-10 p-12` → `px-4 sm:px-6 lg:px-10` / `p-6 sm:p-8 lg:p-12`
-- ct-hero-wrap breakpoint 통일: 900px 이하에서 `padding: 0 20px` 적용 (기존 768px만 처리하여 900~768px 구간 오버플로우 발생)
-- 768px 중복 padding 선언 제거
+**수정**
+- `whitespace-nowrap` 제거
+- 파일: `src/app/page.tsx:806`
+
+**재발 방지**
+- 모바일 대응이 필요한 h2/h3에 `whitespace-nowrap` 사용 금지
+
+---
+
+### BUG-07 · framework 페이지 5각형 다이어그램 모바일 오버플로우
+
+**원인**
+- `FrameworkLoop` 컴포넌트: `position: absolute`로 배치된 노드 카드(`width: 200px`)들이 모바일 뷰포트보다 넓은 SVG 좌표계 기준으로 배치됨
+
+**수정**
+- `<FrameworkLoop />`를 `<div className="hidden lg:block">` 으로 감싸 모바일에서 숨김
+- 파일: `src/app/framework/page.tsx:366`
+
+**재발 방지**
+- absolute 좌표 기반 SVG/canvas 다이어그램은 모바일에서 숨김 처리 후 대체 UI 제공
+
+---
+
+### BUG-08 · 블로그 TOC가 본문을 덮음 (ai-overview 페이지)
+
+**원인**
+- `grid-cols-[220px_1fr]`에서 TOC(220px)가 모바일에서도 그리드 첫 번째 컬럼으로 렌더링
+- `sticky top-[100px]`으로 고정되어 스크롤 시 본문 위에 겹침
+
+**수정**
+- `<ArticleTOC />`를 `<div className="hidden lg:block">` 으로 감싸 모바일 숨김
+- 섹션 패딩 `px-10` → `px-4 sm:px-6 lg:px-10`
+- 파일: `src/app/lab/ai-overview/page.tsx:84-86`
+
+**재발 방지**
+- sticky TOC는 반드시 `hidden lg:block` 처리. 모바일에서는 TOC 없이 본문만 표시
 
 ## 2026-05-13 23:59 — ⭐ 레이아웃 디자인 완료 버전
 - **롤백 기준점** commit: `4449d8c`
