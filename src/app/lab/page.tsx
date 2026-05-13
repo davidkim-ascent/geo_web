@@ -84,7 +84,7 @@ export default function LabPage() {
 
         <div className="relative mx-auto max-w-[1280px] px-10">
           <div className="grid items-start gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
-            <div className="relative z-10">
+            <div className="relative z-10 pt-8">
               <div className="mb-5 flex items-center gap-2 font-mono text-[10px] tracking-[0.24em] text-[#1452FF] uppercase">
                 <span className="relative flex h-1.5 w-1.5">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#1452FF] opacity-75" />

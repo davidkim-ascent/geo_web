@@ -279,7 +279,7 @@ export default function WhyAscentPage() {
 
         <div className="relative mx-auto max-w-[1280px] px-6 md:px-10">
           <div className="grid items-start gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
-            <div className="relative z-10">
+            <div className="relative z-10 pt-8">
               <div className="mb-5 flex items-center gap-2 text-[10px] tracking-[0.24em] text-[#1452ff] font-mono uppercase">
                 <span className="pulse-dot" />
                 Why Ascent
