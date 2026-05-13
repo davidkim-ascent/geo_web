@@ -88,19 +88,6 @@ export default function ContactPage() {
 
             {/* Channel cards */}
             <div className="ct-hero-channels">
-              <a href="tel:0335273963" className="ct-channel-card">
-                <div className="ct-channel-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.72 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.63 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.51 5.51l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-                  </svg>
-                </div>
-                <div className="ct-channel-body">
-                  <div className="ct-channel-title">電話で相談する</div>
-                  <div className="ct-channel-desc">03-3527-3963 · 平日 9:00〜18:00 JST</div>
-                </div>
-                <span className="ct-channel-arrow">→</span>
-              </a>
-
               <a href="#" className="ct-channel-card">
                 <div className="ct-channel-icon">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -132,6 +119,21 @@ export default function ContactPage() {
                 </div>
                 <span className="ct-channel-arrow">→</span>
               </Link>
+
+              <div className="ct-channel-text">
+                <div className="ct-channel-text-head">
+                  <span className="ct-channel-phone-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6.07-6.07 19.8 19.8 0 0 1-3.07-8.63A2 2 0 0 1 4.08 2h3a2 2 0 0 1 2 1.72c.12.93.34 1.84.66 2.71a2 2 0 0 1-.45 2.11L8.1 9.73a16 16 0 0 0 6.17 6.17l1.19-1.19a2 2 0 0 1 2.11-.45c.87.32 1.78.54 2.71.66A2 2 0 0 1 22 16.92Z" />
+                    </svg>
+                  </span>
+                  <span className="ct-channel-text-label">電話で相談する</span>
+                </div>
+                <div className="ct-channel-text-line">
+                  <span className="ct-channel-phone-number">03-3527-3963</span>
+                  <span className="ct-channel-text-meta">平日 9:00〜18:00 JST</span>
+                </div>
+              </div>
             </div>
           </div>
 
