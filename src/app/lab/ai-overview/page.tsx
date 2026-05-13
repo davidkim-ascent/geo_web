@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { CTASection } from "@/components/layout/CTASection";
 import { ContactForm } from "@/components/contact/ContactForm";
@@ -16,19 +17,13 @@ export default function AiOverviewPage() {
   return (
     <div className="bg-[#FAFAF7]">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#0B0B0E] py-12 lg:py-16" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
-        {/* Background */}
-        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
-        <div className="absolute right-[10%] top-[20%] h-[500px] w-[500px] rounded-full bg-[#1452FF]/[0.08] blur-[100px] pointer-events-none" />
-        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-          <div className="arc-spin" style={{ position: "absolute", width: 1100, height: 1100, right: -480, top: -260, border: "1px dashed rgba(255,255,255,0.08)", borderRadius: "50%" }} />
-          <div style={{ position: "absolute", width: 720, height: 720, right: -200, top: 40, border: "1px solid rgba(20,82,255,0.18)", borderRadius: "50%" }} />
-          <div style={{ position: "absolute", width: 360, height: 360, right: 40, top: 200, border: "1px dashed rgba(20,82,255,0.32)", borderRadius: "50%" }} />
-          <div style={{ position: "absolute", left: -40, bottom: -40, fontFamily: "'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif", fontWeight: 800, fontSize: "clamp(180px, 22vw, 320px)", letterSpacing: "-0.06em", color: "transparent", WebkitTextStroke: "1px rgba(255,255,255,0.06)", lineHeight: 0.85, userSelect: "none", whiteSpace: "nowrap" }}>LAB.</div>
-          <div style={{ position: "absolute", left: 0, right: 0, height: 4, background: "linear-gradient(90deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scan 6s ease-in-out infinite" }} />
-          <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scanV 7s ease-in-out infinite" }} />
-          <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scanV 9s ease-in-out -3.5s infinite" }} />
+      <section className="relative overflow-hidden bg-[#0B0B0E] py-12 lg:py-16 text-[#FAFAF7]" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <Image src="/lab-ai-overview-hero.png" alt="" fill className="object-cover opacity-[0.45]" priority />
         </div>
+        {/* Gradient veil */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(11,11,14,0.55) 0%, rgba(11,11,14,0.72) 60%, rgba(11,11,14,0.92) 100%)" }} />
 
         <div className="relative z-10 mx-auto max-w-[1280px] px-10">
           <div className="grid items-start gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
