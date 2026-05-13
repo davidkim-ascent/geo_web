@@ -621,6 +621,9 @@ body.tweak-norotate .fw-ring g.node text {
   font-size: 13px;
   color: var(--muted);
   margin-top: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .fw-step .more {
   color: var(--muted);
