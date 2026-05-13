@@ -234,7 +234,7 @@ function VisualCard({ kind }: { kind: (typeof frameworkSteps)[number]["visual"] 
   );
 }
 
-function FrameworkLoopDiagram() {
+function FrameworkLoop() {
   const nodeData = [
     { cx: 270, cy: 70, label: "Question\nIntelligence" },
     { cx: 460.2, cy: 208.2, label: "Semantic\nGAP" },
@@ -244,8 +244,16 @@ function FrameworkLoopDiagram() {
   ];
 
   return (
-    <div className="relative mx-auto mt-12 w-full max-w-[540px]">
-      <svg viewBox="0 0 540 540" width="100%" height="100%">
+    <div
+      className="fw-loop"
+      style={{
+        position: "relative",
+        margin: "80px auto 0",
+        maxWidth: "900px",
+        aspectRatio: "1 / 1",
+      }}
+    >
+      <svg viewBox="0 0 540 540" style={{ width: "100%", height: "100%", display: "block" }}>
         <defs>
           <marker id="ar" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
             <path d="M0 0 L6 3 L0 6 Z" fill="rgba(255,255,255,0.3)" />
@@ -294,12 +302,45 @@ function FrameworkLoopDiagram() {
         })}
       </svg>
 
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-        <div className="text-center">
-          <div className="text-[12px] tracking-[0.3em] text-white/55">GEO FRAMEWORK</div>
-          <div className="mt-3 text-[34px] font-bold tracking-[-0.05em] text-white">5 Phase</div>
-          <div className="text-[34px] font-bold tracking-[-0.05em] text-[#1452FF]">Loop</div>
-          <p className="mt-3 text-[14px] leading-[1.5] text-white/70">
+      <div
+        className="center"
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%, -50%)",
+          textAlign: "center",
+        }}
+      >
+        <div>
+          <div
+            className="ring"
+            style={{
+              width: "140px",
+              height: "140px",
+              borderRadius: "50%",
+              border: "1px dashed var(--hairline)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              margin: "0 auto 16px",
+              background: "radial-gradient(circle, var(--accent-soft), transparent 70%)",
+            }}
+          >
+            <span
+              className="ring-inner"
+              style={{
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: "11px",
+                letterSpacing: "0.18em",
+                color: "var(--accent)",
+              }}
+            >
+              CORE
+            </span>
+          </div>
+          <h3 style={{ fontSize: "22px", letterSpacing: "-0.02em" }}>GEO Framework</h3>
+          <p style={{ fontSize: "14px", color: "var(--muted)", marginTop: "4px", maxWidth: "28ch" }}>
             5 つのフェーズが連動し、
             <br />
             継続的に最適化を回す
@@ -407,7 +448,7 @@ function FrameworkOverview() {
             </p>
           </div>
 
-          <FrameworkLoopDiagram />
+          <FrameworkLoop />
         </div>
       </div>
     </section>
