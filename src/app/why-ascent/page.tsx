@@ -145,10 +145,10 @@ function SearchPathPanel() {
   const cur = searchPathPaths[2];
 
   return (
-    <div className="rounded-[22px] border border-white/8 bg-[#0c0c11] p-4 shadow-[0_22px_60px_-32px_rgba(0,0,0,0.9)] md:p-5">
-      <div className="rounded-[18px] border border-white/10 bg-[#0b0b0e] p-4 md:p-5">
+    <div className="rounded-[22px] bg-[#0c0c11] p-4 shadow-[0_22px_60px_-32px_rgba(0,0,0,0.9)] md:p-5">
+      <div className="rounded-[18px] bg-[#0b0b0e] p-4 md:p-5">
         <div className="flex flex-col gap-3">
-          <div className="grid grid-cols-3 gap-2 rounded-full border border-white/10 bg-white/[0.03] p-1">
+          <div className="grid grid-cols-3 gap-2 rounded-full bg-white/[0.03] p-1">
             {searchPathPaths.map((p, i) => {
               const active = i === 2;
               return (
@@ -165,8 +165,8 @@ function SearchPathPanel() {
             })}
           </div>
 
-          <div className="rounded-[16px] border border-white/10 bg-white/[0.02] p-5">
-            <div className="mb-4 flex items-center justify-between border-b border-dashed border-white/12 pb-4 font-mono text-[10px] tracking-[0.18em] text-white/55">
+          <div className="rounded-[16px] bg-white/[0.02] p-5">
+            <div className="mb-4 flex items-center justify-between pb-4 font-mono text-[10px] tracking-[0.18em] text-white/55">
               <span className="text-[#1452ff]">SEARCH PATH · {cur.en}</span>
               <span className="inline-flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#1452ff] shadow-[0_0_8px_#1452ff]" />
@@ -178,14 +178,14 @@ function SearchPathPanel() {
               {cur.nodes.map((node, index) => {
                 const depthClass =
                   index === 0
-                    ? "border-white/10 bg-black/20"
+                    ? "bg-black/20"
                     : index === 1
-                      ? "border-[#1452ff]/25 bg-[#1452ff]/6"
-                      : "border-[#1452ff]/45 bg-[#1452ff]/14";
+                      ? "bg-[#1452ff]/6"
+                      : "bg-[#1452ff]/14";
 
                 return (
                   <div key={node.kw}>
-                    <div className={`rounded-[12px] border p-4 md:p-[18px] ${depthClass}`}>
+                    <div className={`rounded-[12px] p-4 md:p-[18px] ${depthClass}`}>
                       <div className="flex items-center justify-between font-mono text-[10px] tracking-[0.18em] text-white/60">
                         <span className="text-[#1452ff]">STEP {String(index + 1).padStart(2, "0")}</span>
                         <span>DEPTH · L{index + 1}</span>
@@ -195,7 +195,7 @@ function SearchPathPanel() {
                       </div>
                       <div className="mt-4 flex flex-col gap-2">
                         <span className="font-mono text-[9px] tracking-[0.2em] text-white/55">USER PROMPT</span>
-                        <div className="rounded-[10px] border border-white/10 bg-white/[0.04] px-4 py-3 text-[14px] italic leading-[1.6] text-white/92">
+                        <div className="rounded-[10px] bg-white/[0.04] px-4 py-3 text-[14px] italic leading-[1.6] text-white/92">
                           <span className="font-mono not-italic text-[#1452ff]">&ldquo;</span>
                           {node.prompt}
                         </div>
@@ -213,8 +213,7 @@ function SearchPathPanel() {
                 );
               })}
             </div>
-
-            <div className="mt-4 flex items-center justify-between border-t border-dashed border-white/12 pt-4 font-mono text-[10px] tracking-[0.16em] text-white/55">
+            <div className="mt-4 flex items-center justify-between pt-4 font-mono text-[10px] tracking-[0.16em] text-white/55">
               <span>SEED · 電動自転車</span>
               <span>
                 STEPS · <b className="font-sans text-[13px] font-semibold text-white">3</b>
