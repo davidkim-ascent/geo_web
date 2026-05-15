@@ -36,7 +36,7 @@ const searchPathPaths = [
 ] as const;
 
 export function SearchPathPanel() {
-  const [active, setActive] = useState(2);
+  const [active, setActive] = useState(0);
   const cur = searchPathPaths[active];
 
   return (

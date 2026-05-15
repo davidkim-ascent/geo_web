@@ -480,7 +480,7 @@ export default async function WhyAscentPage() {
       </section>
 
       {/* Section 4: W/02·B — SEARCH PATH */}
-      <section className="relative overflow-hidden bg-[#0B0B0E] py-24 text-white md:py-28">
+      <section className="relative overflow-hidden bg-[#0B0B0E] pt-24 pb-8 text-white md:pt-28 md:pb-10">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -518,7 +518,7 @@ export default async function WhyAscentPage() {
         </div>
       </section>
 
-      <div className="mt-24 md:mt-32">
+      <div className="mt-10 md:mt-14">
         <CTASection
           kicker="CONTACT — START WITH A FREE AUDIT"
           title={
