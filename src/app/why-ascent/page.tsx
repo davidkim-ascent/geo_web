@@ -202,10 +202,8 @@ export default async function WhyAscentPage() {
               </div>
             </div>
 
-            <div className="relative z-10 lg:-mt-2">
-              <div className="ml-auto max-w-[560px]">
-                <ContactForm blockedEmailDomains={DEFAULT_BLOCKED_EMAIL_DOMAINS} />
-              </div>
+            <div className="relative z-10 lg:-mt-2 w-full max-w-[560px] mx-auto lg:ml-auto lg:mr-0">
+              <ContactForm blockedEmailDomains={DEFAULT_BLOCKED_EMAIL_DOMAINS} />
             </div>
           </div>
         </div>
