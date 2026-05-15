@@ -60,7 +60,7 @@ function AuditVis() {
             <span className="font-semibold tracking-[0.04em] text-[#1452FF]">
               {s.k}
             </span>
-            <span className="italic text-[#1A1A20]">"{s.q}"</span>
+            <span className="italic text-[#1A1A20]">&quot;{s.q}&quot;</span>
             <span className="text-right text-[#6B6B73]">
               {s.v.toLocaleString()}
             </span>
@@ -72,7 +72,7 @@ function AuditVis() {
           FINAL CLUSTER · 初期探索
         </div>
         <p className="mb-2.5 text-[13px] leading-[1.55] text-[#0B0B0E]">
-          "免許なしで乗れる電動自転車で、上り坂の多い通勤用、補助金対象モデルのおすすめは？"
+          &quot;免許なしで乗れる電動自転車で、上り坂の多い通勤用、補助金対象モデルのおすすめは？&quot;
         </p>
         <div className="flex gap-3 font-mono text-[10px] text-[#1452FF]">
           <span>✓ 状況文脈</span>
@@ -513,7 +513,10 @@ export default function ServicesPage() {
               className={`grid items-start gap-20 lg:grid-cols-2 ${svc.flip ? "lg:[&>*:first-child]:order-2" : ""}`}
             >
               <div>
-                <h2 className="mb-4 tracking-[-0.03em] leading-[1.05]" style={{ fontSize: "clamp(36px, 4.4vw, 56px)" }}>
+                <h2
+                  className="mb-4 text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
+                  style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
+                >
                   {svc.title}{" "}
                   <em className="text-[#1452FF] not-italic">{svc.accent}</em>
                 </h2>
@@ -555,8 +558,8 @@ export default function ServicesPage() {
             [ PACKAGES ]
           </div>
           <h2
-            className="mb-4 max-w-[24ch] tracking-[-0.03em] leading-[1.05] text-[#FAFAF7]"
-            style={{ fontSize: "clamp(36px, 4.5vw, 56px)" }}
+            className="mb-4 max-w-[24ch] text-[#FAFAF7] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
+            style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
           >
             単発でも、<em className="text-[#1452FF] not-italic">フルループ</em>でも。
           </h2>

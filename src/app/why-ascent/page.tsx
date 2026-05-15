@@ -1,5 +1,7 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { Backpack, Dumbbell, Flame } from "lucide-react";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { CTASection } from "@/components/layout/CTASection";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
@@ -12,91 +14,116 @@ export const metadata: Metadata = {
   description: "GEO は、推測ではなく設計の科学である。",
 };
 
-
 const patentItems = [
   {
     num: "01",
     title: "Passage Ranking",
-    desc:
-      "AI は文章全体ではなく、特定の Passage(文節)を引用する。 Passage 単位での最適化が引用獲得の核心。",
+    desc: "AI は文章全体ではなく、特定の Passage(文節)を引用する。 Passage 単位での最適化が引用獲得の核心。",
     src: "GOOGLE PATENT · US10810199B2",
   },
   {
     num: "02",
     title: "Intent Ranking",
-    desc:
-      "検索クエリの背後にある「意図」を分類し、生成回答に組み込む。 Intent との一致が引用条件。",
+    desc: "検索クエリの背後にある「意図」を分類し、生成回答に組み込む。 Intent との一致が引用条件。",
     src: "MICROSOFT PATENT · US11003660",
   },
   {
     num: "03",
     title: "Embedding Similarity",
-    desc:
-      "質問と Passage を高次元ベクトルで比較。 Semantic Similarity が一定閾値を超えた Passage が候補化。",
+    desc: "質問と Passage を高次元ベクトルで比較。 Semantic Similarity が一定閾値を超えた Passage が候補化。",
     src: "GOOGLE PATENT · US10324946",
   },
   {
     num: "04",
     title: "AI Retrieval Structure",
-    desc:
-      "Retrieval-Augmented Generation の検索フェーズで、Citation 候補が決まる。 Retrieval 段階の最適化が要。",
+    desc: "Retrieval-Augmented Generation の検索フェーズで、Citation 候補が決まる。 Retrieval 段階の最適化が要。",
     src: "TECHNICAL · OPENAI / ANTHROPIC",
   },
 ];
 
-const listeningBullets = [
-  "消費者の質問フローを CDJ(Consumer Decision Journey) で構造化",
-  "後続質問(Follow-up Question)から検索の文脈を読み解く",
-  "CEP × Search Path で「答えるべき問い」を優先度付け",
-  "引用獲得の確率が高い Passage 候補を抽出",
+const searchJourneys = [
+  {
+    persona: "PERSONA A",
+    focus: "走行性能を重視",
+    title: "通勤目的の比較検討",
+    color: "#e11d48",
+    colorBg: "bg-[#e11d48]",
+    nodes: ["電動自転車", "電動自転車 おすすめ", "電動自転車 おすすめ 通勤"]
+  },
+  {
+    persona: "PERSONA B",
+    focus: "価格・コスパ重視",
+    title: "低価格・型落ち志向",
+    color: "#db2777",
+    colorBg: "bg-[#db2777]",
+    nodes: ["電動自転車", "電動自転車 安い", "電動自転車 安い 型落ち"]
+  },
+  {
+    persona: "PERSONA C",
+    focus: "公的支援を確認",
+    title: "補助金 / 自治体別",
+    color: "#9333ea",
+    colorBg: "bg-[#9333ea]",
+    nodes: ["電動自転車", "電動自転車 補助金", "電動自転車 補助金 東京都 2025"]
+  }
 ];
 
-const searchBranches = [
-  { lvl: "L1", q: "Galaxy AI 機能 一覧", vol: "14.2k / mo" },
-  { lvl: "L2", q: "Galaxy AI バッテリー 持ち", vol: "6.8k / mo" },
-  { lvl: "L3", q: "Galaxy AI 発熱 ゲーム", vol: "2.4k / mo" },
-  { lvl: "L2", q: "Galaxy AI vs iPhone Apple Intelligence", vol: "9.1k / mo" },
-  { lvl: "L3", q: "Galaxy AI 翻訳 精度 比較", vol: "3.6k / mo" },
+const comparisonFactors = [
+  { title: "推奨型の比較軸", details: "走行距離 / バッテリー寿命 / 乗り心地 / 収納性" },
+  { title: "価格型の比較軸", details: "価格 / セール時期 / 在庫処分 / コスパ" },
+  { title: "補助金型の比較軸", details: "対象条件 / 自治体 / 申請期限 / 年度" }
 ];
 
-const frameworkRows = [
+const intentNodes = [
   {
-    num: "F·01",
-    title: "Question Intelligence",
-    meta: "CDJ · QUESTION CLUSTERING",
-    desc:
-      "消費者の購買意思決定ジャーニーから AI に問われる質問を構造化。 CEP に紐づくクラスタを生成し、コンテンツが答えるべき問いを定義します。",
-    bullets: ["CDJ 質問生成", "CEP マッピング", "Question Cluster", "Search Volume 統合"],
-    viz: "network",
+    id: "01",
+    label: "入門者・Beginner",
+    desc: "概念を調べ始めたばかり。ガイド・用語解説を求める。",
+    pct: "42",
   },
   {
-    num: "F·02",
-    title: "Semantic GAP 分析",
-    meta: "12-POINT EVAL · SIMILARITY",
-    desc:
-      "質問と既存コンテンツのセマンティック距離を 12 項目で評価。「答えられていない問い」を特定し、優先度付きの改善ロードマップを提示します。",
-    bullets: ["12点評価モデル", "GAP マトリクス", "Semantic Similarity", "改善優先度"],
-    viz: "matrix",
+    id: "02",
+    label: "実務者・Practitioner",
+    desc: "社内で自ら実行する。チェックリストや実行ノウハウを探す。",
+    pct: "33",
   },
   {
-    num: "F·03",
-    title: "GEO コンテンツ エンジニアリング",
-    meta: "PASSAGE · FAQ STRUCTURE",
-    desc:
-      "Passage 単位で AI に引用される構造を設計。 質問形ヘッダー、簡潔な定義、補強データ、FAQ・Schema までを統合した GEO Writing 指針で実装します。",
-    bullets: ["Passage Optimization", "FAQ / Schema", "質問形ヘッダー", "GEO Writing"],
-    viz: "doc",
+    id: "03",
+    label: "発注検討者・Decision-maker",
+    desc: "外部代理店を比較検討中。成果と料金を見る。",
+    pct: "25",
+  },
+];
+
+const cepCards = [
+  {
+    id: "CEP 01",
+    icon: Dumbbell,
+    accent: "#1452ff",
+    tint: "rgba(20, 82, 255, 0.10)",
+    scenario: "ジムを始めたばかりの初心者で、何を摂ればいいか分からず、初めて製品を選ぶ場面",
+    factor: "目的に合うタンパク源の選定 / 水溶性 / 初心者向け糖質・脂質バランス",
+    vol: "971",
   },
   {
-    num: "F·04",
-    title: "AI Visibility Monitoring",
-    meta: "VISIBILITY · CITATION · TRAFFIC",
-    desc:
-      "ChatGPT / Gemini / Copilot / Perplexity をまたいで、ブランド露出と引用構造を継続計測。改善ループを回すための運用ダッシュボードを提供します。",
-    bullets: ["Brand Visibility", "AI Traffic 分析", "Citation Tracking", "Monthly Report"],
-    viz: "chart",
+    id: "CEP 02",
+    icon: Flame,
+    accent: "#db2777",
+    tint: "rgba(219, 39, 119, 0.10)",
+    scenario: "運動後に空腹だが食事がすぐ取れない時、近場で「とりあえずタンパク質」が欲しい場面",
+    factor: "すぐ飲める RTD ドリンク / 1回分小分けパッケージ / 低糖質ブレンド",
+    vol: "868",
   },
-] as const;
+  {
+    id: "CEP 03",
+    icon: Backpack,
+    accent: "#9333ea",
+    tint: "rgba(147, 51, 234, 0.10)",
+    scenario: "ジム → 会社 → 家の移動が多く、持ち歩きながら「取り出してすぐ」飲みたい日",
+    factor: "蓋付きカップ / 個別パウチ / バッグに入る軽量・コンパクト設計",
+    vol: "606",
+  },
+];
 
 function SectionKicker({
   overline,
@@ -111,104 +138,6 @@ function SectionKicker({
     <div className={`flex items-center gap-6 text-[11px] tracking-[0.3em] uppercase ${dark ? "text-white/55" : "text-[#6b6b70]"}`}>
       <span>{overline}</span>
       <span className={dark ? "text-white" : "text-[#0b0b0e]"}>{label}</span>
-    </div>
-  );
-}
-
-function DiagramCard({ kind }: { kind: "network" | "matrix" | "doc" | "chart" }) {
-  if (kind === "network") {
-    return (
-      <div className="relative flex h-full min-h-[240px] items-center justify-center overflow-hidden rounded-[18px] border border-black/10 bg-[#f3f0e8]">
-        <div className="absolute left-4 top-4 text-[10px] tracking-[0.24em] text-black/30">F · 01</div>
-        <div className="relative h-[170px] w-[170px] rounded-full border border-[#1452ff]">
-          <span className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#1452ff]" />
-          <span className="absolute left-[16%] top-[18%] h-4 w-4 rounded-full border border-[#1452ff] bg-[#dbe4ff] shadow-[0_0_20px_rgba(20,82,255,0.35)]" />
-          <span className="absolute right-[16%] top-[18%] h-4 w-4 rounded-full border border-[#1452ff] bg-[#dbe4ff] shadow-[0_0_20px_rgba(20,82,255,0.35)]" />
-          <span className="absolute left-[9%] bottom-[18%] h-4 w-4 rounded-full border border-[#1452ff] bg-[#dbe4ff] shadow-[0_0_20px_rgba(20,82,255,0.35)]" />
-          <span className="absolute right-[10%] bottom-[18%] h-4 w-4 rounded-full border border-[#1452ff] bg-[#dbe4ff] shadow-[0_0_20px_rgba(20,82,255,0.35)]" />
-          <span className="absolute bottom-[4%] left-1/2 h-4 w-4 -translate-x-1/2 rounded-full border border-[#1452ff] bg-[#dbe4ff] shadow-[0_0_20px_rgba(20,82,255,0.35)]" />
-          <span className="absolute left-1/2 top-[20%] h-px w-[60%] -translate-x-1/2 bg-[#1452ff]/60" />
-          <span className="absolute left-1/2 top-[20%] h-[60%] w-px -translate-x-1/2 bg-[#1452ff]/60" />
-          <span className="absolute left-[24%] top-[26%] h-px w-[32%] -rotate-[36deg] bg-[#1452ff]/60" />
-          <span className="absolute right-[24%] top-[26%] h-px w-[32%] rotate-[36deg] bg-[#1452ff]/60" />
-          <span className="absolute left-[24%] bottom-[28%] h-px w-[32%] rotate-[36deg] bg-[#1452ff]/60" />
-          <span className="absolute right-[24%] bottom-[28%] h-px w-[32%] -rotate-[36deg] bg-[#1452ff]/60" />
-        </div>
-      </div>
-    );
-  }
-
-  if (kind === "matrix") {
-    return (
-      <div className="relative flex h-full min-h-[240px] items-center justify-center overflow-hidden rounded-[18px] border border-black/10 bg-[#f3f0e8]">
-        <div className="absolute left-4 top-4 text-[10px] tracking-[0.24em] text-black/30">F · 02</div>
-        <div className="grid grid-cols-6 gap-1.5">
-          {[
-            [1, 2, 3, 4, 5, 0],
-            [4, 5, 4, 5, 3, 0],
-            [5, 4, 3, 2, 0, 2],
-            [3, 2, 0, 1, 4, 5],
-          ].flatMap((row, rowIdx) =>
-            row.map((value, colIdx) => (
-              <div
-                key={`${rowIdx}-${colIdx}`}
-                className="h-9 w-9"
-                style={{
-                  backgroundColor:
-                    value === 0
-                      ? "#efede5"
-                      : `rgba(20,82,255,${0.15 + value * 0.12})`,
-                }}
-              />
-            ))
-          )}
-        </div>
-        <div className="absolute bottom-5 left-6 text-[9px] tracking-[0.32em] text-black/35">SCORE 0 → 12</div>
-      </div>
-    );
-  }
-
-  if (kind === "doc") {
-    return (
-      <div className="relative flex h-full min-h-[240px] items-center justify-center overflow-hidden rounded-[18px] border border-black/10 bg-[#f3f0e8]">
-        <div className="absolute left-4 top-4 text-[10px] tracking-[0.24em] text-black/30">F · 03</div>
-        <div className="w-[72%] space-y-3">
-          <div className="h-3 w-[85%] bg-black" />
-          <div className="h-1.5 w-[92%] bg-black/20" />
-          <div className="h-1.5 w-[78%] bg-black/20" />
-          <div className="h-1.5 w-[83%] bg-black/20" />
-          <div className="h-1.5 w-[90%] bg-[#1452ff]" />
-          <div className="h-3 w-[58%] bg-[#1452ff]" />
-          <div className="h-1.5 w-[86%] bg-black/20" />
-          <div className="rounded border border-dashed border-[#1452ff] px-2 py-1 text-[9px] tracking-[0.28em] text-[#1452ff]">
-            PASSAGE · CITATION-READY
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="relative flex h-full min-h-[240px] items-center justify-center overflow-hidden rounded-[18px] border border-black/10 bg-[#f3f0e8]">
-      <div className="absolute left-4 top-4 text-[10px] tracking-[0.24em] text-black/30">F · 04</div>
-      <div className="relative h-[180px] w-[250px]">
-        <div className="absolute inset-x-0 bottom-8 h-px bg-black/10" />
-        <div className="absolute inset-y-0 left-8 w-px bg-black/10" />
-        <div className="absolute inset-y-0 left-[36%] w-px bg-black/5" />
-        <div className="absolute inset-y-0 left-[64%] w-px bg-black/5" />
-        <svg viewBox="0 0 250 180" className="absolute inset-0 h-full w-full">
-          <defs>
-            <linearGradient id="why-chart-fill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#1452ff" stopOpacity="0.4" />
-              <stop offset="100%" stopColor="#1452ff" stopOpacity="0" />
-            </linearGradient>
-          </defs>
-          <path d="M 20 142 C 72 136, 88 110, 115 92 C 145 71, 186 40, 228 24" fill="none" stroke="#1452ff" strokeWidth="2.5" />
-          <path d="M 20 142 C 72 136, 88 110, 115 92 C 145 71, 186 40, 228 24 L 228 150 L 20 150 Z" fill="url(#why-chart-fill)" />
-          <circle cx="228" cy="24" r="7" fill="#dbe4ff" stroke="#1452ff" strokeWidth="2" />
-        </svg>
-        <div className="absolute bottom-4 left-5 text-[9px] tracking-[0.3em] text-black/30">JAN · DEC · 2025</div>
-      </div>
     </div>
   );
 }
@@ -321,7 +250,7 @@ export default function WhyAscentPage() {
             <div>
               <SectionKicker overline="W/01 — Technical Foundation" label="特許ベースの GEO 解析" />
               <div className="mt-5 h-px bg-black/10" />
-              <h2 className="mt-14 font-extrabold leading-[0.98] tracking-[-0.04em]">
+              <h2 className="mt-14 font-extrabold leading-[0.98] tracking-[-0.04em] text-[clamp(32px,4vw,48px)]">
                 AI が「なぜ引用するか」は、
                 <span className="text-blue-gradient">特許</span>
                 に書かれている。
@@ -381,6 +310,209 @@ export default function WhyAscentPage() {
         </div>
       </section>
 
+      {/* Section 2: W/02·A — SEARCH INTENT */}
+      <section className="relative overflow-hidden bg-[#0B0B0E] pt-24 pb-24 text-white md:pt-28 md:pb-28">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
+            backgroundSize: "64px 64px",
+            maskImage: "radial-gradient(ellipse 80% 70% at 50% 45%, black 28%, transparent 82%)",
+            opacity: 0.45,
+          }}
+        />
+        <div className="relative mx-auto max-w-[1280px] px-6 md:px-10">
+          <SectionKicker overline="W/02·A — INTENT INTELLIGENCE" label="意図 — SEARCH INTENT" dark />
+          <div className="mt-5 h-px bg-white/10" />
+
+          <div className="mt-14 grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
+            <div>
+              <h2 className="font-extrabold leading-[1.2] tracking-[-0.04em] text-[clamp(32px,3vw,44px)]">
+                キーワードの背後にいる
+                <br />
+                <span className="text-[#1452ff] pr-1">「真の顧客」</span>を見つめる。
+              </h2>
+              <div className="mt-16">
+                <h3 className="text-[22px] md:text-[26px] font-bold leading-[1.3] tracking-[-0.02em]">
+                  同じ質問の中に、
+                  <br />
+                  複数の顧客が混在している。
+                </h3>
+                <p className="mt-6 text-[16px] md:text-[18px] leading-[1.75] text-white/68">
+                  Ascentが開発した「リスニングマインド」ソリューションを活用し、キーワードの背後に隠れた潜在顧客を自動で分類します。例えば「SEO対策」というキーワードの中には、概念を調べ始めた <strong className="text-white font-medium">入門者</strong>、社内で実行する <strong className="text-white font-medium">実務者</strong>、外部に発注を検討する <strong className="text-white font-medium">発注検討者</strong> が混在しています。
+                </p>
+                <p className="mt-5 text-[16px] md:text-[18px] leading-[1.75] text-white/68">
+                  つまり、単にキーワードをターゲットにするのではなく、ユーザーの <strong className="text-white font-medium">Search Intent（検索意図）</strong> を正確に把握した上で、最適な GEO 設計を行います。
+                </p>
+              </div>
+            </div>
+
+            <div className="rounded-[22px] border border-white/8 bg-[#101014] p-6 md:p-8 flex flex-col justify-between relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-8">
+                <span className="rounded-full border border-[#1452ff]/30 text-[#1452ff] bg-[#1452ff]/10 px-3 py-1 text-[10px] tracking-[0.15em]">
+                  REAL-DATA SAMPLE
+                </span>
+              </div>
+              <div className="font-mono text-[11px] tracking-[0.22em] text-white/45 uppercase">
+                SINGLE KEYWORD · 3 INTENTS
+              </div>
+
+              <div className="mt-12 flex items-center h-full relative z-10 pb-6 md:pb-0">
+                {/* Left side Keyword */}
+                <div className="w-[120px] md:w-[140px] shrink-0">
+                  <div className="text-[10px] font-mono tracking-[0.1em] text-white/40 mb-2">MONTHLY AVG.</div>
+                  <div className="text-[20px] font-bold tracking-[-0.02em] mb-1">「SEO対策」</div>
+                  <div className="text-[28px] md:text-[32px] font-bold text-[#1452ff] tracking-tight leading-none mb-2">27,466</div>
+                  <div className="text-[9px] font-mono tracking-[0.15em] text-white/30">SEARCHES / MO</div>
+                </div>
+
+                {/* Connecting lines - SVG */}
+                <div className="absolute left-[110px] md:left-[130px] right-[200px] md:right-[240px] top-0 bottom-0 pointer-events-none hidden sm:block z-0">
+                  <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
+                    <path d="M0,50 C50,50 50,15 100,15" fill="none" stroke="#1452ff" strokeWidth="1.5" className="opacity-80" />
+                    <path d="M0,50 L100,50" fill="none" stroke="#1452ff" strokeWidth="1.5" className="opacity-80" />
+                    <path d="M0,50 C50,50 50,85 100,85" fill="none" stroke="#1452ff" strokeWidth="1.5" className="opacity-80" />
+                    <circle cx="0" cy="50" r="2" fill="#1452ff" />
+                    <circle cx="100" cy="15" r="2" fill="#1452ff" />
+                    <circle cx="100" cy="50" r="2" fill="#1452ff" />
+                    <circle cx="100" cy="85" r="2" fill="#1452ff" />
+                  </svg>
+                </div>
+
+                {/* Right side Nodes */}
+                <div className="flex-1 flex flex-col gap-4 pl-4 sm:pl-16 md:pl-20 relative z-10">
+                  {intentNodes.map((node) => (
+                    <div key={node.id} className="rounded-xl border border-white/10 bg-[#16161a] p-4 flex gap-3 md:gap-4 items-center">
+                      <div className="w-6 h-6 rounded-full border border-[#1452ff] flex items-center justify-center shrink-0">
+                        <span className="text-[9px] text-[#1452ff] font-mono">{node.id}</span>
+                      </div>
+                      <div className="flex-1">
+                        <div className="font-bold text-[13px] md:text-[14px] leading-tight mb-1">{node.label}</div>
+                        <div className="text-[11px] text-white/50 leading-snug">{node.desc}</div>
+                      </div>
+                      <div className="text-[20px] md:text-[22px] font-bold text-white shrink-0">
+                        {node.pct}<span className="text-[12px] font-normal text-white/50 ml-0.5">%</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: W/02·C — CEP × GEO */}
+      <section className="bg-[#FAFAF7] py-24 md:py-28">
+        <div className="mx-auto max-w-[1280px] px-6 md:px-10">
+          <SectionKicker overline="W/02·C — INTENT INTELLIGENCE" label="文脈 — CEP × GEO" />
+          <div className="mt-5 h-px bg-black/10" />
+
+          <div className="mt-14 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+            <h2 className="font-extrabold leading-[1.2] tracking-[-0.04em] text-[clamp(32px,3vw,44px)]">
+              人がAIに問うのは、
+              <br />
+              キーワードではなく
+              <span className="text-[#1452ff] mx-1">CEP</span>
+              である。
+            </h2>
+            <p className="max-w-[34ch] text-[16px] md:text-[18px] leading-[1.75] text-[#4e4e51] lg:justify-self-end pt-4">
+              AI Overview も生成型検索も、質問の背景に応じて回答を組み立てる。文脈のないコンテンツは、もはや引用も推奨もされません。
+            </p>
+          </div>
+
+          <div className="mt-10">
+            <div className="max-w-[800px]">
+              <h3 className="text-[22px] md:text-[26px] font-bold leading-[1.3] tracking-[-0.02em]">
+                消費者の「生活文脈(CEP)」に
+                <br />
+                基づくGEO施策が可能。
+              </h3>
+              <p className="mt-6 text-[15px] md:text-[16px] leading-[1.75] text-[#4e4e51]">
+                CEP(<strong className="font-semibold text-black">Category Entry Point</strong>) — 消費者がブランドを思い浮かべる<strong className="font-semibold text-black">状況・悩み・購買判断要素</strong>。リスニングマインドはここまで掘り下げて、AI に引用される条件を構造化します。
+              </p>
+              <p className="mt-5 text-[15px] md:text-[16px] leading-[1.75] text-[#4e4e51]">
+                シチュエーション・心理状態・購買タイミングを整理し、AIが「状況」に応じて推奨できる<strong className="font-semibold text-black">CEPベースの質問と対応コンテンツ</strong>を設計します。GEO の観点で極めて有利な施策が可能です。
+              </p>
+            </div>
+
+            <div className="mt-10">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {cepCards.map((card) => (
+                  <div
+                    key={card.id}
+                    className="relative overflow-hidden rounded-[20px] border border-white/10 bg-[#101014] p-6 shadow-[0_18px_44px_-24px_rgba(0,0,0,0.65)] flex flex-col justify-between transition-transform duration-200 hover:-translate-y-0.5"
+                  >
+                    <div
+                      aria-hidden="true"
+                      className="absolute inset-x-0 top-0 h-1.5"
+                      style={{ background: card.accent }}
+                    />
+                    <div
+                      aria-hidden="true"
+                      className="absolute right-[-24px] top-[-24px] h-32 w-32 rounded-full blur-2xl opacity-70"
+                      style={{ background: card.tint }}
+                    />
+                    <div>
+                      <div className="mb-5 flex items-start justify-between gap-4">
+                        <div
+                          className="inline-flex items-center gap-2 rounded-full border px-3 py-1"
+                          style={{
+                            borderColor: `${card.accent}55`,
+                            backgroundColor: "rgba(255,255,255,0.03)",
+                          }}
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: card.accent }} />
+                          <span className="text-[10px] font-mono tracking-[0.15em]" style={{ color: card.accent }}>
+                            {card.id}
+                          </span>
+                        </div>
+                        <div
+                          className="grid h-12 w-12 place-items-center rounded-2xl border shadow-[0_10px_24px_-12px_rgba(0,0,0,0.75)]"
+                          style={{
+                            backgroundColor: card.tint,
+                            borderColor: card.accent,
+                            color: card.accent,
+                          }}
+                        >
+                          <card.icon size={22} strokeWidth={2.2} />
+                        </div>
+                      </div>
+                      <p className="mt-5 text-[14px] md:text-[15px] leading-[1.6] font-medium text-white/92">
+                        {card.scenario}
+                      </p>
+                      <div
+                        className="mt-6 rounded-xl border p-4"
+                        style={{
+                          backgroundColor: "rgba(255,255,255,0.03)",
+                          borderColor: `${card.accent}33`,
+                        }}
+                      >
+                        <div className="text-[9px] font-mono tracking-[0.15em] mb-2 uppercase" style={{ color: card.accent }}>
+                          KEY BUYING FACTOR
+                        </div>
+                        <div className="text-[13px] leading-[1.5] text-white/68">
+                          {card.factor}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mt-8 flex items-end justify-between border-t border-white/10 pt-4">
+                      <span className="text-[10px] font-mono tracking-[0.15em] text-white/45">関連 KW 検索量</span>
+                      <span className="text-[20px] font-bold leading-none" style={{ color: card.accent }}>
+                        {card.vol}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: W/02·B — SEARCH PATH */}
       <section className="relative overflow-hidden bg-[#0B0B0E] py-24 text-white md:py-28">
         <div
           aria-hidden="true"
@@ -393,144 +525,118 @@ export default function WhyAscentPage() {
             opacity: 0.45,
           }}
         />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 50% 60% at 80% 20%, rgba(20,82,255,0.20), transparent 60%), radial-gradient(ellipse 60% 50% at 20% 80%, rgba(20,82,255,0.10), transparent 60%)",
-          }}
-        />
-
         <div className="relative mx-auto max-w-[1280px] px-6 md:px-10">
-          <SectionKicker overline="W/02 — Intent Intelligence" label="リスニングマインド" dark />
+          <SectionKicker overline="W/02·B — INTENT INTELLIGENCE" label="経路 — SEARCH PATH" dark />
           <div className="mt-5 h-px bg-white/10" />
 
-          <div className="mt-14 grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
-            <div>
-              <h2 className="font-extrabold leading-[0.98] tracking-[-0.04em]">
-                実消費者の質問データから、
-                <br />
-                GEO を逆算する。
-              </h2>
-              <p className="mt-8 max-w-[34ch] text-[18px] leading-[1.75] text-white/68">
-                キーワードプランナーや SEO ツールでは見えない、「実際の消費者の問い」。リスニングマインドは数百万件の実検索ログ・SNS・コミュニティから消費者インテントを抽出します。
-              </p>
-              <p className="mt-6 max-w-[34ch] text-[18px] leading-[1.75] text-white/68">
-                CEP(Category Entry Point) と Search Path に基づき、AI が答えるべき問いの構造を可視化。GEO コンテンツの設計図になります。
-              </p>
-              <ul className="mt-8 space-y-4">
-                {listeningBullets.map((bullet) => (
-                  <li key={bullet} className="flex gap-3 text-[17px] leading-[1.5] text-white">
-                    <span className="mt-2 h-2 w-2 shrink-0 bg-[#1452ff]" />
-                    <span>{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="mt-14 max-w-[840px]">
+            <h2 className="font-extrabold leading-[1.2] tracking-[-0.04em] text-[clamp(32px,3vw,44px)]">
+              検索経路に基づき、GEOに極めて有利な連続的質問クラスターを設計
+            </h2>
+          </div>
 
-            <div className="rounded-[22px] border border-white/8 bg-[#101014] p-6 md:p-8">
-              <div className="font-mono text-[11px] tracking-[0.22em] text-white/45 uppercase">
-                Search Path · Galaxy AI
+          <div className="mt-10 rounded-[22px] border border-white/8 bg-[#101014] p-6 md:p-10 overflow-x-auto">
+            <div className="min-w-[850px]">
+              {/* Header */}
+              <div className="flex justify-between items-center pb-8 border-b border-white/10">
+                <div className="font-mono text-[12px] tracking-[0.2em] text-white/50 uppercase">
+                  SEARCH JOURNEY — 「電動自転車」 MARKET
+                </div>
+                <div className="flex items-center gap-6 text-[11px] tracking-[0.1em] text-white/60">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#e11d48]"></span>推奨型 / RECOMMENDATION
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#db2777]"></span>価格比較型 / PRICE-DRIVEN
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#9333ea]"></span>補助金型 / SUBSIDY-DRIVEN
+                  </div>
+                </div>
               </div>
-              <div className="mt-7 text-[15px] tracking-[0.24em] text-white/50">— Seed Query</div>
-              <div className="mt-3 text-[clamp(22px,2vw,32px)] font-bold tracking-[-0.03em]">&quot;Galaxy AI とは&quot;</div>
 
-              <div className="mt-8 space-y-4">
-                {searchBranches.map((branch, index) => (
-                  <div
-                    key={`${branch.lvl}-${branch.q}`}
-                    className={`rounded-xl border px-4 py-4 ${
-                      index === 0 ? "border-white/10 bg-white/[0.03]" : "border-white/8 bg-white/[0.02]"
-                    } ${index > 0 ? "ml-4" : ""} ${index > 2 ? "ml-8" : ""}`}
-                  >
-                    <div className="flex items-center gap-4">
-                      <span className="font-mono text-[10px] tracking-[0.24em] text-[#1452ff]">{branch.lvl}</span>
-                      <span className="flex-1 text-[15px] font-medium text-white">{branch.q}</span>
-                      <span className="font-mono text-[11px] tracking-[0.14em] text-white/38">{branch.vol}</span>
+              {/* Diagram */}
+              <div className="py-12 space-y-12">
+                {searchJourneys.map((journey) => (
+                  <div key={journey.persona} className="flex items-center gap-8">
+                    {/* Persona Column */}
+                    <div className="w-[220px] shrink-0">
+                      <div className="text-[11px] text-white/40 font-mono tracking-[0.1em] mb-1">
+                        {journey.persona} · {journey.focus}
+                      </div>
+                      <div className="text-[16px] font-bold text-white/90">
+                        {journey.title}
+                      </div>
+                    </div>
+
+                    <div className="w-px h-12 bg-white/10 shrink-0" />
+
+                    {/* Nodes Column */}
+                    <div className="flex-1 flex items-center gap-4">
+                      {journey.nodes.map((node, i) => (
+                        <Fragment key={node}>
+                          <div
+                            className={`rounded-full px-6 py-3 text-[14px] font-bold shadow-lg ${
+                              i === journey.nodes.length - 1
+                                ? `${journey.colorBg} text-white`
+                                : "bg-[#1c1c22] border border-white/10 text-white/80"
+                            }`}
+                          >
+                            {node}
+                          </div>
+                          {i < journey.nodes.length - 1 && (
+                            <div className="text-white/30 text-[14px]">→</div>
+                          )}
+                        </Fragment>
+                      ))}
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-8 grid grid-cols-3 gap-4 border-t border-white/8 pt-5 font-mono text-[10px] tracking-[0.2em] text-white/35">
-                <div>NODES · 1,284</div>
-                <div>DEPTH · 4 LEVELS</div>
-                <div>UPDATED · 2026.05</div>
+              {/* Factors */}
+              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/10 border-dashed">
+                {comparisonFactors.map((factor) => (
+                  <div key={factor.title}>
+                    <div className="text-[15px] font-bold text-white/90 mb-2">{factor.title}</div>
+                    <div className="text-[13px] text-white/50 leading-relaxed">{factor.details}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section id="framework" className="bg-[#FAFAF7] pt-24 pb-12 md:pt-28 md:pb-14">
-        <div className="mx-auto max-w-[1280px] px-6 md:px-10">
-          <SectionKicker overline="W/03 — Methodology Detail" label="GEO Framework — 4 本柱" />
-          <div className="mt-5 h-px bg-black/10" />
-
-          <div className="mt-14 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-            <h2 className="font-extrabold leading-[0.98] tracking-[-0.04em]">
-              診断、分析、設計、計測。
-              <br />
-              <span className="text-blue-gradient">4本</span>
-              を有機的に回す。
-            </h2>
-            <p className="max-w-[34ch] text-[18px] leading-[1.75] text-[#4e4e51] lg:justify-self-end">
-              単発の施策では AI 検索に勝てない。 Question から Visibility まで一気通貫で回す 循環型フレームワークが Ascent の方法論です。
+          <div className="mt-8 max-w-[840px] space-y-5">
+            <p className="text-[15px] md:text-[16px] leading-[1.75] text-white/70">
+              Ascentはユーザーがそのキーワードに到達する前後で、どのような検索行動を続けているか（Search Path）を分析します。例えば、「電動自転車」の検索経路には、「電動自転車 → 電動自転車 おすすめ → 電動自転車 おすすめ 通勤」のように通勤目的で深掘りしていく流れもあれば、「電動自転車 → 電動自転車 安い → 電動自転車 安い 型落ち」のように価格重視で遷移する流れもあります。また、「電動自転車 → 電動自転車 補助金 → 電動自転車 補助金 東京都 2025」のように、購入前に公的支援情報を確認する経路も存在します。
+            </p>
+            <p className="text-[15px] md:text-[16px] leading-[1.75] text-white/70">
+              GEO施策において重要なポイントは、「質問クラスター」、つまり単一の質問ではなく、連続するユーザーの質問をあらかじめ予測し、コンテンツで対応できているかどうかです。Ascentは検索経路に基づき、GEOに極めて有利な連続的質問クラスターを設計します。
             </p>
           </div>
-
-          <div className="mt-16 divide-y divide-black/10 border-t border-black/10">
-            {frameworkRows.map((row) => (
-              <div
-                key={row.num}
-                className="grid gap-8 py-8 lg:grid-cols-[72px_220px_1fr_280px] lg:gap-10"
-              >
-                <div className="font-mono text-[13px] tracking-[0.2em] text-[#1452ff]">{row.num}</div>
-                <div>
-                  <h3 className="max-w-[10ch] text-[24px] font-bold leading-[1.1] tracking-[-0.03em] md:text-[28px]">
-                    {row.title}
-                  </h3>
-                  <div className="mt-3 font-mono text-[12px] tracking-[0.14em] text-[#7b7b82] uppercase">
-                    {row.meta}
-                  </div>
-                </div>
-                <div>
-                  <p className="max-w-[40ch] text-[17px] leading-[1.7] text-[#4e4e51]">{row.desc}</p>
-                  <div className="mt-6 grid grid-cols-1 gap-3 md:grid-cols-2">
-                    {row.bullets.map((bullet) => (
-                      <div key={bullet} className="flex items-center gap-3 text-[16px] text-[#0b0b0e]">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#1452ff]" />
-                        <span>{bullet}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <DiagramCard kind={row.viz} />
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
-      <CTASection
-        kicker="CONTACT — START WITH A FREE AUDIT"
-        title={
-          <>
-            AI 検索で、
-            <br />
-            あなたのブランドは
-            <br />
-            <span className="text-blue-gradient">何回引用されている</span>か？
-          </>
-        }
-        description="まずは無料診断で、現在の AI Visibility と Citation 構造を可視化します。所要 30 分のオンライン MTG から。"
-        primaryButton={{ href: "/contact", label: "相談する" }}
-        secondaryButtons={[
-          { href: "/whitepaper", label: "サービス資料をダウンロード" },
-          { href: getCalendarBookingHref(), label: "無料相談予約（Googleカレンダー）" },
-        ]}
-      />
+      <div className="mt-24 md:mt-32">
+        <CTASection
+          kicker="CONTACT — START WITH A FREE AUDIT"
+          title={
+            <>
+              AI 検索で、
+              <br />
+              あなたのブランドは
+              <br />
+              <span className="text-blue-gradient">何回引用されている</span>か？
+            </>
+          }
+          description="まずは無料診断で、現在の AI Visibility と Citation 構造を可視化します。所要 30 分のオンライン MTG から。"
+          primaryButton={{ href: "/contact", label: "相談する" }}
+          secondaryButtons={[
+            { href: "/whitepaper", label: "サービス資料をダウンロード" },
+            { href: getCalendarBookingHref(), label: "無料相談予約（Googleカレンダー）" },
+          ]}
+        />
+      </div>
     </div>
   );
 }
