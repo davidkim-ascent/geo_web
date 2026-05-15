@@ -618,20 +618,6 @@ export default async function WhyAscentPage() {
           <div className="mt-5 h-px bg-white/10" />
 
           <div className="mt-14 grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
-            <div className="max-w-[840px]">
-              <h2 className="font-extrabold leading-[1.2] tracking-[-0.04em] text-[clamp(32px,3vw,44px)]">
-                検索経路に基づき、GEOに極めて有利な連続的質問クラスターを設計
-              </h2>
-              <div className="mt-8 space-y-5">
-                <p className="text-[15px] md:text-[16px] leading-[1.75] text-white/70">
-                  Ascentはユーザーがそのキーワードに到達する前後で、どのような検索行動を続けているか（Search Path）を分析します。例えば、「電動自転車」の検索経路には、「電動自転車 → 電動自転車 おすすめ → 電動自転車 おすすめ 通勤」のように通勤目的で深掘りしていく流れもあれば、「電動自転車 → 電動自転車 安い → 電動自転車 安い 型落ち」のように価格重視で遷移する流れもあります。また、「電動自転車 → 電動自転車 補助金 → 電動自転車 補助金 東京都 2025」のように、購入前に公的支援情報を確認する経路も存在します。
-                </p>
-                <p className="text-[15px] md:text-[16px] leading-[1.75] text-white/70">
-                  GEO施策において重要なポイントは、「質問クラスター」、つまり単一の質問ではなく、連続するユーザーの質問をあらかじめ予測し、コンテンツで対応できているかどうかです。Ascentは検索経路に基づき、GEOに極めて有利な連続的質問クラスターを設計します。
-                </p>
-              </div>
-            </div>
-
             <SearchPathPanel />
           </div>
         </div>
