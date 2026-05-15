@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Backpack, Dumbbell, Flame } from "lucide-react";
@@ -39,39 +38,6 @@ const patentItems = [
     desc: "Retrieval-Augmented Generation の検索フェーズで、Citation 候補が決まる。 Retrieval 段階の最適化が要。",
     src: "TECHNICAL · OPENAI / ANTHROPIC",
   },
-];
-
-const searchJourneys = [
-  {
-    persona: "PERSONA A",
-    focus: "走行性能を重視",
-    title: "通勤目的の比較検討",
-    color: "#e11d48",
-    colorBg: "bg-[#e11d48]",
-    nodes: ["電動自転車", "電動自転車 おすすめ", "電動自転車 おすすめ 通勤"]
-  },
-  {
-    persona: "PERSONA B",
-    focus: "価格・コスパ重視",
-    title: "低価格・型落ち志向",
-    color: "#db2777",
-    colorBg: "bg-[#db2777]",
-    nodes: ["電動自転車", "電動自転車 安い", "電動自転車 安い 型落ち"]
-  },
-  {
-    persona: "PERSONA C",
-    focus: "公的支援を確認",
-    title: "補助金 / 自治体別",
-    color: "#9333ea",
-    colorBg: "bg-[#9333ea]",
-    nodes: ["電動自転車", "電動自転車 補助金", "電動自転車 補助金 東京都 2025"]
-  }
-];
-
-const comparisonFactors = [
-  { title: "推奨型の比較軸", details: "走行距離 / バッテリー寿命 / 乗り心地 / 収納性" },
-  { title: "価格型の比較軸", details: "価格 / セール時期 / 在庫処分 / コスパ" },
-  { title: "補助金型の比較軸", details: "対象条件 / 自治体 / 申請期限 / 年度" }
 ];
 
 const intentNodes = [
@@ -125,6 +91,39 @@ const cepCards = [
   },
 ];
 
+const searchPathPaths = [
+  {
+    tag: "PATH 01",
+    name: "通勤目的",
+    en: "COMMUTE",
+    nodes: [
+      { kw: "電動自転車", prompt: "電動自転車って実際どう？普通の自転車と何が違うの？" },
+      { kw: "電動自転車 おすすめ", prompt: "通勤に使える電動自転車のおすすめを教えて。" },
+      { kw: "電動自転車 おすすめ 通勤", prompt: "毎日 10km の通勤で坂道もある場合、おすすめの電動自転車は？充電 1 回でどれくらい走れる？" },
+    ],
+  },
+  {
+    tag: "PATH 02",
+    name: "価格重視",
+    en: "PRICE",
+    nodes: [
+      { kw: "電動自転車", prompt: "電動自転車って高そうだけど、相場ってどれくらい？" },
+      { kw: "電動自転車 安い", prompt: "5 万円以下で買える電動自転車ってある？" },
+      { kw: "電動自転車 安い 型落ち", prompt: "型落ちでもいいから安く買える電動自転車、どこのメーカーがおすすめ？" },
+    ],
+  },
+  {
+    tag: "PATH 03",
+    name: "補助金確認",
+    en: "SUBSIDY",
+    nodes: [
+      { kw: "電動自転車", prompt: "電動自転車を買おうか迷ってる。何を見て決めればいい？" },
+      { kw: "電動自転車 補助金", prompt: "電動自転車って、自治体の補助金もらえる？" },
+      { kw: "電動自転車 補助金 東京都 2025", prompt: "東京都で 2025 年に電動自転車の補助金をもらうには？申請条件と上限額を教えて。" },
+    ],
+  },
+] as const;
+
 function SectionKicker({
   overline,
   label,
@@ -142,7 +141,96 @@ function SectionKicker({
   );
 }
 
-export default function WhyAscentPage() {
+function SearchPathPanel() {
+  const cur = searchPathPaths[2];
+
+  return (
+    <div className="rounded-[22px] border border-white/8 bg-[#0c0c11] p-4 shadow-[0_22px_60px_-32px_rgba(0,0,0,0.9)] md:p-5">
+      <div className="rounded-[18px] border border-white/10 bg-[#0b0b0e] p-4 md:p-5">
+        <div className="flex flex-col gap-3">
+          <div className="grid grid-cols-3 gap-2 rounded-full border border-white/10 bg-white/[0.03] p-1">
+            {searchPathPaths.map((p, i) => {
+              const active = i === 2;
+              return (
+                <div
+                  key={p.tag}
+                  className={`rounded-full px-4 py-3 text-left transition-colors ${active ? "bg-[#1452ff]" : "bg-transparent"}`}
+                >
+                  <div className="font-mono text-[9px] tracking-[0.22em] text-white/55">{p.tag}</div>
+                  <div className="mt-1 text-[13px] font-semibold tracking-[-0.01em] text-white">
+                    {p.name}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="rounded-[16px] border border-white/10 bg-white/[0.02] p-5">
+            <div className="mb-4 flex items-center justify-between border-b border-dashed border-white/12 pb-4 font-mono text-[10px] tracking-[0.18em] text-white/55">
+              <span className="text-[#1452ff]">SEARCH PATH · {cur.en}</span>
+              <span className="inline-flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#1452ff] shadow-[0_0_8px_#1452ff]" />
+                REAL-DATA SAMPLE
+              </span>
+            </div>
+
+            <div className="space-y-4">
+              {cur.nodes.map((node, index) => {
+                const depthClass =
+                  index === 0
+                    ? "border-white/10 bg-black/20"
+                    : index === 1
+                      ? "border-[#1452ff]/25 bg-[#1452ff]/6"
+                      : "border-[#1452ff]/45 bg-[#1452ff]/14";
+
+                return (
+                  <div key={node.kw}>
+                    <div className={`rounded-[12px] border p-4 md:p-[18px] ${depthClass}`}>
+                      <div className="flex items-center justify-between font-mono text-[10px] tracking-[0.18em] text-white/60">
+                        <span className="text-[#1452ff]">STEP {String(index + 1).padStart(2, "0")}</span>
+                        <span>DEPTH · L{index + 1}</span>
+                      </div>
+                      <div className="mt-3 text-[22px] font-bold leading-[1.2] tracking-[-0.02em] text-white">
+                        {node.kw}
+                      </div>
+                      <div className="mt-4 flex flex-col gap-2">
+                        <span className="font-mono text-[9px] tracking-[0.2em] text-white/55">USER PROMPT</span>
+                        <div className="rounded-[10px] border border-white/10 bg-white/[0.04] px-4 py-3 text-[14px] italic leading-[1.6] text-white/92">
+                          <span className="font-mono not-italic text-[#1452ff]">&ldquo;</span>
+                          {node.prompt}
+                        </div>
+                      </div>
+                    </div>
+                    {index < cur.nodes.length - 1 && (
+                      <div className="flex flex-col items-center gap-1 py-3">
+                        <span className="h-1 w-1 rounded-full bg-[#1452ff] opacity-50" />
+                        <span className="h-1 w-1 rounded-full bg-[#1452ff] opacity-50" />
+                        <span className="h-1 w-1 rounded-full bg-[#1452ff] opacity-50" />
+                        <span className="font-mono text-[12px] leading-none text-[#1452ff]">↓</span>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="mt-4 flex items-center justify-between border-t border-dashed border-white/12 pt-4 font-mono text-[10px] tracking-[0.16em] text-white/55">
+              <span>SEED · 電動自転車</span>
+              <span>
+                STEPS · <b className="font-sans text-[13px] font-semibold text-white">3</b>
+              </span>
+              <span>
+                CLUSTER · <b className="font-sans text-[13px] font-semibold text-white">{cur.name}</b>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default async function WhyAscentPage() {
   return (
     <div className="bg-[#FAFAF7] text-[#0B0B0E]">
       <section className="relative overflow-hidden bg-[#0B0B0E] text-white py-12 lg:py-16">
@@ -529,90 +617,22 @@ export default function WhyAscentPage() {
           <SectionKicker overline="W/02·B — INTENT INTELLIGENCE" label="経路 — SEARCH PATH" dark />
           <div className="mt-5 h-px bg-white/10" />
 
-          <div className="mt-14 max-w-[840px]">
-            <h2 className="font-extrabold leading-[1.2] tracking-[-0.04em] text-[clamp(32px,3vw,44px)]">
-              検索経路に基づき、GEOに極めて有利な連続的質問クラスターを設計
-            </h2>
-          </div>
-
-          <div className="mt-10 rounded-[22px] border border-white/8 bg-[#101014] p-6 md:p-10 overflow-x-auto">
-            <div className="min-w-[850px]">
-              {/* Header */}
-              <div className="flex justify-between items-center pb-8 border-b border-white/10">
-                <div className="font-mono text-[12px] tracking-[0.2em] text-white/50 uppercase">
-                  SEARCH JOURNEY — 「電動自転車」 MARKET
-                </div>
-                <div className="flex items-center gap-6 text-[11px] tracking-[0.1em] text-white/60">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#e11d48]"></span>推奨型 / RECOMMENDATION
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#db2777]"></span>価格比較型 / PRICE-DRIVEN
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#9333ea]"></span>補助金型 / SUBSIDY-DRIVEN
-                  </div>
-                </div>
-              </div>
-
-              {/* Diagram */}
-              <div className="py-12 space-y-12">
-                {searchJourneys.map((journey) => (
-                  <div key={journey.persona} className="flex items-center gap-8">
-                    {/* Persona Column */}
-                    <div className="w-[220px] shrink-0">
-                      <div className="text-[11px] text-white/40 font-mono tracking-[0.1em] mb-1">
-                        {journey.persona} · {journey.focus}
-                      </div>
-                      <div className="text-[16px] font-bold text-white/90">
-                        {journey.title}
-                      </div>
-                    </div>
-
-                    <div className="w-px h-12 bg-white/10 shrink-0" />
-
-                    {/* Nodes Column */}
-                    <div className="flex-1 flex items-center gap-4">
-                      {journey.nodes.map((node, i) => (
-                        <Fragment key={node}>
-                          <div
-                            className={`rounded-full px-6 py-3 text-[14px] font-bold shadow-lg ${
-                              i === journey.nodes.length - 1
-                                ? `${journey.colorBg} text-white`
-                                : "bg-[#1c1c22] border border-white/10 text-white/80"
-                            }`}
-                          >
-                            {node}
-                          </div>
-                          {i < journey.nodes.length - 1 && (
-                            <div className="text-white/30 text-[14px]">→</div>
-                          )}
-                        </Fragment>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Factors */}
-              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/10 border-dashed">
-                {comparisonFactors.map((factor) => (
-                  <div key={factor.title}>
-                    <div className="text-[15px] font-bold text-white/90 mb-2">{factor.title}</div>
-                    <div className="text-[13px] text-white/50 leading-relaxed">{factor.details}</div>
-                  </div>
-                ))}
+          <div className="mt-14 grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
+            <div className="max-w-[840px]">
+              <h2 className="font-extrabold leading-[1.2] tracking-[-0.04em] text-[clamp(32px,3vw,44px)]">
+                検索経路に基づき、GEOに極めて有利な連続的質問クラスターを設計
+              </h2>
+              <div className="mt-8 space-y-5">
+                <p className="text-[15px] md:text-[16px] leading-[1.75] text-white/70">
+                  Ascentはユーザーがそのキーワードに到達する前後で、どのような検索行動を続けているか（Search Path）を分析します。例えば、「電動自転車」の検索経路には、「電動自転車 → 電動自転車 おすすめ → 電動自転車 おすすめ 通勤」のように通勤目的で深掘りしていく流れもあれば、「電動自転車 → 電動自転車 安い → 電動自転車 安い 型落ち」のように価格重視で遷移する流れもあります。また、「電動自転車 → 電動自転車 補助金 → 電動自転車 補助金 東京都 2025」のように、購入前に公的支援情報を確認する経路も存在します。
+                </p>
+                <p className="text-[15px] md:text-[16px] leading-[1.75] text-white/70">
+                  GEO施策において重要なポイントは、「質問クラスター」、つまり単一の質問ではなく、連続するユーザーの質問をあらかじめ予測し、コンテンツで対応できているかどうかです。Ascentは検索経路に基づき、GEOに極めて有利な連続的質問クラスターを設計します。
+                </p>
               </div>
             </div>
-          </div>
 
-          <div className="mt-8 max-w-[840px] space-y-5">
-            <p className="text-[15px] md:text-[16px] leading-[1.75] text-white/70">
-              Ascentはユーザーがそのキーワードに到達する前後で、どのような検索行動を続けているか（Search Path）を分析します。例えば、「電動自転車」の検索経路には、「電動自転車 → 電動自転車 おすすめ → 電動自転車 おすすめ 通勤」のように通勤目的で深掘りしていく流れもあれば、「電動自転車 → 電動自転車 安い → 電動自転車 安い 型落ち」のように価格重視で遷移する流れもあります。また、「電動自転車 → 電動自転車 補助金 → 電動自転車 補助金 東京都 2025」のように、購入前に公的支援情報を確認する経路も存在します。
-            </p>
-            <p className="text-[15px] md:text-[16px] leading-[1.75] text-white/70">
-              GEO施策において重要なポイントは、「質問クラスター」、つまり単一の質問ではなく、連続するユーザーの質問をあらかじめ予測し、コンテンツで対応できているかどうかです。Ascentは検索経路に基づき、GEOに極めて有利な連続的質問クラスターを設計します。
-            </p>
+            <SearchPathPanel />
           </div>
         </div>
       </section>

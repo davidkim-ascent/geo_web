@@ -1,3 +1,15 @@
+## 2026-05-15 18:06
+- Why Ascent W/02·B 오른쪽 패널을 `search-path-section.html` 기반으로 직접 렌더하도록 수정: iframe 대신 PATH 03 포함 패널을 페이지 내 JSX로 배치해 빈 흰 박스 문제를 해결.
+
+## 2026-05-15 17:58
+- Why Ascent W/02·B レイアウトを修正: テキストを左、SEARCH JOURNEY ダイアグラムを右に並べる2列構成へ戻し、文言はそのまま維持。
+
+## 2026-05-15 17:55
+- Why Ascent W/02·B 섹션을 롤백: `search-path-section.html` iframe과 좌측 축약 카피를 제거하고, 기존 SEARCH JOURNEY 다이어그램 + 설명문 + CTA 전 레이아웃을 복구.
+
+## 2026-05-15 17:53
+- Why Ascent W/02·B の左側説明を 롤백: 「一つの質問は、決して単独で存在しない。」と GEO 核心の callout を復元し、右側の `search-path-section.html` iframe は維持。
+
 ## 2026-05-15 17:25
 - Services ページの h2 টাইポグラフィを他ページに統一: section 見出しを `font-bold / leading-[var(--lh-heading)] / tracking-[-0.02em]` に揃え、JSX 内の引用符を lint 対応でエスケープ。
 
