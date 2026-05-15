@@ -65,15 +65,7 @@ export function SearchPathPanel() {
           </div>
 
           <div className="rounded-[16px] bg-white/[0.02] p-5">
-            <div className="mb-4 flex items-center justify-between pb-4 font-mono text-[10px] tracking-[0.18em] text-white/55">
-              <span className="text-[#1452ff]">SEARCH PATH · {cur.en}</span>
-              <span className="inline-flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#1452ff] shadow-[0_0_8px_#1452ff]" />
-                REAL-DATA SAMPLE
-              </span>
-            </div>
-
-            <div className="space-y-4">
+            <div className="space-y-1">
               {cur.nodes.map((node, index) => {
                 const depthClass =
                   index === 0
@@ -101,7 +93,7 @@ export function SearchPathPanel() {
                       </div>
                     </div>
                     {index < cur.nodes.length - 1 && (
-                      <div className="flex flex-col items-center gap-1 py-3">
+                      <div className="flex flex-col items-center gap-0 py-0.5">
                         <span className="h-1 w-1 rounded-full bg-[#1452ff] opacity-50" />
                         <span className="h-1 w-1 rounded-full bg-[#1452ff] opacity-50" />
                         <span className="h-1 w-1 rounded-full bg-[#1452ff] opacity-50" />
@@ -111,16 +103,6 @@ export function SearchPathPanel() {
                   </div>
                 );
               })}
-            </div>
-
-            <div className="mt-4 flex items-center justify-between pt-4 font-mono text-[10px] tracking-[0.16em] text-white/55">
-              <span>SEED · 電動自転車</span>
-              <span>
-                STEPS · <b className="font-sans text-[13px] font-semibold text-white">3</b>
-              </span>
-              <span>
-                CLUSTER · <b className="font-sans text-[13px] font-semibold text-white">{cur.name}</b>
-              </span>
             </div>
           </div>
         </div>

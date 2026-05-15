@@ -1,3 +1,6 @@
+## 2026-05-15 18:35
+- Why Ascent W/02·B 오른쪽 패널 메타 정리: `SEARCH PATH · ... REAL-DATA SAMPLE` 상단과 `SEED · ... CLUSTER · ...` 하단을 삭제하고, 스텝 카드 간격도 더 촘촘하게 축소.
+
 ## 2026-05-15 18:34
 - Why Ascent W/02·B Search Path 탭을 동작형으로 전환: PATH 01/02/03이 상태를 바꾸도록 클라이언트 컴포넌트로 분리하고, PATH 01과 PATH 02 전환을 브라우저에서 확인.
 
