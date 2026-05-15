@@ -511,7 +511,9 @@ export default async function WhyAscentPage() {
               </div>
             </div>
 
-            <SearchPathPanel />
+            <div className="lg:-mt-10 xl:-mt-12">
+              <SearchPathPanel />
+            </div>
           </div>
         </div>
       </section>

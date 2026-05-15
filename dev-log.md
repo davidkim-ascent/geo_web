@@ -1,3 +1,6 @@
+## 2026-05-15 18:38
+- Why Ascent W/02·B 오른쪽 패널 상단 정렬 보정: Search Path 패널 래퍼에 `lg:-mt-10 xl:-mt-12`를 적용해 `検索経路に基づき、GEOに...` 제목 높이에 더 가깝게 끌어올림.
+
 ## 2026-05-15 18:35
 - Why Ascent W/02·B 오른쪽 패널 메타 정리: `SEARCH PATH · ... REAL-DATA SAMPLE` 상단과 `SEED · ... CLUSTER · ...` 하단을 삭제하고, 스텝 카드 간격도 더 촘촘하게 축소.
 
