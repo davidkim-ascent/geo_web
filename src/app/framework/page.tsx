@@ -239,7 +239,12 @@ function VisualCard({ kind }: { kind: (typeof frameworkSteps)[number]["visual"] 
 
 function FrameworkHero() {
   return (
-    <section className="relative overflow-hidden bg-[#0B0B0E] text-white py-12 lg:py-16">
+    <section
+      className="hero-fixed relative overflow-hidden text-white py-12 lg:py-16"
+      style={{
+        background: "var(--hero-gradient)",
+      }}
+    >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
@@ -277,30 +282,12 @@ function FrameworkHero() {
         >
           GEO.
         </div>
-        <div
-          style={{
-            position: "absolute", left: 0, right: 0, height: 4,
-            background: "linear-gradient(90deg, transparent, rgba(20,82,255,0.95), transparent)",
-            boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95,
-            animation: "scan 6s ease-in-out infinite",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute", top: 0, bottom: 0, width: 4,
-            background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)",
-            boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95,
-            animation: "scanV 7s ease-in-out infinite",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute", top: 0, bottom: 0, width: 4,
-            background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)",
-            boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95,
-            animation: "scanV 9s ease-in-out -3.5s infinite",
-          }}
-        />
+        <div style={{ position: "absolute", left: 0, right: 0, height: 4, background: "linear-gradient(90deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scan 6s ease-in-out infinite" }} />
+        <div style={{ position: "absolute", left: 0, right: 0, height: 4, background: "linear-gradient(90deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scan 8s ease-in-out -2s infinite" }} />
+        <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scanV 7s ease-in-out infinite" }} />
+        <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scanV 9s ease-in-out -3.5s infinite" }} />
+        <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scanV 11s ease-in-out -1s infinite" }} />
+        <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scanV 13s ease-in-out -5s infinite" }} />
       </div>
 
       <div className="relative mx-auto grid max-w-[1280px] grid-cols-1 gap-14 px-4 sm:px-6 lg:px-10 lg:grid-cols-[1.18fr_1fr] lg:items-start">
@@ -342,7 +329,7 @@ function FrameworkHero() {
           </div>
         </div>
 
-        <div className="lg:pt-6">
+        <div>
           <div className="w-full max-w-[620px] mx-auto lg:ml-auto">
             <ContactForm blockedEmailDomains={DEFAULT_BLOCKED_EMAIL_DOMAINS} />
           </div>

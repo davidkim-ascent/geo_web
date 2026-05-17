@@ -114,7 +114,12 @@ function SectionKicker({
 export default async function WhyAscentPage() {
   return (
     <div className="bg-[#FAFAF7] text-[#0B0B0E]">
-      <section className="relative overflow-hidden bg-[#0B0B0E] text-white py-12 lg:py-16">
+      <section
+        className="hero-fixed relative overflow-hidden text-white py-12 lg:py-16"
+        style={{
+          background: "var(--hero-gradient)",
+        }}
+      >
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -141,30 +146,12 @@ export default async function WhyAscentPage() {
           <div className="absolute left-[-4%] bottom-[-10%] select-none text-[clamp(180px,22vw,320px)] font-extrabold leading-none tracking-[-0.06em] text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.06)]">
             GEO
           </div>
-          <div
-            style={{
-              position: "absolute", left: 0, right: 0, height: 4,
-              background: "linear-gradient(90deg, transparent, rgba(20,82,255,0.95), transparent)",
-              boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95,
-              animation: "scan 6s ease-in-out infinite",
-            }}
-          />
-          <div
-            style={{
-              position: "absolute", top: 0, bottom: 0, width: 4,
-              background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)",
-              boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95,
-              animation: "scanV 7s ease-in-out infinite",
-            }}
-          />
-          <div
-            style={{
-              position: "absolute", top: 0, bottom: 0, width: 4,
-              background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)",
-              boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95,
-              animation: "scanV 9s ease-in-out -3.5s infinite",
-            }}
-          />
+          <div style={{ position: "absolute", left: 0, right: 0, height: 4, background: "linear-gradient(90deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scan 6s ease-in-out infinite" }} />
+          <div style={{ position: "absolute", left: 0, right: 0, height: 4, background: "linear-gradient(90deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scan 8s ease-in-out -2s infinite" }} />
+          <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scanV 7s ease-in-out infinite" }} />
+          <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scanV 9s ease-in-out -3.5s infinite" }} />
+          <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scanV 11s ease-in-out -1s infinite" }} />
+          <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scanV 13s ease-in-out -5s infinite" }} />
           <div className="absolute right-8 top-7 text-right text-[10px] tracking-[0.2em] text-white/40 font-mono">
             <div className="flex items-center justify-end gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-[#1452ff] shadow-[0_0_8px_#1452ff]" />
@@ -175,8 +162,8 @@ export default async function WhyAscentPage() {
           </div>
         </div>
 
-        <div className="relative mx-auto max-w-[1280px] px-6 md:px-10">
-          <div className="grid items-start gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
+        <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
+          <div className="grid items-start gap-10 lg:grid-cols-[1.18fr_1fr] lg:gap-16">
             <div className="relative z-10 pt-8">
               <div className="mb-5 flex items-center gap-2 text-[10px] tracking-[0.24em] text-[#1452ff] font-mono uppercase">
                 <span className="pulse-dot" />
@@ -204,7 +191,7 @@ export default async function WhyAscentPage() {
               </div>
             </div>
 
-            <div className="relative z-10 lg:-mt-2 w-full max-w-[560px] mx-auto lg:ml-auto lg:mr-0">
+            <div className="relative z-10 w-full max-w-[620px] mx-auto lg:ml-auto lg:mr-0">
               <ContactForm blockedEmailDomains={DEFAULT_BLOCKED_EMAIL_DOMAINS} />
             </div>
           </div>

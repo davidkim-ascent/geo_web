@@ -55,8 +55,11 @@ function SectionLabel({ title, dark = false }: { title: string; dark?: boolean }
 function HeroSection() {
   return (
     <SplitSection
-      sectionClassName="relative bg-[#0B0B0E] overflow-hidden py-12 lg:py-16"
-      sectionStyle={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}
+      sectionClassName="hero-fixed relative overflow-hidden py-12 lg:py-16"
+      sectionStyle={{
+        background: "var(--hero-gradient)",
+        borderBottom: "1px solid rgba(255,255,255,0.06)",
+      }}
       background={
         <>
           <div
@@ -162,48 +165,18 @@ function HeroSection() {
                 <span>Copilot</span><span style={{ color: "rgba(255,255,255,0.7)" }}>42%</span>
               </div>
             </div>
-            <div
-              style={{
-                position: "absolute",
-                left: 0,
-                right: 0,
-                height: 4,
-                background: "linear-gradient(90deg, transparent, rgba(20,82,255,0.95), transparent)",
-                boxShadow: "0 0 18px rgba(20,82,255,0.55)",
-                opacity: 0.95,
-                animation: "scan 6s ease-in-out infinite",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                top: 0,
-                bottom: 0,
-                width: 4,
-                background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)",
-                boxShadow: "0 0 18px rgba(20,82,255,0.55)",
-                opacity: 0.95,
-                animation: "scanV 7s ease-in-out infinite",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                top: 0,
-                bottom: 0,
-                width: 4,
-                background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)",
-                boxShadow: "0 0 18px rgba(20,82,255,0.55)",
-                opacity: 0.95,
-                animation: "scanV 9s ease-in-out -3.5s infinite",
-              }}
-            />
+            <div style={{ position: "absolute", left: 0, right: 0, height: 4, background: "linear-gradient(90deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scan 6s ease-in-out infinite" }} />
+            <div style={{ position: "absolute", left: 0, right: 0, height: 4, background: "linear-gradient(90deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scan 8s ease-in-out -2s infinite" }} />
+            <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scanV 7s ease-in-out infinite" }} />
+            <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scanV 9s ease-in-out -3.5s infinite" }} />
+            <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scanV 11s ease-in-out -1s infinite" }} />
+            <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scanV 13s ease-in-out -5s infinite" }} />
           </div>
         </>
       }
-      containerClassName="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10 w-full grid grid-cols-1 lg:grid-cols-[1.22fr_1fr] gap-14 items-start"
+      containerClassName="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10 w-full grid grid-cols-1 lg:grid-cols-[1.18fr_1fr] gap-14 items-start"
       leftClassName="pt-8"
-      rightClassName="lg:pt-8"
+      rightClassName=""
       left={
         <>
           <div className="font-['JetBrains_Mono',monospace] text-[10px] tracking-[0.2em] uppercase text-[#1452FF] mb-5 flex items-center gap-2">

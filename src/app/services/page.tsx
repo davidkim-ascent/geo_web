@@ -389,7 +389,13 @@ export default function ServicesPage() {
   return (
     <div className="bg-[#FAFAF7]">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[#0B0B0E] py-12 lg:py-16" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+      <section
+        className="hero-fixed relative overflow-hidden py-12 lg:py-16"
+        style={{
+          background: "var(--hero-gradient)",
+          borderBottom: "1px solid rgba(255,255,255,0.06)",
+        }}
+      >
         {/* Background — matches index hero */}
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
         <div className="absolute right-[10%] top-[20%] w-[500px] h-[500px] bg-[#1452FF]/[0.08] rounded-full blur-[100px] pointer-events-none" />
@@ -409,11 +415,14 @@ export default function ServicesPage() {
             <div style={{ display: "flex", gap: 10, justifyContent: "flex-end" }}><span>Copilot</span><span style={{ color: "rgba(255,255,255,0.7)" }}>42%</span></div>
           </div>
           <div style={{ position: "absolute", left: 0, right: 0, height: 4, background: "linear-gradient(90deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scan 6s ease-in-out infinite" }} />
+          <div style={{ position: "absolute", left: 0, right: 0, height: 4, background: "linear-gradient(90deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scan 8s ease-in-out -2s infinite" }} />
           <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scanV 7s ease-in-out infinite" }} />
           <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scanV 9s ease-in-out -3.5s infinite" }} />
+          <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scanV 11s ease-in-out -1s infinite" }} />
+          <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scanV 13s ease-in-out -5s infinite" }} />
         </div>
-        <div className="relative mx-auto max-w-[1280px] px-10">
-          <div className="grid items-start gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
+        <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
+          <div className="grid items-start gap-10 lg:grid-cols-[1.18fr_1fr] lg:gap-16">
             <div className="relative z-10 pt-8">
               <div className="mb-5 flex items-center gap-2 font-mono text-[10px] tracking-[0.24em] text-[#1452FF] uppercase">
                 <span className="relative flex h-1.5 w-1.5">

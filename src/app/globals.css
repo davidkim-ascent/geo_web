@@ -14,6 +14,11 @@
   --fg-light: #FAFAF7;
   --blue: #1452FF;
   --blue-light: #6B8FFF;
+  --hero-gradient:
+    radial-gradient(ellipse 58% 46% at 18% 22%, rgba(0, 0, 0, 0.38) 0%, rgba(0, 0, 0, 0) 56%),
+    radial-gradient(ellipse 40% 38% at 82% 26%, rgba(72, 125, 255, 0.26) 0%, rgba(72, 125, 255, 0) 56%),
+    linear-gradient(135deg, #000000 0%, #042A4E 100%);
+  --hero-height: 840px;
   --muted: #4e4e51;
   --muted-light: #d3d3d8;
   --border: rgba(11, 11, 14, 0.1);
@@ -775,6 +780,14 @@ span.accent {
   padding: 0 40px;
 }
 
+/* Fixed hero height — matches Framework page as baseline */
+.hero-fixed {
+  height: var(--hero-height);
+}
+@media (max-width: 900px) {
+  .hero-fixed { height: auto; min-height: 560px; }
+}
+
 /* hero */
 .wp-hero {
   background: var(--bg-dark);
@@ -1405,11 +1418,11 @@ span.accent {
 /* ── Contact page ─────────────────────────────────────── */
 .ct-hero {
   position: relative;
-  background: var(--ink);
+  background: var(--hero-gradient);
   color: var(--paper);
   overflow: hidden;
-  padding: 100px 0 48px;
-  min-height: 80vh;
+  padding: 68px 0;
+  height: var(--hero-height);
 }
 /* grid bg — 64px lattice faded by radial mask */
 .ct-hero-grid-bg {
@@ -1436,15 +1449,21 @@ span.accent {
   z-index: 1;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 16px;
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 80px;
+  grid-template-columns: 1.18fr 1fr;
+  gap: 56px;
   align-items: start;
+}
+@media (min-width: 640px) {
+  .ct-hero-wrap { padding: 0 24px; }
+}
+@media (min-width: 1024px) {
+  .ct-hero-wrap { padding: 0 40px; }
 }
 @media (max-width: 900px) {
   .ct-hero-wrap { grid-template-columns: 1fr; gap: 48px; padding: 0 20px; }
-  .ct-hero { padding: 72px 0 32px; }
+  .ct-hero { padding: 48px 0 32px; height: auto; min-height: 560px; }
 }
 .ct-hero-kicker {
   font-family: 'JetBrains Mono', monospace;
