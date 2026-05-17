@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import { SplitSection } from '@/components/layout/SplitSection'
 import { Button } from '@/components/ui/button'

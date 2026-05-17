@@ -1,3 +1,9 @@
+## 2026-05-17 12:20
+- PageSpeed 대응: `SplitSection`/`CTASection`를 서버 컴포넌트로 되돌리고, 홈의 `ContactForm`·`FrameworkSection`을 dynamic import로 분리해 초기 JS 부담을 줄임.
+
+## 2026-05-17 12:16
+- 폼/메일 참고 문서 생성: `FORM_EMAIL_REFERENCE.md`에 Contact/Whitepaper 검증, Resend 메일, Supabase 저장, 완료 페이지 접근 제어 흐름을 정리함.
+
 ## 2026-05-17 10:58
 - 컨택폼/화이트페이퍼 검증: 정상 제출로 `/contact/thanks`와 `/whitepaper/downloaded`에 각각 접속됨을 확인하고, 쿠키 없는 직통 요청은 일본어 차단 화면으로 막히는지 재확인함.
 

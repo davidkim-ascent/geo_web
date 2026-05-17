@@ -1,13 +1,21 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ContactForm } from "@/components/contact/ContactForm";
 import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
 import { CTASection } from "@/components/layout/CTASection";
 import { SplitSection } from "@/components/layout/SplitSection";
 import { Button } from "@/components/ui/button";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 import { getCalendarBookingHref } from "@/lib/calendar-booking";
-import FrameworkSection from "@/components/home/FrameworkSection";
+import dynamicImport from "next/dynamic";
+
+const ContactForm = dynamicImport(
+  () => import("@/components/contact/ContactForm").then((mod) => mod.ContactForm),
+  { ssr: true }
+);
+
+const FrameworkSection = dynamicImport(() => import("@/components/home/FrameworkSection"), {
+  ssr: true,
+});
 
 export const metadata: Metadata = {
   title: "GEO — Ascent",
