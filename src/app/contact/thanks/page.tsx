@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
+import { DeniedAccess } from "@/components/access/DeniedAccess";
+import { CONTACT_THANKS_COOKIE, hasCompletionAccess } from "@/lib/completion-access";
 
 export const metadata: Metadata = {
   title: "お問い合わせ完了 — Ascent GEO",
   description: "お問い合わせを受け付けました。GEO チームからの返信をお待ちください。",
+  robots: {
+    index: false,
+    follow: false,
+  },
   openGraph: {
     title: "お問い合わせ完了 — Ascent GEO",
     description: "お問い合わせを受け付けました。GEO チームからの返信をお待ちください。",
@@ -15,9 +22,16 @@ export const metadata: Metadata = {
   },
 };
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
-export default function ThanksPage() {
+export default async function ThanksPage() {
+  const cookieStore = await cookies();
+  const hasAccess = hasCompletionAccess(cookieStore.get(CONTACT_THANKS_COOKIE)?.value);
+
+  if (!hasAccess) {
+    return <DeniedAccess backHref="/contact" backLabel="お問い合わせへ戻る" />;
+  }
+
   return (
     <section className="thx-hero" data-screen-label="Thanks Hero">
       <div className="thx-bg" />

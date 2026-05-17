@@ -4,6 +4,7 @@ import { createClient } from '@supabase/supabase-js'
 import { ContactConfirmEmail } from '@/emails/ContactConfirmEmail'
 import { ContactAdminEmail, type ContactFormData } from '@/emails/ContactAdminEmail'
 import { isBlockedEmailDomain } from '@/lib/contact-blocking'
+import { COMPLETION_COOKIE_MAX_AGE, CONTACT_THANKS_COOKIE } from '@/lib/completion-access'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -83,5 +84,16 @@ export async function POST(req: NextRequest) {
     // 어드민 메일 실패는 로그만 기록
   }
 
-  return NextResponse.json({ ok: true })
+  const response = NextResponse.json({ ok: true })
+  response.cookies.set({
+    name: CONTACT_THANKS_COOKIE,
+    value: '1',
+    path: '/contact/thanks',
+    sameSite: 'lax',
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    maxAge: COMPLETION_COOKIE_MAX_AGE,
+  })
+
+  return response
 }

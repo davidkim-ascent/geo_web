@@ -9,6 +9,8 @@ import { createClient } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/button'
 import { getBlockedEmailDomainError } from '@/lib/contact-blocking'
 import { WEBSITE_UNAVAILABLE_COPY, isValidWebsiteValue } from '@/lib/website-validation'
+import { WHITEPAPER_DOWNLOADED_COOKIE } from '@/lib/completion-access'
+import { setCompletionAccessCookie } from '@/lib/completion-access.client'
 
 const INDUSTRIES = [
   '製造業',
@@ -98,6 +100,7 @@ export function DownloadForm({ blockedEmailDomains }: Props) {
       setServerError('送信中にエラーが発生しました。しばらくしてから再度お試しください。')
       return
     }
+    setCompletionAccessCookie(WHITEPAPER_DOWNLOADED_COOKIE)
     router.push('/whitepaper/downloaded')
   }
 

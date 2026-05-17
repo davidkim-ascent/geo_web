@@ -8,6 +8,8 @@ import { z } from 'zod'
 import { Button } from '@/components/ui/button'
 import { getBlockedEmailDomainError } from '@/lib/contact-blocking'
 import { WEBSITE_UNAVAILABLE_COPY, isValidWebsiteValue } from '@/lib/website-validation'
+import { CONTACT_THANKS_COOKIE } from '@/lib/completion-access'
+import { setCompletionAccessCookie } from '@/lib/completion-access.client'
 
 const INDUSTRIES = [
   '製造業',
@@ -113,6 +115,7 @@ export function ContactForm({ blockedEmailDomains }: Props) {
       return
     }
 
+    setCompletionAccessCookie(CONTACT_THANKS_COOKIE)
     router.push('/contact/thanks')
   }
 
