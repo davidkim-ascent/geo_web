@@ -782,10 +782,10 @@ span.accent {
 
 /* Fixed hero height — matches Framework page as baseline */
 .hero-fixed {
-  height: var(--hero-height);
+  min-height: var(--hero-height);
 }
 @media (max-width: 900px) {
-  .hero-fixed { height: auto; min-height: 560px; }
+  .hero-fixed { min-height: 560px; }
 }
 
 /* hero */
@@ -1420,9 +1420,8 @@ span.accent {
   position: relative;
   background: var(--hero-gradient);
   color: var(--paper);
-  overflow: hidden;
   padding: 68px 0;
-  height: var(--hero-height);
+  min-height: var(--hero-height);
 }
 /* grid bg — 64px lattice faded by radial mask */
 .ct-hero-grid-bg {

@@ -240,7 +240,7 @@ function VisualCard({ kind }: { kind: (typeof frameworkSteps)[number]["visual"] 
 function FrameworkHero() {
   return (
     <section
-      className="hero-fixed relative overflow-hidden text-white py-12 lg:py-16"
+      className="hero-fixed relative text-white py-12 lg:py-16"
       style={{
         background: "var(--hero-gradient)",
       }}

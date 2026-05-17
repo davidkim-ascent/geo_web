@@ -55,7 +55,7 @@ function SectionLabel({ title, dark = false }: { title: string; dark?: boolean }
 function HeroSection() {
   return (
     <SplitSection
-      sectionClassName="hero-fixed relative overflow-hidden py-12 lg:py-16"
+      sectionClassName="hero-fixed relative py-12 lg:py-16"
       sectionStyle={{
         background: "var(--hero-gradient)",
         borderBottom: "1px solid rgba(255,255,255,0.06)",

@@ -41,7 +41,7 @@ export default function LabPage() {
     <div className="bg-[#FAFAF7]">
       {/* Hero */}
       <section
-        className="hero-fixed relative overflow-hidden py-12 lg:py-16"
+        className="hero-fixed relative py-12 lg:py-16"
         style={{
           background: "var(--hero-gradient)",
           borderBottom: "1px solid rgba(255,255,255,0.06)",

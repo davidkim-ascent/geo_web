@@ -115,7 +115,7 @@ export default async function WhyAscentPage() {
   return (
     <div className="bg-[#FAFAF7] text-[#0B0B0E]">
       <section
-        className="hero-fixed relative overflow-hidden text-white py-12 lg:py-16"
+        className="hero-fixed relative text-white py-12 lg:py-16"
         style={{
           background: "var(--hero-gradient)",
         }}
