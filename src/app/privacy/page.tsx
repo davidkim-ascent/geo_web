@@ -1,6 +1,19 @@
 export const metadata = {
   title: '個人情報保護方針 — Ascent GEO',
+  description: 'Ascent GEO の個人情報保護方針です。',
+  openGraph: {
+    title: '個人情報保護方針 — Ascent GEO',
+    description: 'Ascent GEO の個人情報保護方針です。',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: '個人情報保護方針 — Ascent GEO',
+    description: 'Ascent GEO の個人情報保護方針です。',
+  },
 }
+
+export const dynamic = 'force-static'
 
 const sections = [
   {

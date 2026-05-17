@@ -1,4 +1,21 @@
-"use client";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "お問い合わせ完了 — Ascent GEO",
+  description: "お問い合わせを受け付けました。GEO チームからの返信をお待ちください。",
+  openGraph: {
+    title: "お問い合わせ完了 — Ascent GEO",
+    description: "お問い合わせを受け付けました。GEO チームからの返信をお待ちください。",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "お問い合わせ完了 — Ascent GEO",
+    description: "お問い合わせを受け付けました。GEO チームからの返信をお待ちください。",
+  },
+};
+
+export const dynamic = "force-static";
 
 export default function ThanksPage() {
   return (

@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   description: "検索の変化、SEO と GEO の差、AI が引用する条件、GEO Writing の実装、KPI の測り方。Ascent が日々のクライアントワークから抽出した知見を、リサーチノートとして公開する。",
 };
 
+export const dynamic = "force-static";
+
 const featuredSide = [
   {
     cat: "SEO vs GEO",

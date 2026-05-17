@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   description: "診断・分析・制作・モニタリング。Ascent の GEO サービスは、4 つのフェーズで切り出すこともできれば、ループとしてフルパッケージで運用することもできる。",
 };
 
+export const dynamic = "force-static";
+
 function AuditVis() {
   const stages = [
     { k: "初期探索", q: "電動自転車とは？", v: 202333 },

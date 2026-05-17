@@ -5,8 +5,21 @@ import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/layout/ScrollToTop";
 
 export const metadata: Metadata = {
-  title: "GEO — Ascent",
+  title: {
+    default: "GEO — Ascent",
+    template: "%s — Ascent",
+  },
   description: "推測ではなく、データと特許に基づくAI検索時代のブランド戦略。",
+  openGraph: {
+    title: "GEO — Ascent",
+    description: "推測ではなく、データと特許に基づくAI検索時代のブランド戦略。",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "GEO — Ascent",
+    description: "推測ではなく、データと特許に基づくAI検索時代のブランド戦略。",
+  },
 };
 
 export default function RootLayout({

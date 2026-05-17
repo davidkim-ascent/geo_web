@@ -1,9 +1,22 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "ダウンロード完了 — Ascent GEO",
   description: "AI 検索時代の、企業マーケティング白書 2026 のダウンロードを開始しました。",
+  openGraph: {
+    title: "ダウンロード完了 — Ascent GEO",
+    description: "AI 検索時代の、企業マーケティング白書 2026 のダウンロードを開始しました。",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "ダウンロード完了 — Ascent GEO",
+    description: "AI 検索時代の、企業マーケティング白書 2026 のダウンロードを開始しました。",
+  },
 };
+
+export const dynamic = "force-static";
 
 export default function WhitepaperDownloadedPage() {
   return (
@@ -101,12 +114,12 @@ export default function WhitepaperDownloadedPage() {
 
         {/* Back to home */}
         <div className="mt-10 flex justify-center">
-          <a
+          <Link
             href="/"
             className="inline-flex items-center gap-2 rounded-full border border-white/[0.18] px-7 py-3 font-mono text-[12px] tracking-[0.18em] text-white/70 transition-colors hover:border-white/40 hover:text-white"
           >
             ← ホームに戻る
-          </a>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,10 +1,28 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 import { getCalendarBookingHref, getCalendarBookingLinkProps } from "@/lib/calendar-booking";
+
+export const metadata: Metadata = {
+  title: "Contact — Ascent GEO",
+  description:
+    "無料相談、サービス資料、電話でのご相談。Ascent GEO へのお問い合わせはこちらから。",
+  openGraph: {
+    title: "Contact — Ascent GEO",
+    description:
+      "無料相談、サービス資料、電話でのご相談。Ascent GEO へのお問い合わせはこちらから。",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Contact — Ascent GEO",
+    description:
+      "無料相談、サービス資料、電話でのご相談。Ascent GEO へのお問い合わせはこちらから。",
+  },
+};
+
+export const dynamic = "force-static";
 
 /* ─── FAQ data ─── */
 const FAQS = [
@@ -51,16 +69,15 @@ const FAQS = [
 ];
 
 function FaqItem({ q, a, idx }: { q: string; a: string; idx: number }) {
-  const [open, setOpen] = useState(false);
   return (
-    <div className={`ct-faq-item${open ? " open" : ""}`}>
-      <button className="ct-faq-q" onClick={() => setOpen(!open)} type="button">
+    <details className="ct-faq-item">
+      <summary className="ct-faq-q">
         <span className="ct-faq-idx">{String(idx).padStart(2, "0")}</span>
         <span className="ct-faq-qtext">{q}</span>
         <span className="ct-faq-toggle">+</span>
-      </button>
+      </summary>
       <div className="ct-faq-a">{a}</div>
-    </div>
+    </details>
   );
 }
 

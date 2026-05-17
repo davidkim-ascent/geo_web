@@ -14,6 +14,8 @@ export const metadata: Metadata = {
   description: "GEO は、推測ではなく設計の科学である。",
 };
 
+export const dynamic = "force-static";
+
 const patentItems = [
   {
     num: "01",

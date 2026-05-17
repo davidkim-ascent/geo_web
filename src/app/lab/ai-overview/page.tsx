@@ -12,6 +12,8 @@ export const metadata: Metadata = {
     "Google AI Overview の本格展開で、検索結果ページの上部に何が起きているのか。12 業種・1,400 ページのクリックログと、4 つの AI 検索エンジンの引用ログを突き合わせ、ユーザーが「ページを開く」までの 3 秒間にどんな意思決定が走っているのかを解剖する。",
 };
 
+export const dynamic = "force-static";
+
 export default function AiOverviewPage() {
   return (
     <div className="bg-[#FAFAF7]">

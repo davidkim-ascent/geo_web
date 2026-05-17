@@ -1617,6 +1617,10 @@ a.ct-channel-card:hover {
   border: none;
   cursor: pointer;
   text-align: left;
+  list-style: none;
+}
+.ct-faq-q::-webkit-details-marker {
+  display: none;
 }
 .ct-faq-idx {
   font-family: 'JetBrains Mono', monospace;
@@ -1640,7 +1644,8 @@ a.ct-channel-card:hover {
   transition: transform 0.2s;
   line-height: 1;
 }
-.ct-faq-item.open .ct-faq-toggle {
+.ct-faq-item.open .ct-faq-toggle,
+.ct-faq-item[open] .ct-faq-toggle {
   transform: rotate(45deg);
   color: var(--accent);
 }
@@ -1652,7 +1657,8 @@ a.ct-channel-card:hover {
   color: rgba(0,0,0,0.6);
   max-width: 72ch;
 }
-.ct-faq-item.open .ct-faq-a { display: block; }
+.ct-faq-item.open .ct-faq-a,
+.ct-faq-item[open] .ct-faq-a { display: block; }
 
 @media (max-width: 768px) {
   .ct-faq { padding: 64px 0; }

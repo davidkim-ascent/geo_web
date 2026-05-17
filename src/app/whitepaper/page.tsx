@@ -5,7 +5,23 @@ import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from '@/lib/contact-blocking'
 
 export const metadata = {
   title: 'AI 検索時代の、企業マーケティング白書 2026 — Ascent / GEO',
+  description:
+    'Google AI Overview、ChatGPT Search、Perplexity の時代に企業ブランドがどう発見されるかを整理した Ascent の白書ページです。',
+  openGraph: {
+    title: 'AI 検索時代の、企業マーケティング白書 2026 — Ascent / GEO',
+    description:
+      'Google AI Overview、ChatGPT Search、Perplexity の時代に企業ブランドがどう発見されるかを整理した Ascent の白書ページです。',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'AI 検索時代の、企業マーケティング白書 2026 — Ascent / GEO',
+    description:
+      'Google AI Overview、ChatGPT Search、Perplexity の時代に企業ブランドがどう発見されるかを整理した Ascent の白書ページです。',
+  },
 }
+
+export const dynamic = 'force-static'
 
 const CHAPTERS = [
   { n: '01', pg: 8, t: 'AI 検索の現在地 · 4 エンジン比較', d: 'Google AI Overview / ChatGPT Search / Perplexity / Copilot · それぞれの引用ロジックと利用ボリュームを整理し、企業として何を最初に攻めるべきかを判断するためのマップを提示する。', sub: ['市場規模', 'エンジン別の引用挙動', 'ユーザー層'] },

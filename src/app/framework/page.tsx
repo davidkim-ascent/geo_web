@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   description: "質問から最適化までを、ひと続きの設計に。",
 };
 
+export const dynamic = "force-static";
+
 const frameworkSteps = [
   {
     id: "01",
