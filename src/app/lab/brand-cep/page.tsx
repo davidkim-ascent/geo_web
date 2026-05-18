@@ -5,6 +5,7 @@ import { CTASection } from "@/components/layout/CTASection";
 import { getCalendarBookingHref } from "@/lib/calendar-booking";
 import { ArticleTOC } from "./ArticleTOC";
 import lmCepFinderImage from "./lm-cep-finder.png";
+import { TypingPromptCard } from "./TypingPromptCard";
 
 const PAGE_TITLE =
   "AI検索時代のブランド戦略：キーワードではなく、CEPを制覇せよ";
@@ -334,13 +335,7 @@ export default function BrandCepArticlePage() {
                 <p className="article-prose">
                   架空の想定ではなく、実際の消費者の悩みと状況からCEPを構築するため、AIに引用される確率の高い「本当に答えるべき文脈」を特定することが可能です。
                 </p>
-                <figure className="mt-2 mb-10 overflow-hidden rounded-2xl border border-[#E6E4DD] bg-[#F2F0EA] shadow-[0_18px_40px_-24px_rgba(11,11,14,0.28)]">
-                  <Image
-                    src={lmCepFinderImage}
-                    alt="ListeningMind CEP Finder — 実際の消費者データからCEPクラスターを構築"
-                    className="h-auto w-full object-cover"
-                  />
-                </figure>
+                <TypingPromptCard />
               </section>
 
               <section id="s10" className="article-section">
