@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>AI Prompt — Typing Animation</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  :root {
+    --bg: oklch(0.18 0.005 250);
+    --panel: oklch(0.22 0.006 250);
+    --panel-2: oklch(0.26 0.006 250);
+    --line: oklch(0.32 0.008 250);
+    --ink: oklch(0.96 0.003 250);
+    --muted: oklch(0.66 0.006 250);
+    --accent: oklch(0.72 0.14 250);
+    --accent-soft: oklch(0.72 0.14 250 / 0.15);
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 600px at 20% -10%, oklch(0.28 0.02 260 / 0.7), transparent 60%),
+      radial-gradient(900px 500px at 110% 110%, oklch(0.26 0.03 200 / 0.5), transparent 60%),
+      var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
+                 "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Noto Sans JP",
+                 "Segoe UI", Arial, sans-serif;
+    display: grid;
+    place-items: center;
+    padding: 32px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .app {
+    width: min(960px, 100%);
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow:
+      0 30px 80px rgba(0,0,0,0.45),
+      0 2px 0 oklch(1 0 0 / 0.04) inset;
+  }
+
+  .titlebar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, oklch(0.24 0.006 250), oklch(0.22 0.006 250));
+  }
+  .dots { display: flex; gap: 6px; }
+  .dot { width: 11px; height: 11px; border-radius: 50%; background: oklch(0.4 0.01 250); }
+  .dot.r { background: oklch(0.62 0.16 25); }
+  .dot.y { background: oklch(0.78 0.14 85); }
+  .dot.g { background: oklch(0.72 0.14 145); }
+  .titlebar .title {
+    margin-left: 8px;
+    color: var(--muted);
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+  }
+  .titlebar .right {
+    margin-left: auto;
+    display: flex;
+    gap: 6px;
+    color: var(--muted);
+    font-size: 11.5px;
+  }
+  .chip {
+    padding: 3px 8px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: oklch(0.24 0.006 250);
+  }
+
+  .body {
+    padding: 22px 22px 18px;
+    display: grid;
+    gap: 18px;
+  }
+
+  .model-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 12.5px;
+  }
+  .model {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    color: var(--ink);
+  }
+  .model .swatch {
+    width: 8px; height: 8px; border-radius: 2px;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+  }
+
+  .prompt {
+    position: relative;
+    background: oklch(0.20 0.006 250);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 18px 56px;
+    min-height: 340px;
+  }
+  .prompt:focus-within, .prompt.focused {
+    border-color: oklch(0.45 0.05 250);
+    box-shadow: 0 0 0 4px var(--accent-soft);
+  }
+
+  .label {
+    font-size: 11.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+
+  #text {
+    font-size: 15.5px;
+    line-height: 1.75;
+    white-space: pre-wrap;
+    word-break: break-word;
+    min-height: 1.75em;
+  }
+
+  /* Section headings inside the prompt */
+  .h {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .sub {
+    color: oklch(0.82 0.04 250);
+    font-weight: 500;
+  }
+  .bullet {
+    color: var(--ink);
+  }
+  .tag {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* Caret */
+  .caret {
+    display: inline-block;
+    width: 2px;
+    height: 1.05em;
+    background: var(--accent);
+    transform: translateY(3px);
+    margin-left: 1px;
+    box-shadow: 0 0 6px var(--accent);
+    animation: blink 1s steps(1) infinite;
+  }
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  /* Bottom toolbar of the prompt */
+  .toolbar {
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tool {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    color: var(--muted);
+    background: oklch(0.22 0.006 250);
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .tool:hover { color: var(--ink); }
+  .counter {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+  }
+  .send {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: oklch(0.16 0.01 250);
+    font-weight: 600;
+    font-size: 12.5px;
+    border: 1px solid oklch(0.6 0.14 250);
+    cursor: pointer;
+    transition: transform 0.08s ease;
+  }
+  .send.flash {
+    animation: flash 0.5s ease;
+  }
+  @keyframes flash {
+    0%   { transform: scale(1); box-shadow: 0 0 0 0 var(--accent-soft); }
+    40%  { transform: scale(0.97); box-shadow: 0 0 0 10px transparent; }
+    100% { transform: scale(1); }
+  }
+
+  /* Replay button */
+  .replay {
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--panel-2);
+    color: var(--ink);
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0.85;
+  }
+  .replay:hover { opacity: 1; }
+
+  /* Speed control */
+  .speed {
+    position: fixed;
+    bottom: 18px;
+    left: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--panel-2);
+    color: var(--muted);
+    font-size: 12px;
+  }
+  .speed input { accent-color: var(--accent); }
+</style>
+</head>
+<body>
+  <div class="app" role="application" aria-label="AI Prompt">
+    <div class="titlebar">
+      <div class="dots"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span></div>
+      <div class="title">New Chat · Untitled prompt</div>
+      <div class="right">
+        <span class="chip">Draft</span>
+        <span class="chip">Auto-save</span>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="model-row">
+        <span>Model</span>
+        <span class="model"><span class="swatch"></span>Sonnet 4.5</span>
+        <span>· Temperature 0.7 · Max 4096</span>
+      </div>
+
+      <div class="prompt focused" id="prompt">
+        <div class="label">Prompt</div>
+        <div id="text" aria-live="polite"></div>
+
+        <div class="toolbar">
+          <span class="tool">＋ Attach</span>
+          <span class="tool">＃ Tools</span>
+          <span class="tool">↻ Style</span>
+          <span class="counter" id="counter">0 chars</span>
+          <span class="send" id="send">Send ⌘↵</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="replay" id="replay">↻ Replay</button>
+  <label class="speed">
+    Speed
+    <input type="range" id="speedRange" min="1" max="40" value="14" />
+    <span id="speedLabel">14 cps/frame</span>
+  </label>
+
+<script>
+  // ----- Content to type -----
+  // Lines are typed sequentially. Each line is rendered as a styled block via the class.
+  const lines = [
+    { cls: "tag",    text: "CEP 10" },
+    { cls: "h",      text: "長距離ドライブ中に眠気が出てきて、高速のSAやコンビニで買ってリフレッシュしながら運転を続けたい" },
+    { cls: "",       text: "" },
+    { cls: "sub",    text: "詳細文脈（ナノインテント）" },
+    { cls: "bullet", text: "・危ない眠気をその場で減らす" },
+    { cls: "bullet", text: "・移動の責任を果たすために集中を保つ" },
+    { cls: "bullet", text: "・途中で買える手軽さを活かして回復する" },
+    { cls: "",       text: "" },
+    { cls: "sub",    text: "購買決定要因（Key Buying Factor）" },
+    { cls: "bullet", text: "・SA/コンビニで即購入しやすい缶・ペットボトル形態" },
+    { cls: "bullet", text: "・移動中に飲みやすい炭酸レベル（炭酸の有無）" },
+    { cls: "bullet", text: "・運用しやすい1本あたり容量帯（250ml前後/330〜355mlクラスなど）" },
+  ];
+
+  const textEl = document.getElementById("text");
+  const counter = document.getElementById("counter");
+  const replayBtn = document.getElementById("replay");
+  const sendBtn = document.getElementById("send");
+  const speedRange = document.getElementById("speedRange");
+  const speedLabel = document.getElementById("speedLabel");
+
+  // Caret element appended at the end of the latest line
+  function makeCaret() {
+    const c = document.createElement("span");
+    c.className = "caret";
+    return c;
+  }
+
+  let charsPerFrame = parseInt(speedRange.value, 10); // typing speed
+  speedRange.addEventListener("input", () => {
+    charsPerFrame = parseInt(speedRange.value, 10);
+    speedLabel.textContent = charsPerFrame + " cps/frame";
+  });
+
+  let animId = 0;
+  let totalChars = 0;
+
+  function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+  async function typeAll() {
+    // Reset
+    cancelAnimationFrame(animId);
+    textEl.innerHTML = "";
+    totalChars = 0;
+    counter.textContent = "0 chars";
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+
+      // Create the line wrapper (a div, even for empty lines, to preserve spacing)
+      const div = document.createElement("div");
+      if (line.cls) div.classList.add(line.cls);
+      textEl.appendChild(div);
+
+      // The text-bearing span (so we can append caret as a sibling)
+      const span = document.createElement("span");
+      div.appendChild(span);
+
+      // Caret at the end of current line
+      const caret = makeCaret();
+      div.appendChild(caret);
+
+      // Empty line: a brief pause, then move on
+      if (line.text.length === 0) {
+        div.innerHTML = "&nbsp;";
+        await sleep(80);
+        // remove the &nbsp; replacement so structure stays clean
+        continue;
+      }
+
+      // Type characters in chunks per animation frame
+      await new Promise((resolve) => {
+        let idx = 0;
+        const step = () => {
+          const next = Math.min(line.text.length, idx + charsPerFrame);
+          span.textContent = line.text.slice(0, next);
+          totalChars += (next - idx);
+          counter.textContent = totalChars + " chars";
+
+          idx = next;
+          if (idx >= line.text.length) {
+            // Remove caret from this line (caret moves to next line on next iteration)
+            caret.remove();
+            resolve();
+          } else {
+            animId = requestAnimationFrame(step);
+          }
+        };
+        animId = requestAnimationFrame(step);
+      });
+
+      // Tiny natural pause between lines
+      const pause = (line.cls === "tag" || line.cls === "h" || line.cls === "sub") ? 220 : 90;
+      await sleep(pause);
+    }
+
+    // Final caret at the end
+    const tail = document.createElement("div");
+    tail.appendChild(makeCaret());
+    textEl.appendChild(tail);
+
+    // Tiny send flash
+    await sleep(450);
+    sendBtn.classList.add("flash");
+    setTimeout(() => sendBtn.classList.remove("flash"), 500);
+  }
+
+  replayBtn.addEventListener("click", typeAll);
+  sendBtn.addEventListener("click", typeAll);
+
+  // Kick off after a short delay so the UI settles first
+  setTimeout(typeAll, 350);
+</script>
+</body>
+</html>

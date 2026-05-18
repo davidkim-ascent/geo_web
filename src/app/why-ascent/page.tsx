@@ -308,16 +308,16 @@ export default async function WhyAscentPage() {
                 SINGLE KEYWORD · 3 INTENTS
               </div>
 
-              <div className="mt-12 flex items-center h-full relative z-10 pb-6 md:pb-0">
-                {/* Left side Keyword */}
-                <div className="w-[120px] md:w-[140px] shrink-0">
+              <div className="mt-12 flex flex-col sm:flex-row sm:items-center h-full relative z-10">
+                {/* Keyword block — top on mobile, left on sm+ */}
+                <div className="w-full sm:w-[120px] md:w-[140px] sm:shrink-0 mb-6 sm:mb-0">
                   <div className="text-[10px] font-mono tracking-[0.1em] text-white/40 mb-2">MONTHLY AVG.</div>
                   <div className="text-[20px] font-bold tracking-[-0.02em] mb-1">「SEO対策」</div>
                   <div className="text-[28px] md:text-[32px] font-bold text-[#1452ff] tracking-tight leading-none mb-2">27,466</div>
                   <div className="text-[9px] font-mono tracking-[0.15em] text-white/30">SEARCHES / MO</div>
                 </div>
 
-                {/* Connecting lines - SVG */}
+                {/* Connecting lines - SVG (desktop only) */}
                 <div className="absolute left-[110px] md:left-[130px] right-[200px] md:right-[240px] top-0 bottom-0 pointer-events-none hidden sm:block z-0">
                   <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
                     <path d="M0,50 C50,50 50,15 100,15" fill="none" stroke="#1452ff" strokeWidth="1.5" className="opacity-80" />
@@ -330,8 +330,8 @@ export default async function WhyAscentPage() {
                   </svg>
                 </div>
 
-                {/* Right side Nodes */}
-                <div className="flex-1 flex flex-col gap-4 pl-4 sm:pl-16 md:pl-20 relative z-10">
+                {/* Intent nodes — below keyword on mobile, right on sm+ */}
+                <div className="w-full sm:flex-1 flex flex-col gap-4 sm:pl-16 md:pl-20 relative z-10">
                   {intentNodes.map((node) => (
                     <div key={node.id} className="rounded-xl border border-white/10 bg-[#16161a] p-4 flex gap-3 md:gap-4 items-center">
                       <div className="w-6 h-6 rounded-full border border-[#1452ff] flex items-center justify-center shrink-0">

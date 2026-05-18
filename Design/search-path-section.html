@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>Search Path Section — Ascent / GEO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<style>
+  :root {
+    --ink: #0B0B0E;
+    --ink-2: #1A1A20;
+    --paper: #FAFAF7;
+    --paper-2: #F2F0EA;
+    --hairline: #E6E4DD;
+    --muted: #6B6B73;
+    --muted-2: #9A9AA0;
+    --accent: #1452FF;
+    --max: 1280px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Pretendard Variable', 'Pretendard', system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+    margin: 0;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+
+  /* ── Section base ─────────────────────────────── */
+  .section {
+    padding: 96px 0;
+    position: relative;
+  }
+  .section-head {
+    display: flex; gap: 32px; align-items: baseline;
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 18px;
+    margin-bottom: 56px;
+  }
+  .section-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.16em;
+    color: var(--muted);
+  }
+  .section-title {
+    font-size: 13px; font-weight: 600;
+    color: var(--ink-2);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+
+  /* dark variant */
+  .section.dark {
+    background: var(--ink);
+    color: var(--paper);
+    overflow: hidden;
+  }
+  .section.dark::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 64px 64px;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 80%);
+  }
+  .section.dark .wrap { position: relative; z-index: 1; }
+  .section.dark .section-head { border-bottom-color: rgba(255,255,255,0.1); }
+  .section.dark .section-id { color: var(--muted-2); }
+  .section.dark .section-title { color: var(--paper); }
+
+  /* ── Search Path ──────────────────────────────── */
+  .sp-layout {
+    display: grid;
+    grid-template-columns: 0.95fr 1.4fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .sp-copy h3 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--paper);
+    margin-bottom: 18px;
+  }
+  .sp-copy p {
+    margin: 0 0 14px 0;
+    font-size: 17px;
+    color: var(--muted-2);
+    line-height: 1.7;
+    max-width: 46ch;
+  }
+  .sp-copy p b {
+    color: var(--paper); font-weight: 600;
+  }
+  .sp-callout {
+    margin-top: 28px;
+    padding: 22px 24px;
+    border-left: 2px solid var(--accent);
+    background: rgba(20,82,255,0.06);
+    border-radius: 0 8px 8px 0;
+  }
+  .sp-callout .lab {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .sp-callout p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--paper);
+    line-height: 1.6;
+    max-width: none;
+  }
+  .sp-callout p b {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .sp-vertical {
+    display: flex; flex-direction: column;
+    gap: 14px;
+  }
+
+  .sp-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    padding: 6px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 999px;
+  }
+  .sp-tab {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    padding: 10px 14px;
+    border-radius: 999px;
+    color: var(--muted-2);
+    cursor: pointer;
+    display: flex; flex-direction: column;
+    align-items: flex-start; gap: 2px;
+    transition: background .15s, color .15s;
+    text-align: left;
+    font-family: inherit;
+  }
+  .sp-tab .t {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: var(--muted-2);
+  }
+  .sp-tab .n {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--paper);
+    letter-spacing: -0.005em;
+  }
+  .sp-tab:hover { background: rgba(255,255,255,0.04); }
+  .sp-tab.active {
+    background: var(--accent);
+  }
+  .sp-tab.active .t { color: rgba(255,255,255,0.7); }
+  .sp-tab.active .n { color: #fff; }
+
+  .sp-chain {
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    background: rgba(255,255,255,0.02);
+    padding: 22px 22px 18px;
+    display: flex; flex-direction: column; gap: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .sp-chain::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+  .sp-chain > * { position: relative; z-index: 1; }
+
+  .sp-chain-head {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--muted-2);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed rgba(255,255,255,0.12);
+  }
+  .sp-chain-head .lab { color: var(--accent); }
+  .sp-chain-head .src {
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .sp-chain-head .src::before {
+    content: '';
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+  }
+
+  .sp-stage {
+    padding: 18px 18px 18px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    background: rgba(0,0,0,0.18);
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .sp-stage.deep {
+    background: rgba(20,82,255,0.06);
+    border-color: rgba(20,82,255,0.25);
+  }
+  .sp-stage.deepest {
+    background: rgba(20,82,255,0.14);
+    border-color: rgba(20,82,255,0.5);
+  }
+  .sp-stage-meta {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--muted-2);
+    text-transform: uppercase;
+  }
+  .sp-stage-meta .step { color: var(--accent); font-weight: 600; }
+  .sp-stage.deepest .sp-stage-meta .depth { color: var(--paper); }
+
+  .sp-kw {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--paper);
+    line-height: 1.2;
+  }
+  .sp-stage.deepest .sp-kw { color: #fff; }
+
+  .sp-prompt {
+    margin-top: 4px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .sp-prompt .lab {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--muted-2);
+    text-transform: uppercase;
+  }
+  .sp-prompt .bubble {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 12px 14px 12px 18px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--paper);
+    position: relative;
+    font-style: italic;
+  }
+  .sp-prompt .bubble .q {
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-style: normal;
+    margin-right: 4px;
+  }
+  .sp-stage.deep .sp-prompt .bubble { background: rgba(255,255,255,0.06); }
+  .sp-stage.deepest .sp-prompt .bubble {
+    background: rgba(0,0,0,0.3);
+    border-color: rgba(255,255,255,0.16);
+  }
+
+  .sp-link {
+    display: flex; flex-direction: column;
+    align-items: center; gap: 4px;
+    padding: 8px 0;
+  }
+  .sp-link .dot {
+    width: 3px; height: 3px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+  .sp-link .arr {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent);
+    font-size: 12px;
+    margin-top: 2px;
+  }
+
+  .sp-foot {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px dashed rgba(255,255,255,0.12);
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    color: var(--muted-2);
+    text-transform: uppercase;
+  }
+  .sp-foot b {
+    color: var(--paper);
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    font-family: 'Pretendard Variable', sans-serif;
+    text-transform: none;
+    font-size: 13px;
+  }
+
+  @media (max-width: 980px) {
+    .sp-layout { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState } = React;
+
+function PathSection() {
+  const [active, setActive] = useState(0);
+  const paths = [
+    {
+      tag: 'PATH 01',
+      name: '通勤目的',
+      en: 'COMMUTE',
+      nodes: [
+        { kw: '電動自転車', prompt: '電動自転車って実際どう？普通の自転車と何が違うの？' },
+        { kw: '電動自転車 おすすめ', prompt: '通勤に使える電動自転車のおすすめを教えて。' },
+        { kw: '電動自転車 おすすめ 通勤', prompt: '毎日 10km の通勤で坂道もある場合、おすすめの電動自転車は？充電 1 回でどれくらい走れる？' },
+      ],
+    },
+    {
+      tag: 'PATH 02',
+      name: '価格重視',
+      en: 'PRICE',
+      nodes: [
+        { kw: '電動自転車', prompt: '電動自転車って高そうだけど、相場ってどれくらい？' },
+        { kw: '電動自転車 安い', prompt: '5 万円以下で買える電動自転車ってある？' },
+        { kw: '電動自転車 安い 型落ち', prompt: '型落ちでもいいから安く買える電動自転車、どこのメーカーがおすすめ？' },
+      ],
+    },
+    {
+      tag: 'PATH 03',
+      name: '補助金確認',
+      en: 'SUBSIDY',
+      nodes: [
+        { kw: '電動自転車', prompt: '電動自転車を買おうか迷ってる。何を見て決めればいい？' },
+        { kw: '電動自転車 補助金', prompt: '電動自転車って、自治体の補助金もらえる？' },
+        { kw: '電動自転車 補助金 東京都 2025', prompt: '東京都で 2025 年に電動自転車の補助金をもらうには？申請条件と上限額を教えて。' },
+      ],
+    },
+  ];
+
+  const cur = paths[active];
+
+  return (
+    <section className="section dark" id="path">
+      <div className="wrap">
+        <div className="section-head">
+          <span className="section-id">W/02·B — INTENT INTELLIGENCE</span>
+          <span className="section-title">経路 — Search Path</span>
+        </div>
+
+        <div style={{ marginBottom: 56, display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 48, alignItems: 'end' }}>
+          <h2 style={{ fontSize: 'clamp(32px, 4vw, 52px)', lineHeight: 1.1, letterSpacing: '-0.025em', color: 'var(--paper)' }}>
+            一つの質問は、<br />
+            決して<span style={{ color: 'var(--accent)', fontStyle: 'italic', fontWeight: 600 }}>単独</span>で存在しない。
+          </h2>
+          <p style={{ color: 'var(--muted-2)', fontSize: 16, maxWidth: '40ch', justifySelf: 'end' }}>
+            ユーザーはキーワードに到達する前後で、別のクエリを連続して問い続ける。<br />
+            その<strong style={{ color: 'var(--paper)', fontWeight: 600 }}>連鎖</strong>こそが、GEO の設計図になります。
+          </p>
+        </div>
+
+        <div className="sp-layout">
+          <div className="sp-copy">
+            <h3>キーワードの<br />「前と後ろ」を読む。</h3>
+            <p>
+              Ascent はユーザーがそのキーワードに到達する前後で、どのような検索行動を続けているか
+              <b>（Search Path）</b>を分析します。
+            </p>
+            <p>
+              例えば「電動自転車」の検索経路には、<b>通勤目的</b>で深掘りしていく流れも、
+              <b>価格重視</b>で遷移する流れも、購入前に<b>公的支援情報</b>を確認する経路も存在します。
+              同じ起点でも、たどり着く問いはまったく違います。
+            </p>
+
+            <div className="sp-callout">
+              <div className="lab">— GEO の核心</div>
+              <p>
+                重要なのは、単一の質問ではなく<b>「質問クラスター」</b>。
+                連続するユーザーの問いをあらかじめ予測し、コンテンツで対応できているか。
+                Ascent は検索経路に基づき、<b>GEO に極めて有利な連続的質問クラスター</b>を設計します。
+              </p>
+            </div>
+          </div>
+
+          <div className="sp-vertical">
+            <div className="sp-tabs">
+              {paths.map((p, i) => (
+                <button
+                  type="button"
+                  key={i}
+                  className={`sp-tab ${active === i ? 'active' : ''}`}
+                  onClick={() => setActive(i)}
+                >
+                  <span className="t">{p.tag}</span>
+                  <span className="n">{p.name}</span>
+                </button>
+              ))}
+            </div>
+
+            <div className="sp-chain">
+              <div className="sp-chain-head">
+                <span className="lab">SEARCH PATH · {cur.en}</span>
+                <span className="src">REAL-DATA SAMPLE</span>
+              </div>
+
+              {cur.nodes.map((n, i) => {
+                const depth = i;
+                const cls = depth === 0 ? '' : depth === 1 ? 'deep' : 'deepest';
+                return (
+                  <React.Fragment key={i}>
+                    <div className={`sp-stage ${cls}`}>
+                      <div className="sp-stage-meta">
+                        <span className="step">STEP {String(i + 1).padStart(2, '0')}</span>
+                        <span className="depth">DEPTH · L{i + 1}</span>
+                      </div>
+                      <div className="sp-kw">{n.kw}</div>
+                      <div className="sp-prompt">
+                        <span className="lab">USER PROMPT</span>
+                        <div className="bubble">
+                          <span className="q">"</span>
+                          {n.prompt}
+                        </div>
+                      </div>
+                    </div>
+                    {i < cur.nodes.length - 1 && (
+                      <div className="sp-link">
+                        <span className="dot"></span>
+                        <span className="dot"></span>
+                        <span className="dot"></span>
+                        <span className="arr">↓</span>
+                      </div>
+                    )}
+                  </React.Fragment>
+                );
+              })}
+
+              <div className="sp-foot">
+                <span>SEED · 電動自転車</span>
+                <span>STEPS · <b>3</b></span>
+                <span>CLUSTER · <b>{cur.name}</b></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<PathSection />);
+</script>
+
+</body>
+</html>
