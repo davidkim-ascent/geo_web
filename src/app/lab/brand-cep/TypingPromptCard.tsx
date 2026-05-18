@@ -74,7 +74,6 @@ export function TypingPromptCard() {
   const [started, setStarted] = useState(false);
   const [lines, setLines] = useState<string[]>(EMPTY_LINES);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const [done, setDone] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -84,7 +83,6 @@ export function TypingPromptCard() {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (reducedMotion.matches) {
       setLines(LINES.map((line) => line.text));
-      setDone(true);
       return;
     }
 
@@ -112,7 +110,6 @@ export function TypingPromptCard() {
       for (let cycle = 0; cycle < REPEAT_COUNT; cycle += 1) {
         setLines(EMPTY_LINES);
         setActiveIndex(0);
-        setDone(false);
 
         for (let lineIndex = 0; lineIndex < LINES.length; lineIndex += 1) {
           const line = LINES[lineIndex];
@@ -134,14 +131,9 @@ export function TypingPromptCard() {
 
         if (cancelled) return;
         setActiveIndex(null);
-        setDone(true);
         if (cycle < REPEAT_COUNT - 1) {
           await sleep(2000);
         }
-      }
-
-      if (!cancelled) {
-        setDone(true);
       }
     };
 
@@ -212,7 +204,7 @@ export function TypingPromptCard() {
             </div>
             <div className="flex items-center gap-2 text-[10px] tracking-[0.18em] text-[#6BA2FF] uppercase">
               <span className="h-1.5 w-1.5 rounded-full bg-[#6BA2FF] shadow-[0_0_8px_rgba(107,162,255,0.9)]" />
-              {done ? "Rendered" : "Typing"}
+              Live typing
             </div>
           </div>
 
@@ -239,7 +231,7 @@ export function TypingPromptCard() {
                   <span className="whitespace-pre-wrap break-words">
                     {lines[index]}
                   </span>
-                  {activeIndex === index && !done ? (
+                  {activeIndex === index ? (
                     <span className="ml-[2px] inline-block h-[1em] w-[2px] translate-y-[2px] animate-pulse bg-[#6BA2FF] shadow-[0_0_6px_rgba(107,162,255,0.95)]" />
                   ) : null}
                 </div>
@@ -255,7 +247,7 @@ export function TypingPromptCard() {
               ListeningMind
             </span>
             <span className="ml-auto font-mono tracking-[0.12em]">
-              {done ? "10 lines" : "typing..."}
+              fixed frame
             </span>
           </div>
         </div>
