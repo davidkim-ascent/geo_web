@@ -206,7 +206,7 @@ export default async function WhyAscentPage() {
               </h2>
             </div>
             <p className="mt-16 max-w-[34ch] text-[18px] leading-[1.75] text-[#4e4e51] lg:justify-self-end">
-              Google・Microsoft が公開する検索特許を解析し、Passage Ranking や Intent Ranking など 実装メカニズムから逆算した GEO を設計します。
+              Google・Microsoft が公開する検索特許を解析し、Passage Ranking や Intent Ranking など 実装メカニズムから逆算した <Link href="/framework" className="underline underline-offset-2 decoration-[#1452ff]/50 hover:decoration-[#1452ff] transition-colors text-[#0b0b0e]">GEO を設計</Link>します。
             </p>
           </div>
 
@@ -290,10 +290,10 @@ export default async function WhyAscentPage() {
                   複数の顧客が混在している。
                 </h3>
                 <p className="mt-6 text-[16px] md:text-[18px] leading-[1.75] text-white/68">
-                  Ascentが開発した「リスニングマインド」ソリューションを活用し、キーワードの背後に隠れた潜在顧客を自動で分類します。例えば「SEO対策」というキーワードの中には、概念を調べ始めた <strong className="text-white font-medium">入門者</strong>、社内で実行する <strong className="text-white font-medium">実務者</strong>、外部に発注を検討する <strong className="text-white font-medium">発注検討者</strong> が混在しています。
+                  Ascentが開発した「<Link href="/services" className="underline underline-offset-2 decoration-[#1452ff]/50 hover:decoration-[#1452ff] transition-colors text-white">リスニングマインド</Link>」ソリューションを活用し、キーワードの背後に隠れた潜在顧客を自動で分類します。例えば「SEO対策」というキーワードの中には、概念を調べ始めた <strong className="text-white font-medium">入門者</strong>、社内で実行する <strong className="text-white font-medium">実務者</strong>、外部に発注を検討する <strong className="text-white font-medium">発注検討者</strong> が混在しています。
                 </p>
                 <p className="mt-5 text-[16px] md:text-[18px] leading-[1.75] text-white/68">
-                  つまり、単にキーワードをターゲットにするのではなく、ユーザーの <strong className="text-white font-medium">Search Intent（検索意図）</strong> を正確に把握した上で、最適な GEO 設計を行います。
+                  つまり、単にキーワードをターゲットにするのではなく、ユーザーの <strong className="text-white font-medium">Search Intent（検索意図）</strong> を正確に把握した上で、最適な <Link href="/framework" className="underline underline-offset-2 decoration-[#1452ff]/50 hover:decoration-[#1452ff] transition-colors text-white">GEO 設計</Link>を行います。
                 </p>
               </div>
             </div>
@@ -380,12 +380,12 @@ export default async function WhyAscentPage() {
                 基づくGEO施策が可能。
               </h3>
               <p className="mt-6 text-[15px] md:text-[16px] leading-[1.75] text-[#4e4e51]">
-                消費者の「<strong className="font-semibold text-black">CEP(Category Entry Point)</strong>」に
+                消費者の「<Link href="/lab/brand-cep" className="font-semibold text-black underline underline-offset-2 decoration-[#1452ff]/50 hover:decoration-[#1452ff] transition-colors">CEP(Category Entry Point)</Link>」に
                 <br />
                 基づくGEO施策が可能。CEPとは、消費者がブランドを思い浮かべる<strong className="font-semibold text-black">状況・悩み・購買判断要素</strong>を指します。リスニングマインドはここまで掘り下げて、AI に引用される条件を構造化します。
               </p>
               <p className="mt-5 text-[15px] md:text-[16px] leading-[1.75] text-[#4e4e51]">
-                シチュエーション・心理状態・購買タイミングを整理し、AIが「状況」に応じて推奨できる<strong className="font-semibold text-black">CEPベースの質問と対応コンテンツ</strong>を設計します。GEO の観点で極めて有利な施策が可能です。
+                シチュエーション・心理状態・購買タイミングを整理し、AIが「状況」に応じて推奨できる<Link href="/services" className="font-semibold text-black underline underline-offset-2 decoration-[#1452ff]/50 hover:decoration-[#1452ff] transition-colors">CEPベースの質問と対応コンテンツ</Link>を設計します。GEO の観点で極めて有利な施策が可能です。
               </p>
             </div>
 
@@ -490,7 +490,7 @@ export default async function WhyAscentPage() {
                 Ascentはユーザーがそのキーワードに到達する前後で、どのような検索行動を続けているか検索経路（Search Path）を分析します。例えば、「電動自転車」の検索経路には、「電動自転車 → 電動自転車 おすすめ → 電動自転車 おすすめ 通勤」のように通勤目的で深掘りしていく流れもあれば、「電動自転車 → 電動自転車 安い → 電動自転車 安い 型落ち」のように価格重視で遷移する流れもあります。また、「電動自転車 → 電動自転車 補助金 → 電動自転車 補助金 東京都 2025」のように、購入前に公的支援情報を確認する経路も存在します。
                 </p>
                 <p className="text-[15px] md:text-[16px] leading-[1.75] text-white/70">
-                  GEO施策において重要なポイントは、「質問クラスター」、つまり単一の質問ではなく、連続するユーザーの質問をあらかじめ予測し、コンテンツで対応できているかどうかです。Ascentは検索経路に基づき、GEOに極めて有利な連続的質問クラスターを設計します。
+                  GEO施策において重要なポイントは、「<Link href="/services" className="underline underline-offset-2 decoration-[#1452ff]/50 hover:decoration-[#1452ff] transition-colors text-white/70">質問クラスター</Link>」、つまり単一の質問ではなく、連続するユーザーの質問をあらかじめ予測し、コンテンツで対応できているかどうかです。Ascentは検索経路に基づき、GEOに極めて有利な連続的質問クラスターを設計します。
                 </p>
               </div>
             </div>

@@ -1,3 +1,16 @@
+## 2026-05-18 21:15
+- why-ascent 페이지 내부링크 삽입
+  - W/01 특허 섹션 "GEO を設計" → /framework
+  - W/02·A 인텐트 섹션 "リスニングマインド" → /services, "GEO 設計" → /framework
+  - W/02·C CEP 섹션 "CEP(Category Entry Point)" → /lab/brand-cep, "CEPベースの質問と対応コンテンツ" → /services
+  - W/02·B 검색경로 섹션 "質問クラスター" → /services
+
+## 2026-05-18 21:00
+- 홈페이지 내부링크 연결: Why Ascent 4개 카드 `詳しく見る →` → `/why-ascent` 또는 `/framework`
+- Services 4개 카드 `詳しく見る →` → `/services`
+- FrameworkSection 5단계 토글 버튼 → `/framework` (hover 시 활성 표시 유지)
+- 로컬 서버 재시작
+
 ## 2026-05-18 20:30
 - brand-cep 아티클 본문 상단에 lm-cep-finder.png 삽입
 - brand-cep s9 섹션 마지막 문단 하단에 동일 이미지 재삽입

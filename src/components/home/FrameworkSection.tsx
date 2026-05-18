@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -130,17 +131,19 @@ export default function FrameworkSection() {
             {steps.map((step, i) => (
               <Button
                 key={step.id}
-                type="button"
+                asChild
                 variant="bare"
-                onClick={() => setActive(i)}
                 className={`fw-step text-left ${active === i ? "active" : ""}`}
+                onMouseEnter={() => setActive(i)}
               >
-                <span className="n">{step.id}</span>
-                <div>
-                  <h5 className={active === i ? "text-[#FAFAF7]" : "text-white/80"}>{step.title}</h5>
-                  <div className="meta">{step.sub}</div>
-                </div>
-                <span className={`more text-[17px] ${active === i ? "text-[#1452FF]" : "text-white/20"}`}>→</span>
+                <Link href="/framework">
+                  <span className="n">{step.id}</span>
+                  <div>
+                    <h5 className={active === i ? "text-[#FAFAF7]" : "text-white/80"}>{step.title}</h5>
+                    <div className="meta">{step.sub}</div>
+                  </div>
+                  <span className={`more text-[17px] ${active === i ? "text-[#1452FF]" : "text-white/20"}`}>→</span>
+                </Link>
               </Button>
             ))}
           </div>

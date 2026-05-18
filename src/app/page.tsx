@@ -362,6 +362,7 @@ function WhyAscentSection() {
       ),
       title: "特許ベースの GEO 分析",
       desc: "Google / Microsoft の検索特許を解析し、Passage Ranking や Intent Ranking など内部メカニズムから GEO を逆算します。",
+      href: "/why-ascent",
     },
     {
       icon: (
@@ -372,6 +373,7 @@ function WhyAscentSection() {
       ),
       title: "リスニングマインド消費者インテント",
       desc: "実消費者の検索質問データを基盤に、想定ではなく「実際に問われている問い」から戦略を組み立てます。",
+      href: "/why-ascent",
     },
     {
       icon: (
@@ -385,6 +387,7 @@ function WhyAscentSection() {
       ),
       title: "検索経路探索",
       desc: "「最初の検索」だけで終わらず、そこから生まれた疑問や調べ直したルートを可視化します。",
+      href: "/why-ascent",
     },
     {
       icon: (
@@ -398,6 +401,7 @@ function WhyAscentSection() {
       ),
       title: "GEO Framework",
       desc: "Embedding による意味的類似度で、質問とコンテンツの GAP を10点モデルで定量評価します。",
+      href: "/framework",
     },
   ];
 
@@ -438,7 +442,7 @@ function WhyAscentSection() {
               <p className="text-[16px] text-[#4e4e51] leading-[1.6] flex-1 font-[inherit]">{p.desc}</p>
               <div className="mt-6 pt-4 border-t border-black/[0.06]">
                 <Button asChild variant="detail">
-                  <Link href="#">詳しく見る →</Link>
+                  <Link href={p.href}>詳しく見る →</Link>
                 </Button>
               </div>
             </div>
@@ -456,6 +460,7 @@ function ServicesSection() {
   const services = [
     {
       title: "質問クラスター抽出",
+      href: "/services",
       desc: "CDJ 5 段階 × 検索量 × 文脈データから、ブランドが応答すべき質問群をデータ基盤で導出。",
       bullets: ["CDJ 5 段階分類", "検索量による優先度化", "cluster・path 文脈結合"],
       visual: (
@@ -487,6 +492,7 @@ function ServicesSection() {
     },
     {
       title: "GAP分析",
+      href: "/services",
       desc: "質問とコンテンツの間にある意味的ギャップを発見。",
       bullets: ["質問 ↔ コンテンツ GAP", "10点評価", "Cluster Mapping"],
       visual: (
@@ -514,6 +520,7 @@ function ServicesSection() {
     },
     {
       title: "GEO コンテンツ制作",
+      href: "/services",
       desc: "AI に「引用される」構造を設計するライティング。",
       bullets: ["Passage 最適化", "FAQ / Schema 設計", "GEO Writing"],
       visual: (
@@ -534,6 +541,7 @@ function ServicesSection() {
     },
     {
       title: "GEO モニタリング",
+      href: "/services",
       desc: "可視性・引用・トラフィックを継続トラッキング。",
       bullets: ["Brand Visibility", "Citation Tracking", "AI Traffic 分析"],
       visual: (
@@ -596,8 +604,8 @@ function ServicesSection() {
               {/* Visual — flex-1로 나머지 공간 채움 */}
               <div className="flex-1 flex flex-col">{svc.visual}</div>
               <div className="mt-5">
-                <Button type="button" variant="detail">
-                  詳しく見る →
+                <Button asChild variant="detail">
+                  <Link href={svc.href}>詳しく見る →</Link>
                 </Button>
               </div>
             </div>
