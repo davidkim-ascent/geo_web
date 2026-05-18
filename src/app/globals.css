@@ -761,6 +761,7 @@ body.tweak-norotate .fw-ring g.node text {
 .article-page {
   background: var(--bg);
   color: var(--fg);
+  overflow-x: clip;
 }
 
 /* 아티클 페이지 내 모든 mono/monospace 폰트를 Pretendard JP로 통일 */
@@ -843,10 +844,25 @@ body.tweak-norotate .fw-ring g.node text {
 }
 
 .article-body {
+  min-width: 0;
   font-size: var(--fs-body);
   line-height: 1.85;
   letter-spacing: 0.005em;
   color: var(--ink);
+}
+
+.article-body img,
+.article-body picture,
+.article-body video,
+.article-body svg {
+  max-width: 100%;
+}
+
+.article-body img,
+.article-body video,
+.article-body svg {
+  display: block;
+  height: auto;
 }
 
 .article-section {
@@ -1036,6 +1052,8 @@ body.tweak-norotate .fw-ring g.node text {
   font-size: var(--fs-body);
   line-height: 1.65;
   color: #323235;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .article-table__cell--label {
@@ -1109,6 +1127,78 @@ body.tweak-norotate .fw-ring g.node text {
 
 .article-cta {
   margin-top: 88px;
+}
+
+@media (max-width: 640px) {
+  .article-shell {
+    padding: 64px 0;
+  }
+
+  .article-hero {
+    padding: 24px 0 20px;
+  }
+
+  .article-hero__grid {
+    gap: 28px;
+  }
+
+  .article-meta {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .article-meta__item {
+    padding-right: 0;
+  }
+
+  .article-meta__item:not(:last-child) {
+    margin-right: 0;
+    padding-bottom: 16px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .article-h2 {
+    max-width: none;
+    white-space: normal;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    font-size: clamp(26px, 7.2vw, 32px);
+  }
+
+  .article-h3 {
+    font-size: 18px;
+  }
+
+  .article-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .article-table__head,
+  .article-table__row {
+    min-width: 620px;
+  }
+
+  .article-callout,
+  .article-faq__item,
+  .article-table__head,
+  .article-table__row {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .article-principle-card {
+    grid-template-columns: 24px 1fr;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .article-principle-card__number {
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+  }
 }
 
 /* ===== ITALIC BLUE GRADIENT — clip fix ===== */
