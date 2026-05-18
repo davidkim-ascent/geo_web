@@ -281,7 +281,7 @@ export default async function WhyAscentPage() {
               <h2 className="font-extrabold leading-[1.2] tracking-[-0.04em] text-[clamp(32px,3vw,44px)]">
                 キーワードの背後にいる
                 <br />
-                <span className="text-[#1452ff] pr-1">「真の顧客」</span>を見つめる。
+                <span className="text-[#1452ff] pr-1">真の顧客</span>を見つめる。
               </h2>
               <div className="mt-16">
                 <h3 className="text-[22px] md:text-[26px] font-bold leading-[1.3] tracking-[-0.02em]">
