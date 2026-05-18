@@ -614,13 +614,14 @@ function ServicesSection() {
 function GeoLabSection() {
   const articles = [
     {
-      tag: "TREND",
+      tag: "STRATEGY",
       num: "03",
-      title: "検索はどう変わっているのか — 2026 AI 検索レポート",
-      desc: "クリック率・回答出現率・引用率の最新データ。検索行動の根本的な変化を読み解く。",
-      date: "04.18",
-      readTime: "8 MIN READ",
+      title: "AI検索時代のブランド戦略：キーワードではなく、CEPを制覇せよ",
+      desc: "消費者がAIに状況を話しかける時代、ブランド競争の本質はキーワード順位からCEP（カテゴリーエントリーポイント）の占有へ移行している。GEO戦略の核心を解説する。",
+      date: "05.18",
+      readTime: "10 MIN READ",
       size: "large",
+      href: "/lab/brand-cep",
     },
     {
       tag: "COMPARE",
@@ -667,7 +668,8 @@ function GeoLabSection() {
         {/* Article cards */}
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Large card */}
-          <div className="md:col-span-1 bg-[#0B0B0E] rounded-2xl overflow-hidden card-hover-dark group">
+          <Link href={articles[0].href ?? "/lab"} className="md:col-span-1 block">
+          <div className="bg-[#0B0B0E] rounded-2xl overflow-hidden card-hover-dark group h-full">
             <div className="relative h-[200px] flex items-center justify-center overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-[#1452FF]/20 to-transparent" />
               <div className="absolute inset-0 flex items-center justify-center">
@@ -675,11 +677,11 @@ function GeoLabSection() {
                   className="font-bold text-white/5"
                   style={{ fontSize: "120px", lineHeight: 1 }}
                 >
-                  03
+                  {articles[0].num}
                 </span>
               </div>
               <div className="absolute top-4 left-4">
-                <span className="tag-blue text-[10px]">TREND</span>
+                <span className="tag-blue text-[10px]">{articles[0].tag}</span>
               </div>
             </div>
             <div className="p-6">
@@ -694,6 +696,7 @@ function GeoLabSection() {
               </div>
             </div>
           </div>
+          </Link>
 
           {/* Small cards */}
           <div className="md:col-span-2 grid grid-rows-2 gap-4">

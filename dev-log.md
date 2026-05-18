@@ -1,3 +1,28 @@
+## 2026-05-18 20:30
+- brand-cep 아티클 본문 상단에 lm-cep-finder.png 삽입
+- brand-cep s9 섹션 마지막 문단 하단에 동일 이미지 재삽입
+- 아티클 히어로 h1 타이틀 폰트 굵기 800 → 500(Medium)으로 조정
+
+## 2026-05-18 20:10
+- 아티클 페이지 폰트 통일: `.article-page *` 스코프로 JetBrains Mono 및 font-mono 계열을 모두 Pretendard JP로 재정의
+- globals.css 내 article 영역 JetBrains Mono 4개 선언도 Pretendard JP로 교체
+
+## 2026-05-18 19:55
+- lab/LabArticles: "検索の変化" 카드 제거, brand-cep를 두 번째 위치로 이동
+- lab/page: featuredSide 첫 번째 항목을 brand-cep로 교체, 두 카드 모두 Link 연결
+- 인덱스 page: GeoLabSection large 카드를 brand-cep 아티클로 교체, 태그 동적 렌더링 및 Link 연결
+
+## 2026-05-18 19:30
+- 신규 아티클 페이지 추가: `/lab/brand-cep` — 「AI検索時代のブランド戦略：キーワードではなく、CEPを制覇せよ」
+- seo-geo와 동일한 레이아웃(히어로, TOC, article-body, CTA) 적용, 섹션 10개
+- LabArticles.tsx에 새 아티클 카드 추가 및 Link 연결 처리
+
+## 2026-05-18 16:56
+- 전역의 10px / 11px 라벨성 텍스트를 +1px 조정해 섹션 보조 라벨과 mono 메타의 가독성을 올림.
+
+## 2026-05-18 16:54
+- 전역 타이포 크기 조정: 섹션 라벨, 본문 카피, 작은 본문, 버튼, 헤더 브랜드/내비/CTA를 각각 +1px씩 확대함.
+
 ## 2026-05-18 16:49
 - 히로 로고를 `Ascent` 흰색 / `GEO` 파란색 분리 버전으로 바꾸고, Home / Why Ascent / Framework / Services / GEO Lab / Contact 히로 영역에 동일하게 삽입함.
 

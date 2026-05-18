@@ -28,9 +28,9 @@
   --fs-h3: 19px;
   --fs-h4: 17px;
   --fs-body: 18px;
-  --fs-body-sm: 17px;
-  --fs-label: 11px;
-  --fs-label-sm: 10px;
+  --fs-body-sm: 18px;
+  --fs-label: 12px;
+  --fs-label-sm: 11px;
   --lh-display: 1.12;
   --lh-heading: 1.22;
   --ui-radius-field: 18px;
@@ -144,7 +144,7 @@ h4 {
 .btn-primary {
   background: #0B0B0E;
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   padding: 14px 28px;
   border-radius: var(--ui-radius-pill);
@@ -165,7 +165,7 @@ h4 {
 .btn-outline {
   background: transparent;
   color: var(--fg);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   padding: 13px 28px;
   border-radius: var(--ui-radius-pill);
@@ -186,7 +186,7 @@ h4 {
 .btn-outline-dark {
   background: transparent;
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   padding: var(--ui-cta-button-padding-y) var(--ui-cta-button-padding-x);
   border-radius: var(--ui-cta-button-radius);
@@ -211,7 +211,7 @@ h4 {
 .btn-filled-dark {
   background: rgba(255,255,255,0.08);
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   padding: var(--ui-cta-button-padding-y) var(--ui-cta-button-padding-x);
   border-radius: var(--ui-cta-button-radius);
@@ -234,7 +234,7 @@ h4 {
 
 .ui-detail-button {
   font-family: inherit;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 1;
   padding: 10px 16px;
@@ -286,7 +286,7 @@ h4 {
   color: var(--paper);
 }
 .ui-section-label-title {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -301,7 +301,7 @@ h4 {
   color: var(--muted);
 }
 .ui-body-copy-sm {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
   color: var(--muted);
 }
@@ -324,11 +324,11 @@ h4 {
 .ui-header-brand {
   color: var(--ink);
   font-weight: 800;
-  font-size: 18px;
+  font-size: 19px;
   letter-spacing: -0.02em;
 }
 .ui-header-nav-link {
-  font-size: 16px;
+  font-size: 17px;
   color: var(--muted);
   transition: color 0.2s ease;
 }
@@ -338,7 +338,7 @@ h4 {
 .ui-header-cta {
   background: var(--ink);
   color: #fff;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   border-radius: var(--ui-radius-pill);
   border: 1px solid var(--ink);
@@ -369,7 +369,7 @@ h4 {
 }
 .ui-footer-heading {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -418,7 +418,7 @@ h4 {
 
 /* ===== TAG PILL ===== */
 .tag-light {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.06em;
   padding: 4px 10px;
@@ -431,7 +431,7 @@ h4 {
 .tag-blue {
   background: var(--blue);
   color: #fff;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.06em;
   padding: 4px 10px;
@@ -440,7 +440,7 @@ h4 {
 }
 
 .tag-dark {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.06em;
   padding: 4px 10px;
@@ -572,7 +572,7 @@ body.tweak-norotate .fw-ring g.node text {
 }
 .fw-center .lab {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.22em;
   color: var(--muted);
   text-transform: uppercase;
@@ -763,6 +763,12 @@ body.tweak-norotate .fw-ring g.node text {
   color: var(--fg);
 }
 
+/* 아티클 페이지 내 모든 mono/monospace 폰트를 Pretendard JP로 통일 */
+.article-page,
+.article-page * {
+  font-family: 'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif !important;
+}
+
 .article-hero {
   background: var(--bg-dark);
   color: var(--fg-light);
@@ -782,7 +788,7 @@ body.tweak-norotate .fw-ring g.node text {
   font-size: clamp(48px, 5.2vw, 82px);
   line-height: 0.96;
   letter-spacing: -0.04em;
-  font-weight: 800;
+  font-weight: 500;
   color: #fff;
 }
 
@@ -812,7 +818,7 @@ body.tweak-norotate .fw-ring g.node text {
 
 .article-meta__label {
   margin-bottom: 4px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif;
   font-size: 10px;
   letter-spacing: 0.18em;
   color: #9A9AA0;
@@ -848,7 +854,7 @@ body.tweak-norotate .fw-ring g.node text {
 }
 
 .article-toc {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif;
 }
 
 .article-toc__label {
@@ -907,7 +913,7 @@ body.tweak-norotate .fw-ring g.node text {
 .article-kicker {
   display: inline-block;
   margin-bottom: 14px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif;
   font-size: 11px;
   letter-spacing: 0.2em;
   color: var(--accent);
@@ -1086,7 +1092,7 @@ body.tweak-norotate .fw-ring g.node text {
   place-items: center;
   background: var(--accent);
   color: #fff;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif;
   font-size: 11px;
   font-weight: 700;
 }
@@ -1166,7 +1172,7 @@ span.accent {
 .wp-bc {
   display: flex; align-items: center; gap: 8px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; letter-spacing: 0.14em;
+  font-size: 12px; letter-spacing: 0.14em;
   color: var(--muted-2);
   margin-bottom: 56px;
 }
@@ -1190,7 +1196,7 @@ span.accent {
 .badge {
   position: absolute; top: -12px; right: -12px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: 0.14em;
+  font-size: 11px; letter-spacing: 0.14em;
   background: var(--blue); color: #fff;
   padding: 4px 10px; border-radius: 100px;
   z-index: 2;
@@ -1249,7 +1255,7 @@ span.accent {
 /* hero side */
 .wp-side .ix {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px; letter-spacing: 0.16em;
+  font-size: 12px; letter-spacing: 0.16em;
   color: var(--muted-2);
   margin-bottom: 20px;
 }
@@ -1282,7 +1288,7 @@ span.accent {
 .specs .s:last-child { border-right: none; }
 .specs .l {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: 0.18em;
+  font-size: 11px; letter-spacing: 0.18em;
   color: var(--muted-2); margin-bottom: 8px;
 }
 .specs .v { font-size: 17px; font-weight: 700; color: #fff; }
@@ -1403,7 +1409,7 @@ span.accent {
 }
 .wp-form-card .lab {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: 0.16em;
+  font-size: 11px; letter-spacing: 0.16em;
   color: rgba(255,255,255,0.35); margin-bottom: 12px;
 }
 .wp-form-card h3 { font-size: 19px; font-weight: 700; color: #fff; margin-bottom: 6px; }
@@ -1503,7 +1509,7 @@ span.accent {
   align-items: center;
   gap: 12px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.22em;
   color: var(--accent);
   padding: 8px 16px;
@@ -1570,7 +1576,7 @@ span.accent {
 
 .thx-step .ix {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.18em;
   color: var(--accent);
   margin-bottom: 14px;
@@ -1595,7 +1601,7 @@ span.accent {
 
 .thx-step .when {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.16em;
   color: var(--accent);
   margin-top: 18px;
@@ -1673,7 +1679,7 @@ span.accent {
 
 .thx-phone-meta {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.18em;
   color: rgba(255,255,255,0.5);
 }
@@ -1740,7 +1746,7 @@ span.accent {
   display: flex; justify-content: space-between;
   margin-top: 14px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: 0.1em;
+  font-size: 11px; letter-spacing: 0.1em;
   color: rgba(255,255,255,0.25);
 }
 
@@ -1813,7 +1819,7 @@ span.accent {
 }
 .ct-hero-kicker {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   color: var(--accent);
   display: flex;
@@ -1988,7 +1994,7 @@ a.ct-channel-card:hover {
 }
 .ct-faq-idx {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   color: var(--accent);
   flex-shrink: 0;

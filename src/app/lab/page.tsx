@@ -17,16 +17,18 @@ export const dynamic = "force-static";
 
 const featuredSide = [
   {
-    cat: "検索の変化",
-    title: "AI Overview が変えた、検索結果ページの3秒間",
-    desc: "Google AI Overview の登場で、検索結果ページ上部に何が起きているか。クリック率の変動と、引用される側の条件を、12 業種のデータから分析する。",
-    meta: "2026.04.12 · 8 MIN",
+    cat: "ブランド戦略",
+    title: "AI検索時代のブランド戦略：キーワードではなく、CEPを制覇せよ",
+    desc: "消費者がAIに状況を話しかける時代、ブランド競争の本質はキーワード順位からCEP（カテゴリーエントリーポイント）の占有へ移行している。GEO戦略の核心を解説する。",
+    meta: "2026.05.18 · 10 MIN",
+    href: "/lab/brand-cep",
   },
   {
     cat: "SEO vs GEO",
     title: "SEOとGEOは何が違うのか？検索最適化と生成AI最適化を比較",
     desc: "SEOは検索エンジン、GEOは生成AI。比較表と実践原則で違いを整理した記事。",
     meta: "2026.05.13 · 8 MIN",
+    href: "/lab/seo-geo",
   },
 ];
 
@@ -164,21 +166,20 @@ export default function LabPage() {
             {/* Side items */}
             <div className="grid gap-4">
               {featuredSide.map((item, i) => (
-                <article
-                  key={i}
-                  className="cursor-pointer rounded-xl border border-[#E6E4DD] bg-[#F2F0EA] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1452FF]"
-                >
-                  <span className="font-mono text-[10px] tracking-[0.14em] text-[#1452FF]">
-                    {item.cat}
-                  </span>
-                  <h4 className="mt-2 mb-2 text-[18px] font-bold leading-[1.3] tracking-[-0.01em]">
-                    {item.title}
-                  </h4>
-                  <p className="text-[13px] leading-[1.5] text-[#6B6B73]">{item.desc}</p>
-                  <div className="mt-3.5 font-mono text-[10px] tracking-[0.12em] text-[#9A9AA0]">
-                    {item.meta}
-                  </div>
-                </article>
+                <Link key={i} href={item.href} className="block">
+                  <article className="group cursor-pointer rounded-xl border border-[#E6E4DD] bg-[#F2F0EA] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1452FF]">
+                    <span className="font-mono text-[10px] tracking-[0.14em] text-[#1452FF]">
+                      {item.cat}
+                    </span>
+                    <h4 className="mt-2 mb-2 text-[18px] font-bold leading-[1.3] tracking-[-0.01em]">
+                      {item.title}
+                    </h4>
+                    <p className="text-[13px] leading-[1.5] text-[#6B6B73]">{item.desc}</p>
+                    <div className="mt-3.5 font-mono text-[10px] tracking-[0.12em] text-[#9A9AA0]">
+                      {item.meta}
+                    </div>
+                  </article>
+                </Link>
               ))}
             </div>
           </div>
