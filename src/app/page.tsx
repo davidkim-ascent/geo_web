@@ -270,7 +270,7 @@ function SearchShiftSection() {
               <div>
                 <h3 className="text-[19px] font-semibold text-[#0B0B0E] mt-1">SERP クリック率の3年連続で継続的減少</h3>
               </div>
-              <div className="text-[24px] font-bold text-red-500 mono">−58%</div>
+              <div className="text-[24px] font-bold text-red-500 mono">−28%</div>
             </div>
             {/* Decline chart — line */}
             <div className="relative h-[100px] mt-2">
@@ -308,7 +308,7 @@ function SearchShiftSection() {
               <div>
                 <h3 className="text-[19px] font-semibold text-[#FAFAF7] mt-1">AI 回答エンジン利用の指数的成長</h3>
               </div>
-              <div className="text-[24px] font-bold text-[#1452FF] mono">+700%</div>
+              <div className="text-[24px] font-bold text-[#1452FF] mono">+240%</div>
             </div>
             {/* Growth chart — line */}
             <div className="relative h-[100px] mt-2">
