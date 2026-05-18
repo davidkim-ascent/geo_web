@@ -1,10 +1,10 @@
 "use client";
 
 const STEPS = [
-  { ix: "01", name: "Question Intelligence", jp: "質問インテリジェンス" },
-  { ix: "02", name: "Semantic GAP Analysis", jp: "セマンティックGAP分析" },
-  { ix: "03", name: "GEO Content Engineering", jp: "GEOコンテンツ・エンジニアリング" },
-  { ix: "04", name: "AI Visibility Monitoring", jp: "AIビジビリティ・モニタリング" },
+  { ix: "01", name: "質問分析", jp: "質問分析" },
+  { ix: "02", name: "GAP分析", jp: "10点評価モデル" },
+  { ix: "03", name: "GEOに特化したコンテンツ対策", jp: "GEOに特化したコンテンツ対策" },
+  { ix: "04", name: "モニタリング", jp: "モニタリング" },
   { ix: "05", name: "Optimization Loop", jp: "最適化ループ" },
 ];
 

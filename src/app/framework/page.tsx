@@ -2,15 +2,15 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
-import { CTASection } from "@/components/layout/CTASection";
+import { HeroLogoMark } from "@/components/layout/HeroLogoMark";
+import { SeoGeoCTASection } from "@/components/layout/SeoGeoCTASection";
 import { Button } from "@/components/ui/button";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
-import { getCalendarBookingHref } from "@/lib/calendar-booking";
 import { FrameworkLoop } from "./FrameworkLoop";
 
 export const metadata: Metadata = {
   title: "Framework — GEO",
-  description: "質問から最適化までを、ひと続きの設計に。",
+  description: "質問から最適化までが、一貫した設計。",
 };
 
 export const dynamic = "force-static";
@@ -18,7 +18,7 @@ export const dynamic = "force-static";
 const frameworkSteps = [
   {
     id: "01",
-    title: "Question Intelligence",
+    title: "質問分析",
     subtitle: "CDJ ベースの質問生成",
     description:
       "検索クエリだけでなく、実消費者の意思決定プロセスから質問群を抽出し、GEO が答えるべき問いを定義します。",
@@ -27,8 +27,8 @@ const frameworkSteps = [
   },
   {
     id: "02",
-    title: "Semantic GAP Analysis",
-    subtitle: "12点評価モデル",
+    title: "GAP分析",
+    subtitle: "10点評価モデル",
     description:
       "質問と既存コンテンツの意味的な距離を見える化し、何が足りないかを定量化。改善順序を決める土台を作ります。",
     bullets: ["12点評価", "Semantic Similarity", "GAP 可視化", "優先順位設計"],
@@ -36,7 +36,7 @@ const frameworkSteps = [
   },
   {
     id: "03",
-    title: "GEO Content Engineering",
+    title: "GEOに特化したコンテンツ対策",
     subtitle: "Passage / FAQ / Schema",
     description:
       "AI に引用されやすい Passage 単位で構成を設計。見出し、定義、FAQ、Schema をひとつの流れで組み立てます。",
@@ -45,7 +45,7 @@ const frameworkSteps = [
   },
   {
     id: "04",
-    title: "AI Visibility Monitoring",
+    title: "モニタリング",
     subtitle: "Citation / Visibility / Traffic",
     description:
       "ChatGPT、Gemini、Copilot、Perplexity など複数エンジンで露出状況を観測し、改善のための現在地を把握します。",
@@ -297,13 +297,13 @@ function FrameworkHero() {
             GEO FRAMEWORK
           </div>
           <h1 className="font-bold text-[#FAFAF7]" style={{ fontSize: "clamp(32px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em" }}>
-            質問から最適化までを
+            質問から最適化までが
             <br />
-            <span className="text-[#6fa0ff]">ひと続きの設計</span>
-            に。
+            <span className="text-[#6fa0ff]">一貫した設計</span>
+            。
           </h1>
           <p className="mt-7 max-w-[54ch] text-[17px] leading-[1.7] text-[#d3d3d8]">
-            Question Intelligence、Semantic GAP、GEO Content、AI Visibility、Optimization Loop。
+            質問分析、GAP分析、GEOに特化したコンテンツ対策、モニタリング、Optimization Loop。
             5つのフェーズを連動させ、AI 検索時代に「引用され続ける」状態をつくるための Ascent の設計です。
           </p>
 
@@ -313,13 +313,14 @@ function FrameworkHero() {
               <Link href="/whitepaper">サービス資料をダウンロード</Link>
             </Button>
           </div>
+          <HeroLogoMark />
 
           <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-5">
             {[
               "Question",
-              "Semantic",
+              "GAP",
               "Content",
-              "Visibility",
+              "Monitor",
               "Loop",
             ].map((item) => (
               <div key={item} className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-center text-[11px] tracking-[0.22em] text-white/75">
@@ -443,24 +444,7 @@ export default function FrameworkPage() {
       <FrameworkOverview />
       <FrameworkSteps />
       <FrameworkFAQ />
-      <CTASection
-        kicker="CONTACT — START WITH A FREE AUDIT"
-        title={
-          <>
-            AI 検索で、
-            <br />
-            あなたのブランドは
-            <br />
-            <span className="text-blue-gradient">何回引用されている</span>か？
-          </>
-        }
-        description="まずは無料診断で、現在の AI Visibility と Citation 構造を可視化します。所要 30 分のオンライン MTG から。"
-        primaryButton={{ href: "/contact", label: "相談する" }}
-        secondaryButtons={[
-          { href: "/whitepaper", label: "サービス資料をダウンロード" },
-          { href: getCalendarBookingHref(), label: "無料相談予約（Googleカレンダー）" },
-        ]}
-      />
+      <SeoGeoCTASection />
     </div>
   );
 }

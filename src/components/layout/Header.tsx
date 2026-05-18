@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -12,12 +13,14 @@ export default function Header() {
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10 h-[70px] pt-[15px] pb-2.5 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5">
-          <span className="w-[22px] h-[22px] rounded-full border-[1.5px] border-[#0B0B0E] flex items-center justify-center relative flex-shrink-0">
-            <span className="w-[9px] h-[9px] rounded-full bg-[#1452FF] absolute" />
-          </span>
-          <span className="ui-header-brand">
-            ASCENT<span className="text-[#1452FF]">/</span>GEO
-          </span>
+          <Image
+            src="/ascent-geo-logo.png"
+            alt="ASCENT/GEO"
+            width={3317}
+            height={552}
+            priority
+            className="h-[22px] w-auto sm:h-[24px]"
+          />
         </Link>
 
         {/* Desktop Nav */}

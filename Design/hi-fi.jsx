@@ -90,7 +90,7 @@ function Hero() {
               <span className="accent">AI検索時代</span>のブランド戦略。
             </h1>
             <p className="hero-sub">
-              Google・Microsoft の特許分析、リスニングマインドの実消費者インテント、Embeddingベースのセマンティック評価。<br />
+              Google・Microsoft の特許分析、リスニングマインドの実消費者インテント、文脈・意図ベースでの評価。<br />
               GEO は推測ゲームではない。Ascent は根拠のあるフレームワークで設計する。
             </p>
             <div className="hero-meta" style={{ marginTop: 36 }}>
@@ -132,17 +132,17 @@ function EraSection() {
 
         <div style={{ marginBottom: 40 }}>
           <h2 style={{ fontSize: 42, lineHeight: 1.15, marginBottom: 14, letterSpacing: '-0.03em' }}>
-            リンクから「答え」へ。検索のレイヤーが根本から書き換わる。
+            ページリンクから「答え」へ。検索の仕組みが根本から書き変わる。
           </h2>
           <p style={{ color: 'var(--muted)', fontSize: 16, maxWidth: '60ch' }}>
-            検索の主戦場は SERP から AI Answer Engine へ。Citation がブランド露出の新しい単位になる。
+            検索の主戦場は、Google結果画面からAIの回答へ。AIに"引用される"ことが、ブランドの新しい露出指標になる。
           </p>
         </div>
 
         <div className="era-row">
           <div className="era">
             <div className="yr">— 2018</div>
-            <h4>SEO Era</h4>
+            <h4>SEO時代</h4>
             <p className="desc">リンクとキーワードを軸に、SERPの上位を競った時代。</p>
             <div className="tags">
               <span className="tag">LINK GRAPH</span>
@@ -152,8 +152,8 @@ function EraSection() {
           </div>
           <div className="era now">
             <div className="yr">2024 —</div>
-            <h4>AI Answer Era</h4>
-            <p className="desc">回答エンジンが直接回答する。Citationこそが露出。</p>
+            <h4>AI Answer時代</h4>
+            <p className="desc">回答エンジンが直接回答する。AIに引用されることこそが、露出。</p>
             <div className="tags">
               <span className="tag accent">CITATION</span>
               <span className="tag">PASSAGE</span>
@@ -167,9 +167,9 @@ function EraSection() {
             <div className="graph-head">
               <div>
                 <div className="label">FIG.01 — Click Through Rate</div>
-                <h5>SERP クリック率の継続的減少</h5>
+                <h5>SERP クリック率の3年連続で継続的減少</h5>
               </div>
-              <div className="delta">−38%</div>
+              <div className="delta">−58%</div>
             </div>
             <svg viewBox="0 0 400 140" style={{ width: '100%', height: 140 }}>
               <defs>
@@ -193,7 +193,7 @@ function EraSection() {
                 <div className="label">FIG.02 — AI Answer Usage</div>
                 <h5>AI 回答エンジン利用の指数的成長</h5>
               </div>
-              <div className="delta">+412%</div>
+              <div className="delta">+700%</div>
             </div>
             <svg viewBox="0 0 400 140" style={{ width: '100%', height: 140 }}>
               <defs>
@@ -223,8 +223,8 @@ function WhySection() {
   const cards = [
   { num: '01 / 04', glyph: <Glyph.Patent />, title: '特許ベースの GEO 分析', desc: 'Google / Microsoft の検索特許を解析し、Passage Ranking や Intent Ranking など内部メカニズムから GEO を逆算します。' },
   { num: '02 / 04', glyph: <Glyph.Listen />, title: 'リスニングマインド消費者インテント', desc: '実消費者の検索質問データを基盤に、想定ではなく「実際に問われている問い」から戦略を組み立てます。' },
-  { num: '03 / 04', glyph: <Glyph.Path />, title: 'Search Path Intelligence', desc: '一次検索だけでなく、後続質問の連鎖を可視化。CDJ ベースで購買経路上の AI 露出をデザインします。' },
-  { num: '04 / 04', glyph: <Glyph.Semantic />, title: 'Semantic GEO Framework', desc: 'Embedding による意味的類似度で、質問とコンテンツの GAP を 12 点モデルで定量評価します。' }];
+  { num: '03 / 04', glyph: <Glyph.Path />, title: '検索経路探索', desc: '「最初の検索」だけで終わらず、そこから生まれた疑問や調べ直したルートを可視化します。' },
+  { num: '04 / 04', glyph: <Glyph.Semantic />, title: 'GEO Framework', desc: 'Embedding による意味的類似度で、質問とコンテンツの GAP を10点モデルで定量評価します。' }];
 
   return (
     <section className="section" id="why" data-screen-label="03 Why Ascent">
@@ -335,9 +335,9 @@ function FrameworkRing({ active, onHover }) {
 function FrameworkSection() {
   const [active, setActive] = useState(0);
   const steps = [
-  { n: '01', name: 'Question Intelligence', desc: 'CDJベースの質問生成 / Question Cluster' },
-  { n: '02', name: 'Semantic GAP 分析', desc: '12点評価モデル / Semantic Similarity' },
-  { n: '03', name: 'GEO コンテンツエンジニアリング', desc: 'Passage Optimization / FAQ 構造' },
+  { n: '01', name: '質問分析', desc: 'カスタマージャーニーベースで質問生成 / 質問クラスター生成' },
+  { n: '02', name: 'GAP分析', desc: '10点評価でスコアリング / 意味的類似度' },
+  { n: '03', name: '実践的なGEO対策', desc: 'Passage Optimization / FAQ 構造' },
   { n: '04', name: 'AI Visibility', desc: 'Visibility / Citation / AI Traffic' },
   { n: '05', name: 'Optimization Loop', desc: '継続的な改善サイクル' }];
 
@@ -394,9 +394,9 @@ function ServicesSection() {
     vis: <ClusterMock />
   },
   {
-    ix: 'S/02', name: 'GAP Analysis',
+    ix: 'S/02', name: 'GAP分析',
     desc: '質問とコンテンツの間にある意味的ギャップを発見。',
-    items: ['質問 ↔ コンテンツ GAP', '12 点 Semantic Score', 'Cluster Mapping'],
+    items: ['質問 ↔ コンテンツ GAP', '10点評価', 'Cluster Mapping'],
     vis: <ScoreMock />
   },
   {

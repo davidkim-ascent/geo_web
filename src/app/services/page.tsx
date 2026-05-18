@@ -1,9 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/ContactForm";
-import { CTASection } from "@/components/layout/CTASection";
+import { HeroLogoMark } from "@/components/layout/HeroLogoMark";
+import { SeoGeoCTASection } from "@/components/layout/SeoGeoCTASection";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
-import { getCalendarBookingHref } from "@/lib/calendar-booking";
 import { Button } from "@/components/ui/button";
 import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
 import { ServicesFAQ } from "./ServicesFAQ";
@@ -88,25 +88,17 @@ function AuditVis() {
 
 function GapVis() {
   const rows = [
-    { l: "Coverage", v: 9, w: false },
-    { l: "Specificity", v: 7, w: false },
-    { l: "Authority", v: 11, w: false },
-    { l: "Recency", v: 4, w: true },
-    { l: "Schema", v: 3, w: true },
-    { l: "Passage Fit", v: 8, w: false },
-    { l: "Entity Match", v: 6, w: false },
-    { l: "Citation Density", v: 5, w: true },
-    { l: "Q-Form Header", v: 9, w: false },
-    { l: "Intent Match", v: 7, w: false },
-    { l: "Semantic Sim.", v: 8, w: false },
-    { l: "AI Readability", v: 10, w: false },
+    { l: "質問整合", v: 9, w: false },
+    { l: "意味的近接", v: 8, w: false },
+    { l: "権威性", v: 7, w: false },
+    { l: "引用適性", v: 6, w: true },
   ];
 
   return (
     <div className="rounded-[14px] border border-[#E6E4DD] bg-white p-6 shadow-[0_24px_48px_-24px_rgba(0,0,0,0.08)]">
       <div className="mb-5 flex items-center justify-between border-b border-[#E6E4DD] pb-4 font-mono text-[11px] tracking-[0.14em] text-[#6B6B73]">
-        <span>GAP.MATRIX / 12-POINT MODEL</span>
-        <span>SCORE 7.3 / 12</span>
+        <span>GAP.MATRIX / 10-POINT MODEL</span>
+        <span>SCORE 7.5 / 10</span>
       </div>
       <div className="grid gap-2">
         {rows.map((r, i) => (
@@ -116,22 +108,22 @@ function GapVis() {
               <div
                 className="h-full rounded-full"
                 style={{
-                  width: `${(r.v / 12) * 100}%`,
+                  width: `${(r.v / 10) * 100}%`,
                   background: r.w ? "rgba(199,62,62,0.7)" : "#1452FF",
                 }}
               />
             </div>
             <span className="text-right font-mono text-[11px] text-[#1A1A20]">
-              {r.v}/12
+              {r.v}/10
             </span>
           </div>
         ))}
       </div>
       <div className="mt-4.5 grid grid-cols-3 gap-3 border-t border-[#E6E4DD] pt-4">
         {[
-          { l: "STRONG", v: "7" },
-          { l: "WEAK", v: "3" },
-          { l: "PRIORITY", v: <>3 <small className="text-[12px] text-[#6B6B73]">項目</small></> },
+          { l: "STRONG", v: "3" },
+          { l: "WEAK", v: "1" },
+          { l: "PRIORITY", v: <>1 <small className="text-[12px] text-[#6B6B73]">項目</small></> },
         ].map((s, i) => (
           <div key={i} className="rounded-md bg-[#F2F0EA] p-2.5">
             <div className="font-mono text-[10px] tracking-[0.12em] text-[#6B6B73]">
@@ -260,7 +252,7 @@ function MonitorVis() {
         ))}
       </div>
       <div className="mt-3.5 rounded-lg bg-[#F2F0EA] p-3 font-mono text-[11px] text-[#6B6B73]">
-        月次レポート / Slack 連携 / 改善アラート
+        月次提出 / 改善提案 / 運用更新
       </div>
     </div>
   );
@@ -293,19 +285,19 @@ const services = [
     ix: "02",
     tag: "GAP ANALYSIS",
     title: "質問とコンテンツの距離を、",
-    accent: "12点で。",
-    lede: "Embedding ベースの Semantic Similarity を、Coverage / Specificity / Authority など 12 軸で定量化。どの質問に対し、どのコンテンツが、なぜ引用されないのかを、数字とロジックで明らかにする。",
+    accent: "10点で。",
+    lede: "引用最適化4項目、10点満点でスコアリング。どの質問に対し、どのコンテンツが、なぜ引用されないのかを、点数とロジックで明らかにする。",
     feat: [
-      "12 点モデルによる Semantic 評価",
+      "10点モデルによる評価",
       "質問×ページ マッピング",
       "弱点項目の自動抽出",
       "改善優先度のスコア化",
-      "Embedding ベースの類似度測定",
+      "質問に対する意味的類似度を測定",
     ],
     meta: [
       { l: "期間", v: "3〜4 週間" },
       { l: "対象質問", v: "〜500件" },
-      { l: "評価軸", v: "12 ポイント" },
+      { l: "評価軸", v: "10 ポイント" },
     ],
     Vis: GapVis,
     alt: true,
@@ -316,12 +308,11 @@ const services = [
     tag: "GEO CONTENT",
     title: "AI に引用される",
     accent: "構造で書く。",
-    lede: "質問形ヘッダー、Passage Optimization、FAQ Schema、Authority Signal。AI Answer Engine が抜き出しやすい単位で、コンテンツを設計・執筆。検索結果ページではなく、AI の回答に入る記事を。",
+    lede: "質問形ヘッダー、Passage Optimization、FAQ Schema を中心に、AI Answer Engine が抜き出しやすい単位でコンテンツを設計・執筆。検索結果ページではなく、AI の回答に入る記事を。",
     feat: [
       "Passage 単位のコンテンツ設計",
       "質問形 H2 / H3 構造化",
       "FAQ Schema / Structured Data",
-      "Authority リンクの最適化",
       "既存記事のリライトも対応",
     ],
     meta: [
@@ -336,20 +327,18 @@ const services = [
   {
     ix: "04",
     tag: "GEO MONITORING",
-    title: "引用され続けることを、",
-    accent: "運用に。",
-    lede: "月次の Visibility / Citation / AI Traffic レポートを Slack 連携で配信。下落アラート、競合動向、改善提案までを一気通貫で。GEO は施策ではなく、運用である。",
+    title: "引用状態を",
+    accent: "モニタリング。",
+    lede: "Visibility / Citation / AI Traffic レポートを月次で提出。改善提案までを一貫してサポート。GEO は施策ではなく、運用である。",
     feat: [
       "月次 Visibility / Citation レポート",
-      "競合ベンチマーク自動更新",
-      "下落アラート（Slack / Email）",
       "AI Traffic 計測（GA4 連携）",
       "四半期改善提案ミーティング",
     ],
     meta: [
       { l: "サイクル", v: "月次運用" },
       { l: "AI Engine", v: "4 サービス" },
-      { l: "通知", v: "Slack 連携" },
+      { l: "提出", v: "月次レポート" },
     ],
     Vis: MonitorVis,
     alt: true,
@@ -360,10 +349,10 @@ const services = [
 const packages = [
   {
     ix: "PKG 01",
-    name: "SPOT",
+    name: "GEO診断（4 AI Engine）",
     desc: "まず現在地を把握したい。",
     items: [
-      "GEO Audit（4 AI Engine）",
+      "GEO診断（4 AI Engine）",
       "競合 3 社比較",
       "レポート + 解説 1 回",
     ],
@@ -372,13 +361,13 @@ const packages = [
   },
   {
     ix: "PKG 02",
-    name: "FULL LOOP",
+    name: "FULL SUPPORT",
     desc: "運用まで一気通貫で。",
     items: [
       "4 サービスフルパッケージ",
       "月次 Monitoring 運用",
       "四半期戦略レビュー",
-      "Slack 連携",
+      "月次レポート共有",
     ],
     price: "年次契約 / お問い合わせ",
     featured: true,
@@ -445,12 +434,12 @@ export default function ServicesPage() {
               </p>
 
               <div className="mt-10">
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4 xl:gap-0">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4 xl:gap-0">
                   {[
                     { ix: "01", label: "質問クラスター\nデータ基盤抽出" },
-                    { ix: "02", label: "12点 GAP 分析\n定量評価" },
+                    { ix: "02", label: "10点GAP分析\n　定量評価" },
                     { ix: "03", label: "GEO 制作\n引用される構造" },
-                    { ix: "04", label: "モニタリング\nVisibility 計測" },
+                    { ix: "04", label: "モニタリング\n引用状態を管理" },
                   ].map((p) => (
                     <div
                       key={p.ix}
@@ -473,6 +462,7 @@ export default function ServicesPage() {
                   <Link href="/whitepaper">サービス資料をダウンロード</Link>
                 </Button>
               </div>
+              <HeroLogoMark />
             </div>
 
             <div className="relative">
@@ -490,9 +480,9 @@ export default function ServicesPage() {
           <div className="grid grid-cols-2 gap-0 border-t border-[#E6E4DD] pt-8 md:grid-cols-4">
             {[
               { ix: "01 / CLUSTER", title: "質問クラスター\nデータ基盤抽出" },
-              { ix: "02 / GAP", title: "12点 GAP 分析\n定量評価" },
+              { ix: "02 / GAP", title: "10点GAP分析\n　定量評価" },
               { ix: "03 / CONTENT", title: "GEO 制作\n引用される構造" },
-              { ix: "04 / MONITOR", title: "モニタリング\nVisibility 計測" },
+              { ix: "04 / MONITOR", title: "モニタリング\n引用状態を管理" },
             ].map((q, i) => (
               <div
                 key={i}
@@ -572,10 +562,10 @@ export default function ServicesPage() {
             className="mb-4 max-w-[24ch] text-[#FAFAF7] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
             style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
           >
-            単発でも、<em className="text-[#1452FF] not-italic">フルループ</em>でも。
+            単発でも、<em className="text-[#1452FF] not-italic">継続</em>でも対応可能
           </h2>
           <p className="mb-10 max-w-[56ch] text-[18px] leading-[1.6] text-[#9A9AA0]">
-            事業規模・フェーズに合わせて、4 サービスを組み合わせる。最小は Audit のみのスポット、最大は GEO ループの完全運用まで。
+            事業規模・フェーズに合わせてプランをお選びいただけます。
           </p>
           <div className="grid gap-5 sm:grid-cols-2">
             {packages.map((pkg) => (
@@ -616,24 +606,7 @@ export default function ServicesPage() {
       <ServicesFAQ />
 
       {/* CTA */}
-      <CTASection
-        kicker="CONTACT — START WITH A FREE AUDIT"
-        title={
-          <>
-            AI 検索で、
-            <br />
-            あなたのブランドは
-            <br />
-            <span className="text-blue-gradient">何回引用されている</span>か？
-          </>
-        }
-        description="まずは無料診断で、現在の AI Visibility と Citation 構造を可視化します。所要 30 分のオンライン MTG から。"
-        primaryButton={{ href: "/contact", label: "相談する" }}
-        secondaryButtons={[
-          { href: "/whitepaper", label: "サービス資料をダウンロード" },
-          { href: getCalendarBookingHref(), label: "無料相談予約（Googleカレンダー）" },
-        ]}
-      />
+      <SeoGeoCTASection />
     </div>
   );
 }

@@ -2,9 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Backpack, Dumbbell, Flame } from "lucide-react";
 import { ContactForm } from "@/components/contact/ContactForm";
-import { CTASection } from "@/components/layout/CTASection";
+import { HeroLogoMark } from "@/components/layout/HeroLogoMark";
+import { SeoGeoCTASection } from "@/components/layout/SeoGeoCTASection";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
-import { getCalendarBookingHref } from "@/lib/calendar-booking";
 import { Button } from "@/components/ui/button";
 import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
 import { SearchPathPanel } from "@/components/why-ascent/SearchPathPanel";
@@ -32,14 +32,8 @@ const patentItems = [
   {
     num: "03",
     title: "Embedding Similarity",
-    desc: "質問と Passage を高次元ベクトルで比較。 Semantic Similarity が一定閾値を超えた Passage が候補化。",
+    desc: "質問の「意味」と文章の「意味」を数値で比較し、引用候補を絞り込む技術。Semantic Similarity（意味的類似度）が一定閾値を超えたPassage(文節)が候補化。",
     src: "GOOGLE PATENT · US10324946",
-  },
-  {
-    num: "04",
-    title: "AI Retrieval Structure",
-    desc: "Retrieval-Augmented Generation の検索フェーズで、Citation 候補が決まる。 Retrieval 段階の最適化が要。",
-    src: "TECHNICAL · OPENAI / ANTHROPIC",
   },
 ];
 
@@ -180,7 +174,7 @@ export default async function WhyAscentPage() {
                 <span className="block">設計の科学である。</span>
               </h1>
               <p className="mt-7 max-w-[52ch] text-[17px] leading-[1.75] text-white/68">
-                AI はどこから、なぜ引用するのか。Ascent は特許・実消費者インテント・Embedding 評価という 4 本の柱で、その問いに定量で答える GEO を構築します。
+                AI は「どこから、なぜ」引用するのか。Ascent は特許ベースGEO施策・消費者インテント(本音)・スコアリングという 3本の柱で、データを解明しAIに選ばれるブランドをつくります。
               </p>
 
               <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-[640px]">
@@ -189,6 +183,7 @@ export default async function WhyAscentPage() {
                   <Link href="/whitepaper">サービス資料をダウンロード</Link>
                 </Button>
               </div>
+              <HeroLogoMark />
             </div>
 
             <div className="relative z-10 w-full max-w-[620px] mx-auto lg:ml-auto lg:mr-0">
@@ -385,7 +380,9 @@ export default async function WhyAscentPage() {
                 基づくGEO施策が可能。
               </h3>
               <p className="mt-6 text-[15px] md:text-[16px] leading-[1.75] text-[#4e4e51]">
-                CEP(<strong className="font-semibold text-black">Category Entry Point</strong>) — 消費者がブランドを思い浮かべる<strong className="font-semibold text-black">状況・悩み・購買判断要素</strong>。リスニングマインドはここまで掘り下げて、AI に引用される条件を構造化します。
+                消費者の「<strong className="font-semibold text-black">CEP(Category Entry Point)</strong>」に
+                <br />
+                基づくGEO施策が可能。CEPとは、消費者がブランドを思い浮かべる<strong className="font-semibold text-black">状況・悩み・購買判断要素</strong>を指します。リスニングマインドはここまで掘り下げて、AI に引用される条件を構造化します。
               </p>
               <p className="mt-5 text-[15px] md:text-[16px] leading-[1.75] text-[#4e4e51]">
                 シチュエーション・心理状態・購買タイミングを整理し、AIが「状況」に応じて推奨できる<strong className="font-semibold text-black">CEPベースの質問と対応コンテンツ</strong>を設計します。GEO の観点で極めて有利な施策が可能です。
@@ -490,7 +487,7 @@ export default async function WhyAscentPage() {
               </h2>
               <div className="mt-8 space-y-5">
                 <p className="text-[15px] md:text-[16px] leading-[1.75] text-white/70">
-                  Ascentはユーザーがそのキーワードに到達する前後で、どのような検索行動を続けているか（Search Path）を分析します。例えば、「電動自転車」の検索経路には、「電動自転車 → 電動自転車 おすすめ → 電動自転車 おすすめ 通勤」のように通勤目的で深掘りしていく流れもあれば、「電動自転車 → 電動自転車 安い → 電動自転車 安い 型落ち」のように価格重視で遷移する流れもあります。また、「電動自転車 → 電動自転車 補助金 → 電動自転車 補助金 東京都 2025」のように、購入前に公的支援情報を確認する経路も存在します。
+                Ascentはユーザーがそのキーワードに到達する前後で、どのような検索行動を続けているか検索経路（Search Path）を分析します。例えば、「電動自転車」の検索経路には、「電動自転車 → 電動自転車 おすすめ → 電動自転車 おすすめ 通勤」のように通勤目的で深掘りしていく流れもあれば、「電動自転車 → 電動自転車 安い → 電動自転車 安い 型落ち」のように価格重視で遷移する流れもあります。また、「電動自転車 → 電動自転車 補助金 → 電動自転車 補助金 東京都 2025」のように、購入前に公的支援情報を確認する経路も存在します。
                 </p>
                 <p className="text-[15px] md:text-[16px] leading-[1.75] text-white/70">
                   GEO施策において重要なポイントは、「質問クラスター」、つまり単一の質問ではなく、連続するユーザーの質問をあらかじめ予測し、コンテンツで対応できているかどうかです。Ascentは検索経路に基づき、GEOに極めて有利な連続的質問クラスターを設計します。
@@ -506,24 +503,7 @@ export default async function WhyAscentPage() {
       </section>
 
       <div className="mt-10 md:mt-14">
-        <CTASection
-          kicker="CONTACT — START WITH A FREE AUDIT"
-          title={
-            <>
-              AI 検索で、
-              <br />
-              あなたのブランドは
-              <br />
-              <span className="text-blue-gradient">何回引用されている</span>か？
-            </>
-          }
-          description="まずは無料診断で、現在の AI Visibility と Citation 構造を可視化します。所要 30 分のオンライン MTG から。"
-          primaryButton={{ href: "/contact", label: "相談する" }}
-          secondaryButtons={[
-            { href: "/whitepaper", label: "サービス資料をダウンロード" },
-            { href: getCalendarBookingHref(), label: "無料相談予約（Googleカレンダー）" },
-          ]}
-        />
+        <SeoGeoCTASection />
       </div>
     </div>
   );

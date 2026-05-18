@@ -18,17 +18,17 @@ export default function FrameworkSection() {
   const steps = [
     {
       id: "01",
-      title: "Question Intelligence",
-      sub: "CDJベースの質問生成 / Question Cluster",
+      title: "質問分析",
+      sub: "カスタマージャーニーベースで質問生成 / 質問クラスター生成",
     },
     {
       id: "02",
-      title: "Semantic GAP 分析",
-      sub: "12点評価モデル / Semantic Similarity",
+      title: "GAP分析",
+      sub: "10点評価でスコアリング / 意味的類似度",
     },
     {
       id: "03",
-      title: "GEO コンテンツエンジニアリング",
+      title: "実践的なGEO対策",
       sub: "Passage Optimization / FAQ 構造",
     },
     {

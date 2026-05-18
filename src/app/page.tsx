@@ -1,11 +1,11 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
-import { CTASection } from "@/components/layout/CTASection";
+import { HeroLogoMark } from "@/components/layout/HeroLogoMark";
+import { SeoGeoCTASection } from "@/components/layout/SeoGeoCTASection";
 import { SplitSection } from "@/components/layout/SplitSection";
 import { Button } from "@/components/ui/button";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
-import { getCalendarBookingHref } from "@/lib/calendar-booking";
 import dynamicImport from "next/dynamic";
 
 const ContactForm = dynamicImport(
@@ -193,7 +193,7 @@ function HeroSection() {
             戦略。
           </h1>
           <p className="mt-7 text-[17px] text-[#d3d3d8] leading-[1.6] max-w-[52ch]">
-            Google・Microsoft の特許分析、リスニングマインドの実消費者インテント、Embeddingベースのセマンティック評価。GEO は推測ゲームではない。Ascent は根拠のあるフレームワークで設計する。
+            Google・Microsoft の特許分析、リスニングマインドの実消費者インテント、文脈・意図ベースでの評価。GEO は推測ゲームではない。Ascent は根拠のあるフレームワークで設計する。
           </p>
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-[640px]">
             <CalendarBookingButton />
@@ -201,6 +201,7 @@ function HeroSection() {
               <Link href="/whitepaper">サービス資料をダウンロード</Link>
             </Button>
           </div>
+          <HeroLogoMark />
         </>
       }
       right={
@@ -225,18 +226,18 @@ function SearchShiftSection() {
         <div className="mt-12">
           <h2 className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
             style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}>
-            リンクから「答え」へ。検索のレイヤーが根本から書き換わる。
+            ページリンクから「答え」へ。検索の仕組みが根本から書き変わる。
           </h2>
             <p className="mt-4 text-[17px] text-[#4e4e51] max-w-[52ch] leading-[1.6] font-[inherit]">
-            検索の主戦場は SERP から AI Answer Engine へ。Citation がブランド露出の新しい単位になる。
+            検索の主戦場は、Google結果画面からAIの回答へ。AIに&quot;引用される&quot;ことが、ブランドの新しい露出指標になる。
           </p>
         </div>
 
         {/* Era comparison */}
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* SEO Era */}
+          {/* SEO時代 */}
           <div className="bg-white border border-black/[0.07] rounded-2xl p-7 card-hover">
-            <h3 className="text-[19px] font-bold text-[#0B0B0E] mb-3">SEO Era</h3>
+            <h3 className="text-[19px] font-bold text-[#0B0B0E] mb-3">SEO時代</h3>
             <p className="text-[16px] text-[#4e4e51] leading-[1.6] mb-5 font-[inherit]">
               リンクとキーワードを軸に、SERPの上位を競った時代。
             </p>
@@ -246,12 +247,12 @@ function SearchShiftSection() {
             </div>
           </div>
 
-          {/* AI Answer Era */}
+          {/* AI Answer時代 */}
           <div className="bg-[#0B0B0E] border border-white/[0.07] rounded-2xl p-7 card-hover-dark relative overflow-hidden">
             <div className="absolute top-4 left-4 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-white/30 text-xs">→</div>
-            <h3 className="text-[19px] font-bold text-[#FAFAF7] mb-3">AI Answer Era</h3>
+            <h3 className="text-[19px] font-bold text-[#FAFAF7] mb-3">AI Answer時代</h3>
             <p className="text-[16px] text-[#d3d3d8] leading-[1.6] mb-5">
-              回答エンジンが直接回答する。Citationこそが露出。
+              回答エンジンが直接回答する。AIに引用されることこそが、露出。
             </p>
             <div className="flex items-center gap-2 flex-wrap">
               <span className="tag-blue">CITATION</span>
@@ -267,9 +268,9 @@ function SearchShiftSection() {
           <div className="bg-white border border-black/[0.07] rounded-2xl p-6 card-hover">
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h3 className="text-[19px] font-semibold text-[#0B0B0E] mt-1">SERP クリック率の継続的減少</h3>
+                <h3 className="text-[19px] font-semibold text-[#0B0B0E] mt-1">SERP クリック率の3年連続で継続的減少</h3>
               </div>
-              <div className="text-[24px] font-bold text-red-500 mono">−38%</div>
+              <div className="text-[24px] font-bold text-red-500 mono">−58%</div>
             </div>
             {/* Decline chart — line */}
             <div className="relative h-[100px] mt-2">
@@ -307,7 +308,7 @@ function SearchShiftSection() {
               <div>
                 <h3 className="text-[19px] font-semibold text-[#FAFAF7] mt-1">AI 回答エンジン利用の指数的成長</h3>
               </div>
-              <div className="text-[24px] font-bold text-[#1452FF] mono">+412%</div>
+              <div className="text-[24px] font-bold text-[#1452FF] mono">+700%</div>
             </div>
             {/* Growth chart — line */}
             <div className="relative h-[100px] mt-2">
@@ -382,8 +383,8 @@ function WhyAscentSection() {
           <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
         </svg>
       ),
-      title: "Search Path Intelligence",
-      desc: "一次検索だけでなく、後続買問の連鎖を可視化。CDJベースで購買経路上の AI 露出をデザインします。",
+      title: "検索経路探索",
+      desc: "「最初の検索」だけで終わらず、そこから生まれた疑問や調べ直したルートを可視化します。",
     },
     {
       icon: (
@@ -395,8 +396,8 @@ function WhyAscentSection() {
           <circle cx="4" cy="12" r="2" />
         </svg>
       ),
-      title: "Semantic GEO Framework",
-      desc: "Embedding による意味的類似度で、質問とコンテンツの GAP を 12 点モデルで定量評価します。",
+      title: "GEO Framework",
+      desc: "Embedding による意味的類似度で、質問とコンテンツの GAP を10点モデルで定量評価します。",
     },
   ];
 
@@ -485,9 +486,9 @@ function ServicesSection() {
       ),
     },
     {
-      title: "GAP Analysis",
+      title: "GAP分析",
       desc: "質問とコンテンツの間にある意味的ギャップを発見。",
-      bullets: ["質問 ↔ コンテンツ GAP", "12 点 Semantic Score", "Cluster Mapping"],
+      bullets: ["質問 ↔ コンテンツ GAP", "10点評価", "Cluster Mapping"],
       visual: (
         <div className="bg-[#0B0B0E] rounded-xl p-4 flex-1 flex flex-col">
           <div className="mono text-[10px] text-[#d3d3d8] tracking-[0.1em] mb-3">SEMANTIC SCORE</div>
@@ -740,16 +741,7 @@ export default function Home() {
       <FrameworkSection />
       <ServicesSection />
       <GeoLabSection />
-      <CTASection
-        kicker="CONTACT — START WITH A FREE AUDIT"
-        title={<>AI 検索で、<br />あなたのブランドは<br /><span className="text-blue-gradient">何回引用されている</span>か？</>}
-        description="まずは無料診断で、現在の AI Visibility と Citation 構造を可視化します。所要 30 分のオンライン MTG から。"
-        primaryButton={{ href: '/contact', label: '相談する' }}
-        secondaryButtons={[
-          { href: '/whitepaper', label: 'サービス資料をダウンロード' },
-          { href: getCalendarBookingHref(), label: '無料相談予約（Googleカレンダー）' },
-        ]}
-      />
+      <SeoGeoCTASection />
     </div>
   );
 }

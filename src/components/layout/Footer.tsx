@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getCalendarBookingHref, getCalendarBookingLinkProps } from "@/lib/calendar-booking";
 
 export default function Footer() {
@@ -8,9 +9,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-[5fr_2.5fr_2.5fr] gap-12">
           {/* Brand */}
           <div>
-            <span className="ui-footer-brand">
-              ASCENT/GEO
-            </span>
+            <Link href="/" className="inline-flex items-center" aria-label="Go to home">
+              <Image
+                src="/ascent-geo-logo.png"
+                alt="ASCENT/GEO"
+                width={3317}
+                height={552}
+                className="h-[24px] w-auto"
+              />
+            </Link>
             <p className="mt-4 ui-body-copy">
               特許 × 実消費者インテント × Embedding。<br />
               根拠ある GEO で、AI 検索のリーダーへ。

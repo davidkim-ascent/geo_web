@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/ContactForm";
+import { HeroLogoMark } from "@/components/layout/HeroLogoMark";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 import { getCalendarBookingHref, getCalendarBookingLinkProps } from "@/lib/calendar-booking";
 
@@ -56,7 +57,7 @@ const FAQS = [
   },
   {
     q: "効果はどう計測しますか？",
-    a: "Citation 数・Share of Answer・Brand Mention・Passage 採用率・AI 流入数を Looker Studio または Notion ダッシュボードで継続トラッキングします。",
+    a: "各モデルでのBrand VisibilityやBrand Position。またカスタムプロンプト（質問）ごとにも各モデルでの露出状況をトラッキングします。",
   },
   {
     q: "社内の制作チームと連携できますか？",
@@ -107,7 +108,7 @@ export default function ContactPage() {
               始めましょう。
             </h1>
             <p className="ct-hero-desc">
-              AI 検索における現在の露出状況を診断し、Citation 構造と改善余地をご共有します。所要 30 分のオンライン MTG から。
+              AI 検索における現在の露出状況を診断し、Brand VisibilityやBrand Positionなど具体的な数値。また改善余地をご共有します。所要 30 分のオンライン MTG から。
             </p>
 
             {/* Channel cards */}
@@ -153,11 +154,13 @@ export default function ContactPage() {
                   </span>
                   <span className="ct-channel-text-label">電話で相談する</span>
                 </div>
-                <div className="ct-channel-text-line">
+              <div className="ct-channel-text-line">
                   <span className="ct-channel-phone-number">03-3527-3963</span>
                   <span className="ct-channel-text-meta">平日 9:00〜18:00 JST</span>
                 </div>
               </div>
+
+              <HeroLogoMark />
             </div>
           </div>
 

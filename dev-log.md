@@ -1,3 +1,39 @@
+## 2026-05-18 16:49
+- 히로 로고를 `Ascent` 흰색 / `GEO` 파란색 분리 버전으로 바꾸고, Home / Why Ascent / Framework / Services / GEO Lab / Contact 히로 영역에 동일하게 삽입함.
+
+## 2026-05-18 16:45
+- index 히로의 로고를 흰색 버전(`ascent-geo-logo-white.png`)으로 교체해 어두운 배경에서 더 잘 보이도록 조정함.
+
+## 2026-05-18 16:43
+- index 히로의 CTA 아래에 `Ascent-GEO` 로고 PNG를 적당한 크기로 삽입함.
+
+## 2026-05-18 16:40
+- 푸터 로고를 홈 링크로 감싸서 클릭 시 index(`/`)로 이동하도록 수정함.
+
+## 2026-05-18 16:33
+- 사이트 브랜드 로고를 `Design/Ascent-GEO-Logo.png`에서 `public/ascent-geo-logo.png`로 옮겨 헤더와 푸터에 적용함.
+
+## 2026-05-18 16:17
+- Contact 페이지 문구 수정: 히어로의 설명을 Brand Visibility / Brand Position 중심으로 바꾸고, FAQ의 효과 측정 답변을 각 모델별露出 트래킹 기준으로 교체함.
+
+## 2026-05-18 15:54
+- Services 페이지 문구 수정: 10점 GAP 분석, 4항목 스코어링, Authority/Slack 알림 제거, 모니터링 문구와 패키지/FAQ 카피를 GEO診断・FULL SUPPORT 기준으로 정리함.
+
+## 2026-05-18 15:49
+- Framework 페이지 문구 수정: 히어로, 4개 단계 카드, 중앙 루프 카드의 텍스트를 `質問分析 / GAP分析 / GEOに特化したコンテンツ対策 / モニタリング` 기준으로 정리하고 회귀 테스트를 추가함.
+
+## 2026-05-18 15:46
+- Why Ascent CEP 문구를 요청한 원문 그대로 재정렬: `消費者の「CEP(Category Entry Point)」に / 基づくGEO施策が可能。` 형식으로 수정함.
+
+## 2026-05-18 15:37
+- Why Ascent 문구 수정: 히어로 3본 카피, Embedding Similarity 설명, CEP 표기, Search Path 설명을 요청한 문장으로 교체하고 AI Retrieval Structure 항목을 제거함.
+
+## 2026-05-18 15:35
+- 하단 CTA 통일: Home / Why Ascent / Framework / Services / GEO Lab의 CTA를 `/lab/seo-geo`와 동일한 GEO 상담 문구로 교체하고 공통 컴포넌트로 묶음.
+
+## 2026-05-18 15:25
+- 홈 인덱스 문구 갱신: hero/era/framework/services 문구를 `文脈・意図ベースでの評価`, `検索経路探索`, `GEO Framework` 등 새 표현으로 교체하고 검증 스크립트를 추가함.
+
 ## 2026-05-18 15:18
 - 아티클 TOC의 `CONTENTS` 라벨 폰트만 키우고, 목차의 기존 디자인과 구조는 그대로 유지함.
 

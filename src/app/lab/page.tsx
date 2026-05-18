@@ -1,9 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/ContactForm";
-import { CTASection } from "@/components/layout/CTASection";
+import { HeroLogoMark } from "@/components/layout/HeroLogoMark";
+import { SeoGeoCTASection } from "@/components/layout/SeoGeoCTASection";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
-import { getCalendarBookingHref } from "@/lib/calendar-booking";
 import { Button } from "@/components/ui/button";
 import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
 import { LabArticles } from "./LabArticles";
@@ -104,6 +104,7 @@ export default function LabPage() {
                   <Link href="/whitepaper">サービス資料をダウンロード</Link>
                 </Button>
               </div>
+              <HeroLogoMark />
             </div>
 
             <div className="relative z-10">
@@ -188,24 +189,7 @@ export default function LabPage() {
       <LabArticles />
 
       {/* CTA */}
-      <CTASection
-        kicker="CONTACT — START WITH A FREE AUDIT"
-        title={
-          <>
-            AI 検索で、
-            <br />
-            あなたのブランドは
-            <br />
-            <span className="text-blue-gradient">何回引用されている</span>か？
-          </>
-        }
-        description="まずは無料診断で、現在の AI Visibility と Citation 構造を可視化します。所要 30 分のオンライン MTG から。"
-        primaryButton={{ href: "/contact", label: "相談する" }}
-        secondaryButtons={[
-          { href: "/whitepaper", label: "サービス資料をダウンロード" },
-          { href: getCalendarBookingHref(), label: "無料相談予約（Googleカレンダー）" },
-        ]}
-      />
+      <SeoGeoCTASection />
     </div>
   );
 }
