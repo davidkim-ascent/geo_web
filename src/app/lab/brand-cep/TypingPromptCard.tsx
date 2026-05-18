@@ -64,6 +64,7 @@ const LINES: LineSpec[] = [
 ];
 
 const EMPTY_LINES = LINES.map(() => "");
+const REPEAT_COUNT = 2;
 
 function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -108,30 +109,38 @@ export function TypingPromptCard() {
     let cancelled = false;
 
     const run = async () => {
-      setLines(EMPTY_LINES);
-      setActiveIndex(0);
-      setDone(false);
+      for (let cycle = 0; cycle < REPEAT_COUNT; cycle += 1) {
+        setLines(EMPTY_LINES);
+        setActiveIndex(0);
+        setDone(false);
 
-      for (let lineIndex = 0; lineIndex < LINES.length; lineIndex += 1) {
-        const line = LINES[lineIndex];
-        setActiveIndex(lineIndex);
+        for (let lineIndex = 0; lineIndex < LINES.length; lineIndex += 1) {
+          const line = LINES[lineIndex];
+          setActiveIndex(lineIndex);
 
-        for (let i = 1; i <= line.text.length; i += 1) {
+          for (let i = 1; i <= line.text.length; i += 1) {
+            if (cancelled) return;
+            setLines((current) => {
+              const next = [...current];
+              next[lineIndex] = line.text.slice(0, i);
+              return next;
+            });
+            await sleep(16);
+          }
+
           if (cancelled) return;
-          setLines((current) => {
-            const next = [...current];
-            next[lineIndex] = line.text.slice(0, i);
-            return next;
-          });
-          await sleep(16);
+          await sleep(line.pause ?? 100);
         }
 
         if (cancelled) return;
-        await sleep(line.pause ?? 100);
+        setActiveIndex(null);
+        setDone(true);
+        if (cycle < REPEAT_COUNT - 1) {
+          await sleep(2000);
+        }
       }
 
       if (!cancelled) {
-        setActiveIndex(null);
         setDone(true);
       }
     };
