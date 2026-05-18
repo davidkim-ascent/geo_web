@@ -1242,7 +1242,6 @@ span.accent {
 }
 .face h2 em {
   color: var(--blue-light);
-  font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
   font-weight: 700;
 }
@@ -1263,7 +1262,6 @@ span.accent {
 }
 .wp-side h1 em {
   color: var(--blue);
-  font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
   font-weight: 700;
   padding-right: 0.12em;
@@ -1307,7 +1305,6 @@ span.accent {
 }
 .wp-body h2 em {
   color: var(--blue);
-  font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
   font-weight: 700;
   padding-right: 0.12em;
@@ -1384,7 +1381,6 @@ span.accent {
 }
 .wp-form-left h2 em {
   color: var(--blue);
-  font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
   font-weight: 700;
   padding-right: 0.12em;
@@ -1541,7 +1537,6 @@ span.accent {
 }
 
 .thx-title em {
-  font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
   font-weight: 600;
   color: var(--accent);
@@ -1835,7 +1830,6 @@ span.accent {
   margin-bottom: 24px;
 }
 .ct-hero-title em {
-  font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
   font-weight: 700;
   color: var(--accent);

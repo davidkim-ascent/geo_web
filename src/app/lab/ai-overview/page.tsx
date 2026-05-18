@@ -118,7 +118,7 @@ export default function AiOverviewPage() {
                   Ascent が 2025 年 10 月から 2026 年 3 月までの半年間にわたり、12 業種のクライアントから取得した SERP スナップショットと AI 引用ログを母集団に、
                   「クリックされる」と「引用される」の境界線を再定義する。
                 </p>
-                <blockquote className="my-12 max-w-[26ch] border-l-[3px] border-[#1452FF] pl-7 font-['Noto_Serif_JP',serif] text-[28px] italic leading-[1.35] tracking-[-0.005em] text-[#0B0B0E] after:mt-4 after:block after:font-mono after:text-[10px] after:not-italic after:tracking-[0.2em] after:text-[#6B6B73] after:content-['—_RESEARCH_NOTE']">
+                <blockquote className="my-12 max-w-[26ch] border-l-[3px] border-[#1452FF] pl-7 text-[28px] italic leading-[1.35] tracking-[-0.005em] text-[#0B0B0E] after:mt-4 after:block after:font-mono after:text-[10px] after:not-italic after:tracking-[0.2em] after:text-[#6B6B73] after:content-['—_RESEARCH_NOTE']">
                   リンクの順位を上げる仕事は、答えの中に席を確保する仕事に置き換わった。
                 </blockquote>
               </section>
@@ -416,7 +416,7 @@ export default function AiOverviewPage() {
                   この問いに「Yes」と即答できる段落の数が、3 秒間の戦いを支える在庫になる。
                 </p>
 
-                <blockquote className="my-12 max-w-[26ch] border-l-[3px] border-[#1452FF] pl-7 font-['Noto_Serif_JP',serif] text-[28px] italic leading-[1.35] tracking-[-0.005em] text-[#0B0B0E] after:mt-4 after:block after:font-mono after:text-[10px] after:not-italic after:tracking-[0.2em] after:text-[#6B6B73] after:content-['—_RESEARCH_NOTE']">
+                <blockquote className="my-12 max-w-[26ch] border-l-[3px] border-[#1452FF] pl-7 text-[28px] italic leading-[1.35] tracking-[-0.005em] text-[#0B0B0E] after:mt-4 after:block after:font-mono after:text-[10px] after:not-italic after:tracking-[0.2em] after:text-[#6B6B73] after:content-['—_RESEARCH_NOTE']">
                   良い記事は、引用されても痩せない。AI に抜かれても、意味が崩れない構造を持っている。
                 </blockquote>
 
