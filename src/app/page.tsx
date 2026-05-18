@@ -626,11 +626,12 @@ function GeoLabSection() {
     {
       tag: "COMPARE",
       num: "02",
-      title: "SEO と GEO は何が違うのか",
-      desc: "",
-      date: "04.04",
-      readTime: "6 MIN READ",
+      title: "SEOとGEOは何が違うのか？検索最適化と生成AI最適化を比較",
+      desc: "SEOは検索エンジンの上位表示を狙う施策、GEOは生成AIに引用されるための施策。違いと実践方法を比較表でわかりやすく整理する。",
+      date: "05.13",
+      readTime: "8 MIN READ",
       size: "small",
+      href: "/lab/seo-geo",
     },
     {
       tag: "INSIGHT",
@@ -700,30 +701,44 @@ function GeoLabSection() {
 
           {/* Small cards */}
           <div className="md:col-span-2 grid grid-rows-2 gap-4">
-            {articles.slice(1).map((article) => (
-              <div
-                key={article.num}
-                className="bg-[#0B0B0E] rounded-2xl overflow-hidden card-hover-dark group flex"
-              >
-                <div className="relative w-[160px] flex-shrink-0 flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#1452FF]/15 to-transparent" />
-                  <span className="font-bold text-white/5" style={{ fontSize: "72px", lineHeight: 1 }}>
-                    {article.num}
-                  </span>
-                  <div className="absolute top-3 left-3">
-                    <span className="tag-dark text-[9px]">{article.tag}</span>
+            {articles.slice(1).map((article) => {
+              const card = (
+                <div
+                  key={article.num}
+                  className="bg-[#0B0B0E] rounded-2xl overflow-hidden card-hover-dark group flex h-full"
+                >
+                  <div className="relative w-[160px] flex-shrink-0 flex items-center justify-center overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#1452FF]/15 to-transparent" />
+                    <span className="font-bold text-white/5" style={{ fontSize: "72px", lineHeight: 1 }}>
+                      {article.num}
+                    </span>
+                    <div className="absolute top-3 left-3">
+                      <span className="tag-dark text-[9px]">{article.tag}</span>
+                    </div>
+                  </div>
+                  <div className="p-5 flex flex-col justify-between flex-1">
+                    <div>
+                      <h4 className="text-[17px] font-bold text-[#FAFAF7] leading-snug mb-2">{article.title}</h4>
+                      {article.desc && (
+                        <p className="text-[13px] leading-[1.55] text-[#9A9AA0]">{article.desc}</p>
+                      )}
+                    </div>
+                    <div className="flex items-center gap-3 mono text-[11px] text-[#d3d3d8] mt-3">
+                      <span>{article.date}</span>
+                      <span>·</span>
+                      <span>{article.readTime}</span>
+                    </div>
                   </div>
                 </div>
-                <div className="p-5 flex flex-col justify-between flex-1">
-                  <h4 className="text-[17px] font-bold text-[#FAFAF7] leading-snug">{article.title}</h4>
-                  <div className="flex items-center gap-3 mono text-[11px] text-[#d3d3d8]">
-                    <span>{article.date}</span>
-                    <span>·</span>
-                    <span>{article.readTime}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
+              );
+              return article.href ? (
+                <Link key={article.num} href={article.href} className="block">
+                  {card}
+                </Link>
+              ) : (
+                <div key={article.num}>{card}</div>
+              );
+            })}
           </div>
         </div>
 
