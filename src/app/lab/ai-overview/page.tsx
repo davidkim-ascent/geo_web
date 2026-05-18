@@ -92,9 +92,9 @@ export default function AiOverviewPage() {
             {/* Prose */}
             <article className="text-[17px] leading-[1.85] tracking-[0.005em] text-[#0B0B0E]">
 
-              {/* § 01 */}
+              {/* 01 */}
               <section id="s1" className="scroll-mt-28">
-                <span className="mb-3.5 inline-block font-mono text-[11px] tracking-[0.2em] text-[#1452FF]">§ 01</span>
+                <span className="mb-3.5 inline-block font-mono text-[11px] tracking-[0.2em] text-[#1452FF]">01</span>
                 <h2 className="mb-6 mt-0 max-w-[22ch] text-[32px] font-bold leading-[1.2] tracking-[-0.025em]">
                   「3秒で読まれる」が、検索の前提条件になった。
                 </h2>
@@ -123,9 +123,9 @@ export default function AiOverviewPage() {
                 </blockquote>
               </section>
 
-              {/* § 02 */}
+              {/* 02 */}
               <section id="s2" className="scroll-mt-28">
-                <span className="mb-3.5 inline-block font-mono text-[11px] tracking-[0.2em] text-[#1452FF]">§ 02</span>
+                <span className="mb-3.5 inline-block font-mono text-[11px] tracking-[0.2em] text-[#1452FF]">02</span>
                 <h2 className="mb-6 max-w-[22ch] text-[32px] font-bold leading-[1.2] tracking-[-0.025em]" style={{ marginTop: 64 }}>
                   AI Overview の出現が、ファーストビューを書き換えた。
                 </h2>
@@ -173,9 +173,9 @@ export default function AiOverviewPage() {
                 </p>
               </section>
 
-              {/* § 03 */}
+              {/* 03 */}
               <section id="s3" className="scroll-mt-28">
-                <span className="mb-3.5 inline-block font-mono text-[11px] tracking-[0.2em] text-[#1452FF]">§ 03</span>
+                <span className="mb-3.5 inline-block font-mono text-[11px] tracking-[0.2em] text-[#1452FF]">03</span>
                 <h2 className="mb-6 max-w-[22ch] text-[32px] font-bold leading-[1.2] tracking-[-0.025em]" style={{ marginTop: 64 }}>
                   12 業種・1,400 ページの実測データ。
                 </h2>
@@ -238,9 +238,9 @@ export default function AiOverviewPage() {
                 </p>
               </section>
 
-              {/* § 04 */}
+              {/* 04 */}
               <section id="s4" className="scroll-mt-28">
-                <span className="mb-3.5 inline-block font-mono text-[11px] tracking-[0.2em] text-[#1452FF]">§ 04</span>
+                <span className="mb-3.5 inline-block font-mono text-[11px] tracking-[0.2em] text-[#1452FF]">04</span>
                 <h2 className="mb-6 max-w-[22ch] text-[32px] font-bold leading-[1.2] tracking-[-0.025em]" style={{ marginTop: 64 }}>
                   引用される側の条件 — 構造、密度、権威。
                 </h2>
@@ -291,9 +291,9 @@ export default function AiOverviewPage() {
                 </div>
               </section>
 
-              {/* § 05 */}
+              {/* 05 */}
               <section id="s5" className="scroll-mt-28">
-                <span className="mb-3.5 inline-block font-mono text-[11px] tracking-[0.2em] text-[#1452FF]">§ 05</span>
+                <span className="mb-3.5 inline-block font-mono text-[11px] tracking-[0.2em] text-[#1452FF]">05</span>
                 <h2 className="mb-6 max-w-[22ch] text-[32px] font-bold leading-[1.2] tracking-[-0.025em]" style={{ marginTop: 64 }}>
                   Passage Optimization という設計思想。
                 </h2>
@@ -364,9 +364,9 @@ export default function AiOverviewPage() {
                 </p>
               </section>
 
-              {/* § 06 */}
+              {/* 06 */}
               <section id="s6" className="scroll-mt-28">
-                <span className="mb-3.5 inline-block font-mono text-[11px] tracking-[0.2em] text-[#1452FF]">§ 06</span>
+                <span className="mb-3.5 inline-block font-mono text-[11px] tracking-[0.2em] text-[#1452FF]">06</span>
                 <h2 className="mb-6 max-w-[22ch] text-[32px] font-bold leading-[1.2] tracking-[-0.025em]" style={{ marginTop: 64 }}>
                   クリックされない検索を、どう測るか。
                 </h2>
@@ -395,9 +395,9 @@ export default function AiOverviewPage() {
                 </p>
               </section>
 
-              {/* § 07 */}
+              {/* 07 */}
               <section id="s7" className="scroll-mt-28">
-                <span className="mb-3.5 inline-block font-mono text-[11px] tracking-[0.2em] text-[#1452FF]">§ 07</span>
+                <span className="mb-3.5 inline-block font-mono text-[11px] tracking-[0.2em] text-[#1452FF]">07</span>
                 <h2 className="mb-6 max-w-[22ch] text-[32px] font-bold leading-[1.2] tracking-[-0.025em]" style={{ marginTop: 64 }}>
                   これからの 3 秒間のために。
                 </h2>

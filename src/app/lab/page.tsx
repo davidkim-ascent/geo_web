@@ -17,22 +17,16 @@ export const dynamic = "force-static";
 
 const featuredSide = [
   {
+    cat: "検索の変化",
+    title: "AI Overview が変えた、検索結果ページの3秒間",
+    desc: "Google AI Overview の登場で、検索結果ページ上部に何が起きているか。クリック率の変動と、引用される側の条件を、12 業種のデータから分析する。",
+    meta: "2026.04.12 · 8 MIN",
+  },
+  {
     cat: "SEO vs GEO",
-    title: "SEO と GEO は、何が決定的に違うのか",
-    desc: "キーワードと質問、ランクと引用。両者を貫く違いを構造から。",
-    meta: "2026.04.05 · 6 MIN",
-  },
-  {
-    cat: "AI 検索構造",
-    title: "Gemini が引用する記事に、共通する 7 つの構造",
-    desc: "Gemini API の出力 1,200 件を分析した実証レポート。",
-    meta: "2026.03.28 · 12 MIN",
-  },
-  {
-    cat: "GEO Writing",
-    title: "Passage Optimization の実装ガイド",
-    desc: "段落単位で抜き出される時代の、執筆ルール。",
-    meta: "2026.03.21 · 9 MIN",
+    title: "SEOとGEOは何が違うのか？検索最適化と生成AI最適化を比較",
+    desc: "SEOは検索エンジン、GEOは生成AI。比較表と実践原則で違いを整理した記事。",
+    meta: "2026.05.13 · 8 MIN",
   },
 ];
 
@@ -132,7 +126,7 @@ export default function LabPage() {
           </h2>
           <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
             {/* Main featured */}
-            <Link href="/lab/ai-overview" className="block">
+            <Link href="/lab/seo-geo" className="block">
             <article className="relative flex min-h-[420px] cursor-pointer flex-col justify-between overflow-hidden rounded-2xl bg-[#0B0B0E] p-14 text-[#FAFAF7] transition-opacity hover:opacity-90">
               <div
                 className="absolute inset-0"
@@ -147,22 +141,20 @@ export default function LabPage() {
                 <div className="mb-6 font-mono text-[11px] tracking-[0.18em] text-[#1452FF]">
                   FEATURED · 2026.04.12
                 </div>
-                <span className="font-mono text-[11px] tracking-[0.16em] text-[#9A9AA0]">
-                  検索の変化
-                </span>
+                <span className="font-mono text-[11px] tracking-[0.16em] text-[#9A9AA0]">SEO vs GEO</span>
                 <h3
                   className="mt-4 mb-5 max-w-[18ch] tracking-[-0.025em] leading-[1.1]"
                   style={{ fontSize: "clamp(28px, 3.4vw, 44px)" }}
                 >
-                  AI Overview が変えた、
-                  <em className="text-[#1452FF] not-italic">検索結果ページの 3 秒間</em>
+                  SEOとGEOは何が違うのか？
+                  <em className="text-[#1452FF] not-italic">検索最適化と生成AI最適化を比較</em>
                 </h3>
                 <p className="max-w-[52ch] text-[16px] leading-[1.65] text-[#9A9AA0]">
-                  Google AI Overview の登場で、検索結果ページ上部に何が起きているか。クリック率の変動と、引用される側の条件を、12 業種・1,400 ページのデータから分析する。AI 検索時代の新しい「ファーストビュー」とは何か。
+                  SEOは検索エンジンの上位表示を狙う施策、GEOは生成AIに引用されるための施策。違いと実践方法を比較表を用いてわかりやすく解説します。
                 </p>
               </div>
               <div className="relative z-10 mt-8 flex items-center gap-6 border-t border-white/[0.12] pt-6 font-mono text-[11px] tracking-[0.12em] text-[#9A9AA0]">
-                <span>RYO TANAKA · GEO RESEARCHER</span>
+                <span>Ascent Research · GEO LAB</span>
                 <span className="text-[#FAFAF7]">READ · 8 MIN →</span>
               </div>
             </article>

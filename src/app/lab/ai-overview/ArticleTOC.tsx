@@ -32,24 +32,22 @@ export function ArticleTOC() {
   }, []);
 
   return (
-    <aside className="sticky top-[100px] font-mono">
-      <div className="mb-4 text-[10px] tracking-[0.2em] text-[#9A9AA0] uppercase">
+    <aside className="article-toc sticky top-[100px]">
+      <div className="article-toc__label">
         [ CONTENTS ]
       </div>
-      <ol className="grid gap-1.5 list-none p-0 m-0" style={{ counterReset: "t" }}>
+      <ol className="article-toc__list" style={{ counterReset: "t" }}>
         {TOC.map((t) => (
           <li
             key={t.id}
-            className={`border-l pl-3 py-1.5 text-[11px] leading-[1.55] tracking-[0.04em] transition-all ${
-              active === t.id
-                ? "border-[#1452FF] text-[#0B0B0E] bg-gradient-to-r from-[rgba(20,82,255,0.08)] to-transparent"
-                : "border-[#E6E4DD] text-[#6B6B73]"
+            className={`article-toc__item ${
+              active === t.id ? "article-toc__item--active" : "text-[#6B6B73]"
             }`}
             style={{ counterIncrement: "t" }}
           >
-            <a href={"#" + t.id} className="hover:text-[#0B0B0E] transition-colors" style={{ color: "inherit" }}>
-              <span className="mr-1.5 text-[#1452FF] font-semibold">§{String(TOC.indexOf(t) + 1).padStart(2, "0")} </span>
-              {t.t}
+            <a href={"#" + t.id} className="article-toc__link hover:text-[#0B0B0E]" style={{ color: "inherit" }}>
+              <span className="article-toc__index">{String(TOC.indexOf(t) + 1).padStart(2, "0")} </span>
+              <span className="article-toc__title">{t.t}</span>
             </a>
           </li>
         ))}

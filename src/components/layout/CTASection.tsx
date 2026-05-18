@@ -42,7 +42,7 @@ export function CTASection({
             sectionClassName="relative"
             containerClassName="ui-cta-grid relative"
             left={
-              <div>
+              <div className="w-full min-w-0 pr-4 lg:pr-8">
                 <div className="flex items-center gap-2 ui-mono ui-section-kicker ui-section-kicker-dark mb-6">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#1452FF]" />
                   {kicker}
@@ -53,7 +53,7 @@ export function CTASection({
                 >
                   {title}
                 </h2>
-                <p className="mt-6 ui-body-copy ui-body-copy-dark max-w-[38ch]">
+                <p className="mt-6 ui-body-copy ui-body-copy-dark max-w-[56ch]">
                   {description}
                 </p>
               </div>
