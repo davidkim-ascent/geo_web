@@ -209,7 +209,7 @@ h4 {
 
 .ui-cta-button,
 .btn-filled-dark {
-  background: rgba(255,255,255,0.08);
+  background: var(--accent);
   color: #fff;
   font-size: 16px;
   font-weight: 600;
@@ -227,8 +227,8 @@ h4 {
 }
 .ui-cta-button:hover,
 .btn-filled-dark:hover {
-  background: var(--blue);
-  border-color: var(--blue);
+  background: #0040E5;
+  border-color: #0040E5;
   color: #fff;
 }
 
