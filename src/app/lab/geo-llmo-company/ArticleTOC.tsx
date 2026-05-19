@@ -13,7 +13,7 @@ const TOC = [
   { id: "s8", t: "費用相場" },
   { id: "s9", t: "依頼前に整理すべきこと" },
   { id: "s10", t: "FAQ" },
-  { id: "s11", t: "まとめ" },
+  { id: "s11", t: "まとめ : 自社に合う1社を見極めるために -" },
 ];
 
 export function ArticleTOC() {

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { CTASection } from "@/components/layout/CTASection";
 import { getCalendarBookingHref } from "@/lib/calendar-booking";
 import { ArticleTOC } from "./ArticleTOC";
+import { RelatedResearchSection } from "@/components/lab/RelatedResearchSection";
 import lmCepFinderImage from "./lm-cep-finder.png";
 import { TypingPromptCard } from "./TypingPromptCard";
 import { buildPageMetadata } from "@/lib/seo";
@@ -113,11 +114,10 @@ export default function BrandCepArticlePage() {
                 <h2 className="article-h2">
                   なぜ私たちのブランドはAIの回答の中に入っていないのか
                 </h2>
-                <div className="article-callout">
-                  <p className="text-[18px] font-semibold leading-[1.7] text-[#0B0B0E]">
-                    広告費を削ったわけでも、製品の競争力が落ちたわけでもない。それなのに、消費者が「おすすめを教えて」と尋ねる瞬間に、自社ブランドが言及されない。
-                  </p>
-                </div>
+                <blockquote className="article-quote article-quote--wide">
+                  <p className="article-quote__text">広告費を削ったわけでも、製品の競争力が落ちたわけでもない。それなのに、消費者が「おすすめを教えて」と尋ねる瞬間に、自社ブランドが言及されない。</p>
+                  <span className="article-quote__note">RESEARCH NOTE</span>
+                </blockquote>
                 <p className="article-prose">
                   最近、多くのブランドが共通して感じている不安です。その原因は、消費者の情報収集行動そのものが変わったことにあります。
                 </p>
@@ -156,11 +156,10 @@ export default function BrandCepArticlePage() {
                 <p className="article-prose">
                   ブランド側としては、さまざまなデータ分析を通じて人々が特定の製品群を思い浮かべる瞬間や文脈を見つけ出し、その文脈の中でブランドが記憶されるようにすることが重要な課題でした。
                 </p>
-                <div className="article-callout">
-                  <p className="text-[16px] leading-[1.75] text-[#0B0B0E]">
-                    ところがAI検索の登場により、そのCEPがプロンプトという形でAI検索窓に<strong>直接入力される</strong>ようになりました。消費者がAIに投げかける詳細な質問の中には、予算・状況・個人的な制約・好み・比較基準がすべて含まれています。
-                  </p>
-                </div>
+                <blockquote className="article-quote">
+                  <p className="article-quote__text">ところがAI検索の登場により、そのCEPがプロンプトという形でAI検索窓に<strong>直接入力される</strong>ようになりました。消費者がAIに投げかける詳細な質問の中には、予算・状況・個人的な制約・好み・比較基準がすべて含まれています。</p>
+                  <span className="article-quote__note">RESEARCH NOTE</span>
+                </blockquote>
                 <p className="article-prose">
                   つまり消費者の質問は今や「何を買うべきか」ではなく、「これらの条件をすべて考慮したとき、最善の選択は何か」という形に変わっています。
                 </p>
@@ -208,11 +207,10 @@ export default function BrandCepArticlePage() {
                 <p className="article-prose">
                   したがってブランドは今、「消費者が私たちの製品を探すのはいつか」という問いを把握しなければなりません。つまり、GEO対策においてCEPを活用することが成功のポイントになります。
                 </p>
-                <div className="article-callout">
-                  <p className="text-[16px] leading-[1.75] text-[#0B0B0E]">
-                    <strong>GEOはCEP構築のための非常に優れたマーケティング施策です。</strong>CEP戦略は、どのような状況で人々が製品やサービスのカテゴリーを思い浮かべるかを見つけ出し、次にその状況で自社ブランドが同時に想起されるようにしなければなりません。
-                  </p>
-                </div>
+                <blockquote className="article-quote article-quote--wide">
+                  <p className="article-quote__text"><strong>GEOはCEP構築のための非常に優れたマーケティング施策です。</strong>CEP戦略は、どのような状況で人々が製品やサービスのカテゴリーを思い浮かべるかを見つけ出し、次にその状況で自社ブランドが同時に想起されるようにしなければなりません。</p>
+                  <span className="article-quote__note">RESEARCH NOTE</span>
+                </blockquote>
               </section>
 
               <section id="s6" className="article-section">
@@ -370,6 +368,8 @@ export default function BrandCepArticlePage() {
           </div>
         </div>
       </section>
+
+      <RelatedResearchSection currentSlug="brand-cep" />
 
       <div className="article-cta">
         <CTASection

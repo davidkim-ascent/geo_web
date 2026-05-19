@@ -1,26 +1,26 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 import { CTASection } from "@/components/layout/CTASection";
 import { getCalendarBookingHref } from "@/lib/calendar-booking";
 import { buildPageMetadata } from "@/lib/seo";
 import { ArticleTOC } from "./ArticleTOC";
-import companyComparisonImage from "./company-comparison.png";
+import { RelatedResearchSection } from "@/components/lab/RelatedResearchSection";
+import { PositioningMap } from "./PositioningMap";
 
 const PAGE_TITLE = "GEO/LLMO対策におすすめの会社7選を徹底比較";
 const PAGE_DESCRIPTION =
-  "GEO/LLMO対策会社7社を4つの型で整理し、選び方の5つの基準、費用相場、FAQまでまとめた比較記事。質問データ起点のAscent Networksを含む主要プレイヤーを一望できます。";
+  "GEO/LLMO対策会社7社を4つの型で整理し、選び方の5つの基準、費用相場、FAQまでまとめた比較記事。質問データ起点のAscent GEOを含む主要プレイヤーを一望できます。";
 
 const TYPE_ROWS = [
   ["SEO老舗対応型", "SEO実績10〜20年の老舗。GEOは既存SEOの拡張機能として提供。", "ジオコード / SEOジャパン"],
   ["GEO/LLMO専業型", "いち早くLLMOを前面に出した専業ポジション。サービスライン多数。", "東京SEOメーカー / メディアグロース"],
   ["ツール+コンサル融合型", "GEO計測ツールを軸に、コンサルへのアップセル構造。", "ミエルカ / ニュートラルワークス"],
-  ["需要起点型", "ユーザーの実際の質問データから逆算してコンテンツを設計。", "Ascent Networks"],
+  ["需要起点型", "ユーザーの実際の質問データから逆算してコンテンツを設計。", "Ascent GEO"],
 ];
 
 const COMPANIES = [
   {
-    name: "Ascent Networks",
+    name: "Ascent GEO",
     type: "需要起点型",
     origin: "ユーザーの質問データ",
     strength: "リスニングマインド・特許ベース設計",
@@ -109,7 +109,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = buildPageMetadata({
-  title: `${PAGE_TITLE} - 株式会社 Ascent Networks`,
+  title: `${PAGE_TITLE} - 株式会社 Ascent GEO`,
   description: PAGE_DESCRIPTION,
   path: "/lab/geo-llmo-company",
   keywords: ["GEO対策", "LLMO対策", "比較", "会社", "生成AI最適化", "AI検索最適化"],
@@ -198,13 +198,12 @@ export default function GeoLlmoCompanyArticlePage() {
               <section id="s1" className="article-section">
                 <span className="article-kicker">01</span>
                 <h4 className="article-h4">
-                  【結論】GEO/LLMO対策会社は「質問データ起点」から設計するAscent Networksがおすすめ
+                  【結論】GEO/LLMO対策会社は「質問データ起点」から設計するAscent GEOがおすすめ
                 </h4>
-                <div className="article-callout">
-                  <p className="text-[18px] font-semibold leading-[1.7] text-[#0B0B0E]">
-                    「ChatGPTに自社サービスを聞いたら、競合の名前ばかりが出てきた」と感じたことはありませんか。
-                  </p>
-                </div>
+                <blockquote className="article-quote article-quote--wide">
+                  <p className="article-quote__text">「ChatGPTに自社サービスを聞いたら、競合の名前ばかりが出てきた」と感じたことはありませんか。</p>
+                  <span className="article-quote__note">RESEARCH NOTE</span>
+                </blockquote>
                 <p className="article-prose">
                   AI検索の利用が一気に広がる中で、自社が引用されないという課題に直面する企業が増えています。GEO/LLMO対策の必要性は分かっていても、どの会社に頼めばよいかの判断は難しいのが現状です。
                 </p>
@@ -302,13 +301,8 @@ export default function GeoLlmoCompanyArticlePage() {
                   4つの型を2軸で可視化したのが下のポジショニングマップです。横軸は「対策の起点(サイト中心 or ユーザー中心)」、縦軸は「サービスの主軸(戦略コンサルティング or ツール/プラットフォーム)」を示しています。
                 </p>
 
-                <figure className="my-8 overflow-hidden rounded-2xl border border-[#E6E4DD] bg-[#FAFAF7] shadow-[0_18px_40px_-24px_rgba(11,11,14,0.28)]">
-                  <Image
-                    src={companyComparisonImage}
-                    alt="GEO/LLMO対策会社ポジショニングマップ"
-                    className="h-auto w-full object-cover"
-                    priority
-                  />
+                <figure className="my-8 p-4 sm:p-6">
+                  <PositioningMap />
                 </figure>
 
                 <h3 className="article-h3">ポジショニングマップから読み取れる3つのこと</h3>
@@ -319,7 +313,7 @@ export default function GeoLlmoCompanyArticlePage() {
                   </li>
                   <li className="article-list__item">
                     <span className="article-list__bullet">•</span>
-                    右上(ユーザー中心 × 戦略コンサル)象限はAscent Networksが独占しており、需要起点で戦略を設計するプレイヤーは他に存在しない
+                    右上(ユーザー中心 × 戦略コンサル)象限はAscent GEOが独占しており、需要起点で戦略を設計するプレイヤーは他に存在しない
                   </li>
                   <li className="article-list__item">
                     <span className="article-list__bullet">•</span>
@@ -358,11 +352,10 @@ export default function GeoLlmoCompanyArticlePage() {
                   ))}
                 </div>
 
-                <div className="article-callout">
-                  <p className="text-[16px] leading-[1.75] text-[#0B0B0E]">
-                    <strong>Ascent Networks</strong> は、日本で唯一「ユーザーのニーズを調査しAIに実際に問いかけている質問の生成」から起点にGEOを設計するコンサルティング会社です。
-                  </p>
-                </div>
+                <blockquote className="article-quote">
+                  <p className="article-quote__text"><strong>Ascent GEO</strong> は、日本で唯一「ユーザーのニーズを調査しAIに実際に問いかけている質問の生成」から起点にGEOを設計するコンサルティング会社です。</p>
+                  <span className="article-quote__note">RESEARCH NOTE</span>
+                </blockquote>
               </section>
 
               <section id="s7" className="article-section">
@@ -445,10 +438,14 @@ export default function GeoLlmoCompanyArticlePage() {
                 <div className="article-faq">
                   {FAQ.map((item) => (
                     <div key={item.q} className="article-faq__item">
-                      <div className="mb-3 font-mono text-[10px] tracking-[0.18em] text-[#1452FF]">Q</div>
-                      <h4 className="article-h4">{item.q}</h4>
-                      <div className="font-mono text-[10px] tracking-[0.18em] text-[#6B6B73]">A</div>
-                      <p className="article-faq__answer mt-2">{item.a}</p>
+                      <div className="article-faq__q">
+                        <span className="article-faq__q-label">Q</span>
+                        <h4 className="article-h4">{item.q}</h4>
+                      </div>
+                      <div className="article-faq__a">
+                        <span className="article-faq__a-label">A</span>
+                        <p className="article-faq__answer">{item.a}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -456,7 +453,7 @@ export default function GeoLlmoCompanyArticlePage() {
 
               <section id="s11" className="article-section">
                 <span className="article-kicker">11</span>
-                <h2 className="article-h2">まとめ 自社に合う1社を見極めるために</h2>
+                <h2 className="article-h2">まとめ : 自社に合う1社を見極めるために -</h2>
                 <p className="article-prose">
                   本記事では、日本のGEO/LLMO対策会社7社を4つの型で整理し、選び方の5つのポイントを解説しました。重要なポイントを最後に振り返ります。
                 </p>
@@ -486,24 +483,29 @@ export default function GeoLlmoCompanyArticlePage() {
                   AI検索の世界では「比較検討の主戦場」がGoogle検索からAI回答へと移りつつあります。早期に対策を始めた企業ほど引用ポジションを獲得しやすい構造です。本記事を参考に、自社に最適なパートナーを見つけてください。
                 </p>
 
-                <div className="article-callout">
-                  <p className="text-[16px] leading-[1.75] text-[#0B0B0E]">
-                    <strong>監修</strong>
-                    <br />
-                    株式会社Ascent Networks GEO戦略室。Google・Microsoftの検索特許分析と、リスニングマインドの日本語AI質問データを軸に、需要起点のGEO戦略を提供。Samsung Japanをはじめとする企業のAI Visibility改善を支援。
-                  </p>
+                <div className="article-note-panel">
+                  <div className="article-note-panel__grid">
+                    <div className="article-note-panel__section">
+                      <div className="article-note-panel__label">監修</div>
+                      <p className="article-note-panel__text">
+                        株式会社Ascent GEO GEO戦略室。Google・Microsoftの検索特許分析と、リスニングマインドの日本語AI質問データを軸に、需要起点のGEO戦略を提供。Samsung Japanをはじめとする企業のAI Visibility改善を支援。
+                      </p>
+                    </div>
+                    <div className="article-note-panel__section">
+                      <div className="article-note-panel__label">出典・参考</div>
+                      <p className="article-note-panel__text article-note-panel__text--muted">
+                        各社サービスページ、公開資料、業界調査レポート(2026年5月時点)。本記事の情報は2026年5月19日時点の最新情報に基づいて作成しました。
+                      </p>
+                    </div>
+                  </div>
                 </div>
-
-                <p className="article-prose">
-                  <strong>出典・参考</strong>
-                  <br />
-                  各社サービスページ、公開資料、業界調査レポート(2026年5月時点)。本記事の情報は2026年5月19日時点の最新情報に基づいて作成しました。
-                </p>
               </section>
             </article>
           </div>
         </div>
       </section>
+
+      <RelatedResearchSection currentSlug="geo-llmo-company" />
 
       <div className="article-cta">
         <CTASection
@@ -518,7 +520,7 @@ export default function GeoLlmoCompanyArticlePage() {
           description={
             <>
               「どの会社に相談すべきか迷っている」「質問データ起点での設計を一度見てほしい」
-              という方に向けて、Ascent Networksでは無料の初回相談を受け付けています。
+              という方に向けて、Ascent GEOでは無料の初回相談を受け付けています。
               <br />
               <br />
               現状診断から、質問群の整理、GEO/LLMOコンテンツの優先順位付けまで、御社の状況に合わせて具体的にご提案します。

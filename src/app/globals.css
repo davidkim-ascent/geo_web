@@ -45,7 +45,7 @@
   --ui-cta-button-padding-x: 24px;
   --ui-cta-button-radius: 20px;
   --ui-cta-dark-border: #FFFFFF40;
-  --ui-content-width: 1152px;
+  --ui-content-width: 1280px;
 }
 
 @theme inline {
@@ -235,7 +235,7 @@ h4 {
 
 .ui-detail-button {
   font-family: inherit;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 600;
   line-height: 1;
   padding: 10px 16px;
@@ -430,7 +430,7 @@ h4 {
 }
 
 .tag-blue {
-  background: var(--blue);
+  background: linear-gradient(90deg, #0070f3, #3d7eff);
   color: #fff;
   font-size: 12px;
   font-weight: 600;
@@ -438,6 +438,7 @@ h4 {
   padding: 4px 10px;
   border-radius: 100px;
   font-family: 'JetBrains Mono', monospace;
+  box-shadow: 0 0 10px #0070f340;
 }
 
 .tag-dark {
@@ -446,8 +447,8 @@ h4 {
   letter-spacing: 0.06em;
   padding: 4px 10px;
   border-radius: 100px;
-  border: 1px solid rgba(255,255,255,0.12);
-  color: rgba(255,255,255,0.5);
+  border: 1px solid #7ab6ff1a;
+  color: #7ab6ff80;
   font-family: 'JetBrains Mono', monospace;
 }
 
@@ -507,6 +508,19 @@ h4 {
 /* ===== ARC SPIN ===== */
 @keyframes arcSpin { to { transform: rotate(360deg); } }
 .arc-spin { animation: arcSpin 80s linear infinite; }
+
+/* ===== SUBTLE MAP DRIFT ===== */
+@keyframes mapJitter {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  25% { transform: translate3d(1px, -1px, 0); }
+  50% { transform: translate3d(-1px, 1px, 0); }
+  75% { transform: translate3d(1px, 1px, 0); }
+}
+.map-jitter {
+  will-change: transform;
+  transform-origin: center center;
+  animation: mapJitter 10s ease-in-out infinite;
+}
 
 /* ===== FRAMEWORK RING ===== */
 .fw-grid {
@@ -1006,6 +1020,106 @@ body.tweak-norotate .fw-ring g.node text {
   padding: 28px;
 }
 
+.article-quote {
+  margin: 40px 0;
+  padding: 4px 0 4px 28px;
+  border-left: 4px solid #1452FF;
+}
+
+.article-quote__text {
+  max-width: 22ch;
+  margin: 0;
+  font-size: clamp(26px, 3vw, 34px);
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+  font-style: italic;
+  color: #0B0B0E;
+  text-wrap: balance;
+}
+
+.article-quote__note {
+  display: block;
+  margin-top: 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: #6B6B73;
+  text-transform: uppercase;
+}
+
+.article-quote__note::before {
+  content: '— ';
+}
+
+.article-quote--wide .article-quote__text {
+  max-width: 26ch;
+}
+
+.article-note-panel {
+  margin: 48px 0 8px;
+  border: 1px solid #E6E4DD;
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(242, 240, 234, 0.92) 0%, rgba(250, 250, 247, 1) 100%);
+  box-shadow: 0 18px 40px -28px rgba(11, 11, 14, 0.22);
+  overflow: hidden;
+}
+
+.article-note-panel__grid {
+  display: grid;
+  gap: 0;
+}
+
+.article-note-panel__section {
+  padding: 28px 28px 30px;
+}
+
+.article-note-panel__section + .article-note-panel__section {
+  border-top: 1px solid #E6E4DD;
+}
+
+.article-note-panel__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1452FF;
+}
+
+.article-note-panel__label::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #1452FF;
+  box-shadow: 0 0 0 4px rgba(20, 82, 255, 0.08);
+}
+
+.article-note-panel__text {
+  font-size: 16px;
+  line-height: 1.78;
+  color: #0B0B0E;
+}
+
+.article-note-panel__text--muted {
+  color: #4E4E51;
+}
+
+@media (min-width: 900px) {
+  .article-note-panel__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .article-note-panel__section + .article-note-panel__section {
+    border-top: 0;
+    border-left: 1px solid #E6E4DD;
+  }
+}
+
 .article-table {
   margin: 32px 0;
   overflow: hidden;
@@ -1068,20 +1182,79 @@ body.tweak-norotate .fw-ring g.node text {
 
 .article-faq {
   display: grid;
-  gap: 16px;
+  gap: 2px;
 }
 
 .article-faq__item {
-  border: 1px solid #E6E4DD;
+  border: none;
+  overflow: hidden;
+  color: #0B0B0E;
+}
+
+.article-faq__item:first-child {
+  border-radius: 18px 18px 0 0;
+}
+
+.article-faq__item:last-child {
+  border-radius: 0 0 18px 18px;
+}
+
+.article-faq__item:first-child:last-child {
   border-radius: 18px;
-  background: #FAFAF7;
-  padding: 24px;
+}
+
+.article-faq__q {
+  background: #0F1F4A;
+  padding: 22px 28px;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.article-faq__q-label {
+  font-family: 'Pretendard JP Variable', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #1452FF;
+  flex-shrink: 0;
+  line-height: 1.5;
+  margin-top: 2px;
+}
+
+.article-faq__q .article-h4 {
+  color: #FAFAF7;
+  margin: 0;
+}
+
+.article-faq__a {
+  background: #F2F0EA;
+  padding: 20px 28px 20px calc(28px + 11px + 16px);
+  border-bottom: 1px solid #E6E4DD;
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+}
+
+.article-faq__a-label {
+  font-family: 'Pretendard JP Variable', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #9A9AA0;
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .article-faq__answer {
   font-size: var(--fs-body);
   line-height: 1.8;
   color: #323235;
+  margin: 0;
+}
+
+.article-faq__item:last-child .article-faq__a {
+  border-bottom: none;
 }
 
 .article-principles-grid {
@@ -1120,10 +1293,6 @@ body.tweak-norotate .fw-ring g.node text {
   font-size: var(--fs-body);
   line-height: 1.7;
   color: rgba(250, 250, 247, 0.82);
-}
-
-.article-faq__item {
-  background: #FAFAF7;
 }
 
 .article-cta {

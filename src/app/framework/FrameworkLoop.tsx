@@ -1,39 +1,77 @@
 "use client";
 
 const STEPS = [
-  { ix: "01", name: "質問分析", jp: "質問分析" },
-  { ix: "02", name: "GAP分析", jp: "10点評価モデル" },
-  { ix: "03", name: "GEOに特化したコンテンツ対策", jp: "GEOに特化したコンテンツ対策" },
-  { ix: "04", name: "モニタリング", jp: "モニタリング" },
+  { ix: "01", name: "Question Intelligence", jp: "質問インテリジェンス" },
+  { ix: "02", name: "Semantic GAP Analysis", jp: "セマンティックGAP分析" },
+  { ix: "03", name: "GEO Content Engineering", jp: "GEOコンテンツ・エンジニアリング" },
+  { ix: "04", name: "AI Visibility Monitoring", jp: "AIビジビリティ・モニタリング" },
   { ix: "05", name: "Optimization Loop", jp: "最適化ループ" },
 ];
 
-// viewBox coordinate space: 0-100 x, 0-100 y
-// Pentagon nodes on circle r=38 centered at (50,50)
-// Top node y = 50-38 = 12, bottom nodes y = 50+38*sin(54°) ≈ 80.8
-// Clip viewBox vertically: from y=4 to y=88 → height=84
-// So aspect ratio = 100 / 84 ≈ 1.19 : 1
-
 const VB_Y0 = 4;
 const VB_H = 84;
+const CX = 50;
+const CY = 50;
+const R = 38;
 
 export function FrameworkLoop() {
   const nodes = STEPS.map((s, i) => {
     const angle = (i / 5) * Math.PI * 2 - Math.PI / 2;
-    const r = 38;
-    const x = 50 + Math.cos(angle) * r;
-    const y = 50 + Math.sin(angle) * r;
+    const x = CX + Math.cos(angle) * R;
+    const y = CY + Math.sin(angle) * R;
     return { ...s, x, y };
   });
 
   return (
     <div style={{ position: "relative", margin: "40px auto 0", maxWidth: 900 }}>
-      {/* SVG drives the container height via viewBox aspect ratio */}
+      <style>{`
+        @keyframes orbitSpin {
+          from { transform: rotate(0deg); }
+          to   { transform: rotate(360deg); }
+        }
+        .orbit-ring {
+          transform-origin: 50px 50px;
+          animation: orbitSpin 120s linear infinite;
+        }
+        @keyframes ripple {
+          0%   { r: 2;  opacity: 0.8; }
+          100% { r: 34; opacity: 0; }
+        }
+        .ripple-1 { animation: ripple 8s ease-out infinite 0s; }
+        .ripple-2 { animation: ripple 8s ease-out infinite 2.6s; }
+        .ripple-3 { animation: ripple 8s ease-out infinite 5.2s; }
+      `}</style>
+
       <svg
         viewBox={`0 ${VB_Y0} 100 ${VB_H}`}
         style={{ width: "100%", display: "block", pointerEvents: "none" }}
       >
-        <circle cx="50" cy="50" r="38" fill="none" stroke="#E6E4DD" strokeWidth="0.2" strokeDasharray="0.8 0.8" />
+        <defs>
+          <filter id="edgeSoften" x="-200%" y="-200%" width="500%" height="500%">
+            <feGaussianBlur stdDeviation="4" />
+          </filter>
+        </defs>
+
+        {/* Outer dashed orbit ring */}
+        <circle
+          className="orbit-ring"
+          cx={CX} cy={CY} r={R}
+          fill="none"
+          stroke="#1e3a6e"
+          strokeWidth="0.15"
+          strokeDasharray="0.8 0.8"
+          opacity="0.5"
+        />
+
+        {/* Pentagon — deep navy solid fill */}
+        <polygon
+          points={nodes.map((n) => `${n.x},${n.y}`).join(" ")}
+          fill="#0d1b3e"
+          stroke="#1e3a6e"
+          strokeWidth="0.2"
+        />
+
+        {/* Pentagon edge lines */}
         {nodes.map((n, i) => {
           const next = nodes[(i + 1) % 5];
           return (
@@ -41,84 +79,106 @@ export function FrameworkLoop() {
               key={i}
               x1={n.x} y1={n.y}
               x2={next.x} y2={next.y}
-              stroke="#1452FF"
-              strokeWidth="0.15"
-              opacity="0.4"
+              stroke="#2a5298"
+              strokeWidth="0.18"
+              opacity="0.6"
             />
           );
         })}
+
+        {/* Ripple waves from core */}
+        <circle className="ripple-1" cx={CX} cy={CY} r="4" fill="none" stroke="#4a90d9" strokeWidth="2.5" filter="url(#edgeSoften)" />
+        <circle className="ripple-2" cx={CX} cy={CY} r="4" fill="none" stroke="#4a90d9" strokeWidth="2.5" filter="url(#edgeSoften)" />
+        <circle className="ripple-3" cx={CX} cy={CY} r="4" fill="none" stroke="#4a90d9" strokeWidth="2.5" filter="url(#edgeSoften)" />
+
+        {/* Core background circle — masks ripple lines behind text */}
+        <circle cx={CX} cy={CY} r="12" fill="#0d1b3e" />
+
       </svg>
 
-      {/* Center overlay */}
+      {/* Center text overlay — positioned inside the r=16 circle */}
       <div
         style={{
           position: "absolute",
-          // map SVG coord (50, 50) into % of clipped viewBox
           left: "50%",
-          top: `${((50 - VB_Y0) / VB_H) * 100}%`,
+          top: `${((CY - VB_Y0) / VB_H) * 100}%`,
           transform: "translate(-50%, -50%)",
           textAlign: "center",
           pointerEvents: "none",
+          width: 160,
         }}
       >
-        <div
-          style={{
-            width: 140,
-            height: 140,
-            borderRadius: "50%",
-            border: "1px dashed #E6E4DD",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            margin: "0 auto 16px",
-            background: "radial-gradient(circle, #DCE5FF, transparent 70%)",
-          }}
-        >
-          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, letterSpacing: "0.18em", color: "#1452FF" }}>
-            CORE
-          </span>
+        <div style={{ fontSize: 18, letterSpacing: "-0.02em", color: "#e8f4ff", fontWeight: 700, marginBottom: 2 }}>
+          Ascentの
         </div>
-        <h3 style={{ fontSize: 22, letterSpacing: "-0.02em", margin: 0 }}>GEO Framework</h3>
-        <p style={{ fontSize: 14, color: "#6B6B73", marginTop: 4, maxWidth: "28ch", lineHeight: 1.6 }}>
+        <h3 style={{ fontSize: 18, letterSpacing: "-0.02em", margin: 0, color: "#e8f4ff", fontWeight: 700 }}>
+          GEO Framework
+        </h3>
+        <p style={{ fontSize: 12, color: "#4a90d9", marginTop: 5, lineHeight: 1.55 }}>
           5 つのフェーズが連動し、<br />継続的に最適化を回す
         </p>
       </div>
 
-      {/* Node cards */}
+      {/* Node cards — white on dark pentagon */}
       {nodes.map((n, i) => (
         <div
           key={i}
           style={{
             position: "absolute",
-            // map SVG coords into % of clipped viewBox
             left: `${n.x}%`,
             top: `${((n.y - VB_Y0) / VB_H) * 100}%`,
             width: 200,
             transform: "translate(-50%, -50%)",
-            background: "#FAFAF7",
-            border: "1px solid #E6E4DD",
+            background: "#ffffff",
+            border: "2.5px solid #1a3a7a",
             borderRadius: 12,
-            padding: "18px 20px",
+            padding: "16px 18px",
             textAlign: "left",
-            transition: "border-color 0.2s, box-shadow 0.2s",
+            transition: "background 0.2s, border-color 0.2s, box-shadow 0.2s",
             cursor: "default",
+            boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
           }}
           onMouseEnter={(e) => {
-            (e.currentTarget as HTMLDivElement).style.borderColor = "#1452FF";
-            (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 24px rgba(20,82,255,0.15)";
+            const el = e.currentTarget as HTMLDivElement;
+            el.style.background = "#1a3a7a";
+            el.style.borderColor = "#1a3a7a";
+            el.style.boxShadow = "0 6px 24px rgba(26,58,122,0.35)";
+            el.querySelectorAll("[data-phase]").forEach((c) => ((c as HTMLElement).style.color = "#7ab6ff"));
+            el.querySelectorAll("[data-title]").forEach((c) => ((c as HTMLElement).style.color = "#ffffff"));
+            el.querySelectorAll("[data-jp]").forEach((c) => ((c as HTMLElement).style.color = "#7ab6ff"));
           }}
           onMouseLeave={(e) => {
-            (e.currentTarget as HTMLDivElement).style.borderColor = "#E6E4DD";
-            (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
+            const el = e.currentTarget as HTMLDivElement;
+            el.style.background = "#ffffff";
+            el.style.borderColor = "#1a3a7a";
+            el.style.boxShadow = "0 2px 12px rgba(0,0,0,0.08)";
+            el.querySelectorAll("[data-phase]").forEach((c) => ((c as HTMLElement).style.color = "#1a3a7a"));
+            el.querySelectorAll("[data-title]").forEach((c) => ((c as HTMLElement).style.color = "#0b0b0e"));
+            el.querySelectorAll("[data-jp]").forEach((c) => ((c as HTMLElement).style.color = "#1a3a7a"));
           }}
         >
-          <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 11, letterSpacing: "0.16em", color: "#1452FF" }}>
+          <div data-phase style={{
+            fontFamily: "'JetBrains Mono', monospace",
+            fontSize: 10,
+            letterSpacing: "0.18em",
+            color: "#1a3a7a",
+            marginBottom: 6,
+          }}>
             PHASE {n.ix}
           </div>
-          <h4 style={{ fontSize: 16, lineHeight: 1.25, margin: "6px 0 4px", letterSpacing: "-0.01em", fontWeight: 700 }}>
+          <h4 data-title style={{
+            fontSize: 15,
+            lineHeight: 1.3,
+            margin: "0 0 4px",
+            letterSpacing: "-0.01em",
+            fontWeight: 700,
+            color: "#0b0b0e",
+          }}>
             {n.name}
           </h4>
-          <p style={{ margin: 0, fontSize: 13, color: "#6B6B73", lineHeight: 1.4 }}>{n.jp}</p>
+          <p data-jp style={{ margin: 0, fontSize: 12, color: "#1a3a7a", lineHeight: 1.4 }}>
+            {n.jp}
+          </p>
         </div>
       ))}
     </div>

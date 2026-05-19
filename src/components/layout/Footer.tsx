@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-[5fr_2.5fr_2.5fr] gap-12">
           {/* Brand */}
           <div>
-            <Link href="/" className="inline-flex items-center" aria-label="Go to home">
+            <a href="/" className="inline-flex items-center" aria-label="Go to home">
               <Image
                 src="/ascent-geo-logo.png"
                 alt="ASCENT/GEO"
@@ -17,7 +17,7 @@ export default function Footer() {
                 height={552}
                 className="h-[24px] w-auto"
               />
-            </Link>
+            </a>
             <p className="mt-4 ui-body-copy">
               特許 × 実消費者インテント × Embedding。<br />
               根拠ある GEO で、AI 検索のリーダーへ。
@@ -49,9 +49,9 @@ export default function Footer() {
                 { label: "GEO Lab", href: "/lab" },
               ].map((item) => (
                 <li key={item.label}>
-                  <Link href={item.href} className="ui-footer-link">
+                  <a href={item.href} className="ui-footer-link">
                     {item.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -72,9 +72,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/whitepaper" className="ui-footer-link">
+                <a href="/whitepaper" className="ui-footer-link">
                   資料ダウンロード
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -84,9 +84,9 @@ export default function Footer() {
           <p className="ui-footer-meta">
             © 2026 ASCENT NETWORK
           </p>
-          <Link href="/privacy" className="ui-footer-link">
+          <a href="/privacy" className="ui-footer-link">
             プライバシーポリシー
-          </Link>
+          </a>
         </div>
       </div>
     </footer>

@@ -436,29 +436,6 @@ export default function ServicesPage() {
                 つのフェーズで切り出すこともできれば、ループとしてフルパッケージで運用することもできる。
               </p>
 
-              <div className="mt-10">
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4 xl:gap-0">
-                  {[
-                    { ix: "01", label: "質問クラスター\nデータ基盤抽出" },
-                    { ix: "02", label: "10点GAP分析\n　定量評価" },
-                    { ix: "03", label: "GEO 制作\n引用される構造" },
-                    { ix: "04", label: "モニタリング\n引用状態を管理" },
-                  ].map((p) => (
-                    <div
-                      key={p.ix}
-                      className="border-t border-white/10 pt-4 xl:border-l xl:border-t-0 xl:pl-6 xl:pt-0 xl:first:border-l-0 xl:first:pl-0"
-                    >
-                      <div className="mb-2 font-mono text-[10px] tracking-[0.2em] text-[#1452FF]">
-                        {p.ix}
-                      </div>
-                      <div className="text-[15px] font-semibold leading-[1.35] text-white whitespace-pre-line">
-                        {p.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-[640px]">
                 <CalendarBookingButton />
                 <Button asChild variant="ctaOutline">
@@ -477,37 +454,11 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Quad overview */}
-      <section className="border-b border-[#E6E4DD] bg-[#FAFAF7] py-16">
-        <div className="mx-auto max-w-[var(--ui-content-width)] px-10">
-          <div className="grid grid-cols-2 gap-0 border-t border-[#E6E4DD] pt-8 md:grid-cols-4">
-            {[
-              { ix: "01 / CLUSTER", title: "質問クラスター\nデータ基盤抽出" },
-              { ix: "02 / GAP", title: "10点GAP分析\n　定量評価" },
-              { ix: "03 / CONTENT", title: "GEO 制作\n引用される構造" },
-              { ix: "04 / MONITOR", title: "モニタリング\n引用状態を管理" },
-            ].map((q, i) => (
-              <div
-                key={i}
-                className="border-b border-[#E6E4DD] py-4 pr-6 pl-1 md:border-b-0 md:border-r md:last:border-r-0"
-              >
-                <div className="mb-3 font-mono text-[11px] tracking-[0.18em] text-[#1452FF]">
-                  {q.ix}
-                </div>
-                <h4 className="text-[17px] font-bold leading-[1.3] whitespace-pre-line">
-                  {q.title}
-                </h4>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Service sections */}
       {services.map((svc) => (
         <section
           key={svc.ix}
-          className={`border-b border-[#E6E4DD] py-[120px] ${svc.alt ? "bg-[#F2F0EA]" : "bg-[#FAFAF7]"}`}
+          className={`border-b border-[#E6E4DD] py-[112px] ${svc.alt ? "bg-[#F2F0EA]" : "bg-[#FAFAF7]"}`}
         >
           <div className="mx-auto max-w-[var(--ui-content-width)] px-10">
             <div className="mb-4 font-mono text-[12px] tracking-[0.18em] text-[#1452FF]">

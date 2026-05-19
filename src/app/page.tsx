@@ -239,8 +239,9 @@ function SearchShiftSection() {
           </div>
 
           {/* AI Answer時代 */}
-          <div className="bg-[#0B0B0E] border border-white/[0.07] rounded-2xl p-7 card-hover-dark relative overflow-hidden">
-            <div className="absolute top-4 left-4 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-white/30 text-xs">→</div>
+          <div className="rounded-2xl p-7 card-hover-dark relative overflow-hidden" style={{ background: "radial-gradient(#0b2260, #0a0a12 70%)", border: "1px solid #7ab6ff12" }}>
+            <div className="absolute top-0 right-0 w-[160px] h-[160px] rounded-full blur-[60px] pointer-events-none" style={{ background: "radial-gradient(circle, #0070f330, transparent 65%)" }} />
+            <div className="absolute top-4 left-4 w-8 h-8 rounded-full flex items-center justify-center text-xs" style={{ background: "#0070f315", color: "#7ab6ff60" }}>→</div>
             <h3 className="text-[19px] font-bold text-[#FAFAF7] mb-3">AI Answer時代</h3>
             <p className="text-[16px] text-[#d3d3d8] leading-[1.6] mb-5">
               回答エンジンが直接回答する。AIに引用されることこそが、露出。
@@ -255,80 +256,101 @@ function SearchShiftSection() {
 
         {/* Chart cards */}
         <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-          {/* Fig 01 */}
-          <div className="bg-white border border-black/[0.07] rounded-2xl p-6 card-hover">
+          {/* Fig 01 — SERP decline */}
+          <div className="rounded-2xl p-6 card-hover overflow-hidden relative" style={{ background: "radial-gradient(120% 100% at 50% 0, #0e1b3e 0%, #050b22 45%, #02050f 80%, #010108 100%)", border: "1px solid rgba(122,182,255,0.08)" }}>
+            <div className="absolute top-0 right-0 w-[180px] h-[180px] rounded-full blur-[70px] pointer-events-none" style={{ background: "radial-gradient(circle, #cd2e3a 0%, #cd2e3a33 32%, transparent 64%)" }} />
             <div className="flex items-center justify-between mb-4">
-              <div>
-                <h3 className="text-[19px] font-semibold text-[#0B0B0E] mt-1">SERP クリック率の3年連続で継続的減少</h3>
+              <h3 className="text-[17px] font-semibold text-white leading-snug max-w-[200px]">SERP クリック率の継続的減少</h3>
+              <div className="text-right">
+                <div className="text-[26px] font-bold mono" style={{ background: "linear-gradient(135deg, #ff5c73, #cd2e3a)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>−28%</div>
+                <div className="text-[10px] font-['JetBrains_Mono',monospace] tracking-[0.1em]" style={{ color: "#ff5c7399" }}>3YR TREND</div>
               </div>
-              <div className="text-[24px] font-bold text-red-500 mono">−28%</div>
             </div>
-            {/* Decline chart — line */}
-            <div className="relative h-[100px] mt-2">
+            <div className="relative h-[108px] mt-2">
               <svg viewBox="0 0 400 90" className="w-full h-full" preserveAspectRatio="none">
                 <defs>
-                  <linearGradient id="redGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="rgba(239,68,68,0.25)" />
-                    <stop offset="100%" stopColor="rgba(239,68,68,0)" />
+                  <linearGradient id="redAreaGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#cd2e3a33" />
+                    <stop offset="60%" stopColor="#cd2e3a0d" />
+                    <stop offset="100%" stopColor="#cd2e3a00" />
                   </linearGradient>
+                  <linearGradient id="redLineGrad" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stopColor="#ff5c73" />
+                    <stop offset="100%" stopColor="#cd2e3a" />
+                  </linearGradient>
+                  <filter id="redGlow">
+                    <feGaussianBlur stdDeviation="2" result="blur" />
+                    <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                  </filter>
                 </defs>
-                {/* Area fill */}
-                <path
-                  d="M0,8 C40,10 80,18 120,28 C160,38 200,48 240,56 C280,64 320,70 360,76 L400,80 L400,90 L0,90 Z"
-                  fill="url(#redGrad)"
-                />
-                {/* Line */}
-                <path
-                  d="M0,8 C40,10 80,18 120,28 C160,38 200,48 240,56 C280,64 320,70 360,76 L400,80"
-                  fill="none"
-                  stroke="rgba(239,68,68,0.8)"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
+                <line x1="0" y1="22" x2="400" y2="22" stroke="#7ab6ff0a" strokeWidth="1" strokeDasharray="4 4" />
+                <line x1="0" y1="55" x2="400" y2="55" stroke="#7ab6ff0a" strokeWidth="1" strokeDasharray="4 4" />
+                <path d="M0,8 C40,10 80,18 120,28 C160,38 200,48 240,56 C280,64 320,70 360,76 L400,80 L400,90 L0,90 Z" fill="url(#redAreaGrad)" />
+                <path d="M0,8 C40,10 80,18 120,28 C160,38 200,48 240,56 C280,64 320,70 360,76 L400,80" fill="none" stroke="#cd2e3a40" strokeWidth="4" strokeLinecap="round" />
+                <path d="M0,8 C40,10 80,18 120,28 C160,38 200,48 240,56 C280,64 320,70 360,76 L400,80" fill="none" stroke="url(#redLineGrad)" strokeWidth="2" strokeLinecap="round" filter="url(#redGlow)" />
+                <circle cx="0" cy="8" r="3.5" fill="#ff5c73" opacity="0.9" />
+                <circle cx="133" cy="30" r="3" fill="#ff5c73" opacity="0.7" />
+                <circle cx="266" cy="58" r="3" fill="#cd2e3a" opacity="0.8" />
+                <circle cx="400" cy="80" r="4" fill="#cd2e3a">
+                  <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.9;0.5;0.9" dur="2s" repeatCount="indefinite" />
+                </circle>
               </svg>
-              <div className="absolute bottom-0 left-0 right-0 flex justify-between">
-                <span className="font-['JetBrains_Mono',monospace] text-[10px] text-[#d3d3d8]">2020</span>
-                <span className="font-['JetBrains_Mono',monospace] text-[10px] text-[#d3d3d8]">2026</span>
+              <div className="absolute bottom-0 left-0 right-0 flex justify-between px-[2px]">
+                <span className="font-['JetBrains_Mono',monospace] text-[10px]" style={{ color: "#7ab6ff40" }}>2020</span>
+                <span className="font-['JetBrains_Mono',monospace] text-[10px]" style={{ color: "#7ab6ff40" }}>2026</span>
               </div>
             </div>
           </div>
 
-          {/* Fig 02 */}
-          <div className="bg-[#0B0B0E] border border-white/[0.07] rounded-2xl p-6 card-hover-dark">
+          {/* Fig 02 — AI growth */}
+          <div className="rounded-2xl p-6 card-hover-dark overflow-hidden relative" style={{ background: "radial-gradient(120% 100% at 50% 0, #0b2260 0%, #061540 35%, #020818 65%, #000 100%)", border: "1px solid rgba(122,182,255,0.12)" }}>
+            <div className="absolute top-0 right-0 w-[200px] h-[200px] rounded-full blur-[70px] pointer-events-none" style={{ background: "radial-gradient(circle, #0070f3 0%, #0070f366 32%, transparent 64%)" }} />
+            <div className="absolute bottom-0 left-0 w-[160px] h-[160px] rounded-full blur-[60px] pointer-events-none" style={{ background: "radial-gradient(circle, #3d7eff 0%, #3d7eff2e 32%, transparent 64%)" }} />
             <div className="flex items-center justify-between mb-4">
-              <div>
-                <h3 className="text-[19px] font-semibold text-[#FAFAF7] mt-1">AI 回答エンジン利用の指数的成長</h3>
+              <h3 className="text-[17px] font-semibold leading-snug max-w-[200px]" style={{ color: "#fff" }}>AI 回答エンジン利用の指数的成長</h3>
+              <div className="text-right">
+                <div className="text-[26px] font-bold mono" style={{ background: "linear-gradient(135deg, #7ab6ff, #0070f3)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>+240%</div>
+                <div className="text-[10px] font-['JetBrains_Mono',monospace] tracking-[0.1em]" style={{ color: "#7ab6ff99" }}>YoY GROWTH</div>
               </div>
-              <div className="text-[24px] font-bold text-[#1452FF] mono">+240%</div>
             </div>
-            {/* Growth chart — line */}
-            <div className="relative h-[100px] mt-2">
+            <div className="relative h-[108px] mt-2">
               <svg viewBox="0 0 400 90" className="w-full h-full" preserveAspectRatio="none">
                 <defs>
-                  <linearGradient id="blueGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="rgba(20,82,255,0.3)" />
-                    <stop offset="100%" stopColor="rgba(20,82,255,0)" />
+                  <linearGradient id="blueAreaGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#7ab6ff38" />
+                    <stop offset="50%" stopColor="#0070f31a" />
+                    <stop offset="100%" stopColor="#0070f300" />
                   </linearGradient>
+                  <linearGradient id="blueLineGrad" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stopColor="#0070f3" />
+                    <stop offset="100%" stopColor="#7ab6ff" />
+                  </linearGradient>
+                  <filter id="blueGlow">
+                    <feGaussianBlur stdDeviation="2.5" result="blur" />
+                    <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                  </filter>
                 </defs>
-                {/* Area fill */}
-                <path
-                  d="M0,82 C60,80 120,78 180,72 C220,68 260,58 300,42 C330,28 360,14 400,4 L400,90 L0,90 Z"
-                  fill="url(#blueGrad)"
-                />
-                {/* Line */}
-                <path
-                  d="M0,82 C60,80 120,78 180,72 C220,68 260,58 300,42 C330,28 360,14 400,4"
-                  fill="none"
-                  stroke="#1452FF"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-                {/* End dot */}
-                <circle cx="400" cy="4" r="3" fill="#6B8FFF" />
+                <line x1="0" y1="22" x2="400" y2="22" stroke="#7ab6ff0d" strokeWidth="1" strokeDasharray="4 4" />
+                <line x1="0" y1="55" x2="400" y2="55" stroke="#7ab6ff0d" strokeWidth="1" strokeDasharray="4 4" />
+                <path d="M0,82 C60,80 120,78 180,72 C220,68 260,58 300,42 C330,28 360,14 400,4 L400,90 L0,90 Z" fill="url(#blueAreaGrad)" />
+                <path d="M0,82 C60,80 120,78 180,72 C220,68 260,58 300,42 C330,28 360,14 400,4" fill="none" stroke="#7ab6ff2e" strokeWidth="5" strokeLinecap="round" />
+                <path d="M0,82 C60,80 120,78 180,72 C220,68 260,58 300,42 C330,28 360,14 400,4" fill="none" stroke="url(#blueLineGrad)" strokeWidth="2" strokeLinecap="round" filter="url(#blueGlow)" />
+                <circle cx="0" cy="82" r="3" fill="#0070f3" opacity="0.7" />
+                <circle cx="133" cy="74" r="3" fill="#3d7eff" opacity="0.8" />
+                <circle cx="266" cy="46" r="3" fill="#5c8dff" opacity="0.9" />
+                <circle cx="400" cy="4" r="4.5" fill="#7ab6ff">
+                  <animate attributeName="r" values="4.5;7;4.5" dur="2.4s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="1;0.4;1" dur="2.4s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="400" cy="4" r="4.5" fill="none" stroke="#7ab6ff" strokeWidth="1">
+                  <animate attributeName="r" values="6;14;6" dur="2.4s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.8;0;0.8" dur="2.4s" repeatCount="indefinite" />
+                </circle>
               </svg>
-              <div className="absolute bottom-0 left-0 right-0 flex justify-between">
-                <span className="font-['JetBrains_Mono',monospace] text-[10px] text-[#d3d3d8]">2023</span>
-                <span className="font-['JetBrains_Mono',monospace] text-[10px] text-[#d3d3d8]">2026</span>
+              <div className="absolute bottom-0 left-0 right-0 flex justify-between px-[2px]">
+                <span className="font-['JetBrains_Mono',monospace] text-[10px]" style={{ color: "#7ab6ff40" }}>2023</span>
+                <span className="font-['JetBrains_Mono',monospace] text-[10px]" style={{ color: "#7ab6ff40" }}>2026</span>
               </div>
             </div>
           </div>
@@ -455,26 +477,33 @@ function ServicesSection() {
       desc: "CDJ 5 段階 × 検索量 × 文脈データから、ブランドが応答すべき質問群をデータ基盤で導出。",
       bullets: ["CDJ 5 段階分類", "検索量による優先度化", "cluster・path 文脈結合"],
       visual: (
-        <div className="bg-[#0B0B0E] rounded-xl p-4 text-left flex-1 flex flex-col justify-center">
-          <div className="mono text-[9px] text-[#d3d3d8] tracking-[0.1em] mb-3">QUESTION CLUSTER</div>
+        <div className="relative rounded-xl p-4 text-left flex-1 flex flex-col justify-center overflow-hidden" style={{ background: "radial-gradient(#112030, #0a0a12 70%)", border: "1px solid #7ab6ff0a" }}>
+          <div className="absolute top-0 right-0 w-[120px] h-[120px] rounded-full blur-[50px] pointer-events-none" style={{ background: "radial-gradient(circle, #0070f340, transparent 60%)" }} />
+          <div className="mono text-[9px] tracking-[0.14em] mb-3 flex items-center gap-1.5" style={{ color: "#7ab6ff" }}>
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#7ab6ff", boxShadow: "0 0 6px #7ab6ff" }} />
+            QUESTION CLUSTER
+          </div>
           {[
-            { label: "初期探索", val: "202,333", w: "100%" },
-            { label: "情報探索", val: "19,303", w: "58%" },
-            { label: "経験探索", val: "8,283", w: "40%" },
-            { label: "購買確定", val: "4,120", w: "28%" },
-            { label: "購買以後", val: "2,104", w: "18%" },
+            { label: "初期探索", val: "202,333", w: "100%", color: "linear-gradient(90deg, #0070f3, #7ab6ff)" },
+            { label: "情報探索", val: "19,303",  w: "58%",  color: "linear-gradient(90deg, #0070f3, #5c8dff)" },
+            { label: "経験探索", val: "8,283",   w: "40%",  color: "linear-gradient(90deg, #0070f3, #3d7eff)" },
+            { label: "購買確定", val: "4,120",   w: "28%",  color: "linear-gradient(90deg, #1547ad, #0070f3)" },
+            { label: "購買以後", val: "2,104",   w: "18%",  color: "linear-gradient(90deg, #0b2260, #1547ad)" },
           ].map((row) => (
             <div key={row.label} className="flex items-center gap-2 mb-1.5">
-              <span className="text-[10px] text-white/40 w-[52px] flex-shrink-0">{row.label}</span>
-              <div className="flex-1 h-[6px] bg-white/[0.05] rounded-full">
-                <div className="h-[6px] rounded-full bg-[#1452FF]" style={{ width: row.w }} />
+              <span className="text-[10px] w-[52px] flex-shrink-0" style={{ color: "#7ab6ff60" }}>{row.label}</span>
+              <div className="flex-1 h-[6px] rounded-full overflow-hidden" style={{ background: "#7ab6ff0a" }}>
+                <div className="h-[6px] rounded-full" style={{ width: row.w, background: row.color }} />
               </div>
-              <span className="mono text-[10px] text-white/50">{row.val}</span>
+              <span className="mono text-[10px]" style={{ color: "#7ab6ff50" }}>{row.val}</span>
             </div>
           ))}
-          <div className="mt-3 bg-[#1452FF]/10 border border-[#1452FF]/20 rounded-lg p-2.5">
-            <div className="mono text-[9px] text-[#6B8FFF] mb-1">FINAL CLUSTER</div>
-            <div className="text-[11px] text-white/70 leading-snug">
+          <div className="mt-3 rounded-lg p-2.5" style={{ background: "linear-gradient(90deg, #0070f32e, #0070f305)", border: "1px solid #3d7eff2e" }}>
+            <div className="mono text-[9px] mb-1 flex items-center gap-1" style={{ color: "#7ab6ff" }}>
+              <span className="w-1 h-1 rounded-full" style={{ background: "#7ab6ff" }} />
+              FINAL CLUSTER
+            </div>
+            <div className="text-[11px] leading-snug" style={{ color: "#ffffff99" }}>
               &quot;免許なしで上り坂通勤に使える補助金対象の電動自転車は？&quot;
             </div>
           </div>
@@ -487,24 +516,46 @@ function ServicesSection() {
       desc: "質問とコンテンツの間にある意味的ギャップを発見。",
       bullets: ["質問 ↔ コンテンツ GAP", "10点評価", "Cluster Mapping"],
       visual: (
-        <div className="bg-[#0B0B0E] rounded-xl p-4 flex-1 flex flex-col">
-          <div className="mono text-[10px] text-[#d3d3d8] tracking-[0.1em] mb-3">SEMANTIC SCORE</div>
+        <div className="relative rounded-xl p-4 flex-1 flex flex-col overflow-hidden" style={{ background: "radial-gradient(#161a30, #0a0a12 70%)", border: "1px solid #7ab6ff0d" }}>
+          <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(circle at 50% 60%, #0070f31f, transparent 65%)" }} />
+          <div className="mono text-[10px] tracking-[0.14em] mb-3 flex items-center gap-1.5" style={{ color: "#7ab6ff" }}>
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#7ab6ff", boxShadow: "0 0 6px #7ab6ff" }} />
+            SEMANTIC SCORE
+          </div>
           <div className="flex-1 flex items-center justify-center py-2">
             <div className="relative w-[120px] h-[120px]">
               <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
-                <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth="8" />
-                <circle
-                  cx="50" cy="50" r="42" fill="none"
-                  stroke="#1452FF" strokeWidth="8"
+                <defs>
+                  <linearGradient id="donutGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#0070f3" />
+                    <stop offset="100%" stopColor="#7ab6ff" />
+                  </linearGradient>
+                  <filter id="donutGlow">
+                    <feGaussianBlur stdDeviation="2" result="blur" />
+                    <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+                  </filter>
+                </defs>
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#7ab6ff0d" strokeWidth="9" />
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#0070f31a" strokeWidth="9"
+                  strokeDasharray={`${2 * Math.PI * 42} ${2 * Math.PI * 42}`} />
+                <circle cx="50" cy="50" r="42" fill="none" stroke="#7ab6ff2e" strokeWidth="12"
                   strokeDasharray={`${2 * Math.PI * 42 * 0.84} ${2 * Math.PI * 42}`}
-                  strokeLinecap="round"
-                />
+                  strokeLinecap="round" />
+                <circle cx="50" cy="50" r="42" fill="none" stroke="url(#donutGrad)" strokeWidth="8"
+                  strokeDasharray={`${2 * Math.PI * 42 * 0.84} ${2 * Math.PI * 42}`}
+                  strokeLinecap="round" filter="url(#donutGlow)" />
               </svg>
               <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="text-[28px] font-bold text-white">8.4</span>
-                <span className="text-[11px] text-white/50">/ 12.0</span>
+                <span className="text-[28px] font-bold" style={{ background: "linear-gradient(135deg, #fff, #7ab6ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>8.4</span>
+                <span className="text-[11px]" style={{ color: "#7ab6ff60" }}>/ 12.0</span>
               </div>
             </div>
+          </div>
+          <div className="flex items-center gap-2 mt-1">
+            <div className="flex-1 h-1 rounded-full overflow-hidden" style={{ background: "#7ab6ff0a" }}>
+              <div className="h-full rounded-full" style={{ width: "70%", background: "linear-gradient(90deg, #0070f3, #7ab6ff)" }} />
+            </div>
+            <span className="mono text-[9px]" style={{ color: "#7ab6ff40" }}>GAP: 30%</span>
           </div>
         </div>
       ),
@@ -515,18 +566,32 @@ function ServicesSection() {
       desc: "AI に「引用される」構造を設計するライティング。",
       bullets: ["Passage 最適化", "FAQ / Schema 設計", "GEO Writing"],
       visual: (
-        <div className="bg-[#0B0B0E] rounded-xl p-4 flex-1 flex flex-col justify-center">
-          <div className="mono text-[9px] text-[#d3d3d8] tracking-[0.1em] mb-3">PASSAGE STRUCTURE</div>
+        <div className="relative rounded-xl p-4 flex-1 flex flex-col justify-center overflow-hidden" style={{ background: "radial-gradient(#122430, #0a0a12 70%)", border: "1px solid #7ab6ff0a" }}>
+          <div className="absolute bottom-0 left-0 w-[130px] h-[80px] blur-[40px] pointer-events-none" style={{ background: "radial-gradient(circle, #3d7eff2e, transparent 60%)" }} />
+          <div className="mono text-[9px] tracking-[0.14em] mb-3 flex items-center gap-1.5" style={{ color: "#7ab6ff" }}>
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#7ab6ff", boxShadow: "0 0 6px #7ab6ff" }} />
+            PASSAGE STRUCTURE
+          </div>
           {[
-            { label: "Lead Passage", w: "90%", color: "#1452FF" },
-            { label: "Support 1", w: "70%", color: "#6B8FFF" },
-            { label: "Support 2", w: "55%", color: "#6B8FFF" },
-            { label: "FAQ Block", w: "80%", color: "#6B8FFF" },
+            { label: "Lead Passage", w: "90%", score: "9.2", color: "linear-gradient(90deg, #0070f3, #7ab6ff)" },
+            { label: "Support 1",    w: "70%", score: "7.1", color: "linear-gradient(90deg, #0070f3, #5c8dff)" },
+            { label: "Support 2",    w: "55%", score: "5.5", color: "linear-gradient(90deg, #1547ad, #3d7eff)" },
+            { label: "FAQ Block",    w: "80%", score: "8.0", color: "linear-gradient(90deg, #0070f3, #3d7eff)" },
           ].map((row) => (
-            <div key={row.label} className="flex items-center gap-2 mb-2">
-              <div className="h-2 rounded-sm" style={{ width: row.w, background: row.color, opacity: 0.7 }} />
+            <div key={row.label} className="mb-2">
+              <div className="flex justify-between mb-0.5">
+                <span className="text-[9px]" style={{ color: "#7ab6ff60" }}>{row.label}</span>
+                <span className="mono text-[9px]" style={{ color: "#7ab6ff40" }}>{row.score}</span>
+              </div>
+              <div className="h-2.5 rounded-full overflow-hidden" style={{ background: "#7ab6ff08" }}>
+                <div className="h-full rounded-full" style={{ width: row.w, background: row.color }} />
+              </div>
             </div>
           ))}
+          <div className="mt-2 flex items-center gap-1.5 rounded-md px-2.5 py-1.5" style={{ background: "linear-gradient(90deg, #0070f32e, #0070f305)", border: "1px solid #3d7eff2e" }}>
+            <span className="w-1 h-1 rounded-full" style={{ background: "#7ab6ff" }} />
+            <span className="text-[9px] mono tracking-[0.08em]" style={{ color: "#7ab6ff" }}>AI CITATION READY</span>
+          </div>
         </div>
       ),
     },
@@ -536,24 +601,41 @@ function ServicesSection() {
       desc: "可視性・引用・トラフィックを継続トラッキング。",
       bullets: ["Brand Visibility", "Citation Tracking", "AI Traffic 分析"],
       visual: (
-        <div className="bg-[#0B0B0E] rounded-xl p-4 flex-1 flex flex-col justify-center">
-          <div className="mono text-[9px] text-[#d3d3d8] tracking-[0.1em] mb-3">CITATION TREND</div>
-          <div className="flex items-end gap-1 h-[70px]">
-            {[20, 28, 22, 35, 30, 42, 38, 55, 50, 68, 62, 80].map((v, i) => (
-              <div
-                key={i}
-                className="flex-1 rounded-t-sm"
-                style={{
-                  height: `${v}%`,
-                  background: i >= 9 ? "#1452FF" : "rgba(255,255,255,0.1)",
-                }}
-              />
+        <div className="relative rounded-xl p-4 flex-1 flex flex-col justify-center overflow-hidden" style={{ background: "radial-gradient(#0b2260, #0a0a12 70%)", border: "1px solid #7ab6ff0d" }}>
+          <div className="absolute top-0 right-0 w-[100px] h-[100px] blur-[45px] pointer-events-none" style={{ background: "radial-gradient(circle, #0070f340, transparent 60%)" }} />
+          <div className="mono text-[9px] tracking-[0.14em] mb-3 flex items-center gap-1.5" style={{ color: "#7ab6ff" }}>
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#7ab6ff", boxShadow: "0 0 6px #7ab6ff" }} />
+            CITATION TREND
+          </div>
+          <div className="flex items-end gap-[3px] h-[68px]">
+            {[20, 28, 22, 35, 30, 42, 38, 55, 50, 68, 62, 80].map((v, i) => {
+              const isRecent = i >= 9;
+              const isLatest = i === 11;
+              return (
+                <div
+                  key={i}
+                  className="flex-1 rounded-t-sm"
+                  style={{
+                    height: `${v}%`,
+                    background: isLatest
+                      ? "linear-gradient(180deg, #7ab6ff, #0070f3)"
+                      : isRecent
+                      ? "linear-gradient(180deg, #3d7eff, #0070f3)"
+                      : `#7ab6ff${Math.round((0.04 + i * 0.004) * 255).toString(16).padStart(2, "0")}`,
+                    boxShadow: isLatest ? "0 0 8px #7ab6ff50" : isRecent ? "0 0 4px #0070f340" : "none",
+                  }}
+                />
+              );
+            })}
+          </div>
+          <div className="flex justify-between mt-1.5 pt-1.5" style={{ borderTop: "1px solid #7ab6ff08" }}>
+            {["JAN", "FEB", "MAR"].map((m) => (
+              <span key={m} className="mono text-[9px]" style={{ color: "#7ab6ff30" }}>{m}</span>
             ))}
           </div>
-          <div className="flex justify-between mt-1">
-            {["JAN", "FEB", "MAR"].map((m) => (
-              <span key={m} className="mono text-[9px] text-white/30">{m}</span>
-            ))}
+          <div className="mt-2 flex items-center justify-between">
+            <span className="mono text-[9px]" style={{ color: "#7ab6ff30" }}>12-week window</span>
+            <span className="mono text-[9px]" style={{ color: "#7ab6ff" }}>↑ +60% MoM</span>
           </div>
         </div>
       ),

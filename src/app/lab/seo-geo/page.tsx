@@ -4,6 +4,7 @@ import Image from "next/image";
 import { CTASection } from "@/components/layout/CTASection";
 import { getCalendarBookingHref } from "@/lib/calendar-booking";
 import { ArticleTOC } from "./ArticleTOC";
+import { RelatedResearchSection } from "@/components/lab/RelatedResearchSection";
 import seoGeoImage from "./seo-geo.png";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -173,14 +174,14 @@ export default function SeoGeoArticlePage() {
                 <h4 className="article-h4">
                   【結論】
                 </h4>
-                <div className="article-callout">
-                  <p className="mb-4 text-[18px] font-semibold leading-[1.7] text-[#0B0B0E]">
-                    SEO：検索エンジンの上位表示を狙う施策
-                  </p>
-                  <p className="text-[18px] font-semibold leading-[1.7] text-[#0B0B0E]">
-                    GEO：生成AIに引用されやすくするための施策
-                  </p>
-                </div>
+                <blockquote className="article-quote article-quote--wide">
+                  <p className="article-quote__text">SEO：検索エンジンの上位表示を狙う施策</p>
+                  <span className="article-quote__note">RESEARCH NOTE</span>
+                </blockquote>
+                <blockquote className="article-quote article-quote--wide">
+                  <p className="article-quote__text">GEO：生成AIに引用されやすくするための施策</p>
+                  <span className="article-quote__note">RESEARCH NOTE</span>
+                </blockquote>
                 <p className="article-prose">
                   「SEOはやっているけど、最近サイトへの流入が伸び悩んでいる」と感じていませんか？
                 </p>
@@ -380,10 +381,14 @@ export default function SeoGeoArticlePage() {
                 <div className="article-faq">
                   {FAQ.map((item) => (
                     <div key={item.q} className="article-faq__item">
-                      <div className="mb-3 font-mono text-[10px] tracking-[0.18em] text-[#1452FF]">Q</div>
-                      <h4 className="article-h4">{item.q}</h4>
-                      <div className="font-mono text-[10px] tracking-[0.18em] text-[#6B6B73]">A</div>
-                      <p className="article-faq__answer mt-2">{item.a}</p>
+                      <div className="article-faq__q">
+                        <span className="article-faq__q-label">Q</span>
+                        <h4 className="article-h4">{item.q}</h4>
+                      </div>
+                      <div className="article-faq__a">
+                        <span className="article-faq__a-label">A</span>
+                        <p className="article-faq__answer">{item.a}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -425,6 +430,8 @@ export default function SeoGeoArticlePage() {
           </div>
         </div>
       </section>
+
+      <RelatedResearchSection currentSlug="seo-geo" />
 
       <div className="article-cta">
         <CTASection

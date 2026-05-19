@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -12,7 +11,7 @@ export default function Header() {
     <header className="ui-header-shell fixed top-0 left-0 right-0 z-50">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 h-[70px] pt-[15px] pb-2.5 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5">
+        <a href="/" className="flex items-center gap-2.5">
           <Image
             src="/ascent-geo-logo.png"
             alt="ASCENT/GEO"
@@ -21,7 +20,7 @@ export default function Header() {
             priority
             className="h-[22px] w-auto sm:h-[24px]"
           />
-        </Link>
+        </a>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-7">
@@ -32,23 +31,23 @@ export default function Header() {
             { label: "GEO Lab", href: "/lab" },
             { label: "Contact", href: "/contact" },
           ].map((item) => (
-            <Link
+            <a
               key={item.label}
               href={item.href}
               className="ui-header-nav-link"
             >
               {item.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
         {/* CTA */}
         <div className="hidden md:flex">
           <Button asChild variant="header">
-            <Link href="/contact">
+            <a href="/contact">
               相談する
               <span className="ui-header-cta-arrow">→</span>
-            </Link>
+            </a>
           </Button>
         </div>
 
@@ -78,19 +77,19 @@ export default function Header() {
             { label: "GEO Lab", href: "/lab" },
             { label: "Contact", href: "/contact" },
           ].map((item) => (
-            <Link
+            <a
               key={item.label}
               href={item.href}
               className="ui-header-nav-link"
               onClick={() => setMenuOpen(false)}
             >
               {item.label}
-            </Link>
+            </a>
           ))}
           <Button asChild variant="header" className="text-center justify-center">
-            <Link href="/contact" onClick={() => setMenuOpen(false)}>
+            <a href="/contact" onClick={() => setMenuOpen(false)}>
               相談する
-            </Link>
+            </a>
           </Button>
         </div>
       )}
