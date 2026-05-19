@@ -79,5 +79,23 @@ origin/main과 로컬 변경사항을 전체 비교한 뒤, 누락 없이 검토
 - 로그인 버그 수정: 세션 만료 시 리다이렉트 누락 해결
 ```
 
+# /lab 페이지 카드 배열 구조
+
+## 파일 구조
+- `src/app/lab/page.tsx` — Featured 섹션 (하드코딩)
+- `src/app/lab/LabArticles.tsx` — 하단 그리드 (POSTS 배열 기반)
+
+## 레이아웃 규칙
+1. **Featured 섹션** (`page.tsx`): 왼쪽 큰 카드 1개 + 오른쪽 2개 카드 (세로 배치, 같은 높이)
+   - 왼쪽: SEO/GEO 아티클 (하드코딩)
+   - 오른쪽: `featuredSide` 배열 — GEO/LLMO, 브랜드전략 (하드코딩)
+2. **하단 그리드** (`LabArticles.tsx`): `POSTS.slice(3)` 부터 3열 그리드
+   - POSTS[0~2]는 Featured 섹션과 중복이므로 제외
+   - 카드가 3개 미만이면 빈 칸으로 유지 (중복 콘텐츠 넣지 말 것)
+
+## 새 아티클 추가 시
+- `LabArticles.tsx`의 `POSTS` 배열에 추가 (index 3 이후)
+- Featured 섹션에 올릴 경우 `page.tsx`의 `featuredSide` 배열 수정
+
 # test-driven-development
 Red-Green-Refactor 사이클 준수. 실패하는 테스트를 먼저 작성하고, 이를 통과하는 최소한의 코드를 짠 뒤 구조 개선.

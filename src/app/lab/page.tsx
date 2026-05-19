@@ -170,7 +170,7 @@ export default function LabPage() {
             <div className="flex flex-col gap-4">
               {featuredSide.map((item, i) => (
                 <Link key={i} href={item.href} className="flex flex-1 flex-col min-h-0">
-                  <article className="group flex flex-1 flex-col cursor-pointer overflow-hidden rounded-xl border border-[#E6E4DD] bg-[#F2F0EA] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1452FF]">
+                  <article className="group flex flex-1 flex-col cursor-pointer overflow-hidden rounded-xl border border-[#E6E4DD] bg-[#FAFAF7] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1452FF]">
                     <ArticleThumbnail variant={item.thumbVariant} eyebrow={item.cat} className="h-[176px] w-full" />
                     <div className="p-6">
                       <span className="font-mono text-[10px] tracking-[0.14em] text-[#1452FF]">

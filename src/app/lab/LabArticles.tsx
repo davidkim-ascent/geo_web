@@ -46,7 +46,7 @@ function PostCard({ p, large = false }: { p: (typeof POSTS)[number]; large?: boo
 }
 
 export function LabArticles() {
-  const gridPosts = POSTS.slice(2);
+  const gridPosts = POSTS.slice(3);
 
   if (gridPosts.length === 0) return null;
 

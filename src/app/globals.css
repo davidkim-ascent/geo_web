@@ -216,7 +216,7 @@ h4 {
   font-weight: 600;
   padding: var(--ui-cta-button-padding-y) var(--ui-cta-button-padding-x);
   border-radius: var(--ui-cta-button-radius);
-  border: 1px solid var(--ui-cta-dark-border);
+  border: 1px solid transparent;
   width: 100%;
   min-width: 100%;
   max-width: 100%;
@@ -704,7 +704,7 @@ body.tweak-norotate .fw-ring g.node text {
 .section.dark .fw-center .lab { color: var(--muted-2); }
 .section.dark .fw-center .ttl { color: #FAFAF7; }
 .section.dark .fw-ring g.node circle[fill="#FAFAF7"] { fill: #FAFAF7; }
-.section.dark .fw-ring g.node circle[fill="#0B0B0E"] { fill: #323235; }
+.section.dark .fw-ring g.node circle[fill="#1e2a52"] { fill: #1e2a52; }
 .section.dark .fw-ring g.node text[fill="white"] { fill: #FAFAF7; }
 
 /* ===== FADE UP ===== */

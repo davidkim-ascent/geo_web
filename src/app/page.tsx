@@ -227,14 +227,15 @@ function SearchShiftSection() {
         {/* Era comparison */}
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* SEO時代 */}
-          <div className="bg-white border border-black/[0.07] rounded-2xl p-7 card-hover">
-            <h3 className="text-[19px] font-bold text-[#0B0B0E] mb-3">SEO時代</h3>
-            <p className="text-[16px] text-[#4e4e51] leading-[1.6] mb-5 font-[inherit]">
+          <div className="rounded-2xl p-7 card-hover relative overflow-hidden" style={{ background: "radial-gradient(120% 100% at 80% 0, #1e0a0e 0%, #0d0508 50%, #020108 100%)", border: "1px solid rgba(205,46,58,0.1)" }}>
+            <div className="absolute top-0 right-0 w-[200px] h-[200px] rounded-full blur-[80px] pointer-events-none" style={{ background: "radial-gradient(circle, #cd2e3a 0%, #cd2e3a28 38%, transparent 65%)" }} />
+            <h3 className="text-[19px] font-bold text-[#FAFAF7] mb-3">SEO時代</h3>
+            <p className="text-[16px] text-[#d3d3d8] leading-[1.6] mb-5 font-[inherit]">
               リンクとキーワードを軸に、SERPの上位を競った時代。
             </p>
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="tag-light">LINK GRAPH</span>
-              <span className="tag-light">KEYWORD</span>
+              <span className="tag-dark">LINK GRAPH</span>
+              <span className="tag-dark">KEYWORD</span>
             </div>
           </div>
 
@@ -315,7 +316,7 @@ function SearchShiftSection() {
               </div>
             </div>
             <div className="relative h-[108px] mt-2">
-              <svg viewBox="0 0 400 90" className="w-full h-full" preserveAspectRatio="none">
+              <svg viewBox="0 0 400 90" className="w-full h-full" preserveAspectRatio="none" overflow="visible">
                 <defs>
                   <linearGradient id="blueAreaGrad" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="#7ab6ff38" />
@@ -333,17 +334,17 @@ function SearchShiftSection() {
                 </defs>
                 <line x1="0" y1="22" x2="400" y2="22" stroke="#7ab6ff0d" strokeWidth="1" strokeDasharray="4 4" />
                 <line x1="0" y1="55" x2="400" y2="55" stroke="#7ab6ff0d" strokeWidth="1" strokeDasharray="4 4" />
-                <path d="M0,82 C60,80 120,78 180,72 C220,68 260,58 300,42 C330,28 360,14 400,4 L400,90 L0,90 Z" fill="url(#blueAreaGrad)" />
-                <path d="M0,82 C60,80 120,78 180,72 C220,68 260,58 300,42 C330,28 360,14 400,4" fill="none" stroke="#7ab6ff2e" strokeWidth="5" strokeLinecap="round" />
-                <path d="M0,82 C60,80 120,78 180,72 C220,68 260,58 300,42 C330,28 360,14 400,4" fill="none" stroke="url(#blueLineGrad)" strokeWidth="2" strokeLinecap="round" filter="url(#blueGlow)" />
+                <path d="M0,82 C60,80 120,78 180,72 C220,68 260,58 300,42 C330,28 360,14 385,6 L385,90 L0,90 Z" fill="url(#blueAreaGrad)" />
+                <path d="M0,82 C60,80 120,78 180,72 C220,68 260,58 300,42 C330,28 360,14 385,6" fill="none" stroke="#7ab6ff2e" strokeWidth="5" strokeLinecap="round" />
+                <path d="M0,82 C60,80 120,78 180,72 C220,68 260,58 300,42 C330,28 360,14 385,6" fill="none" stroke="url(#blueLineGrad)" strokeWidth="2" strokeLinecap="round" filter="url(#blueGlow)" />
                 <circle cx="0" cy="82" r="3" fill="#0070f3" opacity="0.7" />
                 <circle cx="133" cy="74" r="3" fill="#3d7eff" opacity="0.8" />
                 <circle cx="266" cy="46" r="3" fill="#5c8dff" opacity="0.9" />
-                <circle cx="400" cy="4" r="4.5" fill="#7ab6ff">
+                <circle cx="385" cy="6" r="4.5" fill="#7ab6ff">
                   <animate attributeName="r" values="4.5;7;4.5" dur="2.4s" repeatCount="indefinite" />
                   <animate attributeName="opacity" values="1;0.4;1" dur="2.4s" repeatCount="indefinite" />
                 </circle>
-                <circle cx="400" cy="4" r="4.5" fill="none" stroke="#7ab6ff" strokeWidth="1">
+                <circle cx="385" cy="6" r="4.5" fill="none" stroke="#7ab6ff" strokeWidth="1">
                   <animate attributeName="r" values="6;14;6" dur="2.4s" repeatCount="indefinite" />
                   <animate attributeName="opacity" values="0.8;0;0.8" dur="2.4s" repeatCount="indefinite" />
                 </circle>

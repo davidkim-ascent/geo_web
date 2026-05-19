@@ -69,12 +69,30 @@ export default function FrameworkSection() {
             </h2>
 
             <div className="fw-ring-wrap mt-12">
+              <style>{`
+                  @keyframes fw-ripple {
+                    0%   { r: 65;  opacity: 0.6; }
+                    100% { r: 270; opacity: 0; }
+                  }
+                  .fw-ripple-1 { animation: fw-ripple 14s ease-out infinite 0s; }
+                  .fw-ripple-2 { animation: fw-ripple 14s ease-out infinite 4.6s; }
+                  .fw-ripple-3 { animation: fw-ripple 14s ease-out infinite 9.2s; }
+                `}</style>
               <svg className="fw-ring" viewBox="0 0 540 540" width="100%" height="100%">
                 <defs>
                   <marker id="ar" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
                     <path d="M0 0 L6 3 L0 6 Z" fill="rgba(255,255,255,0.3)" />
                   </marker>
+                  <mask id="fw-ripple-mask">
+                    <rect x="0" y="0" width="540" height="540" fill="white" />
+                    <circle cx="270" cy="270" r="62" fill="black" />
+                  </mask>
                 </defs>
+                {/* Ripple waves — CSS blur to avoid rectangular SVG filter clipping */}
+                <circle className="fw-ripple-1" cx="270" cy="270" r="65" fill="none" stroke="#4a90d9" strokeWidth="6" mask="url(#fw-ripple-mask)" style={{ filter: "blur(12px)" }} />
+                <circle className="fw-ripple-2" cx="270" cy="270" r="65" fill="none" stroke="#4a90d9" strokeWidth="6" mask="url(#fw-ripple-mask)" style={{ filter: "blur(12px)" }} />
+                <circle className="fw-ripple-3" cx="270" cy="270" r="65" fill="none" stroke="#4a90d9" strokeWidth="6" mask="url(#fw-ripple-mask)" style={{ filter: "blur(12px)" }} />
+
                 <circle cx="270" cy="270" r="224" fill="none" stroke="#FAFAF7" strokeOpacity="0.28" strokeWidth="1" strokeDasharray="8 10" strokeLinecap="round" />
                 <circle cx="270" cy="270" r="200" fill="none" stroke="#FAFAF7" strokeOpacity="0.24" strokeWidth="1.25" />
                 <circle cx="270" cy="270" r="140" fill="none" stroke="#FAFAF7" strokeOpacity="0.18" strokeWidth="1" strokeDasharray="8 10" strokeLinecap="round" />
@@ -94,8 +112,8 @@ export default function FrameworkSection() {
                         cx={node.cx}
                         cy={node.cy}
                         r="54"
-                        fill={isActive ? "#1452FF" : "#0B0B0E"}
-                        stroke={isActive ? "#1452FF" : "rgba(255,255,255,0.2)"}
+                        fill={isActive ? "#1452FF" : "#1e2a52"}
+                        stroke={isActive ? "#1452FF" : "none"}
                         strokeWidth="1.5"
                       />
                       <text

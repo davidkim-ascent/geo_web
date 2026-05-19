@@ -1,3 +1,6 @@
+## 2026-05-20 00:24
+- CTA 공통 `相談する` 버튼의 흰색 테두리 제거: `ui-cta-button` border를 transparent로 변경
+
 ## 2026-05-20 
 - **Lab 페이지 레이아웃 수정**: `/lab`
   - Featured 섹션 오른쪽 2개 카드 높이를 왼쪽 큰 카드와 동일하게 맞춤 (flex stretch)
