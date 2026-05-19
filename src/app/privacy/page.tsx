@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: '個人情報保護方針 — Ascent GEO',
+  title: '個人情報保護方針 - 株式会社 Ascent Networks',
   description: 'Ascent GEO の個人情報保護方針です。',
   path: '/privacy',
 })

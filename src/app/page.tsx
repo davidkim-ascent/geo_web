@@ -752,20 +752,20 @@ function GeoLabSection() {
         </div>
 
         {/* Article cards */}
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* Large card */}
-          <Link href={articles[0].href ?? "/lab"} className="md:col-span-1 block">
-            <div className="bg-[#0B0B0E] rounded-2xl overflow-hidden card-hover-dark group h-full">
+        <div className="mt-10 flex flex-col gap-4 lg:flex-row lg:items-stretch">
+          {/* 왼쪽: 큰 카드 50% */}
+          <Link href={articles[0].href ?? "/lab"} className="block w-full lg:w-1/2">
+            <div className="bg-[#0B0B0E] rounded-2xl overflow-hidden card-hover-dark group h-full flex flex-col">
               <ArticleThumbnail
                 variant={articles[0].thumbVariant}
                 eyebrow={articles[0].tag}
-                className="h-[220px] w-full"
+                className="h-[260px] w-full"
               />
-              <div className="p-6">
-                <h3 className="text-[19px] font-bold text-[#FAFAF7] leading-snug mb-2">
+              <div className="p-6 flex flex-col flex-1">
+                <h3 className="text-[20px] font-bold text-[#FAFAF7] leading-snug mb-2">
                   {articles[0].title}
                 </h3>
-                <p className="text-[15px] text-[#d3d3d8] leading-[1.6] mb-4">{articles[0].desc}</p>
+                <p className="text-[15px] text-[#d3d3d8] leading-[1.6] mb-4 flex-1">{articles[0].desc}</p>
                 <div className="flex items-center gap-3 mono text-[11px] text-[#d3d3d8]">
                   <span>{articles[0].date}</span>
                   <span>·</span>
@@ -775,8 +775,8 @@ function GeoLabSection() {
             </div>
           </Link>
 
-          {/* Small cards */}
-          <div className="md:col-span-2 grid grid-rows-2 gap-4">
+          {/* 오른쪽: 2개 세로 50% */}
+          <div className="flex w-full flex-col gap-4 lg:w-1/2" style={{ alignSelf: "stretch" }}>
             {articles.slice(1).map((article) => {
               const card = (
                 <div
@@ -786,7 +786,7 @@ function GeoLabSection() {
                   <ArticleThumbnail
                     variant={article.thumbVariant}
                     eyebrow={article.tag}
-                    className="h-full min-h-[184px] w-[170px] flex-shrink-0 rounded-none"
+                    className="h-full min-h-[160px] w-[160px] flex-shrink-0 rounded-none"
                   />
                   <div className="p-5 flex flex-col justify-between flex-1">
                     <div>
@@ -804,11 +804,11 @@ function GeoLabSection() {
                 </div>
               );
               return article.href ? (
-                <Link key={article.num} href={article.href} className="block">
+                <Link key={article.num} href={article.href} className="block flex-1 h-full">
                   {card}
                 </Link>
               ) : (
-                <div key={article.num}>{card}</div>
+                <div key={article.num} className="flex-1 h-full">{card}</div>
               );
             })}
           </div>

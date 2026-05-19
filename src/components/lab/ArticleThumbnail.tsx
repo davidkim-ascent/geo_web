@@ -4,8 +4,9 @@ import Image from "next/image";
 import seoGeoImage from "@/app/lab/seo-geo/seo-geo.png";
 import lmCepFinderImage from "@/app/lab/brand-cep/lm-cep-finder.png";
 import geoLlmoCompanyImage from "@/app/lab/geo-llmo-company/company-comparison.png";
+import aiAgentSiteImage from "@/app/lab/ai-agent-site/ai-agent-site.png";
 
-type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "abstract";
+type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "abstract";
 
 type ArticleThumbnailProps = {
   variant: ArticleThumbnailVariant;
@@ -13,16 +14,19 @@ type ArticleThumbnailProps = {
   eyebrow?: string;
 };
 
-const IMAGE_BY_VARIANT: Record<Exclude<ArticleThumbnailVariant, "abstract">, typeof seoGeoImage> = {
+const IMAGE_BY_VARIANT: Record<Exclude<ArticleThumbnailVariant, "abstract" | "adobe-ai-traffic">, typeof seoGeoImage> = {
   "seo-geo": seoGeoImage,
   "brand-cep": lmCepFinderImage,
   "geo-llmo-company": geoLlmoCompanyImage,
+  "ai-agent-site": aiAgentSiteImage,
 };
 
 const labelByVariant: Record<ArticleThumbnailVariant, string> = {
   "seo-geo": "SEO / GEO",
   "brand-cep": "BRAND × CEP",
   "geo-llmo-company": "GEO / LLMO",
+  "adobe-ai-traffic": "INDUSTRY REPORT",
+  "ai-agent-site": "TECHNICAL GEO",
   abstract: "RESEARCH NOTE",
 };
 
@@ -52,7 +56,29 @@ export function ArticleThumbnail({ variant, className = "", eyebrow }: ArticleTh
           backgroundSize: "28px 28px",
         }}
       />
-      {variant === "abstract" ? (
+      {variant === "adobe-ai-traffic" ? (
+        <>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(20,82,255,0.22),transparent_40%),radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.07),transparent_30%)]" />
+          <div className="absolute inset-0 flex items-end justify-start p-5 gap-1.5 items-end">
+            {[63, 84, 158, 233, 393].map((v, i) => (
+              <div
+                key={i}
+                className="rounded-sm bg-[#1452FF] opacity-80"
+                style={{
+                  width: "16%",
+                  height: `${20 + (v / 393) * 60}%`,
+                  opacity: 0.4 + i * 0.12,
+                }}
+              />
+            ))}
+          </div>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="font-bold text-white/[0.06]" style={{ fontSize: "clamp(52px, 6vw, 90px)", lineHeight: 1, letterSpacing: "-0.06em" }}>
+              AI
+            </span>
+          </div>
+        </>
+      ) : variant === "abstract" ? (
         <>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_18%,rgba(255,255,255,0.08),transparent_26%),radial-gradient(circle_at_30%_72%,rgba(20,82,255,0.18),transparent_30%)]" />
           <div className="absolute inset-0 flex items-center justify-center">

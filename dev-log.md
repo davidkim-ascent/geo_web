@@ -1,3 +1,28 @@
+## 2026-05-20 
+- **Lab 페이지 레이아웃 수정**: `/lab`
+  - Featured 섹션 오른쪽 2개 카드 높이를 왼쪽 큰 카드와 동일하게 맞춤 (flex stretch)
+  - LabArticles 중복 렌더링 제거 — page.tsx Featured 섹션과 겹치던 가운데 줄 삭제
+  - LabArticles를 POSTS[2] 이후만 3열 그리드로 렌더링하도록 단순화
+
+## 2026-05-19 19:30
+- **新規アーティクルページ作成**: `/lab/ai-agent-site`
+  - AIエージェントがサイトを認識する3つの方法（画面画像・構造・組み合わせ）の解説記事
+  - ArticleTOC / page.tsx 作成（11セクション構成）
+  - コードブロック用 `.article-code` スタイルを globals.css に追加
+  - LabArticles・ArticleThumbnail（`ai-agent-site`バリアント追加）・RelatedResearchSection 更新
+  - メタタイトル・ディスクリプション・OGタグ日本語で設定済み
+  - ビルド確認済み
+
+## 2026-05-19 18:00
+- **新規アーティクルページ作成**: `/lab/adobe-ai-traffic`
+  - Adobe Digital Insights 2026 Q2 AIトラフィックレポートの解説記事
+  - 6種のSVGグラフコンポーネントを実装（AdobeCharts.tsx）：業界別増加率棒グラフ、リテール比較バー、旅行CVR差折れ線、業界別エンゲージメント比較、世代別ドーナツ、テクノロジー購入カテゴリ横棒
+  - ArticleTOC / page.tsx 作成
+  - LabArticlesの4番目カード（「SEO と GEO は、何が決定的に違うのか」）を新記事に差し替え
+  - ArticleThumbnail に `adobe-ai-traffic` バリアント追加（バーチャートビジュアル）
+  - RelatedResearchSection に新記事エントリを追加
+  - ビルド確認済み（静的ページとして生成）
+
 ## 2026-05-20 00:40
 - **Framework 5각형 다이어그램 디테일 개선** (FrameworkLoop.tsx)
   - 5각형 내부 `#0d1b3e` 단색 (그라디언트 제거), 바깥 점선 `#1e3a6e` opacity 0.5 + 120초 시계방향 회전

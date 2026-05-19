@@ -1012,6 +1012,22 @@ body.tweak-norotate .fw-ring g.node text {
   font-weight: 700;
 }
 
+.article-code {
+  margin: 24px 0;
+  background: #0B0B0E;
+  border-radius: 10px;
+  padding: 20px 24px;
+  overflow-x: auto;
+}
+
+.article-code code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #C8C8D0;
+  white-space: pre;
+}
+
 .article-callout {
   margin: 40px 0;
   border: 1px solid #E6E4DD;

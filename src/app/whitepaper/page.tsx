@@ -5,7 +5,7 @@ import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from '@/lib/contact-blocking'
 import { buildPageMetadata } from '@/lib/seo'
 
 export const metadata = buildPageMetadata({
-  title: 'AI 検索時代の、企業マーケティング白書 2026 — Ascent / GEO',
+  title: 'AI 検索時代の、企業マーケティング白書 2026 - 株式会社 Ascent Networks',
   description:
     'Google AI Overview、ChatGPT Search、Perplexity の時代に企業ブランドがどう発見されるかを整理した Ascent の白書ページです。',
   path: '/whitepaper',

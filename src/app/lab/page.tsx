@@ -133,10 +133,10 @@ export default function LabPage() {
           <h2 className="mb-12 max-w-[22ch] tracking-[-0.03em] leading-[1.05]">
             今月、もっとも読まれている。
           </h2>
-          <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
+          <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-stretch">
             {/* Main featured */}
-            <Link href="/lab/seo-geo" className="block">
-              <article className="relative flex min-h-[420px] cursor-pointer flex-col overflow-hidden rounded-2xl bg-[#0B0B0E] text-[#FAFAF7] transition-opacity hover:opacity-90">
+            <Link href="/lab/seo-geo" className="block h-full">
+              <article className="relative flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl bg-[#0B0B0E] text-[#FAFAF7] transition-opacity hover:opacity-90">
                 <ArticleThumbnail
                   variant="seo-geo"
                   eyebrow="FEATURED RESEARCH · SEO / GEO"
@@ -167,10 +167,10 @@ export default function LabPage() {
             </Link>
 
             {/* Side items */}
-            <div className="grid gap-4">
+            <div className="flex flex-col gap-4">
               {featuredSide.map((item, i) => (
-                <Link key={i} href={item.href} className="block">
-                  <article className="group cursor-pointer overflow-hidden rounded-xl border border-[#E6E4DD] bg-[#F2F0EA] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1452FF]">
+                <Link key={i} href={item.href} className="flex flex-1 flex-col min-h-0">
+                  <article className="group flex flex-1 flex-col cursor-pointer overflow-hidden rounded-xl border border-[#E6E4DD] bg-[#F2F0EA] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1452FF]">
                     <ArticleThumbnail variant={item.thumbVariant} eyebrow={item.cat} className="h-[176px] w-full" />
                     <div className="p-6">
                       <span className="font-mono text-[10px] tracking-[0.14em] text-[#1452FF]">

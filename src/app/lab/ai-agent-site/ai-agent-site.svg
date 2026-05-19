@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0B0E"/>
+      <stop offset="100%" stop-color="#0f1220"/>
+    </linearGradient>
+    <linearGradient id="glow1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1452FF" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#1452FF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="glow2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B6FFF" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#3B6FFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1452FF" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#1452FF" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#3B6FFF" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#3B6FFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="blur1">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+    <filter id="blur2">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Ambient glows -->
+  <ellipse cx="200" cy="180" rx="320" ry="280" fill="url(#glow1)" filter="url(#blur1)"/>
+  <ellipse cx="1050" cy="480" rx="280" ry="240" fill="url(#glow2)" filter="url(#blur2)"/>
+
+  <!-- Grid pattern -->
+  <g opacity="0.04">
+    <line x1="0" y1="90" x2="1200" y2="90" stroke="white" stroke-width="1"/>
+    <line x1="0" y1="180" x2="1200" y2="180" stroke="white" stroke-width="1"/>
+    <line x1="0" y1="270" x2="1200" y2="270" stroke="white" stroke-width="1"/>
+    <line x1="0" y1="360" x2="1200" y2="360" stroke="white" stroke-width="1"/>
+    <line x1="0" y1="450" x2="1200" y2="450" stroke="white" stroke-width="1"/>
+    <line x1="0" y1="540" x2="1200" y2="540" stroke="white" stroke-width="1"/>
+    <line x1="150" y1="0" x2="150" y2="630" stroke="white" stroke-width="1"/>
+    <line x1="300" y1="0" x2="300" y2="630" stroke="white" stroke-width="1"/>
+    <line x1="450" y1="0" x2="450" y2="630" stroke="white" stroke-width="1"/>
+    <line x1="600" y1="0" x2="600" y2="630" stroke="white" stroke-width="1"/>
+    <line x1="750" y1="0" x2="750" y2="630" stroke="white" stroke-width="1"/>
+    <line x1="900" y1="0" x2="900" y2="630" stroke="white" stroke-width="1"/>
+    <line x1="1050" y1="0" x2="1050" y2="630" stroke="white" stroke-width="1"/>
+  </g>
+
+  <!-- Horizontal accent line -->
+  <line x1="0" y1="315" x2="1200" y2="315" stroke="url(#lineGrad)" stroke-width="1" opacity="0.5"/>
+
+  <!-- Code block: left panel -->
+  <g filter="url(#softglow)">
+    <!-- nav block -->
+    <text x="88" y="172" font-family="JetBrains Mono, monospace" font-size="18" fill="#1452FF" opacity="0.9">&lt;nav&gt;</text>
+    <text x="112" y="204" font-family="JetBrains Mono, monospace" font-size="16" fill="#6B8FFF" opacity="0.7">  aria-label=<tspan fill="#7BA8FF" opacity="0.8">"メインメニュー"</tspan></text>
+    <text x="112" y="234" font-family="JetBrains Mono, monospace" font-size="16" fill="#9BC4FF" opacity="0.55">  &lt;a href=<tspan fill="#7BA8FF">"/"</tspan>&gt;HOME&lt;/a&gt;</text>
+    <text x="88" y="264" font-family="JetBrains Mono, monospace" font-size="18" fill="#1452FF" opacity="0.9">&lt;/nav&gt;</text>
+
+    <!-- main block -->
+    <text x="88" y="312" font-family="JetBrains Mono, monospace" font-size="18" fill="#1452FF" opacity="0.9">&lt;main&gt;</text>
+    <text x="112" y="344" font-family="JetBrains Mono, monospace" font-size="16" fill="#6B8FFF" opacity="0.7">  &lt;h1&gt;<tspan fill="#C8C8D0" opacity="0.6">航空券検索</tspan>&lt;/h1&gt;</text>
+    <text x="112" y="374" font-family="JetBrains Mono, monospace" font-size="16" fill="#6B8FFF" opacity="0.55">  &lt;label for=<tspan fill="#7BA8FF">"dep"</tspan>&gt;</text>
+    <text x="136" y="400" font-family="JetBrains Mono, monospace" font-size="15" fill="#9BC4FF" opacity="0.5">出発空港</text>
+    <text x="112" y="426" font-family="JetBrains Mono, monospace" font-size="16" fill="#6B8FFF" opacity="0.55">  &lt;input type=<tspan fill="#7BA8FF">"text"</tspan> id=<tspan fill="#7BA8FF">"dep"</tspan>/&gt;</text>
+    <text x="112" y="458" font-family="JetBrains Mono, monospace" font-size="16" fill="#1452FF" opacity="0.7">  &lt;button type=<tspan fill="#7BA8FF">"submit"</tspan>&gt;</text>
+    <text x="136" y="484" font-family="JetBrains Mono, monospace" font-size="15" fill="#C8C8D0" opacity="0.65">検索する</text>
+    <text x="112" y="510" font-family="JetBrains Mono, monospace" font-size="16" fill="#1452FF" opacity="0.7">  &lt;/button&gt;</text>
+    <text x="88" y="542" font-family="JetBrains Mono, monospace" font-size="18" fill="#1452FF" opacity="0.9">&lt;/main&gt;</text>
+  </g>
+
+  <!-- Right panel: label snapshot -->
+  <g>
+    <!-- Panel bg -->
+    <rect x="680" y="140" width="440" height="340" rx="12" fill="#ffffff" fill-opacity="0.03" stroke="#1452FF" stroke-opacity="0.15" stroke-width="1"/>
+
+    <!-- Panel label -->
+    <text x="700" y="130" font-family="JetBrains Mono, monospace" font-size="11" fill="#1452FF" opacity="0.6" letter-spacing="2">ACCESSIBILITY TREE</text>
+
+    <text x="704" y="180" font-family="JetBrains Mono, monospace" font-size="14" fill="#6B8FFF" opacity="0.8">[navigation <tspan fill="#7BA8FF">"メインメニュー"</tspan>]</text>
+    <text x="724" y="208" font-family="JetBrains Mono, monospace" font-size="13" fill="#9BC4FF" opacity="0.65">  [link] HOME</text>
+    <text x="724" y="232" font-family="JetBrains Mono, monospace" font-size="13" fill="#9BC4FF" opacity="0.65">  [link] 製品</text>
+
+    <line x1="700" y1="250" x2="1100" y2="250" stroke="#1452FF" stroke-opacity="0.12" stroke-width="1"/>
+
+    <text x="704" y="278" font-family="JetBrains Mono, monospace" font-size="14" fill="#6B8FFF" opacity="0.8">[main]</text>
+    <text x="724" y="304" font-family="JetBrains Mono, monospace" font-size="13" fill="#9BC4FF" opacity="0.65">  [heading level=1] 航空券検索</text>
+    <text x="724" y="328" font-family="JetBrains Mono, monospace" font-size="13" fill="#9BC4FF" opacity="0.65">  [textbox <tspan fill="#7BA8FF">"出発空港"</tspan>]</text>
+    <text x="724" y="352" font-family="JetBrains Mono, monospace" font-size="13" fill="#9BC4FF" opacity="0.65">  [textbox <tspan fill="#7BA8FF">"到着空港"</tspan>]</text>
+    <text x="724" y="376" font-family="JetBrains Mono, monospace" font-size="13" fill="#1452FF" opacity="0.85">  [button] 検索する</text>
+
+    <!-- Cursor blink -->
+    <rect x="826" y="362" width="2" height="16" fill="#1452FF" opacity="0.7"/>
+  </g>
+
+  <!-- Arrow between panels -->
+  <g opacity="0.4">
+    <line x1="574" y1="315" x2="664" y2="315" stroke="#1452FF" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <polygon points="668,315 660,310 660,320" fill="#1452FF"/>
+  </g>
+
+  <!-- Bottom label -->
+  <text x="600" y="598" font-family="JetBrains Mono, monospace" font-size="12" fill="#9A9AA0" opacity="0.5" text-anchor="middle" letter-spacing="3">SEMANTIC HTML → ACCESSIBILITY TREE → AI AGENT</text>
+</svg>

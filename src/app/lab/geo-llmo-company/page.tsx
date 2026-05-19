@@ -109,7 +109,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = buildPageMetadata({
-  title: `${PAGE_TITLE} - 株式会社 Ascent GEO`,
+  title: `${PAGE_TITLE} - Ascent GEO`,
   description: PAGE_DESCRIPTION,
   path: "/lab/geo-llmo-company",
   keywords: ["GEO対策", "LLMO対策", "比較", "会社", "生成AI最適化", "AI検索最適化"],
