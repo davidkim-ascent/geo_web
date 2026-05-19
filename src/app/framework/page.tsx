@@ -389,7 +389,7 @@ function FrameworkSteps() {
             <article
               key={step.id}
               id={`step-${step.id}`}
-              className="grid grid-cols-1 gap-6 border-t border-black/10 pt-8 lg:grid-cols-[3fr_2fr] lg:gap-10"
+              className="grid grid-cols-1 gap-6 border-t border-black/10 pt-8 lg:grid-cols-[3fr_2fr] lg:gap-10 scroll-mt-[90px]"
             >
               <div className="grid grid-cols-[auto_1fr] gap-4">
                 <div className="pt-1">
