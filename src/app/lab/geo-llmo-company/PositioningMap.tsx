@@ -1,24 +1,24 @@
 "use client";
 
 const COMPANIES = [
-  { name: "SEOジャパン",      x: 28, y: 22, r: 32, color: "#C0666A", type: "seo" },
-  { name: "ジオコード",        x: 18, y: 31, r: 32, color: "#8B5A9E", type: "seo" },
-  { name: "東京SEOメーカー",   x: 36, y: 40, r: 32, color: "#D4813A", type: "geo" },
-  { name: "メディアグロース",  x: 22, y: 48, r: 32, color: "#3A9E7A", type: "geo" },
-  { name: "Ascent\nGEO", x: 78, y: 26, r: 32, color: "#2563EB", type: "demand", highlight: true },
-  { name: "ミエルカ",          x: 24, y: 75, r: 32, color: "#E0A030", type: "tool" },
-  { name: "ニュートラルワークス", x: 38, y: 72, r: 32, color: "#4A9BB5", type: "tool" },
+  { name: "SEOジャパン",      x: 28, y: 22, r: 19, color: "#C0666A", type: "seo" },
+  { name: "ジオコード",        x: 18, y: 31, r: 19, color: "#8B5A9E", type: "seo" },
+  { name: "東京SEOメーカー",   x: 36, y: 40, r: 19, color: "#D4813A", type: "geo" },
+  { name: "メディアグロース",  x: 22, y: 48, r: 19, color: "#3A9E7A", type: "geo" },
+  { name: "Ascent\nGEO", x: 70, y: 26, r: 19, color: "#2563EB", type: "demand", highlight: true },
+  { name: "ミエルカ",          x: 24, y: 75, r: 19, color: "#E0A030", type: "tool" },
+  { name: "ニュートラルワークス", x: 38, y: 72, r: 19, color: "#4A9BB5", type: "tool" },
 ];
 
 // Each bubble gets a unique float animation offset so they move independently
 const FLOAT_OFFSETS = [
-  { dx: 6, dy: 5, dur: 5.2 },
-  { dx: 5, dy: 7, dur: 6.1 },
-  { dx: 7, dy: 4, dur: 4.8 },
-  { dx: 4, dy: 6, dur: 5.7 },
-  { dx: 8, dy: 6, dur: 5.0 },
-  { dx: 5, dy: 5, dur: 6.4 },
-  { dx: 6, dy: 7, dur: 5.5 },
+  { dx: 1.5, dy: 4.0, dur: 5.2 },
+  { dx: 1.2, dy: 5.0, dur: 6.1 },
+  { dx: 1.8, dy: 3.5, dur: 4.8 },
+  { dx: 1.0, dy: 4.5, dur: 5.7 },
+  { dx: 2.0, dy: 4.5, dur: 5.0 },
+  { dx: 1.2, dy: 4.0, dur: 6.4 },
+  { dx: 1.5, dy: 5.0, dur: 5.5 },
 ];
 
 export function PositioningMap() {
@@ -26,7 +26,7 @@ export function PositioningMap() {
     <div className="relative w-full" style={{ background: "transparent" }}>
       {/* Title */}
       <div className="text-center mb-3">
-        <p className="text-[16px] font-semibold text-[#0B0B0E] tracking-tight">
+        <p className="text-[19px] font-semibold text-[#0B0B0E] tracking-tight">
           GEO/LLMO 対策会社 ポジショニングマップ
         </p>
         <p className="text-[12px] text-[#6B6B73] mt-1">対策の起点(X軸) × サービスの主軸(Y軸)</p>
@@ -39,14 +39,6 @@ export function PositioningMap() {
         <div className="absolute top-2 left-4 text-[9px] text-[#6B6B73] font-mono">【左上】競合密集ゾーン</div>
         <div className="absolute top-2 right-4 text-[9px] text-[#6B6B73] font-mono text-right">【右上】競合不在の独占ポジション</div>
 
-        {/* Ascent badge */}
-        <div
-          className="absolute z-20 rounded-md border border-[#1452FF] bg-[#0B0B0E] px-2 py-1 text-center"
-          style={{ right: "8%", top: "6%" }}
-        >
-          <div className="text-[8px] font-mono text-[#6B6B73] tracking-widest">需要起点型・独占</div>
-          <div className="text-[10px] font-semibold text-white">Ascent GEO</div>
-        </div>
 
         {/* SVG map */}
         <svg
@@ -76,8 +68,6 @@ export function PositioningMap() {
           <text x="592" y="204" fontSize="13" fill="#1452FF" textAnchor="end" fontFamily="monospace">ユーザー中心</text>
           <text x="592" y="220" fontSize="11" fill="#1452FF" textAnchor="end" fontFamily="monospace">（需要側起点）</text>
 
-          {/* Bottom axis labels */}
-          <text x="300" y="412" fontSize="13" fill="#6B6B73" textAnchor="middle" fontFamily="monospace">ツール / プラットフォーム 主軸</text>
 
           {/* Bubbles */}
           {COMPANIES.map((c, i) => {
@@ -151,7 +141,7 @@ export function PositioningMap() {
 
         {/* Bottom axis label row */}
         <div className="text-center -mt-1">
-          <p className="text-[10px] font-semibold text-[#0B0B0E]">ツール / プラットフォーム 主軸</p>
+          <p className="text-[13px] font-semibold text-[#0B0B0E]">ツール / プラットフォーム 主軸</p>
         </div>
 
         {/* Legend */}
