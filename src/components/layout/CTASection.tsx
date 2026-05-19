@@ -49,7 +49,7 @@ export function CTASection({
                 </div>
                 <h2
                   className="ui-section-title ui-section-title-dark"
-                  style={{ fontSize: 'clamp(32px, 3.2vw, 48px)' }}
+                  style={{ fontSize: 'clamp(27px, 2.7vw, 43px)' }}
                 >
                   {title}
                 </h2>
