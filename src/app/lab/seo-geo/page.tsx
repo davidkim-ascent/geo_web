@@ -73,7 +73,7 @@ const FAQ = [
 ];
 
 export const metadata: Metadata = buildPageMetadata({
-  title: PAGE_TITLE,
+  title: `${PAGE_TITLE} - 株式会社 Ascent Networks`,
   description: PAGE_DESCRIPTION,
   path: "/lab/seo-geo",
 });

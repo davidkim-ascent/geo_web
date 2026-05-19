@@ -14,7 +14,7 @@ const PAGE_DESCRIPTION =
   "消費者がAIに状況を話しかける時代、ブランドは「キーワード競争」から「CEP（カテゴリーエントリーポイント）の占有」へ戦略を転換する必要があります。GEO視点でCEP設計を解説します。";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: PAGE_TITLE,
+  title: `${PAGE_TITLE} - 株式会社 Ascent Networks`,
   description: PAGE_DESCRIPTION,
   path: "/lab/brand-cep",
 });

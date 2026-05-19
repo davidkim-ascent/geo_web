@@ -10,8 +10,9 @@ import { buildPageMetadata } from "@/lib/seo";
 import { FrameworkLoop } from "./FrameworkLoop";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Framework — GEO",
-  description: "質問から最適化までが、一貫した設計。",
+  title: "GEO Framework | 5つの循環設計 - 株式会社 Ascent Networks",
+  description:
+    "質問分析・GAP分析・コンテンツ対策・モニタリング・最適化ループ。5フェーズで、AIに引用される状態を設計するAscent GEOのフレームワーク。",
   path: "/framework",
 });
 

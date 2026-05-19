@@ -1,3 +1,6 @@
+## 2026-05-19 16:45
+- 각 페이지 SEO 타이틀/메타 설명 정리: Home, Why Ascent, Framework, Services, GEO Lab, SEO GEO, Brand CEP에 이미지 기준 메타를 반영하고 회귀 테스트를 추가함
+
 ## 2026-05-19 11:15
 - 전 페이지 SEO/OG 메타 정리: 공통 메타 헬퍼와 루트 `metadataBase`를 추가하고, 모든 주요 페이지에 OG/twitter 이미지 및 canonical 태그를 적용함
 
