@@ -7,9 +7,8 @@ import { getCalendarBookingHref, getCalendarBookingLinkProps } from "@/lib/calen
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Contact — Ascent GEO",
-  description:
-    "無料相談、サービス資料、電話でのご相談。Ascent GEO へのお問い合わせはこちらから。",
+  title: "Ascent GEO・LLMO 無料相談",
+  description: "GEO・LLMOのお問い合わせはこちらから。",
   path: "/contact",
 });
 

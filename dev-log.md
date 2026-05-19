@@ -1,3 +1,6 @@
+## 2026-05-19 17:00
+- 각 페이지 SEO 타이틀/메타를 최종 목록으로 재정렬: Home, Why Ascent, Framework, Lab, Services, Contact 문구를 요청한 LLMO 버전으로 갱신함
+
 ## 2026-05-19 16:48
 - Services 페이지 SEO 타이틀을 `GEO・LLMO Services | Ascent GEO・LLMOのサービス詳細 - 株式会社 Ascent Networks`로 변경하고 회귀 테스트를 갱신함
 

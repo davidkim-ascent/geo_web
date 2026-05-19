@@ -4,37 +4,42 @@ import { readFileSync } from "node:fs";
 const cases = [
   {
     file: "src/app/page.tsx",
-    title: "Ascent GEO（アセント GEO） - 株式会社 Ascent Networks",
+    title: "Ascent GEO・LLMO（アセント GEO・LLMO）- 株式会社 Ascent Networks",
     description:
       "推測ではなく、データと特許に基づくGEO戦略。特許分析と実消費者インテントに基づくGEO戦略を、Ascentが設計します。",
   },
   {
     file: "src/app/why-ascent/page.tsx",
-    title: "Why Ascent | Ascent GEOの強み - 株式会社 Ascent Networks",
+    title: "Ascent GEO・LLMOの強み - 株式会社 Ascent Networks",
     description:
-      "AI はどこから、なぜ引用するのか。Ascentは特許ベースGEO施策・消費者インテント・スコアリングという3本の柱で、データを解明します。",
+      "AI は「どこから、なぜ」引用するのか。Ascentは特許ベースGEO施策・消費者インテント・スコアリングという3本の柱で、データを解明します。",
   },
   {
     file: "src/app/framework/page.tsx",
-    title: "GEO Framework | 5つの循環設計 - 株式会社 Ascent Networks",
+    title: "Ascent GEO・LLMO Framework | 5つの循環設計 - 株式会社 Ascent Networks",
     description:
-      "質問分析・GAP分析・コンテンツ対策・モニタリング・最適化ループ。5フェーズで、AIに引用される状態を設計するAscent GEOのフレームワーク。",
+      "質問分析・GAP分析・コンテンツ対策・モニタリング・最適化ループ。5フェーズで、AIに引用され続ける状態を設計するAscentのGEOフレームワーク。",
   },
   {
     file: "src/app/services/page.tsx",
-    title: "GEO・LLMO Services | Ascent GEO・LLMOのサービス詳細 - 株式会社 Ascent Networks",
+    title: "Ascent GEO・LLMOのサービス詳細 - 株式会社Ascent Networks",
     description:
-      "サイト診断からモニタリングまで一気通貫でサポート。単発でも継続運用でも対応。AIに引用されるブランドの可視化、設計、改善を支援します。",
+      "サイト診断からモニタリングまで一貫してサポート。単発でも継続運用でも対応。AIに引用されるブランドをフルスペックで支援します。",
   },
   {
     file: "src/app/lab/page.tsx",
-    title: "GEO Lab | AI検索リサーチハブ - 株式会社 Ascent Networks",
+    title: "Ascent GEO Lab | AI検索リサーチハブ - 株式会社 Ascent Networks",
     description:
-      "AI検索時代に引用される知識を、実データに基づき分析。特許・消費者インテント・GEO戦略など、Ascent GEO Labで体系的に学べます。",
+      "AI検索時代に引用されるための知識を、実データと実務から発信。特許・消費者インテント・GEO設計まで、Ascent GEO Labで体系的に学べます。",
+  },
+  {
+    file: "src/app/contact/page.tsx",
+    title: "Ascent GEO・LLMO 無料相談",
+    description: "GEO・LLMOのお問い合わせはこちらから。",
   },
   {
     file: "src/app/lab/seo-geo/page.tsx",
-    titleParts: [
+      titleParts: [
       'const PAGE_TITLE = "SEOとGEOは何が違うのか？検索最適化と生成AI最適化を比較";',
       'title: `${PAGE_TITLE} - 株式会社 Ascent Networks`',
     ],

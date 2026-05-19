@@ -20,7 +20,7 @@ const FrameworkSection = dynamicImport(() => import("@/components/home/Framework
 });
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Ascent GEO（アセント GEO） - 株式会社 Ascent Networks",
+  title: "Ascent GEO・LLMO（アセント GEO・LLMO）- 株式会社 Ascent Networks",
   description:
     "推測ではなく、データと特許に基づくGEO戦略。特許分析と実消費者インテントに基づくGEO戦略を、Ascentが設計します。",
   path: "/",

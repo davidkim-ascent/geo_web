@@ -11,9 +11,9 @@ import { LabArticles } from "./LabArticles";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "GEO Lab | AI検索リサーチハブ - 株式会社 Ascent Networks",
+  title: "Ascent GEO Lab | AI検索リサーチハブ - 株式会社 Ascent Networks",
   description:
-    "AI検索時代に引用される知識を、実データに基づき分析。特許・消費者インテント・GEO戦略など、Ascent GEO Labで体系的に学べます。",
+    "AI検索時代に引用されるための知識を、実データと実務から発信。特許・消費者インテント・GEO設計まで、Ascent GEO Labで体系的に学べます。",
   path: "/lab",
 });
 

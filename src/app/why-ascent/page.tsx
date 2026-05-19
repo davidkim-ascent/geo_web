@@ -11,9 +11,9 @@ import { SearchPathPanel } from "@/components/why-ascent/SearchPathPanel";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Why Ascent | Ascent GEOの強み - 株式会社 Ascent Networks",
+  title: "Ascent GEO・LLMOの強み - 株式会社 Ascent Networks",
   description:
-    "AI はどこから、なぜ引用するのか。Ascentは特許ベースGEO施策・消費者インテント・スコアリングという3本の柱で、データを解明します。",
+    "AI は「どこから、なぜ」引用するのか。Ascentは特許ベースGEO施策・消費者インテント・スコアリングという3本の柱で、データを解明します。",
   path: "/why-ascent",
 });
 
