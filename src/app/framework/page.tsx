@@ -388,6 +388,7 @@ function FrameworkSteps() {
           {frameworkSteps.map((step) => (
             <article
               key={step.id}
+              id={`step-${step.id}`}
               className="grid grid-cols-1 gap-6 border-t border-black/10 pt-8 lg:grid-cols-[3fr_2fr] lg:gap-10"
             >
               <div className="grid grid-cols-[auto_1fr] gap-4">

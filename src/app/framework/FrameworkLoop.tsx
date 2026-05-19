@@ -121,8 +121,9 @@ export function FrameworkLoop() {
 
       {/* Node cards — white on dark pentagon */}
       {nodes.map((n, i) => (
-        <div
+        <a
           key={i}
+          href={`#step-${n.ix}`}
           style={{
             position: "absolute",
             left: `${n.x}%`,
@@ -135,11 +136,13 @@ export function FrameworkLoop() {
             padding: "16px 18px",
             textAlign: "left",
             transition: "background 0.2s, border-color 0.2s, box-shadow 0.2s",
-            cursor: "default",
+            cursor: "pointer",
             boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
+            textDecoration: "none",
+            display: "block",
           }}
           onMouseEnter={(e) => {
-            const el = e.currentTarget as HTMLDivElement;
+            const el = e.currentTarget as HTMLAnchorElement;
             el.style.background = "#1a3a7a";
             el.style.borderColor = "#1a3a7a";
             el.style.boxShadow = "0 6px 24px rgba(26,58,122,0.35)";
@@ -148,7 +151,7 @@ export function FrameworkLoop() {
             el.querySelectorAll("[data-jp]").forEach((c) => ((c as HTMLElement).style.color = "#7ab6ff"));
           }}
           onMouseLeave={(e) => {
-            const el = e.currentTarget as HTMLDivElement;
+            const el = e.currentTarget as HTMLAnchorElement;
             el.style.background = "#ffffff";
             el.style.borderColor = "#1a3a7a";
             el.style.boxShadow = "0 2px 12px rgba(0,0,0,0.08)";
@@ -179,7 +182,7 @@ export function FrameworkLoop() {
           <p data-jp style={{ margin: 0, fontSize: 12, color: "#1a3a7a", lineHeight: 1.4 }}>
             {n.jp}
           </p>
-        </div>
+        </a>
       ))}
     </div>
   );
