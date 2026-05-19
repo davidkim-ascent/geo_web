@@ -107,9 +107,9 @@ function SectionKicker({
 
 export default async function WhyAscentPage() {
   return (
-    <div className="bg-[#FAFAF7] text-[#0B0B0E]">
+    <div className="overflow-x-clip bg-[#FAFAF7] text-[#0B0B0E]">
       <section
-        className="hero-fixed relative text-white py-12 lg:py-16"
+        className="hero-fixed relative overflow-hidden text-white py-12 lg:py-16"
         style={{
           background: "var(--hero-gradient)",
         }}
@@ -134,10 +134,10 @@ export default async function WhyAscentPage() {
           }}
         />
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-          <div className="circle-spin absolute right-[-18%] top-[-10%] h-[980px] w-[980px] rounded-full border border-white/8 border-dashed" />
-          <div className="circle-spin-r absolute right-[4%] top-[7%] h-[620px] w-[620px] rounded-full border border-[#1452ff]/20 border-dashed" />
-          <div className="absolute right-[-2%] top-[17%] h-[320px] w-[320px] rounded-full border border-[#1452ff]/30 border-dashed" />
-          <div className="absolute left-[-4%] bottom-[-10%] select-none text-[clamp(180px,22vw,320px)] font-extrabold leading-none tracking-[-0.06em] text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.06)]">
+          <div className="circle-spin absolute right-[-18%] top-[-10%] hidden sm:block h-[980px] w-[980px] rounded-full border border-white/8 border-dashed" />
+          <div className="circle-spin-r absolute right-[4%] top-[7%] hidden sm:block h-[620px] w-[620px] rounded-full border border-[#1452ff]/20 border-dashed" />
+          <div className="absolute right-[-2%] top-[17%] hidden sm:block h-[320px] w-[320px] rounded-full border border-[#1452ff]/30 border-dashed" />
+          <div className="absolute left-[-4%] bottom-[-10%] hidden sm:block select-none text-[clamp(180px,22vw,320px)] font-extrabold leading-none tracking-[-0.06em] text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.06)]">
             GEO
           </div>
           <div style={{ position: "absolute", left: 0, right: 0, height: 4, background: "linear-gradient(90deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scan 6s ease-in-out infinite" }} />
@@ -146,7 +146,7 @@ export default async function WhyAscentPage() {
           <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scanV 9s ease-in-out -3.5s infinite" }} />
           <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scanV 11s ease-in-out -1s infinite" }} />
           <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scanV 13s ease-in-out -5s infinite" }} />
-          <div className="absolute right-8 top-7 text-right text-[10px] tracking-[0.2em] text-white/40 font-mono">
+          <div className="absolute right-8 top-7 hidden sm:block text-right text-[10px] tracking-[0.2em] text-white/40 font-mono">
             <div className="flex items-center justify-end gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-[#1452ff] shadow-[0_0_8px_#1452ff]" />
               <span>VISIBILITY · LIVE</span>
@@ -216,7 +216,7 @@ export default async function WhyAscentPage() {
                 <div key={item.num} className="grid grid-cols-[40px_1fr] gap-6 border-t border-black/10 py-10 first:border-t-0 first:pt-0">
                   <div className="font-mono text-[13px] tracking-[0.18em] text-[#1452ff]">{item.num}</div>
                   <div>
-                    <h3 className="text-[20px] font-bold tracking-[-0.02em] md:text-[24px] whitespace-nowrap">{item.title}</h3>
+                    <h3 className="text-[20px] font-bold tracking-[-0.02em] md:text-[24px] sm:whitespace-nowrap">{item.title}</h3>
                     <p className="mt-4 max-w-[42ch] text-[16px] leading-[1.7] text-[#4e4e51] md:text-[17px]">
                       {item.desc}
                     </p>

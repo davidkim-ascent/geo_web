@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
+import { ArticleThumbnail } from "@/components/lab/ArticleThumbnail";
 import { HeroLogoMark } from "@/components/layout/HeroLogoMark";
 import { SeoGeoCTASection } from "@/components/layout/SeoGeoCTASection";
 import { SplitSection } from "@/components/layout/SplitSection";
@@ -629,6 +630,7 @@ function GeoLabSection() {
       date: "05.18",
       readTime: "10 MIN READ",
       size: "large",
+      thumbVariant: "brand-cep" as const,
       href: "/lab/brand-cep",
     },
     {
@@ -639,6 +641,7 @@ function GeoLabSection() {
       date: "05.13",
       readTime: "8 MIN READ",
       size: "small",
+      thumbVariant: "seo-geo" as const,
       href: "/lab/seo-geo",
     },
     {
@@ -649,6 +652,7 @@ function GeoLabSection() {
       date: "03.22",
       readTime: "10 MIN READ",
       size: "small",
+      thumbVariant: "abstract" as const,
     },
   ];
 
@@ -678,33 +682,24 @@ function GeoLabSection() {
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Large card */}
           <Link href={articles[0].href ?? "/lab"} className="md:col-span-1 block">
-          <div className="bg-[#0B0B0E] rounded-2xl overflow-hidden card-hover-dark group h-full">
-            <div className="relative h-[200px] flex items-center justify-center overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#1452FF]/20 to-transparent" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span
-                  className="font-bold text-white/5"
-                  style={{ fontSize: "120px", lineHeight: 1 }}
-                >
-                  {articles[0].num}
-                </span>
-              </div>
-              <div className="absolute top-4 left-4">
-                <span className="tag-blue text-[10px]">{articles[0].tag}</span>
-              </div>
-            </div>
-            <div className="p-6">
-              <h3 className="text-[19px] font-bold text-[#FAFAF7] leading-snug mb-2">
-                {articles[0].title}
-              </h3>
-              <p className="text-[15px] text-[#d3d3d8] leading-[1.6] mb-4">{articles[0].desc}</p>
-              <div className="flex items-center gap-3 mono text-[11px] text-[#d3d3d8]">
-                <span>{articles[0].date}</span>
-                <span>·</span>
-                <span>{articles[0].readTime}</span>
+            <div className="bg-[#0B0B0E] rounded-2xl overflow-hidden card-hover-dark group h-full">
+              <ArticleThumbnail
+                variant={articles[0].thumbVariant}
+                eyebrow={articles[0].tag}
+                className="h-[220px] w-full"
+              />
+              <div className="p-6">
+                <h3 className="text-[19px] font-bold text-[#FAFAF7] leading-snug mb-2">
+                  {articles[0].title}
+                </h3>
+                <p className="text-[15px] text-[#d3d3d8] leading-[1.6] mb-4">{articles[0].desc}</p>
+                <div className="flex items-center gap-3 mono text-[11px] text-[#d3d3d8]">
+                  <span>{articles[0].date}</span>
+                  <span>·</span>
+                  <span>{articles[0].readTime}</span>
+                </div>
               </div>
             </div>
-          </div>
           </Link>
 
           {/* Small cards */}
@@ -715,15 +710,11 @@ function GeoLabSection() {
                   key={article.num}
                   className="bg-[#0B0B0E] rounded-2xl overflow-hidden card-hover-dark group flex h-full"
                 >
-                  <div className="relative w-[160px] flex-shrink-0 flex items-center justify-center overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#1452FF]/15 to-transparent" />
-                    <span className="font-bold text-white/5" style={{ fontSize: "72px", lineHeight: 1 }}>
-                      {article.num}
-                    </span>
-                    <div className="absolute top-3 left-3">
-                      <span className="tag-dark text-[9px]">{article.tag}</span>
-                    </div>
-                  </div>
+                  <ArticleThumbnail
+                    variant={article.thumbVariant}
+                    eyebrow={article.tag}
+                    className="h-full min-h-[184px] w-[170px] flex-shrink-0 rounded-none"
+                  />
                   <div className="p-5 flex flex-col justify-between flex-1">
                     <div>
                       <h4 className="text-[17px] font-bold text-[#FAFAF7] leading-snug mb-2">{article.title}</h4>

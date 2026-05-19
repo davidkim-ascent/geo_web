@@ -5,8 +5,6 @@ const source = readFileSync(new URL('../src/app/why-ascent/page.tsx', import.met
 const compactSource = source.replace(/\s+/g, ' ')
 
 assert.ok(
-  compactSource.includes(
-    'style={{ background: "var(--hero-gradient)", minHeight: "var(--hero-height)", }}',
-  ),
-  'expected the Why Ascent hero section to use the shared hero gradient and fixed height',
+  compactSource.includes('className="hero-fixed relative overflow-hidden text-white py-12 lg:py-16"'),
+  'expected the Why Ascent hero section to use the shared hero height wrapper and clip decorative overflow',
 )

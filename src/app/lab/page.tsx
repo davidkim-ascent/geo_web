@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/ContactForm";
+import { ArticleThumbnail } from "@/components/lab/ArticleThumbnail";
 import { HeroLogoMark } from "@/components/layout/HeroLogoMark";
 import { SeoGeoCTASection } from "@/components/layout/SeoGeoCTASection";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
@@ -21,6 +22,7 @@ const featuredSide = [
     title: "AI検索時代のブランド戦略：キーワードではなく、CEPを制覇せよ",
     desc: "消費者がAIに状況を話しかける時代、ブランド競争の本質はキーワード順位からCEP（カテゴリーエントリーポイント）の占有へ移行している。GEO戦略の核心を解説する。",
     meta: "2026.05.18 · 10 MIN",
+    thumbVariant: "brand-cep" as const,
     href: "/lab/brand-cep",
   },
   {
@@ -28,6 +30,7 @@ const featuredSide = [
     title: "SEOとGEOは何が違うのか？検索最適化と生成AI最適化を比較",
     desc: "SEOは検索エンジン、GEOは生成AI。比較表と実践原則で違いを整理した記事。",
     meta: "2026.05.13 · 8 MIN",
+    thumbVariant: "seo-geo" as const,
     href: "/lab/seo-geo",
   },
 ];
@@ -130,53 +133,53 @@ export default function LabPage() {
           <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
             {/* Main featured */}
             <Link href="/lab/seo-geo" className="block">
-            <article className="relative flex min-h-[420px] cursor-pointer flex-col justify-between overflow-hidden rounded-2xl bg-[#0B0B0E] p-14 text-[#FAFAF7] transition-opacity hover:opacity-90">
-              <div
-                className="absolute inset-0"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)",
-                  backgroundSize: "32px 32px",
-                  maskImage: "radial-gradient(ellipse at 80% 20%, black 30%, transparent 70%)",
-                }}
-              />
-              <div className="relative z-10">
-                <div className="mb-6 font-mono text-[11px] tracking-[0.18em] text-[#1452FF]">
-                  FEATURED · 2026.04.12
+              <article className="relative flex min-h-[420px] cursor-pointer flex-col overflow-hidden rounded-2xl bg-[#0B0B0E] text-[#FAFAF7] transition-opacity hover:opacity-90">
+                <ArticleThumbnail
+                  variant="seo-geo"
+                  eyebrow="FEATURED RESEARCH · SEO / GEO"
+                  className="h-[240px] w-full"
+                />
+                <div className="relative z-10 flex flex-1 flex-col justify-between p-10 lg:p-14">
+                  <div>
+                    <div className="mb-6 font-mono text-[11px] tracking-[0.18em] text-[#1452FF]">
+                      FEATURED · 2026.04.12
+                    </div>
+                    <h3
+                      className="max-w-[18ch] tracking-[-0.025em] leading-[1.1]"
+                      style={{ fontSize: "clamp(28px, 3.4vw, 44px)" }}
+                    >
+                      SEOとGEOは何が違うのか？
+                      <em className="text-[#1452FF] not-italic">検索最適化と生成AI最適化を比較</em>
+                    </h3>
+                    <p className="mt-5 max-w-[52ch] text-[16px] leading-[1.65] text-[#9A9AA0]">
+                      SEOは検索エンジンの上位表示を狙う施策、GEOは生成AIに引用されるための施策。違いと実践方法を比較表を用いてわかりやすく解説します。
+                    </p>
+                  </div>
+                  <div className="mt-8 flex items-center gap-6 border-t border-white/[0.12] pt-6 font-mono text-[11px] tracking-[0.12em] text-[#9A9AA0]">
+                    <span>Ascent Research · GEO LAB</span>
+                    <span className="text-[#FAFAF7]">READ · 8 MIN →</span>
+                  </div>
                 </div>
-                <span className="font-mono text-[11px] tracking-[0.16em] text-[#9A9AA0]">SEO vs GEO</span>
-                <h3
-                  className="mt-4 mb-5 max-w-[18ch] tracking-[-0.025em] leading-[1.1]"
-                  style={{ fontSize: "clamp(28px, 3.4vw, 44px)" }}
-                >
-                  SEOとGEOは何が違うのか？
-                  <em className="text-[#1452FF] not-italic">検索最適化と生成AI最適化を比較</em>
-                </h3>
-                <p className="max-w-[52ch] text-[16px] leading-[1.65] text-[#9A9AA0]">
-                  SEOは検索エンジンの上位表示を狙う施策、GEOは生成AIに引用されるための施策。違いと実践方法を比較表を用いてわかりやすく解説します。
-                </p>
-              </div>
-              <div className="relative z-10 mt-8 flex items-center gap-6 border-t border-white/[0.12] pt-6 font-mono text-[11px] tracking-[0.12em] text-[#9A9AA0]">
-                <span>Ascent Research · GEO LAB</span>
-                <span className="text-[#FAFAF7]">READ · 8 MIN →</span>
-              </div>
-            </article>
+              </article>
             </Link>
 
             {/* Side items */}
             <div className="grid gap-4">
               {featuredSide.map((item, i) => (
                 <Link key={i} href={item.href} className="block">
-                  <article className="group cursor-pointer rounded-xl border border-[#E6E4DD] bg-[#F2F0EA] p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1452FF]">
-                    <span className="font-mono text-[10px] tracking-[0.14em] text-[#1452FF]">
-                      {item.cat}
-                    </span>
-                    <h4 className="mt-2 mb-2 text-[18px] font-bold leading-[1.3] tracking-[-0.01em]">
-                      {item.title}
-                    </h4>
-                    <p className="text-[13px] leading-[1.5] text-[#6B6B73]">{item.desc}</p>
-                    <div className="mt-3.5 font-mono text-[10px] tracking-[0.12em] text-[#9A9AA0]">
-                      {item.meta}
+                  <article className="group cursor-pointer overflow-hidden rounded-xl border border-[#E6E4DD] bg-[#F2F0EA] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1452FF]">
+                    <ArticleThumbnail variant={item.thumbVariant} eyebrow={item.cat} className="h-[176px] w-full" />
+                    <div className="p-6">
+                      <span className="font-mono text-[10px] tracking-[0.14em] text-[#1452FF]">
+                        {item.cat}
+                      </span>
+                      <h4 className="mt-2 mb-2 text-[18px] font-bold leading-[1.3] tracking-[-0.01em]">
+                        {item.title}
+                      </h4>
+                      <p className="text-[13px] leading-[1.5] text-[#6B6B73]">{item.desc}</p>
+                      <div className="mt-3.5 font-mono text-[10px] tracking-[0.12em] text-[#9A9AA0]">
+                        {item.meta}
+                      </div>
                     </div>
                   </article>
                 </Link>

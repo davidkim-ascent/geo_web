@@ -5,6 +5,6 @@ const source = readFileSync(new URL('../src/app/why-ascent/page.tsx', import.met
 
 assert.match(
   source,
-  /<div className="relative z-10 lg:-mt-2 w-full max-w-\[560px\] mx-auto lg:ml-auto lg:mr-0">/,
+  /<div className="relative z-10 w-full max-w-\[620px\] mx-auto lg:ml-auto lg:mr-0">/,
   'expected the hero contact form wrapper to center on mobile and stay right-aligned on desktop',
 )
