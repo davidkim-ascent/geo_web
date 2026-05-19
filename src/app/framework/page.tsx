@@ -96,24 +96,35 @@ function SectionLabel({ title, dark = false }: { title: string; dark?: boolean }
 
 function VisualCard({ kind }: { kind: (typeof frameworkSteps)[number]["visual"] }) {
   if (kind === "network") {
+    const funnelSteps = [
+      { label: "CDJ 質問生成", width: "100%" },
+      { label: "Question Cluster", width: "78%" },
+      { label: "CEP マッピング", width: "58%" },
+      { label: "検索ボリューム統合", width: "40%" },
+    ];
     return (
       <div className="relative min-h-[240px] overflow-hidden rounded-[18px] border border-black/10 bg-[#f3f0e8]">
         <div className="absolute left-4 top-4 text-[10px] tracking-[0.24em] text-black/30">F · 01</div>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative h-[170px] w-[170px] rounded-full border border-[#1452ff]">
-            <span className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#1452ff]" />
-            <span className="absolute left-[16%] top-[18%] h-4 w-4 rounded-full border border-[#1452ff] bg-[#dbe4ff] shadow-[0_0_20px_rgba(20,82,255,0.35)]" />
-            <span className="absolute right-[16%] top-[18%] h-4 w-4 rounded-full border border-[#1452ff] bg-[#dbe4ff] shadow-[0_0_20px_rgba(20,82,255,0.35)]" />
-            <span className="absolute left-[9%] bottom-[18%] h-4 w-4 rounded-full border border-[#1452ff] bg-[#dbe4ff] shadow-[0_0_20px_rgba(20,82,255,0.35)]" />
-            <span className="absolute right-[10%] bottom-[18%] h-4 w-4 rounded-full border border-[#1452ff] bg-[#dbe4ff] shadow-[0_0_20px_rgba(20,82,255,0.35)]" />
-            <span className="absolute bottom-[4%] left-1/2 h-4 w-4 -translate-x-1/2 rounded-full border border-[#1452ff] bg-[#dbe4ff] shadow-[0_0_20px_rgba(20,82,255,0.35)]" />
-            <span className="absolute left-1/2 top-[20%] h-px w-[60%] -translate-x-1/2 bg-[#1452ff]/60" />
-            <span className="absolute left-1/2 top-[20%] h-[60%] w-px -translate-x-1/2 bg-[#1452ff]/60" />
-            <span className="absolute left-[24%] top-[26%] h-px w-[32%] -rotate-[36deg] bg-[#1452ff]/60" />
-            <span className="absolute right-[24%] top-[26%] h-px w-[32%] rotate-[36deg] bg-[#1452ff]/60" />
-            <span className="absolute left-[24%] bottom-[28%] h-px w-[32%] rotate-[36deg] bg-[#1452ff]/60" />
-            <span className="absolute right-[24%] bottom-[28%] h-px w-[32%] -rotate-[36deg] bg-[#1452ff]/60" />
-          </div>
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-0 px-6 pt-6">
+          {funnelSteps.map((step, i) => (
+            <div key={step.label} className="flex w-full flex-col items-center">
+              <div
+                className="flex h-9 items-center justify-center rounded-sm px-3"
+                style={{
+                  width: step.width,
+                  background: `rgba(20,82,255,${0.12 + i * 0.07})`,
+                  border: "1px solid rgba(20,82,255,0.25)",
+                }}
+              >
+                <span className="text-[10px] tracking-[0.12em] text-[#1452ff]">{step.label}</span>
+              </div>
+              {i < funnelSteps.length - 1 && (
+                <div className="flex h-4 flex-col items-center">
+                  <div className="h-full w-px bg-[#1452ff]/30" />
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     );
