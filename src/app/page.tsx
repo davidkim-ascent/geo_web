@@ -511,10 +511,9 @@ function ServicesSection() {
       desc: "質問とコンテンツの間にある意味的ギャップを発見。",
       bullets: ["質問 ↔ コンテンツ GAP", "10点評価", "Cluster Mapping"],
       visual: (
-        <div className="relative rounded-xl p-4 flex-1 flex flex-col overflow-hidden" style={{ background: "radial-gradient(#161a30, #0a0a12 70%)", border: "1px solid #7ab6ff0d" }}>
-          <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(circle at 50% 60%, #0070f31f, transparent 65%)" }} />
+        <div className="relative rounded-xl p-4 flex-1 flex flex-col overflow-hidden" style={{ background: "#08101e", border: "1px solid #7ab6ff0d" }}>
           <div className="mono text-[10px] tracking-[0.14em] mb-3 flex items-center gap-1.5" style={{ color: "#7ab6ff" }}>
-            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#7ab6ff", boxShadow: "0 0 6px #7ab6ff" }} />
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#7ab6ff" }} />
             SEMANTIC SCORE
           </div>
           <div className="flex-1 flex items-center justify-center py-2">
@@ -525,32 +524,23 @@ function ServicesSection() {
                     <stop offset="0%" stopColor="#0070f3" />
                     <stop offset="100%" stopColor="#7ab6ff" />
                   </linearGradient>
-                  <filter id="donutGlow">
-                    <feGaussianBlur stdDeviation="2" result="blur" />
-                    <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-                  </filter>
                 </defs>
                 <circle cx="50" cy="50" r="42" fill="none" stroke="#7ab6ff0d" strokeWidth="9" />
-                <circle cx="50" cy="50" r="42" fill="none" stroke="#0070f31a" strokeWidth="9"
-                  strokeDasharray={`${2 * Math.PI * 42} ${2 * Math.PI * 42}`} />
-                <circle cx="50" cy="50" r="42" fill="none" stroke="#7ab6ff2e" strokeWidth="12"
-                  strokeDasharray={`${2 * Math.PI * 42 * 0.84} ${2 * Math.PI * 42}`}
-                  strokeLinecap="round" />
                 <circle cx="50" cy="50" r="42" fill="none" stroke="url(#donutGrad)" strokeWidth="8"
                   strokeDasharray={`${2 * Math.PI * 42 * 0.84} ${2 * Math.PI * 42}`}
-                  strokeLinecap="round" filter="url(#donutGlow)" />
+                  strokeLinecap="round" />
               </svg>
               <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="text-[28px] font-bold" style={{ background: "linear-gradient(135deg, #fff, #7ab6ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>8.4</span>
-                <span className="text-[11px]" style={{ color: "#7ab6ff60" }}>/ 12.0</span>
+                <span className="text-[28px] font-bold" style={{ color: "#fff" }}>8.4</span>
+                <span className="text-[11px]" style={{ color: "#7ab6ff60" }}>/ 10.0</span>
               </div>
             </div>
           </div>
           <div className="flex items-center gap-2 mt-1">
             <div className="flex-1 h-1 rounded-full overflow-hidden" style={{ background: "#7ab6ff0a" }}>
-              <div className="h-full rounded-full" style={{ width: "70%", background: "linear-gradient(90deg, #0070f3, #7ab6ff)" }} />
+              <div className="h-full rounded-full" style={{ width: "84%", background: "linear-gradient(90deg, #0070f3, #7ab6ff)" }} />
             </div>
-            <span className="mono text-[9px]" style={{ color: "#7ab6ff40" }}>GAP: 30%</span>
+            <span className="mono text-[9px]" style={{ color: "#7ab6ff40" }}>84%</span>
           </div>
         </div>
       ),
@@ -596,41 +586,62 @@ function ServicesSection() {
       desc: "可視性・引用・トラフィックを継続トラッキング。",
       bullets: ["Brand Visibility", "Citation Tracking", "AI Traffic 分析"],
       visual: (
-        <div className="relative rounded-xl p-4 flex-1 flex flex-col justify-center overflow-hidden" style={{ background: "radial-gradient(#0b2260, #0a0a12 70%)", border: "1px solid #7ab6ff0d" }}>
-          <div className="absolute top-0 right-0 w-[100px] h-[100px] blur-[45px] pointer-events-none" style={{ background: "radial-gradient(circle, #0070f340, transparent 60%)" }} />
-          <div className="mono text-[9px] tracking-[0.14em] mb-3 flex items-center gap-1.5" style={{ color: "#7ab6ff" }}>
-            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#7ab6ff", boxShadow: "0 0 6px #7ab6ff" }} />
-            CITATION TREND
+        <div className="relative rounded-xl p-4 flex-1 flex flex-col justify-center overflow-hidden" style={{ background: "#08101e", border: "1px solid #7ab6ff0d" }}>
+          <div className="mono text-[10px] tracking-[0.14em] mb-3 flex items-center gap-1.5" style={{ color: "#7ab6ff" }}>
+            <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#7ab6ff" }} />
+            BRAND VISIBILITY
           </div>
-          <div className="flex items-end gap-[3px] h-[68px]">
-            {[20, 28, 22, 35, 30, 42, 38, 55, 50, 68, 62, 80].map((v, i) => {
-              const isRecent = i >= 9;
-              const isLatest = i === 11;
-              return (
-                <div
-                  key={i}
-                  className="flex-1 rounded-t-sm"
-                  style={{
-                    height: `${v}%`,
-                    background: isLatest
-                      ? "linear-gradient(180deg, #7ab6ff, #0070f3)"
-                      : isRecent
-                      ? "linear-gradient(180deg, #3d7eff, #0070f3)"
-                      : `#7ab6ff${Math.round((0.04 + i * 0.004) * 255).toString(16).padStart(2, "0")}`,
-                    boxShadow: isLatest ? "0 0 8px #7ab6ff50" : isRecent ? "0 0 4px #0070f340" : "none",
-                  }}
-                />
-              );
-            })}
-          </div>
-          <div className="flex justify-between mt-1.5 pt-1.5" style={{ borderTop: "1px solid #7ab6ff08" }}>
-            {["JAN", "FEB", "MAR"].map((m) => (
-              <span key={m} className="mono text-[9px]" style={{ color: "#7ab6ff30" }}>{m}</span>
-            ))}
-          </div>
-          <div className="mt-2 flex items-center justify-between">
-            <span className="mono text-[9px]" style={{ color: "#7ab6ff30" }}>12-week window</span>
-            <span className="mono text-[9px]" style={{ color: "#7ab6ff" }}>↑ +60% MoM</span>
+          <div className="flex items-center gap-4">
+            {/* 도넛 차트 */}
+            <div className="relative w-[90px] h-[90px] shrink-0">
+              <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
+                <defs>
+                  <linearGradient id="donutGrad2" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#7ab6ff" />
+                    <stop offset="100%" stopColor="#0070f3" />
+                  </linearGradient>
+                  <linearGradient id="donutGrad3" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#3d7eff" />
+                    <stop offset="100%" stopColor="#1547ad" />
+                  </linearGradient>
+                </defs>
+                {/* 배경 트랙 */}
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#7ab6ff08" strokeWidth="14" />
+                {/* Competitor 세그먼트 (38%) */}
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#7ab6ff12" strokeWidth="14"
+                  strokeDasharray={`${2 * Math.PI * 40 * 0.38} ${2 * Math.PI * 40}`}
+                  strokeDashoffset={`-${2 * Math.PI * 40 * 0.62}`}
+                  strokeLinecap="butt" />
+                {/* 자사 점유율 세그먼트 (62%) */}
+                <circle cx="50" cy="50" r="40" fill="none" stroke="url(#donutGrad2)" strokeWidth="14"
+                  strokeDasharray={`${2 * Math.PI * 40 * 0.62} ${2 * Math.PI * 40}`}
+                  strokeLinecap="butt" />
+              </svg>
+              <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <span className="text-[22px] font-bold" style={{ color: "#fff" }}>62%</span>
+                <span className="text-[8px] mono" style={{ color: "#7ab6ff60" }}>Share</span>
+              </div>
+            </div>
+            {/* 범례 */}
+            <div className="flex flex-col gap-2 flex-1">
+              {[
+                { label: "Your Brand", pct: "62%", color: "#7ab6ff" },
+                { label: "Competitor", pct: "38%", color: "#7ab6ff20" },
+              ].map((item) => (
+                <div key={item.label}>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-[9px] mono" style={{ color: item.color }}>{item.label}</span>
+                    <span className="text-[9px] mono" style={{ color: item.color }}>{item.pct}</span>
+                  </div>
+                  <div className="h-[3px] rounded-full" style={{ background: "#7ab6ff08" }}>
+                    <div className="h-full rounded-full" style={{ width: item.pct, background: item.color }} />
+                  </div>
+                </div>
+              ))}
+              <div className="mt-1 flex items-center gap-1.5 rounded-md px-2 py-1" style={{ background: "#0070f310", border: "1px solid #7ab6ff18" }}>
+                <span className="text-[8px] mono" style={{ color: "#7ab6ff" }}>↑ +14% MoM</span>
+              </div>
+            </div>
           </div>
         </div>
       ),

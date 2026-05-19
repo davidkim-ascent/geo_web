@@ -5,7 +5,7 @@ export function SeoGeoCTASection() {
   return (
     <div className="article-cta">
       <CTASection
-        kicker="GEO対策、専任コンサルタントにご相談ください"
+        kicker="GEO対策、専門コンサルタントにご相談ください"
         title={
           <>
             GEO対策、
@@ -34,7 +34,7 @@ export function SeoGeoCTASection() {
                 {/* 가장자리 결 */}
                 <path d="M4,10 C30,8 60,13 90,10 C120,7 148,13 175,10 C200,7 228,12 256,9" fill="none" stroke="url(#underlineGrad)" strokeWidth="3" strokeLinecap="round" opacity="0.2" filter="url(#brushEdge)" />
               </svg>
-              <span style={{ position: "relative", zIndex: 1, color: "#ffffff" }}>専任コンサルタント</span>
+              <span style={{ position: "relative", zIndex: 1, color: "#ffffff" }}>専門コンサルタント</span>
             </span>にご相談ください
           </>
         }

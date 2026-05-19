@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import seoGeoImage from "@/app/lab/seo-geo/seo-geo.png";
-import lmCepFinderImage from "@/app/lab/brand-cep/lm-cep-finder.png";
 import geoLlmoCompanyImage from "@/app/lab/geo-llmo-company/company-comparison.png";
 import aiAgentSiteImage from "@/app/lab/ai-agent-site/ai-agent-site.png";
+import { TypingPromptCard } from "@/app/lab/brand-cep/TypingPromptCard";
 
 type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "abstract";
 
@@ -14,9 +14,8 @@ type ArticleThumbnailProps = {
   eyebrow?: string;
 };
 
-const IMAGE_BY_VARIANT: Record<Exclude<ArticleThumbnailVariant, "abstract" | "adobe-ai-traffic">, typeof seoGeoImage> = {
+const IMAGE_BY_VARIANT: Record<Exclude<ArticleThumbnailVariant, "abstract" | "adobe-ai-traffic" | "brand-cep">, typeof seoGeoImage> = {
   "seo-geo": seoGeoImage,
-  "brand-cep": lmCepFinderImage,
   "geo-llmo-company": geoLlmoCompanyImage,
   "ai-agent-site": aiAgentSiteImage,
 };
@@ -56,7 +55,11 @@ export function ArticleThumbnail({ variant, className = "", eyebrow }: ArticleTh
           backgroundSize: "28px 28px",
         }}
       />
-      {variant === "adobe-ai-traffic" ? (
+      {variant === "brand-cep" ? (
+        <div className="absolute inset-0 overflow-hidden" style={{ transform: "scale(0.72)", transformOrigin: "top left", width: "139%", pointerEvents: "none" }}>
+          <TypingPromptCard />
+        </div>
+      ) : variant === "adobe-ai-traffic" ? (
         <>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(20,82,255,0.22),transparent_40%),radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.07),transparent_30%)]" />
           <div className="absolute inset-0 flex items-end justify-start p-5 gap-1.5 items-end">
