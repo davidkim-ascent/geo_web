@@ -3,25 +3,14 @@ import { cookies } from "next/headers";
 import Link from "next/link";
 import { DeniedAccess } from "@/components/access/DeniedAccess";
 import { WHITEPAPER_DOWNLOADED_COOKIE, hasCompletionAccess } from "@/lib/completion-access";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "ダウンロード完了 — Ascent GEO",
   description: "AI 検索時代の、企業マーケティング白書 2026 のダウンロードを開始しました。",
-  robots: {
-    index: false,
-    follow: false,
-  },
-  openGraph: {
-    title: "ダウンロード完了 — Ascent GEO",
-    description: "AI 検索時代の、企業マーケティング白書 2026 のダウンロードを開始しました。",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "ダウンロード完了 — Ascent GEO",
-    description: "AI 検索時代の、企業マーケティング白書 2026 のダウンロードを開始しました。",
-  },
-};
+  path: "/whitepaper/downloaded",
+  noIndex: true,
+});
 
 export const dynamic = "force-dynamic";
 

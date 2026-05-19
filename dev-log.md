@@ -1,3 +1,9 @@
+## 2026-05-19 11:15
+- 전 페이지 SEO/OG 메타 정리: 공통 메타 헬퍼와 루트 `metadataBase`를 추가하고, 모든 주요 페이지에 OG/twitter 이미지 및 canonical 태그를 적용함
+
+## 2026-05-19 10:25
+- 도메인/Resend 잔여 항목 점검: 현재 코드에는 `metadataBase`/canonical/redirect 설정이 없고, Resend 발신주소는 아직 `onboarding@resend.dev` 기본값이 남아 있어 환경변수 교체와 Resend 도메인 인증이 핵심 남은 작업임을 확인함
+
 ## 2026-05-19 10:21
 - GEO Lab 카드와 Why Ascent 히어로의 모바일 오버플로우를 정리하고, 공통 아티클 썸네일 컴포넌트를 추가해 홈과 Lab 카드 비주얼을 통일함
 

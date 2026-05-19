@@ -8,11 +8,14 @@ import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 import { Button } from "@/components/ui/button";
 import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
 import { LabArticles } from "./LabArticles";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "GEO Lab — Ascent",
-  description: "検索の変化、SEO と GEO の差、AI が引用する条件、GEO Writing の実装、KPI の測り方。Ascent が日々のクライアントワークから抽出した知見を、リサーチノートとして公開する。",
-};
+  description:
+    "検索の変化、SEO と GEO の差、AI が引用する条件、GEO Writing の実装、KPI の測り方。Ascent が日々のクライアントワークから抽出した知見を、リサーチノートとして公開する。",
+  path: "/lab",
+});
 
 export const dynamic = "force-static";
 

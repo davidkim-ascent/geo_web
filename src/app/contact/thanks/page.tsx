@@ -2,25 +2,14 @@ import type { Metadata } from "next";
 import { cookies } from "next/headers";
 import { DeniedAccess } from "@/components/access/DeniedAccess";
 import { CONTACT_THANKS_COOKIE, hasCompletionAccess } from "@/lib/completion-access";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "お問い合わせ完了 — Ascent GEO",
   description: "お問い合わせを受け付けました。GEO チームからの返信をお待ちください。",
-  robots: {
-    index: false,
-    follow: false,
-  },
-  openGraph: {
-    title: "お問い合わせ完了 — Ascent GEO",
-    description: "お問い合わせを受け付けました。GEO チームからの返信をお待ちください。",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "お問い合わせ完了 — Ascent GEO",
-    description: "お問い合わせを受け付けました。GEO チームからの返信をお待ちください。",
-  },
-};
+  path: "/contact/thanks",
+  noIndex: true,
+});
 
 export const dynamic = "force-dynamic";
 

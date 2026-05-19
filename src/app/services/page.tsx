@@ -7,11 +7,14 @@ import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 import { Button } from "@/components/ui/button";
 import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
 import { ServicesFAQ } from "./ServicesFAQ";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Services — Ascent GEO",
-  description: "診断・分析・制作・モニタリング。Ascent の GEO サービスは、4 つのフェーズで切り出すこともできれば、ループとしてフルパッケージで運用することもできる。",
-};
+  description:
+    "診断・分析・制作・モニタリング。Ascent の GEO サービスは、4 つのフェーズで切り出すこともできれば、ループとしてフルパッケージで運用することもできる。",
+  path: "/services",
+});
 
 export const dynamic = "force-static";
 

@@ -6,12 +6,14 @@ import { HeroLogoMark } from "@/components/layout/HeroLogoMark";
 import { SeoGeoCTASection } from "@/components/layout/SeoGeoCTASection";
 import { Button } from "@/components/ui/button";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
+import { buildPageMetadata } from "@/lib/seo";
 import { FrameworkLoop } from "./FrameworkLoop";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Framework — GEO",
   description: "質問から最適化までが、一貫した設計。",
-};
+  path: "/framework",
+});
 
 export const dynamic = "force-static";
 

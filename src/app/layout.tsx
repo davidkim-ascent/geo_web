@@ -3,22 +3,32 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/layout/ScrollToTop";
+import { defaultSiteMetadata, metadataBase } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: {
-    default: "GEO — Ascent",
-    template: "%s — Ascent",
-  },
-  description: "推測ではなく、データと特許に基づくAI検索時代のブランド戦略。",
+  metadataBase,
+  title: defaultSiteMetadata.title,
+  description: defaultSiteMetadata.description,
   openGraph: {
-    title: "GEO — Ascent",
-    description: "推測ではなく、データと特許に基づくAI検索時代のブランド戦略。",
+    title: defaultSiteMetadata.title,
+    description: defaultSiteMetadata.description,
     type: "website",
+    siteName: defaultSiteMetadata.siteName,
+    locale: "ja_JP",
+    images: [
+      {
+        url: defaultSiteMetadata.ogImage,
+        width: defaultSiteMetadata.ogImageWidth,
+        height: defaultSiteMetadata.ogImageHeight,
+        alt: defaultSiteMetadata.siteName,
+      },
+    ],
   },
   twitter: {
-    card: "summary",
-    title: "GEO — Ascent",
-    description: "推測ではなく、データと特許に基づくAI検索時代のブランド戦略。",
+    card: "summary_large_image",
+    title: defaultSiteMetadata.title,
+    description: defaultSiteMetadata.description,
+    images: [defaultSiteMetadata.ogImage],
   },
 };
 

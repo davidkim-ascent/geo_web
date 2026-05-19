@@ -5,12 +5,14 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 import { getCalendarBookingHref } from "@/lib/calendar-booking";
 import { ArticleTOC } from "./ArticleTOC";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "AI Overview が変えた、検索結果ページの 3 秒間 — GEO Lab",
   description:
     "Google AI Overview の本格展開で、検索結果ページの上部に何が起きているのか。12 業種・1,400 ページのクリックログと、4 つの AI 検索エンジンの引用ログを突き合わせ、ユーザーが「ページを開く」までの 3 秒間にどんな意思決定が走っているのかを解剖する。",
-};
+  path: "/lab/ai-overview",
+});
 
 export const dynamic = "force-static";
 

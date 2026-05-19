@@ -7,6 +7,7 @@ import { SeoGeoCTASection } from "@/components/layout/SeoGeoCTASection";
 import { SplitSection } from "@/components/layout/SplitSection";
 import { Button } from "@/components/ui/button";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
+import { buildPageMetadata } from "@/lib/seo";
 import dynamicImport from "next/dynamic";
 
 const ContactForm = dynamicImport(
@@ -18,23 +19,12 @@ const FrameworkSection = dynamicImport(() => import("@/components/home/Framework
   ssr: true,
 });
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "GEO — Ascent",
   description:
     "推測ではなく、データと特許に基づく AI 検索時代のブランド戦略。Ascent は、GEO を実装するためのフレームワークを公開しています。",
-  openGraph: {
-    title: "GEO — Ascent",
-    description:
-      "推測ではなく、データと特許に基づく AI 検索時代のブランド戦略。Ascent は、GEO を実装するためのフレームワークを公開しています。",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "GEO — Ascent",
-    description:
-      "推測ではなく、データと特許に基づく AI 検索時代のブランド戦略。Ascent は、GEO を実装するためのフレームワークを公開しています。",
-  },
-};
+  path: "/",
+});
 
 export const dynamic = "force-static";
 

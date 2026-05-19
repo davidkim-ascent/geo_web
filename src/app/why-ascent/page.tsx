@@ -8,11 +8,13 @@ import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 import { Button } from "@/components/ui/button";
 import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
 import { SearchPathPanel } from "@/components/why-ascent/SearchPathPanel";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Why Ascent — GEO",
   description: "GEO は、推測ではなく設計の科学である。",
-};
+  path: "/why-ascent",
+});
 
 export const dynamic = "force-static";
 

@@ -4,24 +4,14 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { HeroLogoMark } from "@/components/layout/HeroLogoMark";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 import { getCalendarBookingHref, getCalendarBookingLinkProps } from "@/lib/calendar-booking";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Contact — Ascent GEO",
   description:
     "無料相談、サービス資料、電話でのご相談。Ascent GEO へのお問い合わせはこちらから。",
-  openGraph: {
-    title: "Contact — Ascent GEO",
-    description:
-      "無料相談、サービス資料、電話でのご相談。Ascent GEO へのお問い合わせはこちらから。",
-    type: "website",
-  },
-  twitter: {
-    card: "summary",
-    title: "Contact — Ascent GEO",
-    description:
-      "無料相談、サービス資料、電話でのご相談。Ascent GEO へのお問い合わせはこちらから。",
-  },
-};
+  path: "/contact",
+});
 
 export const dynamic = "force-static";
 

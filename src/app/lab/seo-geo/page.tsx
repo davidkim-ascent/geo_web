@@ -5,6 +5,7 @@ import { CTASection } from "@/components/layout/CTASection";
 import { getCalendarBookingHref } from "@/lib/calendar-booking";
 import { ArticleTOC } from "./ArticleTOC";
 import seoGeoImage from "./seo-geo.png";
+import { buildPageMetadata } from "@/lib/seo";
 
 const PAGE_TITLE = "SEOとGEOは何が違うのか？検索最適化と生成AI最適化を比較";
 const PAGE_DESCRIPTION =
@@ -71,10 +72,11 @@ const FAQ = [
   },
 ];
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
-};
+  path: "/lab/seo-geo",
+});
 
 export const dynamic = "force-static";
 
