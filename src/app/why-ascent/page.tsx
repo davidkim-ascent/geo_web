@@ -159,7 +159,7 @@ export default async function WhyAscentPage() {
           </div>
         </div>
 
-        <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
+        <div className="relative mx-auto max-w-[var(--ui-content-width)] px-4 sm:px-6 lg:px-10">
           <div className="grid items-start gap-10 lg:grid-cols-[1.18fr_1fr] lg:gap-16">
             <div className="relative z-10 pt-8">
               <div className="mb-5 flex items-center gap-2 text-[10px] tracking-[0.24em] text-[#1452ff] font-mono uppercase">
@@ -197,7 +197,7 @@ export default async function WhyAscentPage() {
       </section>
 
       <section className="bg-[#FAFAF7] py-24 md:py-28">
-        <div className="mx-auto max-w-[1280px] px-6 md:px-10">
+        <div className="mx-auto max-w-[var(--ui-content-width)] px-6 md:px-10">
           <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             <div>
               <SectionKicker overline="W/01 — Technical Foundation" label="特許ベースの GEO 解析" />
@@ -275,7 +275,7 @@ export default async function WhyAscentPage() {
             opacity: 0.45,
           }}
         />
-        <div className="relative mx-auto max-w-[1280px] px-6 md:px-10">
+        <div className="relative mx-auto max-w-[var(--ui-content-width)] px-6 md:px-10">
           <SectionKicker overline="W/02·A — INTENT INTELLIGENCE" label="意図 — SEARCH INTENT" dark />
           <div className="mt-5 h-px bg-white/10" />
 
@@ -358,7 +358,7 @@ export default async function WhyAscentPage() {
 
       {/* Section 3: W/02·C — CEP × GEO */}
       <section className="bg-[#FAFAF7] py-24 md:py-28">
-        <div className="mx-auto max-w-[1280px] px-6 md:px-10">
+        <div className="mx-auto max-w-[var(--ui-content-width)] px-6 md:px-10">
           <SectionKicker overline="W/02·C — INTENT INTELLIGENCE" label="文脈 — CEP × GEO" />
           <div className="mt-5 h-px bg-black/10" />
 
@@ -479,7 +479,7 @@ export default async function WhyAscentPage() {
             opacity: 0.45,
           }}
         />
-        <div className="relative mx-auto max-w-[1280px] px-6 md:px-10">
+        <div className="relative mx-auto max-w-[var(--ui-content-width)] px-6 md:px-10">
           <SectionKicker overline="W/02·B — INTENT INTELLIGENCE" label="経路 — SEARCH PATH" dark />
           <div className="mt-5 h-px bg-white/10" />
 

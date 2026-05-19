@@ -5,7 +5,7 @@ import { getCalendarBookingHref, getCalendarBookingLinkProps } from "@/lib/calen
 export default function Footer() {
   return (
     <footer className="ui-footer-shell">
-      <div className="max-w-[1280px] mx-auto px-10 pt-16 pb-8">
+      <div className="max-w-[var(--ui-content-width)] mx-auto px-10 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-[5fr_2.5fr_2.5fr] gap-12">
           {/* Brand */}
           <div>

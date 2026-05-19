@@ -1,3 +1,28 @@
+## 2026-05-19 20:25
+- 데스크탑 공통 콘텐츠 폭을 `1280px`에서 `1152px`로 10% 축소하고, 헤더/푸터/홈/랩/서비스/프레임워크/아티클 래퍼에 일괄 적용함
+
+## 2026-05-19 20:22
+- 홈 GEO Lab 인덱스의 3번째 카드에 `geo-llmo-company` 아티클을 반영하고, 기존 placeholder 카드를 새 비교 글로 교체함
+
+## 2026-05-19 20:19
+- 아티클 공통 테이블 레이아웃 조정: 첫 번째 열이 더 좁아지도록 `.article-table__head`와 `.article-table__row`의 3열 비율을 변경함
+
+## 2026-05-19 20:17
+- `docs/GEO_LLMO対策おすすめ会社7選_比較記事.docx` 원문 기준으로 `/lab/geo-llmo-company`를 재작성하고, 7개 회사 비교·포지셔닝 맵·선정 기준·비용·FAQ까지 본문을 문서 흐름에 맞게 교체함
+
+## 2026-05-19 20:12
+- GEO/LLMO 아티클의 META INFORMATION 박스를 본문에서 제거하고, 관련 키워드를 `metadata.keywords`로 이동함
+
+## 2026-05-19 20:10
+- 아티클 테이블 폰트 크기를 추가로 축소: `.article-table__head`와 `.article-table__cell`을 `calc(var(--fs-body) - 2px)`로 조정
+
+## 2026-05-19 20:09
+- 아티클 테이블 전역 폰트 크기를 1px 축소: `.article-table__head`와 `.article-table__cell`에 `calc(var(--fs-body) - 1px)` 적용
+
+## 2026-05-19 19:35
+- 새 아티클 페이지 `/lab/geo-llmo-company` 추가: GEO/LLMO 추천 회사 7선 비교 글을 기존 아티클 패턴으로 구현하고, Lab 목록/썸네일/목차를 함께 갱신함
+- 빌드 통과 확인, 변경 파일 기준 ESLint도 정상 통과함
+
 ## 2026-05-19 17:00
 - 각 페이지 SEO 타이틀/메타를 최종 목록으로 재정렬: Home, Why Ascent, Framework, Lab, Services, Contact 문구를 요청한 LLMO 버전으로 갱신함
 

@@ -54,7 +54,7 @@ export default function FrameworkSection() {
 
   return (
     <section id="framework" className="section dark py-24">
-      <div className="wrap max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="wrap max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
         <SectionLabel title="GEO FRAMEWORK" dark />
         <hr className="my-4 border-white/[0.06]" />
 

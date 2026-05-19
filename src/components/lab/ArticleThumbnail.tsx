@@ -3,8 +3,9 @@
 import Image from "next/image";
 import seoGeoImage from "@/app/lab/seo-geo/seo-geo.png";
 import lmCepFinderImage from "@/app/lab/brand-cep/lm-cep-finder.png";
+import geoLlmoCompanyImage from "@/app/lab/geo-llmo-company/company-comparison.png";
 
-type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "abstract";
+type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "abstract";
 
 type ArticleThumbnailProps = {
   variant: ArticleThumbnailVariant;
@@ -15,11 +16,13 @@ type ArticleThumbnailProps = {
 const IMAGE_BY_VARIANT: Record<Exclude<ArticleThumbnailVariant, "abstract">, typeof seoGeoImage> = {
   "seo-geo": seoGeoImage,
   "brand-cep": lmCepFinderImage,
+  "geo-llmo-company": geoLlmoCompanyImage,
 };
 
 const labelByVariant: Record<ArticleThumbnailVariant, string> = {
   "seo-geo": "SEO / GEO",
   "brand-cep": "BRAND × CEP",
+  "geo-llmo-company": "GEO / LLMO",
   abstract: "RESEARCH NOTE",
 };
 

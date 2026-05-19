@@ -413,7 +413,7 @@ export default function ServicesPage() {
           <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scanV 11s ease-in-out -1s infinite" }} />
           <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scanV 13s ease-in-out -5s infinite" }} />
         </div>
-        <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
+        <div className="relative mx-auto max-w-[var(--ui-content-width)] px-4 sm:px-6 lg:px-10">
           <div className="grid items-start gap-10 lg:grid-cols-[1.18fr_1fr] lg:gap-16">
             <div className="relative z-10 pt-8">
               <div className="mb-5 flex items-center gap-2 font-mono text-[10px] tracking-[0.24em] text-[#1452FF] uppercase">
@@ -479,7 +479,7 @@ export default function ServicesPage() {
 
       {/* Quad overview */}
       <section className="border-b border-[#E6E4DD] bg-[#FAFAF7] py-16">
-        <div className="mx-auto max-w-[1280px] px-10">
+        <div className="mx-auto max-w-[var(--ui-content-width)] px-10">
           <div className="grid grid-cols-2 gap-0 border-t border-[#E6E4DD] pt-8 md:grid-cols-4">
             {[
               { ix: "01 / CLUSTER", title: "質問クラスター\nデータ基盤抽出" },
@@ -509,7 +509,7 @@ export default function ServicesPage() {
           key={svc.ix}
           className={`border-b border-[#E6E4DD] py-[120px] ${svc.alt ? "bg-[#F2F0EA]" : "bg-[#FAFAF7]"}`}
         >
-          <div className="mx-auto max-w-[1280px] px-10">
+          <div className="mx-auto max-w-[var(--ui-content-width)] px-10">
             <div className="mb-4 font-mono text-[12px] tracking-[0.18em] text-[#1452FF]">
               [ {svc.ix} ] {svc.tag}
             </div>
@@ -557,7 +557,7 @@ export default function ServicesPage() {
 
       {/* Packages */}
       <section className="bg-[#0B0B0E] py-[100px]">
-        <div className="mx-auto max-w-[1280px] px-10">
+        <div className="mx-auto max-w-[var(--ui-content-width)] px-10">
           <div className="mb-6 font-mono text-[12px] tracking-[0.18em] text-[#9A9AA0]">
             [ PACKAGES ]
           </div>

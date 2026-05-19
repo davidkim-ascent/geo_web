@@ -22,7 +22,7 @@ export default function AiOverviewPage() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0B0B0E] py-12 lg:py-16 text-[#FAFAF7]" style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
 
-        <div className="relative z-10 mx-auto max-w-[1280px] px-10">
+        <div className="relative z-10 mx-auto max-w-[var(--ui-content-width)] px-10">
           <div className="grid items-start gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
             <div>
               {/* Breadcrumb */}
@@ -84,7 +84,7 @@ export default function AiOverviewPage() {
 
       {/* Body */}
       <section className="bg-[#FAFAF7] py-[88px]">
-        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
+        <div className="mx-auto max-w-[var(--ui-content-width)] px-4 sm:px-6 lg:px-10">
           <div className="grid items-start gap-14 lg:grid-cols-[220px_1fr]">
             {/* TOC — desktop only */}
             <div className="hidden lg:block">
@@ -451,7 +451,7 @@ export default function AiOverviewPage() {
 
       {/* Related */}
       <section className="border-t border-[#E6E4DD] bg-[#F2F0EA] py-[88px]">
-        <div className="mx-auto max-w-[1280px] px-10">
+        <div className="mx-auto max-w-[var(--ui-content-width)] px-10">
           <div className="mb-9 flex items-baseline justify-between">
             <h2 className="tracking-[-0.025em]" style={{ fontSize: "clamp(28px, 3.4vw, 40px)" }}>
               関連するリサーチ。

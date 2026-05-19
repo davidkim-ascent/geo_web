@@ -21,20 +21,20 @@ export const dynamic = "force-static";
 
 const featuredSide = [
   {
+    cat: "GEO / LLMO",
+    title: "GEO/LLMO対策におすすめの会社7選を徹底比較",
+    desc: "GEO対策会社7社を4つの型で比較し、費用相場・選び方・FAQまで整理した比較記事。",
+    meta: "2026.05.19 · 8 MIN",
+    thumbVariant: "geo-llmo-company" as const,
+    href: "/lab/geo-llmo-company",
+  },
+  {
     cat: "ブランド戦略",
     title: "AI検索時代のブランド戦略：キーワードではなく、CEPを制覇せよ",
     desc: "消費者がAIに状況を話しかける時代、ブランド競争の本質はキーワード順位からCEP（カテゴリーエントリーポイント）の占有へ移行している。GEO戦略の核心を解説する。",
     meta: "2026.05.18 · 10 MIN",
     thumbVariant: "brand-cep" as const,
     href: "/lab/brand-cep",
-  },
-  {
-    cat: "SEO vs GEO",
-    title: "SEOとGEOは何が違うのか？検索最適化と生成AI最適化を比較",
-    desc: "SEOは検索エンジン、GEOは生成AI。比較表と実践原則で違いを整理した記事。",
-    meta: "2026.05.13 · 8 MIN",
-    thumbVariant: "seo-geo" as const,
-    href: "/lab/seo-geo",
   },
 ];
 
@@ -86,7 +86,7 @@ export default function LabPage() {
           <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scanV 13s ease-in-out -5s infinite" }} />
         </div>
 
-        <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
+        <div className="relative mx-auto max-w-[var(--ui-content-width)] px-4 sm:px-6 lg:px-10">
           <div className="grid items-start gap-10 lg:grid-cols-[1.18fr_1fr] lg:gap-16">
             <div className="relative z-10 pt-8">
               <div className="mb-5 flex items-center gap-2 font-mono text-[10px] tracking-[0.24em] text-[#1452FF] uppercase">
@@ -126,7 +126,7 @@ export default function LabPage() {
 
       {/* Featured */}
       <section className="px-0 pb-16 pt-[100px]">
-        <div className="mx-auto max-w-[1280px] px-10">
+        <div className="mx-auto max-w-[var(--ui-content-width)] px-10">
           <div className="mb-6 font-mono text-[12px] tracking-[0.18em] text-[#6B6B73] uppercase">
             [ 01 ] FEATURED RESEARCH
           </div>

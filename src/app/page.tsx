@@ -165,7 +165,7 @@ function HeroSection() {
           </div>
         </>
       }
-      containerClassName="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10 w-full grid grid-cols-1 lg:grid-cols-[1.18fr_1fr] gap-14 items-start"
+      containerClassName="relative max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 w-full grid grid-cols-1 lg:grid-cols-[1.18fr_1fr] gap-14 items-start"
       leftClassName="pt-8"
       rightClassName=""
       left={
@@ -210,7 +210,7 @@ function HeroSection() {
 function SearchShiftSection() {
   return (
     <section className="bg-[#FAFAF7] pt-24 pb-12">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
         <SectionLabel title="AI 検索の地殻変動" />
         <hr className="my-4 border-black/[0.07]" />
 
@@ -398,7 +398,7 @@ function WhyAscentSection() {
 
   return (
     <section id="why" className="bg-[#FAFAF7] pt-12 pb-24">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
         <SectionLabel title="WHY ASCENT" />
         <hr className="my-4 border-black/[0.07]" />
 
@@ -562,7 +562,7 @@ function ServicesSection() {
 
   return (
     <section id="services" className="bg-[#FAFAF7] pt-24 pb-12">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
         <SectionLabel title="SERVICES" />
         <hr className="my-4 border-black/[0.07]" />
 
@@ -635,20 +635,21 @@ function GeoLabSection() {
       href: "/lab/seo-geo",
     },
     {
-      tag: "INSIGHT",
+      tag: "GEO / LLMO",
       num: "01",
-      title: "AI はどんなコンテンツを引用するのか",
-      desc: "",
-      date: "03.22",
-      readTime: "10 MIN READ",
+      title: "GEO/LLMO対策におすすめの会社7選を徹底比較",
+      desc: "GEO対策会社7社を4つの型で比較し、費用相場・選び方・FAQまで整理した比較記事。",
+      date: "05.19",
+      readTime: "8 MIN READ",
       size: "small",
-      thumbVariant: "abstract" as const,
+      thumbVariant: "geo-llmo-company" as const,
+      href: "/lab/geo-llmo-company",
     },
   ];
 
   return (
     <section id="lab" className="bg-[#FAFAF7] pt-12 pb-24">
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-10">
+      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
         <SectionLabel title="GEO LAB" />
         <hr className="my-4 border-black/[0.07]" />
 

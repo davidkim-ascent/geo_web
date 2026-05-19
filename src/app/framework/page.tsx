@@ -293,7 +293,7 @@ function FrameworkHero() {
         <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scanV 13s ease-in-out -5s infinite" }} />
       </div>
 
-      <div className="relative mx-auto grid max-w-[1280px] grid-cols-1 gap-14 px-4 sm:px-6 lg:px-10 lg:grid-cols-[1.18fr_1fr] lg:items-start">
+      <div className="relative mx-auto grid max-w-[var(--ui-content-width)] grid-cols-1 gap-14 px-4 sm:px-6 lg:px-10 lg:grid-cols-[1.18fr_1fr] lg:items-start">
         <div className="pt-8">
           <div className="mb-5 flex items-center gap-2 text-[10px] font-medium tracking-[0.22em] text-[#1452FF]">
             <span className="h-2 w-2 rounded-full bg-[#1452FF]" />
@@ -346,7 +346,7 @@ function FrameworkHero() {
 function FrameworkOverview() {
   return (
     <section className="bg-[#FAFAF7] py-[100px]">
-      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
+      <div className="mx-auto max-w-[var(--ui-content-width)] px-4 sm:px-6 lg:px-10">
         <div className="font-mono text-[12px] tracking-[0.18em] text-[#6B6B73] uppercase mb-6">
           [ 01 ] FRAMEWORK · LOOP
         </div>
@@ -367,7 +367,7 @@ function FrameworkOverview() {
 function FrameworkSteps() {
   return (
     <section className="bg-[#FAFAF7] pb-20">
-      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
+      <div className="mx-auto max-w-[var(--ui-content-width)] px-4 sm:px-6 lg:px-10">
         <SectionLabel title="Phase Breakdown" />
         <h2 className="mt-4 font-bold leading-[1.08] tracking-[-0.03em] text-[#0B0B0E] text-[clamp(32px,3.2vw,48px)]">
           各フェーズで、何が起きるか。
@@ -415,7 +415,7 @@ function FrameworkSteps() {
 function FrameworkFAQ() {
   return (
     <section className="bg-[#FAFAF7] py-10">
-      <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
+      <div className="mx-auto max-w-[var(--ui-content-width)] px-4 sm:px-6 lg:px-10">
         <SectionLabel title="Frequently Asked" />
         <h2 className="mt-4 font-bold tracking-[-0.03em] text-[#0B0B0E] text-[clamp(32px,3.2vw,48px)]">
           よくある質問。

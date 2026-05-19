@@ -29,6 +29,7 @@ type PageMetadataOptions = {
   description: string;
   path: string;
   noIndex?: boolean;
+  keywords?: string[];
 };
 
 export function buildPageMetadata({
@@ -36,10 +37,12 @@ export function buildPageMetadata({
   description,
   path,
   noIndex = false,
+  keywords,
 }: PageMetadataOptions): Metadata {
   return {
     title,
     description,
+    keywords,
     alternates: {
       canonical: path,
     },

@@ -13,7 +13,7 @@ type SplitSectionProps = {
 
 export function SplitSection({
   background,
-  containerClassName = 'relative max-w-[1280px] mx-auto px-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-14 items-start',
+  containerClassName = 'relative max-w-[var(--ui-content-width)] mx-auto px-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-14 items-start',
   left,
   leftClassName = '',
   right,

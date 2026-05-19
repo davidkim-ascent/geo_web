@@ -34,7 +34,7 @@ export function ServicesFAQ() {
 
   return (
     <section className="border-t border-[#E6E4DD] bg-[#FAFAF7] py-[120px]">
-      <div className="mx-auto max-w-[1280px] px-10">
+      <div className="mx-auto max-w-[var(--ui-content-width)] px-10">
         <div className="mb-6 font-mono text-[12px] tracking-[0.18em] text-[#9A9AA0] uppercase">
           [ FREQUENTLY ASKED ]
         </div>

@@ -42,7 +42,7 @@ export default function BrandCepArticlePage() {
         />
         <div className="absolute right-[8%] top-[18%] h-[460px] w-[460px] rounded-full bg-[#1452FF]/[0.08] blur-[100px] pointer-events-none" />
 
-        <div className="relative z-10 mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
+        <div className="relative z-10 mx-auto max-w-[var(--ui-content-width)] px-4 sm:px-6 lg:px-10">
           <div className="article-hero__grid pt-8 pb-4">
             <div>
               <div className="mb-8 flex items-center gap-2.5 font-mono text-[11px] tracking-[0.16em] text-[#9A9AA0] uppercase">
@@ -92,7 +92,7 @@ export default function BrandCepArticlePage() {
       </section>
 
       <section className="article-shell">
-        <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-10">
+        <div className="mx-auto max-w-[var(--ui-content-width)] px-4 sm:px-6 lg:px-10">
           <div className="article-shell__grid lg:grid-cols-[220px_1fr]">
             <div className="hidden lg:block">
               <ArticleTOC />
