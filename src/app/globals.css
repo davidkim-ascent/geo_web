@@ -377,7 +377,7 @@ h4 {
   color: var(--muted);
 }
 .ui-footer-link {
-  font-size: 16px;
+  font-size: 14px;
   color: var(--muted);
   transition: color 0.2s ease;
 }
@@ -385,7 +385,7 @@ h4 {
   color: var(--ink);
 }
 .ui-footer-meta {
-  font-size: 16px;
+  font-size: 14px;
   color: var(--muted);
 }
 
