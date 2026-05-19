@@ -227,15 +227,15 @@ function SearchShiftSection() {
         {/* Era comparison */}
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* SEO時代 */}
-          <div className="rounded-2xl p-7 card-hover relative overflow-hidden" style={{ background: "radial-gradient(120% 100% at 80% 0, #1e0a0e 0%, #0d0508 50%, #020108 100%)", border: "1px solid rgba(205,46,58,0.1)" }}>
-            <div className="absolute top-0 right-0 w-[200px] h-[200px] rounded-full blur-[80px] pointer-events-none" style={{ background: "radial-gradient(circle, #cd2e3a 0%, #cd2e3a28 38%, transparent 65%)" }} />
+          <div className="rounded-2xl p-7 card-hover relative overflow-hidden" style={{ background: "linear-gradient(180deg, #0a0208 0%, #120514 40%, #180a1e 70%, #1a0b1a 100%)", border: "1px solid rgba(205,46,58,0.08)" }}>
+            <div className="absolute top-0 right-0 w-[200px] h-[200px] rounded-full blur-[80px] pointer-events-none" style={{ background: "radial-gradient(circle, #cd2e3a 0%, #cd2e3a20 38%, transparent 65%)" }} />
             <h3 className="text-[19px] font-bold text-[#FAFAF7] mb-3">SEO時代</h3>
             <p className="text-[16px] text-[#d3d3d8] leading-[1.6] mb-5 font-[inherit]">
               リンクとキーワードを軸に、SERPの上位を競った時代。
             </p>
             <div className="flex items-center gap-2 flex-wrap">
               <span className="tag-dark">LINK GRAPH</span>
-              <span className="tag-dark">KEYWORD</span>
+              <span className="tag-blue">KEYWORD</span>
             </div>
           </div>
 
@@ -258,15 +258,16 @@ function SearchShiftSection() {
         {/* Chart cards */}
         <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Fig 01 — SERP decline */}
-          <div className="rounded-2xl p-6 card-hover overflow-hidden relative" style={{ background: "radial-gradient(120% 100% at 50% 0, #0e1b3e 0%, #050b22 45%, #02050f 80%, #010108 100%)", border: "1px solid rgba(122,182,255,0.08)" }}>
+          <div className="rounded-2xl p-6 card-hover overflow-hidden relative" style={{ background: "linear-gradient(180deg, #1a0b1a 0%, #130516 40%, #0e0210 70%, #080108 100%)", border: "1px solid rgba(205,46,58,0.08)" }}>
             <div className="absolute top-0 right-0 w-[180px] h-[180px] rounded-full blur-[70px] pointer-events-none" style={{ background: "radial-gradient(circle, #cd2e3a 0%, #cd2e3a33 32%, transparent 64%)" }} />
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-[17px] font-semibold text-white leading-snug max-w-[200px]">SERP クリック率の継続的減少</h3>
-              <div className="text-right">
-                <div className="text-[26px] font-bold mono" style={{ background: "linear-gradient(135deg, #ff5c73, #cd2e3a)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>−28%</div>
-                <div className="text-[10px] font-['JetBrains_Mono',monospace] tracking-[0.1em]" style={{ color: "#ff5c7399" }}>3YR TREND</div>
+            <div className="flex items-start justify-between mb-2">
+              <h3 className="text-[17px] font-semibold text-white leading-snug whitespace-nowrap">AI Overviews によるCTR低下</h3>
+              <div className="text-right shrink-0 ml-3">
+                <div className="text-[26px] font-bold mono" style={{ background: "linear-gradient(135deg, #ff5c73, #cd2e3a)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>−58%</div>
               </div>
             </div>
+            <p className="text-[11px] leading-relaxed mb-1" style={{ color: "#7ab6ffb0" }}>AI Overviewsがあるクエリでは上位表示ページのCTRが <span style={{ color: "#ff5c73" }}>58%</span> 低下</p>
+            <p className="text-[10px] mb-3" style={{ color: "#7ab6ff60" }}>Ahrefs（2025年4月・2026年2月更新）</p>
             <div className="relative h-[108px] mt-2">
               <svg viewBox="0 0 400 90" className="w-full h-full" preserveAspectRatio="none">
                 <defs>
@@ -297,10 +298,6 @@ function SearchShiftSection() {
                   <animate attributeName="opacity" values="0.9;0.5;0.9" dur="2s" repeatCount="indefinite" />
                 </circle>
               </svg>
-              <div className="absolute bottom-0 left-0 right-0 flex justify-between px-[2px]">
-                <span className="font-['JetBrains_Mono',monospace] text-[10px]" style={{ color: "#7ab6ff40" }}>2020</span>
-                <span className="font-['JetBrains_Mono',monospace] text-[10px]" style={{ color: "#7ab6ff40" }}>2026</span>
-              </div>
             </div>
           </div>
 
@@ -308,13 +305,14 @@ function SearchShiftSection() {
           <div className="rounded-2xl p-6 card-hover-dark overflow-hidden relative" style={{ background: "radial-gradient(120% 100% at 50% 0, #0b2260 0%, #061540 35%, #020818 65%, #000 100%)", border: "1px solid rgba(122,182,255,0.12)" }}>
             <div className="absolute top-0 right-0 w-[200px] h-[200px] rounded-full blur-[70px] pointer-events-none" style={{ background: "radial-gradient(circle, #0070f3 0%, #0070f366 32%, transparent 64%)" }} />
             <div className="absolute bottom-0 left-0 w-[160px] h-[160px] rounded-full blur-[60px] pointer-events-none" style={{ background: "radial-gradient(circle, #3d7eff 0%, #3d7eff2e 32%, transparent 64%)" }} />
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-[17px] font-semibold leading-snug max-w-[200px]" style={{ color: "#fff" }}>AI 回答エンジン利用の指数的成長</h3>
-              <div className="text-right">
-                <div className="text-[26px] font-bold mono" style={{ background: "linear-gradient(135deg, #7ab6ff, #0070f3)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>+240%</div>
-                <div className="text-[10px] font-['JetBrains_Mono',monospace] tracking-[0.1em]" style={{ color: "#7ab6ff99" }}>YoY GROWTH</div>
+            <div className="flex items-start justify-between mb-2">
+              <h3 className="text-[17px] font-semibold leading-snug whitespace-nowrap" style={{ color: "#fff" }}>AI経由のリテール訪問急増</h3>
+              <div className="text-right shrink-0 ml-3">
+                <div className="text-[26px] font-bold mono" style={{ background: "linear-gradient(135deg, #7ab6ff, #0070f3)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>+393%</div>
               </div>
             </div>
+            <p className="text-[11px] leading-relaxed mb-1" style={{ color: "#7ab6ffb0" }}>AI経由でリテールサイトに入ってきた訪問は <span style={{ color: "#7ab6ff" }}>393%</span> 増加</p>
+            <p className="text-[10px] mb-3" style={{ color: "#7ab6ff60" }}>Adobe（2026年）</p>
             <div className="relative h-[108px] mt-2">
               <svg viewBox="0 0 400 90" className="w-full h-full" preserveAspectRatio="none" overflow="visible">
                 <defs>
@@ -349,10 +347,6 @@ function SearchShiftSection() {
                   <animate attributeName="opacity" values="0.8;0;0.8" dur="2.4s" repeatCount="indefinite" />
                 </circle>
               </svg>
-              <div className="absolute bottom-0 left-0 right-0 flex justify-between px-[2px]">
-                <span className="font-['JetBrains_Mono',monospace] text-[10px]" style={{ color: "#7ab6ff40" }}>2023</span>
-                <span className="font-['JetBrains_Mono',monospace] text-[10px]" style={{ color: "#7ab6ff40" }}>2026</span>
-              </div>
             </div>
           </div>
         </div>

@@ -1,3 +1,12 @@
+## 2026-05-20 17:00
+- 홈 SERP 카드: 제목·수치·설명 업데이트 — Ahrefs 2025/2026 데이터 기준, CTR −34.5%→−58% 반영
+
+## 2026-05-20 15:30
+- FrameworkSection: 5 Phase Loop SVG에 ripple 파동 애니메이션 추가 (CSS blur, 중앙 마스크 처리)
+- FrameworkSection: 노드 원 배경 #1e2a52, 비활성 테두리 제거
+- 홈 SEO時代 카드: 레드 계열 다크 그라디언트 배경 적용
+- 홈 AI 成長 카드: 그래프 끝점 잘림 수정 (overflow visible, 끝점 385,6으로 조정)
+
 ## 2026-05-20 00:24
 - CTA 공통 `相談する` 버튼의 흰색 테두리 제거: `ui-cta-button` border를 transparent로 변경
 
