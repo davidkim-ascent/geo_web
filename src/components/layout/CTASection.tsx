@@ -53,7 +53,7 @@ export function CTASection({
                 >
                   {title}
                 </h2>
-                <p className="mt-6 ui-body-copy ui-body-copy-dark max-w-[56ch] text-[17px]">
+                <p className="mt-6 ui-body-copy ui-body-copy-dark max-w-[56ch] text-[15px]">
                   {description}
                 </p>
               </div>
