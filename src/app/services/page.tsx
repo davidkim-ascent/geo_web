@@ -10,7 +10,7 @@ import { ServicesFAQ } from "./ServicesFAQ";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Services | Ascent GEOのサービス詳細 - 株式会社 Ascent Networks",
+  title: "GEO・LLMO Services | Ascent GEO・LLMOのサービス詳細 - 株式会社 Ascent Networks",
   description:
     "サイト診断からモニタリングまで一気通貫でサポート。単発でも継続運用でも対応。AIに引用されるブランドの可視化、設計、改善を支援します。",
   path: "/services",

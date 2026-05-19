@@ -1,3 +1,6 @@
+## 2026-05-19 16:48
+- Services 페이지 SEO 타이틀을 `GEO・LLMO Services | Ascent GEO・LLMOのサービス詳細 - 株式会社 Ascent Networks`로 변경하고 회귀 테스트를 갱신함
+
 ## 2026-05-19 16:45
 - 각 페이지 SEO 타이틀/메타 설명 정리: Home, Why Ascent, Framework, Services, GEO Lab, SEO GEO, Brand CEP에 이미지 기준 메타를 반영하고 회귀 테스트를 추가함
 
