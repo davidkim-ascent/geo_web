@@ -8,8 +8,8 @@ import { COMPLETION_COOKIE_MAX_AGE, CONTACT_THANKS_COOKIE } from '@/lib/completi
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-const FROM = process.env.RESEND_FROM_EMAIL ?? 'onboarding@resend.dev'
-const ADMIN_EMAIL = process.env.CONTACT_ADMIN_EMAIL ?? ''
+const FROM = process.env.RESEND_FROM_EMAIL?.trim() || 'geo@ascentnet.co.jp'
+const ADMIN_EMAIL = process.env.CONTACT_ADMIN_EMAIL?.trim() || 'geo@ascentnet.co.jp'
 
 function getBlockedDomains(): string[] {
   return (process.env.BLOCKED_EMAIL_DOMAINS ?? '').split(',').map(d => d.trim()).filter(Boolean)
