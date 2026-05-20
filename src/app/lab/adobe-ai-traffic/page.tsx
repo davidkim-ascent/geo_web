@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { CTASection } from "@/components/layout/CTASection";
-import { getCalendarBookingHref } from "@/lib/calendar-booking";
+import { SeoGeoCTASection } from "@/components/layout/SeoGeoCTASection";
 import { buildPageMetadata } from "@/lib/seo";
 import { ArticleTOC } from "./ArticleTOC";
 import { RelatedResearchSection } from "@/components/lab/RelatedResearchSection";
@@ -440,34 +439,7 @@ export default function AdobeAiTrafficPage() {
       </section>
 
       <RelatedResearchSection currentSlug="adobe-ai-traffic" />
-
-      <div className="article-cta">
-        <CTASection
-          kicker="AIトラフィックを自社サイトへ引き込む"
-          title={
-            <>
-              AIに引用される
-              <br />
-              コンテンツ設計、始めませんか
-            </>
-          }
-          description={
-            <>
-              Adobeレポートが示す通り、AI経由トラフィックの質は急速に向上しています。
-              自社サイトがAIに引用・推薦されるためのGEO戦略を、
-              Ascent GEOが需要データ起点で設計します。
-              <br />
-              <br />
-              まずは無料の初回相談で、現状のAI可視性と改善余地をお伝えします。
-            </>
-          }
-          primaryButton={{ href: "/contact", label: "相談する" }}
-          secondaryButtons={[
-            { href: "/whitepaper", label: "サービス資料をダウンロード" },
-            { href: getCalendarBookingHref(), label: "無料相談予約（Googleカレンダー）" },
-          ]}
-        />
-      </div>
+      <SeoGeoCTASection />
     </div>
   );
 }

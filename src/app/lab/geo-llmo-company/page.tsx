@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { CTASection } from "@/components/layout/CTASection";
-import { getCalendarBookingHref } from "@/lib/calendar-booking";
+import { SeoGeoCTASection } from "@/components/layout/SeoGeoCTASection";
 import { buildPageMetadata } from "@/lib/seo";
 import { ArticleTOC } from "./ArticleTOC";
 import { RelatedResearchSection } from "@/components/lab/RelatedResearchSection";
@@ -488,7 +487,7 @@ export default function GeoLlmoCompanyArticlePage() {
                     <div className="article-note-panel__section">
                       <div className="article-note-panel__label">監修</div>
                       <p className="article-note-panel__text">
-                        株式会社Ascent GEO GEO戦略室。Google・Microsoftの検索特許分析と、リスニングマインドの日本語AI質問データを軸に、需要起点のGEO戦略を提供。Samsung Japanをはじめとする企業のAI Visibility改善を支援。
+                        株式会社Ascent GEO GEO戦略室。Google・Microsoftの検索特許分析と、リスニングマインドの日本語AI質問データを軸に、需要起点のGEO戦略を提供。
                       </p>
                     </div>
                     <div className="article-note-panel__section">
@@ -506,33 +505,7 @@ export default function GeoLlmoCompanyArticlePage() {
       </section>
 
       <RelatedResearchSection currentSlug="geo-llmo-company" />
-
-      <div className="article-cta">
-        <CTASection
-          kicker="GEO/LLMO対策、まずは無料相談から"
-          title={
-            <>
-              GEO/LLMO対策、
-              <br />
-              まずは無料相談から
-            </>
-          }
-          description={
-            <>
-              「どの会社に相談すべきか迷っている」「質問データ起点での設計を一度見てほしい」
-              という方に向けて、Ascent GEOでは無料の初回相談を受け付けています。
-              <br />
-              <br />
-              現状診断から、質問群の整理、GEO/LLMOコンテンツの優先順位付けまで、御社の状況に合わせて具体的にご提案します。
-            </>
-          }
-          primaryButton={{ href: "/contact", label: "相談する" }}
-          secondaryButtons={[
-            { href: "/whitepaper", label: "サービス資料をダウンロード" },
-            { href: getCalendarBookingHref(), label: "無料相談予約（Googleカレンダー）" },
-          ]}
-        />
-      </div>
+      <SeoGeoCTASection />
     </div>
   );
 }

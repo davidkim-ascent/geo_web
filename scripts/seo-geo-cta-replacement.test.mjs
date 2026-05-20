@@ -7,6 +7,11 @@ const pages = [
   "../src/app/framework/page.tsx",
   "../src/app/services/page.tsx",
   "../src/app/lab/page.tsx",
+  "../src/app/lab/geo-llmo-company/page.tsx",
+  "../src/app/lab/seo-geo/page.tsx",
+  "../src/app/lab/brand-cep/page.tsx",
+  "../src/app/lab/ai-agent-site/page.tsx",
+  "../src/app/lab/adobe-ai-traffic/page.tsx",
 ];
 
 for (const file of pages) {
@@ -16,5 +21,5 @@ for (const file of pages) {
   assert.ok(!source.includes("<CTASection"), `${file} should no longer render CTASection`);
 }
 
-const seoGeoSource = readFileSync(new URL("../src/app/lab/seo-geo/page.tsx", import.meta.url), "utf8").replace(/\s+/g, " ");
-assert.ok(seoGeoSource.includes("GEO対策、まずは無料相談から"), "/lab/seo-geo should keep the article CTA copy");
+const sharedSource = readFileSync(new URL("../src/components/layout/SeoGeoCTASection.tsx", import.meta.url), "utf8").replace(/\s+/g, " ");
+assert.ok(sharedSource.includes("GEO対策、専門コンサルタントにご相談ください"), "shared CTA should use the global GEO copy");

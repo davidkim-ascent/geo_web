@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { CTASection } from "@/components/layout/CTASection";
-import { getCalendarBookingHref } from "@/lib/calendar-booking";
+import { SeoGeoCTASection } from "@/components/layout/SeoGeoCTASection";
 import { buildPageMetadata } from "@/lib/seo";
 import { ArticleTOC } from "./ArticleTOC";
 import { RelatedResearchSection } from "@/components/lab/RelatedResearchSection";
@@ -378,34 +377,7 @@ export default function AiAgentSitePage() {
       </section>
 
       <RelatedResearchSection currentSlug="ai-agent-site" />
-
-      <div className="article-cta">
-        <CTASection
-          kicker="AIエージェント対応サイト設計"
-          title={
-            <>
-              AIに正しく読まれる
-              <br />
-              サイト設計、始めませんか
-            </>
-          }
-          description={
-            <>
-              セマンティックHTML・ラベル設計・SSR対応まで、
-              AIエージェントがあなたのサイトを正確に理解できるかどうかを診断します。
-              <br />
-              <br />
-              Ascent GEOでは、AI可視性の観点からサイト構造を評価し、
-              具体的な改善提案を無料の初回相談でお伝えします。
-            </>
-          }
-          primaryButton={{ href: "/contact", label: "相談する" }}
-          secondaryButtons={[
-            { href: "/whitepaper", label: "サービス資料をダウンロード" },
-            { href: getCalendarBookingHref(), label: "無料相談予約（Googleカレンダー）" },
-          ]}
-        />
-      </div>
+      <SeoGeoCTASection />
     </div>
   );
 }

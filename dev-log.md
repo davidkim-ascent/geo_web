@@ -1,3 +1,9 @@
+## 2026-05-20 10:19
+- 아티클 페이지 `/lab/geo-llmo-company`, `/lab/seo-geo`, `/lab/brand-cep`, `/lab/ai-agent-site`, `/lab/adobe-ai-traffic`의 하단 CTA를 전역 공통 `SeoGeoCTASection`으로 통일하고, 무료상담 전용 카피를 제거함
+
+## 2026-05-20 10:03
+- `/lab/geo-llmo-company` 하단 `監修` 문구에서 "Samsung Japanをはじめとする企業のAI Visibility改善を支援。" 문장을 삭제하고, 회귀 테스트를 추가함
+
 ## 2026-05-20 17:00
 - 홈 SERP 카드: 제목·수치·설명 업데이트 — Ahrefs 2025/2026 데이터 기준, CTR −34.5%→−58% 반영
 

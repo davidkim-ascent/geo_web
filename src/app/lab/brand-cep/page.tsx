@@ -1,8 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CTASection } from "@/components/layout/CTASection";
-import { getCalendarBookingHref } from "@/lib/calendar-booking";
+import { SeoGeoCTASection } from "@/components/layout/SeoGeoCTASection";
 import { ArticleTOC } from "./ArticleTOC";
 import { RelatedResearchSection } from "@/components/lab/RelatedResearchSection";
 import lmCepFinderImage from "./lm-cep-finder.png";
@@ -370,34 +369,7 @@ export default function BrandCepArticlePage() {
       </section>
 
       <RelatedResearchSection currentSlug="brand-cep" />
-
-      <div className="article-cta">
-        <CTASection
-          kicker="CEP×GEO戦略、まずは無料相談から"
-          title={
-            <>
-              CEP×GEO戦略、
-              <br />
-              まずは無料相談から
-            </>
-          }
-          description={
-            <>
-              「自社ブランドはどのCEPで認識されているか？」「AIの回答にどう登場させるか？」
-              そのような疑問・課題をお持ちの方に向けて、弊社では無料の初回相談を受け付けています。
-              <br />
-              <br />
-              リスニングマインドを活用したCEP可視化から、GEOコンテンツ設計、AIへの登場頻度モニタリングまで、
-              御社の状況に合わせた具体的なアドバイスをご提供します。お問い合わせから24時間以内にご返信いたします。
-            </>
-          }
-          primaryButton={{ href: "/contact", label: "相談する" }}
-          secondaryButtons={[
-            { href: "/whitepaper", label: "サービス資料をダウンロード" },
-            { href: getCalendarBookingHref(), label: "無料相談予約（Googleカレンダー）" },
-          ]}
-        />
-      </div>
+      <SeoGeoCTASection />
     </div>
   );
 }
