@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-[5fr_2.5fr_2.5fr] gap-12">
           {/* Brand */}
           <div>
-            <a href="/" className="inline-flex items-center" aria-label="Go to home">
+            <Link href="/" className="inline-flex items-center" aria-label="Go to home">
               <Image
                 src="/ascent-geo-logo.png"
                 alt="ASCENT/GEO"
@@ -17,7 +17,7 @@ export default function Footer() {
                 height={552}
                 className="h-[24px] w-auto"
               />
-            </a>
+            </Link>
             <p className="mt-4 ui-body-copy">
               特許 × 実消費者インテント × Embedding。<br />
               根拠ある GEO で、AI 検索のリーダーへ。
@@ -62,8 +62,8 @@ export default function Footer() {
             <p className="ui-footer-heading mb-5">Contact</p>
             <ul className="flex flex-col gap-3">
               <li>
-                <a href="mailto:geo@ascentnet.co.jp" className="ui-footer-link">
-                  geo@ascentnet.co.jp
+                <a href="tel:+81335273963" className="ui-footer-link">
+                  TEL: 03-3527-3963
                 </a>
               </li>
               <li>

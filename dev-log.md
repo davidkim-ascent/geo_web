@@ -1,3 +1,6 @@
+## 2026-05-20 10:26
+- 푸터 전역 연락처를 `geo@ascentnet.co.jp`에서 `TEL: 03-3527-3963`로 교체하고, 로고 홈 링크를 `Link`로 정리함
+
 ## 2026-05-20 10:19
 - 아티클 페이지 `/lab/geo-llmo-company`, `/lab/seo-geo`, `/lab/brand-cep`, `/lab/ai-agent-site`, `/lab/adobe-ai-traffic`의 하단 CTA를 전역 공통 `SeoGeoCTASection`으로 통일하고, 무료상담 전용 카피를 제거함
 
