@@ -1,5 +1,5 @@
 import { CTASection } from "@/components/layout/CTASection";
-import { getCalendarBookingHref } from "@/lib/calendar-booking";
+import { getCalendarBookingHref, getCalendarBookingLinkProps } from "@/lib/calendar-booking";
 
 export function SeoGeoCTASection() {
   return (
@@ -51,7 +51,7 @@ export function SeoGeoCTASection() {
         primaryButton={{ href: "/contact", label: "相談する" }}
         secondaryButtons={[
           { href: "/whitepaper", label: "サービス資料をダウンロード" },
-          { href: getCalendarBookingHref(), label: "無料相談予約（Googleカレンダー）" },
+          { href: getCalendarBookingHref(), label: "無料相談予約（Googleカレンダー）", ...getCalendarBookingLinkProps() },
         ]}
       />
     </div>

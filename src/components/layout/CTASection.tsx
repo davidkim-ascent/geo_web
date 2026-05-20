@@ -7,6 +7,8 @@ type CTAButton = {
   href: string
   label: ReactNode
   variant?: 'primary' | 'outline'
+  target?: string
+  rel?: string
 }
 
 type CTASectionProps = {
@@ -68,7 +70,7 @@ export function CTASection({
                 </Button>
                 {secondaryButtons.map((button) => (
                   <Button key={`${button.href}-${String(button.label)}`} asChild variant="ctaOutline">
-                    <Link href={button.href}>
+                    <Link href={button.href} target={button.target} rel={button.rel}>
                       {button.label}
                     </Link>
                   </Button>
