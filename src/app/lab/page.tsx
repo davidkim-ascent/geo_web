@@ -176,10 +176,10 @@ export default function LabPage() {
                       <span className="font-mono text-[10px] tracking-[0.14em] text-[#1452FF]">
                         {item.cat}
                       </span>
-                      <h4 className="mt-2 mb-2 text-[18px] font-bold leading-[1.3] tracking-[-0.01em]">
+                      <h4 className="mt-2 mb-2 text-[20px] font-bold leading-[1.3] tracking-[-0.01em]">
                         {item.title}
                       </h4>
-                      <p className="text-[13px] leading-[1.5] text-[#6B6B73]">{item.desc}</p>
+                      <p className="card-desc text-[#6B6B73]">{item.desc}</p>
                       <div className="mt-3.5 font-mono text-[10px] tracking-[0.12em] text-[#9A9AA0]">
                         {item.meta}
                       </div>

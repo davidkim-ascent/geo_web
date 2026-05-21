@@ -736,7 +736,7 @@ function GeoLabSection() {
   ];
 
   return (
-    <section id="lab" className="bg-[#FAFAF7] pt-12 pb-24">
+    <section id="lab" className="bg-[#FAFAF7] pt-12 pb-10">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
         <SectionLabel title="GEO LAB" />
         <hr className="my-4 border-black/[0.07]" />
@@ -747,7 +747,7 @@ function GeoLabSection() {
               className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
               style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
             >
-              AI 検索時代の <span className="text-blue-gradient">リサーチハブ</span>。
+              AI検索時代の<span className="text-blue-gradient">リサーチハブ</span>。
             </h2>
           </div>
           <div className="flex items-end">
@@ -798,7 +798,7 @@ function GeoLabSection() {
                     <div>
                       <h4 className="text-[17px] font-bold text-[#FAFAF7] leading-snug mb-2">{article.title}</h4>
                       {article.desc && (
-                        <p className="text-[13px] leading-[1.55] text-[#9A9AA0]">{article.desc}</p>
+                        <p className="card-desc text-[#9A9AA0]">{article.desc}</p>
                       )}
                     </div>
                     <div className="flex items-center gap-3 mono text-[11px] text-[#d3d3d8] mt-3">
@@ -818,6 +818,63 @@ function GeoLabSection() {
               );
             })}
           </div>
+        </div>
+
+        {/* 하단 3카드 그리드 */}
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+          {[
+            {
+              tag: "INDUSTRY REPORT",
+              title: "業界別AIトラフィックレポート 2026 Q1 — Adobeレポート",
+              desc: "1兆件超の訪問データが示す変化。リテール+393%、旅行+233%など業界別AI訪問増加率と、コンバージョン・エンゲージメントへの影響をグラフで報告。",
+              date: "05.19",
+              readTime: "8 MIN",
+              thumbVariant: "adobe-ai-traffic" as const,
+              href: "/lab/adobe-ai-traffic",
+            },
+            {
+              tag: "TECHNICAL GEO",
+              title: "AIエージェントはウェブサイトをどう見るのか — 3つの方法とセマンティックHTMLの重要性",
+              desc: "画面画像・構造読み取り・組み合わせの3方式を解説。セマンティックHTML・ラベル設計・SSRの実装ポイントまで、AI対応サイト設計の基本を整理します。",
+              date: "05.19",
+              readTime: "7 MIN",
+              thumbVariant: "ai-agent-site" as const,
+              href: "/lab/ai-agent-site",
+            },
+            {
+              tag: "AGENTIC COMMERCE",
+              title: "AIショッピングの登場とエージェンティックコマース",
+              desc: "AIが購買を代行する時代の全体像。自動化6段階・OpenAI/Google/Shopifyのプロトコル競争・エコシステム14領域まで体系的に解説。",
+              date: "05.21",
+              readTime: "10 MIN",
+              thumbVariant: "ai-shopping-agent" as const,
+              href: "/lab/ai-shopping-agent",
+            },
+          ].map((a) => (
+            <Link key={a.href} href={a.href} className="block group">
+              <article className="flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border border-[#E6E4DD] bg-[#FAFAF7] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1452FF] hover:shadow-[0_12px_32px_-16px_rgba(20,82,255,0.2)]">
+                <ArticleThumbnail variant={a.thumbVariant} eyebrow={a.tag} className="h-[140px] w-full" />
+                <div className="flex flex-1 flex-col p-5">
+                  <div className="mb-2 flex items-center justify-between font-mono text-[10px] tracking-[0.12em] text-[#6B6B73]">
+                    <span className="text-[#1452FF]">{a.tag}</span>
+                    <span>2026.{a.date}</span>
+                  </div>
+                  <h3 className="mb-2 flex-none text-[17px] font-bold leading-[1.3] tracking-[-0.01em] text-[#0B0B0E]">{a.title}</h3>
+                  <p className="card-desc mb-4 flex-1 text-[#6B6B73]">{a.desc}</p>
+                  <div className="flex items-center justify-between border-t border-[#E6E4DD] pt-3 font-mono text-[10px] tracking-[0.1em] text-[#9A9AA0]">
+                    <span>{a.readTime}</span>
+                    <span className="text-[#1452FF] transition-colors group-hover:underline">READ →</span>
+                  </div>
+                </div>
+              </article>
+            </Link>
+          ))}
+        </div>
+
+        <div className="mt-4 text-center">
+          <Link href="/lab" className="font-mono text-[11px] tracking-[0.18em] text-[#1452FF] hover:underline uppercase">
+            GEO LAB をすべて見る →
+          </Link>
         </div>
 
       </div>

@@ -126,6 +126,11 @@ h4 {
   border-color: rgba(255,255,255,0.15) !important;
 }
 
+.card-desc {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
 /* ===== LINK ARROW ===== */
 .link-arrow {
   display: inline-flex;
@@ -1147,7 +1152,7 @@ body.tweak-norotate .fw-ring g.node text {
 
 .article-table__head {
   display: grid;
-  grid-template-columns: 0.82fr 1.09fr 1.09fr;
+  grid-template-columns: var(--table-cols, 0.82fr 1.09fr 1.09fr);
   gap: 16px;
   border-bottom: 1px solid #DAD7CE;
   padding: 16px 20px;
@@ -1163,7 +1168,7 @@ body.tweak-norotate .fw-ring g.node text {
 
 .article-table__row {
   display: grid;
-  grid-template-columns: 0.82fr 1.09fr 1.09fr;
+  grid-template-columns: var(--table-cols, 0.82fr 1.09fr 1.09fr);
   gap: 16px;
   padding: 18px 20px;
   border-bottom: 1px solid #E6E4DD;

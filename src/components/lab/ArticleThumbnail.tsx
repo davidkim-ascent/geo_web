@@ -4,9 +4,10 @@ import Image from "next/image";
 import seoGeoImage from "@/app/lab/seo-geo/seo-geo.png";
 import geoLlmoCompanyImage from "@/app/lab/geo-llmo-company/company-comparison.png";
 import aiAgentSiteImage from "@/app/lab/ai-agent-site/ai-agent-site.png";
+import aiShoppingImage from "@/app/lab/ai-shopping-agent/ai-shopping.png";
 import { TypingPromptCard } from "@/app/lab/brand-cep/TypingPromptCard";
 
-type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "abstract";
+type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "ai-shopping-agent" | "abstract";
 
 type ArticleThumbnailProps = {
   variant: ArticleThumbnailVariant;
@@ -18,6 +19,7 @@ const IMAGE_BY_VARIANT: Record<Exclude<ArticleThumbnailVariant, "abstract" | "ad
   "seo-geo": seoGeoImage,
   "geo-llmo-company": geoLlmoCompanyImage,
   "ai-agent-site": aiAgentSiteImage,
+  "ai-shopping-agent": aiShoppingImage,
 };
 
 const labelByVariant: Record<ArticleThumbnailVariant, string> = {
@@ -26,6 +28,7 @@ const labelByVariant: Record<ArticleThumbnailVariant, string> = {
   "geo-llmo-company": "GEO / LLMO",
   "adobe-ai-traffic": "INDUSTRY REPORT",
   "ai-agent-site": "TECHNICAL GEO",
+  "ai-shopping-agent": "AGENTIC COMMERCE",
   abstract: "RESEARCH NOTE",
 };
 

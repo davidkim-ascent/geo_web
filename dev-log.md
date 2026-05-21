@@ -1,3 +1,29 @@
+## 2026-05-21
+- Q2 → Q1 수정: Adobe AIトラフィックレポート 제목 전체 (adobe-ai-traffic/page.tsx, LabArticles.tsx, RelatedResearchSection.tsx, page.tsx) Q2를 Q1로 일괄 수정
+- /lab/page.tsx featuredSide 카드 타이틀 폰트사이즈 18px → 20px 변경
+
+## 2026-05-21 (버그 재발 기록)
+- article-list__item 내 `<strong>` 직접 자식 배치 버그 재발 — 텍스트가 한 글자씩 세로 나열됨
+
+**원인**
+- `article-list__item`이 `display: grid; grid-template-columns: 22px 1fr`인 그리드 컨테이너. `<strong>` 태그가 직접 자식으로 있으면 grid item 2(1fr)를 차지하고, 뒤따르는 텍스트 노드가 grid item 3(암묵 컬럼·22px 폭)에 밀려 1문자씩 세로 나열됨.
+
+**영향 범위**
+1. `/lab/ai-shopping-agent` s8 まとめ 섹션의 3개 리스트 항목
+2. `article-list__item` 구조를 사용하는 모든 아티클 페이지 (동일 패턴 존재 시)
+3. 좁은 폭(22px) 컬럼에서 일본어 텍스트가 강제 줄바꿈되어 레이아웃 붕괴
+
+**재발 방지 테스트**
+- `<strong>ラベル：</strong>続きテキスト` 패턴 작성 후 렌더링 확인 → 세로 나열이면 버그 발생
+- 올바른 패턴: `<span><strong>ラベル：</strong>続きテキスト</span>` 으로 반드시 단일 span 래핑
+
+## 2026-05-21
+- 新アーティクル追加: `/lab/ai-shopping-agent`（AIショッピングの登場とエージェンティックコマース）
+  - `src/app/lab/ai-shopping-agent/page.tsx` + `ArticleTOC.tsx` 作成（8セクション構成）
+  - `ArticleThumbnail.tsx` に `ai-shopping-agent` バリアント追加
+  - `LabArticles.tsx` POSTS 配列に追記
+  - `RelatedResearchSection.tsx` に記事追加・型拡張
+
 ## 2026-05-20 10:50
 - 문의 API의 발신자/관리자 메일 기본값을 `geo@ascentnet.co.jp`로 통일하고, 관련 회귀 테스트를 추가함
 

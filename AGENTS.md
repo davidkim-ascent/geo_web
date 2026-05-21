@@ -97,5 +97,42 @@ origin/main과 로컬 변경사항을 전체 비교한 뒤, 누락 없이 검토
 - `LabArticles.tsx`의 `POSTS` 배열에 추가 (index 3 이후)
 - Featured 섹션에 올릴 경우 `page.tsx`의 `featuredSide` 배열 수정
 
+# アーティクルページ作成ガイドライン
+
+## テーブルのカラム幅
+- `article-table` は CSS変数 `--table-cols` で列幅を制御する
+- デフォルト（3列）: `0.82fr 1.09fr 1.09fr`
+- **2列テーブルの場合は必ず** `.article-table` に `style={{ "--table-cols": "auto 1fr" } as React.CSSProperties}` を設定すること
+- 3列以外のカラム構成も同様に `--table-cols` で指定する（例: `"60px 1fr 1fr"` など）
+
+## 日本語テキストのセル内改行問題
+- `・`（中点）区切りの長い日本語テキストをテーブルセルやリストに入れると、`・` の位置で不自然な改行が起きる
+- **対処法**: 項目をセル内に `・` 区切りではなく、`、`（読点）区切りで列挙する。または各項目を別行・別セルに分ける
+- `<strong>カテゴリー名：</strong>属性1・属性2...` の形式は使用しない。代わりにテーブルで「カテゴリー | 属性リスト」として分離する
+- `<strong>` タグは `whitespace-nowrap` を付けてラベルが途中で折れないようにすること
+
+## article-list__item 内の `<strong>` 禁止パターン（再発バグ）
+
+**原因**: `article-list__item` は `display: grid; grid-template-columns: 22px 1fr` のグリッドコンテナ。直接の子要素がすべてgrid itemになるため、`<strong>`が列2（1fr）を占有し、**後続テキストノードが列3（暗黙列・22px幅）に押し出されて1文字ずつ縦に並ぶ**。
+
+**禁止パターン（バグが発生する）**:
+```tsx
+<li className="article-list__item">
+  <span className="article-list__bullet">•</span>
+  <strong>ラベル：</strong>続きのテキスト  {/* ← <strong>とテキストが別々のgrid itemになる */}
+</li>
+```
+
+**正しいパターン（必ずこの形式にする）**:
+```tsx
+<li className="article-list__item">
+  <span className="article-list__bullet">•</span>
+  <span><strong>ラベル：</strong>続きのテキスト</span>  {/* ← <span>で包んで単一grid itemにする */}
+</li>
+```
+
+- `<strong>`・`<em>`・`<a>`など**インライン要素を直接 article-list__item の子として書いてはいけない**
+- bullet の次に来る内容は必ず単一の要素（テキストノード or `<span>` ラッパー）にまとめること
+
 # test-driven-development
 Red-Green-Refactor 사이클 준수. 실패하는 테스트를 먼저 작성하고, 이를 통과하는 최소한의 코드를 짠 뒤 구조 개선.

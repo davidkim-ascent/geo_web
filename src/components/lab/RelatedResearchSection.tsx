@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArticleThumbnail } from "@/components/lab/ArticleThumbnail";
 
 type RelatedResearchSectionProps = {
-  currentSlug: "brand-cep" | "seo-geo" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site";
+  currentSlug: "brand-cep" | "seo-geo" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "ai-shopping-agent";
 };
 
 const POSTS = [
@@ -43,7 +43,7 @@ const POSTS = [
     cat: "INDUSTRY REPORT",
     date: "2026.05.19",
     read: "8 MIN",
-    title: "業界別AIトラフィックレポート 2026 Q2 — Adobeレポート",
+    title: "業界別AIトラフィックレポート 2026 Q1 — Adobeレポート",
     desc: "1兆件超の訪問データが示す変化。リテール+393%、旅行+233%など業界別AI訪問増加率と、コンバージョン・エンゲージメントへの影響をグラフで報告。",
     thumbVariant: "adobe-ai-traffic" as const,
     href: "/lab/adobe-ai-traffic",
@@ -57,6 +57,16 @@ const POSTS = [
     desc: "画面画像・構造読み取り・組み合わせの3方式を解説。セマンティックHTML・ラベル設計・SSRの実装ポイントまで、AI対応サイト設計の基本を整理します。",
     thumbVariant: "ai-agent-site" as const,
     href: "/lab/ai-agent-site",
+  },
+  {
+    slug: "ai-shopping-agent",
+    cat: "AGENTIC COMMERCE",
+    date: "2026.05.21",
+    read: "10 MIN",
+    title: "AIショッピングの登場とエージェンティックコマース",
+    desc: "AIが購買を代行する時代の全体像。自動化6段階・OpenAI/Google/Shopifyのプロトコル競争・エコシステム14領域まで体系的に解説。",
+    thumbVariant: "ai-shopping-agent" as const,
+    href: "/lab/ai-shopping-agent",
   },
 ] as const;
 

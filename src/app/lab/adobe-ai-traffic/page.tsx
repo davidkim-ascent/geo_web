@@ -13,9 +13,9 @@ import {
   TechPurchaseCategoryChart,
 } from "./AdobeCharts";
 
-const PAGE_TITLE = "業界別AIトラフィックレポート 2026 Q2 — Adobeレポート";
+const PAGE_TITLE = "業界別AIトラフィックレポート 2026 Q1 — Adobeレポート";
 const PAGE_DESCRIPTION =
-  "Adobeが1兆件超の訪問データを分析した2026 Q2 AIトラフィックレポートの要点まとめ。リテール+393%、旅行+233%など業界別AI訪問増加率と、コンバージョン・エンゲージメントへの影響をグラフで報告。";
+  "Adobeが1兆件超の訪問データを分析した2026 Q1 AIトラフィックレポートの要点まとめ。リテール+393%、旅行+233%など業界別AI訪問増加率と、コンバージョン・エンゲージメントへの影響をグラフで報告。";
 
 export const metadata: Metadata = buildPageMetadata({
   title: `${PAGE_TITLE} - Ascent GEO`,
@@ -66,7 +66,7 @@ export default function AdobeAiTrafficPage() {
 
               <h1 className="article-hero__title mb-7">
                 <span className="block">業界別AIトラフィックレポート</span>
-                <span className="block text-[#1452FF]">2026 Q2 — Adobeレポート</span>
+                <span className="block text-[#1452FF]">2026 Q1 — Adobeレポート</span>
               </h1>
 
               <p className="article-hero__lede">
@@ -109,7 +109,7 @@ export default function AdobeAiTrafficPage() {
                     AIを経由して訪れたユーザーは、サイトにより長く滞在し、より購入につながりやすくなっている。
                     これはすべての業界で確認された傾向だ。
                   </p>
-                  <span className="article-quote__note">Adobe Digital Insights 2026 Q2</span>
+                  <span className="article-quote__note">Adobe Digital Insights 2026 Q1</span>
                 </blockquote>
                 <p className="article-prose">
                   このレポートはAdobe Digital Insightsが作成しました。米国のショッピングサイトへの訪問記録1兆件以上と、商品情報1億件以上を分析し、2026年3月には米国の消費者5,000人以上を対象にAIの利用について調査しています。
@@ -411,7 +411,7 @@ export default function AdobeAiTrafficPage() {
                     <div className="article-note-panel__section">
                       <div className="article-note-panel__label">原典・データソース</div>
                       <p className="article-note-panel__text">
-                        本記事はAdobe Digital Insightsが作成した「2026 Q2 AI Traffic Report」の要点をまとめたものです。原文は{" "}
+                        本記事はAdobe Digital Insightsが作成した「2026 Q1 AI Traffic Report」の要点をまとめたものです。原文は{" "}
                         <a
                           href="https://business.adobe.com/resources/sdk/2026-q2-ai-traffic-report.html"
                           target="_blank"
