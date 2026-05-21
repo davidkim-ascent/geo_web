@@ -425,8 +425,8 @@ function WhyAscentSection() {
               className="text-[#0B0B0E] font-bold leading-[1.08] tracking-[-0.025em]"
               style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
             >
-              なぜ Ascent の<br />
-              GEO は<span className="text-blue-gradient">違う</span>のか。
+              なぜAscentの<br />
+              GEOは<span className="text-blue-gradient">違う</span>のか。
             </h2>
           </div>
           <div className="flex items-end">

@@ -64,7 +64,7 @@ export default function FrameworkSection() {
               className="text-[#FAFAF7] font-bold leading-[1.08] tracking-[-0.025em]"
               style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
             >
-              5 ステップで回す、<br />
+              5ステップで回す、<br />
               <span className="text-blue-gradient">循環型</span> GEO 設計。
             </h2>
 
