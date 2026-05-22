@@ -7,7 +7,7 @@ import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "ダウンロード完了 — Ascent GEO",
-  description: "AI 検索時代の、企業マーケティング白書 2026 のダウンロードを開始しました。",
+  description: "Ascent GEO サービス紹介資料のダウンロードを開始しました。",
   path: "/whitepaper/downloaded",
   noIndex: true,
 });
@@ -99,10 +99,10 @@ export default async function WhitepaperDownloadedPage() {
               [ CALL US DIRECTLY ]
             </div>
             <h3 className="mb-2 text-[24px] font-bold tracking-[-0.015em] text-[#FAFAF7]">
-              本書の内容について、直接質問する。
+              資料の内容について、直接質問する。
             </h3>
             <p className="max-w-[48ch] text-[14px] leading-[1.6] text-white/60">
-              本書を踏まえた個別のご相談は、お電話または 30 分の無料相談でも承っています。
+              資料を踏まえた個別のご相談は、お電話または 30 分の無料相談でも承っています。
             </p>
           </div>
           <div>

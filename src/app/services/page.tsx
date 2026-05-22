@@ -351,29 +351,46 @@ const services = [
 
 const packages = [
   {
-    ix: "PKG 01",
-    name: "GEO診断（4 AI Engine）",
-    desc: "まず現在地を把握したい。",
+    tag: "単一サイト",
+    name: "スタンダードプラン",
+    desc: "単一の製品カテゴリーに集中し、AIエンジンでの認知を築きます。",
     items: [
-      "GEO診断（4 AI Engine）",
-      "競合 3 社比較",
-      "レポート + 解説 1 回",
+      "AI現状分析（Brand Visibility, Positioning, SOV）",
+      "Question Cluster 〜50設問生成 + GAP分析",
+      "GEO最適化＋新規GEO対策コンテンツ作成",
+      "主要4種AI回答エンジン完全対応（ChatGPT, Gemini, Copilot, Perplexity など）",
     ],
-    price: "期間 2 週間 / お問い合わせ",
     featured: false,
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="6" y="4" width="20" height="24" rx="2" stroke="#1452FF" strokeWidth="1.5" fill="none"/>
+        <rect x="10" y="8" width="4" height="4" rx="0.5" fill="#1452FF" fillOpacity="0.5"/>
+        <rect x="18" y="8" width="4" height="4" rx="0.5" fill="#1452FF" fillOpacity="0.5"/>
+        <rect x="10" y="15" width="4" height="4" rx="0.5" fill="#1452FF" fillOpacity="0.5"/>
+        <rect x="18" y="15" width="4" height="4" rx="0.5" fill="#1452FF" fillOpacity="0.5"/>
+        <rect x="13" y="22" width="6" height="6" rx="0.5" fill="#1452FF"/>
+      </svg>
+    ),
   },
   {
-    ix: "PKG 02",
-    name: "FULL SUPPORT",
-    desc: "運用まで一気通貫で。",
+    tag: "複数ブランド・カテゴリー対応",
+    name: "マルチブランドプラン",
+    desc: "多角的な製品展開と複雑な顧客動線を網羅し、ブランド全体のシナジーを創出します。",
     items: [
-      "4 サービスフルパッケージ",
-      "月次 Monitoring 運用",
-      "四半期戦略レビュー",
-      "月次レポート共有",
+      "AI現状分析（Brand Visibility, Positioning, SOV）",
+      "Question Cluster 〜100設問生成",
+      "GAP分析（複数カテゴリーの網羅的分析）",
+      "GEO最適化＋新規GEO対策コンテンツ作成",
+      "主要4種AI回答エンジン完全対応（ChatGPT, Gemini, Copilot, Perplexity など）",
     ],
-    price: "年次契約 / お問い合わせ",
     featured: true,
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 5L28 11L16 17L4 11L16 5Z" stroke="#1452FF" strokeWidth="1.5" strokeLinejoin="round" fill="none"/>
+        <path d="M4 17L16 23L28 17" stroke="#1452FF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M4 23L16 29L28 23" stroke="#1452FF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" strokeOpacity="0.5"/>
+      </svg>
+    ),
   },
 ];
 
@@ -510,46 +527,59 @@ export default function ServicesPage() {
       <section className="bg-[#0B0B0E] py-[100px]">
         <div className="mx-auto max-w-[var(--ui-content-width)] px-10">
           <div className="mb-6 font-mono text-[12px] tracking-[0.18em] text-[#9A9AA0]">
-            [ PACKAGES ]
+            [ PLANS ]
           </div>
           <h2
             className="mb-4 max-w-[24ch] text-[#FAFAF7] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
             style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
           >
-            単発でも、<em className="text-[#1452FF] not-italic">継続</em>でも対応可能
+            サービスプランと<em className="text-[#1452FF] not-italic">対応範囲</em>
           </h2>
-          <p className="mb-10 max-w-[56ch] text-[18px] leading-[1.6] text-[#9A9AA0]">
-            事業規模・フェーズに合わせてプランをお選びいただけます。
+          <p className="mb-10 max-w-[64ch] text-[17px] leading-[1.7] text-[#9A9AA0]">
+            単一の製品カテゴリーに集中するStandard Planと複数ブランド、カテゴリーに対応するMulti – Brand Planの2つがございます。自社のBrand数や状況に合わせてお見積もりいたします。
           </p>
           <div className="grid gap-5 sm:grid-cols-2">
-            {packages.map((pkg) => (
+            {packages.map((pkg, idx) => (
               <div
-                key={pkg.ix}
-                className={`rounded-xl p-7 ${pkg.featured ? "border border-[#1452FF] bg-[rgba(20,82,255,0.06)]" : "border border-white/[0.12] bg-white/[0.02]"}`}
+                key={idx}
+                className="rounded-xl p-7 relative overflow-hidden"
+                style={
+                  pkg.featured
+                    ? { background: "radial-gradient(#0b2260, #0a0a12 70%)", border: "1px solid rgba(20,82,255,0.45)" }
+                    : { background: "linear-gradient(180deg, #0a0208 0%, #120514 40%, #180a1e 70%, #1a0b1a 100%)", border: "1px solid rgba(205,46,58,0.45)" }
+                }
               >
-                <div className="mb-2 font-mono text-[11px] tracking-[0.18em] text-[#1452FF]">
-                  {pkg.ix}
+                {pkg.featured
+                  ? <div className="absolute top-0 right-0 w-[160px] h-[160px] rounded-full blur-[60px] pointer-events-none" style={{ background: "radial-gradient(circle, #0070f330, transparent 65%)" }} />
+                  : <div className="absolute top-0 right-0 w-[200px] h-[200px] rounded-full blur-[80px] pointer-events-none" style={{ background: "radial-gradient(circle, #cd2e3a 0%, #cd2e3a20 38%, transparent 65%)" }} />
+                }
+                <div className="mb-4 flex items-start gap-4">
+                  <div className="shrink-0 rounded-lg border border-white/[0.1] bg-white/[0.04] p-2">
+                    {pkg.icon}
+                  </div>
+                  <div>
+                    <h4 className="text-[24px] font-bold tracking-[-0.02em] text-[#FAFAF7]">
+                      {pkg.name}
+                    </h4>
+                    <div className="mt-0.5 font-mono text-[11px] tracking-[0.12em] text-[#9A9AA0]">
+                      {pkg.tag}
+                    </div>
+                  </div>
                 </div>
-                <h4 className="mb-2 text-[24px] font-bold tracking-[-0.02em] text-[#FAFAF7]">
-                  {pkg.name}
-                </h4>
-                <p className="mb-4 min-h-[44px] text-[14px] leading-[1.5] text-white/70">
+                <p className="mb-5 text-[14px] leading-[1.6] text-white/60">
                   {pkg.desc}
                 </p>
                 <ul className="mb-6 grid gap-2.5 list-none p-0">
                   {pkg.items.map((item, i) => (
                     <li
                       key={i}
-                      className="relative pl-5 text-[14px] leading-[1.4] text-white/85"
+                      className="relative pl-5 text-[14px] leading-[1.5] text-white/85"
                     >
-                      <span className="absolute left-0 text-[#1452FF]">✓</span>
+                      <span className="absolute left-0 top-[1px] text-[#1452FF]">✓</span>
                       {item}
                     </li>
                   ))}
                 </ul>
-                <div className="border-t border-white/[0.08] pt-4 font-mono text-[11px] text-[#9A9AA0]">
-                  {pkg.price}
-                </div>
               </div>
             ))}
           </div>

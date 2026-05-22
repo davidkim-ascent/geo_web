@@ -1,3 +1,6 @@
+## 2026-05-22 19:10
+- `/services` Packagesセクションをサービス紹介資料PDF 18ページ内容に全面刷新：Standard Plan / Multi-Brand Plan の2プラン構成に変更、各プランの説明・機能リスト・アイコン・CTAボタンを更新
+
 ## 2026-05-22 18:01
 - `public/robots.txt`와 `public/llms.txt`를 정적 파일로 추가하고, 사이트 도메인을 `geo.ascentnet.co.jp`로 맞춤
 

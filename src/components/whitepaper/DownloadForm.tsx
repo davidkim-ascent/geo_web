@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation'
 import { useForm, useWatch } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { createClient } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/button'
 import { getBlockedEmailDomainError } from '@/lib/contact-blocking'
 import { WEBSITE_UNAVAILABLE_COPY, isValidWebsiteValue } from '@/lib/website-validation'
@@ -84,22 +83,35 @@ export function DownloadForm({ blockedEmailDomains }: Props) {
 
   async function onSubmit(values: FormValues) {
     setServerError(null)
-    const supabase = createClient()
-    const { error } = await supabase.from('whitepaper_downloads').insert({
-      company:    values.company,
-      role:       values.role,
-      name:       values.name,
-      phone:      values.phone,
-      email:      values.email,
-      industry:   values.industry,
-      website:    values.website,
-      challenge:  values.challenge,
+    const response = await fetch('/api/whitepaper', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        company: values.company,
+        role: values.role,
+        name: values.name,
+        phone: values.phone,
+        email: values.email,
+        industry: values.industry,
+        website: values.website,
+        challenge: values.challenge,
+      }),
     })
 
-    if (error) {
+    if (!response.ok) {
+      const payload = (await response.json().catch(() => null)) as { error?: string } | null
+
+      if (payload?.error === 'blocked_domain') {
+        setError('email', { type: 'validate', message: '許可されていないメールドメインです。' })
+        return
+      }
+
       setServerError('送信中にエラーが発生しました。しばらくしてから再度お試しください。')
       return
     }
+
     setCompletionAccessCookie(WHITEPAPER_DOWNLOADED_COOKIE)
     router.push('/whitepaper/downloaded')
   }
@@ -199,7 +211,7 @@ export function DownloadForm({ blockedEmailDomains }: Props) {
       {serverError && <p className="field-error" style={{ marginBottom: 8 }}>{serverError}</p>}
 
       <Button type="submit" variant="submit" disabled={isSubmitting}>
-        <span>{isSubmitting ? '送信中...' : '↓ ダウンロード（48 ページ · 12.4 MB）'}</span>
+        <span>{isSubmitting ? '送信中...' : '↓ GEOサービス紹介資料をダウンロード'}</span>
       </Button>
     </form>
   )

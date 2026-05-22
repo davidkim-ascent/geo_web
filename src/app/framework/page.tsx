@@ -66,24 +66,6 @@ const frameworkSteps = [
   },
 ] as const;
 
-const faqItems = [
-  {
-    q: "GEO と SEO は何が違いますか？",
-    a: "SEO は順位の最適化、GEO は AI に引用される情報構造の最適化です。質問の意味、Passage の切り方、回答の根拠設計が中心になります。",
-  },
-  {
-    q: "どれくらいの期間で変化が見えますか？",
-    a: "既存資産の状態にもよりますが、まずは 4〜6 週で引用の兆候が見え始めるケースがあります。改善の蓄積で 3 か月単位の差が出やすくなります。",
-  },
-  {
-    q: "既存の SEO 施策と併用できますか？",
-    a: "はい。むしろ既存コンテンツを GEO 仕様へ再構成することで、コストを抑えつつ AI 検索に対応しやすくなります。",
-  },
-  {
-    q: "質問データはどこから作りますか？",
-    a: "CDJ、検索ログ、AI 経由のクエリ、既存の問い合わせ傾向などを組み合わせます。推測だけではなく、実データから質問群を組み立てます。",
-  },
-] as const;
 
 function SectionLabel({ title, dark = false }: { title: string; dark?: boolean }) {
   return (
@@ -424,33 +406,6 @@ function FrameworkSteps() {
   );
 }
 
-function FrameworkFAQ() {
-  return (
-    <section className="bg-[#FAFAF7] py-10">
-      <div className="mx-auto max-w-[var(--ui-content-width)] px-4 sm:px-6 lg:px-10">
-        <SectionLabel title="Frequently Asked" />
-        <h2 className="mt-4 font-bold tracking-[-0.03em] text-[#0B0B0E] text-[clamp(32px,3.2vw,48px)]">
-          よくある質問。
-        </h2>
-
-        <div className="mt-10 divide-y divide-black/10 border-t border-black/10">
-          {faqItems.map((item, index) => (
-            <details key={item.q} className="group py-5">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-6 text-left">
-                <div className="max-w-[56ch]">
-                  <div className="text-[11px] tracking-[0.24em] text-[#1452FF]">Q.0{index + 1}</div>
-                  <h3 className="mt-2 text-[20px] font-semibold leading-[1.4] text-[#0B0B0E]">{item.q}</h3>
-                </div>
-                <span className="mt-1 text-[22px] leading-none text-[#1452FF] transition-transform group-open:rotate-45">+</span>
-              </summary>
-              <p className="mt-4 max-w-[68ch] pl-0 text-[16px] leading-[1.75] text-[#4e4e51]">{item.a}</p>
-            </details>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export default function FrameworkPage() {
   return (
@@ -458,7 +413,6 @@ export default function FrameworkPage() {
       <FrameworkHero />
       <FrameworkOverview />
       <FrameworkSteps />
-      <FrameworkFAQ />
       <SeoGeoCTASection />
     </div>
   );

@@ -81,8 +81,11 @@ export function TypingPromptCard() {
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (reducedMotion.matches) {
-      setLines(LINES.map((line) => line.text));
-      return;
+      const timeoutId = window.setTimeout(() => {
+        setLines(LINES.map((line) => line.text));
+      }, 0);
+
+      return () => window.clearTimeout(timeoutId);
     }
 
     const observer = new IntersectionObserver(

@@ -236,7 +236,7 @@ export default function AiAgentSitePage() {
                 <pre className="article-code"><code>{`<label for="email">メールアドレス</label>
 <input type="email" id="email" name="email" autocomplete="email">`}</code></pre>
                 <p className="article-prose">
-                  <code className="rounded bg-[#F2F0EA] px-1.5 py-0.5 font-mono text-[13px]">autocomplete="email"</code>も重要です。この属性は、ブラウザとAIに「ここにはメールアドレスを入れればよい」と教えてくれます。
+                  <code className="rounded bg-[#F2F0EA] px-1.5 py-0.5 font-mono text-[13px]">autocomplete=&quot;email&quot;</code>も重要です。この属性は、ブラウザとAIに「ここにはメールアドレスを入れればよい」と教えてくれます。
                 </p>
 
                 <h3 className="article-h3">悪い例</h3>
