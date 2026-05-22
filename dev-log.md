@@ -1,3 +1,6 @@
+## 2026-05-22 17:57
+- `public/sitemap.xml`을 정적 파일로 추가하고, `privacy`/`thanks` 및 noindex 페이지를 제외한 절대 URL 목록으로 정리함
+
 ## 2026-05-22 17:51
 - 문의/화이트페이퍼 메일 발신자를 `no-reply@ascentnet.co.jp`로, 어드민 수신자를 `geo@ascentnet.co.jp`로 정리하고 회귀 테스트를 맞춤
 
