@@ -1,0 +1,28 @@
+# Ascent GEO
+
+> Ascent GEO is the GEO/LLMO site for Ascent Networks. It explains how the brand is discovered and cited in AI search, with service pages, framework guidance, and research articles.
+
+Use the core pages for product and service context, the lab articles for research, and the sitemap for a complete index of public pages.
+
+## Core Pages
+
+- [Home](https://geo.ascentnet.co.jp/)
+- [Services](https://geo.ascentnet.co.jp/services)
+- [Framework](https://geo.ascentnet.co.jp/framework)
+- [Why Ascent](https://geo.ascentnet.co.jp/why-ascent)
+- [GEO Lab](https://geo.ascentnet.co.jp/lab)
+- [Contact](https://geo.ascentnet.co.jp/contact)
+- [Whitepaper](https://geo.ascentnet.co.jp/whitepaper)
+
+## Lab Articles
+
+- [AI search agency company comparison](https://geo.ascentnet.co.jp/lab/geo-llmo-company)
+- [SEO vs GEO](https://geo.ascentnet.co.jp/lab/seo-geo)
+- [Brand strategy and CEP](https://geo.ascentnet.co.jp/lab/brand-cep)
+- [AI agent site design](https://geo.ascentnet.co.jp/lab/ai-agent-site)
+- [Adobe AI traffic report](https://geo.ascentnet.co.jp/lab/adobe-ai-traffic)
+- [AI shopping agent](https://geo.ascentnet.co.jp/lab/ai-shopping-agent)
+
+## Reference
+
+- [Sitemap](https://geo.ascentnet.co.jp/sitemap.xml)

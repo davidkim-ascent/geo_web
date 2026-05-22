@@ -1,3 +1,6 @@
+## 2026-05-22 18:01
+- `public/robots.txt`와 `public/llms.txt`를 정적 파일로 추가하고, 사이트 도메인을 `geo.ascentnet.co.jp`로 맞춤
+
 ## 2026-05-22 17:57
 - `public/sitemap.xml`을 정적 파일로 추가하고, `privacy`/`thanks` 및 noindex 페이지를 제외한 절대 URL 목록으로 정리함
 
