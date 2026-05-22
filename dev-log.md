@@ -1,3 +1,36 @@
+## 2026-05-22 17:51
+- 문의/화이트페이퍼 메일 발신자를 `no-reply@ascentnet.co.jp`로, 어드민 수신자를 `geo@ascentnet.co.jp`로 정리하고 회귀 테스트를 맞춤
+
+## 2026-05-22 17:49
+- /whitepaper의 잘못된 토큰 접근을 /whitepaper/denied로 분리하고, DeniedAccess 전용 안내 페이지를 연결
+
+## 2026-05-22 17:44
+- /whitepaper의 잘못된 접근 흐름을 e2e 재확인: 직접 접근 및 bad token 모두 /whitepaper/downloaded로 유지되는지 검증
+
+## 2026-05-22 17:42
+- /whitepaper 폼 제출, Resend 메일 수신, 토큰 링크 클릭, private Supabase bucket signed URL PDF 응답까지 end-to-end 검증 완료
+
+## 2026-05-22 17:32
+- /whitepaper 다운로드를 private bucket + 메일 토큰 + Supabase service role 기반 signed URL 경유 방식으로 정리하고, 접근 실패 시 잘못된 접근 페이지로 보내도록 수정
+
+## 2026-05-22 17:24
+- /whitepaper 다운로드를 private Supabase bucket + 메일 토큰 검증 + 잘못된 접근 페이지 리다이렉트 방식으로 전환
+
+## 2026-05-22 17:17
+- /whitepaper 다운로드 링크를 Supabase Storage 공개 URL 기반으로 전환하고, Storage 버킷/정책 마이그레이션을 추가
+
+## 2026-05-22 17:08
+- /whitepaper 폼 제출 후 메일 링크가 실제 GEO 서비스 소개 자료 PDF 다운로드를 트리거하도록 API/첨부 응답을 연결
+
+## 2026-05-22 17:03
+- /whitepaper ヒーロータイトルの強調表示を हटして、通常テキストに調整
+
+## 2026-05-22 16:59
+- /whitepaper を GEO サービス紹介資料 PDF ベースに再構成し、デザインを維持したまま文言を全面更新
+
+## 2026-05-22 16:28
+- 비-DNS 정리: ESLint가 `.claude` worktree까지 스캔하던 문제를 제외하고, `Header` 링크 정리 / `ai-agent-site` 코드 예시 따옴표 수정 / `brand-cep` reduced-motion effect 경고를 정리해 lint를 통과시킴
+
 ## 2026-05-21
 - Q2 → Q1 수정: Adobe AIトラフィックレポート 제목 전체 (adobe-ai-traffic/page.tsx, LabArticles.tsx, RelatedResearchSection.tsx, page.tsx) Q2를 Q1로 일괄 수정
 - /lab/page.tsx featuredSide 카드 타이틀 폰트사이즈 18px → 20px 변경
