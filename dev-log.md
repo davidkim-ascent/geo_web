@@ -1,3 +1,6 @@
+## 2026-05-24
+- 화이트페이퍼 PDF 교체: `docs/Ascent_GEO_Service.pdf`를 Supabase Storage(`whitepaper-assets/whitepaper.pdf`)에 업로드(upsert). `whitepaper-download.ts`의 소스 파일명도 업데이트.
+
 ## 2026-05-23
 - Google Analytics (G-H7YRT79KK0) 연동: `layout.tsx`에 `next/script` `afterInteractive` 전략으로 GA4 태그 추가
 
