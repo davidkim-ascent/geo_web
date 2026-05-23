@@ -8,6 +8,9 @@ import { defaultSiteMetadata, metadataBase } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase,
+  verification: {
+    google: "Wm0sd3vJQWjXYU5zF0dvdo9Hp8QpfJoa8vGMEOYqglA",
+  },
   title: defaultSiteMetadata.title,
   description: defaultSiteMetadata.description,
   openGraph: {
