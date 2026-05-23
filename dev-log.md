@@ -1,3 +1,6 @@
+## 2026-05-23
+- Google Analytics (G-H7YRT79KK0) 연동: `layout.tsx`에 `next/script` `afterInteractive` 전략으로 GA4 태그 추가
+
 ## 2026-05-22 19:10
 - `/services` Packagesセクションをサービス紹介資料PDF 18ページ内容に全面刷新：Standard Plan / Multi-Brand Plan の2プラン構成に変更、各プランの説明・機能リスト・アイコン・CTAボタンを更新
 
