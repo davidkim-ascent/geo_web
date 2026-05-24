@@ -1,3 +1,9 @@
+## 2026-05-24 10:30
+- 화이트페이퍼 어드민 알림 메일 구현: 다운로드 시 geo@ascentnet.co.jp로 폼 내용 포함 발송 (WhitepaperAdminEmail 신규 작성)
+- PDF 재업로드 로직 제거: 매 요청마다 로컬 파일 읽어 Storage 업로드하던 불필요한 처리 삭제
+- contact/whitepaper API 필수 필드 validation 추가: 빈 바디 요청 DB 도달 전 400 차단
+- 사용자/어드민 메일 수신 확인 완료
+
 ## 2026-05-24 09:30
 - 컨택폼 메일 발송 버그 수정: Vercel Production 환경변수 `RESEND_API_KEY`, `RESEND_FROM_EMAIL` 빈 값 → 재등록. `CONTACT_ADMIN_EMAIL`이 `geo.ascent@ascentnet.co.jp`로 잘못 설정돼 있어 `geo@ascentnet.co.jp`로 수정. 재배포 후 사용자/어드민 메일 수신 확인 완료.
 
