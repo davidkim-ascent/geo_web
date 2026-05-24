@@ -7,6 +7,7 @@ import {
   Hr,
   Button,
   Section,
+  Img,
 } from '@react-email/components'
 
 type Props = {
@@ -24,12 +25,12 @@ export function WhitepaperConfirmEmail({ company, name, downloadUrl }: Props) {
       <Body style={{ fontFamily: 'sans-serif', backgroundColor: '#f4f4f5', padding: '32px 0' }}>
         <Container style={{ backgroundColor: '#ffffff', borderRadius: 8, maxWidth: 560, overflow: 'hidden' }}>
           <Section style={{ backgroundColor: '#0B0B0E', padding: '28px 32px' }}>
-            <Text style={{ margin: 0, color: '#ffffff', fontWeight: 700, fontSize: 18, letterSpacing: '-0.02em' }}>
-              ASCENT/GEO
-            </Text>
-            <Text style={{ margin: '6px 0 0', color: '#a1a1aa', fontSize: 12 }}>
-              GEOサービス紹介資料
-            </Text>
+            <Img
+              src="https://geo.ascentnet.co.jp/ascent-geo-logo-white.png"
+              alt="ASCENT/GEO"
+              width="160"
+              style={{ display: 'block' }}
+            />
           </Section>
 
           <Section style={{ padding: '40px 32px 32px' }}>

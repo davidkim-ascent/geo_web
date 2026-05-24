@@ -7,6 +7,7 @@ import {
   Hr,
   Button,
   Section,
+  Img,
 } from '@react-email/components'
 import type { ContactFormData } from './ContactAdminEmail'
 
@@ -33,12 +34,12 @@ export function ContactConfirmEmail({ data }: Props) {
         <Container style={{ backgroundColor: '#ffffff', borderRadius: 8, maxWidth: 560, overflow: 'hidden' }}>
           {/* Header */}
           <Section style={{ backgroundColor: '#0B0B0E', padding: '28px 32px' }}>
-            <Text style={{ margin: 0, color: '#ffffff', fontWeight: 700, fontSize: 18, letterSpacing: '-0.02em' }}>
-              ASCENT/GEO
-            </Text>
-            <Text style={{ margin: '6px 0 0', color: '#a1a1aa', fontSize: 12 }}>
-              Logo placeholder
-            </Text>
+            <Img
+              src="https://geo.ascentnet.co.jp/ascent-geo-logo-white.png"
+              alt="ASCENT/GEO"
+              width="160"
+              style={{ display: 'block' }}
+            />
           </Section>
 
           {/* Body */}
