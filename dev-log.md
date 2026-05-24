@@ -1,3 +1,6 @@
+## 2026-05-24 09:30
+- 컨택폼 메일 발송 버그 수정: Vercel Production 환경변수 `RESEND_API_KEY`, `RESEND_FROM_EMAIL` 빈 값 → 재등록. `CONTACT_ADMIN_EMAIL`이 `geo.ascent@ascentnet.co.jp`로 잘못 설정돼 있어 `geo@ascentnet.co.jp`로 수정. 재배포 후 사용자/어드민 메일 수신 확인 완료.
+
 ## 2026-05-24
 - 화이트페이퍼 PDF 교체: `docs/Ascent_GEO_Service.pdf`를 Supabase Storage(`whitepaper-assets/whitepaper.pdf`)에 업로드(upsert). `whitepaper-download.ts`의 소스 파일명도 업데이트.
 

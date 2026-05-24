@@ -33,8 +33,8 @@ const schema = z
     phone:     z.string().regex(PHONE_RE, '正しい電話番号を入力してください（例：03-0000-0000）'),
     email:     z.string().email('正しいメールアドレスを入力してください'),
     industry:  z.string().min(1, '業種を選択してください'),
-    website:   z.string().refine(isValidWebsiteValue, {
-      message: "WebサイトURL または「準備中」を入力してください。",
+    website:   z.string().refine(v => v === '' || isValidWebsiteValue(v), {
+      message: "WebサイトURL を正しい形式で入力してください。",
     }),
     challenge: z.string().min(10, '10文字以上で入力してください'),
     human:     z.boolean().refine(v => v === true, 'チェックしてください'),
@@ -170,11 +170,11 @@ export function DownloadForm({ blockedEmailDomains }: Props) {
       <div className="field-row">
         <div>
           <label style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <span>Webサイト情報 <span className="req">*</span></span>
+            <span>Webサイト情報 <span className="opt">任意</span></span>
           </label>
           <input
             className="field"
-            placeholder={`URLが未確定の場合は「${WEBSITE_UNAVAILABLE_COPY}」と入力してください。`}
+            placeholder="https://example.com"
             {...register('website')}
           />
           {errors.website && <p className="field-error">{errors.website.message}</p>}

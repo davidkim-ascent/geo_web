@@ -40,7 +40,7 @@ export function ContactAdminEmail({ data, isFallback = false }: Props) {
           )}
 
           <Text style={{ fontSize: 18, fontWeight: 700, color: '#0B0B0E', margin: '0 0 24px' }}>
-            {isFallback ? '【送信失敗】ユーザー確認メール未送信' : '【新規お問い合わせ】'}
+            {isFallback ? '【送信失敗】ユーザー確認メール未送信' : '【GEO 新規お問い合わせ】'}
           </Text>
 
           <Hr style={{ borderColor: '#e4e4e7', margin: '0 0 24px' }} />
