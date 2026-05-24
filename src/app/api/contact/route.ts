@@ -24,6 +24,11 @@ export async function POST(req: NextRequest) {
   }
   const { company, role, name, phone, email, industry, website, challenge } = body as Record<string, string>
 
+  // 필수 필드 검증
+  if (!company || !role || !name || !phone || !email || !industry || !challenge) {
+    return NextResponse.json({ error: 'missing_required_fields' }, { status: 400 })
+  }
+
   // 차단 도메인 체크
   if (isBlockedEmailDomain(email ?? '', getBlockedDomains())) {
     return NextResponse.json({ error: 'blocked_domain' }, { status: 400 })
