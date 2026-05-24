@@ -1,20 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
-import { readFile } from 'node:fs/promises'
 import { randomUUID } from 'node:crypto'
 import { isBlockedEmailDomain } from '@/lib/contact-blocking'
 import { WhitepaperConfirmEmail } from '@/emails/WhitepaperConfirmEmail'
+import { WhitepaperAdminEmail } from '@/emails/WhitepaperAdminEmail'
 import {
-  WHITEPAPER_STORAGE_BUCKET,
-  WHITEPAPER_STORAGE_OBJECT_PATH,
   WHITEPAPER_DOWNLOAD_TOKEN_PARAM,
-  getWhitepaperPdfPath,
 } from '@/lib/whitepaper-download'
 import { createAdminClient } from '@/lib/supabase/admin'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 const FROM = process.env.RESEND_FROM_EMAIL?.trim() || 'no-reply@ascentnet.co.jp'
+const ADMIN_EMAIL = process.env.CONTACT_ADMIN_EMAIL?.trim() || 'geo@ascentnet.co.jp'
 const BLOCKED_DOMAINS = (process.env.BLOCKED_EMAIL_DOMAINS ?? '').split(',').map((d) => d.trim()).filter(Boolean)
 
 export async function POST(req: NextRequest) {
@@ -52,22 +50,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'db_error' }, { status: 500 })
   }
 
-  const pdfBytes = await readFile(getWhitepaperPdfPath())
-  const { error: uploadError } = await supabase.storage
-    .from(WHITEPAPER_STORAGE_BUCKET)
-    .upload(WHITEPAPER_STORAGE_OBJECT_PATH, pdfBytes, {
-      upsert: true,
-      contentType: 'application/pdf',
-    })
-
-  if (uploadError) {
-    console.error('[whitepaper] storage upload error:', uploadError)
-    return NextResponse.json({ error: 'storage_upload_error' }, { status: 500 })
-  }
-
   const downloadUrl = new URL('/api/whitepaper/download', req.url)
   downloadUrl.searchParams.set(WHITEPAPER_DOWNLOAD_TOKEN_PARAM, downloadToken)
 
+  const receivedAt = new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })
+
+  // 사용자 확인 메일 (다운로드 링크)
   const { error: emailError } = await resend.emails.send({
     from: FROM,
     to: email,
@@ -82,6 +70,20 @@ export async function POST(req: NextRequest) {
   if (emailError) {
     console.error('[whitepaper] confirm email error:', emailError)
     return NextResponse.json({ error: 'email_error' }, { status: 500 })
+  }
+
+  // 어드민 알림 메일
+  const { error: adminError } = await resend.emails.send({
+    from: FROM,
+    to: ADMIN_EMAIL,
+    subject: `【GEO】資料ダウンロードがありました — ${company} / ${name}`,
+    react: WhitepaperAdminEmail({
+      data: { company: company ?? '', role: role ?? '', name: name ?? '', phone: phone ?? '', email: email ?? '', industry: industry ?? '', website: website ?? '', challenge: challenge ?? '', receivedAt },
+    }),
+  })
+
+  if (adminError) {
+    console.error('[whitepaper] admin email error:', adminError)
   }
 
   return NextResponse.json({ ok: true })
