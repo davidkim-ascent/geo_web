@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import Script from "next/script";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { ArticleThumbnail } from "@/components/lab/ArticleThumbnail";
 import { HeroLogoMark } from "@/components/layout/HeroLogoMark";
@@ -195,23 +194,6 @@ export default function LabPage() {
 
       {/* Articles list with filter */}
       <LabArticles />
-
-      {/* Soro Blog Embed */}
-      <section className="px-0 pb-16">
-        <div className="mx-auto max-w-[var(--ui-content-width)] px-10">
-          <div className="mb-6 font-mono text-[12px] tracking-[0.18em] text-[#6B6B73] uppercase">
-            [ 03 ] BLOG
-          </div>
-          <h2 className="mb-12 max-w-[22ch] tracking-[-0.03em] leading-[1.05]">
-            Ascent GEO ブログ
-          </h2>
-          <div id="soro-blog" className="min-h-[400px] w-full" suppressHydrationWarning />
-          <Script
-            src="https://app.trysoro.com/api/embed/2d793a18-5263-4945-81ad-db245a2be6fe"
-            strategy="afterInteractive"
-          />
-        </div>
-      </section>
 
       {/* CTA */}
       <SeoGeoCTASection />
