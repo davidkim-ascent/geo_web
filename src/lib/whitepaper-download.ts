@@ -5,7 +5,7 @@ export const WHITEPAPER_DOWNLOAD_FILENAME = 'GEOサービス紹介資料.pdf'
 export const WHITEPAPER_STORAGE_BUCKET = 'whitepaper-assets'
 export const WHITEPAPER_STORAGE_OBJECT_PATH = 'whitepaper.pdf'
 export const WHITEPAPER_DOWNLOAD_TOKEN_PARAM = 'token'
-export const WHITEPAPER_PDF_SOURCE_FILENAME = 'Ascent_GEO_Service.pdf'
+export const WHITEPAPER_PDF_SOURCE_FILENAME = 'Ascent_GEO_V2.pdf'
 
 export function getWhitepaperDownloadUrl(baseUrl: string) {
   return new URL(WHITEPAPER_DOWNLOAD_ROUTE, baseUrl).toString()

@@ -1,3 +1,12 @@
+## 2026-06-08 10:08
+- GEO Lab 페이지 Soro Blog 임베드: `src/app/lab/page.tsx` 하단에 외부 블로그 피드 노출을 위한 div 및 `next/script` 연동 추가
+
+## 2026-05-24 13:05
+- 컨택폼 완료 페이지 URL 확인: `/contact/thanks` (full URL: `https://geo.ascentnet.co.jp/contact/thanks`)
+
+## 2026-05-24 13:00
+- 화이트페이퍼 완료 페이지 URL 확인: `/whitepaper/downloaded` (full URL: `https://geo.ascentnet.co.jp/whitepaper/downloaded`)
+
 ## 2026-05-24 10:30
 - 화이트페이퍼 어드민 알림 메일 구현: 다운로드 시 geo@ascentnet.co.jp로 폼 내용 포함 발송 (WhitepaperAdminEmail 신규 작성)
 - PDF 재업로드 로직 제거: 매 요청마다 로컬 파일 읽어 Storage 업로드하던 불필요한 처리 삭제

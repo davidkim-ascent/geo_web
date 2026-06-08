@@ -61,7 +61,7 @@ function HeroSection() {
               backgroundSize: "80px 80px",
             }}
           />
-          <div className="absolute right-[10%] top-[20%] w-[500px] h-[500px] bg-[#1452FF]/8 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute right-[10%] top-[20%] w-[500px] h-[500px] bg-[#1452FF]/4 rounded-full blur-[120px] pointer-events-none" />
           <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
             <div
               className="arc-spin"
