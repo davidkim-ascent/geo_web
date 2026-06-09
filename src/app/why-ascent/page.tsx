@@ -13,7 +13,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildPageMetadata({
   title: "Ascent GEO・LLMOの強み - 株式会社 Ascent Networks",
   description:
-    "AI は「どこから、なぜ」引用するのか。Ascentは特許ベースGEO施策・消費者インテント・スコアリングという3本の柱で、データを解明します。",
+    "AI は「どこから、なぜ」引用するのか。Ascentは特許ベースGEO(LLMO)施策・消費者インテント・スコアリングという3本の柱で、データを解明します。",
   path: "/why-ascent",
 });
 
@@ -170,14 +170,14 @@ export default async function WhyAscentPage() {
                 className="max-w-[13ch] font-bold text-white"
                 style={{ fontSize: "clamp(44px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em", wordBreak: "keep-all" }}
               >
-                <span className="block">GEO は、</span>
+                <span className="block">GEO(LLMO)は、</span>
                 <span className="block">
                   <span className="text-blue-gradient">推測</span>ではなく
                 </span>
                 <span className="block">設計の科学である。</span>
               </h1>
               <p className="mt-7 max-w-[52ch] text-[17px] leading-[1.75] text-white/68">
-                AI は「どこから、なぜ」引用するのか。Ascent は特許ベースGEO施策・消費者インテント(本音)・スコアリングという 3本の柱で、データを解明しAIに選ばれるブランドをつくります。
+                AI は「どこから、なぜ」引用するのか。Ascent は特許ベースGEO(LLMO)施策・消費者インテント(本音)・スコアリングという 3本の柱で、データを解明しAIに選ばれるブランドをつくります。
               </p>
 
               <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-[640px]">
@@ -200,7 +200,7 @@ export default async function WhyAscentPage() {
         <div className="mx-auto max-w-[var(--ui-content-width)] px-6 md:px-10">
           <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             <div>
-              <SectionKicker overline="W/01 — Technical Foundation" label="特許ベースの GEO 解析" />
+              <SectionKicker overline="W/01 — Technical Foundation" label="特許ベースの GEO(LLMO) 解析" />
               <div className="mt-5 h-px bg-black/10" />
               <h2 className="mt-14 font-extrabold leading-[0.98] tracking-[-0.04em] text-[clamp(32px,4vw,48px)]">
                 AI が「なぜ引用するか」は、
@@ -209,7 +209,7 @@ export default async function WhyAscentPage() {
               </h2>
             </div>
             <p className="mt-16 max-w-[34ch] text-[18px] leading-[1.75] text-[#4e4e51] lg:justify-self-end">
-              Google・Microsoft が公開する検索特許を解析し、Passage Ranking や Intent Ranking など 実装メカニズムから逆算した <Link href="/framework" className="underline underline-offset-2 decoration-[#1452ff]/50 hover:decoration-[#1452ff] transition-colors text-[#0b0b0e]">GEO を設計</Link>します。
+              Google・Microsoft が公開する検索特許を解析し、Passage Ranking や Intent Ranking など 実装メカニズムから逆算した <Link href="/framework" className="underline underline-offset-2 decoration-[#1452ff]/50 hover:decoration-[#1452ff] transition-colors text-[#0b0b0e]">GEO(LLMO) を設計</Link>します。
             </p>
           </div>
 
@@ -296,7 +296,7 @@ export default async function WhyAscentPage() {
                   Ascentが開発した「<Link href="/services" className="underline underline-offset-2 decoration-[#1452ff]/50 hover:decoration-[#1452ff] transition-colors text-white">リスニングマインド</Link>」ソリューションを活用し、キーワードの背後に隠れた潜在顧客を自動で分類します。例えば「SEO対策」というキーワードの中には、概念を調べ始めた <strong className="text-white font-medium">入門者</strong>、社内で実行する <strong className="text-white font-medium">実務者</strong>、外部に発注を検討する <strong className="text-white font-medium">発注検討者</strong> が混在しています。
                 </p>
                 <p className="mt-5 text-[16px] md:text-[18px] leading-[1.75] text-white/68">
-                  つまり、単にキーワードをターゲットにするのではなく、ユーザーの <strong className="text-white font-medium">Search Intent（検索意図）</strong> を正確に把握した上で、最適な <Link href="/framework" className="underline underline-offset-2 decoration-[#1452ff]/50 hover:decoration-[#1452ff] transition-colors text-white">GEO 設計</Link>を行います。
+                  つまり、単にキーワードをターゲットにするのではなく、ユーザーの <strong className="text-white font-medium">Search Intent（検索意図）</strong> を正確に把握した上で、最適な <Link href="/framework" className="underline underline-offset-2 decoration-[#1452ff]/50 hover:decoration-[#1452ff] transition-colors text-white">GEO(LLMO) 設計</Link>を行います。
                 </p>
               </div>
             </div>
@@ -356,10 +356,10 @@ export default async function WhyAscentPage() {
         </div>
       </section>
 
-      {/* Section 3: W/02·C — CEP × GEO */}
+      {/* Section 3: W/02·C — CEP × GEO(LLMO) */}
       <section className="bg-[#FAFAF7] py-24 md:py-28">
         <div className="mx-auto max-w-[var(--ui-content-width)] px-6 md:px-10">
-          <SectionKicker overline="W/02·C — INTENT INTELLIGENCE" label="文脈 — CEP × GEO" />
+          <SectionKicker overline="W/02·C — INTENT INTELLIGENCE" label="文脈 — CEP × GEO(LLMO)" />
           <div className="mt-5 h-px bg-black/10" />
 
           <div className="mt-14 grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
@@ -380,15 +380,15 @@ export default async function WhyAscentPage() {
               <h3 className="text-[22px] md:text-[26px] font-bold leading-[1.3] tracking-[-0.02em]">
                 消費者の「生活文脈(CEP)」に
                 <br />
-                基づくGEO施策が可能。
+                基づくGEO(LLMO)施策が可能。
               </h3>
               <p className="mt-6 text-[15px] md:text-[16px] leading-[1.75] text-[#4e4e51]">
                 消費者の「<Link href="/lab/brand-cep" className="font-semibold text-black underline underline-offset-2 decoration-[#1452ff]/50 hover:decoration-[#1452ff] transition-colors">CEP(Category Entry Point)</Link>」に
                 <br />
-                基づくGEO施策が可能。CEPとは、消費者がブランドを思い浮かべる<strong className="font-semibold text-black">状況・悩み・購買判断要素</strong>を指します。リスニングマインドはここまで掘り下げて、AI に引用される条件を構造化します。
+                基づくGEO(LLMO)施策が可能。CEPとは、消費者がブランドを思い浮かべる<strong className="font-semibold text-black">状況・悩み・購買判断要素</strong>を指します。リスニングマインドはここまで掘り下げて、AI に引用される条件を構造化します。
               </p>
               <p className="mt-5 text-[15px] md:text-[16px] leading-[1.75] text-[#4e4e51]">
-                シチュエーション・心理状態・購買タイミングを整理し、AIが「状況」に応じて推奨できる<Link href="/services" className="font-semibold text-black underline underline-offset-2 decoration-[#1452ff]/50 hover:decoration-[#1452ff] transition-colors">CEPベースの質問と対応コンテンツ</Link>を設計します。GEO の観点で極めて有利な施策が可能です。
+                シチュエーション・心理状態・購買タイミングを整理し、AIが「状況」に応じて推奨できる<Link href="/services" className="font-semibold text-black underline underline-offset-2 decoration-[#1452ff]/50 hover:decoration-[#1452ff] transition-colors">CEPベースの質問と対応コンテンツ</Link>を設計します。GEO(LLMO) の観点で極めて有利な施策が可能です。
               </p>
             </div>
 
@@ -486,14 +486,14 @@ export default async function WhyAscentPage() {
           <div className="mt-14 grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
             <div className="max-w-[840px]">
               <h2 className="font-extrabold leading-[1.2] tracking-[-0.04em] text-[clamp(32px,3vw,44px)]">
-                検索経路に基づき、GEOに極めて有利な連続的質問クラスターを設計
+                検索経路に基づき、GEO(LLMO)に極めて有利な連続的質問クラスターを設計
               </h2>
               <div className="mt-8 space-y-5">
                 <p className="text-[15px] md:text-[16px] leading-[1.75] text-white/70">
                 Ascentはユーザーがそのキーワードに到達する前後で、どのような検索行動を続けているか検索経路（Search Path）を分析します。例えば、「電動自転車」の検索経路には、「電動自転車 → 電動自転車 おすすめ → 電動自転車 おすすめ 通勤」のように通勤目的で深掘りしていく流れもあれば、「電動自転車 → 電動自転車 安い → 電動自転車 安い 型落ち」のように価格重視で遷移する流れもあります。また、「電動自転車 → 電動自転車 補助金 → 電動自転車 補助金 東京都 2025」のように、購入前に公的支援情報を確認する経路も存在します。
                 </p>
                 <p className="text-[15px] md:text-[16px] leading-[1.75] text-white/70">
-                  GEO施策において重要なポイントは、「<Link href="/services" className="underline underline-offset-2 decoration-[#1452ff]/50 hover:decoration-[#1452ff] transition-colors text-white/70">質問クラスター</Link>」、つまり単一の質問ではなく、連続するユーザーの質問をあらかじめ予測し、コンテンツで対応できているかどうかです。Ascentは検索経路に基づき、GEOに極めて有利な連続的質問クラスターを設計します。
+                  GEO(LLMO)施策において重要なポイントは、「<Link href="/services" className="underline underline-offset-2 decoration-[#1452ff]/50 hover:decoration-[#1452ff] transition-colors text-white/70">質問クラスター</Link>」、つまり単一の質問ではなく、連続するユーザーの質問をあらかじめ予測し、コンテンツで対応できているかどうかです。Ascentは検索経路に基づき、GEO(LLMO)に極めて有利な連続的質問クラスターを設計します。
                 </p>
               </div>
             </div>

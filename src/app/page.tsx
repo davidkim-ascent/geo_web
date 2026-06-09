@@ -22,7 +22,7 @@ const FrameworkSection = dynamicImport(() => import("@/components/home/Framework
 export const metadata: Metadata = buildPageMetadata({
   title: "Ascent GEO・LLMO（アセント GEO・LLMO）- 株式会社 Ascent Networks",
   description:
-    "推測ではなく、データと特許に基づくGEO戦略。特許分析と実消費者インテントに基づくGEO戦略を、Ascentが設計します。",
+    "推測ではなく、データと特許に基づくGEO(LLMO)戦略。特許分析と実消費者インテントに基づくGEO(LLMO)戦略を、Ascentが設計します。",
   path: "/",
 });
 
@@ -184,7 +184,7 @@ function HeroSection() {
             戦略。
           </h1>
           <p className="mt-7 text-[17px] text-[#d3d3d8] leading-[1.6] max-w-[52ch]">
-            Google・Microsoft の特許分析、リスニングマインドの実消費者インテント、文脈・意図ベースでの評価。GEO は推測ゲームではない。Ascent は根拠のあるフレームワークで設計する。
+            Google・Microsoft の特許分析、リスニングマインドの実消費者インテント、文脈・意図ベースでの評価。GEO(LLMO) は推測ゲームではない。Ascent は根拠のあるフレームワークで設計する。
           </p>
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-[640px]">
             <CalendarBookingButton />
@@ -368,8 +368,8 @@ function WhyAscentSection() {
           <line x1="9" y1="21" x2="9" y2="9" />
         </svg>
       ),
-      title: "特許ベースの GEO 分析",
-      desc: "Google / Microsoft の検索特許を解析し、Passage Ranking や Intent Ranking など内部メカニズムから GEO を逆算します。",
+      title: "特許ベースの GEO(LLMO) 分析",
+      desc: "Google / Microsoft の検索特許を解析し、Passage Ranking や Intent Ranking など内部メカニズムから GEO(LLMO) を逆算します。",
       href: "/why-ascent",
     },
     {
@@ -407,7 +407,7 @@ function WhyAscentSection() {
           <circle cx="4" cy="12" r="2" />
         </svg>
       ),
-      title: "GEO Framework",
+      title: "GEO(LLMO) Framework",
       desc: "Embedding による意味的類似度で、質問とコンテンツの GAP を10点モデルで定量評価します。",
       href: "/framework",
     },
@@ -426,7 +426,7 @@ function WhyAscentSection() {
               style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
             >
               なぜAscentの<br />
-              GEOは<span className="text-blue-gradient">違う</span>のか。
+              GEO(LLMO)は<span className="text-blue-gradient">違う</span>のか。
             </h2>
           </div>
           <div className="flex items-end">
@@ -546,7 +546,7 @@ function ServicesSection() {
       ),
     },
     {
-      title: "GEO コンテンツ制作",
+      title: "GEO(LLMO) コンテンツ制作",
       href: "/services",
       desc: "AI に「引用される」構造を設計するライティング。",
       bullets: ["Passage 最適化", "FAQ / Schema 設計", "GEO Writing"],
@@ -581,7 +581,7 @@ function ServicesSection() {
       ),
     },
     {
-      title: "GEO モニタリング",
+      title: "GEO(LLMO) モニタリング",
       href: "/services",
       desc: "可視性・引用・トラフィックを継続トラッキング。",
       bullets: ["Brand Visibility", "Citation Tracking", "AI Traffic 分析"],
@@ -738,7 +738,7 @@ function GeoLabSection() {
   return (
     <section id="lab" className="bg-[#FAFAF7] pt-12 pb-10">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <SectionLabel title="GEO LAB" />
+        <SectionLabel title="GEO(LLMO) LAB" />
         <hr className="my-4 border-black/[0.07]" />
 
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -752,7 +752,7 @@ function GeoLabSection() {
           </div>
           <div className="flex items-end">
             <p className="text-[17px] text-[#4e4e51] leading-[1.6] font-[inherit]">
-              特許分析・実データ検証・引用構造の研究。GEO Lab は実務に効くリサーチを発信します。
+              特許分析・実データ検証・引用構造の研究。GEO(LLMO) Lab は実務に効くリサーチを発信します。
             </p>
           </div>
         </div>
@@ -873,7 +873,7 @@ function GeoLabSection() {
 
         <div className="mt-4 text-center">
           <Link href="/lab" className="font-mono text-[11px] tracking-[0.18em] text-[#1452FF] hover:underline uppercase">
-            GEO LAB をすべて見る →
+            GEO(LLMO) LAB をすべて見る →
           </Link>
         </div>
 

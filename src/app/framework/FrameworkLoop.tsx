@@ -112,7 +112,7 @@ export function FrameworkLoop() {
           Ascentの
         </div>
         <h3 style={{ fontSize: 18, letterSpacing: "-0.02em", margin: 0, color: "#e8f4ff", fontWeight: 700 }}>
-          GEO Framework
+          GEO(LLMO) Framework
         </h3>
         <p style={{ fontSize: 12, color: "#4a90d9", marginTop: 5, lineHeight: 1.55 }}>
           5 つのフェーズが連動し、<br />継続的に最適化を回す

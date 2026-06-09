@@ -12,7 +12,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildPageMetadata({
   title: "Ascent GEO・LLMOのサービス詳細 - 株式会社 Ascent Networks",
   description:
-    "サイト診断からモニタリングまで一貫してサポート。単発でも継続運用でも対応。AIに引用されるブランドをフルスペックで支援します。",
+    "サイト診断からモニタリングまで一貫してサポート。単発でも継続運用でも対応。AIに引用されるブランドをGEO(LLMO)フルスペックで支援します。",
   path: "/services",
 });
 
@@ -332,7 +332,7 @@ const services = [
     tag: "GEO MONITORING",
     title: "引用状態を",
     accent: "モニタリング。",
-    lede: "Visibility / Citation / AI Traffic レポートを月次で提出。改善提案までを一貫してサポート。GEO は施策ではなく、運用である。",
+    lede: "Visibility / Citation / AI Traffic レポートを月次で提出。改善提案までを一貫してサポート。GEO(LLMO) は施策ではなく、運用である。",
     feat: [
       "月次 Visibility / Citation レポート",
       "AI Traffic 計測（GA4 連携）",
@@ -357,7 +357,7 @@ const packages = [
     items: [
       "AI現状分析（Brand Visibility, Positioning, SOV）",
       "Question Cluster 〜50設問生成 + GAP分析",
-      "GEO最適化＋新規GEO対策コンテンツ作成",
+      "GEO(LLMO)最適化＋新規GEO(LLMO)対策コンテンツ作成",
       "主要4種AI回答エンジン完全対応（ChatGPT, Gemini, Copilot, Perplexity など）",
     ],
     featured: false,
@@ -380,7 +380,7 @@ const packages = [
       "AI現状分析（Brand Visibility, Positioning, SOV）",
       "Question Cluster 〜100設問生成",
       "GAP分析（複数カテゴリーの網羅的分析）",
-      "GEO最適化＋新規GEO対策コンテンツ作成",
+      "GEO(LLMO)最適化＋新規GEO(LLMO)対策コンテンツ作成",
       "主要4種AI回答エンジン完全対応（ChatGPT, Gemini, Copilot, Perplexity など）",
     ],
     featured: true,
@@ -445,11 +445,11 @@ export default function ServicesPage() {
                 style={{ fontSize: "clamp(44px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em", wordBreak: "keep-all" }}
               >
                 <span className="block">データ基盤の、</span>
-                <span className="block text-[#1452FF]">フルスペック GEO</span>
+                <span className="block text-[#1452FF]">フルスペック GEO(LLMO)</span>
                 <span className="block">サービス。</span>
               </h1>
               <p className="mt-7 max-w-[52ch] text-[17px] leading-[1.75] text-white/[0.68]">
-                診断・分析・制作・モニタリング。Ascent の GEO サービスは、4
+                診断・分析・制作・モニタリング。Ascent の GEO(LLMO) サービスは、4
                 つのフェーズで切り出すこともできれば、ループとしてフルパッケージで運用することもできる。
               </p>
 

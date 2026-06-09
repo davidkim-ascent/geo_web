@@ -55,7 +55,7 @@ export default function FrameworkSection() {
   return (
     <section id="framework" className="section dark py-24">
       <div className="wrap max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <SectionLabel title="GEO FRAMEWORK" dark />
+        <SectionLabel title="GEO(LLMO) FRAMEWORK" dark />
         <hr className="my-4 border-white/[0.06]" />
 
         <div className="mt-12 fw-grid">
@@ -65,7 +65,7 @@ export default function FrameworkSection() {
               style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
             >
               5ステップで回す、<br />
-              <span className="text-blue-gradient">循環型</span> GEO 設計。
+              <span className="text-blue-gradient">循環型</span> GEO(LLMO) 設計。
             </h2>
 
             <div className="fw-ring-wrap mt-12">
@@ -138,7 +138,7 @@ export default function FrameworkSection() {
               </svg>
 
               <div className="fw-center">
-                <div className="lab">GEO FRAMEWORK</div>
+                <div className="lab">GEO(LLMO) FRAMEWORK</div>
                 <div className="ttl">5 Phase</div>
                 <div className="ttl accent">Loop</div>
               </div>

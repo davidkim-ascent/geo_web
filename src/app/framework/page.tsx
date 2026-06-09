@@ -12,7 +12,7 @@ import { FrameworkLoop } from "./FrameworkLoop";
 export const metadata: Metadata = buildPageMetadata({
   title: "Ascent GEO・LLMO Framework | 5つの循環設計 - 株式会社 Ascent Networks",
   description:
-    "質問分析・GAP分析・コンテンツ対策・モニタリング・最適化ループ。5フェーズで、AIに引用され続ける状態を設計するAscentのGEOフレームワーク。",
+    "質問分析・GAP分析・コンテンツ対策・モニタリング・最適化ループ。5フェーズで、AIに引用され続ける状態を設計するAscentのGEO(LLMO)フレームワーク。",
   path: "/framework",
 });
 
@@ -24,7 +24,7 @@ const frameworkSteps = [
     title: "質問分析",
     subtitle: "CDJ ベースの質問生成",
     description:
-      "検索クエリだけでなく、実消費者の意思決定プロセスから質問群を抽出し、GEO が答えるべき問いを定義します。",
+      "検索クエリだけでなく、実消費者の意思決定プロセスから質問群を抽出し、GEO(LLMO) が答えるべき問いを定義します。",
     bullets: ["CDJ 質問生成", "Question Cluster", "CEP マッピング", "検索ボリューム統合"],
     visual: "network",
   },
@@ -34,12 +34,12 @@ const frameworkSteps = [
     subtitle: "10点評価モデル",
     description:
       "質問と既存コンテンツの意味的な距離を見える化し、何が足りないかを定量化。改善順序を決める土台を作ります。",
-    bullets: ["12点評価", "Semantic Similarity", "GAP 可視化", "優先順位設計"],
+    bullets: ["10点評価", "Semantic Similarity", "GAP 可視化", "優先順位設計"],
     visual: "matrix",
   },
   {
     id: "03",
-    title: "GEOに特化したコンテンツ対策",
+    title: "GEO(LLMO)に特化したコンテンツ対策",
     subtitle: "Passage / FAQ / Schema",
     description:
       "AI に引用されやすい Passage 単位で構成を設計。見出し、定義、FAQ、Schema をひとつの流れで組み立てます。",
@@ -276,7 +276,7 @@ function FrameworkHero() {
             lineHeight: 0.85, userSelect: "none", whiteSpace: "nowrap",
           }}
         >
-          GEO.
+          GEO(LLMO).
         </div>
         <div style={{ position: "absolute", left: 0, right: 0, height: 4, background: "linear-gradient(90deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scan 6s ease-in-out infinite" }} />
         <div style={{ position: "absolute", left: 0, right: 0, height: 4, background: "linear-gradient(90deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scan 8s ease-in-out -2s infinite" }} />
@@ -290,7 +290,7 @@ function FrameworkHero() {
         <div className="pt-8">
           <div className="mb-5 flex items-center gap-2 text-[10px] font-medium tracking-[0.22em] text-[#1452FF]">
             <span className="h-2 w-2 rounded-full bg-[#1452FF]" />
-            GEO FRAMEWORK
+            GEO(LLMO) FRAMEWORK
           </div>
           <h1 className="font-bold text-[#FAFAF7]" style={{ fontSize: "clamp(32px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em" }}>
             質問から最適化までが
@@ -299,7 +299,7 @@ function FrameworkHero() {
             。
           </h1>
           <p className="mt-7 max-w-[54ch] text-[17px] leading-[1.7] text-[#d3d3d8]">
-            質問分析、GAP分析、GEOに特化したコンテンツ対策、モニタリング、Optimization Loop。
+            質問分析、GAP分析、GEO(LLMO)に特化したコンテンツ対策、モニタリング、Optimization Loop。
             5つのフェーズを連動させ、AI 検索時代に「引用され続ける」状態をつくるための Ascent の設計です。
           </p>
 

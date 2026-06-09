@@ -5,10 +5,10 @@ export function SeoGeoCTASection() {
   return (
     <div className="article-cta">
       <CTASection
-        kicker="GEO対策、専門コンサルタントにご相談ください"
+        kicker="GEO(LLMO)対策、専門コンサルタントにご相談ください"
         title={
           <>
-            GEO対策、
+            GEO(LLMO)対策、
             <br />
             <span style={{ position: "relative", display: "inline-block" }}>
               <svg viewBox="0 0 260 28" preserveAspectRatio="none" style={{ position: "absolute", bottom: "-12px", left: 0, width: "100%", height: "28px", overflow: "visible", zIndex: 0 }}>
@@ -40,11 +40,11 @@ export function SeoGeoCTASection() {
         }
         description={
           <>
-            「自社コンテンツはGEOに対応できているか？」「どの質問からGEO対策を始めるべきか？」
+            「自社コンテンツはGEO(LLMO)に対応できているか？」「どの質問からGEO(LLMO)対策を始めるべきか？」
             そのような疑問・課題をお持ちの方に向けて、弊社では無料の初回相談を受け付けています。
             <br />
             <br />
-            GEO戦略の立案から、リスニングマインドを活用した質問クラスター設計、コンテンツ改善の優先順位付けまで、
+            GEO(LLMO)戦略の立案から、リスニングマインドを活用した質問クラスター設計、コンテンツ改善の優先順位付けまで、
             御社の状況に合わせた具体的なアドバイスをご提供します。お問い合わせから24時間以内にご返信いたします。
           </>
         }

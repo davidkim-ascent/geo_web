@@ -1,3 +1,6 @@
+## 2026-06-09 15:59
+- zip 기반 텍스트 갱신: index / services / lab / framework / why-ascent / CTA의 GEO 문구를 GEO(LLMO) 기준으로 정리하고 관련 프레임워크 라벨과 FAQ 문안을 일괄 수정
+
 ## 2026-06-08 10:08
 - GEO Lab 페이지 Soro Blog 임베드: `src/app/lab/page.tsx` 하단에 외부 블로그 피드 노출을 위한 div 및 `next/script` 연동 추가
 

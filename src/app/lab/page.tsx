@@ -13,7 +13,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildPageMetadata({
   title: "Ascent GEO Lab | AI検索リサーチハブ - 株式会社 Ascent Networks",
   description:
-    "AI検索時代に引用されるための知識を、実データと実務から発信。特許・消費者インテント・GEO設計まで、Ascent GEO Labで体系的に学べます。",
+    "AI検索時代に引用されるための知識を、実データと実務から発信。特許・消費者インテント・GEO(LLMO)設計まで、Ascent GEO(LLMO) Labで体系的に学べます。",
   path: "/lab",
 });
 
@@ -94,7 +94,7 @@ export default function LabPage() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#1452FF] opacity-75" />
                   <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#1452FF]" />
                 </span>
-                GEO LAB
+                GEO(LLMO) LAB
               </div>
               <h1
                 className="font-bold text-white"
@@ -104,7 +104,7 @@ export default function LabPage() {
                 <span className="block text-[#1452FF]">リサーチハブ。</span>
               </h1>
               <p className="mt-7 max-w-[52ch] text-[17px] leading-[1.75] text-white/[0.68]">
-                検索の変化、SEO と GEO の差、AI が引用する条件、GEO Writing の実装、KPI の測り方。Ascent が日々のクライアントワークから抽出した知見を、リサーチノートとして公開する。
+                検索の変化、SEO と GEO(LLMO) の差、AI が引用する条件、GEO(LLMO) Writing の実装、KPI の測り方。Ascent が日々のクライアントワークから抽出した知見を、リサーチノートとして公開する。
               </p>
               <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[640px]">
                 <CalendarBookingButton />
@@ -159,7 +159,7 @@ export default function LabPage() {
                     </p>
                   </div>
                   <div className="mt-8 flex items-center gap-6 border-t border-white/[0.12] pt-6 font-mono text-[11px] tracking-[0.12em] text-[#9A9AA0]">
-                    <span>Ascent Research · GEO LAB</span>
+                    <span>Ascent Research · GEO(LLMO) LAB</span>
                     <span className="text-[#FAFAF7]">READ · 8 MIN →</span>
                   </div>
                 </div>
