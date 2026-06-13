@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 const SITE_NAME = "Ascent GEO";
 const DEFAULT_TITLE = "GEO — Ascent";
 const DEFAULT_DESCRIPTION =
-  "推測ではなく、データと特許に基づくAI検索時代のブランド戦略。";
+  "AI検索時代、推測ではなく、データと特許に基づくブランド戦略。";
 const DEFAULT_OG_IMAGE = "/ascent-geo-logo-split.png";
 const DEFAULT_OG_IMAGE_WIDTH = 3317;
 const DEFAULT_OG_IMAGE_HEIGHT = 552;

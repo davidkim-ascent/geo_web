@@ -1,3 +1,6 @@
+## 2026-06-13 09:11
+- 전역 SEO 기본 설명 문구 수정: `src/lib/seo.ts`의 기본 description을 `AI検索時代、推測ではなく、データと特許に基づくブランド戦略。`로 교체
+
 ## 2026-06-09 15:59
 - zip 기반 텍스트 갱신: index / services / lab / framework / why-ascent / CTA의 GEO 문구를 GEO(LLMO) 기준으로 정리하고 관련 프레임워크 라벨과 FAQ 문안을 일괄 수정
 
