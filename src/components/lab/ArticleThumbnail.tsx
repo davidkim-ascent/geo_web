@@ -7,7 +7,7 @@ import aiAgentSiteImage from "@/app/lab/ai-agent-site/ai-agent-site.png";
 import aiShoppingImage from "@/app/lab/ai-shopping-agent/ai-shopping.png";
 import { TypingPromptCard } from "@/app/lab/brand-cep/TypingPromptCard";
 
-type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "ai-shopping-agent" | "abstract";
+type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "ai-shopping-agent" | "llmo-eeat" | "abstract";
 
 type ArticleThumbnailProps = {
   variant: ArticleThumbnailVariant;
@@ -15,7 +15,7 @@ type ArticleThumbnailProps = {
   eyebrow?: string;
 };
 
-const IMAGE_BY_VARIANT: Record<Exclude<ArticleThumbnailVariant, "abstract" | "adobe-ai-traffic" | "brand-cep">, typeof seoGeoImage> = {
+const IMAGE_BY_VARIANT: Record<Exclude<ArticleThumbnailVariant, "abstract" | "adobe-ai-traffic" | "brand-cep" | "llmo-eeat">, typeof seoGeoImage> = {
   "seo-geo": seoGeoImage,
   "geo-llmo-company": geoLlmoCompanyImage,
   "ai-agent-site": aiAgentSiteImage,
@@ -29,6 +29,7 @@ const labelByVariant: Record<ArticleThumbnailVariant, string> = {
   "adobe-ai-traffic": "INDUSTRY REPORT",
   "ai-agent-site": "TECHNICAL GEO",
   "ai-shopping-agent": "AGENTIC COMMERCE",
+  "llmo-eeat": "LLMO / E-E-A-T",
   abstract: "RESEARCH NOTE",
 };
 
@@ -82,6 +83,35 @@ export function ArticleThumbnail({ variant, className = "", eyebrow }: ArticleTh
             <span className="font-bold text-white/[0.06]" style={{ fontSize: "clamp(52px, 6vw, 90px)", lineHeight: 1, letterSpacing: "-0.06em" }}>
               AI
             </span>
+          </div>
+        </>
+      ) : variant === "llmo-eeat" ? (
+        <>
+          <div
+            className="absolute inset-0 bg-[radial-gradient(circle_at_25%_28%,rgba(20,82,255,0.26),transparent_24%),radial-gradient(circle_at_78%_22%,rgba(255,255,255,0.12),transparent_20%),radial-gradient(circle_at_50%_78%,rgba(20,82,255,0.16),transparent_28%)]"
+          />
+          <div className="absolute left-5 top-5 rounded-full border border-white/10 bg-black/30 px-3 py-1 font-mono text-[9px] tracking-[0.22em] text-white/72 uppercase backdrop-blur-[2px]">
+            TRUST SIGNAL
+          </div>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-center">
+              <div
+                className="font-bold text-white"
+                style={{
+                  fontSize: "clamp(34px, 4.7vw, 66px)",
+                  lineHeight: 0.95,
+                  letterSpacing: "-0.08em",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                E - E - A - T
+              </div>
+              <div
+                className="mt-2 font-mono text-[10px] tracking-[0.32em] text-white/55 uppercase"
+              >
+                LLMO
+              </div>
+            </div>
           </div>
         </>
       ) : variant === "abstract" ? (
