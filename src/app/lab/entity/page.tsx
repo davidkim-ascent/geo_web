@@ -152,33 +152,23 @@ export default function EntityArticlePage() {
                   理由は、検索エンジンが言葉を「文字」ではなく「意味を持つ存在」として扱うようになったためです。たとえば「Apple」という言葉ひとつをとっても、複数の異なる実体が存在します。
                 </p>
                 <h3 className="article-h3">具体例：「Apple」が指す3つのエンティティ</h3>
-                <div className="article-table-wrap">
-                  <table className="article-table" style={{ "--table-cols": "auto 1fr 1fr" } as React.CSSProperties}>
-                    <thead>
-                      <tr>
-                        <th>分類</th>
-                        <th>エンティティ</th>
-                        <th>付随する情報</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>企業</td>
-                        <td>Apple Inc.</td>
-                        <td>iPhoneやMacを製造する会社</td>
-                      </tr>
-                      <tr>
-                        <td>果物</td>
-                        <td>りんご</td>
-                        <td>赤くて丸い、甘い果物</td>
-                      </tr>
-                      <tr>
-                        <td>地名</td>
-                        <td>Apple Valley</td>
-                        <td>米国カリフォルニア州の地名</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div className="article-table" style={{ "--table-cols": "0.82fr 1.09fr 1.09fr" } as React.CSSProperties}>
+                  <div className="article-table__head">
+                    <div>分類</div>
+                    <div>エンティティ</div>
+                    <div>付随する情報</div>
+                  </div>
+                  {[
+                    ["企業", "Apple Inc.", "iPhoneやMacを製造する会社"],
+                    ["果物", "りんご", "赤くて丸い、甘い果物"],
+                    ["地名", "Apple Valley", "米国カリフォルニア州の地名"],
+                  ].map((row) => (
+                    <div key={row[0]} className="article-table__row">
+                      <div className="article-table__cell article-table__cell--label">{row[0]}</div>
+                      <div className="article-table__cell">{row[1]}</div>
+                      <div className="article-table__cell">{row[2]}</div>
+                    </div>
+                  ))}
                 </div>
                 <p className="article-prose">
                   検索エンジンはこれらを識別し、ユーザーがどの実体を知りたいのかを推測します。これにより「Apple iPhone」のように複数の実体を組み合わせた検索にも、正確な結果を返せるのです。
@@ -198,38 +188,24 @@ export default function EntityArticlePage() {
                 <p className="article-prose">
                   この違いを理解することが、現代のSEOやGEO・LLMO対策の出発点になります。
                 </p>
-                <div className="article-table-wrap">
-                  <table className="article-table" style={{ "--table-cols": "auto 1fr 1fr" } as React.CSSProperties}>
-                    <thead>
-                      <tr>
-                        <th>観点</th>
-                        <th>キーワード</th>
-                        <th>エンティティ</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>正体</td>
-                        <td>ユーザーが入力する文字列</td>
-                        <td>意味を持つ固有の実体・概念</td>
-                      </tr>
-                      <tr>
-                        <td>評価の軸</td>
-                        <td>言葉の一致</td>
-                        <td>実体の認識と関係性</td>
-                      </tr>
-                      <tr>
-                        <td>評価のポイント</td>
-                        <td>言葉が含まれるか</td>
-                        <td>何について書かれているか</td>
-                      </tr>
-                      <tr>
-                        <td>AI検索での扱い</td>
-                        <td>断片的</td>
-                        <td>引用・推奨の判断材料</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div className="article-table" style={{ "--table-cols": "0.82fr 1.09fr 1.09fr" } as React.CSSProperties}>
+                  <div className="article-table__head">
+                    <div>観点</div>
+                    <div>キーワード</div>
+                    <div>エンティティ</div>
+                  </div>
+                  {[
+                    ["正体", "ユーザーが入力する文字列", "意味を持つ固有の実体・概念"],
+                    ["評価の軸", "言葉の一致", "実体の認識と関係性"],
+                    ["評価のポイント", "言葉が含まれるか", "何について書かれているか"],
+                    ["AI検索での扱い", "断片的", "引用・推奨の判断材料"],
+                  ].map((row) => (
+                    <div key={row[0]} className="article-table__row">
+                      <div className="article-table__cell article-table__cell--label">{row[0]}</div>
+                      <div className="article-table__cell">{row[1]}</div>
+                      <div className="article-table__cell">{row[2]}</div>
+                    </div>
+                  ))}
                 </div>
                 <p className="article-prose">
                   かつては、ページに狙ったキーワードを多く含めるだけで上位表示が可能でした。しかし現在は、何についてのページなのかをエンティティとして正確に伝えることが、評価の最重要ポイントへと変化しています。
@@ -286,33 +262,23 @@ export default function EntityArticlePage() {
                   たとえば「東京のおすすめのLLMO会社は？」という質問でAIに自社が推薦されれば、たとえ全体の流入数が減っても、検討度の高い見込み客を集客できます。AI検索は、量より質の集客に向いているのです。
                 </p>
                 <h3 className="article-h3">SEOとGEO・LLMOにおけるエンティティの位置づけ</h3>
-                <div className="article-table-wrap">
-                  <table className="article-table" style={{ "--table-cols": "auto 1fr 1fr" } as React.CSSProperties}>
-                    <thead>
-                      <tr>
-                        <th>項目</th>
-                        <th>従来のSEO</th>
-                        <th>GEO・LLMO</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>ゴール</td>
-                        <td>検索結果ページの上位表示</td>
-                        <td>AIの回答文に引用される状態</td>
-                      </tr>
-                      <tr>
-                        <td>評価の中心</td>
-                        <td>キーワードとの関連性</td>
-                        <td>発信者エンティティの信頼性</td>
-                      </tr>
-                      <tr>
-                        <td>主な対象AI</td>
-                        <td>Google検索</td>
-                        <td>ChatGPT・Gemini・Perplexity・Copilot</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div className="article-table" style={{ "--table-cols": "0.82fr 1.09fr 1.09fr" } as React.CSSProperties}>
+                  <div className="article-table__head">
+                    <div>項目</div>
+                    <div>従来のSEO</div>
+                    <div>GEO・LLMO</div>
+                  </div>
+                  {[
+                    ["ゴール", "検索結果ページの上位表示", "AIの回答文に引用される状態"],
+                    ["評価の中心", "キーワードとの関連性", "発信者エンティティの信頼性"],
+                    ["主な対象AI", "Google検索", "ChatGPT・Gemini・Perplexity・Copilot"],
+                  ].map((row) => (
+                    <div key={row[0]} className="article-table__row">
+                      <div className="article-table__cell article-table__cell--label">{row[0]}</div>
+                      <div className="article-table__cell">{row[1]}</div>
+                      <div className="article-table__cell">{row[2]}</div>
+                    </div>
+                  ))}
                 </div>
                 <p className="article-prose">
                   なお、両者は対立する関係ではなく補完関係です。SEOで築いた土台の上に、エンティティ強化とGEO・LLMO対策を重ねていく考え方が現実的でしょう。
@@ -416,48 +382,26 @@ export default function EntityArticlePage() {
                 <p className="article-prose">
                   ただし1社だけ例外があります。OPPOの親会社の説明です。「BBK Electronics系列」「BBKエレクトロニクス」「欧加ホールディングス」と、エンジンによって呼び方が分かれました。OPPOは中国のBBKグループを源流とし、OnePlusやrealmeと兄弟関係にある複雑な資本構造を持つため、AIが説明しきれずにばらついたと考えられます。
                 </p>
-                <div className="article-table-wrap">
-                  <table className="article-table" style={{ "--table-cols": "auto 1fr auto" } as React.CSSProperties}>
-                    <thead>
-                      <tr>
-                        <th>ブランド</th>
-                        <th>親会社の認識</th>
-                        <th>一致度</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>iPhone</td>
-                        <td>全エンジン「Apple」で一致</td>
-                        <td>○ 揃う</td>
-                      </tr>
-                      <tr>
-                        <td>Galaxy</td>
-                        <td>全エンジン「サムスン」で一致</td>
-                        <td>○ 揃う</td>
-                      </tr>
-                      <tr>
-                        <td>Pixel</td>
-                        <td>全エンジン「Alphabet」で一致</td>
-                        <td>○ 揃う</td>
-                      </tr>
-                      <tr>
-                        <td>Xiaomi</td>
-                        <td>全エンジン「Xiaomi Corporation」で一致</td>
-                        <td>○ 揃う</td>
-                      </tr>
-                      <tr>
-                        <td>Nothing</td>
-                        <td>全エンジン「Nothing Technology」で一致</td>
-                        <td>○ 揃う</td>
-                      </tr>
-                      <tr>
-                        <td>OPPO</td>
-                        <td>BBK系列・欧加ホールディングス等に表現が分裂</td>
-                        <td>△ ばらつく</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div className="article-table" style={{ "--table-cols": "0.82fr 1.09fr 1.09fr" } as React.CSSProperties}>
+                  <div className="article-table__head">
+                    <div>ブランド</div>
+                    <div>親会社の認識</div>
+                    <div>一致度</div>
+                  </div>
+                  {[
+                    ["iPhone", "全エンジン「Apple」で一致", "○ 揃う"],
+                    ["Galaxy", "全エンジン「サムスン」で一致", "○ 揃う"],
+                    ["Pixel", "全エンジン「Alphabet」で一致", "○ 揃う"],
+                    ["Xiaomi", "全エンジン「Xiaomi Corporation」で一致", "○ 揃う"],
+                    ["Nothing", "全エンジン「Nothing Technology」で一致", "○ 揃う"],
+                    ["OPPO", "BBK系列・欧加ホールディングス等に表現が分裂", "△ ばらつく"],
+                  ].map((row) => (
+                    <div key={row[0]} className="article-table__row">
+                      <div className="article-table__cell article-table__cell--label">{row[0]}</div>
+                      <div className="article-table__cell">{row[1]}</div>
+                      <div className="article-table__cell">{row[2]}</div>
+                    </div>
+                  ))}
                 </div>
                 <h3 className="article-h3">結果2：「ブランドの立ち位置」でOPPOだけ認識が割れた</h3>
                 <p className="article-prose">
@@ -484,48 +428,26 @@ export default function EntityArticlePage() {
                 <p className="article-prose">
                   ところがOPPOだけは、5エンジンが5通りの答えを返しました。「カメラ特化」「カメラ×コスパ」「プレミアム/コスパ」「コスパ/実用」「デザイン・カメラ特化」と、見事に割れています。同じブランドなのに、AIによって"何のブランドか"の理解が定まっていないのです。
                 </p>
-                <div className="article-table-wrap">
-                  <table className="article-table" style={{ "--table-cols": "auto 1fr auto" } as React.CSSProperties}>
-                    <thead>
-                      <tr>
-                        <th>ブランド</th>
-                        <th>5エンジンの答えの種類</th>
-                        <th>認識の状態</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Pixel</td>
-                        <td>1種類（AI特化）</td>
-                        <td>一致（強い）</td>
-                      </tr>
-                      <tr>
-                        <td>Xiaomi</td>
-                        <td>1種類（コスパ重視）</td>
-                        <td>一致（強い）</td>
-                      </tr>
-                      <tr>
-                        <td>Nothing</td>
-                        <td>1種類（デザイン特化）</td>
-                        <td>一致（強い）</td>
-                      </tr>
-                      <tr>
-                        <td>Galaxy</td>
-                        <td>1種類（ハイエンド）</td>
-                        <td>一致（強い）</td>
-                      </tr>
-                      <tr>
-                        <td>iPhone</td>
-                        <td>2種類（プレミアム/ハイエンド）</td>
-                        <td>ほぼ一致</td>
-                      </tr>
-                      <tr>
-                        <td>OPPO</td>
-                        <td>5種類（すべて別の表現）</td>
-                        <td>ばらつき（弱い）</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div className="article-table" style={{ "--table-cols": "0.82fr 1.09fr 1.09fr" } as React.CSSProperties}>
+                  <div className="article-table__head">
+                    <div>ブランド</div>
+                    <div>5エンジンの答えの種類</div>
+                    <div>認識の状態</div>
+                  </div>
+                  {[
+                    ["Pixel", "1種類（AI特化）", "一致（強い）"],
+                    ["Xiaomi", "1種類（コスパ重視）", "一致（強い）"],
+                    ["Nothing", "1種類（デザイン特化）", "一致（強い）"],
+                    ["Galaxy", "1種類（ハイエンド）", "一致（強い）"],
+                    ["iPhone", "2種類（プレミアム/ハイエンド）", "ほぼ一致"],
+                    ["OPPO", "5種類（すべて別の表現）", "ばらつき（弱い）"],
+                  ].map((row) => (
+                    <div key={row[0]} className="article-table__row">
+                      <div className="article-table__cell article-table__cell--label">{row[0]}</div>
+                      <div className="article-table__cell">{row[1]}</div>
+                      <div className="article-table__cell">{row[2]}</div>
+                    </div>
+                  ))}
                 </div>
                 <h3 className="article-h3">この結果からわかること</h3>
                 <p className="article-prose">
@@ -551,33 +473,22 @@ export default function EntityArticlePage() {
                 <p className="article-prose">
                   弊社Ascent（株式会社Ascent Networks）は、自社で開発運営をしている消費行動分析ツールListeningMindを用いてデータ基盤にもとづくGEO（LLMO）サービスを提供しています。多くの会社がコンテンツ対策やモニタリングのみを行うのに対し、Ascentはその前段となる質問クラスター分析から一貫して対応できる点が大きな違いです。
                 </p>
-                <div className="article-table-wrap">
-                  <table className="article-table" style={{ "--table-cols": "auto 1fr" } as React.CSSProperties}>
-                    <thead>
-                      <tr>
-                        <th>フェーズ</th>
-                        <th>内容</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>① 質問クラスター抽出</td>
-                        <td>実際にされている質問をデータで分析し、答えるべき質問群を特定</td>
-                      </tr>
-                      <tr>
-                        <td>② GAP分析</td>
-                        <td>質問とコンテンツの距離を10点満点でスコアリングし、優先度を可視化</td>
-                      </tr>
-                      <tr>
-                        <td>③ コンテンツ制作</td>
-                        <td>質問形ヘッダーとFAQ Schemaで、AIに引用される構造で執筆</td>
-                      </tr>
-                      <tr>
-                        <td>④ モニタリング</td>
-                        <td>引用状態・AI流入を月次レポートで提出し、改善まで一貫支援</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div className="article-table" style={{ "--table-cols": "auto 1fr" } as React.CSSProperties}>
+                  <div className="article-table__head">
+                    <div>フェーズ</div>
+                    <div>内容</div>
+                  </div>
+                  {[
+                    ["① 質問クラスター抽出", "実際にされている質問をデータで分析し、答えるべき質問群を特定"],
+                    ["② GAP分析", "質問とコンテンツの距離を10点満点でスコアリングし、優先度を可視化"],
+                    ["③ コンテンツ制作", "質問形ヘッダーとFAQ Schemaで、AIに引用される構造で執筆"],
+                    ["④ モニタリング", "引用状態・AI流入を月次レポートで提出し、改善まで一貫支援"],
+                  ].map((row) => (
+                    <div key={row[0]} className="article-table__row">
+                      <div className="article-table__cell article-table__cell--label">{row[0]}</div>
+                      <div className="article-table__cell">{row[1]}</div>
+                    </div>
+                  ))}
                 </div>
               </section>
 
