@@ -100,10 +100,32 @@ origin/main과 로컬 변경사항을 전체 비교한 뒤, 누락 없이 검토
 # アーティクルページ作成ガイドライン
 
 ## テーブルのカラム幅
-- `article-table` は CSS変数 `--table-cols` で列幅を制御する
-- デフォルト（3列）: `0.82fr 1.09fr 1.09fr`
-- **2列テーブルの場合は必ず** `.article-table` に `style={{ "--table-cols": "auto 1fr" } as React.CSSProperties}` を設定すること
-- 3列以外のカラム構成も同様に `--table-cols` で指定する（例: `"60px 1fr 1fr"` など）
+- `article-table` は div ベースの構造を使う（`<table>` HTML は使用禁止）
+- 構造: `.article-table` > `.article-table__head` > `<div>` × 列数、`.article-table__row` > `.article-table__cell` × 列数
+- デフォルト（3列）: `--table-cols` の初期値が `0.82fr 1.09fr 1.09fr` に設定済み。style 指定不要。
+- **2列テーブルの場合は必ず** `.article-table` に `article-table--2col` クラスを追加すること（`style` での `--table-cols` 指定は効かない）
+  ```tsx
+  <div className="article-table article-table--2col">
+    <div className="article-table__head"><div>列1</div><div>列2</div></div>
+    <div className="article-table__row">
+      <div className="article-table__cell article-table__cell--label">...</div>
+      <div className="article-table__cell">...</div>
+    </div>
+  </div>
+  ```
+- 3列テーブルの例:
+  ```tsx
+  <div className="article-table">
+    <div className="article-table__head"><div>列1</div><div>列2</div><div>列3</div></div>
+    {rows.map(row => (
+      <div key={row[0]} className="article-table__row">
+        <div className="article-table__cell article-table__cell--label">{row[0]}</div>
+        <div className="article-table__cell">{row[1]}</div>
+        <div className="article-table__cell">{row[2]}</div>
+      </div>
+    ))}
+  </div>
+  ```
 
 ## 日本語テキストのセル内改行問題
 - `・`（中点）区切りの長い日本語テキストをテーブルセルやリストに入れると、`・` の位置で不自然な改行が起きる

@@ -1184,6 +1184,12 @@ body.tweak-norotate .fw-ring g.node text {
   border-bottom: 0;
 }
 
+/* 2-column table variant */
+.article-table--2col .article-table__head,
+.article-table--2col .article-table__row {
+  grid-template-columns: auto 1fr;
+}
+
 .article-table__cell {
   font-size: calc(var(--fs-body) - 2px);
   line-height: 1.65;

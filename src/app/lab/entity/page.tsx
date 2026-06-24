@@ -473,7 +473,7 @@ export default function EntityArticlePage() {
                 <p className="article-prose">
                   弊社Ascent（株式会社Ascent Networks）は、自社で開発運営をしている消費行動分析ツールListeningMindを用いてデータ基盤にもとづくGEO（LLMO）サービスを提供しています。多くの会社がコンテンツ対策やモニタリングのみを行うのに対し、Ascentはその前段となる質問クラスター分析から一貫して対応できる点が大きな違いです。
                 </p>
-                <div className="article-table" style={{ "--table-cols": "auto 1fr" } as React.CSSProperties}>
+                <div className="article-table article-table--2col">
                   <div className="article-table__head">
                     <div>フェーズ</div>
                     <div>内容</div>
