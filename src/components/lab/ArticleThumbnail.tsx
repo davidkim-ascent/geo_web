@@ -7,7 +7,7 @@ import aiAgentSiteImage from "@/app/lab/ai-agent-site/ai-agent-site.png";
 import aiShoppingImage from "@/app/lab/ai-shopping-agent/ai-shopping.png";
 import { TypingPromptCard } from "@/app/lab/brand-cep/TypingPromptCard";
 
-type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "ai-shopping-agent" | "llmo-eeat" | "abstract";
+type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "ai-shopping-agent" | "llmo-eeat" | "entity" | "abstract";
 
 type ArticleThumbnailProps = {
   variant: ArticleThumbnailVariant;
@@ -15,7 +15,7 @@ type ArticleThumbnailProps = {
   eyebrow?: string;
 };
 
-const IMAGE_BY_VARIANT: Record<Exclude<ArticleThumbnailVariant, "abstract" | "adobe-ai-traffic" | "brand-cep" | "llmo-eeat">, typeof seoGeoImage> = {
+const IMAGE_BY_VARIANT: Record<Exclude<ArticleThumbnailVariant, "abstract" | "adobe-ai-traffic" | "brand-cep" | "llmo-eeat" | "entity">, typeof seoGeoImage> = {
   "seo-geo": seoGeoImage,
   "geo-llmo-company": geoLlmoCompanyImage,
   "ai-agent-site": aiAgentSiteImage,
@@ -30,6 +30,7 @@ const labelByVariant: Record<ArticleThumbnailVariant, string> = {
   "ai-agent-site": "TECHNICAL GEO",
   "ai-shopping-agent": "AGENTIC COMMERCE",
   "llmo-eeat": "LLMO / E-E-A-T",
+  entity: "エンティティ / GEO・LLMO",
   abstract: "RESEARCH NOTE",
 };
 
@@ -112,6 +113,87 @@ export function ArticleThumbnail({ variant, className = "", eyebrow }: ArticleTh
                 LLMO
               </div>
             </div>
+          </div>
+        </>
+      ) : variant === "entity" ? (
+        <>
+          {/* warm cream background */}
+          <div className="absolute inset-0" style={{ background: "#F2E8C8" }} />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <svg viewBox="0 0 520 260" width="92%" height="92%" xmlns="http://www.w3.org/2000/svg" style={{ overflow: "visible" }}>
+              {/* ── LEFT: dense knowledge graph ── */}
+              {/* edges */}
+              <g stroke="#1B2A4A" strokeWidth="1.6" strokeLinecap="round" opacity="0.75">
+                {/* red cluster top */}
+                <line x1="120" y1="28" x2="88" y2="68" />
+                <line x1="120" y1="28" x2="148" y2="68" />
+                <line x1="88" y1="68" x2="148" y2="68" />
+                <line x1="88" y1="68" x2="108" y2="104" />
+                <line x1="148" y1="68" x2="108" y2="104" />
+                <line x1="120" y1="28" x2="108" y2="104" />
+                {/* red → purple bridge */}
+                <line x1="148" y1="68" x2="188" y2="72" />
+                {/* red → teal bridge */}
+                <line x1="108" y1="104" x2="120" y2="148" />
+                <line x1="88" y1="68" x2="56" y2="148" />
+                {/* orange nodes */}
+                <line x1="32" y1="180" x2="56" y2="148" />
+                <line x1="32" y1="180" x2="68" y2="208" />
+                <line x1="56" y1="148" x2="68" y2="208" />
+                {/* teal cluster bottom */}
+                <line x1="120" y1="148" x2="152" y2="168" />
+                <line x1="120" y1="148" x2="140" y2="208" />
+                <line x1="152" y1="168" x2="180" y2="148" />
+                <line x1="152" y1="168" x2="168" y2="210" />
+                <line x1="180" y1="148" x2="168" y2="210" />
+                <line x1="180" y1="148" x2="200" y2="185" />
+                <line x1="168" y1="210" x2="200" y2="185" />
+                <line x1="140" y1="208" x2="168" y2="210" />
+                <line x1="140" y1="208" x2="120" y2="148" />
+                <line x1="68" y1="208" x2="120" y2="148" />
+              </g>
+              {/* red nodes */}
+              <circle cx="120" cy="28" r="11" fill="#E8706A" stroke="#fff" strokeWidth="2" />
+              <circle cx="88" cy="68" r="11" fill="#E8706A" stroke="#fff" strokeWidth="2" />
+              <circle cx="148" cy="68" r="11" fill="#E8706A" stroke="#fff" strokeWidth="2" />
+              <circle cx="108" cy="104" r="11" fill="#E8706A" stroke="#fff" strokeWidth="2" />
+              {/* purple node */}
+              <circle cx="188" cy="72" r="10" fill="#9B8EC4" stroke="#fff" strokeWidth="2" />
+              {/* orange nodes */}
+              <circle cx="56" cy="148" r="10" fill="#E8A84A" stroke="#fff" strokeWidth="2" />
+              <circle cx="32" cy="180" r="10" fill="#E8A84A" stroke="#fff" strokeWidth="2" />
+              <circle cx="68" cy="208" r="10" fill="#E8A84A" stroke="#fff" strokeWidth="2" />
+              {/* teal nodes */}
+              <circle cx="120" cy="148" r="11" fill="#4BBFB0" stroke="#fff" strokeWidth="2" />
+              <circle cx="152" cy="168" r="11" fill="#4BBFB0" stroke="#fff" strokeWidth="2" />
+              <circle cx="180" cy="148" r="11" fill="#4BBFB0" stroke="#fff" strokeWidth="2" />
+              <circle cx="140" cy="208" r="11" fill="#4BBFB0" stroke="#fff" strokeWidth="2" />
+              <circle cx="168" cy="210" r="11" fill="#4BBFB0" stroke="#fff" strokeWidth="2" />
+              <circle cx="200" cy="185" r="11" fill="#4BBFB0" stroke="#fff" strokeWidth="2" />
+
+              {/* ── ARROW ── */}
+              <line x1="238" y1="130" x2="278" y2="130" stroke="#1B2A4A" strokeWidth="2" strokeDasharray="5 3" strokeLinecap="round" />
+              <polygon points="278,124 290,130 278,136" fill="#1B2A4A" opacity="0.7" />
+
+              {/* ── RIGHT: simplified entity graph ── */}
+              <g stroke="#1B2A4A" strokeWidth="2" strokeLinecap="round" opacity="0.85">
+                <line x1="360" y1="80" x2="330" y2="175" />
+                <line x1="360" y1="80" x2="460" y2="170" />
+                <line x1="330" y1="175" x2="460" y2="170" />
+                <line x1="360" y1="80" x2="420" y2="68" />
+              </g>
+              {/* red node — 5 */}
+              <circle cx="360" cy="80" r="28" fill="#E8706A" stroke="#fff" strokeWidth="2.5" />
+              <text x="360" y="87" textAnchor="middle" fill="white" fontSize="22" fontWeight="700" fontFamily="sans-serif">5</text>
+              {/* purple node */}
+              <circle cx="420" cy="68" r="18" fill="#9B8EC4" stroke="#fff" strokeWidth="2" />
+              {/* orange node — 3 */}
+              <circle cx="330" cy="175" r="24" fill="#E8A84A" stroke="#fff" strokeWidth="2.5" />
+              <text x="330" y="182" textAnchor="middle" fill="white" fontSize="20" fontWeight="700" fontFamily="sans-serif">3</text>
+              {/* teal node — 6 */}
+              <circle cx="460" cy="170" r="28" fill="#4BBFB0" stroke="#fff" strokeWidth="2.5" />
+              <text x="460" y="177" textAnchor="middle" fill="white" fontSize="22" fontWeight="700" fontFamily="sans-serif">6</text>
+            </svg>
           </div>
         </>
       ) : variant === "abstract" ? (

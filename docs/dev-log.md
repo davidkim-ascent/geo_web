@@ -1,5 +1,10 @@
 # Dev Log
 
+## 2026-06-24
+- 新規ブログ記事追加: `/lab/entity`（エンティティとは？LLMOやGEOなどAI検索の重要性について解説）
+- `ArticleThumbnail` に `entity` variant 追加（KNOWLEDGE GRAPH ビジュアル）
+- `LabArticles.tsx` POSTS 配列にエンティティ記事カードを追加（index 7）
+
 ## 2026-05-12 21:05
 - Resend API key 노출 문서 정리: 계획 문서에 남아 있던 실제 키를 마스킹함
 

@@ -11,6 +11,7 @@ const POSTS = [
   { cat: "INDUSTRY REPORT", date: "2026.05.19", read: "8 min", t: "業界別AIトラフィックレポート 2026 Q1 — Adobeレポート", d: "1兆件超の訪問データが示す変化。リテール+393%、旅行+233%など業界別AI訪問増加率と、コンバージョン・エンゲージメントへの影響をグラフで報告。", href: "/lab/adobe-ai-traffic", thumbVariant: "adobe-ai-traffic" as const },
   { cat: "TECHNICAL GEO", date: "2026.05.19", read: "7 min", t: "AIエージェントはウェブサイトをどう見るのか — 3つの方法とセマンティックHTMLの重要性", d: "画面画像・構造読み取り・組み合わせの3方式を解説。セマンティックHTML・ラベル設計・SSRの実装ポイントまで、AI対応サイト設計の基本を整理します。", href: "/lab/ai-agent-site", thumbVariant: "ai-agent-site" as const },
   { cat: "AGENTIC COMMERCE", date: "2026.05.21", read: "10 min", t: "AIショッピングの登場とエージェンティックコマース", d: "AIが購買を代行する時代の全体像。自動化6段階・OpenAI/Google/Shopifyのプロトコル競争・エコシステム14領域まで体系的に解説。", href: "/lab/ai-shopping-agent", thumbVariant: "ai-shopping-agent" as const },
+  { cat: "エンティティ / GEO・LLMO", date: "2026.06.24", read: "8 min", t: "エンティティとは？LLMOやGEOなどAI検索の重要性について解説", d: "エンティティを基礎知識から解説。AI検索に引用されるための仕組みやEEATとの関係、自社で可能な対策まで網羅。独自調査：5つのAIエンジンでブランド認識がどれだけ揃うかを検証。", href: "/lab/entity", thumbVariant: "entity" as const },
 ];
 
 function PostCard({ p, large = false }: { p: (typeof POSTS)[number]; large?: boolean }) {
