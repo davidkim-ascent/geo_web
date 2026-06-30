@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 const SITE_NAME = "Ascent GEO";
-const DEFAULT_TITLE = "GEO — Ascent";
+const DEFAULT_TITLE = "GEO・AIO・LLMOによるAI検索最適化 | Ascent GEO";
 const DEFAULT_DESCRIPTION =
-  "AI検索時代、推測ではなく、データと特許に基づくブランド戦略。";
+  "GEO・AIO・LLMOによるAI検索最適化を支援。特許分析と検索データに基づく戦略設計から、AI検索でのブランドプレゼンスを継続的に可視化・改善するモニタリングツール「GEO Watcher」まで、株式会社 Ascent Networksが提供します。";
 const DEFAULT_OG_IMAGE = "/ascent-geo-logo-split.png";
 const DEFAULT_OG_IMAGE_WIDTH = 3317;
 const DEFAULT_OG_IMAGE_HEIGHT = 552;

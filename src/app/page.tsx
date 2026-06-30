@@ -20,9 +20,9 @@ const FrameworkSection = dynamicImport(() => import("@/components/home/Framework
 });
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Ascent GEO・LLMO（アセント GEO・LLMO）- 株式会社 Ascent Networks",
+  title: "GEO・AIO・LLMOによるAI検索最適化 | Ascent GEO",
   description:
-    "推測ではなく、データと特許に基づくGEO(LLMO)戦略。特許分析と実消費者インテントに基づくGEO(LLMO)戦略を、Ascentが設計します。",
+    "GEO・AIO・LLMOによるAI検索最適化を支援。特許分析と検索データに基づく戦略設計から、AI検索でのブランドプレゼンスを継続的に可視化・改善するモニタリングツール「GEO Watcher」まで、株式会社 Ascent Networksが提供します。",
   path: "/",
 });
 
