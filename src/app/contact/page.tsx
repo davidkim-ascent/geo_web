@@ -7,8 +7,9 @@ import { getCalendarBookingHref, getCalendarBookingLinkProps } from "@/lib/calen
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Ascent GEO・LLMO 無料相談 - 株式会社 Ascent Networks",
-  description: "GEO・LLMOのお問い合わせはこちらから。",
+  title: "GEO・AIO・LLMO 無料相談 | 株式会社 Ascent Networks",
+  description:
+    "GEO・AIO・LLMO戦略やAI検索最適化に関するご相談はこちら。サービス内容や導入方法、GEO Watcherについてもお気軽にお問い合わせください。",
   path: "/contact",
 });
 

@@ -10,9 +10,9 @@ import { ServicesFAQ } from "./ServicesFAQ";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Ascent GEO・LLMOのサービス詳細 - 株式会社 Ascent Networks",
+  title: "GEO・AIO・LLMOサービス | 株式会社 Ascent Networks",
   description:
-    "サイト診断からモニタリングまで一貫してサポート。単発でも継続運用でも対応。AIに引用されるブランドをGEO(LLMO)フルスペックで支援します。",
+    "サイト診断から戦略設計、コンテンツ最適化、AI検索モニタリングまで一貫して支援。単発プロジェクトから継続運用まで、GEO・AIO・LLMOによるAI検索最適化を株式会社 Ascent Networksが提供します。",
   path: "/services",
 });
 
