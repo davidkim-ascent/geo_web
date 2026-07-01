@@ -7,7 +7,7 @@ import aiAgentSiteImage from "@/app/lab/ai-agent-site/ai-agent-site.png";
 import aiShoppingImage from "@/app/lab/ai-shopping-agent/ai-shopping.png";
 import { TypingPromptCard } from "@/app/lab/brand-cep/TypingPromptCard";
 
-type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "ai-shopping-agent" | "llmo-eeat" | "entity" | "abstract";
+type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "ai-shopping-agent" | "llmo-eeat" | "entity" | "ai-cited-article" | "abstract";
 
 type ArticleThumbnailProps = {
   variant: ArticleThumbnailVariant;
@@ -31,6 +31,7 @@ const labelByVariant: Record<ArticleThumbnailVariant, string> = {
   "ai-shopping-agent": "AGENTIC COMMERCE",
   "llmo-eeat": "LLMO / E-E-A-T",
   entity: "エンティティ / GEO・LLMO",
+  "ai-cited-article": "GEO / LLMO",
   abstract: "RESEARCH NOTE",
 };
 
@@ -194,6 +195,49 @@ export function ArticleThumbnail({ variant, className = "", eyebrow }: ArticleTh
               <circle cx="460" cy="170" r="28" fill="#4BBFB0" stroke="#fff" strokeWidth="2.5" />
               <text x="460" y="177" textAnchor="middle" fill="white" fontSize="22" fontWeight="700" fontFamily="sans-serif">6</text>
             </svg>
+          </div>
+        </>
+      ) : variant === "ai-cited-article" ? (
+        <>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(20,82,255,0.28),transparent_38%),radial-gradient(circle_at_80%_72%,rgba(20,82,255,0.14),transparent_32%)]" />
+          {/* 大きな "7" */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span
+              className="font-bold text-white select-none"
+              style={{ fontSize: "clamp(100px, 14vw, 160px)", lineHeight: 1, letterSpacing: "-0.06em", opacity: 0.12 }}
+            >
+              7
+            </span>
+          </div>
+          {/* 7つのタグを縦に並べる */}
+          <div className="absolute inset-0 flex items-center justify-end pr-6">
+            <div className="flex flex-col gap-[5px]">
+              {[
+                "結論ファースト",
+                "パッセージ設計",
+                "一次データ",
+                "FAQ構造",
+                "見出し網羅性",
+                "セマンティックHTML",
+                "根拠・出典",
+              ].map((label, i) => (
+                <div
+                  key={i}
+                  className="rounded-full px-3 py-[3px] font-mono text-[9px] tracking-[0.08em] text-white/80"
+                  style={{
+                    background: i < 2 ? "rgba(20,82,255,0.55)" : "rgba(255,255,255,0.07)",
+                    border: `1px solid ${i < 2 ? "rgba(20,82,255,0.7)" : "rgba(255,255,255,0.12)"}`,
+                  }}
+                >
+                  {String(i + 1).padStart(2, "0")} {label}
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* 左下ラベル */}
+          <div className="absolute left-5 bottom-5 font-bold text-white/90" style={{ fontSize: "clamp(28px, 4vw, 42px)", lineHeight: 1, letterSpacing: "-0.04em" }}>
+            AI引用<br />
+            <span className="text-[#1452FF]">7つの特徴</span>
           </div>
         </>
       ) : variant === "abstract" ? (

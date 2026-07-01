@@ -12,6 +12,7 @@ const POSTS = [
   { cat: "TECHNICAL GEO", date: "2026.05.19", read: "7 min", t: "AIエージェントはウェブサイトをどう見るのか — 3つの方法とセマンティックHTMLの重要性", d: "画面画像・構造読み取り・組み合わせの3方式を解説。セマンティックHTML・ラベル設計・SSRの実装ポイントまで、AI対応サイト設計の基本を整理します。", href: "/lab/ai-agent-site", thumbVariant: "ai-agent-site" as const },
   { cat: "AGENTIC COMMERCE", date: "2026.05.21", read: "10 min", t: "AIショッピングの登場とエージェンティックコマース", d: "AIが購買を代行する時代の全体像。自動化6段階・OpenAI/Google/Shopifyのプロトコル競争・エコシステム14領域まで体系的に解説。", href: "/lab/ai-shopping-agent", thumbVariant: "ai-shopping-agent" as const },
   { cat: "エンティティ / GEO・LLMO", date: "2026.06.24", read: "8 min", t: "エンティティとは？LLMOやGEOなどAI検索の重要性について解説", d: "エンティティを基礎知識から解説。AI検索に引用されるための仕組みやEEATとの関係、自社で可能な対策まで網羅。独自調査：5つのAIエンジンでブランド認識がどれだけ揃うかを検証。", href: "/lab/entity", thumbVariant: "entity" as const },
+  { cat: "GEO / LLMO", date: "2026.07.01", read: "8 min", t: "AIに引用される記事の特徴とは？押さえるべき7つの特徴", d: "AIに引用されやすいコンテンツの特徴や設計ポイントを独自調査データ（52件の引用分析）を交えながら7つのポイントに絞って解説。", href: "/lab/ai-cited-article", thumbVariant: "ai-cited-article" as const },
 ];
 
 function PostCard({ p, large = false }: { p: (typeof POSTS)[number]; large?: boolean }) {
