@@ -394,7 +394,7 @@ function WatcherShindanSection() {
             >
               <p className="font-mono text-[11px] tracking-[0.14em] text-[#1452FF] mb-2 uppercase">{c.subtitle}</p>
               <h3 className="text-[19px] font-bold text-[#0B0B0E] mb-3 leading-snug">{c.title}</h3>
-              <p className="text-[16px] text-[#4e4e51] leading-[1.6] flex-1">{c.desc}</p>
+              <p className="text-[16px] text-[#4e4e51] leading-[1.6] flex-1 font-[inherit]">{c.desc}</p>
               <div className="mt-6 pt-4 border-t border-black/[0.06]">
                 <Button asChild variant="detail">
                   <Link href={c.href}>詳しく見る →</Link>
