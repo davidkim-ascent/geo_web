@@ -7,20 +7,8 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://geo.ascentnet.co.jp/services</loc>
-    <lastmod>2026-06-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://geo.ascentnet.co.jp/framework</loc>
-    <lastmod>2026-06-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://geo.ascentnet.co.jp/why-ascent</loc>
-    <lastmod>2026-06-29</lastmod>
+    <loc>https://geo.ascentnet.co.jp/watcher</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

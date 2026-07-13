@@ -8,7 +8,6 @@ const sitemap = fs.readFileSync(sitemapPath, 'utf8')
 const expectedUrls = [
   'https://geo.ascentnet.co.jp/',
   'https://geo.ascentnet.co.jp/contact',
-  'https://geo.ascentnet.co.jp/framework',
   'https://geo.ascentnet.co.jp/lab',
   'https://geo.ascentnet.co.jp/lab/adobe-ai-traffic',
   'https://geo.ascentnet.co.jp/lab/ai-agent-site',
@@ -16,9 +15,8 @@ const expectedUrls = [
   'https://geo.ascentnet.co.jp/lab/brand-cep',
   'https://geo.ascentnet.co.jp/lab/geo-llmo-company',
   'https://geo.ascentnet.co.jp/lab/seo-geo',
-  'https://geo.ascentnet.co.jp/services',
+  'https://geo.ascentnet.co.jp/watcher',
   'https://geo.ascentnet.co.jp/whitepaper',
-  'https://geo.ascentnet.co.jp/why-ascent',
 ]
 
 for (const url of expectedUrls) {
