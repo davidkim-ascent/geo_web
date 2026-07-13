@@ -17,15 +17,6 @@ export const metadata: Metadata = buildPageMetadata({
 
 export const dynamic = "force-static";
 
-function SectionLabel({ title }: { title: string }) {
-  return (
-    <div className="flex items-center gap-3">
-      <span className="w-[6px] h-[6px] rounded-full flex-shrink-0 bg-[#1452FF]" />
-      <span className="ui-section-label-title">{title}</span>
-    </div>
-  );
-}
-
 function HeroSection() {
   return (
     <SplitSection
