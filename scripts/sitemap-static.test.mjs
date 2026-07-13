@@ -28,6 +28,7 @@ for (const excluded of [
   'https://geo.ascentnet.co.jp/contact/thanks',
   'https://geo.ascentnet.co.jp/whitepaper/downloaded',
   'https://geo.ascentnet.co.jp/whitepaper/denied',
+  'https://geo.ascentnet.co.jp/shindan',
 ]) {
   assert.ok(!sitemap.includes(`<loc>${excluded}</loc>`), `expected sitemap to exclude ${excluded}`)
 }
