@@ -15,10 +15,6 @@ const ContactForm = dynamicImport(
   { ssr: true }
 );
 
-const FrameworkSection = dynamicImport(() => import("@/components/home/FrameworkSection"), {
-  ssr: true,
-});
-
 export const metadata: Metadata = buildPageMetadata({
   title: "GEO・AIO・LLMOによるAI検索最適化 | Ascent GEO",
   description:
@@ -356,101 +352,52 @@ function SearchShiftSection() {
 }
 
 /* ─────────────────────────────────────────────
-   Why Ascent Section
+   Watcher / Shindan Intro Section
 ───────────────────────────────────────────── */
-function WhyAscentSection() {
-  const pillars = [
+function WatcherShindanSection() {
+  const cards = [
     {
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <rect x="3" y="3" width="18" height="18" rx="2" />
-          <line x1="3" y1="9" x2="21" y2="9" />
-          <line x1="9" y1="21" x2="9" y2="9" />
-        </svg>
-      ),
-      title: "特許ベースの GEO(LLMO) 分析",
-      desc: "Google / Microsoft の検索特許を解析し、Passage Ranking や Intent Ranking など内部メカニズムから GEO(LLMO) を逆算します。",
-      href: "/why-ascent",
+      title: "モニタリングツール",
+      subtitle: "GEO Watcher",
+      desc: "主要AIエンジンを横断して、自社・競合のAI検索上での露出、言及、引用状況を継続的にモニタリング。デイリーモニタリング／7つのAIモデル／20社の競合分析に対応。",
+      href: "/watcher",
     },
     {
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <circle cx="12" cy="12" r="3" />
-          <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
-        </svg>
-      ),
-      title: "リスニングマインド消費者インテント",
-      desc: "実消費者の検索質問データを基盤に、想定ではなく「実際に問われている問い」から戦略を組み立てます。",
-      href: "/why-ascent",
-    },
-    {
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <circle cx="18" cy="5" r="3" />
-          <circle cx="6" cy="12" r="3" />
-          <circle cx="18" cy="19" r="3" />
-          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-        </svg>
-      ),
-      title: "検索経路探索",
-      desc: "「最初の検索」だけで終わらず、そこから生まれた疑問や調べ直したルートを可視化します。",
-      href: "/why-ascent",
-    },
-    {
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <circle cx="12" cy="12" r="2" />
-          <circle cx="12" cy="4" r="2" />
-          <circle cx="20" cy="12" r="2" />
-          <circle cx="12" cy="20" r="2" />
-          <circle cx="4" cy="12" r="2" />
-        </svg>
-      ),
-      title: "GEO(LLMO) Framework",
-      desc: "Embedding による意味的類似度で、質問とコンテンツの GAP を10点モデルで定量評価します。",
-      href: "/framework",
+      title: "診断ツール",
+      subtitle: "GEO(LLMO) 診断",
+      desc: "自社ブランドと競合のAI検索上での露出状況を診断し、GEO/LLMO対策の出発点を明らかにします。",
+      href: "/shindan",
     },
   ];
 
   return (
-    <section id="why" className="bg-[#FAFAF7] pt-12 pb-24">
+    <section className="bg-[#FAFAF7] pt-12 pb-24">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <SectionLabel title="WHY ASCENT" />
+        <SectionLabel title="MONITORING & DIAGNOSIS" />
         <hr className="my-4 border-black/[0.07]" />
 
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <h2
-              className="text-[#0B0B0E] font-bold leading-[1.08] tracking-[-0.025em]"
-              style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
-            >
-              なぜAscentの<br />
-              GEO(LLMO)は<span className="text-blue-gradient">違う</span>のか。
-            </h2>
-          </div>
-          <div className="flex items-end">
-            <p className="text-[17px] text-[#4e4e51] leading-[1.6] font-[inherit]">
-              4 本の柱が、AI 検索の中で「なぜ引用されるのか」を定量で説明します。
-            </p>
-          </div>
+        <div className="mt-12">
+          <h2
+            className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
+            style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
+          >
+            現状を<span className="text-blue-gradient">可視化</span>し、<br />
+            継続的に<span className="text-blue-gradient">追う</span>。
+          </h2>
         </div>
 
-        {/* 4 pillar cards */}
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {pillars.map((p) => (
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+          {cards.map((c) => (
             <div
-              key={p.title}
-              className="bg-white border border-black/[0.07] rounded-2xl p-6 flex flex-col card-hover group"
+              key={c.title}
+              className="bg-white border border-black/[0.07] rounded-2xl p-7 flex flex-col card-hover group"
             >
-              <div className="w-[52px] h-[52px] rounded-xl border border-black/[0.08] flex items-center justify-center text-[#0B0B0E] mb-5 group-hover:border-[#1452FF]/30 group-hover:text-[#1452FF] transition-colors">
-                {p.icon}
-              </div>
-              <h3 className="text-[19px] font-bold text-[#0B0B0E] mb-3 leading-snug">{p.title}</h3>
-              <p className="text-[16px] text-[#4e4e51] leading-[1.6] flex-1 font-[inherit]">{p.desc}</p>
+              <p className="font-mono text-[11px] tracking-[0.14em] text-[#1452FF] mb-2 uppercase">{c.subtitle}</p>
+              <h3 className="text-[19px] font-bold text-[#0B0B0E] mb-3 leading-snug">{c.title}</h3>
+              <p className="text-[16px] text-[#4e4e51] leading-[1.6] flex-1">{c.desc}</p>
               <div className="mt-6 pt-4 border-t border-black/[0.06]">
                 <Button asChild variant="detail">
-                  <Link href={p.href}>詳しく見る →</Link>
+                  <Link href={c.href}>詳しく見る →</Link>
                 </Button>
               </div>
             </div>
@@ -890,8 +837,7 @@ export default function Home() {
     <div>
       <HeroSection />
       <SearchShiftSection />
-      <WhyAscentSection />
-      <FrameworkSection />
+      <WatcherShindanSection />
       <ServicesSection />
       <GeoLabSection />
       <SeoGeoCTASection />
