@@ -43,9 +43,8 @@ export default function Footer() {
             <ul className="flex flex-col gap-3">
               {[
                 { label: "Home", href: "/" },
-                { label: "Why Ascent", href: "/why-ascent" },
-                { label: "Framework", href: "/framework" },
-                { label: "Services", href: "/services" },
+                { label: "モニタリングツール", href: "/watcher" },
+                { label: "診断ツール", href: "/shindan" },
                 { label: "GEO Lab", href: "/lab" },
               ].map((item) => (
                 <li key={item.label}>
