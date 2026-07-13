@@ -5,9 +5,9 @@
 ## 背景・目的
 
 現在のグローバルナビゲーションは `Why Ascent / Framework / Services / GEO Lab / Contact` の5項目。
-これを `モニタリング / 診断ツール / GEO Lab / Contact` の4項目に変更する。
+これを `モニタリングツール / 診断ツール / GEO Lab / Contact` の4項目に変更する。
 
-- 「モニタリング」= 新規ページ `/watcher`（GEO Watcher 紹介）
+- 「モニタリングツール」= 新規ページ `/watcher`（GEO Watcher 紹介）
 - 「診断ツール」= 新規ページ `/shindan`（構成案は別途作成予定。今回はルーティングのみ先行構築）
 
 既存の `/why-ascent`, `/framework`, `/services` ページはファイルとして削除しない（コードはローカル・Git に残す）。
@@ -20,7 +20,7 @@
 nav配列（デスクトップ・モバイル両方）を以下に置換：
 
 ```
-{ label: "モニタリング", href: "/watcher" }
+{ label: "モニタリングツール", href: "/watcher" }
 { label: "診断ツール", href: "/shindan" }
 { label: "GEO Lab", href: "/lab" }
 { label: "Contact", href: "/contact" }
@@ -32,7 +32,7 @@ Sitemap欄のリストを以下に置換：
 
 ```
 { label: "Home", href: "/" }
-{ label: "モニタリング", href: "/watcher" }
+{ label: "モニタリングツール", href: "/watcher" }
 { label: "診断ツール", href: "/shindan" }
 { label: "GEO Lab", href: "/lab" }
 ```
@@ -78,7 +78,7 @@ Sitemap欄のリストを以下に置換：
 
 新規セクション `WatcherShindanIntro`:
 - 既存 `ServicesSection` 内のカードスタイル（白背景カード + card-hover + 詳しく見る→ボタン）を踏襲した、横並び2カードのシンプルな紹介セクション
-- カード1: モニタリング（GEO Watcher）紹介 + 「詳しく見る →」で `/watcher` へ
+- カード1: モニタリングツール（GEO Watcher）紹介 + 「詳しく見る →」で `/watcher` へ
 - カード2: 診断ツール紹介 + 「詳しく見る →」で `/shindan` へ
 - 見出し・リード文はSectionLabel（例: `MONITORING & DIAGNOSIS`）+ 短い導入コピーを新規作成
 
