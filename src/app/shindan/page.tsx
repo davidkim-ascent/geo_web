@@ -67,6 +67,8 @@ export default function ShindanPage() {
   return (
     <div>
       <HeroSection />
+      {/* TODO: WatcherFAQ の内容はGEO Watcher（モニタリングツール）向けのFAQ。
+          診断ツール用の正式コンテンツに差し替える際は必ず内容も見直すこと。 */}
       <WatcherFAQ />
     </div>
   );
