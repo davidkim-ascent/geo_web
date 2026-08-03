@@ -180,6 +180,8 @@ function ChallengesSection() {
       cta: "GEO Watcherを見る",
       href: "/watcher",
       steps: ["測る", "比べる", "改善する", "確かめる"],
+      bg: "linear-gradient(180deg, #180a1e 0%, #120514 50%, #0a0208 100%)",
+      border: "rgba(205,46,58,0.1)",
     },
     {
       label: "GEO診断レポート",
@@ -189,6 +191,8 @@ function ChallengesSection() {
       cta: "GEO診断レポートを見る",
       href: "/shindan",
       steps: ["診断する", "課題を示す", "提案する", "商談につなげる"],
+      bg: "radial-gradient(#0b2260, #0a0a12 70%)",
+      border: "#7ab6ff14",
     },
   ];
 
@@ -252,7 +256,8 @@ function ChallengesSection() {
           {solutions.map((s, si) => (
             <div
               key={s.label}
-              className="rounded-2xl p-7 border border-white/[0.1] bg-white/[0.03] flex flex-col card-hover-dark group"
+              className="rounded-2xl p-7 flex flex-col card-hover-dark group"
+              style={{ background: s.bg, border: `1px solid ${s.border}` }}
             >
               <p className="font-mono text-[11px] tracking-[0.14em] text-[#7ab6ff] mb-2 uppercase">{s.label}</p>
               <p className="text-[13px] text-[#9A9AA0] mb-3">{s.audience}</p>
