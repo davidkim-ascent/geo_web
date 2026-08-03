@@ -135,85 +135,6 @@ function HeroSection() {
 /* ─────────────────────────────────────────────
    2 Solutions Section
 ───────────────────────────────────────────── */
-function TwoSolutionsSection() {
-  const solutions = [
-    {
-      label: "GEO Watcher",
-      audience: "企業のマーケティング・ブランド担当者向け",
-      title: "自社・競合の変化を毎日追い、次の改善へ。",
-      desc: "主要AIにおける自社・競合の言及、引用、露出を毎日計測。競合との差や施策前後の変化を継続的に確認し、次に取り組むべき改善テーマを判断できます。",
-      specs: ["主要7AI", "毎日自動計測", "競合20社まで比較", "過去365日分を保存"],
-      cta: "GEO Watcherを見る",
-      href: "/watcher",
-      image: "/home/solution-watcher.png",
-    },
-    {
-      label: "GEO診断レポート",
-      audience: "SEO・Webマーケティング会社の法人営業向け",
-      title: "GEO・LLMO診断データから、初回商談を具体化する。",
-      desc: "ブランド名とURLを入力するだけで、見込み顧客のAI検索上の課題と競合との差を可視化。たった数分で、営業提案に使える診断レポートを作成できます。",
-      specs: ["主要6AI", "プロンプト・競合を自動生成", "自社ロゴ・CTAに変更可能", "提案用レポートを作成"],
-      cta: "GEO診断レポートを見る",
-      href: "/shindan",
-      image: "/home/solution-shindan.png",
-    },
-  ];
-
-  return (
-    <section className="bg-[#FAFAF7] pt-24 pb-12">
-      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <SectionLabel title="サービス紹介" />
-        <hr className="my-4 border-black/[0.07]" />
-
-        <div className="mt-12">
-          <h2
-            className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
-            style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
-          >
-            GEO・LLMO対策の目的に合わせて、<br />
-            <span className="text-blue-gradient">2つのソリューション</span>を。
-          </h2>
-          <p className="mt-4 text-[17px] text-[#4e4e51] max-w-[64ch] leading-[1.6] font-[inherit]">
-            自社・競合の変化を継続的に追いたい企業には、モニタリングツール「GEO Watcher」。見込み顧客の課題を可視化し、営業提案につなげたい企業には「GEO診断レポート」。Ascent GEOは、自社ブランドの継続的な改善と、見込み顧客への営業提案。2つの目的に応えるソリューションを提供します。
-          </p>
-        </div>
-
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
-          {solutions.map((s) => (
-            <div
-              key={s.label}
-              className="bg-white border border-black/[0.07] rounded-2xl overflow-hidden flex flex-col card-hover group"
-            >
-              <div className="relative w-full aspect-[16/10] bg-[#F0EFEA]">
-                <Image src={s.image} alt={s.title} fill className="object-cover" />
-              </div>
-              <div className="p-7 flex flex-col flex-1">
-                <p className="font-mono text-[11px] tracking-[0.14em] text-[#003393] mb-2 uppercase">{s.label}</p>
-                <p className="text-[13px] text-[#6B6B73] mb-3">{s.audience}</p>
-                <h3 className="text-[19px] font-bold text-[#0B0B0E] mb-3 leading-snug">{s.title}</h3>
-                <p className="text-[16px] text-[#4e4e51] leading-[1.6] flex-1 font-[inherit]">{s.desc}</p>
-                <div className="mt-5 flex items-center gap-2 flex-wrap">
-                  {s.specs.map((spec) => (
-                    <span key={spec} className="tag-light">{spec}</span>
-                  ))}
-                </div>
-                <div className="mt-6 pt-4 border-t border-black/[0.06]">
-                  <Button asChild variant="detail">
-                    <Link href={s.href}>{s.cta} →</Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─────────────────────────────────────────────
-   Challenges Section
-───────────────────────────────────────────── */
 function ChallengesSection() {
   const challenges = [
     {
@@ -250,10 +171,31 @@ function ChallengesSection() {
     },
   ];
 
+  const solutions = [
+    {
+      label: "GEO Watcher",
+      audience: "企業のマーケティング・ブランド担当者向け",
+      title: "自社・競合の変化を毎日追い、次の改善へ。",
+      desc: "主要AIにおける自社・競合の言及、引用、露出を毎日計測。競合との差や施策前後の変化を継続的に確認し、次に取り組むべき改善テーマを判断できます。",
+      specs: ["主要7AI", "毎日自動計測", "競合20社まで比較", "過去365日分を保存"],
+      cta: "GEO Watcherを見る",
+      href: "/watcher",
+    },
+    {
+      label: "GEO診断レポート",
+      audience: "SEO・Webマーケティング会社の法人営業向け",
+      title: "GEO・LLMO診断データから、初回商談を具体化する。",
+      desc: "ブランド名とURLを入力するだけで、見込み顧客のAI検索上の課題と競合との差を可視化。たった数分で、営業提案に使える診断レポートを作成できます。",
+      specs: ["主要6AI", "プロンプト・競合を自動生成", "自社ロゴ・CTAに変更可能", "提案用レポートを作成"],
+      cta: "GEO診断レポートを見る",
+      href: "/shindan",
+    },
+  ];
+
   return (
     <section className="bg-[#0B0B0E] pt-24 pb-12">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <SectionLabel title="CHALLENGES" dark />
+        <SectionLabel title="CHALLENGES & SOLUTION" dark />
         <hr className="my-4 border-white/[0.08]" />
 
         <div className="mt-12 text-center">
@@ -293,6 +235,43 @@ function ChallengesSection() {
                   </li>
                 ))}
               </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16">
+          <h2
+            className="text-[#FAFAF7] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
+            style={{ fontSize: "clamp(28px, 2.8vw, 44px)" }}
+          >
+            GEO・LLMO対策の目的に合わせて、<br />
+            <span className="text-blue-gradient">2つのソリューション</span>を。
+          </h2>
+          <p className="mt-4 text-[16px] text-[#d3d3d8] max-w-[64ch] leading-[1.6] font-[inherit]">
+            自社・競合の変化を継続的に追いたい企業には、モニタリングツール「GEO Watcher」。見込み顧客の課題を可視化し、営業提案につなげたい企業には「GEO診断レポート」。Ascent GEOは、自社ブランドの継続的な改善と、見込み顧客への営業提案。2つの目的に応えるソリューションを提供します。
+          </p>
+        </div>
+
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+          {solutions.map((s) => (
+            <div
+              key={s.label}
+              className="rounded-2xl p-7 border border-white/[0.1] bg-white/[0.03] flex flex-col card-hover-dark group"
+            >
+              <p className="font-mono text-[11px] tracking-[0.14em] text-[#7ab6ff] mb-2 uppercase">{s.label}</p>
+              <p className="text-[13px] text-[#9A9AA0] mb-3">{s.audience}</p>
+              <h3 className="text-[19px] font-bold text-[#FAFAF7] mb-3 leading-snug">{s.title}</h3>
+              <p className="text-[16px] text-[#d3d3d8] leading-[1.6] flex-1 font-[inherit]">{s.desc}</p>
+              <div className="mt-5 flex items-center gap-2 flex-wrap">
+                {s.specs.map((spec) => (
+                  <span key={spec} className="tag-dark">{spec}</span>
+                ))}
+              </div>
+              <div className="mt-6 pt-4 border-t border-white/[0.08]">
+                <Button asChild variant="detail">
+                  <Link href={s.href}>{s.cta} →</Link>
+                </Button>
+              </div>
             </div>
           ))}
         </div>
@@ -563,7 +542,6 @@ export default function Home() {
     <div>
       <HeroSection />
       <ChallengesSection />
-      <TwoSolutionsSection />
       <SolutionFlowSection />
       <GeoLabSection />
       <CTASection
