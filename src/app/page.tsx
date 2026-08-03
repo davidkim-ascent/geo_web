@@ -91,7 +91,7 @@ function HeroSection() {
             <Button
               asChild
               variant="cta"
-              className="!w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !bg-[#003393] hover:!bg-[#0B0B0E]"
+              className="!w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] !bg-[#003393] hover:!bg-[#0B0B0E]"
             >
               <Link href="/watcher">モニタリングツール GEO Watcherへ</Link>
             </Button>
@@ -120,7 +120,7 @@ function HeroSection() {
             <Button
               asChild
               variant="cta"
-              className="!w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 -mt-3 !bg-[#003393] hover:!bg-[#0B0B0E]"
+              className="!w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] -mt-3 !bg-[#003393] hover:!bg-[#0B0B0E]"
             >
               <Link href="/shindan">診断レポートツール GEO 診断へ</Link>
             </Button>
