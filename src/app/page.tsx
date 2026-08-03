@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { ArticleThumbnail } from "@/components/lab/ArticleThumbnail";
 import { HeroShindanAnimated } from "@/components/home/HeroShindanAnimated";
 import { HeroWatcherAnimated } from "@/components/home/HeroWatcherAnimated";
+import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { Button } from "@/components/ui/button";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
@@ -524,7 +525,7 @@ function GeoLabSection() {
 function FinalCtaSection() {
   return (
     <section
-      className="relative py-20 lg:py-28 overflow-hidden"
+      className="relative py-10 lg:py-14 overflow-hidden"
       style={{ background: "linear-gradient(160deg, #0a1a3a 0%, #071228 40%, #05070f 75%, #000000 100%)" }}
     >
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-14 items-start">
@@ -534,7 +535,7 @@ function FinalCtaSection() {
           </div>
           <h2
             className="text-[#FAFAF7] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
-            style={{ fontSize: "clamp(28px, 2.8vw, 44px)" }}
+            style={{ fontSize: "clamp(31px, 3.08vw, 48px)" }}
           >
             AI検索で選ばれるための<br />一歩を、ここから。
           </h2>
@@ -559,6 +560,9 @@ function FinalCtaSection() {
             >
               <Link href="/shindan">GEO診断レポートを見る →</Link>
             </Button>
+          </div>
+          <div className="mt-3">
+            <CalendarBookingButton className="!w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px]" />
           </div>
         </div>
         <div className="w-full max-w-[560px] mx-auto lg:ml-auto lg:mr-0">
