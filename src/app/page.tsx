@@ -207,24 +207,22 @@ function HeroSection() {
             Ascent GEOは、見込み顧客の課題を可視化するエージェンシー向けの「GEO診断レポートツール」と、自社・競合の変化を継続的に追う「GEO Watcher（GEO・LLMOモニタリングツール）」を提供します。現状把握から提案、改善、効果検証まで、目的に合わせたGEO・LLMO対策を支援します。
           </p>
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-[640px]">
-            <Link
-              href="/watcher"
-              className="rounded-xl px-5 py-4 bg-[#1452FF] hover:bg-[#0f43d6] transition-colors"
-            >
-              <p className="text-[12px] text-white/70 leading-snug">企業のマーケティング・ブランド担当者向け</p>
-              <p className="mt-1 text-[15px] font-bold text-white leading-snug">
-                モニタリングツール「GEO Watcher」
-              </p>
-            </Link>
-            <Link
-              href="/shindan"
-              className="rounded-xl px-5 py-4 border border-white/20 hover:border-white/40 hover:bg-white/5 transition-colors"
-            >
-              <p className="text-[12px] text-white/60 leading-snug">SEO・Webマーケティング会社の法人営業向け</p>
-              <p className="mt-1 text-[15px] font-bold text-white leading-snug">
-                診断レポートツール「GEO 診断」
-              </p>
-            </Link>
+            <Button asChild variant="cta" className="h-auto flex-col items-start gap-1">
+              <Link href="/watcher">
+                <span className="text-[12px] font-normal text-white/70 leading-snug">企業のマーケティング・ブランド担当者向け</span>
+                <span className="text-[15px] font-bold text-white leading-snug">
+                  モニタリングツール「GEO Watcher」
+                </span>
+              </Link>
+            </Button>
+            <Button asChild variant="ctaOutline" className="h-auto flex-col items-start gap-1">
+              <Link href="/shindan">
+                <span className="text-[12px] font-normal text-white/60 leading-snug">SEO・Webマーケティング会社の法人営業向け</span>
+                <span className="text-[15px] font-bold text-white leading-snug">
+                  診断レポートツール「GEO 診断」
+                </span>
+              </Link>
+            </Button>
           </div>
           <HeroLogoMark />
         </>
