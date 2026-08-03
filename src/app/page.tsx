@@ -353,14 +353,14 @@ function ChallengesSection() {
   ];
 
   return (
-    <section className="bg-[#FAFAF7] pt-24 pb-12">
+    <section className="bg-[#0B0B0E] pt-24 pb-12">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <SectionLabel title="CHALLENGES" />
-        <hr className="my-4 border-black/[0.07]" />
+        <SectionLabel title="CHALLENGES" dark />
+        <hr className="my-4 border-white/[0.08]" />
 
         <div className="mt-12">
           <h2
-            className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
+            className="text-[#FAFAF7] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
             style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
           >
             目的によって異なる、<br />
@@ -506,15 +506,15 @@ function GeoLabSection() {
   ];
 
   return (
-    <section id="lab" className="bg-[#FAFAF7] pt-12 pb-10">
+    <section id="lab" className="bg-[#0B0B0E] pt-12 pb-10">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <SectionLabel title="GEO(LLMO) LAB" />
-        <hr className="my-4 border-black/[0.07]" />
+        <SectionLabel title="GEO(LLMO) LAB" dark />
+        <hr className="my-4 border-white/[0.08]" />
 
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
             <h2
-              className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
+              className="text-[#FAFAF7] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
               style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
             >
               GEO・LLMO対策を、<br />
@@ -522,7 +522,7 @@ function GeoLabSection() {
             </h2>
           </div>
           <div className="flex items-end">
-            <p className="text-[17px] text-[#4e4e51] leading-[1.6] font-[inherit]">
+            <p className="text-[17px] text-[#d3d3d8] leading-[1.6] font-[inherit]">
               Ascent GEO LABは、AI検索時代の変化を、調査と実践から読み解くリサーチハブです。検索行動の変化、SEOとGEO・LLMOの違い、AIに引用されるコンテンツの条件、効果測定の考え方など、実務に役立つ知見を公開します。
             </p>
           </div>
@@ -532,7 +532,7 @@ function GeoLabSection() {
         <div className="mt-10 flex flex-col gap-4 lg:flex-row lg:items-stretch">
           {/* 왼쪽: 큰 카드 50% */}
           <Link href={articles[0].href ?? "/lab"} className="block w-full lg:w-1/2">
-            <div className="bg-[#0B0B0E] rounded-2xl overflow-hidden card-hover-dark group h-full flex flex-col">
+            <div className="bg-[#15151a] border border-white/[0.08] rounded-2xl overflow-hidden card-hover-dark group h-full flex flex-col">
               <ArticleThumbnail
                 variant={articles[0].thumbVariant}
                 eyebrow={articles[0].tag}
@@ -558,7 +558,7 @@ function GeoLabSection() {
               const card = (
                 <div
                   key={article.num}
-                  className="bg-[#0B0B0E] rounded-2xl overflow-hidden card-hover-dark group flex h-full"
+                  className="bg-[#15151a] border border-white/[0.08] rounded-2xl overflow-hidden card-hover-dark group flex h-full"
                 >
                   <ArticleThumbnail
                     variant={article.thumbVariant}
@@ -623,18 +623,18 @@ function GeoLabSection() {
             },
           ].map((a) => (
             <Link key={a.href} href={a.href} className="block group">
-              <article className="flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border border-[#E6E4DD] bg-[#FAFAF7] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1452FF] hover:shadow-[0_12px_32px_-16px_rgba(20,82,255,0.2)]">
+              <article className="flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border border-white/[0.08] bg-[#15151a] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1452FF] hover:shadow-[0_12px_32px_-16px_rgba(20,82,255,0.4)]">
                 <ArticleThumbnail variant={a.thumbVariant} eyebrow={a.tag} className="h-[140px] w-full" />
                 <div className="flex flex-1 flex-col p-5">
-                  <div className="mb-2 flex items-center justify-between font-mono text-[10px] tracking-[0.12em] text-[#6B6B73]">
-                    <span className="text-[#1452FF]">{a.tag}</span>
+                  <div className="mb-2 flex items-center justify-between font-mono text-[10px] tracking-[0.12em] text-[#9A9AA0]">
+                    <span className="text-[#7ab6ff]">{a.tag}</span>
                     <span>2026.{a.date}</span>
                   </div>
-                  <h3 className="mb-2 flex-none text-[17px] font-bold leading-[1.3] tracking-[-0.01em] text-[#0B0B0E]">{a.title}</h3>
-                  <p className="card-desc mb-4 flex-1 text-[#6B6B73]">{a.desc}</p>
-                  <div className="flex items-center justify-between border-t border-[#E6E4DD] pt-3 font-mono text-[10px] tracking-[0.1em] text-[#9A9AA0]">
+                  <h3 className="mb-2 flex-none text-[17px] font-bold leading-[1.3] tracking-[-0.01em] text-[#FAFAF7]">{a.title}</h3>
+                  <p className="card-desc mb-4 flex-1 text-[#9A9AA0]">{a.desc}</p>
+                  <div className="flex items-center justify-between border-t border-white/[0.08] pt-3 font-mono text-[10px] tracking-[0.1em] text-[#9A9AA0]">
                     <span>{a.readTime}</span>
-                    <span className="text-[#1452FF] transition-colors group-hover:underline">READ →</span>
+                    <span className="text-[#7ab6ff] transition-colors group-hover:underline">READ →</span>
                   </div>
                 </div>
               </article>
@@ -643,7 +643,7 @@ function GeoLabSection() {
         </div>
 
         <div className="mt-4 text-center">
-          <Link href="/lab" className="font-mono text-[11px] tracking-[0.18em] text-[#1452FF] hover:underline uppercase">
+          <Link href="/lab" className="font-mono text-[11px] tracking-[0.18em] text-[#7ab6ff] hover:underline uppercase">
             GEO(LLMO) LAB をすべて見る →
           </Link>
         </div>
