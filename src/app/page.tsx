@@ -215,9 +215,9 @@ function HeroSection() {
                 </span>
               </Link>
             </Button>
-            <Button asChild variant="ctaOutline" className="h-auto flex-col items-start gap-1">
+            <Button asChild variant="cta" className="h-auto flex-col items-start gap-1">
               <Link href="/shindan">
-                <span className="text-[12px] font-normal text-white/60 leading-snug">SEO・Webマーケティング会社の法人営業向け</span>
+                <span className="text-[12px] font-normal text-white/70 leading-snug">SEO・Webマーケティング会社の法人営業向け</span>
                 <span className="text-[15px] font-bold text-white leading-snug">
                   診断レポートツール「GEO 診断」
                 </span>
