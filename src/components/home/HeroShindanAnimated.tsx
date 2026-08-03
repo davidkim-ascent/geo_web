@@ -58,7 +58,10 @@ export function HeroShindanAnimated() {
         <span className="text-[6px] text-[#9A9AA0]">2026年7月16日</span>
       </div>
 
-      <div className="text-[13px] font-bold text-[#0B0B0E] mb-3 pb-1 border-b-2 border-[#0B0B0E] w-fit">ユニクロ</div>
+      <div className="flex items-baseline gap-2 mb-3 pb-1 border-b-2 border-[#0B0B0E] w-fit">
+        <span className="text-[13px] font-bold text-[#0B0B0E]">ユニクロ</span>
+        <span className="text-[13px] font-bold text-[#0B0B0E]">GEO(LLMO) リポート</span>
+      </div>
 
       <div className="flex gap-3 flex-1 min-h-0">
         <div className="w-[40%] rounded-md bg-[#F7F8FA] p-3 flex flex-col items-center justify-center">
