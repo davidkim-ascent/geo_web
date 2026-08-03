@@ -36,7 +36,7 @@ function HeroSection() {
   return (
     <section className="relative py-20 lg:py-28 bg-white border-b border-black/[0.06]">
       <div className="relative max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 w-full flex flex-col items-center text-center">
-        <div className="flex items-center justify-center gap-4 flex-wrap mb-8">
+        <div className="flex items-center justify-center gap-1.5 flex-wrap mb-8">
           {[
             { src: "/ai-model-logos/chatgpt.png", alt: "ChatGPT", whiteBg: true, scale: false },
             { src: "/ai-model-logos/claude.png", alt: "Claude", whiteBg: false, scale: false },
