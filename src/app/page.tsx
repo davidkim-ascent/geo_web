@@ -274,6 +274,90 @@ function TwoSolutionsSection() {
 }
 
 /* ─────────────────────────────────────────────
+   Challenges Section
+───────────────────────────────────────────── */
+function ChallengesSection() {
+  const challenges = [
+    {
+      label: "GEO Watcher",
+      audience: "マーケティング・ブランド担当者の課題",
+      title: "AI検索上の自社・競合の変化を、追えていますか？",
+      desc: "AIごとに言及や引用の状況は異なり、その結果も日々変化します。一度確認するだけでは、施策の効果や競合との差、次に改善すべきポイントを正しく判断できません。",
+      bullets: [
+        "複数のAIを横断して確認できていない",
+        "競合との差や業界内の立ち位置が把握できていない",
+        "施策前後の変化を継続的に追えていない",
+        "改善すべきテーマをデータから判断できていない",
+      ],
+      accent: "#cd2e3a",
+      bg: "linear-gradient(180deg, #0a0208 0%, #120514 40%, #180a1e 70%, #1a0b1a 100%)",
+      border: "rgba(205,46,58,0.08)",
+    },
+    {
+      label: "GEO診断レポート",
+      audience: "SEO・Webマーケティング会社の法人営業担当者の課題",
+      title: "「AI検索対策が必要です」だけで、商談を具体化できていますか？",
+      desc: "一般論だけでは、相手企業にとっての課題が見えず、具体的な提案にはつながりません。商談前に、AI上の言及状況や競合との差、次に提案すべきテーマを把握する必要があります。",
+      bullets: [
+        "見込み顧客ごとの課題を短時間で調べられない",
+        "初回商談で示せる具体的なデータがない",
+        "SEO提案にGEO・LLMOの切り口を加えられない",
+        "診断結果を次の相談や提案につなげにくい",
+      ],
+      accent: "#0070f3",
+      bg: "radial-gradient(#0b2260, #0a0a12 70%)",
+      border: "#7ab6ff12",
+    },
+  ];
+
+  return (
+    <section className="bg-[#FAFAF7] pt-24 pb-12">
+      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
+        <SectionLabel title="CHALLENGES" />
+        <hr className="my-4 border-black/[0.07]" />
+
+        <div className="mt-12">
+          <h2
+            className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
+            style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
+          >
+            目的によって異なる、<br />
+            GEO・LLMO対策の<span className="text-blue-gradient">課題</span>。
+          </h2>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+          {challenges.map((c) => (
+            <div
+              key={c.label}
+              className="rounded-2xl p-7 card-hover-dark relative overflow-hidden"
+              style={{ background: c.bg, border: `1px solid ${c.border}` }}
+            >
+              <div
+                className="absolute top-0 right-0 w-[200px] h-[200px] rounded-full blur-[80px] pointer-events-none"
+                style={{ background: `radial-gradient(circle, ${c.accent} 0%, ${c.accent}20 38%, transparent 65%)` }}
+              />
+              <p className="font-mono text-[11px] tracking-[0.14em] text-[#7ab6ff] mb-2 uppercase">{c.label}</p>
+              <p className="text-[13px] text-[#9A9AA0] mb-3">{c.audience}</p>
+              <h3 className="text-[19px] font-bold text-[#FAFAF7] mb-3 leading-snug">{c.title}</h3>
+              <p className="text-[15px] text-[#d3d3d8] leading-[1.6] mb-5 font-[inherit]">{c.desc}</p>
+              <ul className="flex flex-col gap-2">
+                {c.bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-2 text-[14px] text-[#d3d3d8] font-[inherit]">
+                    <span className="w-4 h-[1px] bg-[#7ab6ff] mt-[10px] flex-shrink-0" />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────
    GEO Lab Section
 ───────────────────────────────────────────── */
 function GeoLabSection() {
@@ -468,6 +552,7 @@ export default function Home() {
     <div>
       <HeroSection />
       <TwoSolutionsSection />
+      <ChallengesSection />
       <GeoLabSection />
       <SeoGeoCTASection />
     </div>
