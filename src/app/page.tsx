@@ -61,13 +61,13 @@ function HeroSection() {
           )}
         </div>
         <h1
-          className="text-[#0B0B0E] font-bold max-w-[26ch] mx-auto"
-          style={{ fontSize: "clamp(28px, 3.6vw, 46px)", lineHeight: "var(--lh-heading)", letterSpacing: "-0.03em" }}
+          className="text-[#0B0B0E] font-bold max-w-[34ch] mx-auto"
+          style={{ fontSize: "clamp(36px, 4.68vw, 60px)", lineHeight: "var(--lh-heading)", letterSpacing: "-0.03em" }}
         >
           GEO・LLMO対策の目的に合わせた、<br />
           <span className="text-blue-gradient">2つのソリューション</span>
         </h1>
-        <p className="mt-6 text-[17px] text-[#4e4e51] leading-[1.6] max-w-[64ch] mx-auto">
+        <p className="mt-6 text-[17px] text-[#4e4e51] leading-[1.6] max-w-[72ch] mx-auto">
           自社・競合の変化を継続的に追いたい企業には、モニタリングツール「GEO Watcher」。見込み顧客の課題を可視化し、営業提案につなげたい企業には「GEO診断レポート」。Ascent GEOは、自社ブランドの継続的な改善と、見込み顧客への営業提案。2つの目的に応えるソリューションを提供します。
         </p>
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 w-full max-w-[640px] mx-auto">
