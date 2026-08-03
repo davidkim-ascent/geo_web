@@ -179,6 +179,7 @@ function ChallengesSection() {
       desc: "主要AIにおける自社・競合の言及、引用、露出を毎日計測。競合との差や施策前後の変化を継続的に確認し、次に取り組むべき改善テーマを判断できます。AIごとの差や施策前後の変化を継続的に追うことで、GEO・LLMO対策の効果と、次に優先すべき改善テーマを判断できます。",
       cta: "GEO Watcherを見る",
       href: "/watcher",
+      steps: ["測る", "比べる", "改善する", "確かめる"],
     },
     {
       label: "GEO診断レポート",
@@ -187,6 +188,7 @@ function ChallengesSection() {
       desc: "ブランド名とURLを入力するだけで、見込み顧客のAI検索上の課題と競合との差を可視化。たった数分で、営業提案に使える診断レポートを作成できます。相手企業ごとのAI検索上の課題と競合との差を、初回商談で示せるGEO・LLMOの具体的な提案材料に変えられます。",
       cta: "GEO診断レポートを見る",
       href: "/shindan",
+      steps: ["診断する", "課題を示す", "提案する", "商談につなげる"],
     },
   ];
 
@@ -255,76 +257,62 @@ function ChallengesSection() {
               <p className="font-mono text-[11px] tracking-[0.14em] text-[#7ab6ff] mb-2 uppercase">{s.label}</p>
               <p className="text-[13px] text-[#9A9AA0] mb-3">{s.audience}</p>
               <h3 className="text-[19px] font-bold text-[#FAFAF7] mb-3 leading-snug">{s.title}</h3>
-              <p className="text-[16px] text-[#d3d3d8] leading-[1.6] flex-1 font-[inherit]">{s.desc}</p>
-              <div className="mt-6 pt-4 border-t border-white/[0.08]">
+              <p className="text-[16px] text-[#d3d3d8] leading-[1.6] mb-6 font-[inherit]">{s.desc}</p>
+              <div className="relative mx-auto mb-2" style={{ width: 220, height: 220 }}>
+                <svg viewBox="0 0 220 220" className="w-full h-full overflow-visible">
+                  <defs>
+                    <marker id={`arrow-${s.label}`} markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                      <path d="M0,0 L6,3 L0,6 Z" fill="#7ab6ff" />
+                    </marker>
+                  </defs>
+                  <circle cx="110" cy="110" r="78" fill="none" stroke="#7ab6ff33" strokeWidth="1.5" strokeDasharray="4 5" />
+                  {[0, 1, 2, 3].map((i) => {
+                    const startAngle = (i * 90 - 90) * (Math.PI / 180) + 0.35;
+                    const endAngle = ((i + 1) * 90 - 90) * (Math.PI / 180) - 0.35;
+                    const r = 78;
+                    const x1 = 110 + r * Math.cos(startAngle);
+                    const y1 = 110 + r * Math.sin(startAngle);
+                    const x2 = 110 + r * Math.cos(endAngle);
+                    const y2 = 110 + r * Math.sin(endAngle);
+                    return (
+                      <path
+                        key={i}
+                        d={`M${x1},${y1} A${r},${r} 0 0 1 ${x2},${y2}`}
+                        fill="none"
+                        stroke="#7ab6ff"
+                        strokeWidth="1.5"
+                        markerEnd={`url(#arrow-${s.label})`}
+                      />
+                    );
+                  })}
+                </svg>
+                {s.steps.map((step, i) => {
+                  const angle = (i * 90 - 90) * (Math.PI / 180);
+                  const x = 50 + 35.5 * Math.cos(angle);
+                  const y = 50 + 35.5 * Math.sin(angle);
+                  return (
+                    <div
+                      key={step}
+                      className="absolute flex items-center justify-center rounded-full bg-[#003393] text-white text-center px-2 leading-tight"
+                      style={{
+                        left: `${x}%`,
+                        top: `${y}%`,
+                        width: 76,
+                        height: 76,
+                        marginLeft: -38,
+                        marginTop: -38,
+                        fontSize: 12,
+                        fontWeight: 700,
+                      }}
+                    >
+                      {step}
+                    </div>
+                  );
+                })}
+              </div>
+              <div className="mt-2 pt-4 border-t border-white/[0.08]">
                 <Button asChild variant="detail" className="!bg-[#003393] hover:!bg-[#0B0B0E]">
                   <Link href={s.href}>{s.cta} →</Link>
-                </Button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─────────────────────────────────────────────
-   Solution Flow Section
-───────────────────────────────────────────── */
-function SolutionFlowSection() {
-  const flows = [
-    {
-      label: "GEO Watcher",
-      desc: "AIごとの差や施策前後の変化を継続的に追うことで、GEO・LLMO対策の効果と、次に優先すべき改善テーマを判断できます。",
-      steps: ["測る", "比べる", "改善する", "確かめる"],
-      cta: "GEO Watcherを見る",
-      href: "/watcher",
-    },
-    {
-      label: "GEO診断レポート",
-      desc: "相手企業ごとのAI検索上の課題と競合との差を、初回商談で示せるGEO・LLMOの具体的な提案材料に変えられます。",
-      steps: ["診断する", "課題を示す", "提案する", "商談につなげる"],
-      cta: "GEO診断レポートを見る",
-      href: "/shindan",
-    },
-  ];
-
-  return (
-    <section className="bg-[#FAFAF7] pt-24 pb-12">
-      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <SectionLabel title="SOLUTION" />
-        <hr className="my-4 border-black/[0.07]" />
-
-        <div className="mt-12">
-          <h2
-            className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
-            style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
-          >
-            目的別の課題を、<br />
-            2つのソリューションで<span className="text-blue-gradient">解決</span>。
-          </h2>
-        </div>
-
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
-          {flows.map((f) => (
-            <div
-              key={f.label}
-              className="bg-white border border-black/[0.07] rounded-2xl p-7 flex flex-col card-hover group"
-            >
-              <p className="font-mono text-[11px] tracking-[0.14em] text-[#003393] mb-3 uppercase">{f.label}</p>
-              <p className="text-[16px] text-[#4e4e51] leading-[1.6] mb-6 font-[inherit]">{f.desc}</p>
-              <div className="flex items-center gap-2 flex-wrap mb-6">
-                {f.steps.map((step, i) => (
-                  <div key={step} className="flex items-center gap-2">
-                    <span className="tag-blue">{step}</span>
-                    {i < f.steps.length - 1 && <span className="text-[#003393]">→</span>}
-                  </div>
-                ))}
-              </div>
-              <div className="mt-auto pt-4 border-t border-black/[0.06]">
-                <Button asChild variant="detail">
-                  <Link href={f.href}>{f.cta} →</Link>
                 </Button>
               </div>
             </div>
@@ -402,18 +390,18 @@ function GeoLabSection() {
         <div className="mt-10 flex flex-col gap-4 lg:flex-row lg:items-stretch">
           {/* 왼쪽: 큰 카드 50% */}
           <Link href={articles[0].href ?? "/lab"} className="block w-full lg:w-1/2">
-            <div className="bg-[#15151a] border border-white/[0.08] rounded-2xl overflow-hidden card-hover-dark group h-full flex flex-col">
+            <div className="bg-white border border-black/[0.07] rounded-2xl overflow-hidden card-hover group h-full flex flex-col">
               <ArticleThumbnail
                 variant={articles[0].thumbVariant}
                 eyebrow={articles[0].tag}
                 className="h-[260px] w-full"
               />
               <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-[20px] font-bold text-[#FAFAF7] leading-snug mb-2">
+                <h3 className="text-[20px] font-bold text-[#0B0B0E] leading-snug mb-2">
                   {articles[0].title}
                 </h3>
-                <p className="text-[15px] text-[#d3d3d8] leading-[1.6] mb-4 flex-1">{articles[0].desc}</p>
-                <div className="flex items-center gap-3 mono text-[11px] text-[#d3d3d8]">
+                <p className="text-[15px] text-[#4e4e51] leading-[1.6] mb-4 flex-1">{articles[0].desc}</p>
+                <div className="flex items-center gap-3 mono text-[11px] text-[#6B6B73]">
                   <span>{articles[0].date}</span>
                   <span>·</span>
                   <span>{articles[0].readTime}</span>
@@ -428,7 +416,7 @@ function GeoLabSection() {
               const card = (
                 <div
                   key={article.num}
-                  className="bg-[#15151a] border border-white/[0.08] rounded-2xl overflow-hidden card-hover-dark group flex h-full"
+                  className="bg-white border border-black/[0.07] rounded-2xl overflow-hidden card-hover group flex h-full"
                 >
                   <ArticleThumbnail
                     variant={article.thumbVariant}
@@ -437,12 +425,12 @@ function GeoLabSection() {
                   />
                   <div className="p-5 flex flex-col justify-between flex-1">
                     <div>
-                      <h4 className="text-[17px] font-bold text-[#FAFAF7] leading-snug mb-2">{article.title}</h4>
+                      <h4 className="text-[17px] font-bold text-[#0B0B0E] leading-snug mb-2">{article.title}</h4>
                       {article.desc && (
-                        <p className="card-desc text-[#9A9AA0]">{article.desc}</p>
+                        <p className="card-desc text-[#6B6B73]">{article.desc}</p>
                       )}
                     </div>
-                    <div className="flex items-center gap-3 mono text-[11px] text-[#d3d3d8] mt-3">
+                    <div className="flex items-center gap-3 mono text-[11px] text-[#6B6B73] mt-3">
                       <span>{article.date}</span>
                       <span>·</span>
                       <span>{article.readTime}</span>
@@ -493,18 +481,18 @@ function GeoLabSection() {
             },
           ].map((a) => (
             <Link key={a.href} href={a.href} className="block group">
-              <article className="flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border border-white/[0.08] bg-[#15151a] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1452FF] hover:shadow-[0_12px_32px_-16px_rgba(20,82,255,0.4)]">
+              <article className="flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border border-[#E6E4DD] bg-[#FAFAF7] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#003393] hover:shadow-[0_12px_32px_-16px_rgba(0,51,147,0.2)]">
                 <ArticleThumbnail variant={a.thumbVariant} eyebrow={a.tag} className="h-[140px] w-full" />
                 <div className="flex flex-1 flex-col p-5">
-                  <div className="mb-2 flex items-center justify-between font-mono text-[10px] tracking-[0.12em] text-[#9A9AA0]">
-                    <span className="text-[#7ab6ff]">{a.tag}</span>
+                  <div className="mb-2 flex items-center justify-between font-mono text-[10px] tracking-[0.12em] text-[#6B6B73]">
+                    <span className="text-[#003393]">{a.tag}</span>
                     <span>2026.{a.date}</span>
                   </div>
-                  <h3 className="mb-2 flex-none text-[17px] font-bold leading-[1.3] tracking-[-0.01em] text-[#FAFAF7]">{a.title}</h3>
-                  <p className="card-desc mb-4 flex-1 text-[#9A9AA0]">{a.desc}</p>
-                  <div className="flex items-center justify-between border-t border-white/[0.08] pt-3 font-mono text-[10px] tracking-[0.1em] text-[#9A9AA0]">
+                  <h3 className="mb-2 flex-none text-[17px] font-bold leading-[1.3] tracking-[-0.01em] text-[#0B0B0E]">{a.title}</h3>
+                  <p className="card-desc mb-4 flex-1 text-[#6B6B73]">{a.desc}</p>
+                  <div className="flex items-center justify-between border-t border-[#E6E4DD] pt-3 font-mono text-[10px] tracking-[0.1em] text-[#9A9AA0]">
                     <span>{a.readTime}</span>
-                    <span className="text-[#7ab6ff] transition-colors group-hover:underline">READ →</span>
+                    <span className="text-[#003393] transition-colors group-hover:underline">READ →</span>
                   </div>
                 </div>
               </article>
@@ -513,7 +501,7 @@ function GeoLabSection() {
         </div>
 
         <div className="mt-4 text-center">
-          <Link href="/lab" className="font-mono text-[11px] tracking-[0.18em] text-[#7ab6ff] hover:underline uppercase">
+          <Link href="/lab" className="font-mono text-[14px] tracking-[0.18em] text-[#003393] hover:underline uppercase">
             GEO(LLMO) LAB をすべて見る →
           </Link>
         </div>
@@ -531,7 +519,6 @@ export default function Home() {
     <div>
       <HeroSection />
       <ChallengesSection />
-      <SolutionFlowSection />
       <GeoLabSection />
       <CTASection
         kicker="AI検索で選ばれるための一歩を、ここから"
