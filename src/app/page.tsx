@@ -71,7 +71,7 @@ function HeroSection() {
         </p>
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-[880px] mx-auto">
           <div className="flex flex-col items-center gap-4">
-            <p className="text-[13px] text-[#4e4e51]">企業のマーケティング・ブランド担当者向け</p>
+            <span className="inline-flex items-center rounded-full bg-[#003393] px-5 py-2 text-[15px] font-medium text-white">企業のマーケティング・ブランド担当者向け</span>
             <div className="relative w-full aspect-[2260/660] rounded-lg overflow-hidden bg-white border border-black/[0.07]">
               <Image src="/home/hero-watcher-graph.png" alt="GEO Watcher 可視性グラフ" fill className="object-cover" />
             </div>
@@ -80,7 +80,7 @@ function HeroSection() {
             </Button>
           </div>
           <div className="flex flex-col items-center gap-4">
-            <p className="text-[13px] text-[#4e4e51]">SEO・Webマーケティング会社の法人営業向け</p>
+            <span className="inline-flex items-center rounded-full bg-[#003393] px-5 py-2 text-[15px] font-medium text-white">SEO・Webマーケティング会社の法人営業向け</span>
             <div className="relative w-full aspect-[940/260] rounded-lg overflow-hidden bg-white border border-black/[0.07]">
               <Image src="/home/hero-shindan-graph.png" alt="GEO 診断 シェア・オブ・ボイスグラフ" fill className="object-cover" />
             </div>
