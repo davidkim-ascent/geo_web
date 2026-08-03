@@ -4,8 +4,9 @@ import type { Metadata } from "next";
 import { ArticleThumbnail } from "@/components/lab/ArticleThumbnail";
 import { HeroShindanAnimated } from "@/components/home/HeroShindanAnimated";
 import { HeroWatcherAnimated } from "@/components/home/HeroWatcherAnimated";
-import { CTASection } from "@/components/layout/CTASection";
+import { ContactForm } from "@/components/contact/ContactForm";
 import { Button } from "@/components/ui/button";
+import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -518,6 +519,57 @@ function GeoLabSection() {
 }
 
 /* ─────────────────────────────────────────────
+   Final CTA Section
+───────────────────────────────────────────── */
+function FinalCtaSection() {
+  return (
+    <section
+      className="relative py-20 lg:py-28 overflow-hidden"
+      style={{ background: "linear-gradient(160deg, #0a1a3a 0%, #071228 40%, #05070f 75%, #000000 100%)" }}
+    >
+      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-14 items-start">
+        <div>
+          <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-[#7ab6ff] mb-5">
+            AI検索で選ばれるための一歩を、ここから
+          </div>
+          <h2
+            className="text-[#FAFAF7] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
+            style={{ fontSize: "clamp(28px, 2.8vw, 44px)" }}
+          >
+            AI検索で選ばれるための<br />一歩を、ここから。
+          </h2>
+          <p className="mt-6 text-[16px] text-[#d3d3d8] leading-[1.6] max-w-[52ch]">
+            自社ブランドの変化を継続的に捉えるなら、GEO Watcher。見込み顧客への提案を具体化するなら、GEO診断レポート。
+            <br />
+            <br />
+            診断する。変化を追う。課題を次の改善へつなげる。目的に合った方法で、GEO・LLMO対策を始めましょう。
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <Button
+              asChild
+              variant="cta"
+              className="!w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] !bg-[#003393] hover:!bg-[#0B0B0E]"
+            >
+              <Link href="/watcher">GEO Watcherを見る →</Link>
+            </Button>
+            <Button
+              asChild
+              variant="cta"
+              className="!w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] !bg-[#003393] hover:!bg-[#0B0B0E]"
+            >
+              <Link href="/shindan">GEO診断レポートを見る →</Link>
+            </Button>
+          </div>
+        </div>
+        <div className="w-full max-w-[560px] mx-auto lg:ml-auto lg:mr-0">
+          <ContactForm blockedEmailDomains={DEFAULT_BLOCKED_EMAIL_DOMAINS} />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────
    Page Root
 ───────────────────────────────────────────── */
 export default function Home() {
@@ -526,25 +578,7 @@ export default function Home() {
       <HeroSection />
       <ChallengesSection />
       <GeoLabSection />
-      <CTASection
-        kicker="AI検索で選ばれるための一歩を、ここから"
-        title={
-          <>
-            AI検索で選ばれるための<br />
-            一歩を、ここから。
-          </>
-        }
-        description={
-          <>
-            自社ブランドの変化を継続的に捉えるなら、GEO Watcher。見込み顧客への提案を具体化するなら、GEO診断レポート。
-            <br />
-            <br />
-            診断する。変化を追う。課題を次の改善へつなげる。目的に合った方法で、GEO・LLMO対策を始めましょう。
-          </>
-        }
-        primaryButton={{ href: "/watcher", label: "GEO Watcherを見る" }}
-        secondaryButtons={[{ href: "/shindan", label: "GEO診断レポートを見る" }]}
-      />
+      <FinalCtaSection />
     </div>
   );
 }
