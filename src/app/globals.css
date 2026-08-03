@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'NiveauGrotesk';
+  src: url('/fonts/NiveauGroteskMedium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NiveauGrotesk';
+  src: url('/fonts/HVD Fonts - NiveauGroteskBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg: #FAFAF7;
   --bg-dark: #0B0B0E;
@@ -7,13 +23,13 @@
   --paper-2: #F2F2EF;
   --ink: #0B0B0E;
   --ink-2: #323235;
-  --accent: #1452FF;
+  --accent: #003393;
   --muted-2: #d3d3d8;
   --hairline: rgba(11, 11, 14, 0.1);
   --fg: #323235;
   --fg-light: #FAFAF7;
-  --blue: #1452FF;
-  --blue-light: #6B8FFF;
+  --blue: #003393;
+  --blue-light: #003393;
   --hero-gradient:
     radial-gradient(ellipse 58% 46% at 18% 22%, rgba(0, 0, 0, 0.38) 0%, rgba(0, 0, 0, 0) 56%),
     radial-gradient(ellipse 40% 38% at 82% 26%, rgba(72, 125, 255, 0.26) 0%, rgba(72, 125, 255, 0) 56%),
@@ -183,8 +199,8 @@ h4 {
 }
 .ui-button-outline:hover,
 .btn-outline:hover {
-  border-color: var(--blue);
-  background: var(--blue);
+  border-color: #0B0B0E;
+  background: #0B0B0E;
   color: #fff;
 }
 
@@ -208,8 +224,8 @@ h4 {
 }
 .ui-cta-button-outline:hover,
 .btn-outline-dark:hover {
-  border-color: var(--blue);
-  background: var(--blue);
+  border-color: #0B0B0E;
+  background: #0B0B0E;
   color: #fff;
 }
 
@@ -233,8 +249,8 @@ h4 {
 }
 .ui-cta-button:hover,
 .btn-filled-dark:hover {
-  background: #0040E5;
-  border-color: #0040E5;
+  background: #0B0B0E;
+  border-color: #0B0B0E;
   color: #fff;
 }
 
@@ -258,7 +274,7 @@ h4 {
   color: #FAFAF7;
 }
 .ui-detail-button-dark:hover {
-  background: #1452FF;
+  background: #003393;
   color: #FAFAF7;
 }
 
@@ -435,7 +451,7 @@ h4 {
 }
 
 .tag-blue {
-  background: linear-gradient(90deg, #0070f3, #3d7eff);
+  background: #003393;
   color: #fff;
   font-size: 12px;
   font-weight: 600;
@@ -443,7 +459,7 @@ h4 {
   padding: 4px 10px;
   border-radius: 100px;
   font-family: 'JetBrains Mono', monospace;
-  box-shadow: 0 0 10px #0070f340;
+  box-shadow: 0 0 10px #00339340;
 }
 
 .tag-dark {
@@ -1398,14 +1414,11 @@ body.tweak-norotate .fw-ring g.node text {
   }
 }
 
-/* ===== ITALIC BLUE GRADIENT — clip fix ===== */
+/* ===== ITALIC NAVY ACCENT ===== */
 .text-blue-gradient,
 em.accent,
 span.accent {
-  background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--blue);
   font-style: italic;
   padding-right: 0.12em;
   display: inline-block;
