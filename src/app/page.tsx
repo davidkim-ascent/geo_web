@@ -179,6 +179,31 @@ function HeroSection() {
             <span className="text-blue-gradient">診断</span>と<span className="text-blue-gradient">モニタリング</span><br />
             ツール
           </h1>
+          <div className="mt-6 flex items-center gap-4 flex-wrap">
+            {[
+              { src: "/ai-model-logos/chatgpt.png", alt: "ChatGPT", whiteBg: true, scale: false },
+              { src: "/ai-model-logos/claude.png", alt: "Claude", whiteBg: false, scale: false },
+              { src: "/ai-model-logos/gemini.webp", alt: "Gemini", whiteBg: false, scale: false },
+              { src: "/ai-model-logos/perplexity.png", alt: "Perplexity", whiteBg: false, scale: true },
+              { src: "/ai-model-logos/copilot.png", alt: "Copilot", whiteBg: false, scale: false },
+              { src: "/ai-model-logos/google.svg", alt: "Google AI", whiteBg: false, scale: false },
+            ].map((logo) =>
+              logo.whiteBg ? (
+                <div key={logo.alt} className="h-7 w-7 rounded-full bg-white p-1 flex items-center justify-center">
+                  <Image src={logo.src} alt={logo.alt} width={28} height={28} className="h-full w-full object-contain" />
+                </div>
+              ) : (
+                <Image
+                  key={logo.alt}
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={28}
+                  height={28}
+                  className={`h-7 w-7 object-contain ${logo.scale ? "scale-125" : ""}`}
+                />
+              )
+            )}
+          </div>
           <p className="mt-7 text-[17px] text-[#d3d3d8] leading-[1.6] max-w-[52ch]">
             Ascent GEOは、見込み顧客の課題を可視化するエージェンシー向けの「GEO診断レポートツール」と、自社・競合の変化を継続的に追う「GEO Watcher（GEO・LLMOモニタリングツール）」を提供します。現状把握から提案、改善、効果検証まで、目的に合わせたGEO・LLMO対策を支援します。
           </p>
