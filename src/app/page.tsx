@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
 import { ArticleThumbnail } from "@/components/lab/ArticleThumbnail";
 import { HeroLogoMark } from "@/components/layout/HeroLogoMark";
-import { SeoGeoCTASection } from "@/components/layout/SeoGeoCTASection";
+import { CTASection } from "@/components/layout/CTASection";
 import { SplitSection } from "@/components/layout/SplitSection";
 import { Button } from "@/components/ui/button";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
@@ -622,7 +622,25 @@ export default function Home() {
       <ChallengesSection />
       <SolutionFlowSection />
       <GeoLabSection />
-      <SeoGeoCTASection />
+      <CTASection
+        kicker="AI検索で選ばれるための一歩を、ここから"
+        title={
+          <>
+            AI検索で選ばれるための<br />
+            一歩を、ここから。
+          </>
+        }
+        description={
+          <>
+            自社ブランドの変化を継続的に捉えるなら、GEO Watcher。見込み顧客への提案を具体化するなら、GEO診断レポート。
+            <br />
+            <br />
+            診断する。変化を追う。課題を次の改善へつなげる。目的に合った方法で、GEO・LLMO対策を始めましょう。
+          </>
+        }
+        primaryButton={{ href: "/watcher", label: "GEO Watcherを見る" }}
+        secondaryButtons={[{ href: "/shindan", label: "GEO診断レポートを見る" }]}
+      />
     </div>
   );
 }
