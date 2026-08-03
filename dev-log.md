@@ -1,3 +1,17 @@
+## 2026-08-03 16:20
+- ホームページ・ヘッダーナビをGEOリニューアル設計書（docs/superpowers/specs/2026-08-03-home-renewal-design.md）に基づき刷新
+- ヘッダー: Home/GEO Watcher/GEO診断/GEO LABの4項目構成に変更
+- トップページ: Hero新コピー化、2ソリューション紹介/課題提示/解決フローの3セクション新設、SearchShift/Servicesセクション削除、GEO Labリード文更新、CTAセクションを2ボタン構成に変更
+- 2ソリューション紹介セクションにdocx原本イラスト（GEO Watcher/GEO診断カード）を追加
+- HeroにAIモデルロゴ（ChatGPT/Claude/Gemini/Perplexity/Copilot/Google AI）のストリップを追加
+- Hero CTAをカレンダー予約ボタンから対象者別2ボタン（GEO Watcher/GEO診断）に変更し、共通Button variant(cta/ctaOutline)に統一
+
+## 2026-07-16 17:50
+- 로컬 개발 서버 실행: `npm run dev`로 Next.js 서버를 띄우고 `http://localhost:3000` 응답을 확인
+
+## 2026-07-14 15:55
+- 로컬 개발 서버 상태 확인: 동일 프로젝트의 `next dev`가 이미 실행 중임을 확인하고 `http://localhost:3000` 응답을 검증
+
 ## 2026-06-30 11:30
 - 4개 주요 페이지 SEO 메타데이터 변경: 서비스, Ascent의 강점, Framework, 문의 페이지의 타이틀 및 디스크립션 문구를 일괄 갱신
 
