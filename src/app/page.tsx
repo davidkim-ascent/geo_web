@@ -475,12 +475,13 @@ function GeoLabSection() {
               className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
               style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
             >
-              AI検索時代の<span className="text-blue-gradient">リサーチハブ</span>。
+              GEO・LLMO対策を、<br />
+              <span className="text-blue-gradient">知識とデータ</span>の両面から。
             </h2>
           </div>
           <div className="flex items-end">
             <p className="text-[17px] text-[#4e4e51] leading-[1.6] font-[inherit]">
-              特許分析・実データ検証・引用構造の研究。GEO(LLMO) Lab は実務に効くリサーチを発信します。
+              Ascent GEO LABは、AI検索時代の変化を、調査と実践から読み解くリサーチハブです。検索行動の変化、SEOとGEO・LLMOの違い、AIに引用されるコンテンツの条件、効果測定の考え方など、実務に役立つ知見を公開します。
             </p>
           </div>
         </div>
