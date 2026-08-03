@@ -72,8 +72,8 @@ function HeroSection() {
           自社・競合の変化を継続的に追いたい企業には、モニタリングツール「GEO Watcher」。見込み顧客の課題を可視化し、営業提案につなげたい企業には「GEO診断レポート」。Ascent GEOは、自社ブランドの継続的な改善と、見込み顧客への営業提案。2つの目的に応えるソリューションを提供します。
         </p>
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 w-full max-w-[1232px] mx-auto">
-          <div className="flex flex-col items-center gap-6 rounded-2xl border border-black/[0.08] p-8">
-            <span className="text-[13px] font-medium text-[#6B6B73]">企業のマーケティング・ブランド担当者向け</span>
+          <div className="relative flex flex-col items-center gap-6 rounded-2xl border border-black/[0.08] p-8 pt-9">
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-3 text-[13px] font-medium text-[#6B6B73] whitespace-nowrap">企業のマーケティング・ブランド担当者向け</span>
             <div className="flex flex-col items-center gap-3 text-center">
               <p className="text-[17px] font-bold text-[#0B0B0E] leading-snug">国内最大、7つの主要AIモデルをカバー</p>
               <div className="flex flex-wrap items-center justify-center gap-1.5 max-w-[420px]">
@@ -97,8 +97,8 @@ function HeroSection() {
             </Button>
             <HeroWatcherAnimated />
           </div>
-          <div className="flex flex-col items-center gap-6 rounded-2xl border border-black/[0.08] p-8">
-            <span className="text-[13px] font-medium text-[#6B6B73]">SEO・Webマーケティング会社の法人営業向け</span>
+          <div className="relative flex flex-col items-center gap-6 rounded-2xl border border-black/[0.08] p-8 pt-9">
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-3 text-[13px] font-medium text-[#6B6B73] whitespace-nowrap">SEO・Webマーケティング会社の法人営業向け</span>
             <ul className="flex flex-col gap-2 text-center">
               {[
                 "商談前に、課題に対して仮説を持てる",
