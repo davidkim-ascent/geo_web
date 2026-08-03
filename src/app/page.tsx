@@ -69,22 +69,30 @@ function HeroSection() {
         <p className="mt-6 text-[17px] text-[#4e4e51] leading-[1.6] max-w-[72ch] mx-auto">
           自社・競合の変化を継続的に追いたい企業には、モニタリングツール「GEO Watcher」。見込み顧客の課題を可視化し、営業提案につなげたい企業には「GEO診断レポート」。Ascent GEOは、自社ブランドの継続的な改善と、見込み顧客への営業提案。2つの目的に応えるソリューションを提供します。
         </p>
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-[880px] mx-auto">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-14 w-full max-w-[1232px] mx-auto">
           <div className="flex flex-col items-center gap-4">
             <span className="inline-flex items-center rounded-full bg-[#003393] px-5 py-2 text-[15px] font-medium text-white">企業のマーケティング・ブランド担当者向け</span>
-            <div className="relative w-full aspect-[2260/660] rounded-lg overflow-hidden bg-white border border-black/[0.07]">
+            <div className="relative w-full aspect-[3/2] rounded-lg overflow-hidden bg-white border border-black/[0.07]">
               <Image src="/home/hero-watcher-graph.png" alt="GEO Watcher 可視性グラフ" fill className="object-cover" />
             </div>
-            <Button asChild variant="cta" className="justify-center text-center">
+            <Button
+              asChild
+              variant="cta"
+              className="!w-auto !min-w-0 !max-w-none justify-center text-center px-6 !bg-[#0B0B0E] hover:!bg-[#003393]"
+            >
               <Link href="/watcher">モニタリングツール「GEO Watcher」</Link>
             </Button>
           </div>
           <div className="flex flex-col items-center gap-4">
             <span className="inline-flex items-center rounded-full bg-[#003393] px-5 py-2 text-[15px] font-medium text-white">SEO・Webマーケティング会社の法人営業向け</span>
-            <div className="relative w-full aspect-[940/260] rounded-lg overflow-hidden bg-white border border-black/[0.07]">
+            <div className="relative w-full aspect-[3/2] rounded-lg overflow-hidden bg-white border border-black/[0.07]">
               <Image src="/home/hero-shindan-graph.png" alt="GEO 診断 シェア・オブ・ボイスグラフ" fill className="object-cover" />
             </div>
-            <Button asChild variant="cta" className="justify-center text-center">
+            <Button
+              asChild
+              variant="cta"
+              className="!w-auto !min-w-0 !max-w-none justify-center text-center px-6 !bg-[#0B0B0E] hover:!bg-[#003393]"
+            >
               <Link href="/shindan">診断レポートツール「GEO 診断」</Link>
             </Button>
           </div>
