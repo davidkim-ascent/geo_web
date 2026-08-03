@@ -10,11 +10,11 @@ const SERIES = [
   { label: "SK-Ⅱ (P&G)", color: "#1E3A66", points: [{ x: 0, y: 60 }, { x: 25, y: 34 }, { x: 50, y: 12 }, { x: 75, y: 24 }, { x: 100, y: 30 }] },
 ];
 
-const DOT_POP_DURATION = 0.25;
-const DOT_STAGGER = 0.05;
-const DOTS_TOTAL_TIME = 0.6; // 全ブランドの点が出そろうまでの時間
-const LINE_DURATION = 1.1; // seconds per line draw
-const LINE_STAGGER = 0.2;
+const DOT_POP_DURATION = 0.4;
+const DOT_STAGGER = 0.1;
+const DOTS_TOTAL_TIME = 1.2; // 全ブランドの点が出そろうまでの時間
+const LINE_DURATION = 2.2; // seconds per line draw
+const LINE_STAGGER = 0.4;
 
 function catmullRomToBezier(points: { x: number; y: number }[]) {
   if (points.length < 2) return "";

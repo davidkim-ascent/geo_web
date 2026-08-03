@@ -36,7 +36,7 @@ export function HeroShindanAnimated() {
 
   useEffect(() => {
     if (!played) return;
-    const duration = 900;
+    const duration = 3200;
     const start = performance.now();
     let frame: number;
     const tick = (now: number) => {
@@ -78,7 +78,7 @@ export function HeroShindanAnimated() {
                 strokeLinecap="round"
                 strokeDasharray={2 * Math.PI * 42}
                 strokeDashoffset={played ? 2 * Math.PI * 42 * (1 - SOV_VALUE / 100) : 2 * Math.PI * 42}
-                style={{ transition: "stroke-dashoffset 900ms ease-out" }}
+                style={{ transition: "stroke-dashoffset 3200ms ease-out" }}
               />
             </svg>
             <div className="absolute inset-0 flex items-center justify-center font-bold text-[#0B0B0E]" style={{ fontSize: "min(3.2vw, 16px)" }}>
@@ -100,8 +100,8 @@ export function HeroShindanAnimated() {
                     style={{
                       width: played ? `${bar.value}%` : "0%",
                       background: bar.color,
-                      transitionDuration: "800ms",
-                      transitionDelay: `${i * 90}ms`,
+                      transitionDuration: "2400ms",
+                      transitionDelay: `${i * 260}ms`,
                     }}
                   />
                 </div>
