@@ -22,7 +22,7 @@ export const dynamic = "force-static";
 function SectionLabel({ title, dark = false }: { title: string; dark?: boolean }) {
   return (
     <div className="flex items-center gap-3">
-      <span className="w-[6px] h-[6px] rounded-full flex-shrink-0 bg-[#1452FF]" />
+      <span className="w-[6px] h-[6px] rounded-full flex-shrink-0 bg-[#003393]" />
       <span className={`ui-section-label-title ${dark ? "ui-section-label-title-dark" : ""}`}>{title}</span>
     </div>
   );
@@ -150,7 +150,7 @@ function TwoSolutionsSection() {
                 <Image src={s.image} alt={s.title} fill className="object-cover" />
               </div>
               <div className="p-7 flex flex-col flex-1">
-                <p className="font-mono text-[11px] tracking-[0.14em] text-[#1452FF] mb-2 uppercase">{s.label}</p>
+                <p className="font-mono text-[11px] tracking-[0.14em] text-[#003393] mb-2 uppercase">{s.label}</p>
                 <p className="text-[13px] text-[#6B6B73] mb-3">{s.audience}</p>
                 <h3 className="text-[19px] font-bold text-[#0B0B0E] mb-3 leading-snug">{s.title}</h3>
                 <p className="text-[16px] text-[#4e4e51] leading-[1.6] flex-1 font-[inherit]">{s.desc}</p>
@@ -300,13 +300,13 @@ function SolutionFlowSection() {
               key={f.label}
               className="bg-white border border-black/[0.07] rounded-2xl p-7 flex flex-col card-hover group"
             >
-              <p className="font-mono text-[11px] tracking-[0.14em] text-[#1452FF] mb-3 uppercase">{f.label}</p>
+              <p className="font-mono text-[11px] tracking-[0.14em] text-[#003393] mb-3 uppercase">{f.label}</p>
               <p className="text-[16px] text-[#4e4e51] leading-[1.6] mb-6 font-[inherit]">{f.desc}</p>
               <div className="flex items-center gap-2 flex-wrap mb-6">
                 {f.steps.map((step, i) => (
                   <div key={step} className="flex items-center gap-2">
                     <span className="tag-blue">{step}</span>
-                    {i < f.steps.length - 1 && <span className="text-[#1452FF]">→</span>}
+                    {i < f.steps.length - 1 && <span className="text-[#003393]">→</span>}
                   </div>
                 ))}
               </div>
