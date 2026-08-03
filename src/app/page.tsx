@@ -71,7 +71,7 @@ function HeroSection() {
         <p className="mt-6 text-[17px] text-[#4e4e51] leading-[1.6] max-w-[72ch] mx-auto">
           自社・競合の変化を継続的に追いたい企業には、モニタリングツール「GEO Watcher」。見込み顧客の課題を可視化し、営業提案につなげたい企業には「GEO診断レポート」。Ascent GEOは、自社ブランドの継続的な改善と、見込み顧客への営業提案。2つの目的に応えるソリューションを提供します。
         </p>
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 w-full max-w-[1232px] mx-auto">
+        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 gap-8 w-full max-w-[1232px] mx-auto">
           <div className="relative flex flex-col items-center gap-6 rounded-2xl border border-[#003393]/30 p-8 pt-9">
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-3 text-[14px] font-medium text-[#003393] whitespace-nowrap">企業のマーケティング・ブランド担当者向け</span>
             <div className="flex flex-col items-center gap-3 text-center">
@@ -176,8 +176,7 @@ function ChallengesSection() {
       label: "GEO Watcher",
       audience: "企業のマーケティング・ブランド担当者向け",
       title: "自社・競合の変化を毎日追い、次の改善へ。",
-      desc: "主要AIにおける自社・競合の言及、引用、露出を毎日計測。競合との差や施策前後の変化を継続的に確認し、次に取り組むべき改善テーマを判断できます。",
-      specs: ["主要7AI", "毎日自動計測", "競合20社まで比較", "過去365日分を保存"],
+      desc: "主要AIにおける自社・競合の言及、引用、露出を毎日計測。競合との差や施策前後の変化を継続的に確認し、次に取り組むべき改善テーマを判断できます。AIごとの差や施策前後の変化を継続的に追うことで、GEO・LLMO対策の効果と、次に優先すべき改善テーマを判断できます。",
       cta: "GEO Watcherを見る",
       href: "/watcher",
     },
@@ -185,8 +184,7 @@ function ChallengesSection() {
       label: "GEO診断レポート",
       audience: "SEO・Webマーケティング会社の法人営業向け",
       title: "GEO・LLMO診断データから、初回商談を具体化する。",
-      desc: "ブランド名とURLを入力するだけで、見込み顧客のAI検索上の課題と競合との差を可視化。たった数分で、営業提案に使える診断レポートを作成できます。",
-      specs: ["主要6AI", "プロンプト・競合を自動生成", "自社ロゴ・CTAに変更可能", "提案用レポートを作成"],
+      desc: "ブランド名とURLを入力するだけで、見込み顧客のAI検索上の課題と競合との差を可視化。たった数分で、営業提案に使える診断レポートを作成できます。相手企業ごとのAI検索上の課題と競合との差を、初回商談で示せるGEO・LLMOの具体的な提案材料に変えられます。",
       cta: "GEO診断レポートを見る",
       href: "/shindan",
     },
@@ -239,17 +237,13 @@ function ChallengesSection() {
           ))}
         </div>
 
-        <div className="mt-16">
+        <div className="mt-16 text-center">
           <h2
             className="text-[#FAFAF7] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
             style={{ fontSize: "clamp(28px, 2.8vw, 44px)" }}
           >
-            GEO・LLMO対策の目的に合わせて、<br />
-            <span className="text-blue-gradient">2つのソリューション</span>を。
+            目的別の課題を、<span className="text-[#FAFAF7] not-italic">2つのソリューション</span>で解決。
           </h2>
-          <p className="mt-4 text-[16px] text-[#d3d3d8] max-w-[64ch] leading-[1.6] font-[inherit]">
-            自社・競合の変化を継続的に追いたい企業には、モニタリングツール「GEO Watcher」。見込み顧客の課題を可視化し、営業提案につなげたい企業には「GEO診断レポート」。Ascent GEOは、自社ブランドの継続的な改善と、見込み顧客への営業提案。2つの目的に応えるソリューションを提供します。
-          </p>
         </div>
 
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -262,13 +256,8 @@ function ChallengesSection() {
               <p className="text-[13px] text-[#9A9AA0] mb-3">{s.audience}</p>
               <h3 className="text-[19px] font-bold text-[#FAFAF7] mb-3 leading-snug">{s.title}</h3>
               <p className="text-[16px] text-[#d3d3d8] leading-[1.6] flex-1 font-[inherit]">{s.desc}</p>
-              <div className="mt-5 flex items-center gap-2 flex-wrap">
-                {s.specs.map((spec) => (
-                  <span key={spec} className="tag-dark">{spec}</span>
-                ))}
-              </div>
               <div className="mt-6 pt-4 border-t border-white/[0.08]">
-                <Button asChild variant="detail">
+                <Button asChild variant="detail" className="!bg-[#003393] hover:!bg-[#0B0B0E]">
                   <Link href={s.href}>{s.cta} →</Link>
                 </Button>
               </div>
@@ -387,15 +376,15 @@ function GeoLabSection() {
   ];
 
   return (
-    <section id="lab" className="bg-[#0B0B0E] pt-12 pb-10">
+    <section id="lab" className="bg-[#FAFAF7] pt-12 pb-10">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <SectionLabel title="GEO(LLMO) LAB" dark />
-        <hr className="my-4 border-white/[0.08]" />
+        <SectionLabel title="GEO(LLMO) LAB" />
+        <hr className="my-4 border-black/[0.07]" />
 
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
             <h2
-              className="text-[#FAFAF7] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
+              className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
               style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
             >
               GEO・LLMO対策を、<br />
@@ -403,7 +392,7 @@ function GeoLabSection() {
             </h2>
           </div>
           <div className="flex items-end">
-            <p className="text-[17px] text-[#d3d3d8] leading-[1.6] font-[inherit]">
+            <p className="text-[17px] text-[#4e4e51] leading-[1.6] font-[inherit]">
               Ascent GEO LABは、AI検索時代の変化を、調査と実践から読み解くリサーチハブです。検索行動の変化、SEOとGEO・LLMOの違い、AIに引用されるコンテンツの条件、効果測定の考え方など、実務に役立つ知見を公開します。
             </p>
           </div>
