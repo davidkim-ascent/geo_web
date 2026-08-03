@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
 import { ArticleThumbnail } from "@/components/lab/ArticleThumbnail";
@@ -214,6 +215,7 @@ function TwoSolutionsSection() {
       specs: ["主要7AI", "毎日自動計測", "競合20社まで比較", "過去365日分を保存"],
       cta: "GEO Watcherを見る",
       href: "/watcher",
+      image: "/home/solution-watcher.png",
     },
     {
       label: "GEO診断レポート",
@@ -223,6 +225,7 @@ function TwoSolutionsSection() {
       specs: ["主要6AI", "プロンプト・競合を自動生成", "自社ロゴ・CTAに変更可能", "提案用レポートを作成"],
       cta: "GEO診断レポートを見る",
       href: "/shindan",
+      image: "/home/solution-shindan.png",
     },
   ];
 
@@ -249,21 +252,26 @@ function TwoSolutionsSection() {
           {solutions.map((s) => (
             <div
               key={s.label}
-              className="bg-white border border-black/[0.07] rounded-2xl p-7 flex flex-col card-hover group"
+              className="bg-white border border-black/[0.07] rounded-2xl overflow-hidden flex flex-col card-hover group"
             >
-              <p className="font-mono text-[11px] tracking-[0.14em] text-[#1452FF] mb-2 uppercase">{s.label}</p>
-              <p className="text-[13px] text-[#6B6B73] mb-3">{s.audience}</p>
-              <h3 className="text-[19px] font-bold text-[#0B0B0E] mb-3 leading-snug">{s.title}</h3>
-              <p className="text-[16px] text-[#4e4e51] leading-[1.6] flex-1 font-[inherit]">{s.desc}</p>
-              <div className="mt-5 flex items-center gap-2 flex-wrap">
-                {s.specs.map((spec) => (
-                  <span key={spec} className="tag-light">{spec}</span>
-                ))}
+              <div className="relative w-full aspect-[16/10] bg-[#F0EFEA]">
+                <Image src={s.image} alt={s.title} fill className="object-cover" />
               </div>
-              <div className="mt-6 pt-4 border-t border-black/[0.06]">
-                <Button asChild variant="detail">
-                  <Link href={s.href}>{s.cta} →</Link>
-                </Button>
+              <div className="p-7 flex flex-col flex-1">
+                <p className="font-mono text-[11px] tracking-[0.14em] text-[#1452FF] mb-2 uppercase">{s.label}</p>
+                <p className="text-[13px] text-[#6B6B73] mb-3">{s.audience}</p>
+                <h3 className="text-[19px] font-bold text-[#0B0B0E] mb-3 leading-snug">{s.title}</h3>
+                <p className="text-[16px] text-[#4e4e51] leading-[1.6] flex-1 font-[inherit]">{s.desc}</p>
+                <div className="mt-5 flex items-center gap-2 flex-wrap">
+                  {s.specs.map((spec) => (
+                    <span key={spec} className="tag-light">{spec}</span>
+                  ))}
+                </div>
+                <div className="mt-6 pt-4 border-t border-black/[0.06]">
+                  <Button asChild variant="detail">
+                    <Link href={s.href}>{s.cta} →</Link>
+                  </Button>
+                </div>
               </div>
             </div>
           ))}
