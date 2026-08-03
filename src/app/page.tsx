@@ -254,13 +254,12 @@ function ChallengesSection() {
         <SectionLabel title="CHALLENGES" dark />
         <hr className="my-4 border-white/[0.08]" />
 
-        <div className="mt-12">
+        <div className="mt-12 text-center">
           <h2
             className="text-[#FAFAF7] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
-            style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
+            style={{ fontSize: "clamp(28px, 2.8vw, 44px)" }}
           >
-            目的によって異なる、<br />
-            GEO・LLMO対策の<span className="text-blue-gradient">課題</span>。
+            目的によって異なる、GEO・LLMO対策の<span className="text-[#FAFAF7] not-italic">課題</span>。
           </h2>
         </div>
 
@@ -556,8 +555,8 @@ export default function Home() {
   return (
     <div>
       <HeroSection />
-      <TwoSolutionsSection />
       <ChallengesSection />
+      <TwoSolutionsSection />
       <SolutionFlowSection />
       <GeoLabSection />
       <CTASection
