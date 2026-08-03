@@ -71,20 +71,22 @@ function HeroSection() {
         <p className="mt-6 text-[17px] text-[#4e4e51] leading-[1.6] max-w-[72ch] mx-auto">
           自社・競合の変化を継続的に追いたい企業には、モニタリングツール「GEO Watcher」。見込み顧客の課題を可視化し、営業提案につなげたい企業には「GEO診断レポート」。Ascent GEOは、自社ブランドの継続的な改善と、見込み顧客への営業提案。2つの目的に応えるソリューションを提供します。
         </p>
-        <div className="relative mt-10 grid grid-cols-1 sm:grid-cols-2 gap-14 w-full max-w-[1232px] mx-auto">
-          <div className="hidden sm:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-black/[0.08]" aria-hidden="true" />
-          <div className="flex flex-col items-center gap-5">
-            <div className="flex items-center gap-3 w-full">
-              <span className="flex-1 h-px bg-black/[0.15]" />
-              <span className="text-[14px] font-medium text-[#0B0B0E] whitespace-nowrap">企業のマーケティング・ブランド担当者向け</span>
-              <span className="flex-1 h-px bg-black/[0.15]" />
-            </div>
-            <div className="flex flex-col gap-1.5 text-center">
-              <p className="text-[15px] font-bold text-[#0B0B0E] leading-snug">国内最大、7つの主要AIモデルをカバー</p>
-              <p className="text-[13px] text-[#6B6B73] leading-relaxed">
-                AIモデル別のブランド言及,競合比較,URL引用,トピック分類,AIモデルの検索キーワード,AI回答の原文提供,自動プロンプト・分析,CSVデータ,毎日追跡
-              </p>
-              <p className="text-[15px] font-bold text-[#0B0B0E] leading-snug">料金も、使える範囲も、最初から明確に</p>
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 w-full max-w-[1232px] mx-auto">
+          <div className="flex flex-col items-center gap-6 rounded-2xl border border-black/[0.08] p-8">
+            <span className="text-[13px] font-medium text-[#6B6B73]">企業のマーケティング・ブランド担当者向け</span>
+            <div className="flex flex-col items-center gap-3 text-center">
+              <p className="text-[17px] font-bold text-[#0B0B0E] leading-snug">国内最大、7つの主要AIモデルをカバー</p>
+              <div className="flex flex-wrap items-center justify-center gap-1.5 max-w-[420px]">
+                {[
+                  "ブランド言及", "競合比較", "URL引用", "トピック分類",
+                  "検索キーワード", "AI回答の原文", "自動プロンプト分析", "CSVデータ", "毎日追跡",
+                ].map((tag) => (
+                  <span key={tag} className="text-[13px] text-[#4e4e51] bg-black/[0.04] rounded-full px-3 py-1.5">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <p className="text-[17px] font-bold text-[#0B0B0E] leading-snug">料金も、使える範囲も、最初から明確に</p>
             </div>
             <Button
               asChild
@@ -95,17 +97,17 @@ function HeroSection() {
             </Button>
             <HeroWatcherAnimated />
           </div>
-          <div className="flex flex-col items-center gap-5">
-            <div className="flex items-center gap-3 w-full">
-              <span className="flex-1 h-px bg-black/[0.15]" />
-              <span className="text-[14px] font-medium text-[#0B0B0E] whitespace-nowrap">SEO・Webマーケティング会社の法人営業向け</span>
-              <span className="flex-1 h-px bg-black/[0.15]" />
-            </div>
-            <div className="flex flex-col gap-1.5 text-center">
-              <p className="text-[15px] font-bold text-[#0B0B0E] leading-snug">商談前に、課題に対して仮説を持てる</p>
-              <p className="text-[15px] font-bold text-[#0B0B0E] leading-snug">診断結果を、自社の提案資料として使える</p>
-              <p className="text-[15px] font-bold text-[#0B0B0E] leading-snug">自社仕様のレポートにカスタマイズ</p>
-            </div>
+          <div className="flex flex-col items-center gap-6 rounded-2xl border border-black/[0.08] p-8">
+            <span className="text-[13px] font-medium text-[#6B6B73]">SEO・Webマーケティング会社の法人営業向け</span>
+            <ul className="flex flex-col gap-2 text-center">
+              {[
+                "商談前に、課題に対して仮説を持てる",
+                "診断結果を、自社の提案資料として使える",
+                "自社仕様のレポートにカスタマイズ",
+              ].map((line) => (
+                <li key={line} className="text-[17px] font-bold text-[#0B0B0E] leading-snug">{line}</li>
+              ))}
+            </ul>
             <Button
               asChild
               variant="cta"
