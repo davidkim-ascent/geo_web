@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { ArticleThumbnail } from "@/components/lab/ArticleThumbnail";
+import { HeroShindanAnimated } from "@/components/home/HeroShindanAnimated";
+import { HeroWatcherAnimated } from "@/components/home/HeroWatcherAnimated";
 import { CTASection } from "@/components/layout/CTASection";
 import { Button } from "@/components/ui/button";
 import { buildPageMetadata } from "@/lib/seo";
@@ -72,9 +74,7 @@ function HeroSection() {
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-14 w-full max-w-[1232px] mx-auto">
           <div className="flex flex-col items-center gap-4">
             <span className="inline-flex items-center rounded-full border border-[#003393] px-5 py-2 text-[15px] font-medium text-[#003393]">企業のマーケティング・ブランド担当者向け</span>
-            <div className="relative w-full aspect-[3/2] rounded-lg overflow-hidden bg-white border border-black/[0.07]">
-              <Image src="/home/hero-watcher-graph.png" alt="GEO Watcher 可視性グラフ" fill className="object-cover" />
-            </div>
+            <HeroWatcherAnimated />
             <Button
               asChild
               variant="cta"
@@ -85,9 +85,7 @@ function HeroSection() {
           </div>
           <div className="flex flex-col items-center gap-4">
             <span className="inline-flex items-center rounded-full border border-[#003393] px-5 py-2 text-[15px] font-medium text-[#003393]">SEO・Webマーケティング会社の法人営業向け</span>
-            <div className="relative w-full aspect-[3/2] rounded-lg overflow-hidden bg-white border border-black/[0.07]">
-              <Image src="/home/hero-shindan-graph.png" alt="GEO 診断 シェア・オブ・ボイスグラフ" fill className="object-cover" />
-            </div>
+            <HeroShindanAnimated />
             <Button
               asChild
               variant="cta"
