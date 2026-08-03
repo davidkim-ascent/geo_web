@@ -4,16 +4,8 @@ import type { Metadata } from "next";
 import { ArticleThumbnail } from "@/components/lab/ArticleThumbnail";
 import { HeroLogoMark } from "@/components/layout/HeroLogoMark";
 import { CTASection } from "@/components/layout/CTASection";
-import { SplitSection } from "@/components/layout/SplitSection";
 import { Button } from "@/components/ui/button";
-import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 import { buildPageMetadata } from "@/lib/seo";
-import dynamicImport from "next/dynamic";
-
-const ContactForm = dynamicImport(
-  () => import("@/components/contact/ContactForm").then((mod) => mod.ContactForm),
-  { ssr: true }
-);
 
 export const metadata: Metadata = buildPageMetadata({
   title: "GEO・AIO・LLMOによるAI検索最適化 | Ascent GEO",
@@ -41,198 +33,64 @@ function SectionLabel({ title, dark = false }: { title: string; dark?: boolean }
 ───────────────────────────────────────────── */
 function HeroSection() {
   return (
-    <SplitSection
-      sectionClassName="hero-fixed relative py-12 lg:py-16"
-      sectionStyle={{
-        background: "var(--hero-gradient)",
-        borderBottom: "1px solid rgba(255,255,255,0.06)",
-      }}
-      background={
-        <>
-          <div
-            className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
-              backgroundSize: "80px 80px",
-            }}
-          />
-          <div className="absolute right-[10%] top-[20%] w-[500px] h-[500px] bg-[#1452FF]/4 rounded-full blur-[120px] pointer-events-none" />
-          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-            <div
-              className="arc-spin"
-              style={{
-                position: "absolute",
-                width: 1100,
-                height: 1100,
-                right: -480,
-                top: -260,
-                border: "1px dashed rgba(255,255,255,0.08)",
-                borderRadius: "50%",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                width: 720,
-                height: 720,
-                right: -200,
-                top: 40,
-                border: "1px solid rgba(20,82,255,0.18)",
-                borderRadius: "50%",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                width: 360,
-                height: 360,
-                right: 40,
-                top: 200,
-                border: "1px dashed rgba(20,82,255,0.32)",
-                borderRadius: "50%",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                left: -40,
-                bottom: -40,
-                fontFamily: "'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif",
-                fontWeight: 800,
-                fontSize: "clamp(180px, 22vw, 320px)",
-                letterSpacing: "-0.06em",
-                color: "transparent",
-                WebkitTextStroke: "1px rgba(255,255,255,0.06)",
-                lineHeight: 0.85,
-                userSelect: "none",
-                whiteSpace: "nowrap",
-              }}
-            >
-              GEO.
-            </div>
-            <div
-              style={{
-                position: "absolute",
-                right: 32,
-                top: 28,
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 10,
-                letterSpacing: "0.18em",
-                color: "rgba(255,255,255,0.42)",
-                display: "grid",
-                gap: 4,
-                textAlign: "right",
-              }}
-            >
-              <div style={{ display: "flex", gap: 10, justifyContent: "flex-end" }}>
-                <span
-                  style={{
-                    display: "inline-block",
-                    width: 6,
-                    height: 6,
-                    borderRadius: "50%",
-                    background: "#1452FF",
-                    boxShadow: "0 0 8px #1452FF",
-                    alignSelf: "center",
-                  }}
-                />
-                <span>LIVE · AI VISIBILITY INDEX</span>
+    <section className="relative py-20 lg:py-28 bg-[#FAFAF7] border-b border-black/[0.06]">
+      <div className="relative max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 w-full flex flex-col items-center text-center">
+        <div className="flex items-center justify-center gap-4 flex-wrap mb-8">
+          {[
+            { src: "/ai-model-logos/chatgpt.png", alt: "ChatGPT", whiteBg: true, scale: false },
+            { src: "/ai-model-logos/claude.png", alt: "Claude", whiteBg: false, scale: false },
+            { src: "/ai-model-logos/gemini.webp", alt: "Gemini", whiteBg: false, scale: false },
+            { src: "/ai-model-logos/perplexity.png", alt: "Perplexity", whiteBg: false, scale: true },
+            { src: "/ai-model-logos/copilot.png", alt: "Copilot", whiteBg: false, scale: false },
+            { src: "/ai-model-logos/google.svg", alt: "Google AI", whiteBg: false, scale: false },
+          ].map((logo) =>
+            logo.whiteBg ? (
+              <div key={logo.alt} className="h-7 w-7 rounded-full bg-white border border-black/[0.06] p-1 flex items-center justify-center">
+                <Image src={logo.src} alt={logo.alt} width={28} height={28} className="h-full w-full object-contain" />
               </div>
-              <div style={{ display: "flex", gap: 10, justifyContent: "flex-end" }}>
-                <span>ChatGPT</span><span style={{ color: "rgba(255,255,255,0.7)" }}>78%</span>
-              </div>
-              <div style={{ display: "flex", gap: 10, justifyContent: "flex-end" }}>
-                <span>Gemini</span><span style={{ color: "rgba(255,255,255,0.7)" }}>64%</span>
-              </div>
-              <div style={{ display: "flex", gap: 10, justifyContent: "flex-end" }}>
-                <span>Perplexity</span><span style={{ color: "rgba(255,255,255,0.7)" }}>51%</span>
-              </div>
-              <div style={{ display: "flex", gap: 10, justifyContent: "flex-end" }}>
-                <span>Copilot</span><span style={{ color: "rgba(255,255,255,0.7)" }}>42%</span>
-              </div>
-            </div>
-            <div style={{ position: "absolute", left: 0, right: 0, height: 4, background: "linear-gradient(90deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scan 6s ease-in-out infinite" }} />
-            <div style={{ position: "absolute", left: 0, right: 0, height: 4, background: "linear-gradient(90deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scan 8s ease-in-out -2s infinite" }} />
-            <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scanV 7s ease-in-out infinite" }} />
-            <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.95, animation: "scanV 9s ease-in-out -3.5s infinite" }} />
-            <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scanV 11s ease-in-out -1s infinite" }} />
-            <div style={{ position: "absolute", top: 0, bottom: 0, width: 4, background: "linear-gradient(180deg, transparent, rgba(20,82,255,0.95), transparent)", boxShadow: "0 0 18px rgba(20,82,255,0.55)", opacity: 0.6, animation: "scanV 13s ease-in-out -5s infinite" }} />
-          </div>
-        </>
-      }
-      containerClassName="relative max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 w-full grid grid-cols-1 lg:grid-cols-[1.18fr_1fr] gap-14 items-start"
-      leftClassName="pt-8"
-      rightClassName=""
-      left={
-        <>
-          <div className="font-['JetBrains_Mono',monospace] text-[10px] tracking-[0.2em] uppercase text-[#1452FF] mb-5 flex items-center gap-2">
-            <span className="pulse-dot" />
-            企業のGEO・LLMO対策を支援
-          </div>
-          <h1
-            className="text-[#FAFAF7] font-bold"
-            style={{ fontSize: "clamp(32px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em" }}
-          >
-            GEO・LLMOの<br />
-            <span className="text-blue-gradient">診断</span>と<span className="text-blue-gradient">モニタリング</span><br />
-            ツール
-          </h1>
-          <div className="mt-6 flex items-center gap-4 flex-wrap">
-            {[
-              { src: "/ai-model-logos/chatgpt.png", alt: "ChatGPT", whiteBg: true, scale: false },
-              { src: "/ai-model-logos/claude.png", alt: "Claude", whiteBg: false, scale: false },
-              { src: "/ai-model-logos/gemini.webp", alt: "Gemini", whiteBg: false, scale: false },
-              { src: "/ai-model-logos/perplexity.png", alt: "Perplexity", whiteBg: false, scale: true },
-              { src: "/ai-model-logos/copilot.png", alt: "Copilot", whiteBg: false, scale: false },
-              { src: "/ai-model-logos/google.svg", alt: "Google AI", whiteBg: false, scale: false },
-            ].map((logo) =>
-              logo.whiteBg ? (
-                <div key={logo.alt} className="h-7 w-7 rounded-full bg-white p-1 flex items-center justify-center">
-                  <Image src={logo.src} alt={logo.alt} width={28} height={28} className="h-full w-full object-contain" />
-                </div>
-              ) : (
-                <Image
-                  key={logo.alt}
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={28}
-                  height={28}
-                  className={`h-7 w-7 object-contain ${logo.scale ? "scale-125" : ""}`}
-                />
-              )
-            )}
-          </div>
-          <p className="mt-7 text-[17px] text-[#d3d3d8] leading-[1.6] max-w-[52ch]">
-            Ascent GEOは、見込み顧客の課題を可視化するエージェンシー向けの「GEO診断レポートツール」と、自社・競合の変化を継続的に追う「GEO Watcher（GEO・LLMOモニタリングツール）」を提供します。現状把握から提案、改善、効果検証まで、目的に合わせたGEO・LLMO対策を支援します。
-          </p>
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-[640px]">
-            <Button asChild variant="cta" className="h-auto flex-col items-start gap-1">
-              <Link href="/watcher">
-                <span className="text-[12px] font-normal text-white/70 leading-snug">企業のマーケティング・ブランド担当者向け</span>
-                <span className="text-[15px] font-bold text-white leading-snug">
-                  モニタリングツール「GEO Watcher」
-                </span>
-              </Link>
-            </Button>
-            <Button asChild variant="cta" className="h-auto flex-col items-start gap-1">
-              <Link href="/shindan">
-                <span className="text-[12px] font-normal text-white/70 leading-snug">SEO・Webマーケティング会社の法人営業向け</span>
-                <span className="text-[15px] font-bold text-white leading-snug">
-                  診断レポートツール「GEO 診断」
-                </span>
-              </Link>
-            </Button>
-          </div>
-          <HeroLogoMark />
-        </>
-      }
-      right={
-        <div className="w-full max-w-[620px] mx-auto lg:ml-auto lg:mr-0">
-          <ContactForm blockedEmailDomains={DEFAULT_BLOCKED_EMAIL_DOMAINS} />
+            ) : (
+              <Image
+                key={logo.alt}
+                src={logo.src}
+                alt={logo.alt}
+                width={28}
+                height={28}
+                className={`h-7 w-7 object-contain ${logo.scale ? "scale-125" : ""}`}
+              />
+            )
+          )}
         </div>
-      }
-    />
+        <h1
+          className="text-[#0B0B0E] font-bold max-w-[26ch] mx-auto"
+          style={{ fontSize: "clamp(28px, 3.6vw, 46px)", lineHeight: "var(--lh-heading)", letterSpacing: "-0.03em" }}
+        >
+          GEO・LLMO対策の目的に合わせた、<br />
+          <span className="text-blue-gradient">2つのソリューション</span>
+        </h1>
+        <p className="mt-6 text-[17px] text-[#4e4e51] leading-[1.6] max-w-[64ch] mx-auto">
+          自社・競合の変化を継続的に追いたい企業には、モニタリングツール「GEO Watcher」。見込み顧客の課題を可視化し、営業提案につなげたい企業には「GEO診断レポート」。Ascent GEOは、自社ブランドの継続的な改善と、見込み顧客への営業提案。2つの目的に応えるソリューションを提供します。
+        </p>
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 w-full max-w-[640px] mx-auto">
+          <Button asChild variant="cta" className="h-auto flex-col items-start gap-1">
+            <Link href="/watcher">
+              <span className="text-[12px] font-normal text-white/70 leading-snug">企業のマーケティング・ブランド担当者向け</span>
+              <span className="text-[15px] font-bold text-white leading-snug">
+                モニタリングツール「GEO Watcher」
+              </span>
+            </Link>
+          </Button>
+          <Button asChild variant="cta" className="h-auto flex-col items-start gap-1">
+            <Link href="/shindan">
+              <span className="text-[12px] font-normal text-white/70 leading-snug">SEO・Webマーケティング会社の法人営業向け</span>
+              <span className="text-[15px] font-bold text-white leading-snug">
+                診断レポートツール「GEO 診断」
+              </span>
+            </Link>
+          </Button>
+        </div>
+        <HeroLogoMark />
+      </div>
+    </section>
   );
 }
 
