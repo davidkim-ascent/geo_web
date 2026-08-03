@@ -72,10 +72,11 @@ function HeroSection() {
           自社・競合の変化を継続的に追いたい企業には、モニタリングツール「GEO Watcher」。見込み顧客の課題を可視化し、営業提案につなげたい企業には「GEO診断レポート」。Ascent GEOは、自社ブランドの継続的な改善と、見込み顧客への営業提案。2つの目的に応えるソリューションを提供します。
         </p>
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 w-full max-w-[1232px] mx-auto">
-          <div className="relative flex flex-col items-center gap-6 rounded-2xl border border-black/[0.08] p-8 pt-9">
+          <div className="relative flex flex-col items-center gap-6 rounded-2xl border border-[#003393]/30 p-8 pt-9">
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-3 text-[14px] font-medium text-[#003393] whitespace-nowrap">企業のマーケティング・ブランド担当者向け</span>
             <div className="flex flex-col items-center gap-3 text-center">
               <p className="text-[17px] font-bold text-[#0B0B0E] leading-snug">国内最大、7つの主要AIモデルをカバー</p>
+              <p className="text-[17px] font-bold text-[#0B0B0E] leading-snug">料金も、使える範囲も、最初から明確に</p>
               <div className="flex flex-wrap items-center justify-center gap-1.5 max-w-[420px]">
                 {[
                   "ブランド言及", "競合比較", "URL引用", "トピック分類",
@@ -86,7 +87,6 @@ function HeroSection() {
                   </span>
                 ))}
               </div>
-              <p className="text-[17px] font-bold text-[#0B0B0E] leading-snug">料金も、使える範囲も、最初から明確に</p>
             </div>
             <Button
               asChild
@@ -97,11 +97,10 @@ function HeroSection() {
             </Button>
             <HeroWatcherAnimated />
           </div>
-          <div className="relative flex flex-col items-center gap-6 rounded-2xl border border-black/[0.08] p-8 pt-9">
+          <div className="relative flex flex-col items-center gap-6 rounded-2xl border border-[#003393]/30 p-8 pt-9">
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-3 text-[14px] font-medium text-[#003393] whitespace-nowrap">SEO・Webマーケティング会社の法人営業向け</span>
             <ul className="flex flex-col gap-2 text-center">
               {[
-                "商談前に、課題に対して仮説を持てる",
                 "診断結果を、自社の提案資料として使える",
                 "自社仕様のレポートにカスタマイズ",
               ].map((line) => (
