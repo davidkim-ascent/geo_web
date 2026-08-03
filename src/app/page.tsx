@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Calendar } from "lucide-react";
 import type { Metadata } from "next";
 import { ArticleThumbnail } from "@/components/lab/ArticleThumbnail";
 import { HeroShindanAnimated } from "@/components/home/HeroShindanAnimated";
@@ -549,20 +550,23 @@ function FinalCtaSection() {
             <Button
               asChild
               variant="cta"
-              className="!w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] !bg-[#003393] hover:!bg-[#0B0B0E]"
+              className="flex-1 !w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] !bg-[#003393] hover:!bg-[#0B0B0E]"
             >
               <Link href="/watcher">GEO Watcherを見る →</Link>
             </Button>
             <Button
               asChild
               variant="cta"
-              className="!w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] !bg-[#003393] hover:!bg-[#0B0B0E]"
+              className="flex-1 !w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] !bg-[#003393] hover:!bg-[#0B0B0E]"
             >
               <Link href="/shindan">GEO診断レポートを見る →</Link>
             </Button>
           </div>
           <div className="mt-3">
-            <CalendarBookingButton className="!w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px]" />
+            <CalendarBookingButton className="!w-full !min-w-0 !max-w-none !h-[52px] !justify-start text-left px-6 !text-[14px] gap-2">
+              <Calendar size={16} />
+              無料相談予約（Googleカレンダー）
+            </CalendarBookingButton>
           </div>
         </div>
         <div className="w-full max-w-[560px] mx-auto lg:ml-auto lg:mr-0">
