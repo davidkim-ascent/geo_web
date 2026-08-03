@@ -249,7 +249,7 @@ function ChallengesSection() {
         </div>
 
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-          {solutions.map((s) => (
+          {solutions.map((s, si) => (
             <div
               key={s.label}
               className="rounded-2xl p-7 border border-white/[0.1] bg-white/[0.03] flex flex-col card-hover-dark group"
@@ -258,33 +258,34 @@ function ChallengesSection() {
               <p className="text-[13px] text-[#9A9AA0] mb-3">{s.audience}</p>
               <h3 className="text-[19px] font-bold text-[#FAFAF7] mb-3 leading-snug">{s.title}</h3>
               <p className="text-[16px] text-[#d3d3d8] leading-[1.6] mb-6 font-[inherit]">{s.desc}</p>
-              <div className="relative mx-auto mb-2" style={{ width: 220, height: 220 }}>
-                <svg viewBox="0 0 220 220" className="w-full h-full overflow-visible">
+              <div className="relative mx-auto mb-2" style={{ width: 440, height: 440 }}>
+                <svg viewBox="0 0 440 440" className="w-full h-full overflow-visible">
                   <defs>
-                    <marker id={`arrow-${s.label}`} markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                      <path d="M0,0 L6,3 L0,6 Z" fill="#7ab6ff" />
-                    </marker>
+                    <linearGradient id={`orbit-grad-${si}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#7ab6ff" stopOpacity="0" />
+                      <stop offset="100%" stopColor="#7ab6ff" stopOpacity="1" />
+                    </linearGradient>
                   </defs>
-                  <circle cx="110" cy="110" r="78" fill="none" stroke="#7ab6ff33" strokeWidth="1.5" strokeDasharray="4 5" />
-                  {[0, 1, 2, 3].map((i) => {
-                    const startAngle = (i * 90 - 90) * (Math.PI / 180) + 0.35;
-                    const endAngle = ((i + 1) * 90 - 90) * (Math.PI / 180) - 0.35;
-                    const r = 78;
-                    const x1 = 110 + r * Math.cos(startAngle);
-                    const y1 = 110 + r * Math.sin(startAngle);
-                    const x2 = 110 + r * Math.cos(endAngle);
-                    const y2 = 110 + r * Math.sin(endAngle);
-                    return (
-                      <path
-                        key={i}
-                        d={`M${x1},${y1} A${r},${r} 0 0 1 ${x2},${y2}`}
-                        fill="none"
-                        stroke="#7ab6ff"
-                        strokeWidth="1.5"
-                        markerEnd={`url(#arrow-${s.label})`}
-                      />
-                    );
-                  })}
+                  <circle cx="220" cy="220" r="156" fill="none" stroke="#7ab6ff33" strokeWidth="3" strokeDasharray="8 10" />
+                  <circle
+                    cx="220"
+                    cy="220"
+                    r="156"
+                    fill="none"
+                    stroke={`url(#orbit-grad-${si})`}
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeDasharray={`${2 * Math.PI * 156 * 0.22} ${2 * Math.PI * 156}`}
+                  >
+                    <animateTransform
+                      attributeName="transform"
+                      type="rotate"
+                      from="0 220 220"
+                      to="360 220 220"
+                      dur="4s"
+                      repeatCount="indefinite"
+                    />
+                  </circle>
                 </svg>
                 {s.steps.map((step, i) => {
                   const angle = (i * 90 - 90) * (Math.PI / 180);
@@ -297,10 +298,10 @@ function ChallengesSection() {
                       style={{
                         left: `${x}%`,
                         top: `${y}%`,
-                        width: 76,
-                        height: 76,
-                        marginLeft: -38,
-                        marginTop: -38,
+                        width: 100,
+                        height: 100,
+                        marginLeft: -50,
+                        marginTop: -50,
                         fontSize: 12,
                         fontWeight: 700,
                       }}
@@ -310,8 +311,8 @@ function ChallengesSection() {
                   );
                 })}
               </div>
-              <div className="mt-2 pt-4 border-t border-white/[0.08]">
-                <Button asChild variant="detail" className="!bg-[#003393] hover:!bg-[#0B0B0E]">
+              <div className="mt-6 flex justify-center">
+                <Button asChild variant="detail" className="!bg-[#003393] hover:!bg-[#0B0B0E] scale-110">
                   <Link href={s.href}>{s.cta} →</Link>
                 </Button>
               </div>
