@@ -34,7 +34,7 @@ function SectionLabel({ title, dark = false }: { title: string; dark?: boolean }
 ───────────────────────────────────────────── */
 function HeroSection() {
   return (
-    <section className="relative pt-8 pb-20 lg:pt-10 lg:pb-28 bg-white border-b border-black/[0.06]">
+    <section className="relative pt-16 pb-20 lg:pt-20 lg:pb-28 bg-white border-b border-black/[0.06]">
       <div className="relative max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 w-full flex flex-col items-center text-center">
         <div className="flex items-center justify-center gap-12 flex-wrap mb-8">
           {[
