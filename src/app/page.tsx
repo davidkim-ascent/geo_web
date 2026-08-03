@@ -73,9 +73,19 @@ function HeroSection() {
         </p>
         <div className="relative mt-10 grid grid-cols-1 sm:grid-cols-2 gap-14 w-full max-w-[1232px] mx-auto">
           <div className="hidden sm:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-black/[0.08]" aria-hidden="true" />
-          <div className="flex flex-col items-center gap-4">
-            <span className="inline-flex items-center rounded-full border border-[#003393] px-5 py-2 text-[15px] font-medium text-[#003393]">企業のマーケティング・ブランド担当者向け</span>
-            <HeroWatcherAnimated />
+          <div className="flex flex-col items-center gap-5">
+            <div className="flex items-center gap-3 w-full">
+              <span className="flex-1 h-px bg-black/[0.15]" />
+              <span className="text-[14px] font-medium text-[#0B0B0E] whitespace-nowrap">企業のマーケティング・ブランド担当者向け</span>
+              <span className="flex-1 h-px bg-black/[0.15]" />
+            </div>
+            <div className="flex flex-col gap-1.5 text-center">
+              <p className="text-[15px] font-bold text-[#0B0B0E] leading-snug">国内最大、7つの主要AIモデルをカバー</p>
+              <p className="text-[13px] text-[#6B6B73] leading-relaxed">
+                AIモデル別のブランド言及,競合比較,URL引用,トピック分類,AIモデルの検索キーワード,AI回答の原文提供,自動プロンプト・分析,CSVデータ,毎日追跡
+              </p>
+              <p className="text-[15px] font-bold text-[#0B0B0E] leading-snug">料金も、使える範囲も、最初から明確に</p>
+            </div>
             <Button
               asChild
               variant="cta"
@@ -83,10 +93,19 @@ function HeroSection() {
             >
               <Link href="/watcher">モニタリングツール GEO Watcher</Link>
             </Button>
+            <HeroWatcherAnimated />
           </div>
-          <div className="flex flex-col items-center gap-4">
-            <span className="inline-flex items-center rounded-full border border-[#003393] px-5 py-2 text-[15px] font-medium text-[#003393]">SEO・Webマーケティング会社の法人営業向け</span>
-            <HeroShindanAnimated />
+          <div className="flex flex-col items-center gap-5">
+            <div className="flex items-center gap-3 w-full">
+              <span className="flex-1 h-px bg-black/[0.15]" />
+              <span className="text-[14px] font-medium text-[#0B0B0E] whitespace-nowrap">SEO・Webマーケティング会社の法人営業向け</span>
+              <span className="flex-1 h-px bg-black/[0.15]" />
+            </div>
+            <div className="flex flex-col gap-1.5 text-center">
+              <p className="text-[15px] font-bold text-[#0B0B0E] leading-snug">商談前に、課題に対して仮説を持てる</p>
+              <p className="text-[15px] font-bold text-[#0B0B0E] leading-snug">診断結果を、自社の提案資料として使える</p>
+              <p className="text-[15px] font-bold text-[#0B0B0E] leading-snug">自社仕様のレポートにカスタマイズ</p>
+            </div>
             <Button
               asChild
               variant="cta"
@@ -94,6 +113,7 @@ function HeroSection() {
             >
               <Link href="/shindan">診断レポートツール GEO 診断</Link>
             </Button>
+            <HeroShindanAnimated />
           </div>
         </div>
       </div>
