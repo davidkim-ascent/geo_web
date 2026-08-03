@@ -71,7 +71,8 @@ function HeroSection() {
         <p className="mt-6 text-[17px] text-[#4e4e51] leading-[1.6] max-w-[72ch] mx-auto">
           自社・競合の変化を継続的に追いたい企業には、モニタリングツール「GEO Watcher」。見込み顧客の課題を可視化し、営業提案につなげたい企業には「GEO診断レポート」。Ascent GEOは、自社ブランドの継続的な改善と、見込み顧客への営業提案。2つの目的に応えるソリューションを提供します。
         </p>
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-14 w-full max-w-[1232px] mx-auto">
+        <div className="relative mt-10 grid grid-cols-1 sm:grid-cols-2 gap-14 w-full max-w-[1232px] mx-auto">
+          <div className="hidden sm:block absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-black/[0.08]" aria-hidden="true" />
           <div className="flex flex-col items-center gap-4">
             <span className="inline-flex items-center rounded-full border border-[#003393] px-5 py-2 text-[15px] font-medium text-[#003393]">企業のマーケティング・ブランド担当者向け</span>
             <HeroWatcherAnimated />
