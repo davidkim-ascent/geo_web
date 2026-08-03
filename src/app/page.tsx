@@ -168,25 +168,26 @@ function HeroSection() {
         <>
           <div className="font-['JetBrains_Mono',monospace] text-[10px] tracking-[0.2em] uppercase text-[#1452FF] mb-5 flex items-center gap-2">
             <span className="pulse-dot" />
-            GENERATIVE ENGINE OPTIMIZATION
+            企業のGEO・LLMO対策を支援
           </div>
           <h1
             className="text-[#FAFAF7] font-bold"
             style={{ fontSize: "clamp(32px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em" }}
           >
-            推測ではなく、<br />
-            データと特許に基づく<br />
-            <span className="text-blue-gradient">AI検索時代</span>のブランド<br />
-            戦略。
+            GEO・LLMOの<br />
+            <span className="text-blue-gradient">診断</span>と<span className="text-blue-gradient">モニタリング</span><br />
+            ツール
           </h1>
           <p className="mt-7 text-[17px] text-[#d3d3d8] leading-[1.6] max-w-[52ch]">
-            Google・Microsoft の特許分析、リスニングマインドの実消費者インテント、文脈・意図ベースでの評価。GEO(LLMO) は推測ゲームではない。Ascent は根拠のあるフレームワークで設計する。
+            Ascent GEOは、見込み顧客の課題を可視化するエージェンシー向けの「GEO診断レポートツール」と、自社・競合の変化を継続的に追う「GEO Watcher（GEO・LLMOモニタリングツール）」を提供します。現状把握から提案、改善、効果検証まで、目的に合わせたGEO・LLMO対策を支援します。
           </p>
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-[640px]">
+          <div className="mt-10 grid grid-cols-1 max-w-[360px]">
             <CalendarBookingButton />
+            {/* 資料準備後に復活予定:
             <Button asChild variant="ctaOutline">
               <Link href="/whitepaper">サービス資料をダウンロード</Link>
             </Button>
+            */}
           </div>
           <HeroLogoMark />
         </>
