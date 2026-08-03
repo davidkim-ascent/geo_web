@@ -2020,7 +2020,7 @@ span.accent {
     font-size: 32px;
   }
 }
-.check label a { color: var(--blue-light); text-decoration: underline; }
+.check label a { color: #7ab6ff; text-decoration: underline; }
 .ui-form-submit {
   width: 100%;
   padding: 14px;
