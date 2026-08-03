@@ -358,6 +358,72 @@ function ChallengesSection() {
 }
 
 /* ─────────────────────────────────────────────
+   Solution Flow Section
+───────────────────────────────────────────── */
+function SolutionFlowSection() {
+  const flows = [
+    {
+      label: "GEO Watcher",
+      desc: "AIごとの差や施策前後の変化を継続的に追うことで、GEO・LLMO対策の効果と、次に優先すべき改善テーマを判断できます。",
+      steps: ["測る", "比べる", "改善する", "確かめる"],
+      cta: "GEO Watcherを見る",
+      href: "/watcher",
+    },
+    {
+      label: "GEO診断レポート",
+      desc: "相手企業ごとのAI検索上の課題と競合との差を、初回商談で示せるGEO・LLMOの具体的な提案材料に変えられます。",
+      steps: ["診断する", "課題を示す", "提案する", "商談につなげる"],
+      cta: "GEO診断レポートを見る",
+      href: "/shindan",
+    },
+  ];
+
+  return (
+    <section className="bg-[#FAFAF7] pt-24 pb-12">
+      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
+        <SectionLabel title="SOLUTION" />
+        <hr className="my-4 border-black/[0.07]" />
+
+        <div className="mt-12">
+          <h2
+            className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
+            style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
+          >
+            目的別の課題を、<br />
+            2つのソリューションで<span className="text-blue-gradient">解決</span>。
+          </h2>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+          {flows.map((f) => (
+            <div
+              key={f.label}
+              className="bg-white border border-black/[0.07] rounded-2xl p-7 flex flex-col card-hover group"
+            >
+              <p className="font-mono text-[11px] tracking-[0.14em] text-[#1452FF] mb-3 uppercase">{f.label}</p>
+              <p className="text-[16px] text-[#4e4e51] leading-[1.6] mb-6 font-[inherit]">{f.desc}</p>
+              <div className="flex items-center gap-2 flex-wrap mb-6">
+                {f.steps.map((step, i) => (
+                  <div key={step} className="flex items-center gap-2">
+                    <span className="tag-blue">{step}</span>
+                    {i < f.steps.length - 1 && <span className="text-[#1452FF]">→</span>}
+                  </div>
+                ))}
+              </div>
+              <div className="mt-auto pt-4 border-t border-black/[0.06]">
+                <Button asChild variant="detail">
+                  <Link href={f.href}>{f.cta} →</Link>
+                </Button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────
    GEO Lab Section
 ───────────────────────────────────────────── */
 function GeoLabSection() {
@@ -553,6 +619,7 @@ export default function Home() {
       <HeroSection />
       <TwoSolutionsSection />
       <ChallengesSection />
+      <SolutionFlowSection />
       <GeoLabSection />
       <SeoGeoCTASection />
     </div>
