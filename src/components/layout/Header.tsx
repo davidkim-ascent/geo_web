@@ -26,10 +26,10 @@ export default function Header() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-7">
           {[
-            { label: "モニタリングツール", href: "/watcher" },
-            { label: "診断ツール", href: "/shindan" },
-            { label: "GEO Lab", href: "/lab" },
-            { label: "Contact", href: "/contact" },
+            { label: "Home", href: "/" },
+            { label: "GEO Watcher", href: "/watcher" },
+            { label: "GEO 診断", href: "/shindan" },
+            { label: "GEO LAB", href: "/lab" },
           ].map((item) => (
             <a
               key={item.label}
@@ -71,10 +71,10 @@ export default function Header() {
       {menuOpen && (
         <div className="md:hidden bg-[#FAFAF7] border-t border-black/[0.06] px-6 py-5 flex flex-col gap-4">
           {[
-            { label: "モニタリングツール", href: "/watcher" },
-            { label: "診断ツール", href: "/shindan" },
-            { label: "GEO Lab", href: "/lab" },
-            { label: "Contact", href: "/contact" },
+            { label: "Home", href: "/" },
+            { label: "GEO Watcher", href: "/watcher" },
+            { label: "GEO 診断", href: "/shindan" },
+            { label: "GEO LAB", href: "/lab" },
           ].map((item) => (
             <a
               key={item.label}
