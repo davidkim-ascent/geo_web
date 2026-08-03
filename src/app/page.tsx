@@ -63,7 +63,7 @@ function HeroSection() {
         </div>
         <h1
           className="text-[#0B0B0E] font-bold max-w-[34ch] mx-auto"
-          style={{ fontSize: "clamp(36px, 4.68vw, 60px)", lineHeight: "var(--lh-heading)", letterSpacing: "-0.03em" }}
+          style={{ fontSize: "clamp(31px, 3.98vw, 51px)", lineHeight: "var(--lh-heading)", letterSpacing: "-0.03em" }}
         >
           GEO・LLMO対策の目的に合わせた、<br />
           <span className="text-blue-gradient">2つのソリューション</span>
