@@ -70,18 +70,24 @@ function HeroSection() {
         <p className="mt-6 text-[17px] text-[#4e4e51] leading-[1.6] max-w-[72ch] mx-auto">
           自社・競合の変化を継続的に追いたい企業には、モニタリングツール「GEO Watcher」。見込み顧客の課題を可視化し、営業提案につなげたい企業には「GEO診断レポート」。Ascent GEOは、自社ブランドの継続的な改善と、見込み顧客への営業提案。2つの目的に応えるソリューションを提供します。
         </p>
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 w-full max-w-[640px] mx-auto">
-          <Button asChild variant="cta" className="h-auto flex-col items-start gap-1">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-[880px] mx-auto">
+          <Button asChild variant="cta" className="h-auto flex-col items-stretch justify-start gap-3 !py-5">
             <Link href="/watcher">
               <span className="text-[12px] font-normal text-white/70 leading-snug">企業のマーケティング・ブランド担当者向け</span>
+              <span className="relative w-full aspect-[2260/660] rounded-lg overflow-hidden bg-white">
+                <Image src="/home/hero-watcher-graph.png" alt="GEO Watcher 可視性グラフ" fill className="object-cover" />
+              </span>
               <span className="text-[15px] font-bold text-white leading-snug">
                 モニタリングツール「GEO Watcher」
               </span>
             </Link>
           </Button>
-          <Button asChild variant="cta" className="h-auto flex-col items-start gap-1">
+          <Button asChild variant="cta" className="h-auto flex-col items-stretch justify-start gap-3 !py-5">
             <Link href="/shindan">
               <span className="text-[12px] font-normal text-white/70 leading-snug">SEO・Webマーケティング会社の法人営業向け</span>
+              <span className="relative w-full aspect-[940/260] rounded-lg overflow-hidden bg-white">
+                <Image src="/home/hero-shindan-graph.png" alt="GEO 診断 シェア・オブ・ボイスグラフ" fill className="object-cover" />
+              </span>
               <span className="text-[15px] font-bold text-white leading-snug">
                 診断レポートツール「GEO 診断」
               </span>
