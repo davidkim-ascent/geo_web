@@ -1,15 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const ENGINE_BARS = [
-  { label: "AI Overviews", value: 73, color: "#4A9FD8", top: 24.0 },
-  { label: "Gemini", value: 73, color: "#F5A623", top: 26.25 },
-  { label: "AI Mode", value: 73, color: "#7B5FE0", top: 28.5 },
-  { label: "ChatGPT", value: 80, color: "#E0604D", top: 30.75 },
-  { label: "Perplexity", value: 80, color: "#E85A97", top: 33.0 },
-  { label: "Microsoft Copilot", value: 87, color: "#4FB8A8", top: 35.25 },
+  { label: "AI Overviews", value: 73, color: "#4A9FD8" },
+  { label: "Gemini", value: 73, color: "#F5A623" },
+  { label: "AI Mode", value: 73, color: "#7B5FE0" },
+  { label: "ChatGPT", value: 80, color: "#E0604D" },
+  { label: "Perplexity", value: 80, color: "#E85A97" },
+  { label: "Microsoft Copilot", value: 87, color: "#4FB8A8" },
 ];
 
 const SOV_VALUE = 38;
@@ -50,36 +49,65 @@ export function HeroShindanAnimated() {
   }, [played]);
 
   return (
-    <div ref={ref} className="relative w-full aspect-[1600/1200] rounded-lg overflow-hidden bg-white border border-black/[0.07]">
-      <Image src="/home/hero-shindan-full.png" alt="GEO 診断 レポート" fill className="object-cover" />
-
-      <div className="absolute font-bold text-[#0B0B0E]" style={{ left: "23.25%", top: "26.2%", fontSize: "2.4vw" }}>
-        <span className="tabular-nums">{count}</span>%
-      </div>
-      <div className="absolute rounded-full bg-black/[0.06] overflow-hidden" style={{ left: "23.25%", top: "34%", width: "21.5%", height: "0.9%" }}>
-        <div
-          className="h-full rounded-full bg-[#F5A623] transition-[width] ease-out"
-          style={{ width: played ? `${SOV_VALUE}%` : "0%", transitionDuration: "900ms" }}
-        />
-      </div>
-
-      {ENGINE_BARS.map((bar, i) => (
-        <div
-          key={bar.label}
-          className="absolute rounded-full bg-black/[0.05] overflow-hidden"
-          style={{ left: "60.3%", top: `${bar.top}%`, width: "18.75%", height: "1.35%" }}
-        >
-          <div
-            className="h-full rounded-full transition-[width] ease-out"
-            style={{
-              width: played ? `${bar.value}%` : "0%",
-              background: bar.color,
-              transitionDuration: "800ms",
-              transitionDelay: `${i * 90}ms`,
-            }}
-          />
+    <div ref={ref} className="w-full rounded-lg overflow-hidden border border-black/[0.07] bg-white flex flex-col p-4 text-left" style={{ aspectRatio: "3 / 2" }}>
+      <div className="flex items-center justify-between mb-3">
+        <div className="font-bold text-[10px] text-[#0B0B0E]">
+          ASCENT<span className="text-[#003393]">GEO</span>
+          <span className="ml-1.5 text-[7px] font-normal text-[#6B6B73]">AI検索結果 診断レポート</span>
         </div>
-      ))}
+        <span className="text-[6px] text-[#9A9AA0]">2026年7月16日</span>
+      </div>
+
+      <div className="text-[13px] font-bold text-[#0B0B0E] mb-3 pb-1 border-b-2 border-[#0B0B0E] w-fit">ユニクロ</div>
+
+      <div className="flex gap-3 flex-1 min-h-0">
+        <div className="w-[40%] rounded-md bg-[#F7F8FA] p-3 flex flex-col items-center justify-center">
+          <div className="relative" style={{ width: "68%", aspectRatio: "1 / 1" }}>
+            <svg viewBox="0 0 100 100" className="w-full h-full -rotate-90">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="#00000010" strokeWidth="12" />
+              <circle
+                cx="50"
+                cy="50"
+                r="42"
+                fill="none"
+                stroke="#F5A623"
+                strokeWidth="12"
+                strokeLinecap="round"
+                strokeDasharray={2 * Math.PI * 42}
+                strokeDashoffset={played ? 2 * Math.PI * 42 * (1 - SOV_VALUE / 100) : 2 * Math.PI * 42}
+                style={{ transition: "stroke-dashoffset 900ms ease-out" }}
+              />
+            </svg>
+            <div className="absolute inset-0 flex items-center justify-center font-bold text-[#0B0B0E]" style={{ fontSize: "min(3.2vw, 16px)" }}>
+              <span className="tabular-nums">{count}</span>%
+            </div>
+          </div>
+          <div className="text-[6px] text-[#6B6B73] mt-2">シェア・オブ・ボイス</div>
+        </div>
+
+        <div className="flex-1 flex flex-col min-w-0">
+          <div className="text-[7px] font-semibold text-[#0B0B0E] mb-1.5">AI エンジン別ブランド言及率</div>
+          <div className="flex flex-col gap-1.5 flex-1 justify-center">
+            {ENGINE_BARS.map((bar, i) => (
+              <div key={bar.label} className="flex items-center gap-1.5">
+                <span className="text-[6px] text-[#6B6B73] w-[34%] truncate flex-shrink-0">{bar.label}</span>
+                <div className="flex-1 h-[6px] rounded-full bg-black/[0.05] overflow-hidden">
+                  <div
+                    className="h-full rounded-full transition-[width] ease-out"
+                    style={{
+                      width: played ? `${bar.value}%` : "0%",
+                      background: bar.color,
+                      transitionDuration: "800ms",
+                      transitionDelay: `${i * 90}ms`,
+                    }}
+                  />
+                </div>
+                <span className="text-[6px] text-[#9A9AA0] w-[16px] text-right flex-shrink-0">{bar.value}%</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
