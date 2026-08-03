@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { ArticleThumbnail } from "@/components/lab/ArticleThumbnail";
-import { HeroLogoMark } from "@/components/layout/HeroLogoMark";
 import { CTASection } from "@/components/layout/CTASection";
 import { Button } from "@/components/ui/button";
 import { buildPageMetadata } from "@/lib/seo";
@@ -76,7 +75,7 @@ function HeroSection() {
             <div className="relative w-full aspect-[2260/660] rounded-lg overflow-hidden bg-white border border-black/[0.07]">
               <Image src="/home/hero-watcher-graph.png" alt="GEO Watcher 可視性グラフ" fill className="object-cover" />
             </div>
-            <Button asChild variant="cta">
+            <Button asChild variant="cta" className="justify-center text-center">
               <Link href="/watcher">モニタリングツール「GEO Watcher」</Link>
             </Button>
           </div>
@@ -85,12 +84,11 @@ function HeroSection() {
             <div className="relative w-full aspect-[940/260] rounded-lg overflow-hidden bg-white border border-black/[0.07]">
               <Image src="/home/hero-shindan-graph.png" alt="GEO 診断 シェア・オブ・ボイスグラフ" fill className="object-cover" />
             </div>
-            <Button asChild variant="cta">
+            <Button asChild variant="cta" className="justify-center text-center">
               <Link href="/shindan">診断レポートツール「GEO 診断」</Link>
             </Button>
           </div>
         </div>
-        <HeroLogoMark />
       </div>
     </section>
   );
