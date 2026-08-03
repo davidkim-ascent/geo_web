@@ -230,6 +230,7 @@ function ChallengesSection() {
       accent: "#cd2e3a",
       bg: "linear-gradient(180deg, #0a0208 0%, #120514 40%, #180a1e 70%, #1a0b1a 100%)",
       border: "rgba(205,46,58,0.08)",
+      image: "/home/challenge-watcher.png",
     },
     {
       label: "GEO診断レポート",
@@ -245,6 +246,7 @@ function ChallengesSection() {
       accent: "#0070f3",
       bg: "radial-gradient(#0b2260, #0a0a12 70%)",
       border: "#7ab6ff12",
+      image: "/home/challenge-shindan.png",
     },
   ];
 
@@ -274,6 +276,11 @@ function ChallengesSection() {
                 className="absolute top-0 right-0 w-[200px] h-[200px] rounded-full blur-[80px] pointer-events-none"
                 style={{ background: `radial-gradient(circle, ${c.accent} 0%, ${c.accent}20 38%, transparent 65%)` }}
               />
+              {c.image && (
+                <div className="relative w-full aspect-[3/2] rounded-xl overflow-hidden mb-5 -mt-1">
+                  <Image src={c.image} alt={c.title} fill className="object-cover" />
+                </div>
+              )}
               <p className="font-mono text-[11px] tracking-[0.14em] text-[#7ab6ff] mb-2 uppercase">{c.label}</p>
               <p className="text-[13px] text-[#9A9AA0] mb-3">{c.audience}</p>
               <h3 className="text-[19px] font-bold text-[#FAFAF7] mb-3 leading-snug">{c.title}</h3>
