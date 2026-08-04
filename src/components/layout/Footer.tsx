@@ -25,7 +25,15 @@ export default function Footer() {
             <p className="mt-4 ui-body-copy-sm whitespace-pre-line">
               運営会社：株式会社 Ascent Networks{"\n"}
               東京都中央区晴海1-8-10 晴海トリトンスクエア オフィスタワーX棟 8階{"\n"}
-              TEL: 03-3527-3963
+              TEL: 03-3527-3963{"\n"}
+              <a
+                href="https://www.ascentnet.co.jp/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-black/20 underline-offset-2 hover:decoration-black/50"
+              >
+                https://www.ascentnet.co.jp/
+              </a>
             </p>
           </div>
 
