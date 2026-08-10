@@ -155,8 +155,8 @@ function ChallengesSection() {
         "改善すべきテーマをデータから判断できていない",
       ],
       accent: "#cd2e3a",
-      bg: "linear-gradient(180deg, #0a0208 0%, #120514 40%, #180a1e 70%, #1a0b1a 100%)",
-      border: "rgba(205,46,58,0.08)",
+      bg: "#f0f8ff",
+      border: "rgba(0,51,147,0.15)",
       image: "/home/challenge-watcher.png",
     },
     {
@@ -171,8 +171,8 @@ function ChallengesSection() {
         "診断結果を次の相談や提案につなげにくい",
       ],
       accent: "#0070f3",
-      bg: "radial-gradient(#0b2260, #0a0a12 70%)",
-      border: "#7ab6ff12",
+      bg: "#f5f8ff",
+      border: "#7ab6ff33",
       image: "/home/challenge-shindan.png",
     },
   ];
@@ -200,13 +200,20 @@ function ChallengesSection() {
                 className="absolute top-0 right-0 w-[200px] h-[200px] rounded-full blur-[80px] pointer-events-none"
                 style={{ background: `radial-gradient(circle, ${c.accent} 0%, ${c.accent}20 38%, transparent 65%)` }}
               />
-              <p className="text-[#9A9AA0] mb-3" style={{ fontSize: "var(--fs-label-sm)" }}>{c.audience}</p>
-              <h3 className="font-bold text-[#FAFAF7] mb-3 leading-snug" style={{ fontSize: "var(--fs-h3)" }}>{c.title}</h3>
-              <p className="text-[#d3d3d8] leading-[1.6] mb-5 font-[inherit]" style={{ fontSize: "var(--fs-body-xsm)" }}>{c.desc}</p>
-              <ul className="flex flex-col gap-2">
+              <Image
+                src={c.image}
+                alt=""
+                width={180}
+                height={180}
+                className="absolute -top-8 -left-8 w-[180px] h-[180px] rounded-full object-cover"
+              />
+              <p className="text-[#666] mb-3 relative z-10" style={{ fontSize: "var(--fs-label-sm)" }}>{c.audience}</p>
+              <h3 className="font-bold text-[#0B0B0E] mb-3 leading-snug relative z-10" style={{ fontSize: "var(--fs-h3)" }}>{c.title}</h3>
+              <p className="text-[#4e4e51] leading-[1.6] mb-5 font-[inherit] relative z-10" style={{ fontSize: "var(--fs-body-xsm)" }}>{c.desc}</p>
+              <ul className="flex flex-col gap-2 relative z-10">
                 {c.bullets.map((b) => (
-                  <li key={b} className="flex items-start gap-2 text-[#d3d3d8] font-[inherit]" style={{ fontSize: "var(--fs-body)" }}>
-                    <span className="w-4 h-[1px] bg-[#7ab6ff] mt-[10px] flex-shrink-0" />
+                  <li key={b} className="flex items-start gap-2 text-[#4e4e51] font-[inherit]" style={{ fontSize: "var(--fs-body)" }}>
+                    <span className="w-4 h-[1px] bg-[#003393] mt-[10px] flex-shrink-0" />
                     <span>{b}</span>
                   </li>
                 ))}
