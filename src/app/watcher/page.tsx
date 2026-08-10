@@ -29,7 +29,7 @@ function SectionLabel({ title, dark = false }: { title: string; dark?: boolean }
 
 function HeroSection() {
   return (
-    <section className="relative bg-white py-16 lg:py-20 border-b border-black/[0.06]">
+    <section className="relative bg-white py-12 lg:py-12 border-b border-black/[0.06]">
       <div className="relative max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 w-full flex flex-col items-center text-center">
         {/* Label */}
         <div className="mb-8 border border-[#003393] rounded-full px-6 py-2 inline-block">
@@ -64,25 +64,26 @@ function HeroSection() {
         </div>
 
         {/* H3 Title */}
-        <h3 className="font-bold text-[#0B0B0E] mt-6" style={{ fontSize: "var(--fs-h3)" }}>
-          GEO・LLMOモニタリングツール GEO Watcher : 主要AIでの自社・競合の動向を、毎日モニタリング。
+        <h3
+          className="text-[#0B0B0E] font-semibold max-w-[48ch] mt-4"
+          style={{ fontSize: "var(--fs-h3)", lineHeight: "1.6", letterSpacing: "-0.035em" }}
+        >
+          GEO・LLMOモニタリングツール GEO Watcher -<br />
+          主要AIでの自社・競合の動向を、毎日モニタリング。
         </h3>
 
         {/* H1 Title */}
         <h1
-          className="text-[#0B0B0E] font-bold max-w-[36ch] mt-4"
-          style={{ fontSize: "clamp(32px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em" }}
+          className="text-[#0B0B0E] font-bold max-w-[48ch] mt-6"
+          style={{ fontSize: "var(--fs-display)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em" }}
         >
           GEO・LLMO対策は、月額コンサルなしで、これひとつ。
         </h1>
 
         {/* Subcopy Section */}
-        <div className="mt-12 bg-white rounded-2xl border border-[#003393]/20 p-8 max-w-[800px]">
+        <div className="mt-6 max-w-[800px]">
           <p className="text-[#0B0B0E] leading-[1.8] mb-5 font-medium" style={{ fontSize: "var(--fs-body-xsm)" }}>
-            GEO Watcherは、主要AIにおける自社・競合の言及、引用、露出の変化を毎日計測するGEO・LLMO対策のモニタリングツールです。
-          </p>
-          <p className="text-[#4e4e51] leading-[1.8] mb-6" style={{ fontSize: "var(--fs-body-xsm)" }}>
-            AIごとの比較から施策後の効果確認まで、GEO・LLMO対策に必要なデータをひとつの画面に集約。料金体系は3つのプランを用意。プロの専門支援が必要な時だけ、月額縛りのない「スポットサポート」を利用できます。
+            GEO Watcherは、AIにおける自社・競合の言及、引用、露出の変化を毎日計測するGEO・LLMO対策のモニタリングツールです。AIごとの比較から施策後の効果確認まで、GEO・LLMO対策に必要なデータをひとつの画面に集約。料金体系は3つのプランを用意。プロの専門支援が必要な時だけ、月額縛りのない「スポットサポート」を利用できます。
           </p>
 
           {/* Features */}
@@ -96,30 +97,25 @@ function HeroSection() {
             <span>データ1年保存</span>
           </div>
 
-          {/* JMA Logo Placeholder */}
-          <div className="mt-6 pt-6 border-t border-[#e0e0e0]">
-            <p className="text-[#999] mb-2" style={{ fontSize: "var(--fs-label-xs)" }}>認定団体</p>
-            <p className="text-[#666]" style={{ fontSize: "var(--fs-label-xs)" }}>JMA（日本マーケティング協会）ロゴ</p>
+        </div>
+
+        {/* Navigation Anchors */}
+        <div className="mt-16 flex justify-center text-[#003393] font-medium" style={{ fontSize: "var(--fs-body-sm)" }}>
+          <div className="flex gap-3 flex-wrap justify-center">
+            <a href="#features" className="hover:text-[#0f3de0] transition-colors">主要機能</a>
+            <span className="text-[#ccc]">/</span>
+            <a href="#reasons" className="hover:text-[#0f3de0] transition-colors">選ばれる理由</a>
+            <span className="text-[#ccc]">/</span>
+            <a href="#pricing" className="hover:text-[#0f3de0] transition-colors">料金プラン</a>
+            <span className="text-[#ccc]">/</span>
+            <a href="#support" className="hover:text-[#0f3de0] transition-colors">スポットサポート</a>
+            <span className="text-[#ccc]">/</span>
+            <a href="#testimonials" className="hover:text-[#0f3de0] transition-colors">顧客の声</a>
+            <span className="text-[#ccc]">/</span>
+            <a href="#faq" className="hover:text-[#0f3de0] transition-colors">FAQ</a>
+            <span className="text-[#ccc]">/</span>
+            <a href="#contact" className="hover:text-[#0f3de0] transition-colors">問い合わせる</a>
           </div>
-        </div>
-
-        {/* CTA Button */}
-        <div className="mt-12">
-          <Link href="#contact" className="inline-flex items-center justify-center rounded-lg bg-[#003393] px-8 py-3 font-medium text-white transition-colors hover:bg-[#0f3de0]" style={{ fontSize: "var(--fs-body-xsm)" }}>
-            GEO Watcherについて問い合わせる
-          </Link>
-        </div>
-
-        {/* Dashboard Image */}
-        <div className="mt-14 w-full max-w-[1100px] rounded-2xl border border-black/[0.08] shadow-[0_40px_100px_-40px_rgba(0,0,0,0.25)] overflow-hidden">
-          <Image
-            src="/watcher-hero-screen.png"
-            alt="GEO Watcher ダッシュボード画面"
-            width={2833}
-            height={1866}
-            className="w-full h-auto"
-            priority
-          />
         </div>
       </div>
     </section>
@@ -208,7 +204,7 @@ function StepsSection() {
         <div className="text-center mb-12">
           <h2
             className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em] mb-4"
-            style={{ fontSize: "clamp(28px, 2.8vw, 44px)" }}
+            style={{ fontSize: "var(--fs-section-title)" }}
           >
             測り、知り、設計し、直し、確かめる。<br />
             GEO・LLMO対策を、自社で回せる環境へ。
@@ -449,8 +445,8 @@ function PricingSection() {
               </p>
               {p.price ? (
                 <p className={`mb-5 ${p.featured ? "text-white" : "text-[#0B0B0E]"}`}>
-                  <span className="text-[30px] font-bold">{p.price}</span>
-                  <span className="text-[14px] font-medium">円 / 月</span>
+                  <span className="font-bold" style={{ fontSize: "clamp(28px, 3.2vw, 36px)" }}>{p.price}</span>
+                  <span className="font-medium" style={{ fontSize: "var(--fs-label)" }}>円 / 月</span>
                 </p>
               ) : (
                 <p className={`mb-5 text-[22px] font-bold ${p.featured ? "text-white" : "text-[#0B0B0E]"}`}>
@@ -566,7 +562,7 @@ function ContactSection() {
           </div>
           <h2
             className="text-[#FAFAF7] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
-            style={{ fontSize: "clamp(31px, 3.08vw, 48px)" }}
+            style={{ fontSize: "var(--fs-section-title)" }}
           >
             AI検索で選ばれるための<br />一歩を、ここから。
           </h2>

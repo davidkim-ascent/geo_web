@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { ArticleThumbnail } from "@/components/lab/ArticleThumbnail";
 import { HeroLogoMark } from "@/components/layout/HeroLogoMark";
-import { SeoGeoCTASection } from "@/components/layout/SeoGeoCTASection";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 import { Button } from "@/components/ui/button";
 import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
+import { Calendar } from "lucide-react";
 import { LabArticles } from "./LabArticles";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -196,7 +196,55 @@ export default function LabPage() {
       <LabArticles />
 
       {/* CTA */}
-      <SeoGeoCTASection />
+      <section
+        className="relative py-10 lg:py-14 overflow-hidden"
+        style={{ background: "linear-gradient(160deg, #0a1a3a 0%, #071228 40%, #05070f 75%, #000000 100%)" }}
+      >
+        <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-14 items-start">
+          <div>
+            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-[#7ab6ff] mb-5">
+              AI検索で選ばれるための一歩を、ここから
+            </div>
+            <h2
+              className="text-[#FAFAF7] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
+              style={{ fontSize: "clamp(31px, 3.08vw, 48px)" }}
+            >
+              AI検索で選ばれるための<br />一歩を、ここから。
+            </h2>
+            <p className="mt-6 text-[16px] text-[#d3d3d8] leading-[1.6] max-w-[52ch]">
+              自社ブランドの変化を継続的に捉えるなら、GEO Watcher。見込み顧客への提案を具体化するなら、GEO診断レポート。
+              <br />
+              <br />
+              診断する。変化を追う。課題を次の改善へつなげる。目的に合った方法で、GEO・LLMO対策を始めましょう。
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <Button
+                asChild
+                variant="cta"
+                className="flex-1 !w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] !bg-[#003393] hover:!bg-[#0f3de0]"
+              >
+                <Link href="/watcher">GEO Watcherを見る →</Link>
+              </Button>
+              <Button
+                asChild
+                variant="cta"
+                className="flex-1 !w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] !bg-[#003393] hover:!bg-[#0f3de0]"
+              >
+                <Link href="/shindan">GEO診断レポートを見る →</Link>
+              </Button>
+            </div>
+            <div className="mt-3">
+              <CalendarBookingButton className="!w-full !min-w-0 !max-w-none !h-[52px] !justify-start text-left px-6 !text-[14px] gap-2 hover:!bg-[#003393] hover:!border-[#003393]">
+                <Calendar size={16} />
+                無料相談予約（Googleカレンダー）
+              </CalendarBookingButton>
+            </div>
+          </div>
+          <div className="w-full max-w-[560px] mx-auto lg:ml-auto lg:mr-0">
+            <ContactForm blockedEmailDomains={DEFAULT_BLOCKED_EMAIL_DOMAINS} />
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

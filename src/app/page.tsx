@@ -37,7 +37,7 @@ function SectionLabel({ title, dark = false }: { title: string; dark?: boolean }
 ───────────────────────────────────────────── */
 function HeroSection() {
   return (
-    <section className="relative pt-16 pb-20 lg:pt-20 lg:pb-28 bg-white border-b border-black/[0.06]">
+    <section className="relative pt-12 pb-20 lg:pt-12 lg:pb-28 bg-white border-b border-black/[0.06]">
       <div className="relative max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 w-full flex flex-col items-center text-center">
         <div className="mb-8 border border-[#003393] rounded-full px-6 py-2 inline-block">
           <p className="text-[#003393] font-bold" style={{ fontSize: "var(--fs-label-sm)" }}>企業のGEO・LLMO対策を支援</p>
