@@ -39,7 +39,7 @@
   --muted-light: #d3d3d8;
   --border: rgba(11, 11, 14, 0.1);
   --border-dark: rgba(255, 255, 255, 0.06);
-  --fs-display: 43px;
+  --fs-display: 46px;
   --fs-section-title: clamp(32px, 3.2vw, 48px);
   --fs-h3: 24px;
   --fs-h4: 17px;

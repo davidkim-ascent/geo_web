@@ -155,8 +155,8 @@ function ChallengesSection() {
         "改善すべきテーマをデータから判断できていない",
       ],
       accent: "#cd2e3a",
-      bg: "#f0f8ff",
-      border: "rgba(0,51,147,0.15)",
+      bg: "#ffffff",
+      border: "rgba(0,0,0,0.1)",
       image: "/home/challenge-watcher.png",
     },
     {
@@ -171,21 +171,21 @@ function ChallengesSection() {
         "診断結果を次の相談や提案につなげにくい",
       ],
       accent: "#0070f3",
-      bg: "#f5f8ff",
-      border: "#7ab6ff33",
+      bg: "#ffffff",
+      border: "rgba(0,0,0,0.1)",
       image: "/home/challenge-shindan.png",
     },
   ];
 
   return (
-    <section className="relative pt-24 pb-0 overflow-hidden" style={{ background: "linear-gradient(160deg, #0a1a3a 0%, #071228 40%, #05070f 75%, #000000 100%)" }}>
+    <section className="relative pt-24 pb-24 overflow-hidden" style={{ background: "#d4e8f7" }}>
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
         <div className="mt-12 text-center">
           <h2
-            className="text-[#FAFAF7] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
+            className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
             style={{ fontSize: "var(--fs-section-title)" }}
           >
-            目的によって異なる、GEO・LLMO対策の<span className="text-[#FAFAF7] not-italic">課題</span>。
+            目的によって異なる、<span style={{ color: "#003393" }}>GEO・LLMO対策の課題</span>。
           </h2>
         </div>
 
@@ -196,10 +196,6 @@ function ChallengesSection() {
               className="rounded-2xl p-7 card-hover-dark relative overflow-hidden"
               style={{ background: c.bg, border: `1px solid ${c.border}` }}
             >
-              <div
-                className="absolute top-0 right-0 w-[200px] h-[200px] rounded-full blur-[80px] pointer-events-none"
-                style={{ background: `radial-gradient(circle, ${c.accent} 0%, ${c.accent}20 38%, transparent 65%)` }}
-              />
               <Image
                 src={c.image}
                 alt=""
@@ -222,15 +218,6 @@ function ChallengesSection() {
           ))}
         </div>
       </div>
-      <svg className="w-full h-20" viewBox="0 0 1200 80" preserveAspectRatio="none" style={{ display: "block", marginTop: "48px" }}>
-        <defs>
-          <filter id="wave-filter">
-            <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise" />
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="30" />
-          </filter>
-        </defs>
-        <path d="M 0,40 Q 150,20 300,40 T 600,40 T 900,40 T 1200,40 L 1200,80 L 0,80 Z" fill="#0B0B0E" filter="url(#wave-filter)" />
-      </svg>
     </section>
   );
 }
