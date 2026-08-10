@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Calendar } from "lucide-react";
+import { Calendar, Gauge, Eye, Lightbulb, Phone } from "lucide-react";
 import type { Metadata } from "next";
 import { ArticleThumbnail } from "@/components/lab/ArticleThumbnail";
 import { HeroShindanAnimated } from "@/components/home/HeroShindanAnimated";
@@ -39,6 +39,9 @@ function HeroSection() {
   return (
     <section className="relative pt-16 pb-20 lg:pt-20 lg:pb-28 bg-white border-b border-black/[0.06]">
       <div className="relative max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 w-full flex flex-col items-center text-center">
+        <div className="mb-8 border border-[#003393] rounded-full px-6 py-2 inline-block">
+          <p className="text-[#003393] font-bold text-[16px]">企業のGEO・LLMO対策を支援</p>
+        </div>
         <div className="flex items-center justify-center gap-12 flex-wrap mb-8">
           {[
             { src: "/ai-model-logos/chatgpt.png", alt: "ChatGPT", whiteBg: true, scale: false },
@@ -174,41 +177,13 @@ function ChallengesSection() {
     },
   ];
 
-  const solutions = [
-    {
-      label: "GEO Watcher",
-      audience: "企業のマーケティング・ブランド担当者向け",
-      title: "自社・競合の変化を毎日追い、次の改善へ。",
-      desc: "主要AIにおける自社・競合の言及、引用、露出を毎日計測。競合との差や施策前後の変化を継続的に確認し、次に取り組むべき改善テーマを判断できます。AIごとの差や施策前後の変化を継続的に追うことで、GEO・LLMO対策の効果と、次に優先すべき改善テーマを判断できます。",
-      cta: "GEO Watcherを見る",
-      href: "/watcher",
-      steps: ["測る", "比べる", "改善する", "確かめる"],
-      bg: "linear-gradient(180deg, #180a1e 0%, #120514 50%, #0a0208 100%)",
-      border: "rgba(205,46,58,0.1)",
-    },
-    {
-      label: "GEO診断レポート",
-      audience: "SEO・Webマーケティング会社の法人営業向け",
-      title: "GEO・LLMO診断データから、初回商談を具体化する。",
-      desc: "ブランド名とURLを入力するだけで、見込み顧客のAI検索上の課題と競合との差を可視化。たった数分で、営業提案に使える診断レポートを作成できます。相手企業ごとのAI検索上の課題と競合との差を、初回商談で示せるGEO・LLMOの具体的な提案材料に変えられます。",
-      cta: "GEO診断レポートを見る",
-      href: "/shindan",
-      steps: ["診断する", "課題を示す", "提案する", "商談につなげる"],
-      bg: "radial-gradient(#0b2260, #0a0a12 70%)",
-      border: "#7ab6ff14",
-    },
-  ];
-
   return (
-    <section className="bg-[#0B0B0E] pt-24 pb-12">
+    <section className="bg-[#0B0B0E] pt-24 pb-0">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <SectionLabel title="CHALLENGES & SOLUTION" dark />
-        <hr className="my-4 border-white/[0.08]" />
-
         <div className="mt-12 text-center">
           <h2
             className="text-[#FAFAF7] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
-            style={{ fontSize: "clamp(28px, 2.8vw, 44px)" }}
+            style={{ fontSize: "clamp(33px, 3.3vw, 49px)" }}
           >
             目的によって異なる、GEO・LLMO対策の<span className="text-[#FAFAF7] not-italic">課題</span>。
           </h2>
@@ -225,18 +200,12 @@ function ChallengesSection() {
                 className="absolute top-0 right-0 w-[200px] h-[200px] rounded-full blur-[80px] pointer-events-none"
                 style={{ background: `radial-gradient(circle, ${c.accent} 0%, ${c.accent}20 38%, transparent 65%)` }}
               />
-              {c.image && (
-                <div className="relative w-full aspect-[3/2] rounded-xl overflow-hidden mb-5 -mt-1">
-                  <Image src={c.image} alt={c.title} fill className="object-cover" />
-                </div>
-              )}
-              <p className="font-mono text-[11px] tracking-[0.14em] text-[#7ab6ff] mb-2 uppercase">{c.label}</p>
               <p className="text-[13px] text-[#9A9AA0] mb-3">{c.audience}</p>
               <h3 className="text-[19px] font-bold text-[#FAFAF7] mb-3 leading-snug">{c.title}</h3>
               <p className="text-[15px] text-[#d3d3d8] leading-[1.6] mb-5 font-[inherit]">{c.desc}</p>
               <ul className="flex flex-col gap-2">
                 {c.bullets.map((b) => (
-                  <li key={b} className="flex items-start gap-2 text-[14px] text-[#d3d3d8] font-[inherit]">
+                  <li key={b} className="flex items-start gap-2 text-[18px] text-[#d3d3d8] font-[inherit]">
                     <span className="w-4 h-[1px] bg-[#7ab6ff] mt-[10px] flex-shrink-0" />
                     <span>{b}</span>
                   </li>
@@ -245,82 +214,130 @@ function ChallengesSection() {
             </div>
           ))}
         </div>
+      </div>
+      <svg className="w-full h-20" viewBox="0 0 1200 80" preserveAspectRatio="none" style={{ display: "block", marginTop: "48px" }}>
+        <defs>
+          <filter id="wave-filter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="30" />
+          </filter>
+        </defs>
+        <path d="M 0,40 Q 150,20 300,40 T 600,40 T 900,40 T 1200,40 L 1200,80 L 0,80 Z" fill="#0B0B0E" filter="url(#wave-filter)" />
+      </svg>
+    </section>
+  );
+}
 
-        <div className="mt-16 text-center">
+/* ─────────────────────────────────────────────
+   Solutions Section (화이트 배경)
+───────────────────────────────────────────── */
+function SolutionsSection() {
+  const solutions = [
+    {
+      label: "GEO Watcher",
+      title: "GEO Watcherで",
+      subtitle: "変化を見逃さず、次の改善を判断できる。",
+      desc: "AIごとの差や施策前後の変化を継続的に追うことで、GEO・LLMO対策の効果と、次に優先すべき改善テーマを判断できます。",
+      cta: "GEO Watcherを見る",
+      href: "/watcher",
+      image: "/home/solution-shindan.png",
+      steps: [
+        { label: "測る", desc: "主要AIでの言及・引用・露出を毎日計測", icon: "gauge" },
+        { label: "比べる", desc: "自社と競合の差をAI・質問ごとに比較", icon: "eye" },
+        { label: "改善する", desc: "差がある質問や引用元から、改善テーマを特定", icon: "lightbulb" },
+        { label: "確かめる", desc: "施策前後の変化を時系列で追い、効果を確認", icon: "check" },
+      ],
+    },
+    {
+      label: "GEO診断レポート",
+      title: "GEO診断ツールで",
+      subtitle: "相手企業ごとの課題を、具体的な提案に変えられる。",
+      desc: "相手企業ごとのAI検索上の課題と競合との差を、初回商談で示せるGEO・LLMOの具体的な提案材料に変えられます。",
+      cta: "GEO診断レポートを見る",
+      href: "/shindan",
+      image: "/home/solution-watcher.png",
+      steps: [
+        { label: "診断する", desc: "ブランド名とURLだけでAI検索状況を数分で診断", icon: "gauge" },
+        { label: "課題を示す", desc: "競合との引用差や、表示されていない質問を可視化", icon: "eye" },
+        { label: "提案する", desc: "診断結果を顧客向けの提案資料に変換", icon: "lightbulb" },
+        { label: "商談につなげる", desc: "相手企業ごとの課題を示し、次の提案へ", icon: "check" },
+      ],
+    },
+  ];
+
+  return (
+    <section className="bg-white pt-24 pb-12">
+      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="mt-0 text-center">
           <h2
-            className="text-[#FAFAF7] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
-            style={{ fontSize: "clamp(28px, 2.8vw, 44px)" }}
+            className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
+            style={{ fontSize: "clamp(33px, 3.3vw, 49px)" }}
           >
-            目的別の課題を、<span className="text-[#FAFAF7] not-italic">2つのソリューション</span>で解決。
+            目的別の課題を、<span className="text-[#0B0B0E] not-italic">2つのソリューション</span>で解決。
           </h2>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-          {solutions.map((s, si) => (
-            <div
-              key={s.label}
-              className="rounded-2xl p-7 flex flex-col card-hover-dark group"
-              style={{ background: s.bg, border: `1px solid ${s.border}` }}
-            >
-              <p className="font-mono text-[11px] tracking-[0.14em] text-[#7ab6ff] mb-2 uppercase">{s.label}</p>
-              <p className="text-[13px] text-[#9A9AA0] mb-3">{s.audience}</p>
-              <h3 className="text-[19px] font-bold text-[#FAFAF7] mb-3 leading-snug">{s.title}</h3>
-              <p className="text-[16px] text-[#d3d3d8] leading-[1.6] mb-6 font-[inherit]">{s.desc}</p>
-              <div className="relative mx-auto mb-2" style={{ width: 440, height: 440 }}>
-                <svg viewBox="0 0 440 440" className="w-full h-full overflow-visible">
-                  <defs>
-                    <linearGradient id={`orbit-grad-${si}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#7ab6ff" stopOpacity="0" />
-                      <stop offset="100%" stopColor="#7ab6ff" stopOpacity="1" />
-                    </linearGradient>
-                  </defs>
-                  <circle cx="220" cy="220" r="156" fill="none" stroke="#7ab6ff33" strokeWidth="3" strokeDasharray="8 10" />
-                  <circle
-                    cx="220"
-                    cy="220"
-                    r="156"
-                    fill="none"
-                    stroke={`url(#orbit-grad-${si})`}
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeDasharray={`${2 * Math.PI * 156 * 0.22} ${2 * Math.PI * 156}`}
-                  >
-                    <animateTransform
-                      attributeName="transform"
-                      type="rotate"
-                      from="0 220 220"
-                      to="360 220 220"
-                      dur="4s"
-                      repeatCount="indefinite"
-                    />
-                  </circle>
-                </svg>
-                {s.steps.map((step, i) => {
-                  const angle = (i * 90 - 90) * (Math.PI / 180);
-                  const x = 50 + 35.5 * Math.cos(angle);
-                  const y = 50 + 35.5 * Math.sin(angle);
-                  return (
-                    <div
-                      key={step}
-                      className="absolute flex items-center justify-center rounded-full bg-[#003393] text-white text-center px-2 leading-tight"
-                      style={{
-                        left: `${x}%`,
-                        top: `${y}%`,
-                        width: 100,
-                        height: 100,
-                        marginLeft: -50,
-                        marginTop: -50,
-                        fontSize: 12,
-                        fontWeight: 700,
-                      }}
-                    >
-                      {step}
-                    </div>
-                  );
-                })}
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+          {solutions.map((s) => (
+            <div key={s.label} className="flex flex-col">
+              <div className="mb-6">
+                <p className="font-mono text-[11px] tracking-[0.14em] text-[#003393] mb-2 uppercase">{s.label}</p>
+                <h3 className="text-[28px] font-bold text-[#0B0B0E] mb-2 leading-snug">{s.title}</h3>
+                <p className="text-[20px] font-bold text-[#0B0B0E] mb-3">{s.subtitle}</p>
+                <p className="text-[16px] text-[#4e4e51] leading-[1.6]">{s.desc}</p>
               </div>
-              <div className="mt-6 flex justify-center">
-                <Button asChild variant="detail" className="!bg-[#003393] hover:!bg-[#0B0B0E] scale-110">
+              {s.image && (
+                <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-6">
+                  <Image src={s.image} alt={s.label} fill className="object-cover" />
+                </div>
+              )}
+              <div className="mb-8">
+                <div className="grid grid-cols-1 gap-3">
+                  {s.steps.map((step, i) => {
+                    const getIcon = (iconType: string) => {
+                      const iconProps = { size: 20, className: "flex-shrink-0" };
+                      switch(iconType) {
+                        case "gauge": return <Gauge {...iconProps} />;
+                        case "eye": return <Eye {...iconProps} />;
+                        case "lightbulb": return <Lightbulb {...iconProps} />;
+                        case "check": return <Phone {...iconProps} />;
+                        default: return null;
+                      }
+                    };
+
+                    return (
+                      <div key={i}>
+                        <div className="step-item border border-[#003393]/20 rounded-lg p-4 bg-white">
+                          <div className="flex gap-3 items-start">
+                            <div className="flex-shrink-0 text-[#003393] mt-0.5">
+                              {getIcon(step.icon || "gauge")}
+                            </div>
+                            <div className="flex-1">
+                              <p className="text-[17px] text-[#0B0B0E]">
+                                <span className="font-bold">{step.label}：</span>
+                                <span className="text-[#4e4e51] ml-1">{step.desc}</span>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        {i < s.steps.length - 1 && (
+                          <div className="flex justify-center py-2">
+                            <svg width="16" height="10" viewBox="0 0 16 10" className="fill-[#003393]">
+                              <polygon points="0,0 16,0 8,10" />
+                            </svg>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+              <div className="mt-auto flex gap-3 justify-center">
+                <Button
+                  asChild
+                  variant="cta"
+                  className="!w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] !bg-[#003393] hover:!bg-[#0f3de0]"
+                >
                   <Link href={s.href}>{s.cta} →</Link>
                 </Button>
               </div>
@@ -550,14 +567,14 @@ function FinalCtaSection() {
             <Button
               asChild
               variant="cta"
-              className="flex-1 !w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] !bg-[#003393] hover:!bg-[#0B0B0E]"
+              className="flex-1 !w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] !bg-[#003393] hover:!bg-[#0f3de0]"
             >
               <Link href="/watcher">GEO Watcherを見る →</Link>
             </Button>
             <Button
               asChild
               variant="cta"
-              className="flex-1 !w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] !bg-[#003393] hover:!bg-[#0B0B0E]"
+              className="flex-1 !w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] !bg-[#003393] hover:!bg-[#0f3de0]"
             >
               <Link href="/shindan">GEO診断レポートを見る →</Link>
             </Button>
@@ -585,6 +602,7 @@ export default function Home() {
     <div>
       <HeroSection />
       <ChallengesSection />
+      <SolutionsSection />
       <GeoLabSection />
       <FinalCtaSection />
     </div>

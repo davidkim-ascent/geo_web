@@ -739,6 +739,11 @@ body.tweak-norotate .fw-ring g.node text {
 .fade-up-3 { animation-delay: 0.3s; }
 .fade-up-4 { animation-delay: 0.4s; }
 
+/* ===== STEP ITEM ===== */
+.step-item {
+  border-radius: 8px;
+}
+
 /* ===== CHART BARS ===== */
 @keyframes growBar {
   from { height: 0; }
