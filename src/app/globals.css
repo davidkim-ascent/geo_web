@@ -44,9 +44,13 @@
   --fs-h3: 19px;
   --fs-h4: 17px;
   --fs-body: 18px;
-  --fs-body-sm: 18px;
-  --fs-label: 12px;
-  --fs-label-sm: 11px;
+  --fs-body-sm: 17px;
+  --fs-body-xsm: 16px;
+  --fs-label: 14px;
+  --fs-label-sm: 13px;
+  --fs-label-xs: 12px;
+  --fs-label-xxs: 11px;
+  --fs-caption: 10px;
   --lh-display: 1.12;
   --lh-heading: 1.22;
   --ui-radius-field: 18px;

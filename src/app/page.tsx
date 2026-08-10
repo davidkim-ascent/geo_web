@@ -12,9 +12,9 @@ import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "GEO・AIO・LLMOによるAI検索最適化 | Ascent GEO",
+  title: "GEO・LLMO・AIO対策ツール｜Ascent GEO",
   description:
-    "GEO・AIO・LLMOによるAI検索最適化を支援。特許分析と検索データに基づく戦略設計から、AI検索でのブランドプレゼンスを継続的に可視化・改善するモニタリングツール「GEO Watcher」まで、株式会社 Ascent Networksが提供します。",
+    "Ascent GEOは、AI検索上の自社・競合の変化をモニタリングする「GEO Watcher」と、GEO・LLMO営業提案に使える「GEO診断レポート」を提供。",
   path: "/",
 });
 
@@ -40,7 +40,7 @@ function HeroSection() {
     <section className="relative pt-16 pb-20 lg:pt-20 lg:pb-28 bg-white border-b border-black/[0.06]">
       <div className="relative max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 w-full flex flex-col items-center text-center">
         <div className="mb-8 border border-[#003393] rounded-full px-6 py-2 inline-block">
-          <p className="text-[#003393] font-bold text-[16px]">企業のGEO・LLMO対策を支援</p>
+          <p className="text-[#003393] font-bold" style={{ fontSize: "var(--fs-label-sm)" }}>企業のGEO・LLMO対策を支援</p>
         </div>
         <div className="flex items-center justify-center gap-12 flex-wrap mb-8">
           {[
@@ -69,26 +69,26 @@ function HeroSection() {
         </div>
         <h1
           className="text-[#0B0B0E] font-bold max-w-[34ch] mx-auto"
-          style={{ fontSize: "clamp(31px, 3.98vw, 51px)", lineHeight: "var(--lh-heading)", letterSpacing: "-0.03em" }}
+          style={{ fontSize: "var(--fs-display)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em" }}
         >
           GEO・LLMO対策の目的に合わせた、<br />
           <span className="text-blue-gradient">2つのソリューション</span>
         </h1>
-        <p className="mt-6 text-[17px] text-[#4e4e51] leading-[1.6] max-w-[72ch] mx-auto">
+        <p className="mt-6 text-[#4e4e51] leading-[1.6] max-w-[72ch] mx-auto" style={{ fontSize: "var(--fs-body-sm)" }}>
           自社・競合の変化を継続的に追いたい企業には、モニタリングツール「GEO Watcher」。見込み顧客の課題を可視化し、営業提案につなげたい企業には「GEO診断レポート」。Ascent GEOは、自社ブランドの継続的な改善と、見込み顧客への営業提案。2つの目的に応えるソリューションを提供します。
         </p>
         <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 gap-8 w-full max-w-[1232px] mx-auto">
           <div className="relative flex flex-col items-center gap-6 rounded-2xl border border-[#003393]/30 p-8 pt-9">
-            <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-3 text-[14px] font-medium text-[#003393] whitespace-nowrap">企業のマーケティング・ブランド担当者向け</span>
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-3 font-medium text-[#003393] whitespace-nowrap" style={{ fontSize: "var(--fs-label)" }}>企業のマーケティング・ブランド担当者向け</span>
             <div className="flex flex-col items-center gap-3 text-center">
-              <p className="text-[17px] font-bold text-[#0B0B0E] leading-snug">国内最大、7つの主要AIモデルをカバー</p>
-              <p className="text-[17px] font-bold text-[#0B0B0E] leading-snug">料金も、使える範囲も、最初から明確に</p>
+              <p className="font-bold text-[#0B0B0E] leading-snug" style={{ fontSize: "var(--fs-body-sm)" }}>国内最大、7つの主要AIモデルをカバー</p>
+              <p className="font-bold text-[#0B0B0E] leading-snug" style={{ fontSize: "var(--fs-body-sm)" }}>料金も、使える範囲も、最初から明確に</p>
               <div className="flex flex-wrap items-center justify-center gap-1.5 max-w-[420px]">
                 {[
                   "ブランド言及", "競合比較", "URL引用", "トピック分類",
                   "検索キーワード", "AI回答の原文", "自動プロンプト分析", "CSVデータ", "毎日追跡",
                 ].map((tag) => (
-                  <span key={tag} className="text-[13px] text-[#4e4e51] bg-black/[0.04] rounded-full px-3 py-1.5">
+                  <span key={tag} className="text-[#4e4e51] bg-black/[0.04] rounded-full px-3 py-1.5" style={{ fontSize: "var(--fs-label-sm)" }}>
                     {tag}
                   </span>
                 ))}
@@ -97,7 +97,7 @@ function HeroSection() {
             <Button
               asChild
               variant="cta"
-              className="!w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] !bg-[#003393] hover:!bg-[#0B0B0E]"
+              className="!w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !bg-[#003393] hover:!bg-[#0B0B0E]" style={{ fontSize: "var(--fs-label)" }}
             >
               <Link href="/watcher">モニタリングツール GEO Watcherへ</Link>
             </Button>
@@ -178,12 +178,12 @@ function ChallengesSection() {
   ];
 
   return (
-    <section className="bg-[#0B0B0E] pt-24 pb-0">
-      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
+    <section className="relative pt-24 pb-0 overflow-hidden" style={{ background: "linear-gradient(160deg, #0a1a3a 0%, #071228 40%, #05070f 75%, #000000 100%)" }}>
+      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
         <div className="mt-12 text-center">
           <h2
             className="text-[#FAFAF7] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
-            style={{ fontSize: "clamp(33px, 3.3vw, 49px)" }}
+            style={{ fontSize: "var(--fs-section-title)" }}
           >
             目的によって異なる、GEO・LLMO対策の<span className="text-[#FAFAF7] not-italic">課題</span>。
           </h2>
@@ -200,12 +200,12 @@ function ChallengesSection() {
                 className="absolute top-0 right-0 w-[200px] h-[200px] rounded-full blur-[80px] pointer-events-none"
                 style={{ background: `radial-gradient(circle, ${c.accent} 0%, ${c.accent}20 38%, transparent 65%)` }}
               />
-              <p className="text-[13px] text-[#9A9AA0] mb-3">{c.audience}</p>
-              <h3 className="text-[19px] font-bold text-[#FAFAF7] mb-3 leading-snug">{c.title}</h3>
-              <p className="text-[15px] text-[#d3d3d8] leading-[1.6] mb-5 font-[inherit]">{c.desc}</p>
+              <p className="text-[#9A9AA0] mb-3" style={{ fontSize: "var(--fs-label-sm)" }}>{c.audience}</p>
+              <h3 className="font-bold text-[#FAFAF7] mb-3 leading-snug" style={{ fontSize: "var(--fs-h3)" }}>{c.title}</h3>
+              <p className="text-[#d3d3d8] leading-[1.6] mb-5 font-[inherit]" style={{ fontSize: "var(--fs-body-xsm)" }}>{c.desc}</p>
               <ul className="flex flex-col gap-2">
                 {c.bullets.map((b) => (
-                  <li key={b} className="flex items-start gap-2 text-[18px] text-[#d3d3d8] font-[inherit]">
+                  <li key={b} className="flex items-start gap-2 text-[#d3d3d8] font-[inherit]" style={{ fontSize: "var(--fs-body)" }}>
                     <span className="w-4 h-[1px] bg-[#7ab6ff] mt-[10px] flex-shrink-0" />
                     <span>{b}</span>
                   </li>
@@ -271,7 +271,7 @@ function SolutionsSection() {
         <div className="mt-0 text-center">
           <h2
             className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
-            style={{ fontSize: "clamp(33px, 3.3vw, 49px)" }}
+            style={{ fontSize: "var(--fs-section-title)" }}
           >
             目的別の課題を、<span className="text-[#0B0B0E] not-italic">2つのソリューション</span>で解決。
           </h2>
@@ -281,10 +281,10 @@ function SolutionsSection() {
           {solutions.map((s) => (
             <div key={s.label} className="flex flex-col">
               <div className="mb-6">
-                <p className="font-mono text-[11px] tracking-[0.14em] text-[#003393] mb-2 uppercase">{s.label}</p>
-                <h3 className="text-[28px] font-bold text-[#0B0B0E] mb-2 leading-snug">{s.title}</h3>
-                <p className="text-[20px] font-bold text-[#0B0B0E] mb-3">{s.subtitle}</p>
-                <p className="text-[16px] text-[#4e4e51] leading-[1.6]">{s.desc}</p>
+                <p className="font-mono text-[#003393] mb-2 uppercase" style={{ fontSize: "var(--fs-label-xxs)", letterSpacing: "0.14em" }}>{s.label}</p>
+                <h3 className="font-bold text-[#0B0B0E] mb-2 leading-snug" style={{ fontSize: "clamp(24px, 2.8vw, 32px)" }}>{s.title}</h3>
+                <p className="font-bold text-[#0B0B0E] mb-3" style={{ fontSize: "var(--fs-body)" }}>{s.subtitle}</p>
+                <p className="text-[#4e4e51] leading-[1.6]" style={{ fontSize: "var(--fs-body-xsm)" }}>{s.desc}</p>
               </div>
               {s.image && (
                 <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-6">
@@ -313,7 +313,7 @@ function SolutionsSection() {
                               {getIcon(step.icon || "gauge")}
                             </div>
                             <div className="flex-1">
-                              <p className="text-[17px] text-[#0B0B0E]">
+                              <p className="text-[#0B0B0E]" style={{ fontSize: "var(--fs-body-sm)" }}>
                                 <span className="font-bold">{step.label}：</span>
                                 <span className="text-[#4e4e51] ml-1">{step.desc}</span>
                               </p>
@@ -336,7 +336,7 @@ function SolutionsSection() {
                 <Button
                   asChild
                   variant="cta"
-                  className="!w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] !bg-[#003393] hover:!bg-[#0f3de0]"
+                  className="!w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !bg-[#003393] hover:!bg-[#0f3de0]" style={{ fontSize: "var(--fs-label)" }}
                 >
                   <Link href={s.href}>{s.cta} →</Link>
                 </Button>
@@ -399,14 +399,14 @@ function GeoLabSection() {
           <div>
             <h2
               className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
-              style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
+              style={{ fontSize: "var(--fs-section-title)" }}
             >
               GEO・LLMO対策を、<br />
               <span className="text-blue-gradient">知識とデータ</span>の両面から。
             </h2>
           </div>
           <div className="flex items-end">
-            <p className="text-[17px] text-[#4e4e51] leading-[1.6] font-[inherit]">
+            <p className="text-[#4e4e51] leading-[1.6] font-[inherit]" style={{ fontSize: "var(--fs-body-sm)" }}>
               Ascent GEO LABは、AI検索時代の変化を、調査と実践から読み解くリサーチハブです。検索行動の変化、SEOとGEO・LLMOの違い、AIに引用されるコンテンツの条件、効果測定の考え方など、実務に役立つ知見を公開します。
             </p>
           </div>
@@ -423,11 +423,11 @@ function GeoLabSection() {
                 className="h-[260px] w-full"
               />
               <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-[20px] font-bold text-[#0B0B0E] leading-snug mb-2">
+                <h3 className="font-bold text-[#0B0B0E] leading-snug mb-2" style={{ fontSize: "clamp(18px, 2.2vw, 24px)" }}>
                   {articles[0].title}
                 </h3>
-                <p className="text-[15px] text-[#4e4e51] leading-[1.6] mb-4 flex-1">{articles[0].desc}</p>
-                <div className="flex items-center gap-3 mono text-[11px] text-[#6B6B73]">
+                <p className="text-[#4e4e51] leading-[1.6] mb-4 flex-1" style={{ fontSize: "var(--fs-body-xsm)" }}>{articles[0].desc}</p>
+                <div className="flex items-center gap-3 mono text-[#6B6B73]" style={{ fontSize: "var(--fs-label-xxs)" }}>
                   <span>{articles[0].date}</span>
                   <span>·</span>
                   <span>{articles[0].readTime}</span>
@@ -451,12 +451,12 @@ function GeoLabSection() {
                   />
                   <div className="p-5 flex flex-col justify-between flex-1">
                     <div>
-                      <h4 className="text-[17px] font-bold text-[#0B0B0E] leading-snug mb-2">{article.title}</h4>
+                      <h4 className="font-bold text-[#0B0B0E] leading-snug mb-2" style={{ fontSize: "var(--fs-h4)" }}>{article.title}</h4>
                       {article.desc && (
                         <p className="card-desc text-[#6B6B73]">{article.desc}</p>
                       )}
                     </div>
-                    <div className="flex items-center gap-3 mono text-[11px] text-[#6B6B73] mt-3">
+                    <div className="flex items-center gap-3 mono text-[#6B6B73] mt-3" style={{ fontSize: "var(--fs-label-xxs)" }}>
                       <span>{article.date}</span>
                       <span>·</span>
                       <span>{article.readTime}</span>
@@ -510,13 +510,13 @@ function GeoLabSection() {
               <article className="flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border border-[#E6E4DD] bg-[#FAFAF7] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#003393] hover:shadow-[0_12px_32px_-16px_rgba(0,51,147,0.2)]">
                 <ArticleThumbnail variant={a.thumbVariant} eyebrow={a.tag} className="h-[140px] w-full" />
                 <div className="flex flex-1 flex-col p-5">
-                  <div className="mb-2 flex items-center justify-between font-mono text-[10px] tracking-[0.12em] text-[#6B6B73]">
+                  <div className="mb-2 flex items-center justify-between font-mono tracking-[0.12em] text-[#6B6B73]" style={{ fontSize: "var(--fs-caption)" }}>
                     <span className="text-[#003393]">{a.tag}</span>
                     <span>2026.{a.date}</span>
                   </div>
-                  <h3 className="mb-2 flex-none text-[17px] font-bold leading-[1.3] tracking-[-0.01em] text-[#0B0B0E]">{a.title}</h3>
+                  <h3 className="mb-2 flex-none font-bold leading-[1.3] tracking-[-0.01em] text-[#0B0B0E]" style={{ fontSize: "var(--fs-h4)" }}>{a.title}</h3>
                   <p className="card-desc mb-4 flex-1 text-[#6B6B73]">{a.desc}</p>
-                  <div className="flex items-center justify-between border-t border-[#E6E4DD] pt-3 font-mono text-[10px] tracking-[0.1em] text-[#9A9AA0]">
+                  <div className="flex items-center justify-between border-t border-[#E6E4DD] pt-3 font-mono tracking-[0.1em] text-[#9A9AA0]" style={{ fontSize: "var(--fs-caption)" }}>
                     <span>{a.readTime}</span>
                     <span className="text-[#003393] transition-colors group-hover:underline">READ →</span>
                   </div>
@@ -527,7 +527,7 @@ function GeoLabSection() {
         </div>
 
         <div className="mt-4 text-center">
-          <Link href="/lab" className="font-mono text-[14px] tracking-[0.18em] text-[#003393] hover:underline uppercase">
+          <Link href="/lab" className="font-mono tracking-[0.18em] text-[#003393] hover:underline uppercase" style={{ fontSize: "var(--fs-label)" }}>
             GEO(LLMO) LAB をすべて見る →
           </Link>
         </div>
@@ -548,16 +548,16 @@ function FinalCtaSection() {
     >
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-14 items-start">
         <div>
-          <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-[#7ab6ff] mb-5">
+          <div className="font-mono tracking-[0.18em] uppercase text-[#7ab6ff] mb-5" style={{ fontSize: "var(--fs-label-xxs)" }}>
             AI検索で選ばれるための一歩を、ここから
           </div>
           <h2
             className="text-[#FAFAF7] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
-            style={{ fontSize: "clamp(31px, 3.08vw, 48px)" }}
+            style={{ fontSize: "var(--fs-section-title)" }}
           >
             AI検索で選ばれるための<br />一歩を、ここから。
           </h2>
-          <p className="mt-6 text-[16px] text-[#d3d3d8] leading-[1.6] max-w-[52ch]">
+          <p className="mt-6 text-[#d3d3d8] leading-[1.6] max-w-[52ch]" style={{ fontSize: "var(--fs-body-xsm)" }}>
             自社ブランドの変化を継続的に捉えるなら、GEO Watcher。見込み顧客への提案を具体化するなら、GEO診断レポート。
             <br />
             <br />
@@ -567,20 +567,20 @@ function FinalCtaSection() {
             <Button
               asChild
               variant="cta"
-              className="flex-1 !w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] !bg-[#003393] hover:!bg-[#0f3de0]"
+              className="flex-1 !w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !bg-[#003393] hover:!bg-[#0f3de0]" style={{ fontSize: "var(--fs-label)" }}
             >
               <Link href="/watcher">GEO Watcherを見る →</Link>
             </Button>
             <Button
               asChild
               variant="cta"
-              className="flex-1 !w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] !bg-[#003393] hover:!bg-[#0f3de0]"
+              className="flex-1 !w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !bg-[#003393] hover:!bg-[#0f3de0]" style={{ fontSize: "var(--fs-label)" }}
             >
               <Link href="/shindan">GEO診断レポートを見る →</Link>
             </Button>
           </div>
           <div className="mt-3">
-            <CalendarBookingButton className="!w-full !min-w-0 !max-w-none !h-[52px] !justify-start text-left px-6 !text-[14px] gap-2 hover:!bg-[#003393] hover:!border-[#003393]">
+            <CalendarBookingButton className="!w-full !min-w-0 !max-w-none !h-[52px] !justify-start text-left px-6 gap-2 hover:!bg-[#003393] hover:!border-[#003393] !text-[14px]">
               <Calendar size={16} />
               無料相談予約（Googleカレンダー）
             </CalendarBookingButton>
