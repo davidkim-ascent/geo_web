@@ -8,6 +8,9 @@ import { buildPageMetadata } from "@/lib/seo";
 import { WatcherFAQ } from "./WatcherFAQ";
 import { Button } from "@/components/ui/button";
 import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
+import voice1Image from "../../../Design/voice1.png";
+import voice2Image from "../../../Design/voice2.png";
+import voice3Image from "../../../Design/voice3.png";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "GEO Watcher｜GEO・LLMO対策モニタリングツール",
@@ -347,6 +350,78 @@ function ReasonsSection() {
   );
 }
 
+function TestimonialsSection() {
+  return (
+    <section className="bg-[#FAFAF7] py-12 lg:py-16">
+      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
+        <SectionLabel title="顧客の声" />
+        <hr className="my-4 border-black/[0.07]" />
+        <div className="mt-12 grid grid-cols-1 gap-6">
+          {[
+            {
+              name: "EC運営担当者",
+              role: "化粧品・自社EC",
+              review: "月額コンサルではなく、必要な支援だけ頼めました。「他社のGEO・LLMOツールを検討したときは、最後に月額コンサルを提案されることが多く、導入を見送っていました。GEO Watcherは、主要な計測機能をツール内で利用でき、苦手だったプロンプト設計だけを、1回単位で依頼できました。毎月の追加費用が発生しないため、社内でも説明しやすく、導入までスムーズに進められました。」",
+              image: voice1Image,
+              rating: 5,
+            },
+            {
+              name: "広報・マーケティング担当者",
+              role: "地方製造業",
+              review: "ビッグデータの専門企業が開発していることが、導入の決め手でした。「GEO・LLMO対策はまだ新しい分野なので、ツールの機能だけでなく、どのような会社が開発・運営しているかも重視しました。GEO Watcherは、検索データやビッグデータを長年扱ってきた企業が開発しているため、計測データの信頼性にも安心感がありました。複数のAIにおける自社と競合の変化を、継続的に確認できる点も、社内で導入を決める後押しになりました。」",
+              image: voice2Image,
+              rating: 5,
+            },
+            {
+              name: "マーケティングマネージャー",
+              role: "BtoB SaaS企業",
+              review: "施策後の変化を、データで説明できるようになりました。「以前利用していたGEO・LLMOツールは週3回の更新だったため、コンテンツ改善後の変化が、いつAIの回答に反映されたのか判断しづらい状態でした。GEO Watcherに切り替えてからは、毎日のデータで言及率や引用URLの変化を追えるため、施策後の反応を早い段階で確認できます。複数のAIの回答原文やグラフもまとめて共有でき、社内報告の根拠として使いやすくなりました。」",
+              image: voice3Image,
+              rating: 5,
+            },
+          ].map((reviewer) => (
+            <div key={reviewer.name} className="rounded-lg bg-white p-6 flex gap-6">
+              <div className="flex-shrink-0">
+                <div className="h-[80px] w-[80px] rounded-full overflow-hidden bg-gray-200">
+                  {reviewer.image && (
+                    <Image
+                      src={reviewer.image}
+                      alt={reviewer.name}
+                      width={80}
+                      height={80}
+                      className={`h-full w-full object-cover ${reviewer.name === "広報・マーケティング担当者" ? "scale-200 -translate-y-1" : ""}`}
+                    />
+                  )}
+                </div>
+              </div>
+              <div className="flex-1">
+                <p className="mb-3 text-[14px] leading-[1.6] text-[#4e4e51]">
+                  {reviewer.review}
+                </p>
+                <div className="border-t border-[#e0e0e0] pt-3">
+                  <p className="font-bold text-[#0B0B0E]" style={{ fontSize: "var(--fs-body)" }}>
+                    {reviewer.name}
+                  </p>
+                  <p className="text-[#999] mb-2" style={{ fontSize: "var(--fs-label-sm)" }}>
+                    {reviewer.role}
+                  </p>
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className={i < reviewer.rating ? "text-[#FFC93B] text-lg" : "text-[#ddd] text-lg"}>
+                        ★
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function PricingSection() {
   const plans = [
     {
@@ -612,6 +687,7 @@ export default function WatcherPage() {
       <AnswerSection />
       <FeaturesSection />
       <ReasonsSection />
+      <TestimonialsSection />
       <PricingSection />
       <ContactSection />
       <WatcherFAQ />
