@@ -28,18 +28,6 @@ export const metadata: Metadata = buildPageMetadata({
 export const dynamic = "force-static";
 
 /* ─────────────────────────────────────────────
-   Section Label (공통 컴포넌트)
-───────────────────────────────────────────── */
-function SectionLabel({ title, dark = false }: { title: string; dark?: boolean }) {
-  return (
-    <div className="flex items-center gap-3">
-      <span className="w-[6px] h-[6px] rounded-full flex-shrink-0 bg-[#003393]" />
-      <span className={`ui-section-label-title ${dark ? "ui-section-label-title-dark" : ""}`}>{title}</span>
-    </div>
-  );
-}
-
-/* ─────────────────────────────────────────────
    Hero Section
 ───────────────────────────────────────────── */
 function HeroSection() {
@@ -199,17 +187,17 @@ function ChallengesSection() {
   ];
 
   return (
-    <section className="relative pt-24 pb-0 overflow-hidden" style={{ background: "linear-gradient(180deg, #b8d9ef 0%, #d4e8f7 72%, #d4e8f7 100%)" }}>
+    <section className="relative pt-24 pb-0 overflow-hidden" style={{ background: "linear-gradient(180deg, #8bc0e8 0%, #d4e8f7 72%, #d4e8f7 100%)" }}>
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 relative z-10 pb-24">
         <div className="mx-auto mb-10 flex min-h-[62px] w-full max-w-[560px] items-center justify-center rounded-full bg-white px-6 py-4 text-center">
           <p className="font-bold text-[#0B0B0E]" style={{ fontSize: "var(--fs-h3)" }}>こんなお悩みありませんか？</p>
         </div>
         <div className="text-center">
           <h2
-            className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
+            className="text-white font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
             style={{ fontSize: "var(--fs-section-title)" }}
           >
-            目的によって異なる、<span style={{ color: "#003393" }}>GEO・LLMO対策の課題</span>。
+            <span style={{ color: "white" }}>目的によって異なる、</span><span style={{ color: "#003393" }}>GEO・LLMO対策の課題。</span>
           </h2>
         </div>
 
@@ -223,7 +211,7 @@ function ChallengesSection() {
               <div className="relative mb-6 h-[168px] w-[168px] overflow-hidden rounded-full border border-black/[0.06] bg-[#f4f8fb] shadow-[0_12px_32px_rgba(0,0,0,0.08)] sm:h-[182px] sm:w-[182px]">
                 <Image src={c.image} alt={c.imageAlt} fill sizes="(max-width: 768px) 168px, 182px" className="object-cover" />
               </div>
-              <p className="text-[#666] mb-3 relative z-10 text-center" style={{ fontSize: "var(--fs-label-sm)" }}>{c.audience}</p>
+              <p className="text-[#003393] mb-3 relative z-10 text-center font-bold" style={{ fontSize: "var(--fs-label-sm)" }}>{c.audience}</p>
               <h3 className="font-bold text-[#0B0B0E] mb-3 leading-snug relative z-10 text-center" style={{ fontSize: "var(--fs-h3)" }}>{c.title}</h3>
               <p className="text-[#4e4e51] leading-[1.6] mb-5 font-[inherit] relative z-10 text-center" style={{ fontSize: "var(--fs-body-xsm)" }}>{c.desc}</p>
               <ul className="flex w-full flex-col gap-2 relative z-10">
@@ -240,8 +228,8 @@ function ChallengesSection() {
       </div>
 
       {/* Arrow Down Divider */}
-      <svg className="w-full h-40" viewBox="0 0 1200 160" preserveAspectRatio="none" style={{ display: "block", background: "#ffffff" }}>
-        <polygon points="0,0 1200,0 600,160" fill="#d4e8f7" />
+      <svg className="w-full h-24" viewBox="0 0 1200 96" preserveAspectRatio="none" style={{ display: "block", background: "#ffffff" }}>
+        <polygon points="0,0 1200,0 600,96" fill="#d4e8f7" />
       </svg>
     </section>
   );
@@ -285,14 +273,14 @@ function SolutionsSection() {
   ];
 
   return (
-    <section className="bg-white pt-24 pb-12">
+    <section className="bg-white pt-12 pb-24">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
         <div className="mt-0 text-center">
           <h2
             className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
             style={{ fontSize: "var(--fs-section-title)" }}
           >
-            目的別の課題を、<span className="text-[#0B0B0E] not-italic">2つのソリューション</span>で解決。
+            目的別の課題を、<span className="text-[#0B0B0E] not-italic" style={{ backgroundImage: "linear-gradient(120deg, #d4e8f7 0%, #d4e8f7 100%)", backgroundPosition: "0 80%", backgroundRepeat: "repeat-x", backgroundSize: "100% 40%", paddingBottom: "4px" }}>2つのソリューション</span>で解決。
           </h2>
         </div>
 
@@ -428,9 +416,6 @@ function GeoLabSection() {
   return (
     <section id="lab" className="bg-[#FAFAF7] pt-12 pb-10">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <SectionLabel title="GEO(LLMO) LAB" />
-        <hr className="my-4 border-black/[0.07]" />
-
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
             <h2
@@ -579,12 +564,107 @@ function GeoLabSection() {
 }
 
 /* ─────────────────────────────────────────────
+   Ascent Strengths Section
+───────────────────────────────────────────── */
+function AscentStrengthsSection() {
+  return (
+    <section className="bg-[#FAFAF7] border-t border-b border-black/[0.08] py-12 lg:py-16">
+      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="text-center mb-12">
+          <h2
+            className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
+            style={{ fontSize: "var(--fs-section-title)" }}
+          >
+            <span style={{ color: "#003393", backgroundImage: "linear-gradient(120deg, #fef08a 0%, #fef08a 100%)", backgroundPosition: "0 80%", backgroundRepeat: "repeat-x", backgroundSize: "100% 40%", paddingBottom: "4px" }}>Ascent GEO</span>が選ばれる理由
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            {
+              title: "20年以上のWebマーケティング、SEO 分野での実績",
+              desc: "20年間、国内外の大手企業、中堅企業のSEO、サイト流入分析、サイトパフォーマンス分析を実施した専門性と経験を保有",
+              evidenceImage: "/evidence-1.png",
+            },
+            {
+              title: "15億件の検索ビッグデータを保有",
+              desc: "検索経路、検索の理由、生活文脈(CEP)、AIOクエリなど、Googleの検索データ15億件以上を保有。圧倒的なデータ量と技術力で実データに基づく検索行動分析が可能",
+              evidenceImage: "/evidence-2.png",
+            },
+            {
+              title: "特許基盤のGEO・LLMO設計フレームワーク",
+              desc: "Google・Microsoftの特許分析を通じて、推測ではなく、正確な根拠に基づいた顧客支援を実現",
+              evidenceImage: "/evidence-3.png",
+            },
+          ].map((item, idx) => (
+            <div key={idx} className="rounded-lg bg-white overflow-hidden border border-black/[0.06] shadow-lg shadow-black/[0.08]">
+              {/* Evidence Image */}
+              <div className="w-full h-[240px] relative">
+                {item.evidenceImage && (
+                  <Image
+                    src={item.evidenceImage}
+                    alt={item.title}
+                    fill
+                    className="object-contain bg-gray-50"
+                  />
+                )}
+              </div>
+
+              {/* Divider */}
+              <hr className="border-black/[0.06]" />
+
+              {/* Content */}
+              <div className="p-6">
+                <h4 className="font-bold text-[#0B0B0E] mb-3 leading-snug" style={{ fontSize: "var(--fs-h4)" }}>
+                  {item.title}
+                </h4>
+                <p className="text-[#4e4e51] leading-[1.6]" style={{ fontSize: "var(--fs-body-xsm)" }}>
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Award Logos */}
+        <div className="mt-16 flex justify-center items-center gap-12">
+          <div className="flex flex-col items-center">
+            <Image
+              src="/red-herring-logo.png"
+              alt="Red Herring"
+              width={90}
+              height={62}
+              className="h-auto w-auto"
+            />
+            <p className="mt-3 text-center text-[#4e4e51] leading-[1.6]" style={{ fontSize: "var(--fs-body-xsm)" }}>
+              RED HERRING グローバル<br />TOP 100 技術企業として選定
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+            <Image
+              src="/jma-logo.jpg"
+              alt="JMA"
+              width={90}
+              height={90}
+              className="h-auto w-auto"
+            />
+            <p className="mt-3 text-center text-[#4e4e51] leading-[1.6]" style={{ fontSize: "var(--fs-body-xsm)" }}>
+              公益社団法人<br />日本マーケティング協会会員社
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────
    Final CTA Section
 ───────────────────────────────────────────── */
 function FinalCtaSection() {
   return (
     <section
-      className="relative py-10 lg:py-14 overflow-hidden"
+      className="relative py-10 lg:py-20 overflow-hidden"
       style={{ background: "linear-gradient(180deg, #e8f4fb 0%, #d4e8f7 50%, #c8dff5 100%)" }}
     >
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-14 items-start">
@@ -694,6 +774,7 @@ export default function Home() {
       <HeroSection />
       <ChallengesSection />
       <SolutionsSection />
+      <AscentStrengthsSection />
       <FinalCtaSection />
       <GeoLabSection />
     </div>

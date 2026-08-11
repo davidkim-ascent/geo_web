@@ -19,7 +19,7 @@ export function WatcherFAQ() {
   const [open, setOpen] = useState<number>(0);
 
   return (
-    <section className="border-t border-[#E6E4DD] bg-[#FAFAF7] py-[120px]">
+    <section className="border-t border-[#E6E4DD] bg-white py-[120px]">
       <div className="mx-auto max-w-[var(--ui-content-width)] px-4 sm:px-6 lg:px-10">
         <div className="mb-6 font-mono text-[12px] tracking-[0.18em] text-[#9A9AA0] uppercase">
           [ FREQUENTLY ASKED ]
