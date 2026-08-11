@@ -629,11 +629,11 @@ function FinalCtaSection() {
             <div className="grid grid-cols-3 gap-4">
               {[
                 {
-                  name: "Louis Hoffman",
-                  role: "Happy Officer",
-                  review: "Happy reviewer is super excited being part of happy addons family",
+                  name: "EC運営担当者",
+                  role: "化粧品・自社EC",
+                  review: "月額コンサルではなく、必要な支援だけ頼めました。「他社のGEO・LLMOツールを検討したときは、最後に月額コンサルを提案されることが多く、導入を見送っていました。GEO Watcherは、主要な計測機能をツール内で利用でき、苦手だったプロンプト設計だけを、1回単位で依頼できました。毎月の追加費用が発生しないため、社内でも説明しやすく、導入までスムーズに進められました。」",
                   image: "/home/review-1.png",
-                  rating: 4,
+                  rating: 5,
                 },
                 {
                   name: "Thoma Midleditch",
