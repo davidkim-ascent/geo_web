@@ -14,6 +14,9 @@ import mktStressImage from "../../Design/mkt-stress.png";
 import salesStressImage from "../../Design/sales-stress.png";
 import salesSuccessImage from "../../Design/salessucccess.png";
 import teamMeetImage from "../../Design/teammeet.png";
+import voice1Image from "../../Design/voice1.png";
+import voice2Image from "../../Design/voice2.png";
+import voice3Image from "../../Design/voice3.png";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "GEO・LLMO・AIO対策ツール｜Ascent GEO",
@@ -631,21 +634,21 @@ function FinalCtaSection() {
                   name: "EC運営担当者",
                   role: "化粧品・自社EC",
                   review: "月額コンサルではなく、必要な支援だけ頼めました。「他社のGEO・LLMOツールを検討したときは、最後に月額コンサルを提案されることが多く、導入を見送っていました。GEO Watcherは、主要な計測機能をツール内で利用でき、苦手だったプロンプト設計だけを、1回単位で依頼できました。毎月の追加費用が発生しないため、社内でも説明しやすく、導入までスムーズに進められました。」",
-                  image: "/home/review-1.png",
+                  image: voice1Image,
                   rating: 5,
                 },
                 {
                   name: "広報・マーケティング担当者",
                   role: "地方製造業",
                   review: "ビッグデータの専門企業が開発していることが、導入の決め手でした。「GEO・LLMO対策はまだ新しい分野なので、ツールの機能だけでなく、どのような会社が開発・運営しているかも重視しました。GEO Watcherは、検索データやビッグデータを長年扱ってきた企業が開発しているため、計測データの信頼性にも安心感がありました。複数のAIにおける自社と競合の変化を、継続的に確認できる点も、社内で導入を決める後押しになりました。」",
-                  image: "/home/review-2.png",
+                  image: voice2Image,
                   rating: 5,
                 },
                 {
                   name: "マーケティングマネージャー",
                   role: "BtoB SaaS企業",
                   review: "施策後の変化を、データで説明できるようになりました。「以前利用していたGEO・LLMOツールは週3回の更新だったため、コンテンツ改善後の変化が、いつAIの回答に反映されたのか判断しづらい状態でした。GEO Watcherに切り替えてからは、毎日のデータで言及率や引用URLの変化を追えるため、施策後の反応を早い段階で確認できます。複数のAIの回答原文やグラフもまとめて共有でき、社内報告の根拠として使いやすくなりました。」",
-                  image: "/home/review-3.png",
+                  image: voice3Image,
                   rating: 5,
                 },
               ].map((reviewer) => (
