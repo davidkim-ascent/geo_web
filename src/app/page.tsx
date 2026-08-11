@@ -636,18 +636,18 @@ function FinalCtaSection() {
                   rating: 5,
                 },
                 {
-                  name: "Thoma Midleditch",
-                  role: "Happy Officer",
-                  review: "Happy reviewer is super excited being part of happy addons family",
+                  name: "広報・マーケティング担当者",
+                  role: "地方製造業",
+                  review: "ビッグデータの専門企業が開発していることが、導入の決め手でした。「GEO・LLMO対策はまだ新しい分野なので、ツールの機能だけでなく、どのような会社が開発・運営しているかも重視しました。GEO Watcherは、検索データやビッグデータを長年扱ってきた企業が開発しているため、計測データの信頼性にも安心感がありました。複数のAIにおける自社と競合の変化を、継続的に確認できる点も、社内で導入を決める後押しになりました。」",
                   image: "/home/review-2.png",
-                  rating: 4,
+                  rating: 5,
                 },
                 {
-                  name: "Sarah Johnson",
-                  role: "Happy Officer",
-                  review: "Happy reviewer is super excited being part of happy addons family",
+                  name: "マーケティングマネージャー",
+                  role: "BtoB SaaS企業",
+                  review: "施策後の変化を、データで説明できるようになりました。「以前利用していたGEO・LLMOツールは週3回の更新だったため、コンテンツ改善後の変化が、いつAIの回答に反映されたのか判断しづらい状態でした。GEO Watcherに切り替えてからは、毎日のデータで言及率や引用URLの変化を追えるため、施策後の反応を早い段階で確認できます。複数のAIの回答原文やグラフもまとめて共有でき、社内報告の根拠として使いやすくなりました。」",
                   image: "/home/review-3.png",
-                  rating: 4,
+                  rating: 5,
                 },
               ].map((reviewer) => (
                 <div key={reviewer.name} className="rounded-lg bg-white p-6 text-center">
