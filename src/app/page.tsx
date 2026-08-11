@@ -582,20 +582,20 @@ function FinalCtaSection() {
   return (
     <section
       className="relative py-10 lg:py-14 overflow-hidden"
-      style={{ background: "linear-gradient(160deg, #0a1a3a 0%, #071228 40%, #05070f 75%, #000000 100%)" }}
+      style={{ background: "#d4e8f7" }}
     >
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-14 items-start">
         <div>
-          <div className="font-mono tracking-[0.18em] uppercase text-[#7ab6ff] mb-5" style={{ fontSize: "var(--fs-label-xxs)" }}>
+          <div className="font-mono tracking-[0.18em] uppercase text-[#003393] mb-5" style={{ fontSize: "var(--fs-label-xxs)" }}>
             AI検索で選ばれるための一歩を、ここから
           </div>
           <h2
-            className="text-[#FAFAF7] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
+            className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
             style={{ fontSize: "var(--fs-section-title)" }}
           >
             AI検索で選ばれるための<br />一歩を、ここから。
           </h2>
-          <p className="mt-6 text-[#d3d3d8] leading-[1.6] max-w-[52ch]" style={{ fontSize: "var(--fs-body-xsm)" }}>
+          <p className="mt-6 text-[#4e4e51] leading-[1.6] max-w-[52ch]" style={{ fontSize: "var(--fs-body-xsm)" }}>
             自社ブランドの変化を継続的に捉えるなら、GEO Watcher。見込み顧客への提案を具体化するなら、GEO診断レポート。
             <br />
             <br />
