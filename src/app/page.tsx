@@ -661,7 +661,7 @@ function FinalCtaSection() {
                           alt={reviewer.name}
                           width={80}
                           height={80}
-                          className={`h-full w-full object-cover ${reviewer.name === "広報・マーケティング担当者" ? "scale-125 -translate-y-1" : ""}`}
+                          className={`h-full w-full object-cover ${reviewer.name === "広報・マーケティング担当者" ? "scale-150 -translate-y-2" : ""}`}
                         />
                       )}
                     </div>
