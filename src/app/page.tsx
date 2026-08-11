@@ -625,57 +625,66 @@ function FinalCtaSection() {
           </div>
 
           {/* Reviews */}
-          <div className="mt-8 grid grid-cols-2 gap-4">
-            {[
-              {
-                name: "Louis Hoffman",
-                role: "Happy Officer",
-                review: "Happy reviewer is super excited being part of happy addons family",
-                image: "/home/review-1.png",
-                rating: 4,
-              },
-              {
-                name: "Thoma Midleditch",
-                role: "Happy Officer",
-                review: "Happy reviewer is super excited being part of happy addons family",
-                image: "/home/review-2.png",
-                rating: 4,
-              },
-            ].map((reviewer) => (
-              <div key={reviewer.name} className="rounded-lg bg-white p-6 text-center">
-                <div className="mb-4 flex justify-center">
-                  <div className="h-[80px] w-[80px] rounded-full overflow-hidden bg-gray-200">
-                    {reviewer.image && (
-                      <Image
-                        src={reviewer.image}
-                        alt={reviewer.name}
-                        width={80}
-                        height={80}
-                        className="h-full w-full object-cover"
-                      />
-                    )}
+          <div className="mt-8 grid grid-cols-1 gap-4">
+            <div className="grid grid-cols-3 gap-4">
+              {[
+                {
+                  name: "Louis Hoffman",
+                  role: "Happy Officer",
+                  review: "Happy reviewer is super excited being part of happy addons family",
+                  image: "/home/review-1.png",
+                  rating: 4,
+                },
+                {
+                  name: "Thoma Midleditch",
+                  role: "Happy Officer",
+                  review: "Happy reviewer is super excited being part of happy addons family",
+                  image: "/home/review-2.png",
+                  rating: 4,
+                },
+                {
+                  name: "Sarah Johnson",
+                  role: "Happy Officer",
+                  review: "Happy reviewer is super excited being part of happy addons family",
+                  image: "/home/review-3.png",
+                  rating: 4,
+                },
+              ].map((reviewer) => (
+                <div key={reviewer.name} className="rounded-lg bg-white p-6 text-center">
+                  <div className="mb-4 flex justify-center">
+                    <div className="h-[80px] w-[80px] rounded-full overflow-hidden bg-gray-200">
+                      {reviewer.image && (
+                        <Image
+                          src={reviewer.image}
+                          alt={reviewer.name}
+                          width={80}
+                          height={80}
+                          className="h-full w-full object-cover"
+                        />
+                      )}
+                    </div>
+                  </div>
+                  <p className="mb-4 text-[14px] leading-[1.6] text-[#4e4e51]" style={{ minHeight: "56px" }}>
+                    {reviewer.review}
+                  </p>
+                  <div className="mb-3 border-t border-[#e0e0e0] pt-3">
+                    <p className="font-bold text-[#0B0B0E]" style={{ fontSize: "var(--fs-body)" }}>
+                      {reviewer.name}
+                    </p>
+                    <p className="text-[#999]" style={{ fontSize: "var(--fs-label-sm)" }}>
+                      {reviewer.role}
+                    </p>
+                  </div>
+                  <div className="flex justify-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className={i < reviewer.rating ? "text-[#FFC93B] text-lg" : "text-[#ddd] text-lg"}>
+                        ★
+                      </span>
+                    ))}
                   </div>
                 </div>
-                <p className="mb-4 text-[14px] leading-[1.6] text-[#4e4e51]" style={{ minHeight: "56px" }}>
-                  {reviewer.review}
-                </p>
-                <div className="mb-3 border-t border-[#e0e0e0] pt-3">
-                  <p className="font-bold text-[#0B0B0E]" style={{ fontSize: "var(--fs-body)" }}>
-                    {reviewer.name}
-                  </p>
-                  <p className="text-[#999]" style={{ fontSize: "var(--fs-label-sm)" }}>
-                    {reviewer.role}
-                  </p>
-                </div>
-                <div className="flex justify-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className={i < reviewer.rating ? "text-[#FFC93B] text-lg" : "text-[#ddd] text-lg"}>
-                      ★
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
         <div className="w-full max-w-[560px] mx-auto lg:ml-auto lg:mr-0">
