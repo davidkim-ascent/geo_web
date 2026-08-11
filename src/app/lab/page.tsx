@@ -4,11 +4,11 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { ArticleThumbnail } from "@/components/lab/ArticleThumbnail";
 import { HeroLogoMark } from "@/components/layout/HeroLogoMark";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
+import { LabArticles } from "./LabArticles";
+import { buildPageMetadata } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
 import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
 import { Calendar } from "lucide-react";
-import { LabArticles } from "./LabArticles";
-import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Ascent GEO Lab | AI検索リサーチハブ - 株式会社 Ascent Networks",
@@ -45,7 +45,7 @@ export default function LabPage() {
       <section
         className="hero-fixed relative py-12 lg:py-16"
         style={{
-          background: "var(--hero-gradient)",
+          background: "linear-gradient(180deg, #e8f4fb 0%, #d4e8f7 50%, #c8dff5 100%)",
           borderBottom: "1px solid rgba(255,255,255,0.06)",
         }}
       >
@@ -89,28 +89,44 @@ export default function LabPage() {
         <div className="relative mx-auto max-w-[var(--ui-content-width)] px-4 sm:px-6 lg:px-10">
           <div className="grid items-start gap-10 lg:grid-cols-[1.18fr_1fr] lg:gap-16">
             <div className="relative z-10 pt-8">
-              <div className="mb-5 flex items-center gap-2 font-mono text-[10px] tracking-[0.24em] text-[#1452FF] uppercase">
+              <div className="mb-5 flex items-center gap-2 font-mono text-[10px] tracking-[0.24em] text-[#003393] uppercase">
                 <span className="relative flex h-1.5 w-1.5">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#1452FF] opacity-75" />
-                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#1452FF]" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#003393] opacity-75" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#003393]" />
                 </span>
                 GEO(LLMO) LAB
               </div>
               <h1
-                className="font-bold text-white"
+                className="font-bold text-[#0B0B0E]"
                 style={{ fontSize: "clamp(44px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em", wordBreak: "keep-all" }}
               >
                 <span className="block">AI 検索時代の、</span>
-                <span className="block text-[#1452FF]">リサーチハブ。</span>
+                <span className="block text-[#003393]">リサーチハブ。</span>
               </h1>
-              <p className="mt-7 max-w-[52ch] text-[17px] leading-[1.75] text-white/[0.68]">
+              <p className="mt-7 max-w-[52ch] text-[17px] leading-[1.75] text-[#4e4e51]">
                 検索の変化、SEO と GEO(LLMO) の差、AI が引用する条件、GEO(LLMO) Writing の実装、KPI の測り方。Ascent が日々のクライアントワークから抽出した知見を、リサーチノートとして公開する。
               </p>
-              <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[640px]">
-                <CalendarBookingButton />
-                <Button asChild variant="ctaOutline">
-                  <Link href="/whitepaper">サービス資料をダウンロード</Link>
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <Button
+                  asChild
+                  variant="cta"
+                  className="flex-1 !w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !bg-[#003393] hover:!bg-[#0f3de0]" style={{ fontSize: "var(--fs-body-xsm)" }}
+                >
+                  <Link href="/watcher">GEO Watcherを見る →</Link>
                 </Button>
+                <Button
+                  asChild
+                  variant="cta"
+                  className="flex-1 !w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !bg-[#003393] hover:!bg-[#0f3de0]" style={{ fontSize: "var(--fs-body-xsm)" }}
+                >
+                  <Link href="/shindan">GEO診断レポートを見る →</Link>
+                </Button>
+              </div>
+              <div className="mt-3">
+                <CalendarBookingButton className="!w-full !min-w-0 !max-w-none !h-[52px] !justify-start text-left px-6 gap-2 !bg-transparent !border !border-[#003393] !text-[#003393] hover:!bg-[#003393] hover:!text-white hover:!border-[#003393]">
+                  <Calendar size={16} />
+                  無料相談予約（Googleカレンダー）
+                </CalendarBookingButton>
               </div>
               <HeroLogoMark />
             </div>
@@ -194,57 +210,6 @@ export default function LabPage() {
 
       {/* Articles list with filter */}
       <LabArticles />
-
-      {/* CTA */}
-      <section
-        className="relative py-10 lg:py-14 overflow-hidden"
-        style={{ background: "linear-gradient(160deg, #0a1a3a 0%, #071228 40%, #05070f 75%, #000000 100%)" }}
-      >
-        <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-14 items-start">
-          <div>
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-[#7ab6ff] mb-5">
-              AI検索で選ばれるための一歩を、ここから
-            </div>
-            <h2
-              className="text-[#FAFAF7] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
-              style={{ fontSize: "clamp(31px, 3.08vw, 48px)" }}
-            >
-              AI検索で選ばれるための<br />一歩を、ここから。
-            </h2>
-            <p className="mt-6 text-[16px] text-[#d3d3d8] leading-[1.6] max-w-[52ch]">
-              自社ブランドの変化を継続的に捉えるなら、GEO Watcher。見込み顧客への提案を具体化するなら、GEO診断レポート。
-              <br />
-              <br />
-              診断する。変化を追う。課題を次の改善へつなげる。目的に合った方法で、GEO・LLMO対策を始めましょう。
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <Button
-                asChild
-                variant="cta"
-                className="flex-1 !w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] !bg-[#003393] hover:!bg-[#0f3de0]"
-              >
-                <Link href="/watcher">GEO Watcherを見る →</Link>
-              </Button>
-              <Button
-                asChild
-                variant="cta"
-                className="flex-1 !w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] !bg-[#003393] hover:!bg-[#0f3de0]"
-              >
-                <Link href="/shindan">GEO診断レポートを見る →</Link>
-              </Button>
-            </div>
-            <div className="mt-3">
-              <CalendarBookingButton className="!w-full !min-w-0 !max-w-none !h-[52px] !justify-start text-left px-6 !text-[14px] gap-2 hover:!bg-[#003393] hover:!border-[#003393]">
-                <Calendar size={16} />
-                無料相談予約（Googleカレンダー）
-              </CalendarBookingButton>
-            </div>
-          </div>
-          <div className="w-full max-w-[560px] mx-auto lg:ml-auto lg:mr-0">
-            <ContactForm blockedEmailDomains={DEFAULT_BLOCKED_EMAIL_DOMAINS} />
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

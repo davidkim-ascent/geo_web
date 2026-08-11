@@ -4,7 +4,7 @@ export function HeroLogoMark() {
   return (
     <div className="mt-8 flex items-center justify-start">
       <Image
-        src="/ascent-geo-logo-split.png"
+        src="/ascent-geo-logo.png"
         alt="ASCENT GEO"
         width={3317}
         height={552}

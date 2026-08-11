@@ -598,12 +598,6 @@ function FinalCtaSection() {
           >
             <span className="text-marker-highlight">AI検索で選ばれるための</span><br />一歩を、ここから。
           </h2>
-          <p className="mt-6 text-[#4e4e51] leading-[1.6] max-w-[52ch]" style={{ fontSize: "var(--fs-body-xsm)" }}>
-            自社ブランドの変化を継続的に捉えるなら、GEO Watcher。見込み顧客への提案を具体化するなら、GEO診断レポート。
-            <br />
-            <br />
-            診断する。変化を追う。課題を次の改善へつなげる。目的に合った方法で、GEO・LLMO対策を始めましょう。
-          </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <Button
               asChild
@@ -652,7 +646,7 @@ function FinalCtaSection() {
                   rating: 5,
                 },
               ].map((reviewer) => (
-                <div key={reviewer.name} className="rounded-lg bg-white p-6 flex gap-6">
+                <div key={reviewer.name} className="rounded-lg bg-white p-4 flex gap-4">
                   <div className="flex-shrink-0">
                     <div className="h-[80px] w-[80px] rounded-full overflow-hidden bg-gray-200">
                       {reviewer.image && (
@@ -667,14 +661,14 @@ function FinalCtaSection() {
                     </div>
                   </div>
                   <div className="flex-1">
-                    <p className="mb-3 text-[14px] leading-[1.6] text-[#4e4e51]">
+                    <p className="mb-2 text-[14px] leading-[1.5] text-[#4e4e51]">
                       {reviewer.review}
                     </p>
-                    <div className="border-t border-[#e0e0e0] pt-3">
-                      <p className="font-bold text-[#0B0B0E]" style={{ fontSize: "var(--fs-body)" }}>
+                    <div className="border-t border-[#e0e0e0] pt-2">
+                      <p className="font-bold text-[#0B0B0E] leading-[1.2]" style={{ fontSize: "var(--fs-body-xsm)" }}>
                         {reviewer.name}
                       </p>
-                      <p className="text-[#999]" style={{ fontSize: "var(--fs-label-sm)" }}>
+                      <p className="text-[#999] leading-[1.2]" style={{ fontSize: "var(--fs-label-xs)" }}>
                         {reviewer.role}
                       </p>
                     </div>
