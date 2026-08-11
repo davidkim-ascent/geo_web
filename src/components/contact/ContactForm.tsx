@@ -123,7 +123,7 @@ export function ContactForm({ blockedEmailDomains }: Props) {
     <form className="wp-form-card" name="contact_form" data-form-name="contact_form" onSubmit={handleSubmit(onSubmit)} noValidate>
       <h3>まずは、お気軽にご相談</h3>
       <p className="sub">
-        <span className="req">*</span> は必須です。
+        <span className="req">必須</span> は必須項目です。
       </p>
 
       <div className="field-row two">
@@ -184,7 +184,7 @@ export function ContactForm({ blockedEmailDomains }: Props) {
 
       <div className="field-row">
         <div>
-          <label>現在の課題 <span className="req">*</span></label>
+          <label><span>現在の課題</span><span className="req">必須</span></label>
           <textarea
             className="field"
             rows={2}
