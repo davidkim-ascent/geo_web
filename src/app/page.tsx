@@ -650,8 +650,8 @@ function FinalCtaSection() {
                   rating: 5,
                 },
               ].map((reviewer) => (
-                <div key={reviewer.name} className="rounded-lg bg-white p-6 text-center">
-                  <div className="mb-4 flex justify-center">
+                <div key={reviewer.name} className="rounded-lg bg-white p-6 flex gap-6">
+                  <div className="flex-shrink-0">
                     <div className="h-[80px] w-[80px] rounded-full overflow-hidden bg-gray-200">
                       {reviewer.image && (
                         <Image
@@ -664,23 +664,25 @@ function FinalCtaSection() {
                       )}
                     </div>
                   </div>
-                  <p className="mb-4 text-[14px] leading-[1.6] text-[#4e4e51]" style={{ minHeight: "56px" }}>
-                    {reviewer.review}
-                  </p>
-                  <div className="mb-3 border-t border-[#e0e0e0] pt-3">
-                    <p className="font-bold text-[#0B0B0E]" style={{ fontSize: "var(--fs-body)" }}>
-                      {reviewer.name}
+                  <div className="flex-1">
+                    <p className="mb-3 text-[14px] leading-[1.6] text-[#4e4e51]">
+                      {reviewer.review}
                     </p>
-                    <p className="text-[#999]" style={{ fontSize: "var(--fs-label-sm)" }}>
-                      {reviewer.role}
-                    </p>
-                  </div>
-                  <div className="flex justify-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <span key={i} className={i < reviewer.rating ? "text-[#FFC93B] text-lg" : "text-[#ddd] text-lg"}>
-                        ★
-                      </span>
-                    ))}
+                    <div className="border-t border-[#e0e0e0] pt-3">
+                      <p className="font-bold text-[#0B0B0E]" style={{ fontSize: "var(--fs-body)" }}>
+                        {reviewer.name}
+                      </p>
+                      <p className="text-[#999] mb-2" style={{ fontSize: "var(--fs-label-sm)" }}>
+                        {reviewer.role}
+                      </p>
+                      <div className="flex gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <span key={i} className={i < reviewer.rating ? "text-[#FFC93B] text-lg" : "text-[#ddd] text-lg"}>
+                            ★
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
