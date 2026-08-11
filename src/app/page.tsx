@@ -12,7 +12,7 @@ import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 import { buildPageMetadata } from "@/lib/seo";
 import mktStressImage from "../../Design/mkt-stress.png";
 import salesStressImage from "../../Design/sales-stress.png";
-import salesImage from "../../Design/sales.png";
+import salesSuccessImage from "../../Design/salessucccess.png";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "GEO・LLMO・AIO対策ツール｜Ascent GEO",
@@ -270,7 +270,7 @@ function SolutionsSection() {
       desc: "相手企業ごとのAI検索上の課題と競合との差を、初回商談で示せるGEO・LLMOの具体的な提案材料に変えられます。",
       cta: "GEO診断レポートを見る",
       href: "/shindan",
-      image: salesImage,
+      image: salesSuccessImage,
       steps: [
         { label: "診断する", desc: "ブランド名とURLだけでAI検索状況を数分で診断", icon: "gauge" },
         { label: "課題を示す", desc: "競合との引用差や、表示されていない質問を可視化", icon: "eye" },
