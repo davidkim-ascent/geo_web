@@ -593,7 +593,7 @@ function FinalCtaSection() {
             className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
             style={{ fontSize: "var(--fs-section-title)" }}
           >
-            AI検索で選ばれるための<br />一歩を、ここから。
+            <span className="text-marker-highlight">AI検索で選ばれるための</span><br />一歩を、ここから。
           </h2>
           <p className="mt-6 text-[#4e4e51] leading-[1.6] max-w-[52ch]" style={{ fontSize: "var(--fs-body-xsm)" }}>
             自社ブランドの変化を継続的に捉えるなら、GEO Watcher。見込み顧客への提案を具体化するなら、GEO診断レポート。
