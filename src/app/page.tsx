@@ -218,6 +218,11 @@ function ChallengesSection() {
           ))}
         </div>
       </div>
+
+      {/* Arrow Down Divider */}
+      <svg className="w-full h-20" viewBox="0 0 1200 80" preserveAspectRatio="none" style={{ display: "block" }}>
+        <path d="M 0,0 Q 300,40 600,80 Q 900,40 1200,0 L 1200,0 L 0,0 Z" fill="#d4e8f7" />
+      </svg>
     </section>
   );
 }
@@ -597,8 +602,8 @@ export default function Home() {
       <HeroSection />
       <ChallengesSection />
       <SolutionsSection />
-      <GeoLabSection />
       <FinalCtaSection />
+      <GeoLabSection />
     </div>
   );
 }
