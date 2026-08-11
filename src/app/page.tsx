@@ -73,8 +73,8 @@ function HeroSection() {
           自社・競合の変化を継続的に追いたい企業には、<span className="text-marker-highlight">モニタリングツール「GEO Watcher」</span>。見込み顧客の課題を可視化し、<span className="text-marker-highlight">営業提案につなげたい企業には「GEO診断レポート」</span>。Ascent GEOは、自社ブランドの継続的な改善と、見込み顧客への営業提案。2つの目的に応えるソリューションを提供します。
         </p>
         <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 gap-8 w-full max-w-[1232px] mx-auto">
-          <div className="relative flex flex-col items-center gap-6 rounded-2xl border border-[#003393]/30 p-8 pt-9">
-            <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-3 font-medium text-[#003393] whitespace-nowrap" style={{ fontSize: "var(--fs-label)" }}>企業のマーケティング・ブランド担当者向け</span>
+          <div className="hero-solution-card relative flex flex-col items-center gap-6 rounded-2xl p-8 pt-9">
+            <span className="hero-solution-card__eyebrow absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-3 font-medium text-[#003393] whitespace-nowrap" style={{ fontSize: "var(--fs-label)" }}>企業のマーケティング・ブランド担当者向け</span>
             <div className="flex flex-col items-center gap-2 text-center">
               <h3 className="font-bold text-[#003393] leading-snug" style={{ fontSize: "var(--fs-h3)" }}><span className="text-marker-highlight-blue">AI対策ツール「GEO Watcher」</span></h3>
               <p className="font-bold text-[#0B0B0E] leading-[1.45]" style={{ fontSize: "var(--fs-body)" }}>国内最大、7つの主要AIモデルをカバー</p>
@@ -104,8 +104,8 @@ function HeroSection() {
             </Button>
             <HeroWatcherAnimated />
           </div>
-          <div className="relative flex flex-col items-center gap-6 rounded-2xl border border-[#003393]/30 p-8 pt-9">
-            <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-3 text-[14px] font-medium text-[#003393] whitespace-nowrap">SEO・Webマーケティング会社の法人営業向け</span>
+          <div className="hero-solution-card relative flex flex-col items-center gap-6 rounded-2xl p-8 pt-9">
+            <span className="hero-solution-card__eyebrow absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-3 text-[14px] font-medium text-[#003393] whitespace-nowrap">SEO・Webマーケティング会社の法人営業向け</span>
             <div className="flex flex-col gap-2 text-center">
               <h3 className="font-bold text-[#003393] leading-snug" style={{ fontSize: "var(--fs-h3)" }}><span className="text-marker-highlight-blue">法人営業向け「GEO診断レポート」</span></h3>
               {[

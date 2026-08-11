@@ -2,10 +2,19 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
+const NAV_ITEMS = [
+  { label: "Home", href: "/" },
+  { label: "GEO Watcher", href: "/watcher" },
+  { label: "GEO 診断", href: "/shindan" },
+  { label: "GEO LAB", href: "/lab" },
+];
+
 export default function Header() {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -25,20 +34,27 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-7">
-          {[
-            { label: "Home", href: "/" },
-            { label: "GEO Watcher", href: "/watcher" },
-            { label: "GEO 診断", href: "/shindan" },
-            { label: "GEO LAB", href: "/lab" },
-          ].map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="ui-header-nav-link"
-            >
-              {item.label}
-            </a>
-          ))}
+          {NAV_ITEMS.map((item, index) => {
+            const isActive =
+              pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href + "/"));
+
+            return (
+              <div key={item.label} className="flex items-center gap-7">
+                {index > 0 ? (
+                  <span aria-hidden="true" className="ui-header-nav-separator">
+                    |
+                  </span>
+                ) : null}
+                <Link
+                  href={item.href}
+                  className={`ui-header-nav-link ${isActive ? "ui-header-nav-link--active" : ""}`}
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  {item.label}
+                </Link>
+              </div>
+            );
+          })}
         </nav>
 
         {/* CTA */}
@@ -70,20 +86,15 @@ export default function Header() {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden bg-[#FAFAF7] border-t border-black/[0.06] px-6 py-5 flex flex-col gap-4">
-          {[
-            { label: "Home", href: "/" },
-            { label: "GEO Watcher", href: "/watcher" },
-            { label: "GEO 診断", href: "/shindan" },
-            { label: "GEO LAB", href: "/lab" },
-          ].map((item) => (
-            <a
+          {NAV_ITEMS.map((item) => (
+            <Link
               key={item.label}
               href={item.href}
               className="ui-header-nav-link"
               onClick={() => setMenuOpen(false)}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
           <Button asChild variant="header" className="text-center justify-center">
             <a href="/contact" onClick={() => setMenuOpen(false)}>
