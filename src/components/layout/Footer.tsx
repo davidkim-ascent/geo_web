@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="inline-flex items-center" aria-label="Go to home">
               <Image
-                src="/ascent-geo-logo-white.png"
+                src="/ascent-geo-logo-split.png"
                 alt="ASCENT/GEO"
                 width={3317}
                 height={552}
