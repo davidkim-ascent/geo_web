@@ -582,7 +582,7 @@ function FinalCtaSection() {
   return (
     <section
       className="relative py-10 lg:py-14 overflow-hidden"
-      style={{ background: "#d4e8f7" }}
+      style={{ background: "linear-gradient(180deg, #e8f4fb 0%, #d4e8f7 50%, #c8dff5 100%)" }}
     >
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-14 items-start">
         <div>
