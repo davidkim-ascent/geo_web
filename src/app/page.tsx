@@ -618,7 +618,7 @@ function FinalCtaSection() {
             </Button>
           </div>
           <div className="mt-3">
-            <CalendarBookingButton className="!w-full !min-w-0 !max-w-none !h-[52px] !justify-start text-left px-6 gap-2 hover:!bg-[#003393] hover:!border-[#003393] !text-[14px]">
+            <CalendarBookingButton className="!w-full !min-w-0 !max-w-none !h-[52px] !justify-start text-left px-6 gap-2 !bg-transparent !border !border-[#003393] !text-[#003393] hover:!bg-[#003393] hover:!text-white hover:!border-[#003393]">
               <Calendar size={16} />
               無料相談予約（Googleカレンダー）
             </CalendarBookingButton>
