@@ -193,16 +193,18 @@ function ChallengesSection() {
           {challenges.map((c) => (
             <div
               key={c.label}
-              className="rounded-2xl p-7 card-hover-dark relative overflow-hidden"
+              className="rounded-2xl pt-20 pb-7 px-7 card-hover-dark relative overflow-hidden"
               style={{ background: c.bg, border: `1px solid ${c.border}` }}
             >
-              <Image
-                src={c.image}
-                alt=""
-                width={180}
-                height={180}
-                className="absolute -top-8 -left-8 w-[180px] h-[180px] rounded-full object-cover"
-              />
+              <div className="absolute top-0 left-0 w-[140px] h-[140px] rounded-full overflow-hidden">
+                <Image
+                  src={c.image}
+                  alt=""
+                  width={140}
+                  height={140}
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <p className="text-[#666] mb-3 relative z-10" style={{ fontSize: "var(--fs-label-sm)" }}>{c.audience}</p>
               <h3 className="font-bold text-[#0B0B0E] mb-3 leading-snug relative z-10" style={{ fontSize: "var(--fs-h3)" }}>{c.title}</h3>
               <p className="text-[#4e4e51] leading-[1.6] mb-5 font-[inherit] relative z-10" style={{ fontSize: "var(--fs-body-xsm)" }}>{c.desc}</p>
