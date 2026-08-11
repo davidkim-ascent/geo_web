@@ -360,13 +360,18 @@ function SolutionsSection() {
                   })}
                 </div>
               </div>
-              <div className="mt-auto flex gap-3 justify-center">
+              <div className="mt-auto flex gap-3 justify-center w-full">
                 <Button
                   asChild
                   variant="cta"
-                  className="!w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !bg-[#003393] hover:!bg-[#0f3de0]" style={{ fontSize: "var(--fs-label)" }}
+                  className="!h-[52px] !min-h-[52px] !max-h-[52px] !w-full !max-w-[320px] !min-w-0 !flex-none !items-center !justify-center !py-0 !px-6 !text-center !leading-none !bg-[#003393] hover:!bg-[#0B0B0E]" style={{ fontSize: "var(--fs-label)" }}
                 >
-                  <Link href={s.href}>{s.cta} →</Link>
+                  <Link href={s.href} className="flex h-full w-full items-center justify-center gap-0">
+                    <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full border-2 border-white">
+                      <ChevronRight aria-hidden="true" className="h-4 w-4" strokeWidth={3} />
+                    </span>
+                    <span className="font-bold">{s.cta}</span>
+                  </Link>
                 </Button>
               </div>
             </div>
