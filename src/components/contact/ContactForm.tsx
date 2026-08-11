@@ -128,12 +128,12 @@ export function ContactForm({ blockedEmailDomains }: Props) {
 
       <div className="field-row two">
         <div>
-          <label>会社名 <span className="req">*</span></label>
+          <label><span>会社名</span><span className="req">必須</span></label>
           <input className="field" placeholder="株式会社○○" {...register('company')} />
           {errors.company && <p className="field-error">{errors.company.message}</p>}
         </div>
         <div>
-          <label>役職 <span className="req">*</span></label>
+          <label><span>役職</span><span className="req">必須</span></label>
           <input className="field" placeholder="マーケティング部 部長" {...register('role')} />
           {errors.role && <p className="field-error">{errors.role.message}</p>}
         </div>
@@ -141,32 +141,30 @@ export function ContactForm({ blockedEmailDomains }: Props) {
 
       <div className="field-row two">
         <div>
-          <label>お名前 <span className="req">*</span></label>
-          <input className="field" placeholder="山田 太郎" {...register('name')} />
+          <label><span>名</span><span className="req">必須</span></label>
+          <input className="field" placeholder="例）ミエルカ" {...register('name')} />
           {errors.name && <p className="field-error">{errors.name.message}</p>}
         </div>
         <div>
-          <label>電話番号 <span className="req">*</span></label>
-          <input className="field" placeholder="03-0000-0000" {...register('phone')} />
+          <label><span>電話番号</span><span className="req">必須</span></label>
+          <input className="field" placeholder="例）0355455230" {...register('phone')} />
           {errors.phone && <p className="field-error">{errors.phone.message}</p>}
         </div>
       </div>
 
       <div className="field-row two">
         <div>
-          <label>メールアドレス <span className="req">*</span></label>
-          <input className="field" type="email" placeholder="name@company.co.jp" {...register('email')} />
+          <label><span>メールアドレス</span><span className="req">必須</span></label>
+          <input className="field" type="email" placeholder="例）mieruca@fabercompany.co.jp" {...register('email')} />
           {errors.email && <p className="field-error">{errors.email.message}</p>}
         </div>
+      </div>
+
+      <div className="field-row">
         <div>
-          <label>業種 <span className="req">*</span></label>
-          <select className="field" {...register('industry')}>
-            <option value="">業種を選択</option>
-            {INDUSTRIES.map(ind => (
-              <option key={ind} value={ind}>{ind}</option>
-            ))}
-          </select>
-          {errors.industry && <p className="field-error">{errors.industry.message}</p>}
+          <label><span>会社名</span><span className="req">必須</span></label>
+          <input className="field" placeholder="例）株式会社Faber Company" {...register('company')} />
+          {errors.company && <p className="field-error">{errors.company.message}</p>}
         </div>
       </div>
 
