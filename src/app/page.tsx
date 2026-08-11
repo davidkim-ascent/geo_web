@@ -626,7 +626,6 @@ function FinalCtaSection() {
 
           {/* Reviews */}
           <div className="mt-8 grid grid-cols-1 gap-4">
-            <div className="grid grid-cols-3 gap-4">
               {[
                 {
                   name: "EC運営担当者",
@@ -686,7 +685,6 @@ function FinalCtaSection() {
                   </div>
                 </div>
               ))}
-            </div>
           </div>
         </div>
         <div className="w-full max-w-[560px] mx-auto lg:ml-auto lg:mr-0">
