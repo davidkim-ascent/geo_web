@@ -41,9 +41,9 @@
   --border-dark: rgba(255, 255, 255, 0.06);
   --fs-display: 46px;
   --fs-section-title: clamp(32px, 3.2vw, 48px);
-  --fs-h3: 24px;
+  --fs-h3: 26px;
   --fs-h4: 17px;
-  --fs-body: 17px;
+  --fs-body: 18px;
   --fs-body-sm: 17px;
   --fs-body-xsm: 16px;
   --fs-label: 15px;
@@ -86,10 +86,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.text-marker-highlight {
+  background: linear-gradient(transparent 55%, #fff176 55%, #fff176 92%, transparent 92%);
+  padding: 0 0.08em;
+}
+
+.text-marker-highlight-blue {
+  background: linear-gradient(transparent 48%, #c7e8ff 48%, #c7e8ff 94%, transparent 94%);
+  padding: 0 0.08em;
+}
+
 /* ===== TYPOGRAPHY SCALE =====
 h1 : clamp(44px, 4.86vw, 65px)  — mobile min 44px (110% of h2 base)
   h2 : clamp(32px, 3.2vw, 48px)   — all sections unified
-   h3 : 19px                        — all sections unified
+   h3 : 26px                        — all sections unified
    h4 : 17px                        — all sections unified
    body: 18px (base) / 17px (secondary paragraphs)
    mono/label: 9–11px

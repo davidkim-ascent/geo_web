@@ -56,7 +56,7 @@ export function HeroWatcherAnimated() {
   }, []);
 
   return (
-    <div ref={ref} className="w-full rounded-lg overflow-hidden border border-black/[0.07] bg-white flex text-left" style={{ aspectRatio: "3 / 2" }}>
+    <div ref={ref} className="w-full aspect-[3/2] h-auto flex-none rounded-lg overflow-hidden border border-black/[0.07] bg-white flex text-left">
       {/* Sidebar */}
       <div className="hidden sm:flex w-[26%] flex-shrink-0 flex-col gap-1 bg-[#FAFAF9] border-r border-black/[0.06] px-3 py-3">
         <div className="font-bold text-[10px] text-[#0B0B0E] mb-2">

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Calendar, Gauge, Eye, Lightbulb, Phone } from "lucide-react";
+import { Calendar, ChevronRight, Gauge, Eye, Lightbulb, Phone } from "lucide-react";
 import type { Metadata } from "next";
 import { ArticleThumbnail } from "@/components/lab/ArticleThumbnail";
 import { HeroShindanAnimated } from "@/components/home/HeroShindanAnimated";
@@ -75,50 +75,22 @@ function HeroSection() {
           <span className="text-blue-gradient">2つのソリューション</span>
         </h1>
         <p className="mt-6 text-[#4e4e51] leading-[1.6] max-w-[72ch] mx-auto" style={{ fontSize: "var(--fs-body-sm)" }}>
-          自社・競合の変化を継続的に追いたい企業には、モニタリングツール「GEO Watcher」。見込み顧客の課題を可視化し、営業提案につなげたい企業には「GEO診断レポート」。Ascent GEOは、自社ブランドの継続的な改善と、見込み顧客への営業提案。2つの目的に応えるソリューションを提供します。
+          自社・競合の変化を継続的に追いたい企業には、<span className="text-marker-highlight">モニタリングツール「GEO Watcher」</span>。見込み顧客の課題を可視化し、<span className="text-marker-highlight">営業提案につなげたい企業には「GEO診断レポート」</span>。Ascent GEOは、自社ブランドの継続的な改善と、見込み顧客への営業提案。2つの目的に応えるソリューションを提供します。
         </p>
         <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 gap-8 w-full max-w-[1232px] mx-auto">
           <div className="relative flex flex-col items-center gap-6 rounded-2xl border border-[#003393]/30 p-8 pt-9">
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-3 font-medium text-[#003393] whitespace-nowrap" style={{ fontSize: "var(--fs-label)" }}>企業のマーケティング・ブランド担当者向け</span>
-            <div className="flex flex-col items-center gap-3 text-center">
-              <p className="font-bold text-[#0B0B0E] leading-snug" style={{ fontSize: "var(--fs-body-sm)" }}>国内最大、7つの主要AIモデルをカバー</p>
-              <p className="font-bold text-[#0B0B0E] leading-snug" style={{ fontSize: "var(--fs-body-sm)" }}>料金も、使える範囲も、最初から明確に</p>
-              <div className="flex flex-wrap items-center justify-center gap-1.5 max-w-[420px]">
-                {[
-                  "ブランド言及", "競合比較", "URL引用", "トピック分類",
-                  "検索キーワード", "AI回答の原文", "自動プロンプト分析", "CSVデータ", "毎日追跡",
-                ].map((tag) => (
-                  <span key={tag} className="text-[#4e4e51] bg-black/[0.04] rounded-full px-3 py-1.5" style={{ fontSize: "var(--fs-label-sm)" }}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
+            <div className="flex flex-col items-center gap-2 text-center">
+              <h3 className="font-bold text-[#003393] leading-snug" style={{ fontSize: "var(--fs-h3)" }}><span className="text-marker-highlight-blue">AI対策ツール「GEO Watcher」</span></h3>
+              <p className="font-bold text-[#0B0B0E] leading-[1.45]" style={{ fontSize: "var(--fs-body)" }}>国内最大、7つの主要AIモデルをカバー</p>
+              <p className="font-bold text-[#0B0B0E] leading-[1.45]" style={{ fontSize: "var(--fs-body)" }}>料金も、使える範囲も、最初から明確に</p>
             </div>
-            <Button
-              asChild
-              variant="cta"
-              className="!w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !bg-[#003393] hover:!bg-[#0B0B0E]" style={{ fontSize: "var(--fs-label)" }}
-            >
-              <Link href="/watcher">モニタリングツール GEO Watcherへ</Link>
-            </Button>
-            <HeroWatcherAnimated />
-          </div>
-          <div className="relative flex flex-col items-center gap-6 rounded-2xl border border-[#003393]/30 p-8 pt-9">
-            <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-3 text-[14px] font-medium text-[#003393] whitespace-nowrap">SEO・Webマーケティング会社の法人営業向け</span>
-            <ul className="flex flex-col gap-2 text-center">
-              {[
-                "診断結果を、自社の提案資料として使える",
-                "自社仕様のレポートにカスタマイズ",
-              ].map((line) => (
-                <li key={line} className="text-[17px] font-bold text-[#0B0B0E] leading-snug">{line}</li>
-              ))}
-            </ul>
             <div className="flex flex-wrap items-center justify-center gap-1.5 max-w-[420px]">
               {[
-                "ブランド言及率", "競合比較", "URL引用", "自動プロンプト分析",
-                "AI エンジン別パフォーマンス", "AI 検索クエリ上位", "コンテンツギャップ",
+                "ブランド言及", "競合比較", "URL引用", "トピック分類",
+                "検索キーワード", "AI回答の原文", "自動プロンプト分析", "CSVデータ", "毎日追跡",
               ].map((tag) => (
-                <span key={tag} className="text-[13px] text-[#4e4e51] bg-black/[0.04] rounded-full px-3 py-1.5">
+                <span key={tag} className="text-[#4e4e51] bg-black/[0.04] rounded-full px-3 py-1.5" style={{ fontSize: "var(--fs-label-sm)" }}>
                   {tag}
                 </span>
               ))}
@@ -126,9 +98,49 @@ function HeroSection() {
             <Button
               asChild
               variant="cta"
-              className="!w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !text-[14px] -mt-3 !bg-[#003393] hover:!bg-[#0B0B0E]"
+              className="!h-[52px] !min-h-[52px] !max-h-[52px] !w-full !max-w-[320px] !min-w-0 !flex-none !items-center !justify-center !py-0 !px-6 !text-center !leading-none !bg-[#003393] hover:!bg-[#0B0B0E]" style={{ fontSize: "var(--fs-label)" }}
             >
-              <Link href="/shindan">診断レポートツール GEO 診断へ</Link>
+              <Link href="/watcher" className="flex h-full w-full items-center justify-center gap-0">
+                <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full border-2 border-white">
+                  <ChevronRight aria-hidden="true" className="h-4 w-4" strokeWidth={3} />
+                </span>
+                <span className="font-bold">GEO Watcherをもっと見る</span>
+              </Link>
+            </Button>
+            <HeroWatcherAnimated />
+          </div>
+          <div className="relative flex flex-col items-center gap-6 rounded-2xl border border-[#003393]/30 p-8 pt-9">
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-3 text-[14px] font-medium text-[#003393] whitespace-nowrap">SEO・Webマーケティング会社の法人営業向け</span>
+            <div className="flex flex-col gap-2 text-center">
+              <h3 className="font-bold text-[#003393] leading-snug" style={{ fontSize: "var(--fs-h3)" }}><span className="text-marker-highlight-blue">法人営業向け「GEO診断レポート」</span></h3>
+              {[
+                "診断結果を、自社の提案資料として使える",
+                "自社仕様のレポートにカスタマイズ",
+              ].map((line) => (
+                <p key={line} className="font-bold text-[#0B0B0E] leading-[1.45]" style={{ fontSize: "var(--fs-body)" }}>{line}</p>
+              ))}
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-1.5 max-w-[420px]">
+              {[
+                "ブランド言及率", "競合比較", "URL引用", "自動プロンプト分析",
+                "AI エンジン別パフォーマンス", "AI 検索クエリ上位", "コンテンツギャップ",
+              ].map((tag) => (
+                <span key={tag} className="text-[#4e4e51] bg-black/[0.04] rounded-full px-3 py-1.5" style={{ fontSize: "var(--fs-label-sm)" }}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <Button
+              asChild
+              variant="cta"
+              className="!h-[52px] !min-h-[52px] !max-h-[52px] !w-full !max-w-[320px] !min-w-0 !flex-none !items-center !justify-center !py-0 !px-6 !text-center !leading-none !bg-[#003393] hover:!bg-[#0B0B0E]" style={{ fontSize: "var(--fs-label)" }}
+            >
+              <Link href="/shindan" className="flex h-full w-full items-center justify-center gap-0">
+                <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full border-2 border-white">
+                  <ChevronRight aria-hidden="true" className="h-4 w-4" strokeWidth={3} />
+                </span>
+                <span className="font-bold">GEO診断レポートをもっと見る</span>
+              </Link>
             </Button>
             <HeroShindanAnimated />
           </div>
@@ -178,8 +190,8 @@ function ChallengesSection() {
   ];
 
   return (
-    <section className="relative pt-24 pb-24 overflow-hidden" style={{ background: "#d4e8f7" }}>
-      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
+    <section className="relative pt-24 pb-0 overflow-hidden" style={{ background: "linear-gradient(180deg, #b8d9ef 0%, #d4e8f7 72%, #d4e8f7 100%)" }}>
+      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 relative z-10 pb-24">
         <div className="mt-12 text-center">
           <h2
             className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
@@ -222,8 +234,8 @@ function ChallengesSection() {
       </div>
 
       {/* Arrow Down Divider */}
-      <svg className="w-full h-20" viewBox="0 0 1200 80" preserveAspectRatio="none" style={{ display: "block" }}>
-        <path d="M 0,0 Q 300,40 600,80 Q 900,40 1200,0 L 1200,0 L 0,0 Z" fill="#d4e8f7" />
+      <svg className="w-full h-40" viewBox="0 0 1200 160" preserveAspectRatio="none" style={{ display: "block", background: "#ffffff" }}>
+        <polygon points="0,0 1200,0 600,160" fill="#d4e8f7" />
       </svg>
     </section>
   );
@@ -281,9 +293,21 @@ function SolutionsSection() {
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
           {solutions.map((s) => (
             <div key={s.label} className="flex flex-col">
-              <div className="mb-6">
+              <div className={s.label === "GEO Watcher" || s.label === "GEO診断レポート" ? "mb-6 relative text-center px-8" : "mb-6"}>
+                {(s.label === "GEO Watcher" || s.label === "GEO診断レポート") && (
+                  <>
+                    <svg aria-hidden="true" viewBox="0 0 24 120" className="absolute left-0 top-1/2 h-20 w-5 -translate-y-1/2">
+                      <polygon points="0,0 13,0 24,112 17,120" fill="#1688c5" />
+                    </svg>
+                    <svg aria-hidden="true" viewBox="0 0 24 120" className="absolute right-0 top-1/2 h-20 w-5 -translate-y-1/2">
+                      <polygon points="11,0 24,0 7,120 0,112" fill="#1688c5" />
+                    </svg>
+                  </>
+                )}
                 <p className="font-mono text-[#003393] mb-2 uppercase" style={{ fontSize: "var(--fs-label-xxs)", letterSpacing: "0.14em" }}>{s.label}</p>
-                <h3 className="font-bold text-[#0B0B0E] mb-2 leading-snug" style={{ fontSize: "clamp(24px, 2.8vw, 32px)" }}>{s.title}</h3>
+                <h3 className="font-bold text-[#0B0B0E] mb-2 leading-snug" style={{ fontSize: "clamp(24px, 2.8vw, 32px)" }}>
+                  {s.label === "GEO Watcher" || s.label === "GEO診断レポート" ? <span className="text-marker-highlight">{s.title}</span> : s.title}
+                </h3>
                 <p className="font-bold text-[#0B0B0E] mb-3" style={{ fontSize: "var(--fs-body)" }}>{s.subtitle}</p>
                 <p className="text-[#4e4e51] leading-[1.6]" style={{ fontSize: "var(--fs-body-xsm)" }}>{s.desc}</p>
               </div>
@@ -293,7 +317,7 @@ function SolutionsSection() {
                 </div>
               )}
               <div className="mb-8">
-                <div className="grid grid-cols-1 gap-3">
+                <div className="grid grid-cols-1 gap-1">
                   {s.steps.map((step, i) => {
                     const getIcon = (iconType: string) => {
                       const iconProps = { size: 20, className: "flex-shrink-0" };
@@ -322,7 +346,7 @@ function SolutionsSection() {
                           </div>
                         </div>
                         {i < s.steps.length - 1 && (
-                          <div className="flex justify-center py-2">
+                          <div className="flex justify-center pt-2 pb-0">
                             <svg width="16" height="10" viewBox="0 0 16 10" className="fill-[#003393]">
                               <polygon points="0,0 16,0 8,10" />
                             </svg>

@@ -49,7 +49,7 @@ export function HeroShindanAnimated() {
   }, [played]);
 
   return (
-    <div ref={ref} className="w-full rounded-lg overflow-hidden border border-black/[0.07] bg-white flex flex-col p-4 text-left" style={{ aspectRatio: "3 / 2" }}>
+    <div ref={ref} className="w-full aspect-[3/2] h-auto flex-none rounded-lg overflow-hidden border border-black/[0.07] bg-white flex flex-col p-4 text-left">
       <div className="flex items-center justify-between mb-3">
         <div className="font-bold text-[10px] text-[#0B0B0E]">
           ASCENT<span className="text-[#003393]">GEO</span>
