@@ -687,8 +687,8 @@ export default function WatcherPage() {
       <AnswerSection />
       <FeaturesSection />
       <ReasonsSection />
-      <TestimonialsSection />
       <PricingSection />
+      <TestimonialsSection />
       <ContactSection />
       <WatcherFAQ />
     </div>
