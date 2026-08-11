@@ -674,16 +674,9 @@ function FinalCtaSection() {
                       <p className="font-bold text-[#0B0B0E]" style={{ fontSize: "var(--fs-body)" }}>
                         {reviewer.name}
                       </p>
-                      <p className="text-[#999] mb-2" style={{ fontSize: "var(--fs-label-sm)" }}>
+                      <p className="text-[#999]" style={{ fontSize: "var(--fs-label-sm)" }}>
                         {reviewer.role}
                       </p>
-                      <div className="flex gap-1">
-                        {[...Array(5)].map((_, i) => (
-                          <span key={i} className={i < reviewer.rating ? "text-[#FFC93B] text-lg" : "text-[#ddd] text-lg"}>
-                            ★
-                          </span>
-                        ))}
-                      </div>
                     </div>
                   </div>
                 </div>
