@@ -13,6 +13,7 @@ import { buildPageMetadata } from "@/lib/seo";
 import mktStressImage from "../../Design/mkt-stress.png";
 import salesStressImage from "../../Design/sales-stress.png";
 import salesSuccessImage from "../../Design/salessucccess.png";
+import teamMeetImage from "../../Design/teammeet.png";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "GEO・LLMO・AIO対策ツール｜Ascent GEO",
@@ -255,7 +256,7 @@ function SolutionsSection() {
       desc: "AIごとの差や施策前後の変化を継続的に追うことで、GEO・LLMO対策の効果と、次に優先すべき改善テーマを判断できます。",
       cta: "GEO Watcherを見る",
       href: "/watcher",
-      image: "/home/solution-shindan.png",
+      image: teamMeetImage,
       steps: [
         { label: "測る", desc: "主要AIでの言及・引用・露出を毎日計測", icon: "gauge" },
         { label: "比べる", desc: "自社と競合の差をAI・質問ごとに比較", icon: "eye" },
