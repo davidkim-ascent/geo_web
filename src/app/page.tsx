@@ -10,6 +10,8 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { Button } from "@/components/ui/button";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 import { buildPageMetadata } from "@/lib/seo";
+import mktStressImage from "../../Design/mkt-stress.png";
+import salesStressImage from "../../Design/sales-stress.png";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "GEO・LLMO・AIO対策ツール｜Ascent GEO",
@@ -156,6 +158,8 @@ function HeroSection() {
 function ChallengesSection() {
   const challenges = [
     {
+      image: mktStressImage,
+      imageAlt: "マーケティング・ブランド担当者の課題を表す円形イメージ",
       label: "GEO Watcher",
       audience: "マーケティング・ブランド担当者の課題",
       title: "AI検索上の自社・競合の変化を、追えていますか？",
@@ -169,9 +173,10 @@ function ChallengesSection() {
       accent: "#cd2e3a",
       bg: "#ffffff",
       border: "rgba(0,0,0,0.1)",
-      image: "/home/challenge-watcher.png",
     },
     {
+      image: salesStressImage,
+      imageAlt: "法人営業担当者の課題を表す円形イメージ",
       label: "GEO診断レポート",
       audience: "SEO・Webマーケティング会社の法人営業担当者の課題",
       title: "「AI検索対策が必要です」だけで、商談を具体化できていますか？",
@@ -185,14 +190,16 @@ function ChallengesSection() {
       accent: "#0070f3",
       bg: "#ffffff",
       border: "rgba(0,0,0,0.1)",
-      image: "/home/challenge-shindan.png",
     },
   ];
 
   return (
     <section className="relative pt-24 pb-0 overflow-hidden" style={{ background: "linear-gradient(180deg, #b8d9ef 0%, #d4e8f7 72%, #d4e8f7 100%)" }}>
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 relative z-10 pb-24">
-        <div className="mt-12 text-center">
+        <div className="mx-auto mb-10 flex min-h-[62px] w-full max-w-[560px] items-center justify-center rounded-full bg-white px-6 py-4 text-center">
+          <p className="font-bold text-[#0B0B0E]" style={{ fontSize: "var(--fs-h3)" }}>こんなお悩みありませんか？</p>
+        </div>
+        <div className="text-center">
           <h2
             className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
             style={{ fontSize: "var(--fs-section-title)" }}
@@ -205,22 +212,16 @@ function ChallengesSection() {
           {challenges.map((c) => (
             <div
               key={c.label}
-              className="rounded-2xl pt-20 pb-7 px-7 card-hover-dark relative overflow-hidden"
+              className="rounded-2xl pt-8 pb-7 px-7 card-hover-dark relative overflow-hidden flex flex-col items-center"
               style={{ background: c.bg, border: `1px solid ${c.border}` }}
             >
-              <div className="absolute top-0 left-0 w-[140px] h-[140px] rounded-full overflow-hidden">
-                <Image
-                  src={c.image}
-                  alt=""
-                  width={140}
-                  height={140}
-                  className="w-full h-full object-cover"
-                />
+              <div className="relative mb-6 h-[168px] w-[168px] overflow-hidden rounded-full border border-black/[0.06] bg-[#f4f8fb] shadow-[0_12px_32px_rgba(0,0,0,0.08)] sm:h-[182px] sm:w-[182px]">
+                <Image src={c.image} alt={c.imageAlt} fill sizes="(max-width: 768px) 168px, 182px" className="object-cover" />
               </div>
-              <p className="text-[#666] mb-3 relative z-10" style={{ fontSize: "var(--fs-label-sm)" }}>{c.audience}</p>
-              <h3 className="font-bold text-[#0B0B0E] mb-3 leading-snug relative z-10" style={{ fontSize: "var(--fs-h3)" }}>{c.title}</h3>
-              <p className="text-[#4e4e51] leading-[1.6] mb-5 font-[inherit] relative z-10" style={{ fontSize: "var(--fs-body-xsm)" }}>{c.desc}</p>
-              <ul className="flex flex-col gap-2 relative z-10">
+              <p className="text-[#666] mb-3 relative z-10 text-center" style={{ fontSize: "var(--fs-label-sm)" }}>{c.audience}</p>
+              <h3 className="font-bold text-[#0B0B0E] mb-3 leading-snug relative z-10 text-center" style={{ fontSize: "var(--fs-h3)" }}>{c.title}</h3>
+              <p className="text-[#4e4e51] leading-[1.6] mb-5 font-[inherit] relative z-10 text-center" style={{ fontSize: "var(--fs-body-xsm)" }}>{c.desc}</p>
+              <ul className="flex w-full flex-col gap-2 relative z-10">
                 {c.bullets.map((b) => (
                   <li key={b} className="flex items-start gap-2 text-[#4e4e51] font-[inherit]" style={{ fontSize: "var(--fs-body)" }}>
                     <span className="w-4 h-[1px] bg-[#003393] mt-[10px] flex-shrink-0" />
