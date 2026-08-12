@@ -1,3 +1,8 @@
+## 2026-08-12 21:30
+- Watcher 히어로 타이틀 구조 재편: h3(GEO・LLMO・AIO対策は月額コンサルなしで、これひとつ。)와 h1(AI 対策ツール GEO Watcher) 2단으로 분리
+- h1 영어 부분(AI/GEO Watcher)에 NiveauGrotesk 폰트 적용(53px), 일본어 部分(対策ツール)만 Pretendard JP 별도 크기(49px) 적용
+- h1 전역 사이즈(--fs-display)를 1200px 이상 데스크탑에서 52px 고정되도록 조정 (clamp 기준값 변경)
+
 ## 2026-08-12 18:40
 - Watcher 主要機能 섹션(#features) 신규 구현: ガイド付きデモ(GuidedDemo 클라이언트 컴포넌트, STEP 1~5 인터랙티브 투어) 추가
 - AI可視性/プロンプトモニタリング/シェア・オブ・ボイス/引用URL分析 4개 기능을 이미지+텍스트 지그재그 레이아웃으로 구성, public/watcher-demo/ 이미지 추가

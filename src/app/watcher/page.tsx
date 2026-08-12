@@ -68,13 +68,20 @@ function HeroSection() {
           )}
         </div>
 
+        {/* H3 Title */}
+        <h3
+          className="font-bold max-w-[60ch] mx-auto"
+          style={{ fontSize: "var(--fs-h3)", lineHeight: "1.5", letterSpacing: "-0.035em" }}
+        >
+          <span style={{ color: "#003393" }}>GEO・LLMO・AIO 対策</span>は<span style={{ backgroundImage: "linear-gradient(transparent 55%, #fff176 55%, #fff176 92%, transparent 92%)", paddingBottom: "4px" }}>月額コンサルなしで、</span>これひとつ。
+        </h3>
+
         {/* H1 Title */}
         <h1
-          className="font-bold max-w-[48ch] mx-auto"
-          style={{ fontSize: "var(--fs-display)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em" }}
+          className="font-bold max-w-[48ch] mx-auto mt-4"
+          style={{ fontSize: "53px", lineHeight: "1.5", letterSpacing: "-0.035em", fontFamily: "'NiveauGrotesk', sans-serif" }}
         >
-          <span style={{ color: "#003393" }}>GEO・LLMO・AIO 対策</span>は<br />
-          <span style={{ backgroundImage: "linear-gradient(transparent 55%, #fff176 55%, #fff176 92%, transparent 92%)", paddingBottom: "4px" }}>月額コンサルなしで、</span>これひとつ。
+          AI <span style={{ fontSize: "49px", fontFamily: "'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif" }}>対策ツール</span> <span style={{ color: "#003393" }}>GEO Watcher</span>
         </h1>
 
         {/* Subcopy Section */}
