@@ -1,3 +1,11 @@
+## 2026-08-12 18:40
+- Watcher 主要機能 섹션(#features) 신규 구현: ガイド付きデモ(GuidedDemo 클라이언트 컴포넌트, STEP 1~5 인터랙티브 투어) 추가
+- AI可視性/プロンプトモニタリング/シェア・オブ・ボイス/引用URL分析 4개 기능을 이미지+텍스트 지그재그 레이아웃으로 구성, public/watcher-demo/ 이미지 추가
+- Watcher 選ばれる理由 섹션(#reasons) 신규 구현: h2/h3 + 6개 카드(파란 헤더 구분), 카드 제목 핵심 문구 하늘색 형광펜, h2 노란 형광펜
+- StepsSection·ReasonsSection 배경을 그라데이션 없는 파란 단색(#d4e8f7)으로 통일
+- 앵커 네비게이션에 主要機能(#features), 選ばれる理由(#reasons) 링크 복원
+- 料金プラン 제목 가운데 정렬
+
 ## 2026-08-12 16:25
 - h2 전역 사이즈 조정: `--fs-section-title` clamp(30px, 3.2vw, 40px)
 - Watcher 히어로 AI 로고와 h1 간격을 인덱스 페이지와 동일하게 통일 (로고 mb-8, h1 mt 제거)

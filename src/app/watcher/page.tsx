@@ -6,6 +6,7 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 import { buildPageMetadata } from "@/lib/seo";
 import { WatcherFAQ } from "./WatcherFAQ";
+import { GuidedDemo } from "./GuidedDemo";
 import { Button } from "@/components/ui/button";
 import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
 import voice1Image from "../../../Design/voice1.png";
@@ -90,6 +91,7 @@ function HeroSection() {
 function NavigationSection() {
   const items = [
     { label: "FEATURES", ja: "主要機能", href: "#features" },
+    { label: "REASONS", ja: "選ばれる理由", href: "#reasons" },
     { label: "PRICING", ja: "料金プラン", href: "#pricing" },
     { label: "SPOT SUPPORT", ja: "スポットサポート", href: "#support" },
     { label: "VOICE", ja: "顧客の声", href: "#testimonials" },
@@ -194,7 +196,7 @@ function StepsSection() {
   ];
 
   return (
-    <section className="pt-24 pb-24" style={{ background: "linear-gradient(180deg, #e8f4fb 0%, #d4e8f7 50%, #c8dff5 100%)" }}>
+    <section className="pt-24 pb-24" style={{ background: "#d4e8f7" }}>
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
         <div className="text-center mb-16">
           <h2
@@ -259,74 +261,115 @@ function StepsSection() {
   );
 }
 
-function AnswerSection() {
+function FeaturesSection() {
   return (
-    <section className="bg-white pt-12 pb-12">
+    <section id="features" className="bg-white pt-24 pb-12">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="mt-12">
+        <div className="text-center mb-14">
           <h2
-            className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
+            className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em] mb-4"
             style={{ fontSize: "var(--fs-section-title)" }}
           >
-            推測ではなく、<span className="text-blue-gradient" style={{ fontStyle: "normal" }}>継続データ</span>でAI検索上の変化を捉える。
+            GEO Watcherの主要機能
           </h2>
-          <p className="mt-4 text-[17px] text-[#4e4e51] max-w-[64ch] leading-[1.6]">
-            GEOウォッチャーは、主要AIエンジンを横断して、自社・競合のAI検索上での露出、言及、引用状況を継続的にモニタリングするツールです。
-            日々蓄積されるデータから、施策前後の変化や競合との差分を確認。AI検索上での自社の変化を捉え、継続的な改善判断を支援します。
+          <p className="text-[#4e4e51] leading-[1.6] max-w-[900px] mx-auto" style={{ fontSize: "var(--fs-body)" }}>
+            GEO Watcherでは、自社ブランドがAIにどれだけ言及されているかだけでなく、競合との違い、質問ごとの変化、AIが参照したページまでまとめて確認できます。
           </p>
         </div>
-      </div>
-    </section>
-  );
-}
 
-function FeaturesSection() {
-  const features = [
-    {
-      title: "AI可視性",
-      desc: "主要なAIエンジンの回答内で、自社や競合がどれだけ露出しているかを一目で確認。プロンプト別、モデル別にフィルタリングが可能なので、GEO/LLMO対策の状況を正確に把握できます。",
-    },
-    {
-      title: "プロンプト",
-      desc: "注視したいプロンプトの検索結果を継続的にモニタリング。ブランド言及率や引用URLの推移はもちろん、実際のAI回答文も自動で記録されるため、アルゴリズムの変化にもいち早く気づけます。",
-    },
-    {
-      title: "シェア・オブ・ボイス",
-      desc: "各AIエンジンにおいて、自社ブランドと競合他社がどれくらいの割合で言及されているかを可視化します。ブランドの言及ランキングや、プロンプト・AIモデル別のシェアを詳細に比較・確認できます。",
-    },
-    {
-      title: "引用URL",
-      desc: "AIが回答を生成する際に参照・引用したリンク（ソース）を特定します。ドメイン別・URL別に分析できるほか、自社サイトやソーシャルメディアなど、どの種類のメディアが引用されやすいかの傾向も把握できます。",
-    },
-  ];
+        <GuidedDemo />
 
-  return (
-    <section className="bg-white pt-12 pb-12">
-      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="mt-12">
-          <h2
-            className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
-            style={{ fontSize: "var(--fs-section-title)" }}
-          >
-            画面でわかる、GEOウォッチャーの主な機能
-          </h2>
+        <hr className="max-w-[1274px] mx-auto my-16 border-black/[0.08]" />
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-[1274px] mx-auto">
+          <div>
+            <h3 className="font-bold text-[#0B0B0E] mb-4 leading-snug" style={{ fontSize: "var(--fs-h3)" }}>
+              AI可視性：複数のAIで、自社の露出状況をひと目で確認
+            </h3>
+            <p className="text-[#4e4e51] leading-[1.8]" style={{ fontSize: "var(--fs-body)" }}>
+              主要なAIエンジンの回答内で、自社や競合がどれだけ言及されているかを一覧で確認できます。<br />
+              プロンプト別、AIモデル別に絞り込めるため、どのAIで露出が多く、どこで不足しているのかを正確に把握できます。
+            </p>
+          </div>
+          <div className="rounded-2xl overflow-hidden" style={{ boxShadow: "0 4px 12px -4px rgba(11,14,22,0.12)" }}>
+            <Image
+              src="/watcher-demo/demo_visibility_v3.png"
+              alt="AI可視性画面"
+              width={1258}
+              height={686}
+              className="w-full h-auto"
+            />
+          </div>
         </div>
-        <div className="mt-8 aspect-video w-full overflow-hidden rounded-2xl border border-black/[0.07]">
-          <iframe
-            className="h-full w-full"
-            src="https://www.youtube.com/embed/uHXiUjXvr6U"
-            title="Ascent GEO Watcher機能説明"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+
+        <hr className="max-w-[1274px] mx-auto my-16 border-black/[0.08]" />
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-[1274px] mx-auto">
+          <div className="rounded-2xl overflow-hidden order-2 lg:order-1" style={{ boxShadow: "0 4px 12px -4px rgba(11,14,22,0.12)" }}>
+            <Image
+              src="/watcher-demo/demo_prompt_v3.png"
+              alt="プロンプトモニタリング画面"
+              width={1258}
+              height={686}
+              className="w-full h-auto"
+            />
+          </div>
+          <div className="order-1 lg:order-2">
+            <h3 className="font-bold text-[#0B0B0E] mb-4 leading-snug" style={{ fontSize: "var(--fs-h3)" }}>
+              プロンプトモニタリング：注目したい質問の変化を、継続的に追跡
+            </h3>
+            <p className="text-[#4e4e51] leading-[1.8]" style={{ fontSize: "var(--fs-body)" }}>
+              登録したプロンプトごとに、ブランドの言及率、引用URL、実際のAI回答文を継続的に記録します。<br />
+              「以前は自社が表示されていたのに、今は競合が表示されている」といった変化にも、いち早く気づけます。
+            </p>
+          </div>
         </div>
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
-          {features.map((f) => (
-            <div key={f.title} className="bg-white border border-black/[0.07] rounded-2xl p-7">
-              <h3 className="font-bold text-[#0B0B0E] mb-3 leading-snug" style={{ fontSize: "var(--fs-h3)" }}>{f.title}</h3>
-              <p className="text-[#4e4e51] leading-[1.6]" style={{ fontSize: "var(--fs-body-xsm)" }}>{f.desc}</p>
-            </div>
-          ))}
+
+        <hr className="max-w-[1274px] mx-auto my-16 border-black/[0.08]" />
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-[1274px] mx-auto">
+          <div>
+            <h3 className="font-bold text-[#0B0B0E] mb-4 leading-snug" style={{ fontSize: "var(--fs-h3)" }}>
+              シェア・オブ・ボイス：競合と比べて、自社がどれだけ言及されているかを比較
+            </h3>
+            <p className="text-[#4e4e51] leading-[1.8]" style={{ fontSize: "var(--fs-body)" }}>
+              各AIエンジンにおいて、自社と競合がどのくらいの割合で言及されているかを比較できます。<br />
+              ブランドごとの言及順位や、プロンプト別・AIモデル別のシェアを確認することで、業界内での現在地が分かります。
+            </p>
+          </div>
+          <div className="rounded-2xl overflow-hidden" style={{ boxShadow: "0 4px 12px -4px rgba(11,14,22,0.12)" }}>
+            <Image
+              src="/watcher-demo/demo_sov_v3.png"
+              alt="シェア・オブ・ボイス画面"
+              width={1258}
+              height={686}
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
+
+        <hr className="max-w-[1274px] mx-auto my-16 border-black/[0.08]" />
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-[1274px] mx-auto">
+          <div className="rounded-2xl overflow-hidden order-2 lg:order-1" style={{ boxShadow: "0 4px 12px -4px rgba(11,14,22,0.12)" }}>
+            <Image
+              src="/watcher-demo/demo_citation_v3.png"
+              alt="引用URL分析画面"
+              width={1258}
+              height={686}
+              className="w-full h-auto"
+            />
+          </div>
+          <div className="order-1 lg:order-2">
+            <h3 className="font-bold text-[#0B0B0E] mb-4 leading-snug" style={{ fontSize: "var(--fs-h3)" }}>
+              引用URL分析：AIが、どのページを根拠にしているかを特定
+            </h3>
+            <p className="text-[#4e4e51] leading-[1.8]" style={{ fontSize: "var(--fs-body)" }}>
+              AIが回答を生成する際に参照・引用したURLやドメインを確認できます。<br />
+              自社サイトのどのページが引用されているか、競合のどのコンテンツが選ばれているかを把握し、改善すべきページやテーマの発見につなげられます。<br />
+              また、公式サイト、メディア、SNSなど、どの種類の情報源が引用されやすいかも確認できます。
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -335,32 +378,75 @@ function FeaturesSection() {
 
 function ReasonsSection() {
   const reasons = [
-    { title: "主要AIエンジンを横断してモニタリング", desc: "7つのAIモデルに対応。AI検索上での自社・競合の露出状況を横断的に確認できます。" },
-    { title: "競合比較で、自社の立ち位置変化を把握", desc: "20社の競合ブランドを登録可能。AI回答内での露出状況や言及傾向を比較し、自社の変化を確認できます。" },
-    { title: "過去データから現在までの推移を追跡", desc: "過去365日分のデータを保存。施策前後の変化や、時系列でのAI検索上の推移を確認できます。" },
-    { title: "毎日の変化を自動でモニタリング", desc: "毎日自動データ更新。AI検索上での露出・言及・引用状況の変化を継続的にモニタリングできます。" },
-    { title: "データを活用しやすい形で取得", desc: "CSVダウンロード、資料にそのまま使える画像ダウンロードを提供。" },
-    { title: "使い方に合わせた料金プランを提供", desc: "規模感に応じたカスタマイズプランにも対応。" },
+    {
+      title: "国内最大、7つの主要AIモデルをカバー",
+      highlight: "国内最大、7つの主要AIモデル",
+      subtitle: "一つのAIだけでは分からない、ブランドの現在地を把握。",
+      desc: "ChatGPT、Gemini、Perplexity、Google AI Overviews、AI Mode、Copilotの主要6AIに標準対応。（Claudeはオプションで追加できます）AIごとに異なる自社・競合の言及や引用状況を、まとめて確認できます。",
+    },
+    {
+      title: "週数回では見えにくい変化まで、毎日追跡",
+      highlight: "毎日追跡。",
+      subtitle: "施策の効果を、点ではなく流れで判断。",
+      desc: "AIの回答や引用元は日々変わるため、計測間隔が空くほど、その変化がいつ起きたのかを捉えにくくなります。GEO Watcherは毎日自動で計測し、プロンプトの実行条件も調整可能。改善後の反応を早い段階で捉え、次の判断につなげられます。",
+    },
+    {
+      title: "最大20社の競合と比較",
+      highlight: "最大20社の競合",
+      subtitle: "自社だけでは分からない、業界内での立ち位置を可視化。",
+      desc: "最大20社の競合ブランドを登録できます。自社と競合の露出、言及、引用状況を比較し、差が広がっているのか、縮まっているのかを継続的に把握できます。",
+    },
+    {
+      title: "過去365日分のデータを保存",
+      highlight: "365日分のデータを保存",
+      subtitle: "季節変動も、施策の積み重ねも、1年単位で確認。",
+      desc: "AI検索上の言及や引用は、季節要因やキャンペーン、コンテンツ更新によって変化します。過去365日分の計測データを保存することで、短期的な増減だけでなく、改善前後の違いや施策を積み重ねた結果を時系列で確認できます。",
+    },
+    {
+      title: "データを、報告や共有にそのまま活用",
+      highlight: "報告や共有にそのまま",
+      subtitle: "分析結果を、社内で使える資料に。",
+      desc: "計測結果はCSVでダウンロードできるほか、グラフや分析画面を画像として保存できます。社内報告や定例会議、施策前後の比較資料にも、そのまま活用できます。",
+    },
+    {
+      title: "ブランド名とURLから、プロンプトを自動生成",
+      highlight: "プロンプトを自動生成",
+      subtitle: "何を計測するか迷わず、そのままスタート。",
+      desc: "ブランド名とWebサイトのURLを登録するだけで、AI検索上の状況を確認するためのプロンプトを自動で生成します。専門的な設定は不要で、生成後のプロンプトは目的に合わせて自由に編集できます。",
+    },
   ];
 
   return (
-    <section className="bg-white pt-12 pb-12">
+    <section id="reasons" className="pt-24 pb-24" style={{ background: "#d4e8f7" }}>
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="mt-12">
+        <div className="text-center mb-14">
           <h2
-            className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
+            className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em] mb-4"
             style={{ fontSize: "var(--fs-section-title)" }}
           >
-            AI検索上の変化を、継続的に追える環境を提供
+            GEO Watcher、<span style={{ backgroundImage: "linear-gradient(transparent 55%, #fff176 55%, #fff176 92%, transparent 92%)", paddingBottom: "4px" }}>選ばれる理由</span>
           </h2>
+          <h3 className="font-bold" style={{ fontSize: "var(--fs-h3)", color: "#003393" }}>
+            AI検索上の変化を、広く、毎日、長く追える。
+          </h3>
         </div>
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {reasons.map((r) => (
-            <div key={r.title} className="bg-white border border-black/[0.07] rounded-2xl p-6">
-              <h3 className="font-bold text-[#0B0B0E] mb-2 leading-snug" style={{ fontSize: "var(--fs-h4)" }}>{r.title}</h3>
-              <p className="text-[#4e4e51] leading-[1.6]" style={{ fontSize: "var(--fs-body-xsm)" }}>{r.desc}</p>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {reasons.map((r) => {
+            const highlight = "highlight" in r ? r.highlight : undefined;
+            return (
+              <div key={r.title} className="rounded-2xl overflow-hidden bg-white" style={{ border: "1px solid #003393" }}>
+                <div className="px-6 py-4 text-center" style={{ backgroundColor: "#003393" }}>
+                  <h4 className="text-white leading-snug" style={{ fontSize: "var(--fs-body-xsm)", fontWeight: 900 }}>
+                    {r.title}
+                  </h4>
+                </div>
+                <div className="p-7">
+                  <p className="font-bold text-[#0B0B0E] mb-3" style={{ fontSize: "var(--fs-body-xsm)" }}>{r.subtitle}</p>
+                  <p className="text-[#4e4e51] leading-[1.6]" style={{ fontSize: "var(--fs-body-xsm)" }}>{r.desc}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -501,7 +587,7 @@ function PricingSection() {
   return (
     <section id="pricing" className="bg-white pt-12 pb-12">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="mt-12">
+        <div className="mt-12 text-center">
           <h2
             className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
             style={{ fontSize: "var(--fs-section-title)" }}
@@ -697,7 +783,6 @@ export default function WatcherPage() {
       <HeroSection />
       <NavigationSection />
       <StepsSection />
-      <AnswerSection />
       <FeaturesSection />
       <ReasonsSection />
       <PricingSection />
