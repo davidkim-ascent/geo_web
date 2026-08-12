@@ -282,6 +282,10 @@ export function PricingSection() {
           ))}
         </div>
 
+        <p className="mt-4 text-[#6B6B73]" style={{ fontSize: "var(--fs-label)" }}>
+          ※ プロジェクト数：プロジェクトとはブランドを意味します。例えば、ユニクロとGUのように独立した2つのブランドを運用する場合は、アドバンスプランをお選びください。
+        </p>
+
         <div className="mt-8 rounded-2xl border border-black/[0.07] bg-[#F6F7FB] p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center gap-6 justify-between">
           <div>
             <h3 className="font-bold text-[#0B0B0E] mb-1" style={{ fontSize: "var(--fs-h4)" }}>
@@ -303,12 +307,6 @@ export function PricingSection() {
             style={{ fontSize: "var(--fs-label-sm)" }}
           >
             お問い合わせ
-          </a>
-        </div>
-
-        <div className="mt-6 text-center">
-          <a href="/contact" className="font-mono tracking-[0.18em] text-[#1452FF] hover:underline uppercase" style={{ fontSize: "var(--fs-label-xxs)" }}>
-            料金・プランについて問い合わせる →
           </a>
         </div>
       </div>
