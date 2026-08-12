@@ -1,3 +1,10 @@
+## 2026-08-12 16:10
+- 폰트 사이즈 전역 통일: h1 `--fs-display` clamp(36px, 3.4vw, 50px), h2 `--fs-section-title` clamp(32px, 3.2vw, 42px)
+- 각 페이지 h1 인라인 clamp 값을 `--fs-display` 변수로 일괄 교체 (shindan/framework/lab/services/why-ascent/whitepaper/contact/wp-side)
+- Watcher StepsSection을 상단 5-1-2, 하단 4-3 사이클 레이아웃으로 재구성 (Flexbox 기반, 직선 화살표)
+- Watcher 히어로 하단에 앵커 네비게이션 추가, 각 섹션 라벨·구분선 제거, 배경 화이트 통일
+- Contact 페이지 히어로 배경을 하늘색 그라데이션으로 변경, 폰트 컬러 조정, 버튼 레이아웃 및 FAQ 항목 수정
+
 ## 2026-08-11 23:05
 - 로컬 개발 서버를 `npm run dev`로 재실행하고 `http://localhost:3000` 기동 상태를 확인
 
