@@ -64,7 +64,7 @@ export function GuidedDemo() {
   }
 
   return (
-    <div className="max-w-[1274px] mx-auto mb-16">
+    <div className="max-w-[1274px] mx-auto mb-6">
       <div className="flex justify-end mb-4">
         <button
           onClick={start}

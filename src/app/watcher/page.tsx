@@ -9,6 +9,7 @@ import { WatcherFAQ } from "./WatcherFAQ";
 import { GuidedDemo } from "./GuidedDemo";
 import { Button } from "@/components/ui/button";
 import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
+import { HeroLogoMark } from "@/components/layout/HeroLogoMark";
 import voice1Image from "../../../Design/voice1.png";
 import voice2Image from "../../../Design/voice2.png";
 import voice3Image from "../../../Design/voice3.png";
@@ -270,28 +271,25 @@ function FeaturesSection() {
             className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em] mb-4"
             style={{ fontSize: "var(--fs-section-title)" }}
           >
-            GEO Watcherの主要機能
+            <span style={{ fontSize: "28px", color: "#7DD3FC" }}>✦</span> GEO Watcherの<span style={{ backgroundImage: "linear-gradient(transparent 55%, #c7e8ff 55%, #c7e8ff 92%, transparent 92%)", paddingBottom: "4px" }}>主要機能</span> <span style={{ fontSize: "28px", color: "#7DD3FC" }}>✦</span>
           </h2>
-          <p className="text-[#4e4e51] leading-[1.6] max-w-[900px] mx-auto" style={{ fontSize: "var(--fs-body)" }}>
-            GEO Watcherでは、自社ブランドがAIにどれだけ言及されているかだけでなく、競合との違い、質問ごとの変化、AIが参照したページまでまとめて確認できます。
-          </p>
         </div>
 
         <GuidedDemo />
 
-        <hr className="max-w-[1274px] mx-auto my-16 border-black/[0.08]" />
+        <hr className="max-w-[1274px] mx-auto my-6 border-black/[0.08]" />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-[1274px] mx-auto">
           <div>
-            <h3 className="font-bold text-[#0B0B0E] mb-4 leading-snug" style={{ fontSize: "var(--fs-h3)" }}>
-              AI可視性：複数のAIで、自社の露出状況をひと目で確認
+            <h3 className="font-bold mb-4 leading-snug" style={{ fontSize: "var(--fs-h4)", color: "#003393" }}>
+              <span style={{ backgroundImage: "linear-gradient(transparent 55%, #c7e8ff 55%, #c7e8ff 92%, transparent 92%)", paddingBottom: "4px" }}>AI可視性：複数のAIで、自社の露出状況をひと目で確認</span>
             </h3>
             <p className="text-[#4e4e51] leading-[1.8]" style={{ fontSize: "var(--fs-body)" }}>
               主要なAIエンジンの回答内で、自社や競合がどれだけ言及されているかを一覧で確認できます。<br />
               プロンプト別、AIモデル別に絞り込めるため、どのAIで露出が多く、どこで不足しているのかを正確に把握できます。
             </p>
           </div>
-          <div className="rounded-2xl overflow-hidden" style={{ boxShadow: "0 4px 12px -4px rgba(11,14,22,0.12)" }}>
+          <div className="rounded-2xl overflow-hidden">
             <Image
               src="/watcher-demo/demo_visibility_v3.png"
               alt="AI可視性画面"
@@ -302,10 +300,10 @@ function FeaturesSection() {
           </div>
         </div>
 
-        <hr className="max-w-[1274px] mx-auto my-16 border-black/[0.08]" />
+        <hr className="max-w-[1274px] mx-auto my-6 border-black/[0.08]" />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-[1274px] mx-auto">
-          <div className="rounded-2xl overflow-hidden order-2 lg:order-1" style={{ boxShadow: "0 4px 12px -4px rgba(11,14,22,0.12)" }}>
+          <div className="rounded-2xl overflow-hidden order-2 lg:order-1">
             <Image
               src="/watcher-demo/demo_prompt_v3.png"
               alt="プロンプトモニタリング画面"
@@ -315,8 +313,8 @@ function FeaturesSection() {
             />
           </div>
           <div className="order-1 lg:order-2">
-            <h3 className="font-bold text-[#0B0B0E] mb-4 leading-snug" style={{ fontSize: "var(--fs-h3)" }}>
-              プロンプトモニタリング：注目したい質問の変化を、継続的に追跡
+            <h3 className="font-bold mb-4 leading-snug" style={{ fontSize: "var(--fs-h4)", color: "#003393" }}>
+              <span style={{ backgroundImage: "linear-gradient(transparent 55%, #c7e8ff 55%, #c7e8ff 92%, transparent 92%)", paddingBottom: "4px" }}>プロンプトモニタリング：注目したい質問の変化を、継続的に追跡</span>
             </h3>
             <p className="text-[#4e4e51] leading-[1.8]" style={{ fontSize: "var(--fs-body)" }}>
               登録したプロンプトごとに、ブランドの言及率、引用URL、実際のAI回答文を継続的に記録します。<br />
@@ -325,19 +323,19 @@ function FeaturesSection() {
           </div>
         </div>
 
-        <hr className="max-w-[1274px] mx-auto my-16 border-black/[0.08]" />
+        <hr className="max-w-[1274px] mx-auto my-6 border-black/[0.08]" />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-[1274px] mx-auto">
           <div>
-            <h3 className="font-bold text-[#0B0B0E] mb-4 leading-snug" style={{ fontSize: "var(--fs-h3)" }}>
-              シェア・オブ・ボイス：競合と比べて、自社がどれだけ言及されているかを比較
+            <h3 className="font-bold mb-4 leading-snug" style={{ fontSize: "var(--fs-h4)", color: "#003393" }}>
+              <span style={{ backgroundImage: "linear-gradient(transparent 55%, #c7e8ff 55%, #c7e8ff 92%, transparent 92%)", paddingBottom: "4px" }}>シェア・オブ・ボイス：競合と比べて、自社がどれだけ言及されているかを比較</span>
             </h3>
             <p className="text-[#4e4e51] leading-[1.8]" style={{ fontSize: "var(--fs-body)" }}>
               各AIエンジンにおいて、自社と競合がどのくらいの割合で言及されているかを比較できます。<br />
               ブランドごとの言及順位や、プロンプト別・AIモデル別のシェアを確認することで、業界内での現在地が分かります。
             </p>
           </div>
-          <div className="rounded-2xl overflow-hidden" style={{ boxShadow: "0 4px 12px -4px rgba(11,14,22,0.12)" }}>
+          <div className="rounded-2xl overflow-hidden">
             <Image
               src="/watcher-demo/demo_sov_v3.png"
               alt="シェア・オブ・ボイス画面"
@@ -348,10 +346,10 @@ function FeaturesSection() {
           </div>
         </div>
 
-        <hr className="max-w-[1274px] mx-auto my-16 border-black/[0.08]" />
+        <hr className="max-w-[1274px] mx-auto my-6 border-black/[0.08]" />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-[1274px] mx-auto">
-          <div className="rounded-2xl overflow-hidden order-2 lg:order-1" style={{ boxShadow: "0 4px 12px -4px rgba(11,14,22,0.12)" }}>
+          <div className="rounded-2xl overflow-hidden order-2 lg:order-1">
             <Image
               src="/watcher-demo/demo_citation_v3.png"
               alt="引用URL分析画面"
@@ -361,8 +359,8 @@ function FeaturesSection() {
             />
           </div>
           <div className="order-1 lg:order-2">
-            <h3 className="font-bold text-[#0B0B0E] mb-4 leading-snug" style={{ fontSize: "var(--fs-h3)" }}>
-              引用URL分析：AIが、どのページを根拠にしているかを特定
+            <h3 className="font-bold mb-4 leading-snug" style={{ fontSize: "var(--fs-h4)", color: "#003393" }}>
+              <span style={{ backgroundImage: "linear-gradient(transparent 55%, #c7e8ff 55%, #c7e8ff 92%, transparent 92%)", paddingBottom: "4px" }}>引用URL分析：AIが、どのページを根拠にしているかを特定</span>
             </h3>
             <p className="text-[#4e4e51] leading-[1.8]" style={{ fontSize: "var(--fs-body)" }}>
               AIが回答を生成する際に参照・引用したURLやドメインを確認できます。<br />
@@ -417,7 +415,7 @@ function ReasonsSection() {
   ];
 
   return (
-    <section id="reasons" className="pt-24 pb-24" style={{ background: "#d4e8f7" }}>
+    <section id="reasons" className="pt-24 pb-24" style={{ background: "#e8f4fb" }}>
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
         <div className="text-center mb-14">
           <h2
@@ -426,24 +424,22 @@ function ReasonsSection() {
           >
             GEO Watcher、<span style={{ backgroundImage: "linear-gradient(transparent 55%, #fff176 55%, #fff176 92%, transparent 92%)", paddingBottom: "4px" }}>選ばれる理由</span>
           </h2>
-          <h3 className="font-bold" style={{ fontSize: "var(--fs-h3)", color: "#003393" }}>
+          <h4 className="font-bold" style={{ fontSize: "var(--fs-h4)", color: "#003393" }}>
             AI検索上の変化を、広く、毎日、長く追える。
-          </h3>
+          </h4>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {reasons.map((r) => {
-            const highlight = "highlight" in r ? r.highlight : undefined;
+          {reasons.map((r, i) => {
             return (
-              <div key={r.title} className="rounded-2xl overflow-hidden bg-white" style={{ border: "1px solid #003393" }}>
-                <div className="px-6 py-4 text-center" style={{ backgroundColor: "#003393" }}>
-                  <h4 className="text-white leading-snug" style={{ fontSize: "var(--fs-body-xsm)", fontWeight: 900 }}>
+              <div key={r.title} className="rounded-2xl overflow-hidden bg-white p-7">
+                <div className="flex items-center gap-2 mb-4 rounded-xl pl-3 pr-4" style={{ backgroundColor: "#ffcc00", minHeight: "56px", width: "100%" }}>
+                  <span className="font-bold text-[#0B0B0E] flex-shrink-0" style={{ fontSize: "var(--fs-label)" }}>{String(i + 1).padStart(2, "0")}</span>
+                  <h4 className="font-bold text-[#0B0B0E] leading-snug" style={{ fontSize: "var(--fs-h4)" }}>
                     {r.title}
                   </h4>
                 </div>
-                <div className="p-7">
-                  <p className="font-bold text-[#0B0B0E] mb-3" style={{ fontSize: "var(--fs-body-xsm)" }}>{r.subtitle}</p>
-                  <p className="text-[#4e4e51] leading-[1.6]" style={{ fontSize: "var(--fs-body-xsm)" }}>{r.desc}</p>
-                </div>
+                <p className="font-bold mb-3" style={{ fontSize: "var(--fs-body)", color: "#003393" }}>{r.subtitle}</p>
+                <p className="text-[#4e4e51] leading-[1.6]" style={{ fontSize: "var(--fs-body-xsm)" }}>{r.desc}</p>
               </div>
             );
           })}
@@ -455,34 +451,37 @@ function ReasonsSection() {
 
 function TestimonialsSection() {
   return (
-    <section className="bg-white py-12 lg:py-16">
+    <section id="testimonials" className="bg-white py-12 lg:py-16">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="mt-12 grid grid-cols-1 gap-6">
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
           {[
             {
               name: "EC運営担当者",
               role: "化粧品・自社EC",
-              review: "月額コンサルではなく、必要な支援だけ頼めました。「他社のGEO・LLMOツールを検討したときは、最後に月額コンサルを提案されることが多く、導入を見送っていました。GEO Watcherは、主要な計測機能をツール内で利用でき、苦手だったプロンプト設計だけを、1回単位で依頼できました。毎月の追加費用が発生しないため、社内でも説明しやすく、導入までスムーズに進められました。」",
+              headline: "月額コンサルではなく、必要な支援だけ頼めました。",
+              review: "他社のGEO・LLMOツールを検討したときは、最後に月額コンサルを提案されることが多く、導入を見送っていました。GEO Watcherは、主要な計測機能をツール内で利用でき、苦手だったプロンプト設計だけを、1回単位で依頼できました。毎月の追加費用が発生しないため、社内でも説明しやすく、導入までスムーズに進められました。",
               image: voice1Image,
               rating: 5,
             },
             {
               name: "広報・マーケティング担当者",
               role: "地方製造業",
-              review: "ビッグデータの専門企業が開発していることが、導入の決め手でした。「GEO・LLMO対策はまだ新しい分野なので、ツールの機能だけでなく、どのような会社が開発・運営しているかも重視しました。GEO Watcherは、検索データやビッグデータを長年扱ってきた企業が開発しているため、計測データの信頼性にも安心感がありました。複数のAIにおける自社と競合の変化を、継続的に確認できる点も、社内で導入を決める後押しになりました。」",
+              headline: "ビッグデータの専門企業が開発していることが、導入の決め手でした。",
+              review: "GEO・LLMO対策はまだ新しい分野なので、ツールの機能だけでなく、どのような会社が開発・運営しているかも重視しました。GEO Watcherは、検索データやビッグデータを長年扱ってきた企業が開発しているため、計測データの信頼性にも安心感がありました。複数のAIにおける自社と競合の変化を、継続的に確認できる点も、社内で導入を決める後押しになりました。",
               image: voice2Image,
               rating: 5,
             },
             {
               name: "マーケティングマネージャー",
               role: "BtoB SaaS企業",
-              review: "施策後の変化を、データで説明できるようになりました。「以前利用していたGEO・LLMOツールは週3回の更新だったため、コンテンツ改善後の変化が、いつAIの回答に反映されたのか判断しづらい状態でした。GEO Watcherに切り替えてからは、毎日のデータで言及率や引用URLの変化を追えるため、施策後の反応を早い段階で確認できます。複数のAIの回答原文やグラフもまとめて共有でき、社内報告の根拠として使いやすくなりました。」",
+              headline: "施策後の変化を、データで説明できるようになりました。",
+              review: "以前利用していたGEO・LLMOツールは週3回の更新だったため、コンテンツ改善後の変化が、いつAIの回答に反映されたのか判断しづらい状態でした。GEO Watcherに切り替えてからは、毎日のデータで言及率や引用URLの変化を追えるため、施策後の反応を早い段階で確認できます。複数のAIの回答原文やグラフもまとめて共有でき、社内報告の根拠として使いやすくなりました。",
               image: voice3Image,
               rating: 5,
             },
           ].map((reviewer) => (
-            <div key={reviewer.name} className="rounded-lg bg-white p-6 flex gap-6">
-              <div className="flex-shrink-0">
+            <div key={reviewer.name} className="rounded-lg bg-white border border-black/[0.07] p-6 flex flex-col items-center text-center" style={{ boxShadow: "0 4px 12px -4px rgba(11,14,22,0.1)" }}>
+              <div className="flex-shrink-0 mb-4">
                 <div className="h-[80px] w-[80px] rounded-full overflow-hidden bg-gray-200">
                   {reviewer.image && (
                     <Image
@@ -495,8 +494,22 @@ function TestimonialsSection() {
                   )}
                 </div>
               </div>
-              <div className="flex-1">
-                <p className="mb-3 text-[14px] leading-[1.6] text-[#4e4e51]">
+              <div className="flex-1 w-full flex flex-col items-center">
+                <div
+                  style={{
+                    width: 0,
+                    height: 0,
+                    borderLeft: "8px solid transparent",
+                    borderRight: "8px solid transparent",
+                    borderBottom: "9px solid #0066ff",
+                  }}
+                />
+                <div className="inline-flex items-center mb-3 rounded-xl px-4 py-2" style={{ backgroundColor: "#0066ff" }}>
+                  <p className="font-bold text-white leading-snug" style={{ fontSize: "var(--fs-body)" }}>
+                    {reviewer.headline}
+                  </p>
+                </div>
+                <p className="mb-3 leading-[1.6] text-[#4e4e51] text-left" style={{ fontSize: "var(--fs-body-sm)" }}>
                   {reviewer.review}
                 </p>
                 <div className="border-t border-[#e0e0e0] pt-3">
@@ -506,7 +519,7 @@ function TestimonialsSection() {
                   <p className="text-[#999] mb-2" style={{ fontSize: "var(--fs-label-sm)" }}>
                     {reviewer.role}
                   </p>
-                  <div className="flex gap-1">
+                  <div className="flex gap-1 justify-center">
                     {[...Array(5)].map((_, i) => (
                       <span key={i} className={i < reviewer.rating ? "text-[#FFC93B] text-lg" : "text-[#ddd] text-lg"}>
                         ★
@@ -592,7 +605,7 @@ function PricingSection() {
             className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
             style={{ fontSize: "var(--fs-section-title)" }}
           >
-            料金プラン
+            <span style={{ fontSize: "28px", color: "#7DD3FC" }}>✦</span> 料金プラン <span style={{ fontSize: "28px", color: "#7DD3FC" }}>✦</span>
           </h2>
         </div>
 
@@ -723,6 +736,123 @@ function PricingSection() {
   );
 }
 
+function SpotSupportSection() {
+  const spotSupports = [
+    {
+      title: "プロンプト設計サポート",
+      image: "/spot01.png",
+      tagline: "最適なプロンプトを、実際の検索データから設計",
+      body: "ブランド、商品、ターゲットについてヒアリングし、消費者が実際に検索しているテーマをもとに、計測すべき最適なプロンプトを設計します。単に質問文を作るのではなく、「なぜこの質問を追うのか」まで整理した状態で納品します。",
+      price: "30,000〜50,000円　※設計するプロンプト数に応じて、申し込み前に確定します",
+      duration: "5営業日以内",
+      hearing: "30分",
+      deliverable: "プロンプトの設計・登録、設計意図をまとめた解説資料",
+      useCases: ["どのプロンプトを登録すべきか分からない", "自動生成したプロンプトを精緻化したい", "購買段階に合わせて質問を設計したい"],
+    },
+    {
+      title: "コンテンツ改善診断",
+      image: "/spot02.png",
+      tagline: "どこから直すべきかを、データから整理",
+      body: "AIに引用されている競合ページと自社ページを比較し、改善すべきページと優先順位を整理します。感覚ではなく、現在の引用状況や競合との差をもとに、GEO・LLMO対策で次に取り組むべき改善の方向性を明確にします。",
+      price: "50,000〜100,000円　※診断するページ数に応じて、申し込み前に確定します",
+      duration: "10営業日以内",
+      hearing: "30分",
+      deliverable: "改善優先度レポート",
+      useCases: ["計測結果を見ても、次の施策が決まらない", "競合との差をコンテンツ改善につなげたい", "優先して直すページを絞り込みたい"],
+    },
+  ];
+
+  return (
+    <section id="support" className="pt-24 pb-24" style={{ background: "#e8f4fb" }}>
+      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="text-center mb-14">
+          <h2
+            className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em] mb-4"
+            style={{ fontSize: "var(--fs-section-title)" }}
+          >
+            必要なときだけ使える、スポットサポート（オプション）
+          </h2>
+          <h3 className="font-bold mb-6" style={{ fontSize: "var(--fs-h3)", color: "#003393" }}>
+            <span style={{ backgroundImage: "linear-gradient(transparent 55%, #fff176 55%, #fff176 92%, transparent 92%)", paddingBottom: "4px" }}>月額契約なし。必要な支援だけを、必要なときに。</span>
+          </h3>
+          <p className="text-[#4e4e51] leading-[1.8] max-w-[900px] mx-auto" style={{ fontSize: "var(--fs-body)" }}>
+            GEO Watcherは、日々の計測や分析を自社で進められるツールです。<br />
+            GEO・LLMO対策で専門的な判断に迷ったときは、計測結果をもとに、次に取り組むべき質問や改善テーマを整理するスポットサポートを利用できます。<br />
+            この提案支援のベースとなるのが、<span style={{ backgroundImage: "linear-gradient(transparent 55%, #fff176 55%, #fff176 92%, transparent 92%)", paddingBottom: "4px" }}>日本3.5億件を含む15億件超の実検索データ</span>です。消費者の検索意図や需要と、現在の言及・引用状況、競合との差を照らし合わせ、優先すべき打ち手を明確にします。<br />
+            <span style={{ backgroundImage: "linear-gradient(transparent 55%, #fff176 55%, #fff176 92%, transparent 92%)", paddingBottom: "4px" }}>月額契約や自動更新はなく、必要な支援だけをスポットで利用</span>できます。
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {spotSupports.map((s, i) => (
+            <div key={s.title} className="bg-white rounded-2xl overflow-hidden">
+              {"image" in s && s.image && (
+                <div className="w-full relative" style={{ aspectRatio: "16 / 9" }}>
+                  <Image
+                    src={s.image}
+                    alt={s.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              )}
+              <div className="p-8">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="flex-shrink-0 rounded-full flex items-center justify-center" style={{ width: "36px", height: "36px", backgroundColor: "#003393" }}>
+                    <span className="font-bold text-white" style={{ fontSize: "var(--fs-body-xsm)" }}>{String(i + 1).padStart(2, "0")}</span>
+                  </div>
+                  <h3 className="font-bold" style={{ fontSize: "var(--fs-h3)", color: "#003393" }}>
+                    <span style={{ backgroundImage: "linear-gradient(transparent 55%, #c7e8ff 55%, #c7e8ff 92%, transparent 92%)", paddingBottom: "4px" }}>{s.title}</span>
+                  </h3>
+                </div>
+                <p className="font-bold mb-4" style={{ fontSize: "var(--fs-body-sm)", color: "#003393" }}>{s.tagline}</p>
+                <p className="text-[#4e4e51] leading-[1.7] mb-6" style={{ fontSize: "var(--fs-body-sm)" }}>{s.body}</p>
+
+                <div className="mb-6 rounded-lg overflow-hidden border border-black/[0.1]">
+                  {[
+                    ["価格", s.price],
+                    ["期間", s.duration],
+                    ["ヒアリング", s.hearing],
+                    ["納品内容", s.deliverable],
+                  ].map(([label, value], i) => (
+                    <div key={label} className={`grid grid-cols-[100px_1fr] ${i > 0 ? "border-t border-black/[0.1]" : ""}`}>
+                      <div className="px-4 py-3 text-[#4e4e51] whitespace-nowrap" style={{ fontSize: "var(--fs-label)", backgroundColor: "#F6F7FB" }}>{label}</div>
+                      <div className="px-4 py-3 text-[#0B0B0E]" style={{ fontSize: "var(--fs-label)" }}>{value}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="pt-4 border-t border-black/[0.08]">
+                  <div className="relative inline-block mb-4 rounded-xl px-4 py-2" style={{ backgroundColor: "#003393" }}>
+                    <span className="font-bold text-white" style={{ fontSize: "var(--fs-body-xsm)" }}>こんなときに</span>
+                    <div
+                      className="absolute"
+                      style={{
+                        bottom: "-6px",
+                        left: "22px",
+                        width: 0,
+                        height: 0,
+                        borderLeft: "6px solid transparent",
+                        borderRight: "6px solid transparent",
+                        borderTop: "7px solid #003393",
+                      }}
+                    />
+                  </div>
+                  <ul className="flex flex-col gap-1.5">
+                    {s.useCases.map((u) => (
+                      <li key={u} className="text-[#0B0B0E]" style={{ fontSize: "var(--fs-body)" }}>・{u}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ContactSection() {
   return (
     <section
@@ -768,6 +898,9 @@ function ContactSection() {
               無料相談予約（Googleカレンダー）
             </CalendarBookingButton>
           </div>
+          <div className="mt-32">
+            <HeroLogoMark />
+          </div>
         </div>
         <div className="w-full max-w-[560px] mx-auto lg:ml-auto lg:mr-0">
           <ContactForm blockedEmailDomains={DEFAULT_BLOCKED_EMAIL_DOMAINS} />
@@ -786,6 +919,7 @@ export default function WatcherPage() {
       <FeaturesSection />
       <ReasonsSection />
       <PricingSection />
+      <SpotSupportSection />
       <TestimonialsSection />
       <ContactSection />
       <WatcherFAQ />
