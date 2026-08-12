@@ -189,7 +189,7 @@ export function PricingSection() {
                 key={p.name}
                 className={`relative flex flex-col rounded-2xl p-6 ${
                   p.featured
-                    ? "bg-[#0B0B0E] border border-[#1452FF]"
+                    ? "bg-[#0a1a3d] border border-[#1452FF]"
                     : "bg-white border border-black/[0.15]"
                 }`}
               >
