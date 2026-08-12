@@ -19,11 +19,8 @@ export function WatcherFAQ() {
   const [open, setOpen] = useState<number>(0);
 
   return (
-    <section className="bg-white py-[120px]">
+    <section className="bg-white pt-[80px] pb-[120px]">
       <div className="mx-auto max-w-[var(--ui-content-width)] px-4 sm:px-6 lg:px-10">
-        <div className="mb-6 font-mono text-[12px] tracking-[0.18em] text-[#9A9AA0] uppercase">
-          [ FREQUENTLY ASKED ]
-        </div>
         <h2 className="mb-14 max-w-[22ch] tracking-[-0.03em] leading-[1.05]">
           よくある質問。
         </h2>

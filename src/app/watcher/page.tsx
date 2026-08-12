@@ -81,11 +81,11 @@ function HeroSection() {
           className="font-bold max-w-[48ch] mx-auto mt-4"
           style={{ fontSize: "53px", lineHeight: "1.5", letterSpacing: "-0.035em", fontFamily: "'NiveauGrotesk', sans-serif" }}
         >
-          AI <span style={{ fontSize: "49px", fontFamily: "'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif" }}>対策ツール</span> <span style={{ color: "#003393" }}>GEO Watcher</span>
+          AI<span style={{ marginLeft: "3px", fontSize: "49px", fontFamily: "'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif" }}>対策ツール</span> <span style={{ color: "#003393" }}>GEO Watcher</span>
         </h1>
 
         {/* Subcopy Section */}
-        <div className="mt-6 max-w-[900px] mb-8">
+        <div className="mt-6 max-w-[720px] mb-8">
           <p className="text-[#0B0B0E] leading-[1.8] mb-0 font-medium" style={{ fontSize: "var(--fs-body)" }}>
             GEO Watcherは、AIにおける自社・競合の言及、引用、露出の変化を毎日計測するGEO・LLMO対策のモニタリングツールです。AIごとの比較から施策後の効果確認まで、GEO・LLMO対策に必要なデータをひとつの画面に集約。料金体系は3つのプランを用意。プロの専門支援が必要な時だけ、月額縛りのない「スポットサポート」を利用できます。
           </p>
@@ -144,7 +144,7 @@ function StepCard({ step }: { step: Step }) {
         <h3 className="font-bold text-[#0B0B0E]" style={{ fontSize: "24px", letterSpacing: "-0.02em" }}>{step.title}</h3>
       </div>
       <p className="font-bold text-[#0B0B0E] mb-2.5" style={{ fontSize: "var(--fs-body-sm)" }}>{step.description}</p>
-      <p className="text-[#4e4e51] leading-[1.75]" style={{ fontSize: "var(--fs-body-sm)" }}>{step.detail}</p>
+      <p className="text-[#4e4e51] leading-[1.5]" style={{ fontSize: "var(--fs-label)" }}>{step.detail}</p>
     </div>
   );
 }
@@ -271,9 +271,9 @@ function StepsSection() {
 
 function FeaturesSection() {
   return (
-    <section id="features" className="bg-white pt-24 pb-12">
+    <section id="features" className="bg-white pt-[72px] pb-12">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="text-center mb-14">
+        <div className="text-center mb-7">
           <h2
             className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em] mb-4"
             style={{ fontSize: "var(--fs-section-title)" }}
@@ -569,15 +569,14 @@ function PricingSection() {
       featured: false,
       tagline: "複数ブランド・広範囲を追うチームに",
     },
-    {
-      name: "カスタマイズプラン",
-      price: null,
-      prompts: "自由選択",
-      models: "アドバンスに準ずる",
-      featured: false,
-      tagline: "規模に合わせて柔軟に設計",
-    },
   ];
+
+  const customPlan = {
+    name: "カスタマイズプラン",
+    prompts: "自由選択",
+    models: "アドバンスに準ずる",
+    tagline: "規模に合わせて柔軟に設計",
+  };
 
   const ALL_MODELS = [
     { key: "aio", label: "AI Overviews", logo: "/ai-model-logos/google.svg" },
@@ -593,15 +592,14 @@ function PricingSection() {
     ["aio", "gemini", "chatgpt", "perplexity"],
     ["aio", "gemini", "aimode", "chatgpt", "perplexity"],
     ["aio", "gemini", "aimode", "chatgpt", "perplexity", "copilot"],
-    ["aio", "gemini", "aimode", "chatgpt", "perplexity", "copilot", "claude"],
   ];
 
   const comparisonRows = [
-    { label: "登録プロンプト数", values: ["25", "50", "100", "自由選択"] },
-    { label: "競合登録", values: ["20個", "20個", "20個", "20個"] },
-    { label: "データ保存期間", values: ["1年間", "1年間", "1年間", "1年間"] },
-    { label: "更新頻度", values: ["毎日", "毎日", "毎日", "毎日"] },
-    { label: "エクスポート機能", values: ["csv", "csv", "csv", "csv"] },
+    { label: "登録プロンプト数", values: ["25", "50", "100"] },
+    { label: "競合登録", values: ["20個", "20個", "20個"] },
+    { label: "データ保存期間", values: ["1年間", "1年間", "1年間"] },
+    { label: "更新頻度", values: ["毎日", "毎日", "毎日"] },
+    { label: "エクスポート機能", values: ["csv", "csv", "csv"] },
   ];
 
   return (
@@ -616,7 +614,8 @@ function PricingSection() {
           </h2>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-[160px_1fr_1fr_1fr] gap-4 items-stretch">
+          <div className="hidden md:block" />
           {plans.map((p) => (
             <div
               key={p.name}
@@ -679,58 +678,71 @@ function PricingSection() {
           ))}
         </div>
 
-        <div className="mt-10 overflow-x-auto">
-          <div className="min-w-[720px]">
-            <div className="grid grid-cols-[1.4fr_1fr_1fr_1fr_1fr] border-b border-black/[0.1] pb-3">
-              <span className="font-bold text-[#6B6B73]" style={{ fontSize: "var(--fs-body-xsm)" }}>項目</span>
-              {plans.map((p) => (
-                <span
-                  key={p.name}
-                  className="font-bold text-[#0B0B0E] text-center border-l border-black/[0.08]" style={{ fontSize: "var(--fs-body-xsm)" }}
-                >
-                  {p.name}
-                </span>
-              ))}
-            </div>
-            <div className="grid grid-cols-[1.4fr_1fr_1fr_1fr_1fr] border-b border-black/[0.06] py-4">
-              <span className="text-[#4e4e51] pt-1" style={{ fontSize: "var(--fs-body-xsm)" }}>AIモデル</span>
-              {planModelKeys.map((keys, i) => (
-                <div
-                  key={i}
-                  className="flex flex-col items-start justify-center gap-1.5 px-2 border-l border-black/[0.08]"
-                >
-                  {keys.map((key) => {
-                    const model = ALL_MODELS.find((m) => m.key === key)!;
-                    return (
-                      <div key={key} className="flex items-center gap-1.5">
-                        <Image
-                          src={model.logo}
-                          alt=""
-                          width={16}
-                          height={16}
-                          className="h-4 w-4 shrink-0 rounded-sm object-contain"
-                        />
-                        <span className="text-[#0B0B0E] whitespace-nowrap" style={{ fontSize: "var(--fs-body-xsm)" }}>{model.label}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-              ))}
-            </div>
-            {comparisonRows.map((row) => (
-              <div key={row.label} className="grid grid-cols-[1.4fr_1fr_1fr_1fr_1fr] border-b border-black/[0.06] py-3">
-                <span className="text-[#4e4e51]" style={{ fontSize: "var(--fs-body-xsm)" }}>{row.label}</span>
-                {row.values.map((v, i) => (
-                  <span
-                    key={`${row.label}-${i}`}
-                    className="text-[#0B0B0E] text-center border-l border-black/[0.08]" style={{ fontSize: "var(--fs-body-xsm)" }}
-                  >
-                    {v}
-                  </span>
-                ))}
+        <div className="mt-10">
+          <div className="grid grid-cols-1 md:grid-cols-[160px_1fr_1fr_1fr] gap-0 border-b border-black/[0.1] pb-3">
+            <span className="hidden md:flex items-center font-bold text-[#6B6B73]" style={{ fontSize: "var(--fs-body-xsm)" }}>項目</span>
+            {plans.map((p) => (
+              <span key={p.name} className="font-bold text-[#0B0B0E] text-center px-2 md:border-l border-black/[0.08]" style={{ fontSize: "var(--fs-body-xsm)" }}>
+                {p.name}
+              </span>
+            ))}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-[160px_1fr_1fr_1fr] gap-0 border-b border-black/[0.06] py-4">
+            <span className="hidden md:flex items-start pt-1 text-[#0B0B0E]" style={{ fontSize: "var(--fs-body-xsm)" }}>AIモデル</span>
+            {planModelKeys.map((keys, i) => (
+              <div key={i} className="flex flex-col items-center justify-start gap-1.5 px-2 md:border-l border-black/[0.08]">
+                {keys.map((key) => {
+                  const model = ALL_MODELS.find((m) => m.key === key)!;
+                  return (
+                    <div key={key} className="flex items-center gap-1.5">
+                      <Image
+                        src={model.logo}
+                        alt=""
+                        width={16}
+                        height={16}
+                        className="h-4 w-4 shrink-0 rounded-sm object-contain"
+                      />
+                      <span className="text-[#0B0B0E] whitespace-nowrap" style={{ fontSize: "var(--fs-body-xsm)" }}>{model.label}</span>
+                    </div>
+                  );
+                })}
               </div>
             ))}
           </div>
+          {comparisonRows.map((row) => (
+            <div key={row.label} className="grid grid-cols-1 md:grid-cols-[160px_1fr_1fr_1fr] gap-0 border-b border-black/[0.06] py-3">
+              <span className="hidden md:flex items-center text-[#0B0B0E]" style={{ fontSize: "var(--fs-body-xsm)" }}>{row.label}</span>
+              {row.values.map((v, i) => (
+                <span key={`${row.label}-${i}`} className="text-[#0B0B0E] text-center px-2 md:border-l border-black/[0.08]" style={{ fontSize: "var(--fs-body-xsm)" }}>
+                  {v}
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-8 rounded-2xl border border-black/[0.07] bg-[#F6F7FB] p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center gap-6 justify-between">
+          <div>
+            <h3 className="font-bold text-[#0B0B0E] mb-1" style={{ fontSize: "var(--fs-h4)" }}>
+              {customPlan.name}
+            </h3>
+            <p className="text-[#6B6B73] mb-3" style={{ fontSize: "var(--fs-label-sm)" }}>
+              {customPlan.tagline}
+            </p>
+            <div className="flex flex-wrap gap-x-6 gap-y-1 text-[#4e4e51]" style={{ fontSize: "var(--fs-body-xsm)" }}>
+              <span>登録プロンプト数：{customPlan.prompts}</span>
+              <span>AIモデル：{customPlan.models}</span>
+              <span>競合登録：20個</span>
+              <span>データ保存期間：1年間</span>
+            </div>
+          </div>
+          <a
+            href="/contact"
+            className="shrink-0 rounded-lg bg-[#0B0B0E] text-white px-6 py-3 text-center font-bold tracking-[0.02em] hover:bg-black/[0.85] transition-colors"
+            style={{ fontSize: "var(--fs-label-sm)" }}
+          >
+            お問い合わせ
+          </a>
         </div>
 
         <div className="mt-6 text-center">
