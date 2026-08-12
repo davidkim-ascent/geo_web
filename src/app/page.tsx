@@ -197,7 +197,7 @@ function ChallengesSection() {
             className="text-white font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
             style={{ fontSize: "var(--fs-section-title)" }}
           >
-            <span style={{ color: "#003393" }}>GEO・LLMO、</span><span style={{ color: "#003393", backgroundImage: "linear-gradient(transparent 55%, #fff176 55%, #fff176 92%, transparent 92%)", paddingBottom: "4px" }}>マーケティングと営業、各々異なる課題。</span>
+            <span style={{ color: "#003393" }}>GEO・LLMO、</span><span style={{ color: "#003393", backgroundImage: "linear-gradient(transparent 55%, #fff176 55%, #fff176 92%, transparent 92%)", paddingBottom: "4px" }}>マーケティングと営業では課題が異なる。</span>
           </h2>
         </div>
 
