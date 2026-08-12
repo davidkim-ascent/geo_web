@@ -116,7 +116,7 @@ export function PricingSection() {
           <div className="mt-5 flex items-center justify-center text-center">
             <p className="text-[#6B6B73]" style={{ fontSize: "var(--fs-label)" }}>
               お支払いは<span className="font-bold" style={{ color: "#003393" }}>Stripe</span>の安全な決済システムを利用しています。<br />
-              カード情報は当社サーバーに保存されず、業界標準の暗号化により保護されますので、安心してご利用いただけます。
+              カード情報は当社サーバーに保存されず、Stripe上で暗号化して管理されます。
             </p>
           </div>
 
