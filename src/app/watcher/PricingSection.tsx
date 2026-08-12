@@ -1,0 +1,315 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+
+const WATCHER_APP_URL = "https://geo-watcher.ascentnet.co.jp";
+const PROMPT_ADDON_MONTHLY_JPY = 5000;
+
+const plans = [
+  {
+    name: "ライトプラン",
+    planKey: "light",
+    monthlyPrice: 29800,
+    annualPrice: 298000,
+    prompts: "20",
+    models: "4つ",
+    projects: "1",
+    featured: false,
+    tagline: "まずは小さく始めたいチームに",
+  },
+  {
+    name: "スタンダードプラン",
+    planKey: "standard",
+    monthlyPrice: 39800,
+    annualPrice: 398000,
+    prompts: "50",
+    models: "6つ",
+    projects: "1",
+    featured: true,
+    tagline: "本格的にGEO対策を進めるチームに",
+  },
+  {
+    name: "アドバンスプラン",
+    planKey: "advanced",
+    monthlyPrice: 79800,
+    annualPrice: 798000,
+    prompts: "100",
+    models: "6つ",
+    projects: "2",
+    featured: false,
+    tagline: "複数ブランド・広範囲を追うチームに",
+  },
+];
+
+const customPlan = {
+  name: "カスタマイズプラン",
+  prompts: "自由選択",
+  models: "アドバンスに準ずる",
+  tagline: "規模に合わせて柔軟に設計",
+};
+
+const ALL_MODELS = [
+  { key: "aio", label: "AI Overviews", logo: "/ai-model-logos/google.svg" },
+  { key: "gemini", label: "Gemini", logo: "/ai-model-logos/gemini.webp" },
+  { key: "aimode", label: "AI Mode", logo: "/ai-model-logos/google.svg" },
+  { key: "chatgpt", label: "ChatGPT", logo: "/ai-model-logos/chatgpt.png" },
+  { key: "perplexity", label: "Perplexity", logo: "/ai-model-logos/perplexity.png" },
+  { key: "copilot", label: "Microsoft Copilot", logo: "/ai-model-logos/copilot.png" },
+  { key: "claude", label: "Claude（オプション）", logo: "/ai-model-logos/claude.png" },
+];
+
+const planModelKeys = [
+  ["aio", "gemini", "chatgpt", "perplexity"],
+  ["aio", "gemini", "aimode", "chatgpt", "perplexity", "copilot"],
+  ["aio", "gemini", "aimode", "chatgpt", "perplexity", "copilot"],
+];
+
+const comparisonRows = [
+  { label: "登録プロンプト数", values: ["20", "50", "100"] },
+  { label: "競合登録", values: ["20個", "20個", "20個"] },
+  { label: "データ保存期間", values: ["1年間", "1年間", "1年間"] },
+  { label: "更新頻度", values: ["毎日", "毎日", "毎日"] },
+  { label: "エクスポート機能", values: ["csv", "csv", "csv"] },
+  { label: "プロジェクト数", values: ["1", "1", "2"] },
+];
+
+export function PricingSection() {
+  const [annual, setAnnual] = useState(false);
+  const [addonEnabled, setAddonEnabled] = useState(false);
+
+  const addonPrice = annual ? PROMPT_ADDON_MONTHLY_JPY * 12 : PROMPT_ADDON_MONTHLY_JPY;
+
+  return (
+    <section id="pricing" className="bg-white pt-12 pb-12">
+      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="mt-12 text-center">
+          <h2
+            className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
+            style={{ fontSize: "var(--fs-section-title)" }}
+          >
+            <span style={{ fontSize: "28px", color: "#7DD3FC" }}>✦</span> 料金プラン <span style={{ fontSize: "28px", color: "#7DD3FC" }}>✦</span>
+          </h2>
+
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-2 gap-y-3">
+            {[
+              "プランを選択",
+              "「このプランで始める」をクリック",
+              "会員登録",
+              "お支払い情報を入力",
+              "利用開始",
+            ].map((step, i, arr) => (
+              <div key={step} className="flex items-center gap-2">
+                <span
+                  className="rounded-full px-4 py-2 font-bold whitespace-nowrap"
+                  style={{ fontSize: "var(--fs-label)", backgroundColor: "#F6F7FB", color: "#003393" }}
+                >
+                  {step}
+                </span>
+                {i < arr.length - 1 && (
+                  <span className="text-[#9A9AA0]" style={{ fontSize: "var(--fs-label)" }}>→</span>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-5 flex items-center justify-center text-center">
+            <p className="text-[#6B6B73]" style={{ fontSize: "var(--fs-label)" }}>
+              お支払いは<span className="font-bold" style={{ color: "#003393" }}>Stripe</span>の安全な決済システムを利用しています。<br />
+              カード情報は当社サーバーに保存されず、業界標準の暗号化により保護されますので、安心してご利用いただけます。
+            </p>
+          </div>
+
+          {/* 月額/年払い切り替え */}
+          <div className="mt-8 inline-flex items-center rounded-full p-1" style={{ backgroundColor: "#F6F7FB" }}>
+            <button
+              type="button"
+              onClick={() => setAnnual(false)}
+              className="rounded-full px-5 py-2 font-bold transition-colors"
+              style={{
+                fontSize: "var(--fs-label)",
+                backgroundColor: !annual ? "#003393" : "transparent",
+                color: !annual ? "#fff" : "#6B6B73",
+              }}
+            >
+              月払い
+            </button>
+            <button
+              type="button"
+              onClick={() => setAnnual(true)}
+              className="rounded-full px-5 py-2 font-bold transition-colors flex items-center gap-1.5"
+              style={{
+                fontSize: "var(--fs-label)",
+                backgroundColor: annual ? "#003393" : "transparent",
+                color: annual ? "#fff" : "#6B6B73",
+              }}
+            >
+              年払い
+              <span
+                className="rounded-full px-2 py-0.5 font-bold"
+                style={{
+                  fontSize: "var(--fs-caption)",
+                  backgroundColor: annual ? "#fff176" : "#fff176",
+                  color: "#0B0B0E",
+                }}
+              >
+                2ヶ月分お得
+              </span>
+            </button>
+          </div>
+
+          {/* プロンプト追加オプション */}
+          <div className="mt-4 flex items-center justify-center">
+            <label
+              className="inline-flex items-center gap-2.5 cursor-pointer rounded-xl px-5 py-3"
+              style={{ border: "1.5px solid #003393", backgroundColor: "#F6F7FB" }}
+            >
+              <input
+                type="checkbox"
+                checked={addonEnabled}
+                onChange={(e) => setAddonEnabled(e.target.checked)}
+                className="h-4 w-4 accent-[#003393]"
+              />
+              <span className="font-bold" style={{ fontSize: "var(--fs-label)", color: "#003393" }}>
+                プロンプト追加オプション：プロンプトを10個まで追加可能です。（+{addonPrice.toLocaleString()}円 / {annual ? "年" : "月"}）
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-[160px_1fr_1fr_1fr] gap-4 items-stretch">
+          <div className="hidden md:block" />
+          {plans.map((p) => {
+            const basePrice = annual ? p.annualPrice : p.monthlyPrice;
+            const totalPrice = basePrice + (addonEnabled ? addonPrice : 0);
+            return (
+              <div
+                key={p.name}
+                className={`relative flex flex-col rounded-2xl p-6 ${
+                  p.featured
+                    ? "bg-[#0B0B0E] border border-[#1452FF]"
+                    : "bg-white border border-black/[0.15]"
+                }`}
+              >
+                {p.featured && (
+                  <span className="absolute -top-3 left-6 rounded-full bg-[#1452FF] px-3 py-1 text-[11px] font-bold tracking-[0.04em] text-white">
+                    おすすめ
+                  </span>
+                )}
+                <h3 className={`font-bold mb-1 ${p.featured ? "text-white" : "text-[#0B0B0E]"}`} style={{ fontSize: "var(--fs-h4)" }}>
+                  {p.name}
+                </h3>
+                <p className={`mb-4 ${p.featured ? "text-white/60" : "text-[#6B6B73]"}`} style={{ fontSize: "var(--fs-label-sm)" }}>
+                  {p.tagline}
+                </p>
+                <p className={`mb-1 ${p.featured ? "text-white" : "text-[#0B0B0E]"}`}>
+                  <span className="font-bold" style={{ fontSize: "clamp(28px, 3.2vw, 36px)" }}>{totalPrice.toLocaleString()}</span>
+                  <span className="font-medium" style={{ fontSize: "var(--fs-label)" }}>円 / {annual ? "年" : "月"}</span>
+                </p>
+                <div className="mb-4" />
+                <ul className={`flex flex-1 flex-col gap-2.5 leading-[1.5] ${p.featured ? "text-white/80" : "text-[#4e4e51]"}`} style={{ fontSize: "var(--fs-label)" }}>
+                  {[
+                    `登録プロンプト数：${p.prompts}${addonEnabled ? "＋10" : ""}`,
+                    "競合登録：20個",
+                    `AIモデル：${p.models}`,
+                    "データ保存期間：1年間",
+                    "更新頻度：毎日",
+                    "エクスポート機能：csv",
+                    `プロジェクト数：${p.projects}`,
+                  ].map((line) => (
+                    <li key={line} className="flex items-start gap-2">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="mt-0.5 shrink-0" stroke={p.featured ? "#7ab6ff" : "#1452FF"} strokeWidth="2">
+                        <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      <span>{line}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={`${WATCHER_APP_URL}/signup?plan=${p.planKey}&annual=${annual}&promptAddonEnabled=${addonEnabled}`}
+                  className="mt-6 block rounded-lg py-2.5 text-center font-bold tracking-[0.02em] text-white transition-colors hover:bg-[#1452FF]/90"
+                  style={{ backgroundColor: "#1452FF", fontSize: "var(--fs-label-sm)" }}
+                >
+                  このプランで始める
+                </a>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="mt-10">
+          <div className="grid grid-cols-1 md:grid-cols-[160px_1fr_1fr_1fr] gap-0 border-b border-black/[0.15] pb-3">
+            <span className="hidden md:flex items-center font-bold text-[#6B6B73]" style={{ fontSize: "var(--fs-body-xsm)" }}>項目</span>
+            {plans.map((p) => (
+              <span key={p.name} className="font-bold text-[#0B0B0E] text-center px-2 md:border-l border-black/[0.15]" style={{ fontSize: "var(--fs-body-xsm)" }}>
+                {p.name}
+              </span>
+            ))}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-[160px_1fr_1fr_1fr] gap-0 border-b border-black/[0.15] py-4">
+            <span className="hidden md:flex items-start pt-1 text-[#0B0B0E]" style={{ fontSize: "var(--fs-body-xsm)" }}>AIモデル</span>
+            {planModelKeys.map((keys, i) => (
+              <div key={i} className="flex flex-col items-center justify-start gap-1.5 px-2 md:border-l border-black/[0.15]">
+                {keys.map((key) => {
+                  const model = ALL_MODELS.find((m) => m.key === key)!;
+                  return (
+                    <div key={key} className="flex items-center gap-1.5">
+                      <Image
+                        src={model.logo}
+                        alt=""
+                        width={16}
+                        height={16}
+                        className="h-4 w-4 shrink-0 rounded-sm object-contain"
+                      />
+                      <span className="text-[#0B0B0E] whitespace-nowrap" style={{ fontSize: "var(--fs-body-xsm)" }}>{model.label}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            ))}
+          </div>
+          {comparisonRows.map((row) => (
+            <div key={row.label} className="grid grid-cols-1 md:grid-cols-[160px_1fr_1fr_1fr] gap-0 border-b border-black/[0.15] py-3">
+              <span className="hidden md:flex items-center text-[#0B0B0E]" style={{ fontSize: "var(--fs-body-xsm)" }}>{row.label}</span>
+              {row.values.map((v, i) => (
+                <span key={`${row.label}-${i}`} className="text-[#0B0B0E] text-center px-2 md:border-l border-black/[0.15]" style={{ fontSize: "var(--fs-body-xsm)" }}>
+                  {v}
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-8 rounded-2xl border border-black/[0.07] bg-[#F6F7FB] p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center gap-6 justify-between">
+          <div>
+            <h3 className="font-bold text-[#0B0B0E] mb-1" style={{ fontSize: "var(--fs-h4)" }}>
+              {customPlan.name}
+            </h3>
+            <p className="text-[#6B6B73] mb-3" style={{ fontSize: "var(--fs-label-sm)" }}>
+              {customPlan.tagline}
+            </p>
+            <div className="flex flex-wrap gap-x-6 gap-y-1 text-[#4e4e51]" style={{ fontSize: "var(--fs-body-xsm)" }}>
+              <span>登録プロンプト数：{customPlan.prompts}</span>
+              <span>AIモデル：{customPlan.models}</span>
+              <span>競合登録：20個</span>
+              <span>データ保存期間：1年間</span>
+            </div>
+          </div>
+          <a
+            href="/contact"
+            className="shrink-0 rounded-lg bg-[#0B0B0E] text-white px-6 py-3 text-center font-bold tracking-[0.02em] hover:bg-black/[0.85] transition-colors"
+            style={{ fontSize: "var(--fs-label-sm)" }}
+          >
+            お問い合わせ
+          </a>
+        </div>
+
+        <div className="mt-6 text-center">
+          <a href="/contact" className="font-mono tracking-[0.18em] text-[#1452FF] hover:underline uppercase" style={{ fontSize: "var(--fs-label-xxs)" }}>
+            料金・プランについて問い合わせる →
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}

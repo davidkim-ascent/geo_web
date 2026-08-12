@@ -1,3 +1,10 @@
+## 2026-08-12 23:50
+- GEO-Watcher 프로젝트에서 Stripe 결제 연동 인계서(16/17/18/19/22번 문서) docs/ 폴더로 복사
+- Watcher 料金プラン을 PricingSection.tsx 클라이언트 컴포넌트로 분리, 月払い/年払い 토글 및 プロンプト追加オプション(+10個) 체크박스 구현
+- 각 플랜 CTA를 https://geo-watcher.ascentnet.co.jp/signup?plan=...&annual=...&promptAddonEnabled=... 로 연동 (GEO-Watcher 인계서의 가입→자동チェックアウト 흐름 준수)
+- 가격/모델 개수를 GEO-Watcher 실제 STRIPE_PLANS 데이터와 일치시킴 (light/standard/advanced 월額29,800/39,800/79,800円, 年額298,000/398,000/798,000円)
+- 料金プラン 상단에 5단계 이용 흐름 안내 및 Stripe 안전결제 안내 문구 추가
+
 ## 2026-08-12 22:40
 - Watcher 料金プラン 섹션 재구성: カスタマイズプラン을 4열 카드/비교표에서 분리, 3개 플랜만 카드+비교표로 유지
 - 비교표를 왼쪽 라벨 열(項目/AIモデル 등) + 3개 플랜 열 구조로 재구성해 위쪽 카드와 세로 정렬이 정확히 일치하도록 개선
