@@ -125,7 +125,7 @@ export function PricingSection() {
             <button
               type="button"
               onClick={() => setAnnual(false)}
-              className="rounded-full px-5 py-2 font-bold transition-colors"
+              className="rounded-full px-5 py-2 font-bold transition-colors flex items-center gap-1.5"
               style={{
                 fontSize: "var(--fs-label)",
                 backgroundColor: !annual ? "#003393" : "transparent",
@@ -133,6 +133,7 @@ export function PricingSection() {
               }}
             >
               月払い
+              <span style={{ fontSize: "var(--fs-label)", opacity: 0.85 }}>（税込）</span>
             </button>
             <button
               type="button"
@@ -145,11 +146,12 @@ export function PricingSection() {
               }}
             >
               年払い
+              <span style={{ fontSize: "var(--fs-label)", opacity: 0.85 }}>（税込）</span>
               <span
                 className="rounded-full px-2 py-0.5 font-bold"
                 style={{
                   fontSize: "var(--fs-caption)",
-                  backgroundColor: annual ? "#fff176" : "#fff176",
+                  backgroundColor: "#fff176",
                   color: "#0B0B0E",
                 }}
               >
