@@ -68,7 +68,7 @@ function HeroSection() {
 
         {/* H1 Title */}
         <h1
-          className="font-bold max-w-[48ch] mt-6"
+          className="font-bold max-w-[48ch] mx-auto"
           style={{ fontSize: "var(--fs-display)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em" }}
         >
           <span style={{ color: "#003393" }}>GEO・LLMO・AIO 対策</span>は<br />

@@ -1,3 +1,7 @@
+## 2026-08-12 16:25
+- h2 전역 사이즈 조정: `--fs-section-title` clamp(30px, 3.2vw, 40px)
+- Watcher 히어로 AI 로고와 h1 간격을 인덱스 페이지와 동일하게 통일 (로고 mb-8, h1 mt 제거)
+
 ## 2026-08-12 16:10
 - 폰트 사이즈 전역 통일: h1 `--fs-display` clamp(36px, 3.4vw, 50px), h2 `--fs-section-title` clamp(32px, 3.2vw, 42px)
 - 각 페이지 h1 인라인 clamp 값을 `--fs-display` 변수로 일괄 교체 (shindan/framework/lab/services/why-ascent/whitepaper/contact/wp-side)
