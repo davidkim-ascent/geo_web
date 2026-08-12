@@ -39,8 +39,8 @@
   --muted-light: #d3d3d8;
   --border: rgba(11, 11, 14, 0.1);
   --border-dark: rgba(255, 255, 255, 0.06);
-  --fs-display: 46px;
-  --fs-section-title: clamp(32px, 3.2vw, 48px);
+  --fs-display: clamp(36px, 3.4vw, 50px);
+  --fs-section-title: clamp(32px, 3.2vw, 42px);
   --fs-h3: 26px;
   --fs-h4: 20px;
   --fs-body: 18px;
@@ -111,6 +111,7 @@ html {
 
 /* Global heading rhythm */
 h1 {
+  font-size: var(--fs-display);
   line-height: var(--lh-display);
 }
 h2 {
@@ -1640,7 +1641,7 @@ span.accent {
   margin-bottom: 20px;
 }
 .wp-side h1 {
-  font-size: clamp(32px, 4.4vw, 56px);
+  font-size: var(--fs-display);
   font-weight: 700; line-height: var(--lh-display);
   letter-spacing: -0.03em;
   color: #fff; margin-bottom: 24px;
@@ -2185,8 +2186,8 @@ span.accent {
 /* ── Contact page ─────────────────────────────────────── */
 .ct-hero {
   position: relative;
-  background: var(--hero-gradient);
-  color: var(--paper);
+  background: linear-gradient(180deg, #e8f4fb 0%, #d4e8f7 50%, #c8dff5 100%);
+  color: #0B0B0E;
   padding: 68px 0;
   min-height: var(--hero-height);
 }
@@ -2242,11 +2243,11 @@ span.accent {
   margin-bottom: 24px;
 }
 .ct-hero-title {
-  font-size: clamp(40px, 4.8vw, 68px);
+  font-size: var(--fs-display);
   font-weight: 700;
   line-height: 1.06;
   letter-spacing: -0.035em;
-  color: var(--paper);
+  color: #0B0B0E;
   margin-bottom: 24px;
 }
 .ct-hero-title em {
@@ -2258,7 +2259,7 @@ span.accent {
 .ct-hero-desc {
   font-size: 17px;
   line-height: 1.65;
-  color: rgba(255,255,255,0.65);
+  color: #4e4e51;
   max-width: 48ch;
   margin-bottom: 36px;
 }

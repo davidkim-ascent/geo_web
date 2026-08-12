@@ -168,7 +168,7 @@ export default async function WhyAscentPage() {
               </div>
               <h1
                 className="max-w-[13ch] font-bold text-white"
-                style={{ fontSize: "clamp(44px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em", wordBreak: "keep-all" }}
+                style={{ fontSize: "var(--fs-display)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em", wordBreak: "keep-all" }}
               >
                 <span className="block">GEO(LLMO)は、</span>
                 <span className="block">

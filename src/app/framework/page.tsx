@@ -292,7 +292,7 @@ function FrameworkHero() {
             <span className="h-2 w-2 rounded-full bg-[#1452FF]" />
             GEO(LLMO) FRAMEWORK
           </div>
-          <h1 className="font-bold text-[#FAFAF7]" style={{ fontSize: "clamp(32px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em" }}>
+          <h1 className="font-bold text-[#FAFAF7]" style={{ fontSize: "var(--fs-display)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em" }}>
             質問から最適化までが
             <br />
             <span className="text-[#6fa0ff]">一貫した設計</span>

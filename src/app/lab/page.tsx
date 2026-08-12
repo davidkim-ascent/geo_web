@@ -98,7 +98,7 @@ export default function LabPage() {
               </div>
               <h1
                 className="font-bold text-[#0B0B0E]"
-                style={{ fontSize: "clamp(44px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em", wordBreak: "keep-all" }}
+                style={{ fontSize: "var(--fs-display)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em", wordBreak: "keep-all" }}
               >
                 <span className="block">AI 検索時代の、</span>
                 <span className="block text-[#003393]">リサーチハブ。</span>

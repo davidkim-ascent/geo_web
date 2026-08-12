@@ -43,7 +43,7 @@ function HeroSection() {
           </div>
           <h1
             className="text-[#FAFAF7] font-bold"
-            style={{ fontSize: "clamp(32px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em" }}
+            style={{ fontSize: "var(--fs-display)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em" }}
           >
             自社のAI検索上の<br />
             現在地を、<span className="text-blue-gradient">診断</span>する。

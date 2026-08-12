@@ -442,7 +442,7 @@ export default function ServicesPage() {
               </div>
               <h1
                 className="font-bold text-white"
-                style={{ fontSize: "clamp(44px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em", wordBreak: "keep-all" }}
+                style={{ fontSize: "var(--fs-display)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em", wordBreak: "keep-all" }}
               >
                 <span className="block">データ基盤の、</span>
                 <span className="block text-[#1452FF]">フルスペック GEO(LLMO)</span>

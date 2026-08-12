@@ -35,7 +35,7 @@ const FAQS = [
   },
   {
     q: "対象となる AI 検索エンジンは？",
-    a: "ChatGPT・Perplexity・Google AI Overviews・Gemini を標準対象とします。Claude・Copilot はオプションで対応可能です。",
+    a: "ChatGPT・Perplexity・Google AI Overviews・Google AI Mode・Gemini・Copilotを標準対象とします。Claude はオプションで対応可能です。",
   },
   {
     q: "効果はどう計測しますか？",
@@ -47,7 +47,11 @@ const FAQS = [
   },
   {
     q: "相談から契約までの流れを教えてください。",
-    a: "無料相談申し込み後、オンラインにて1時間程度の現状ヒアリングを実施します。ヒアリングMTG実施日より2営業日以内にお見積もりをメールにてお送りし、内容をご確認いただいた上でご契約（約1日）となります。まずはお気軽に無料相談からお申し込みください。",
+    a: "無料相談申し込み後、オンラインにて1時間程度の現状ヒアリングを実施します。各ツールの使用は、オンラインで即決済後、即座にご利用が可能です。銀行振込やカスタム要件がある場合は、別途ご案内させていただきます。",
+  },
+  {
+    q: "デモ利用は可能ですか？",
+    a: "GEO Watcher、GEO診断レポート各ページで、ソリューションの詳細機能をご確認いただけます。デモが必要な場合は、別途お問い合わせフォームからご連絡ください。対応させていただきます。",
   },
 ];
 
@@ -90,45 +94,32 @@ export default function ContactPage() {
               始めましょう。
             </h1>
             <p className="ct-hero-desc">
-              AI 検索における現在の露出状況を診断し、Brand VisibilityやBrand Positionなど具体的な数値。また改善余地をご共有します。所要 30 分のオンライン MTG から。
+              自社ブランドの変化を継続的に捉えるなら、GEO Watcher。見込み顧客への提案を具体化するなら、GEO診断レポート。<br /><br />
+              診断する。変化を追う。課題を次の改善へつなげる。目的に合った方法で、GEO・LLMO対策を始めましょう。
             </p>
 
             {/* Channel cards */}
-            <div className="ct-hero-channels">
-              <a href={getCalendarBookingHref()} className="ct-channel-card" {...getCalendarBookingLinkProps()}>
-                <div className="ct-channel-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <rect x="3" y="4" width="18" height="18" rx="2"/>
-                    <line x1="16" y1="2" x2="16" y2="6"/>
-                    <line x1="8" y1="2" x2="8" y2="6"/>
-                    <line x1="3" y1="10" x2="21" y2="10"/>
-                  </svg>
-                </div>
-                <div className="ct-channel-body">
-                  <div className="ct-channel-title">無料相談予約（Googleカレンダー）</div>
-                  <div className="ct-channel-desc">30 分の無料相談 · Google Meet</div>
-                </div>
-                <span className="ct-channel-arrow">→</span>
+            <div className="flex flex-col gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link href="/shindan" className="flex-1 px-6 h-[52px] rounded-full bg-[#003393] text-white font-bold flex items-center justify-center hover:bg-[#0f3de0] text-center" style={{ fontSize: "var(--fs-body-xsm)" }}>
+                  GEO診断レポートを見る →
+                </Link>
+                <Link href="/watcher" className="flex-1 px-6 h-[52px] rounded-full bg-[#003393] text-white font-bold flex items-center justify-center hover:bg-[#0f3de0] text-center" style={{ fontSize: "var(--fs-body-xsm)" }}>
+                  GEO Watcherを見る →
+                </Link>
+              </div>
+              <a href={getCalendarBookingHref()} className="px-6 h-[52px] rounded-full border-2 border-[#003393] text-[#003393] font-bold flex items-center justify-center gap-2 hover:bg-[#003393] hover:text-white text-center" {...getCalendarBookingLinkProps()} style={{ fontSize: "var(--fs-body-xsm)" }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <rect x="3" y="4" width="18" height="18" rx="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/>
+                  <line x1="8" y1="2" x2="8" y2="6"/>
+                  <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+                無料相談予約（Googleカレンダー）
               </a>
-
-              <Link href="/whitepaper" className="ct-channel-card">
-                <div className="ct-channel-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                    <polyline points="14 2 14 8 20 8"/>
-                    <line x1="12" y1="18" x2="12" y2="12"/>
-                    <line x1="9" y1="15" x2="15" y2="15"/>
-                  </svg>
-                </div>
-                <div className="ct-channel-body">
-                  <div className="ct-channel-title">サービス資料をダウンロード</div>
-                  <div className="ct-channel-desc">GEO フレームワーク解説 PDF · 無料</div>
-                </div>
-                <span className="ct-channel-arrow">→</span>
-              </Link>
-
-              <HeroLogoMark />
             </div>
+
+            <HeroLogoMark />
           </div>
 
           {/* Right — Contact Form */}

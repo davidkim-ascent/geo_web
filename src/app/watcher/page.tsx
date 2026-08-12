@@ -32,7 +32,7 @@ function SectionLabel({ title, dark = false }: { title: string; dark?: boolean }
 
 function HeroSection() {
   return (
-    <section className="relative bg-white py-12 lg:py-12 border-b border-black/[0.06]">
+    <section className="relative bg-white py-12 pb-0">
       <div className="relative max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 w-full flex flex-col items-center text-center">
         {/* Label */}
         <div className="mb-8 border border-[#003393] rounded-full px-6 py-2 inline-block">
@@ -66,104 +66,96 @@ function HeroSection() {
           )}
         </div>
 
-        {/* H3 Title */}
-        <h3
-          className="text-[#0B0B0E] font-semibold max-w-[48ch] mt-4"
-          style={{ fontSize: "var(--fs-h3)", lineHeight: "1.6", letterSpacing: "-0.035em" }}
-        >
-          GEO・LLMOモニタリングツール GEO Watcher -<br />
-          主要AIでの自社・競合の動向を、毎日モニタリング。
-        </h3>
-
         {/* H1 Title */}
         <h1
-          className="text-[#0B0B0E] font-bold max-w-[48ch] mt-6"
+          className="font-bold max-w-[48ch] mt-6"
           style={{ fontSize: "var(--fs-display)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em" }}
         >
-          GEO・LLMO対策は、月額コンサルなしで、これひとつ。
+          <span style={{ color: "#003393" }}>GEO・LLMO・AIO 対策</span>は<br />
+          <span style={{ backgroundImage: "linear-gradient(transparent 55%, #fff176 55%, #fff176 92%, transparent 92%)", paddingBottom: "4px" }}>月額コンサルなしで、</span>これひとつ。
         </h1>
 
         {/* Subcopy Section */}
-        <div className="mt-6 max-w-[800px]">
-          <p className="text-[#0B0B0E] leading-[1.8] mb-5 font-medium" style={{ fontSize: "var(--fs-body-xsm)" }}>
+        <div className="mt-6 max-w-[900px] mb-8">
+          <p className="text-[#0B0B0E] leading-[1.8] mb-0 font-medium" style={{ fontSize: "var(--fs-body)" }}>
             GEO Watcherは、AIにおける自社・競合の言及、引用、露出の変化を毎日計測するGEO・LLMO対策のモニタリングツールです。AIごとの比較から施策後の効果確認まで、GEO・LLMO対策に必要なデータをひとつの画面に集約。料金体系は3つのプランを用意。プロの専門支援が必要な時だけ、月額縛りのない「スポットサポート」を利用できます。
           </p>
-
-          {/* Features */}
-          <div className="flex flex-wrap gap-2 justify-center text-[#003393] font-medium" style={{ fontSize: "var(--fs-label)" }}>
-            <span>主要７AIに対応</span>
-            <span className="text-[#ccc]">｜</span>
-            <span>毎日計測</span>
-            <span className="text-[#ccc]">｜</span>
-            <span>競合20社まで比較</span>
-            <span className="text-[#ccc]">｜</span>
-            <span>データ1年保存</span>
-          </div>
-
         </div>
 
-        {/* Navigation Anchors */}
-        <div className="mt-16 flex justify-center text-[#003393] font-medium" style={{ fontSize: "var(--fs-body-sm)" }}>
-          <div className="flex gap-3 flex-wrap justify-center">
-            <a href="#features" className="hover:text-[#0f3de0] transition-colors">主要機能</a>
-            <span className="text-[#ccc]">/</span>
-            <a href="#reasons" className="hover:text-[#0f3de0] transition-colors">選ばれる理由</a>
-            <span className="text-[#ccc]">/</span>
-            <a href="#pricing" className="hover:text-[#0f3de0] transition-colors">料金プラン</a>
-            <span className="text-[#ccc]">/</span>
-            <a href="#support" className="hover:text-[#0f3de0] transition-colors">スポットサポート</a>
-            <span className="text-[#ccc]">/</span>
-            <a href="#testimonials" className="hover:text-[#0f3de0] transition-colors">顧客の声</a>
-            <span className="text-[#ccc]">/</span>
-            <a href="#faq" className="hover:text-[#0f3de0] transition-colors">FAQ</a>
-            <span className="text-[#ccc]">/</span>
-            <a href="#contact" className="hover:text-[#0f3de0] transition-colors">問い合わせる</a>
-          </div>
+      </div>
+    </section>
+  );
+}
+
+function NavigationSection() {
+  const items = [
+    { label: "FEATURES", ja: "主要機能", href: "#features" },
+    { label: "PRICING", ja: "料金プラン", href: "#pricing" },
+    { label: "SPOT SUPPORT", ja: "スポットサポート", href: "#support" },
+    { label: "VOICE", ja: "顧客の声", href: "#testimonials" },
+    { label: "FAQ", ja: "FAQ", href: "#faq" },
+  ];
+
+  return (
+    <section className="bg-white py-0 border-t border-b border-black/[0.06]">
+      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="flex flex-wrap justify-center">
+          {items.map((item, idx) => (
+            <div key={item.href} className="flex items-center">
+              <a
+                href={item.href}
+                className="px-4 sm:px-6 py-4 text-center hover:opacity-80 transition-opacity"
+                style={{ minWidth: "140px" }}
+              >
+                <div className="text-[11px] font-bold tracking-widest uppercase mb-1" style={{ color: "#003393" }}>{item.label}</div>
+                <div style={{ fontSize: "var(--fs-body)", fontWeight: "600", color: "#003393" }}>{item.ja}</div>
+                <div className="text-[10px] mt-1" style={{ color: "#003393" }}>•</div>
+              </a>
+              {idx < items.length - 1 && (
+                <div style={{ width: "1px", height: "60px", backgroundColor: "#003393", margin: "0 0" }} />
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-function ProblemSection() {
-  const items = [
-    {
-      title: "激変する検索行動：「ググる」から「AIに聞く」時代へ",
-      body: "ユーザーの情報収集は、従来の検索結果一覧を見る行動から、生成AIに直接質問する行動へと変化しています。これからのマーケティングでは、検索順位だけでなく、AIの回答内で自社がどのように扱われているかを把握することが重要です。",
-    },
-    {
-      title: "AI回答での自社・競合の変化を追えていますか？",
-      body: "AIの回答に自社ブランドはどれくらい言及されているのか。競合と比べて、露出・引用・推奨の状況はどのように変化しているのか。変化を継続的に追えなければ、GEO/LLMO施策の成果や改善ポイントを正しく判断できません。",
-    },
-    {
-      title: "必要なのは、AI検索上の変化を追い続ける仕組みです。",
-      body: "AI検索上でのブランド評価や露出状況は、常に変化しています。一度の確認だけでは、施策による変化や競合との差を正しく把握することはできません。重要なのは、AI検索上での露出・言及・引用の推移を継続的に観測し、変化を追い続けることです。",
-    },
-  ];
+type Step = { number: string; title: string; description: string; detail: string };
 
+function StepCard({ step }: { step: Step }) {
   return (
-    <section className="bg-[#FAFAF7] pt-24 pb-12">
-      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <SectionLabel title="課題" />
-        <hr className="my-4 border-black/[0.07]" />
-        <div className="mt-12">
-          <h2
-            className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
-            style={{ fontSize: "var(--fs-section-title)" }}
-          >
-            AI検索で、自社は選ばれ続けていますか？
-          </h2>
+    <div className="flex-1 bg-white rounded-2xl px-5 py-4" style={{ border: "1px solid #4472C4", boxShadow: "0 4px 20px rgba(0,0,0,0.06)" }}>
+      <div className="flex items-center gap-2.5 mb-3">
+        <div className="w-7 h-7 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0" style={{ backgroundColor: "#0B2A6B", fontSize: "14px" }}>
+          {step.number}
         </div>
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
-          {items.map((item) => (
-            <div key={item.title} className="bg-white border border-black/[0.07] rounded-2xl p-7">
-              <h3 className="font-bold text-[#0B0B0E] mb-3 leading-snug" style={{ fontSize: "var(--fs-h3)" }}>{item.title}</h3>
-              <p className="text-[#4e4e51] leading-[1.6]" style={{ fontSize: "var(--fs-body-xsm)" }}>{item.body}</p>
-            </div>
-          ))}
-        </div>
+        <h3 className="font-bold text-[#0B0B0E]" style={{ fontSize: "24px", letterSpacing: "-0.02em" }}>{step.title}</h3>
       </div>
-    </section>
+      <p className="font-bold text-[#0B0B0E] mb-2.5" style={{ fontSize: "var(--fs-body-sm)" }}>{step.description}</p>
+      <p className="text-[#4e4e51] leading-[1.75]" style={{ fontSize: "var(--fs-body-sm)" }}>{step.detail}</p>
+    </div>
+  );
+}
+
+function ArrowH({ direction = "right" }: { direction?: "right" | "left" }) {
+  return (
+    <div className="flex items-center justify-center flex-shrink-0" style={{ width: "72px" }}>
+      <svg width="60" height="16" viewBox="0 0 60 16" style={{ transform: direction === "left" ? "scaleX(-1)" : undefined }}>
+        <line x1="0" y1="8" x2="48" y2="8" stroke="#4472C4" strokeWidth="2.5" />
+        <polygon points="48,2 60,8 48,14" fill="#4472C4" />
+      </svg>
+    </div>
+  );
+}
+
+function ArrowV({ direction = "down" }: { direction?: "down" | "up" }) {
+  return (
+    <svg width="16" height="76" viewBox="0 0 16 76" style={{ transform: direction === "up" ? "scaleY(-1)" : undefined }}>
+      <line x1="8" y1="0" x2="8" y2="64" stroke="#4472C4" strokeWidth="2.5" />
+      <polygon points="2,64 14,64 8,76" fill="#4472C4" />
+    </svg>
   );
 }
 
@@ -202,32 +194,63 @@ function StepsSection() {
   ];
 
   return (
-    <section className="bg-[#FAFAF7] pt-24 pb-12">
+    <section className="pt-24 pb-24" style={{ background: "linear-gradient(180deg, #e8f4fb 0%, #d4e8f7 50%, #c8dff5 100%)" }}>
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <h2
             className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em] mb-4"
             style={{ fontSize: "var(--fs-section-title)" }}
           >
             測り、知り、設計し、直し、確かめる。<br />
-            GEO・LLMO対策を、自社で回せる環境へ。
+            <span style={{ color: "#003393" }}>GEO・LLMO対策を、自社で回せる環境へ。</span>
           </h2>
-          <p className="text-[17px] text-[#4e4e51] leading-[1.6] max-w-[72ch] mx-auto">
+          <p className="text-[17px] text-[#4e4e51] leading-[1.6] max-w-[900px] mx-auto">
             GEO Watcherは、AI検索上の露出状況を確認するだけのツールではありません。自社・競合の現在地を把握し、改善点を見つけ、施策後の変化を確かめます。GEO・LLMO対策に必要な一連の流れを、自社で継続的に回せます。日々の計測と分析はツールで進め、専門的な判断に迷ったときだけ、スポットサポートを利用できます。
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+        {/* Cycle Layout */}
+        <div className="hidden lg:block w-full max-w-[1320px] mx-auto">
+          {/* 上段: 5 → 1 → 2 */}
+          <div className="flex items-stretch">
+            <StepCard step={steps[4]} />
+            <ArrowH />
+            <StepCard step={steps[0]} />
+            <ArrowH />
+            <StepCard step={steps[1]} />
+          </div>
+
+          {/* 中段: 縦矢印 (左: 4→5 上向き / 右: 2→3 下向き) */}
+          <div className="flex items-center" style={{ height: "90px" }}>
+            <div style={{ flex: "1 1 0" }} className="flex justify-center">
+              <ArrowV direction="up" />
+            </div>
+            <div style={{ flex: "1 1 0" }} />
+            <div style={{ flex: "1 1 0" }} className="flex justify-center">
+              <ArrowV direction="down" />
+            </div>
+          </div>
+
+          {/* 下段: 4 ← 3 (上段の左右端カード中心に合わせる) */}
+          <div className="flex items-stretch" style={{ paddingLeft: "8%", paddingRight: "8%" }}>
+            <StepCard step={steps[3]} />
+            <ArrowH direction="left" />
+            <StepCard step={steps[2]} />
+          </div>
+        </div>
+
+        {/* Mobile fallback: simple stacked list */}
+        <div className="flex flex-col gap-6 lg:hidden">
           {steps.map((step, index) => (
-            <div key={index} className="flex flex-col">
-              <div className="mb-4">
-                <div className="w-12 h-12 rounded-full bg-[#003393] text-white flex items-center justify-center text-[20px] font-bold">
+            <div key={index} className="bg-white rounded-2xl border border-black/[0.08] p-6">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-7 h-7 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0" style={{ backgroundColor: "#0B2A6B", fontSize: "14px" }}>
                   {step.number}
                 </div>
+                <h3 className="font-bold text-[#0B0B0E]" style={{ fontSize: "22px" }}>{step.title}</h3>
               </div>
-              <h3 className="font-bold text-[#0B0B0E] mb-2" style={{ fontSize: "clamp(18px, 2.2vw, 24px)" }}>{step.title}</h3>
-              <p className="text-[#4e4e51] font-bold mb-3" style={{ fontSize: "var(--fs-label)" }}>{step.description}</p>
-              <p className="text-[#4e4e51] leading-[1.6]" style={{ fontSize: "var(--fs-label)" }}>{step.detail}</p>
+              <p className="font-bold text-[#0B0B0E] mb-2" style={{ fontSize: "var(--fs-body-sm)" }}>{step.description}</p>
+              <p className="text-[#4e4e51] leading-[1.6]" style={{ fontSize: "var(--fs-body-sm)" }}>{step.detail}</p>
             </div>
           ))}
         </div>
@@ -240,8 +263,6 @@ function AnswerSection() {
   return (
     <section className="bg-white pt-12 pb-12">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <SectionLabel title="課題に対するアンサー" />
-        <hr className="my-4 border-black/[0.07]" />
         <div className="mt-12">
           <h2
             className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
@@ -280,10 +301,8 @@ function FeaturesSection() {
   ];
 
   return (
-    <section className="bg-[#FAFAF7] pt-12 pb-12">
+    <section className="bg-white pt-12 pb-12">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <SectionLabel title="操作画面・主要機能" />
-        <hr className="my-4 border-black/[0.07]" />
         <div className="mt-12">
           <h2
             className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
@@ -327,8 +346,6 @@ function ReasonsSection() {
   return (
     <section className="bg-white pt-12 pb-12">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <SectionLabel title="選ばれる理由" />
-        <hr className="my-4 border-black/[0.07]" />
         <div className="mt-12">
           <h2
             className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
@@ -352,10 +369,8 @@ function ReasonsSection() {
 
 function TestimonialsSection() {
   return (
-    <section className="bg-[#FAFAF7] py-12 lg:py-16">
+    <section className="bg-white py-12 lg:py-16">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <SectionLabel title="顧客の声" />
-        <hr className="my-4 border-black/[0.07]" />
         <div className="mt-12 grid grid-cols-1 gap-6">
           {[
             {
@@ -486,8 +501,6 @@ function PricingSection() {
   return (
     <section id="pricing" className="bg-white pt-12 pb-12">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <SectionLabel title="料金プラン" />
-        <hr className="my-4 border-black/[0.07]" />
         <div className="mt-12">
           <h2
             className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
@@ -682,7 +695,7 @@ export default function WatcherPage() {
   return (
     <div>
       <HeroSection />
-      <ProblemSection />
+      <NavigationSection />
       <StepsSection />
       <AnswerSection />
       <FeaturesSection />

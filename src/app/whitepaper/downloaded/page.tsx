@@ -79,7 +79,7 @@ export default async function WhitepaperDownloadedPage() {
         {/* Title */}
         <h1
           className="mb-7 font-bold tracking-[-0.035em] leading-[1.06]"
-          style={{ fontSize: "clamp(38px, 5.4vw, 72px)", maxWidth: "18ch" }}
+          style={{ fontSize: "var(--fs-display)", maxWidth: "18ch" }}
         >
           メールボックスを
           <br />
