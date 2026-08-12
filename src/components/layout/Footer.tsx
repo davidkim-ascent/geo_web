@@ -43,8 +43,8 @@ export default function Footer() {
             <ul className="flex flex-col gap-3">
               {[
                 { label: "Home", href: "/" },
-                { label: "モニタリングツール", href: "/watcher" },
-                { label: "診断ツール", href: "/shindan" },
+                { label: "AI対策ツール", href: "/watcher" },
+                { label: "GEO・LLMO診断ツール", href: "/shindan" },
                 { label: "GEO Lab", href: "/lab" },
               ].map((item) => (
                 <li key={item.label}>

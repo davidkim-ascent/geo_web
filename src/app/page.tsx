@@ -197,7 +197,7 @@ function ChallengesSection() {
             className="text-white font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
             style={{ fontSize: "var(--fs-section-title)" }}
           >
-            <span style={{ color: "white" }}>目的によって異なる、</span><span style={{ color: "#003393" }}>GEO・LLMO対策の課題。</span>
+            <span style={{ color: "#003393" }}>GEO・LLMO、</span><span style={{ color: "#003393", backgroundImage: "linear-gradient(transparent 55%, #fff176 55%, #fff176 92%, transparent 92%)", paddingBottom: "4px" }}>マーケティングと営業、各々異なる課題。</span>
           </h2>
         </div>
 
@@ -280,7 +280,7 @@ function SolutionsSection() {
             className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
             style={{ fontSize: "var(--fs-section-title)" }}
           >
-            目的別の課題を、<span className="text-[#0B0B0E] not-italic" style={{ backgroundImage: "linear-gradient(120deg, #d4e8f7 0%, #d4e8f7 100%)", backgroundPosition: "0 80%", backgroundRepeat: "repeat-x", backgroundSize: "100% 40%", paddingBottom: "4px" }}>2つのソリューション</span>で解決。
+課題に合わせて選べる、<span className="text-[#0B0B0E] not-italic" style={{ backgroundImage: "linear-gradient(120deg, #d4e8f7 0%, #d4e8f7 100%)", backgroundPosition: "0 80%", backgroundRepeat: "repeat-x", backgroundSize: "100% 40%", paddingBottom: "4px" }}>2つのソリューション</span>。
           </h2>
         </div>
 

@@ -1,0 +1,31 @@
+<svg width="168" height="116" viewBox="0 0 168 116" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer border -->
+  <rect x="2" y="2" width="164" height="112" fill="none" stroke="#333" stroke-width="2"/>
+
+  <!-- Top section - Red -->
+  <rect x="2" y="2" width="126" height="38" fill="#E63946"/>
+
+  <!-- RED text -->
+  <text x="68" y="35" font-size="36" font-weight="bold" text-anchor="middle" fill="white" font-family="Arial, sans-serif" letter-spacing="2">RED</text>
+
+  <!-- Middle section - Black -->
+  <rect x="2" y="40" width="126" height="28" fill="#1a1a1a"/>
+
+  <!-- HERRING text -->
+  <text x="68" y="63" font-size="16" font-weight="bold" text-anchor="middle" fill="#888" font-family="Arial, sans-serif" letter-spacing="2">HERRING</text>
+
+  <!-- Bottom section - White -->
+  <rect x="2" y="68" width="126" height="46" fill="white"/>
+
+  <!-- 100 text -->
+  <text x="68" y="92" font-size="28" font-weight="bold" text-anchor="middle" fill="black" font-family="Arial, sans-serif">100</text>
+
+  <!-- WINNER text -->
+  <text x="68" y="110" font-size="12" font-weight="bold" text-anchor="middle" fill="black" font-family="Arial, sans-serif" letter-spacing="1">WINNER</text>
+
+  <!-- Right section - Gold/Yellow -->
+  <rect x="128" y="2" width="38" height="112" fill="#FFB81C"/>
+
+  <!-- GLOBAL text vertical -->
+  <text x="147" y="28" font-size="11" font-weight="bold" text-anchor="middle" fill="black" font-family="Arial, sans-serif" letter-spacing="2" transform="rotate(-90 147 50)">GLOBAL</text>
+</svg>

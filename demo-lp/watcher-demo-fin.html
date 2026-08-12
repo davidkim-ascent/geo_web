@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" as="style" crossorigin="" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-jp-dynamic-subset.css">
+  <style>
+    body { margin:0; font-family:'Pretendard JP','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif; -webkit-font-smoothing:antialiased; }
+    a { color:#3D5CFF; text-decoration:none; }
+    a:hover { color:#2A44D6; }
+    input, select { font-family:inherit; }
+    ::placeholder { color:#9AA3B5; }
+  </style>
+  <script src="./image-slot.js"></script>
+  <script type="text/babel" src="./browser-window.jsx"></script>
+</helmet>
+
+<div data-screen-label="GEOウォッチャー LP" style="width:100%;background:#FFFFFF;color:#151B2B;line-height:1.8;">
+
+
+  <!-- HEADER -->
+  <header style="position:sticky;top:0;z-index:50;background:#0A0E1A;border-bottom:1px solid rgba(255,255,255,0.08);">
+    <div style="max-width:1160px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <a href="./GEO index LP.dc.html" style="font-size:18px;font-weight:900;color:#fff;letter-spacing:0.01em;">ASCENT<span style="color:#3D5CFF;">GEO</span></a>
+      </div>
+      <div style="display:flex;align-items:center;gap:30px;">
+        <a href="#features" style="color:#3D5CFF;font-size:13.5px;font-weight:600;">モニタリングツール</a>
+        <a href="./GEO診断ツール LP.dc.html" style="color:#B9C1D9;font-size:13.5px;font-weight:600;">診断レポートツール</a>
+        <a href="./GEO診断ツール LP.dc.html" style="color:#B9C1D9;font-size:13.5px;font-weight:600;">GEO LAB</a>
+        <a href="#contact-form" style="background:#fff;color:#0A0E1A;padding:9px 20px;border-radius:999px;font-size:13px;font-weight:700;white-space:nowrap;">お問い合わせ →</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. FIRST VIEW -->
+  <section style="background:radial-gradient(circle at 12% 15%, #131A30 0%, #0A0E1A 55%, #05070E 100%);padding:88px 32px 96px;">
+    <div style="max-width:1160px;margin:0 auto;display:flex;gap:56px;flex-wrap:wrap;align-items:flex-start;">
+      <div style="flex:1 1 480px;min-width:320px;color:#fff;">
+        <div style="display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:#fff;letter-spacing:0.06em;margin-bottom:22px;">
+          <span style="width:6px;height:6px;border-radius:50%;background:#3D5CFF;display:inline-block;"></span>
+          企業のマーケティング・ブランド担当者向け
+        </div>
+        <h1 style="font-size:14px;font-weight:900;line-height:1.55;margin:0 0 24px;letter-spacing:0.01em;">主要AIでの自社・競合の動向を、毎日モニタリング。<br><span style="font-size:32px;">GEO・LLMO対策は、月額コンサルなしで、これひとつ。</span></h1>
+        <p style="font-size:15.5px;color:#fff;margin:0 0 28px;max-width:540px;">GEO Watcherは、主要AIにおける自社・競合の言及、引用、露出の変化を毎日計測するGEO・LLMO対策のモニタリングツールです。AIごとの比較から施策後の効果確認まで、GEO・LLMO対策に必要なデータをひとつの画面に集約。料金体系は3つのプランを用意。プロの専門支援が必要な時だけ、月額縛りのない「スポットサポート」を利用できます。</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px 20px;margin-bottom:8px;">
+          <span style="font-size:13px;color:#B9C1D9;">主要7AIに対応</span>
+          <span style="color:#3D5CFF;">/</span>
+          <span style="font-size:13px;color:#B9C1D9;">毎日計測</span>
+          <span style="color:#3D5CFF;">/</span>
+          <span style="font-size:13px;color:#B9C1D9;">競合20社まで比較</span>
+          <span style="color:#3D5CFF;">/</span>
+          <span style="font-size:13px;color:#B9C1D9;">データ1年保存</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:22px;margin-top:28px;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div style="background:#fff;border-radius:8px;padding:5px;width:26px;height:26px;display:flex;align-items:center;justify-content:center;"><img src="uploads/7576880.webp" alt="ChatGPT" style="height:100%;width:100%;object-fit:contain;"></div>
+            <span style="font-size:11px;color:#fff;">ChatGPT</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <img src="uploads/Google_Gemini_icon_2025.svg.webp" alt="Gemini" style="height:26px;width:26px;object-fit:contain;">
+            <span style="font-size:11px;color:#fff;">Gemini</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <img src="uploads/google-logo.png" alt="AI Overviews" style="height:26px;width:26px;object-fit:contain;">
+            <span style="font-size:11px;color:#fff;">AI Overviews</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <img src="uploads/google-logo.png" alt="Google AIモード" style="height:26px;width:26px;object-fit:contain;">
+            <span style="font-size:11px;color:#fff;">Google AIモード</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <img src="uploads/perplexityai.png" alt="Perplexity" style="height:26px;width:26px;object-fit:contain;">
+            <span style="font-size:11px;color:#fff;">Perplexity</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <img src="uploads/s-1024x1024_v-fs_webp_f811b6fc-ab68-4abd-8dfb-1739a852f810.webp" alt="Microsoft Copilot" style="height:26px;width:26px;object-fit:contain;">
+            <span style="font-size:11px;color:#fff;">Copilot</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;margin-top:40px;">
+          <a href="#pricing" style="background:#3D5CFF;color:#fff;padding:13px 28px;border-radius:8px;font-size:14.5px;font-weight:700;white-space:nowrap;">料金を見る →</a>
+          <a href="#features" style="background:transparent;border:1px solid rgba(255,255,255,0.25);color:#fff;padding:13px 28px;border-radius:8px;font-size:14.5px;font-weight:700;">機能紹介</a>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:32px;">
+          <image-slot id="jma-logo" shape="rect" placeholder="JMAロゴ" style="width:56px;height:56px;background:#fff;border-radius:8px;"></image-slot>
+          <span style="font-size:12px;color:#B9C1D9;">日本マーケティング協会（JMA）会員</span>
+        </div>
+      </div>
+
+      <div id="contact-form" style="flex:1 1 380px;min-width:320px;max-width:420px;background:#11162A;border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:32px 28px;box-shadow:0 30px 80px -30px rgba(0,0,0,0.6);scroll-margin-top:100px;">
+        <h2 style="font-size:19px;font-weight:700;color:#fff;margin:0 0 4px;">GEO Watcherについて問い合わせる</h2>
+        <p style="font-size:13px;color:#7C8AAE;margin:0 0 22px;">下記フォームよりお気軽にご連絡ください。</p>
+        <sc-if value="{{ formNotSubmitted }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ handleSubmit }}" style="display:flex;flex-direction:column;gap:14px;">
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;color:#C7CEE3;">会社名
+              <input type="text" placeholder="株式会社◯◯◯◯" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.14);border-radius:8px;padding:11px 12px;font-size:14px;color:#fff;outline:none;">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;color:#C7CEE3;">お名前
+              <input type="text" placeholder="山田 太郎" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.14);border-radius:8px;padding:11px 12px;font-size:14px;color:#fff;outline:none;">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;color:#C7CEE3;">電話番号
+              <input type="tel" placeholder="03-0000-0000" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.14);border-radius:8px;padding:11px 12px;font-size:14px;color:#fff;outline:none;">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;color:#C7CEE3;">メールアドレス
+              <input type="email" placeholder="name@company.co.jp" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.14);border-radius:8px;padding:11px 12px;font-size:14px;color:#fff;outline:none;">
+            </label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;color:#C7CEE3;">お問い合わせ種別
+              <select style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.14);border-radius:8px;padding:11px 12px;font-size:14px;color:#fff;outline:none;">
+                <option value="" style="color:#000;">選択してください</option>
+                <option value="demo" style="color:#000;">デモ</option>
+                <option value="custom" style="color:#000;">カスタムプランに関する相談</option>
+                <option value="spot" style="color:#000;">スポットサポート</option>
+              </select>
+            </label>
+            <label style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:#7C8AAE;margin-top:4px;">
+              <input type="checkbox" style="margin-top:3px;">
+              <span><a href="#privacy" style="color:#7B93FF;">プライバシーポリシー</a>に同意する</span>
+            </label>
+            <button type="submit" style="margin-top:8px;background:#3D5CFF;color:#fff;border:none;padding:14px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;">送信</button>
+          </form>
+        </sc-if>
+        <sc-if value="{{ formSubmitted }}" hint-placeholder-val="{{ false }}">
+          <div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:24px 20px;text-align:center;">
+            <p style="font-size:14px;color:#C7CEE3;margin:0;line-height:1.9;">お問い合わせありがとうございます。<br>担当者よりお電話もしくはメールにてご連絡いたします。</p>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. HOW IT WORKS -->
+  <section style="background:#0B0E16;padding:100px 32px;">
+    <div style="max-width:960px;margin:0 auto;text-align:center;">
+      <h2 style="font-size:28px;font-weight:900;color:#fff;line-height:1.6;margin:0 0 20px;">測り、知り、設計し、直し、確かめる。<br>GEO・LLMO対策を、自社で回せる環境へ。</h2>
+      <p style="font-size:14.5px;color:#fff;margin:0 0 64px;max-width:680px;margin-left:auto;margin-right:auto;">GEO Watcherは、AI検索上の露出状況を確認するだけのツールではありません。自社・競合の現在地を把握し、改善点を見つけ、施策後の変化を確かめます。GEO対策に必要な一連の流れを、自社で継続的に回せます。日々の計測と分析はツールで進め、専門的な判断に迷ったときだけ、スポットサポートを利用できます。</p>
+    </div>
+    <div style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;">
+      <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5">
+        <div style="background:#151A28;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:26px 20px;">
+          <div style="font-size:12px;font-weight:900;color:{{ s.accent }};margin-bottom:12px;">STEP {{ s.num }}</div>
+          <h3 style="font-size:16px;font-weight:700;color:#fff;margin:0 0 12px;">{{ s.title }}</h3>
+          <p style="font-size:13px;color:#fff;margin:0;">{{ s.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- 3. FEATURES -->
+  <section id="features" style="background:#fff;padding:100px 32px;">
+    <div style="max-width:960px;margin:0 auto;text-align:center;">
+      <div style="display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:#3D5CFF;letter-spacing:0.06em;margin-bottom:16px;">
+        <span style="width:6px;height:6px;border-radius:50%;background:#3D5CFF;display:inline-block;"></span>主要機能
+      </div>
+      <h2 style="font-size:30px;font-weight:900;color:#0B0F1A;margin:0 0 20px;">AI検索上の自社・競合を、4つの視点で把握。</h2>
+      <p style="font-size:14.5px;color:#5B647A;margin:0 0 56px;max-width:680px;margin-left:auto;margin-right:auto;">GEO Watcherでは、自社ブランドがAIにどれだけ言及されているかだけでなく、競合との違い、質問ごとの変化、AIが参照したページまでまとめて確認できます。</p>
+    </div>
+    <div style="max-width:980px;margin:0 auto 72px;">
+      <div style="display:flex;justify-content:flex-end;margin-bottom:16px;">
+        <button onClick="{{ startTour }}" style="background:#3D5CFF;color:#fff;border:none;padding:11px 22px;border-radius:8px;font-size:13.5px;font-weight:700;cursor:pointer;">▶ ガイド付きで見る</button>
+      </div>
+      <div style="position:relative;border-radius:14px;overflow:hidden;box-shadow:0 30px 70px -30px rgba(11,14,22,0.35);border:1px solid #E3E7F0;aspect-ratio:2940/1602;background:#F6F7FB;">
+        <img ref="{{ tourImgRef }}" src="uploads/demo_overview_v3.png" alt="GEO Watcher 操作画面" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+        <sc-if value="{{ tourActive }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;top:{{ tourTip.top }};left:{{ tourTip.left }};max-width:300px;background:#fff;border-radius:14px;padding:20px 22px;box-shadow:0 24px 60px -16px rgba(0,0,0,0.4);border:1px solid #E3E7F0;">
+            <sc-if value="{{ tourIsSettings }}" hint-placeholder-val="{{ false }}">
+              <div style="font-size:11px;font-weight:800;color:#3D5CFF;letter-spacing:0.06em;margin-bottom:10px;">設定</div>
+            </sc-if>
+            <sc-if value="{{ tourNotSettings }}" hint-placeholder-val="{{ true }}">
+              <div style="font-size:11px;font-weight:800;color:#3D5CFF;letter-spacing:0.06em;margin-bottom:10px;">STEP {{ tourStepNum }} / 5</div>
+            </sc-if>
+            <h4 style="font-size:15.5px;font-weight:700;color:#0B0F1A;margin:0 0 10px;line-height:1.5;">{{ tourTitle }}</h4>
+            <p style="font-size:12.5px;color:#5B647A;margin:0 0 16px;">{{ tourBody }}</p>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <button onClick="{{ prevTour }}" style="background:none;border:none;color:#5B647A;font-size:12.5px;font-weight:700;cursor:pointer;padding:8px 4px;">‹ 戻る</button>
+              <button onClick="{{ nextTour }}" style="flex:1;background:#0B0F1A;border:none;color:#fff;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;">{{ tourNextLabel }}</button>
+            </div>
+          </div>
+          <button onClick="{{ closeTour }}" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.9);border:none;width:32px;height:32px;border-radius:50%;font-size:14px;color:#0B0F1A;cursor:pointer;z-index:5;">✕</button>
+        </sc-if>
+      </div>
+    </div>
+    <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:28px;">
+      <sc-for list="{{ features }}" as="f" hint-placeholder-count="4">
+        <div style="background:#F6F7FB;border-radius:12px;overflow:hidden;">
+          <image-slot id="{{ f.imgId }}" shape="rect" placeholder="機能イメージ画像" style="width:100%;aspect-ratio:16/9;height:auto;background:#EEF0F5;"></image-slot>
+          <div style="padding:26px 28px 30px;border-top:3px solid {{ f.accent }};">
+            <div style="font-size:12px;font-weight:900;color:{{ f.accent }};margin-bottom:10px;">{{ f.num }}</div>
+            <h3 style="font-size:17px;font-weight:700;color:#0B0F1A;margin:0 0 10px;">{{ f.title }}</h3>
+            <p style="font-size:13.5px;color:#5B647A;margin:0;">{{ f.body }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="text-align:center;margin-top:56px;">
+      <a href="#contact-form" style="display:inline-block;background:#3D5CFF;color:#fff;padding:15px 36px;border-radius:8px;font-size:15px;font-weight:700;white-space:nowrap;">GEO Watcherについて問い合わせる →</a>
+    </div>
+  </section>
+
+  <!-- 5. WHY CHOSEN -->
+  <section style="background:#F6F7FB;padding:100px 32px;">
+    <div style="max-width:960px;margin:0 auto;text-align:center;">
+      <div style="display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:#3D5CFF;letter-spacing:0.06em;margin-bottom:16px;">
+        <span style="width:6px;height:6px;border-radius:50%;background:#3D5CFF;display:inline-block;"></span>選ばれる理由
+      </div>
+      <h2 style="font-size:28px;font-weight:900;color:#0B0F1A;line-height:1.6;margin:0 0 22px;">AI検索上の変化を、広く、毎日、長く追える。</h2>
+      <p style="font-size:14.5px;color:#5B647A;margin:0 0 56px;max-width:680px;margin-left:auto;margin-right:auto;">AI検索対策で大切なのは、1回の結果を見ることではありません。複数のAIを横断し、自社と競合を比べながら、日々の変化を継続して追うこと。GEO Watcherなら、改善施策の効果を、的確に・迷わず判断できます。</p>
+    </div>
+    <div style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <sc-for list="{{ reasons }}" as="r" hint-placeholder-count="6">
+        <div style="background:#fff;border-radius:12px;padding:24px 22px;border-top:3px solid {{ r.accent }};">
+          <div style="font-size:14.5px;font-weight:700;color:#0B0F1A;margin:0 0 10px;">{{ r.title }}</div>
+          <p style="font-size:13px;color:#5B647A;margin:0;">{{ r.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- 6. PRICING -->
+  <section id="pricing" style="background:#fff;padding:100px 32px;">
+    <div style="max-width:960px;margin:0 auto;text-align:center;">
+      <div style="display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:#3D5CFF;letter-spacing:0.06em;margin-bottom:16px;">
+        <span style="width:6px;height:6px;border-radius:50%;background:#3D5CFF;display:inline-block;"></span>料金プラン
+      </div>
+      <h2 style="font-size:30px;font-weight:900;color:#0B0F1A;margin:0 0 20px;">料金も、使える範囲も、最初から明確に。</h2>
+      <p style="font-size:14.5px;color:#5B647A;margin:0 0 56px;max-width:680px;margin-left:auto;margin-right:auto;">GEO Watcherは、プランごとの料金と利用範囲を公開しています。基本機能を使うためのイニシャルコストや、別途月額コンサルを契約したりする必要はありません。計測するプロンプト数や、管理するプロジェクト数に合わせてプランを選べます。</p>
+    </div>
+
+    <div style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch;">
+      <sc-for list="{{ plans }}" as="p" hint-placeholder-count="3">
+        <div style="position:relative;border-radius:12px;padding:30px 24px;display:flex;flex-direction:column;">
+          <sc-if value="{{ p.highlight }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;top:0;left:0;right:0;bottom:0;border:2px solid #3D5CFF;border-radius:12px;pointer-events:none;"></div>
+            <div style="position:absolute;top:-13px;left:24px;background:#3D5CFF;color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:999px;">おすすめ</div>
+          </sc-if>
+          <sc-if value="{{ p.notHighlight }}" hint-placeholder-val="{{ true }}">
+            <div style="position:absolute;top:0;left:0;right:0;bottom:0;border:1px solid #E3E7F0;border-radius:12px;pointer-events:none;"></div>
+          </sc-if>
+          <h3 style="font-size:16px;font-weight:700;color:#0B0F1A;margin:0 0 4px;">{{ p.name }}</h3>
+          <p style="font-size:12px;color:#8892A8;margin:0 0 14px;line-height:1.6;">{{ p.tagline }}</p>
+          <div style="font-size:26px;font-weight:900;color:#0B0F1A;margin:0 0 4px;">¥{{ p.price }}<span style="font-size:12px;font-weight:500;color:#8892A8;">/月（税別）</span></div>
+          <div style="font-size:12.5px;color:#333B4D;font-weight:700;margin:0 0 20px;">年間払いの場合、¥{{ p.annualPrice }}/月</div>
+          <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;color:#5B647A;flex:1;">
+            <div>登録プロンプト数：<b style="color:#0B0F1A;">{{ p.prompts }}</b></div>
+            <div>プロジェクト数：<b style="color:#0B0F1A;">{{ p.projectCount }}</b></div>
+            <div>AIモデル：<b style="color:#0B0F1A;">主要6AIに対応</b></div>
+            <div>競合比較：<b style="color:#0B0F1A;">最大{{ p.competitors }}社</b></div>
+            <div>データ保存期間：<b style="color:#0B0F1A;">1年間</b></div>
+            <div>更新頻度：<b style="color:#0B0F1A;">毎日</b></div>
+            <div>エクスポート：<b style="color:#0B0F1A;">CSV・画像</b></div>
+            <sc-if value="{{ p.highlight }}" hint-placeholder-val="{{ false }}">
+              <div style="font-size:11.5px;color:#8892A8;">※Claudeありは別オプション</div>
+            </sc-if>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="max-width:960px;margin:32px auto 0;text-align:center;">
+      <p style="font-size:13.5px;color:#5B647A;margin:0;">主要6AIの計測、毎日更新、競合比較、365日保存は、すべてのプランで利用できます。上位プランでなければ主要なAIモデルや毎日計測が使えない、といった設計ではありません。自社の運用規模に合ったプランを、無理なく選べます。</p>
+    </div>
+
+    <div style="max-width:1160px;margin:64px auto 0;overflow-x:auto;">
+      <div style="display:grid;grid-template-columns:200px repeat(4,1fr);min-width:920px;">
+        <div style="padding:16px 12px;font-size:13px;font-weight:700;color:#5B647A;border-bottom:2px solid #0B0F1A;"></div>
+        <sc-for list="{{ comparisonPlans }}" as="cp" hint-placeholder-count="4">
+          <div style="padding:16px 12px;text-align:center;font-size:15px;font-weight:700;color:#0B0F1A;border-bottom:2px solid #0B0F1A;">{{ cp.name }}</div>
+        </sc-for>
+
+        <div style="padding:20px 12px;font-size:13.5px;color:#5B647A;border-bottom:1px solid #E3E7F0;">AIモデル</div>
+        <sc-for list="{{ comparisonPlans }}" as="cp" hint-placeholder-count="4">
+          <div style="padding:20px 12px;border-bottom:1px solid #E3E7F0;display:flex;flex-direction:column;gap:8px;align-items:center;">
+            <sc-for list="{{ cp.modelList }}" as="m" hint-placeholder-count="5">
+              <span style="font-size:13px;color:#333B4D;">{{ m }}</span>
+            </sc-for>
+          </div>
+        </sc-for>
+
+        <div style="padding:18px 12px;font-size:13.5px;color:#5B647A;border-bottom:1px solid #E3E7F0;">登録プロンプト数</div>
+        <sc-for list="{{ comparisonPlans }}" as="cp" hint-placeholder-count="4">
+          <div style="padding:18px 12px;text-align:center;font-size:14px;font-weight:700;color:#0B0F1A;border-bottom:1px solid #E3E7F0;">{{ cp.prompts }}</div>
+        </sc-for>
+
+        <div style="padding:18px 12px;font-size:13.5px;color:#5B647A;border-bottom:1px solid #E3E7F0;">競合登録</div>
+        <sc-for list="{{ comparisonPlans }}" as="cp" hint-placeholder-count="4">
+          <div style="padding:18px 12px;text-align:center;font-size:14px;font-weight:700;color:#0B0F1A;border-bottom:1px solid #E3E7F0;">{{ cp.competitors }}</div>
+        </sc-for>
+
+        <div style="padding:18px 12px;font-size:13.5px;color:#5B647A;border-bottom:1px solid #E3E7F0;">プロジェクト数</div>
+        <sc-for list="{{ comparisonPlans }}" as="cp" hint-placeholder-count="4">
+          <div style="padding:18px 12px;text-align:center;font-size:14px;font-weight:700;color:#0B0F1A;border-bottom:1px solid #E3E7F0;">{{ cp.projects }}</div>
+        </sc-for>
+
+        <div style="padding:18px 12px;font-size:13.5px;color:#5B647A;border-bottom:1px solid #E3E7F0;">データ保存期間</div>
+        <sc-for list="{{ comparisonPlans }}" as="cp" hint-placeholder-count="4">
+          <div style="padding:18px 12px;text-align:center;font-size:14px;color:#0B0F1A;border-bottom:1px solid #E3E7F0;">1年間</div>
+        </sc-for>
+
+        <div style="padding:18px 12px;font-size:13.5px;color:#5B647A;border-bottom:1px solid #E3E7F0;">取得頻度</div>
+        <sc-for list="{{ comparisonPlans }}" as="cp" hint-placeholder-count="4">
+          <div style="padding:18px 12px;text-align:center;font-size:14px;color:#0B0F1A;border-bottom:1px solid #E3E7F0;">毎日</div>
+        </sc-for>
+
+        <div style="padding:18px 12px;font-size:13.5px;color:#5B647A;border-bottom:1px solid #E3E7F0;">エクスポート機能</div>
+        <sc-for list="{{ comparisonPlans }}" as="cp" hint-placeholder-count="4">
+          <div style="padding:18px 12px;text-align:center;font-size:14px;color:#0B0F1A;border-bottom:1px solid #E3E7F0;">CSV</div>
+        </sc-for>
+
+        <div style="padding:18px 12px;font-size:13.5px;color:#5B647A;border-bottom:1px solid #E3E7F0;">LLMO 応答履歴</div>
+        <sc-for list="{{ comparisonPlans }}" as="cp" hint-placeholder-count="4">
+          <div style="padding:18px 12px;text-align:center;font-size:14px;color:#0B0F1A;border-bottom:1px solid #E3E7F0;">✔️</div>
+        </sc-for>
+
+        <div style="padding:18px 12px;font-size:13.5px;color:#5B647A;border-bottom:1px solid #E3E7F0;">引用URL/ページ分析</div>
+        <sc-for list="{{ comparisonPlans }}" as="cp" hint-placeholder-count="4">
+          <div style="padding:18px 12px;text-align:center;font-size:14px;color:#0B0F1A;border-bottom:1px solid #E3E7F0;">✔️</div>
+        </sc-for>
+
+        <div style="padding:18px 12px;font-size:13.5px;color:#5B647A;">AIクエリファンアウト</div>
+        <sc-for list="{{ comparisonPlans }}" as="cp" hint-placeholder-count="4">
+          <div style="padding:18px 12px;text-align:center;font-size:14px;color:#0B0F1A;">✔️</div>
+        </sc-for>
+      </div>
+      <p style="max-width:920px;margin:12px 0 0;font-size:12px;color:#8892A8;">※プロジェクト数：製品やブランドを分けてモニタリングが可能<br>※AIクエリファンアウト：AIが検索したクエリ</p>
+    </div>
+
+    <div style="max-width:1160px;margin:64px auto 0;background:#F6F7FB;border-radius:14px;padding:36px 40px;">
+      <h3 style="font-size:16.5px;font-weight:700;color:#0B0F1A;margin:0 0 12px;">追加オプション・お支払い方法のご相談</h3>
+      <p style="font-size:13.5px;color:#5B647A;margin:0 0 20px;max-width:760px;">Claudeの追加や、各プランの上限を超えるプロンプト数・プロジェクト数をご希望の場合は、利用規模に合わせてご案内します。請求書払いなど、クレジットカード以外のお支払い方法についてもご相談いただけます。</p>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px 32px;font-size:13px;color:#333B4D;">
+        <div>・AIモデルの追加：Claudeをオプションで追加できます。</div>
+        <div>・プロジェクト数の追加：ADVANCEDを対象に、3件以上のプロジェクト管理についてご相談いただけます。</div>
+        <div>・プロンプト数の追加：LIGHT以上のプランを対象に、標準件数を超えるプロンプト数についてご相談いただけます。</div>
+        <div>・お支払い方法：クレジットカード決済に加え、請求書払いにも対応します。</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:48px;">
+      <a href="#contact-form" style="display:inline-block;background:#0A0E1A;color:#fff;padding:15px 36px;border-radius:8px;font-size:15px;font-weight:700;white-space:nowrap;">料金・プランについて問い合わせる →</a>
+    </div>
+  </section>
+
+  <!-- 6. SPOT SUPPORT -->
+  <section style="background:#0B0E16;padding:100px 32px;">
+    <div style="max-width:960px;margin:0 auto;text-align:center;">
+      <div style="display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:#fff;letter-spacing:0.06em;margin-bottom:16px;">
+        <span style="width:6px;height:6px;border-radius:50%;background:#3D5CFF;display:inline-block;"></span>必要なときだけ使える、スポットサポート（オプション）
+      </div>
+      <h2 style="font-size:28px;font-weight:900;color:#fff;margin:0 0 20px;">月額契約なし。必要な支援だけを、必要なときに。</h2>
+      <p style="font-size:14.5px;color:#fff;margin:0 0 56px;max-width:680px;margin-left:auto;margin-right:auto;">GEO Watcherは、日々の計測や分析を自社で進められるツールです。専門的な判断に迷ったときは、計測結果をもとに、次に取り組むべき質問や改善テーマを整理するスポットサポートを利用できます。この提案支援のベースとなるのが、日本3.5億件を含む15億件超の実検索データです。消費者の検索意図や需要と、現在の言及・引用状況、競合との差を照らし合わせ、優先すべき打ち手を明確にします。月額契約や自動更新はなく、必要な支援だけをスポットで利用できます。</p>
+    </div>
+    <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:24px;">
+      <sc-for list="{{ spotSupports }}" as="s" hint-placeholder-count="2">
+        <div style="background:#151A28;border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:32px;">
+          <h3 style="font-size:18px;font-weight:700;color:#fff;margin:0 0 8px;">{{ s.title }}</h3>
+          <p style="font-size:13px;color:#7B93FF;font-weight:700;margin:0 0 14px;">{{ s.tagline }}</p>
+          <p style="font-size:13.5px;color:#fff;margin:0 0 20px;">{{ s.body }}</p>
+          <div style="display:flex;flex-direction:column;gap:8px;font-size:12.5px;color:#B9C1D9;margin-bottom:20px;">
+            <div>価格：<b style="color:#fff;">{{ s.price }}</b></div>
+            <div>期間：<b style="color:#fff;">{{ s.duration }}</b></div>
+            <div>ヒアリング：<b style="color:#fff;">{{ s.hearing }}</b></div>
+            <div>納品内容：<b style="color:#fff;">{{ s.deliverable }}</b></div>
+          </div>
+          <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:16px;">
+            <div style="font-size:12px;font-weight:700;color:#7B93FF;margin-bottom:10px;">こんなときに</div>
+            <div style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:#fff;">
+              <sc-for list="{{ s.useCases }}" as="u" hint-placeholder-count="3">
+                <div>・{{ u }}</div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- 7. TESTIMONIALS -->
+  <section style="background:#F6F7FB;padding:100px 32px;">
+    <div style="max-width:960px;margin:0 auto;text-align:center;">
+      <h2 style="font-size:30px;font-weight:900;color:#0B0F1A;margin:0 0 20px;">利用者の声</h2>
+      <p style="font-size:14.5px;color:#5B647A;margin:0 0 56px;max-width:680px;margin-left:auto;margin-right:auto;">料金への不安、使いこなせるかという不安、本当に改善につながるのかという疑問。GEO Watcherを利用した方の声を通じて、導入後の使い方や実感をご紹介します。</p>
+    </div>
+    <div style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
+        <div style="background:#fff;border-radius:14px;padding:28px 26px;">
+          <div style="font-size:12px;color:#8892A8;margin-bottom:4px;">{{ t.role }}</div>
+          <div style="font-size:12px;color:#8892A8;margin-bottom:16px;">{{ t.industry }}</div>
+          <h3 style="font-size:15.5px;font-weight:700;color:#0B0F1A;margin:0 0 14px;line-height:1.6;">{{ t.headline }}</h3>
+          <p style="font-size:13px;color:#5B647A;margin:0;white-space:pre-line;">{{ t.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- 8. FAQ -->
+  <section style="background:#F6F7FB;padding:100px 32px;">
+    <div style="max-width:960px;margin:0 auto;text-align:center;">
+      <h2 style="font-size:30px;font-weight:900;color:#0B0F1A;margin:0 0 48px;">よくある質問</h2>
+    </div>
+    <div style="max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:12px;">
+      <sc-for list="{{ faqs }}" as="item" hint-placeholder-count="10">
+        <div style="background:#fff;border-radius:12px;overflow:hidden;">
+          <button onClick="{{ item.toggle }}" style="width:100%;text-align:left;background:none;border:none;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;">
+            <span style="font-size:14.5px;font-weight:700;color:#0B0F1A;">Q. {{ item.q }}</span>
+            <span style="font-size:18px;color:#3D5CFF;font-weight:700;flex:none;">{{ item.marker }}</span>
+          </button>
+          <sc-if value="{{ item.isOpen }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:0 24px 22px;font-size:13.5px;color:#5B647A;">{{ item.a }}</div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+    <div style="text-align:center;margin-top:48px;">
+      <a href="#contact-form" style="display:inline-block;background:#0A0E1A;color:#fff;padding:14px 32px;border-radius:8px;font-size:14.5px;font-weight:700;white-space:nowrap;">GEO Watcherについて問い合わせる →</a>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section style="background:radial-gradient(circle at 12% 15%, #131A30 0%, #0A0E1A 55%, #05070E 100%);padding:96px 32px;">
+    <div style="max-width:1160px;margin:0 auto;display:flex;gap:56px;flex-wrap:wrap;align-items:center;justify-content:space-between;">
+      <div style="flex:1 1 480px;min-width:320px;color:#fff;">
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:#7B93FF;letter-spacing:0.02em;margin-bottom:22px;">
+          <span style="width:6px;height:6px;border-radius:50%;background:#3D5CFF;display:inline-block;"></span>
+          GEO/LLMO/AEO対策のモニタリングツール
+        </div>
+        <h2 style="font-size:32px;font-weight:900;line-height:1.6;margin:0 0 24px;border-bottom:3px solid #3D5CFF;display:inline;padding-bottom:6px;">月額コンサルに頼らず、<br>GEO・LLMO対策を自社の力で。</h2>
+        <p style="font-size:14.5px;color:#fff;margin:28px 0 0;max-width:560px;">AI検索上の現在地も、競合との差も、施策後の変化も、自社で確かめられる環境へ。GEO Watcherは、毎日の計測と分析をツールで支え、迷った場面だけスポットサポートで補えます。料金も利用範囲も明確なGEO・LLMO対策を、ここから始めませんか？</p>
+      </div>
+      <div style="flex:1 1 320px;min-width:280px;max-width:360px;display:flex;flex-direction:column;gap:14px;">
+        <a href="#contact-form" style="background:#3D5CFF;color:#fff;padding:16px 24px;border-radius:8px;font-size:14.5px;font-weight:700;text-align:center;display:flex;align-items:center;justify-content:space-between;">GEO Watcherについて問い合わせる<span>→</span></a>
+        <a href="#contact-form" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);color:#fff;padding:16px 24px;border-radius:8px;font-size:14.5px;font-weight:700;text-align:center;">サービス資料をダウンロード</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#F6F7FB;padding:56px 32px 28px;color:#5B647A;">
+    <div style="max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;">
+      <div style="max-width:340px;">
+        <div style="margin-bottom:16px;">
+          <span style="font-size:16px;font-weight:900;color:#0B0F1A;">ASCENT<span style="color:#3D5CFF;">GEO</span></span>
+        </div>
+        <p style="font-size: 13px; color: #5B647A; margin: 0 0 20px; line-height: 1.9; width: 470px; height: 59px">AI検索上のブランドの見え方を、診断・モニタリングする。<br>GEO（LLMO・AEO）対策に必要な現状把握から継続管理まで支援します。</p>
+        <div style="font-size:12.5px;line-height:2;">
+          運営会社：株式会社 Ascent Networks<br>
+          東京都中央区晴海1-8-10 晴海トリトンスクエア オフィスタワーX棟 8階<br>
+          TEL: 03-3527-3963<br>
+          <a href="https://www.ascentnet.co.jp/" style="color:#3D5CFF;">https://www.ascentnet.co.jp/</a>
+        </div>
+      </div>
+      <div style="display:flex;gap:80px;flex-wrap:wrap;">
+        <div>
+          <div style="font-size:11px;font-weight:700;color:#8892A8;letter-spacing:0.1em;margin-bottom:16px;">SITEMAP</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font-size:13.5px;">
+            <a href="./GEO index LP.dc.html" style="color:#333B4D;">Home</a>
+            <a href="./GEOウォッチャー LP.dc.html" style="color:#333B4D;">GEOモニタリング</a>
+            <a href="./GEO診断ツール LP.dc.html" style="color:#333B4D;">GEO診断</a>
+            <a href="./GEO診断ツール LP.dc.html" style="color:#333B4D;">GEO Lab</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:#8892A8;letter-spacing:0.1em;margin-bottom:16px;">CONTACT</div>
+          <div style="display:flex;flex-direction:column;gap:12px;font-size:13.5px;">
+            <span style="color:#333B4D;">TEL: 03-3527-3963</span>
+            <a href="#contact-form" style="color:#333B4D;">資料請求（Googleフォームへ）</a>
+            <a href="#contact-form" style="color:#333B4D;">資料ダウンロード</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1160px;margin:40px auto 0;border-top:1px solid #E3E7F0;padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:11.5px;color:#8892A8;">
+      <span>© 2026 ASCENT NETWORK</span>
+      <a href="https://geo.ascentnet.co.jp/privacy" style="color:#8892A8;">プライバシーポリシー</a>
+    </div>
+  </footer>
+
+  <!-- CUSTOM PLAN MODAL (removed) -->
+  <sc-if value="{{ false }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;background:rgba(5,7,14,0.7);z-index:100;display:flex;align-items:center;justify-content:center;padding:24px;">
+      <div style="background:#fff;border-radius:16px;max-width:560px;width:100%;max-height:88vh;overflow-y:auto;padding:32px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
+          <h3 style="font-size:19px;font-weight:900;color:#0B0F1A;margin:0;">カスタマイズプランを組み立てる</h3>
+          <button onClick="{{ closeCustomModal }}" style="background:none;border:none;font-size:20px;color:#8892A8;cursor:pointer;line-height:1;">✕</button>
+        </div>
+        <p style="font-size:13px;color:#5B647A;margin:0 0 26px;">項目を選択すると、ご希望内容の概要が下に表示されます。</p>
+
+        <div style="margin-bottom:24px;">
+          <label style="font-size:13.5px;font-weight:700;color:#0B0F1A;display:flex;justify-content:space-between;">登録プロンプト数<span style="color:#3D5CFF;">{{ customPrompts }}</span></label>
+          <input type="range" min="50" max="200" step="10" value="{{ customPrompts }}" onChange="{{ setCustomPrompts }}" style="width:100%;margin-top:10px;">
+        </div>
+
+        <div style="margin-bottom:8px;">
+          <label style="font-size:13.5px;font-weight:700;color:#0B0F1A;">対応AIモデル</label>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:28px;">
+          <sc-for list="{{ aiModelOptions }}" as="m" hint-placeholder-count="7">
+            <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:#333B4D;background:#F6F7FB;padding:10px 12px;border-radius:8px;">
+              <input type="checkbox" checked="{{ m.selected }}" onChange="{{ m.toggle }}">
+              {{ m.label }}
+            </label>
+          </sc-for>
+        </div>
+
+        <div style="background:#F6F7FB;border-radius:12px;padding:18px 20px;margin-bottom:24px;font-size:13px;color:#5B647A;">
+          <b style="color:#0B0F1A;">ご希望内容：</b>プロンプト数 {{ customPrompts }} ／ 競合登録 20社 ／ AIモデル {{ customModelSummary }}
+        </div>
+
+        <a href="#contact-form" onClick="{{ closeCustomModal }}" style="display:block;text-align:center;background:#3D5CFF;color:#fff;padding:14px;border-radius:8px;font-size:14.5px;font-weight:700;">この内容で相談する</a>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = {
+    openFaqIndex: null,
+    tourStep: 0,
+    customModalOpen: false,
+    customPrompts: 100,
+    customModels: { aio: true, gemini: true, aimode: false, chatgpt: true, perplexity: true, copilot: false, claude: false },
+  };
+
+  preventSubmit = (e) => e.preventDefault();
+
+  handleSubmit = (e) => { e.preventDefault(); this.setState({ formSubmitted: true }); };
+
+  toggleFaq = (i) => this.setState(s => ({ openFaqIndex: s.openFaqIndex === i ? null : i }));
+
+  componentDidMount() {
+    ['uploads/demo_overview_v3.png','uploads/demo_visibility_v3.png','uploads/demo_prompt_v3.png','uploads/demo_sov_v3.png','uploads/demo_citation_v3.png']
+      .forEach(src => { const img = new Image(); img.src = src; });
+  }
+
+  tourImgRef = (el) => {
+    this.tourImgEl = el;
+    if (el && !el.src) el.src = 'uploads/demo_overview_v3.png';
+  };
+
+  startTour = () => this.setState({ tourStep: 1 });
+  nextTour = () => this.setState(s => ({ tourStep: s.tourStep >= 9 ? 0 : s.tourStep + 1 }));
+  prevTour = () => this.setState(s => ({ tourStep: s.tourStep <= 1 ? 1 : s.tourStep - 1 }));
+  closeTour = () => this.setState({ tourStep: 0 });
+
+  openCustomModal = (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ customModalOpen: true }); };
+  closeCustomModal = () => this.setState({ customModalOpen: false });
+
+  setCustomPrompts = (e) => this.setState({ customPrompts: Number(e.target.value) });
+
+  toggleModel = (id) => this.setState(s => ({ customModels: { ...s.customModels, [id]: !s.customModels[id] } }));
+
+  renderVals() {
+    const accents = ['#3D5CFF', '#8B5CF6', '#FF4D8D', '#12B3A8'];
+
+    const steps = [
+      { num: '01', title: '測る：まず、AI検索上の現在地を把握', body: 'ブランド名やWebサイトを登録すると、AI検索上での言及や引用の計測を開始できます。プロンプトは自動で生成されるため、専門的な設定をしなくても始められます。' },
+      { num: '02', title: '知る：自社と競合の違いを把握', body: 'AIごとの言及率、回答内容、引用URLを確認し、自社がどのように扱われているかを把握します。競合と比較することで、強みと不足している点が見えてきます。' },
+      { num: '03', title: '設計する：次に取り組むべきテーマを明確に', body: '競合は表示されているのに、自社は表示されていない質問を確認します。優先して改善すべきテーマやコンテンツを絞り込めます。' },
+      { num: '04', title: '改善する：サイトやコンテンツを見直す', body: '引用されている競合ページや情報源を参考に、自社サイトやコンテンツを改善します。何を直すべきか迷う場合は、スポット単位のコンテンツ改善サポートもご利用できます。' },
+      { num: '05', title: '確かめる：施策後の変化を毎日追う', body: '改善後に、言及率や引用状況がどう変わったかを確認します。施策前後を比較しながら、次の改善につなげます。' },
+    ].map((s, i) => ({ ...s, accent: accents[i % accents.length] }));
+
+    const features = [
+      { num: '01 / AI可視性', title: 'AI可視性：複数のAIで、自社の露出状況をひと目で確認', body: '主要なAIエンジンの回答内で、自社や競合がどれだけ言及されているかを一覧で確認できます。プロンプト別、AIモデル別に絞り込めるため、どのAIで露出が多く、どこで不足しているのかを正確に把握できます。', imgId: 'feat-visibility' },
+      { num: '02 / プロンプトモニタリング', title: 'プロンプトモニタリング：注目したい質問の変化を、継続的に追跡', body: '登録したプロンプトごとに、ブランドの言及率、引用URL、実際のAI回答文を継続的に記録します。「以前は自社が表示されていたのに、今は競合が表示されている」といった変化にも、いち早く気づけます。', imgId: 'feat-prompt' },
+      { num: '03 / シェア・オブ・ボイス', title: 'シェア・オブ・ボイス：競合と比べて、自社がどれだけ言及されているかを比較', body: '各AIエンジンにおいて、自社と競合がどのくらいの割合で言及されているかを比較できます。ブランドごとの言及順位や、プロンプト別・AIモデル別のシェアを確認することで、業界内での現在地が分かります。', imgId: 'feat-sov' },
+      { num: '04 / 引用URL分析', title: '引用URL分析：AIが、どのページを根拠にしているかを特定', body: 'AIが回答を生成する際に参照・引用したURLやドメインを確認できます。自社サイトのどのページが引用されているか、競合のどのコンテンツが選ばれているかを把握し、改善すべきページやテーマの発見につなげられます。また、公式サイト、メディア、SNSなど、どの種類の情報源が引用されやすいかも確認できます。', imgId: 'feat-citation' },
+    ].map((f, i) => ({ ...f, accent: accents[i % accents.length] }));
+
+    const reasons = [
+      { title: '国内最大、7つの主要AIモデルをカバー', body: '一つのAIだけでは分からない、ブランドの現在地を把握。ChatGPT、Gemini、Perplexity、Google AI Overviews、AI Mode、Copilotの主要6AIに標準対応（Claudeはオプションで追加できます）。AIごとに異なる自社・競合の言及や引用状況を、まとめて確認できます。' },
+      { title: '週数回では見えにくい変化まで、毎日追跡', body: '施策の効果を、点ではなく流れで判断。AIの回答や引用元は日々変わるため、計測間隔が空くほど、その変化がいつ起きたのかを捉えにくくなります。GEO Watcherは毎日自動で計測し、プロンプトの実行条件も調整可能。改善後の反応を早い段階で捉え、次の判断につなげられます。' },
+      { title: '最大20社の競合と比較', body: '自社だけでは分からない、業界内での立ち位置を可視化。最大20社の競合ブランドを登録できます。自社と競合の露出、言及、引用状況を比較し、差が広がっているのか、縮まっているのかを継続的に把握できます。' },
+      { title: '過去365日分のデータを保存', body: '季節変動も、施策の積み重ねも、1年単位で確認。AI検索上の言及や引用は、季節要因やキャンペーン、コンテンツ更新によって変化します。過去365日分の計測データを保存することで、短期的な増減だけでなく、改善前後の違いや施策を積み重ねた結果を時系列で確認できます。' },
+      { title: 'データを、報告や共有にそのまま活用', body: '分析結果を、社内で使える資料に。計測結果はCSVでダウンロードできるほか、グラフや分析画面を画像として保存できます。社内報告や定例会議、施策前後の比較資料にも、そのまま活用できます。' },
+      { title: 'ブランド名とURLから、プロンプトを自動生成', body: '何を計測するか迷わず、そのままスタート。ブランド名とWebサイトのURLを登録するだけで、AI検索上の状況を確認するためのプロンプトを自動で生成します。専門的な設定は不要で、生成後のプロンプトは目的に合わせて自由に編集できます。' },
+    ].map((r, i) => ({ ...r, accent: accents[i % accents.length] }));
+
+    const plans = [
+      { name: 'ライトプラン', tagline: 'まず、自社ブランドの現在地を把握したい方に', price: '29,800', annualPrice: '27,500', prompts: 20, competitors: 20, highlight: false },
+      { name: 'スタンダードプラン', tagline: 'GEO対策の改善サイクルを、本格的に回したい方に', price: '39,800', annualPrice: '36,500', prompts: 50, competitors: 20, highlight: true },
+      { name: 'アドバンスプラン', tagline: '複数ブランドや複数サイトを、まとめて管理したい方に', price: '79,800', annualPrice: '73,500', prompts: 100, competitors: 20, highlight: false },
+    ].map(p => ({ ...p, notHighlight: !p.highlight, projectCount: { 'ライトプラン': '1個', 'スタンダードプラン': '1個', 'アドバンスプラン': '2個' }[p.name] }));
+
+    const projectCounts = { 'ライトプラン': '1個', 'スタンダードプラン': '1個', 'アドバンスプラン': '2個' };
+    const sixModels = ['ChatGPT', 'Gemini', 'Google AI Overview', 'Google AIモード', 'Perplexity', 'Copilot'];
+    const comparisonPlans = [
+      ...plans.map(p => ({ name: p.name, prompts: p.prompts, competitors: p.competitors + '個', projects: projectCounts[p.name], modelList: sixModels })),
+      { name: 'カスタマイズプラン', prompts: '要相談', competitors: '20個', projects: '要相談', modelList: [...sixModels, 'Claude（オプション）'] },
+    ];
+
+    const spotSupports = [
+      { title: 'プロンプト設計サポート', tagline: '最適なプロンプトを、実際の検索データから設計', body: 'ブランド、商品、ターゲットについてヒアリングし、消費者が実際に検索しているテーマをもとに、計測すべき最適なプロンプトを設計します。単に質問文を作るのではなく、「なぜこの質問を追うのか」まで整理した状態で納品します。', price: '30,000〜50,000円　※設計するプロンプト数に応じて、申し込み前に確定します', duration: '5営業日以内', hearing: '30分', deliverable: 'プロンプトの設計・登録、設計意図をまとめた解説資料', useCases: ['どのプロンプトを登録すべきか分からない', '自動生成したプロンプトを精緻化したい', '購買段階に合わせて質問を設計したい'] },
+      { title: 'コンテンツ改善診断', tagline: 'どこから直すべきかを、データから整理', body: 'AIに引用されている競合ページと自社ページを比較し、改善すべきページと優先順位を整理します。感覚ではなく、現在の引用状況や競合との差をもとに、GEO・LLMO対策で次に取り組むべき改善の方向性を明確にします。', price: '50,000〜100,000円　※診断するページ数に応じて、申し込み前に確定します', duration: '10営業日以内', hearing: '30分', deliverable: '改善優先度レポート', useCases: ['計測結果を見ても、次の施策が決まらない', '競合との差をコンテンツ改善につなげたい', '優先して直すページを絞り込みたい'] },
+    ];
+
+    const testimonials = [
+      { role: 'EC運営担当者', industry: '化粧品・自社EC', headline: '月額コンサルではなく、必要な支援だけ頼めました。', body: '他社のGEO・LLMOツールを検討したときは、最後に月額コンサルを提案されることが多く、導入を見送っていました。\n\nGEO Watcherは、主要な計測機能をツール内で利用でき、苦手だったプロンプト設計だけを、1回単位で依頼できました。毎月の追加費用が発生しないため、社内でも説明しやすく、導入までスムーズに進められました。' },
+      { role: '広報・マーケティング担当者', industry: '地方製造業', headline: 'ビッグデータの専門企業が開発していることが、導入の決め手でした。', body: 'GEO・LLMO対策はまだ新しい分野なので、ツールの機能だけでなく、どのような会社が開発・運営しているかも重視しました。\n\nGEO Watcherは、検索データやビッグデータを長年扱ってきた企業が開発しているため、計測データの信頼性にも安心感がありました。複数のAIにおける自社と競合の変化を、継続的に確認できる点も、社内で導入を決める後押しになりました。' },
+      { role: 'マーケティングマネージャー', industry: 'BtoB SaaS企業', headline: '施策後の変化を、データで説明できるようになりました。', body: '以前利用していたGEO・LLMOツールは週3回の更新だったため、コンテンツ改善後の変化が、いつAIの回答に反映されたのか判断しづらい状態でした。\n\nGEO Watcherに切り替えてからは、毎日のデータで言及率や引用URLの変化を追えるため、施策後の反応を早い段階で確認できます。複数のAIの回答原文やグラフもまとめて共有でき、社内報告の根拠として使いやすくなりました。' },
+    ];
+
+    const faqData = [
+      { q: '対応しているAIモデルは？', a: 'Chat GPT、Gemini、Google AI モード、AI Overview、Perplexity、Copilot、Claudeの7つに対応しています。Claudeを選択する場合はオプションとなります。' },
+      { q: '競合ブランドは何社と比較できますか？', a: '最大20社まで比較可能です。自社ブランドと同じ項目で比較できます。競合ブランド登録数は全プラン共通して最大20社となっております。' },
+      { q: 'データはどのくらいの期間保存されますか？', a: '過去1年分のデータが保存されます。' },
+      { q: 'プロンプトの更新頻度はどれくらいですか？', a: '全プラン共通して毎日更新されます。更新日時も各プロンプトごとに確認可能です。' },
+      { q: 'プロンプトの内容は変更できますか？', a: 'プロンプトの内容はいつでも自由に変更が可能です。' },
+      { q: '最低契約期間はありますか？', a: '月払いには最低契約期間の縛りはなく、解約金もありません。' },
+      { q: '導入にはどのくらいの期間がかかりますか？', a: 'お支払い完了後、アカウントの発行が終わり次第、すぐにご利用いただけます。' },
+      { q: '無料トライアル期間はありますか？', a: '現在、無料トライアルは行っておりません。' },
+      { q: '解約はいつできますか？', a: '月払いの場合は、いつでも解約を申請できます。解約申請後は、当月末をもって契約終了となります。解約金は発生しません。' },
+      { q: 'プロンプトの更新頻度は調整できますか？', a: '現在、更新頻度を調整する機能はございません。どのプランであっても毎日更新となります。' },
+    ];
+    const faqs = faqData.map((f, i) => ({
+      ...f,
+      isOpen: this.state.openFaqIndex === i,
+      marker: this.state.openFaqIndex === i ? '−' : '+',
+      toggle: () => this.toggleFaq(i),
+    }));
+
+    const modelLabels = {
+      aio: 'AI Overview', gemini: 'Gemini', aimode: 'Google AIモード', chatgpt: 'ChatGPT',
+      perplexity: 'Perplexity', copilot: 'Copilot', claude: 'Claude（オプション）',
+    };
+    const aiModelOptions = Object.keys(modelLabels).map(id => ({
+      id, label: modelLabels[id], selected: this.state.customModels[id],
+      toggle: () => this.toggleModel(id),
+    }));
+    const customModelSummary = Object.keys(modelLabels)
+      .filter(id => this.state.customModels[id])
+      .map(id => modelLabels[id]).join(' / ') || 'なし';
+
+    const tourIdx = Math.max(this.state.tourStep - 1, 0);
+    const tourSlides = [
+      { image: 'uploads/demo_overview_v3.png', title: 'ダッシュボード概要', body: 'ログイン直後の画面で、AI可視性とシェア・オブ・ボイスなどのデータをひと目で確認できます。', spot: { top: '10%', left: '1%', width: '27%', height: '40%' }, tip: { top: '10%', left: '30%' } },
+      { image: 'uploads/demo_visibility_v3.png', title: 'AI可視性：複数のAIで、自社の露出状況をひと目で確認', body: '主要なAIエンジンの回答内で、自社や競合がどれだけ言及されているかを一覧で確認できます。AIモデル別、タグ別に絞り込めるため、どのAIで露出が多く、どこで不足しているのかを正確に把握できます。', spot: { top: '29%', left: '1%', width: '65%', height: '10%' }, tip: { top: '42%', left: '1%' } },
+      { image: 'uploads/demo_prompt_v3.png', title: 'プロンプトモニタリング：注目したい質問の変化を、継続的に追跡', body: '登録したプロンプトごとに、ブランドの言及率、引用URL、実際のAI回答文を継続的に記録します。「以前は自社が表示されていたのに、今は競合が表示されている」といった変化にも、いち早く気づけます。', spot: { top: '29%', left: '1%', width: '98%', height: '13%' }, tip: { top: '45%', left: '1%' } },
+      { image: 'uploads/demo_sov_v3.png', title: 'シェア・オブ・ボイス：競合と比べて、自社がどれだけ言及されているかを比較', body: '各AIエンジンにおいて、自社と競合がどのくらいの割合で言及されているかを比較できます。ブランドごとの言及率などを確認することで、業界内での現在地が分かります。', spot: { top: '30%', left: '1%', width: '38%', height: '40%' }, tip: { top: '42%', left: '1%' } },
+      { image: 'uploads/demo_citation_v3.png', title: '引用URL分析：AIが、どのページを根拠にしているかを特定', body: 'AIが回答を生成する際に参照・引用したURLやドメインを確認できます。自社サイトのどのページが引用されているか、競合のどのコンテンツが選ばれているかを把握できます。また、どのチャンネルの情報源が引用されやすいかも確認できます。', spot: { top: '30%', left: '1%', width: '38%', height: '20%' }, tip: { top: '38%', left: '1%' } },
+      { image: 'uploads/demo_brand.png', title: 'ブランド設定：モニタリング対象を編集', body: 'モニタリングする対象のブランド名とウェブサイトを編集できます。', spot: { top: '9%', left: '1%', width: '46%', height: '6%' }, tip: { top: '58%', left: '68%' }, isSettings: true },
+      { image: 'uploads/demo_competitors.png', title: '競合他社設定：比較対象を管理', body: '対象ブランドの競合他社の情報を編集できます。プランに関わらず最大20社まで登録可能です。', spot: { top: '12%', left: '1%', width: '46%', height: '6%' }, tip: { top: '58%', left: '68%' }, isSettings: true },
+      { image: 'uploads/demo_prompt_settings.png', title: 'プロンプト設定：質問文を管理', body: 'プロンプト（質問文）の追加・編集・削除ができます。トピックごとにタグ設定も可能です。', spot: { top: '10%', left: '1%', width: '31%', height: '6%' }, tip: { top: '58%', left: '68%' }, isSettings: true },
+      { image: 'uploads/demo-llmo.png', title: 'LLM：対象AIモデルを確認', body: '収集・分析対象のAIモデル一覧が確認できます。', spot: { top: '11%', left: '1%', width: '11%', height: '6%' }, tip: { top: '58%', left: '68%' }, isSettings: true },
+    ];
+    const currentSlide = tourSlides[tourIdx];
+    if (this.tourImgEl) this.tourImgEl.src = currentSlide.image;
+
+    return {
+      steps, features, reasons, plans, comparisonPlans, spotSupports, testimonials, faqs, aiModelOptions,
+      tourActive: this.state.tourStep > 0,
+      tourImgRef: this.tourImgRef,
+      tourStepNum: this.state.tourStep || 1,
+      tourTitle: currentSlide.title,
+      tourBody: currentSlide.body,
+      tourSpot: currentSlide.spot,
+      tourTip: currentSlide.tip,
+      tourIsSettings: !!currentSlide.isSettings,
+      tourNotSettings: !currentSlide.isSettings,
+      tourNextLabel: this.state.tourStep >= 9 ? '完了' : '次へ',
+      startTour: this.startTour,
+      prevTour: this.prevTour,
+      nextTour: this.nextTour,
+      closeTour: this.closeTour,
+      preventSubmit: this.preventSubmit,
+      handleSubmit: this.handleSubmit,
+      formSubmitted: this.state.formSubmitted,
+      formNotSubmitted: !this.state.formSubmitted,
+      openCustomModal: this.openCustomModal,
+      closeCustomModal: this.closeCustomModal,
+      customModalOpen: this.state.customModalOpen,
+      customPrompts: this.state.customPrompts,
+      setCustomPrompts: this.setCustomPrompts,
+      customModelSummary,
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -142,7 +142,7 @@ export function ContactForm({ blockedEmailDomains }: Props) {
       <div className="field-row two">
         <div>
           <label><span>名</span><span className="req">必須</span></label>
-          <input className="field" placeholder="例）ミエルカ" {...register('name')} />
+          <input className="field" placeholder="例）太郎" {...register('name')} />
           {errors.name && <p className="field-error">{errors.name.message}</p>}
         </div>
         <div>
@@ -155,16 +155,21 @@ export function ContactForm({ blockedEmailDomains }: Props) {
       <div className="field-row two">
         <div>
           <label><span>メールアドレス</span><span className="req">必須</span></label>
-          <input className="field" type="email" placeholder="例）mieruca@fabercompany.co.jp" {...register('email')} />
+          <input className="field" type="email" placeholder="例）taro@example.com" {...register('email')} />
           {errors.email && <p className="field-error">{errors.email.message}</p>}
         </div>
       </div>
 
       <div className="field-row">
         <div>
-          <label><span>会社名</span><span className="req">必須</span></label>
-          <input className="field" placeholder="例）株式会社Faber Company" {...register('company')} />
-          {errors.company && <p className="field-error">{errors.company.message}</p>}
+          <label><span>業種</span><span className="req">必須</span></label>
+          <select className="field" {...register('industry')}>
+            <option value="">業種を選択</option>
+            {INDUSTRIES.map(ind => (
+              <option key={ind} value={ind}>{ind}</option>
+            ))}
+          </select>
+          {errors.industry && <p className="field-error">{errors.industry.message}</p>}
         </div>
       </div>
 

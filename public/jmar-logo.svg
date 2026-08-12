@@ -1,0 +1,22 @@
+<svg width="116" height="116" viewBox="0 0 116 116" xmlns="http://www.w3.org/2000/svg">
+  <!-- Blue background -->
+  <rect width="116" height="116" fill="#1B7DB8"/>
+
+  <!-- Chart/Graph icon -->
+  <!-- Vertical bar (left) -->
+  <rect x="14" y="50" width="8" height="56" fill="white" stroke="white" stroke-width="1.5"/>
+  <!-- Small square (top left) -->
+  <rect x="14" y="30" width="8" height="8" fill="white"/>
+
+  <!-- First mountain/line segment -->
+  <polyline points="22,70 36,54 50,70" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Second mountain/line segment -->
+  <polyline points="50,70 64,46 78,70" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Small square (middle right) -->
+  <rect x="62" y="48" width="8" height="8" fill="white"/>
+
+  <!-- Down trend line -->
+  <polyline points="78,70 92,92" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

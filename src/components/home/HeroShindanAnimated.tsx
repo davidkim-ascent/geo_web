@@ -59,8 +59,8 @@ export function HeroShindanAnimated() {
       </div>
 
       <div className="flex items-baseline gap-2 mb-3 pb-1 border-b-2 border-[#0B0B0E] w-fit">
-        <span className="text-[13px] font-bold text-[#0B0B0E]">ユニクロ</span>
-        <span className="text-[13px] font-bold text-[#0B0B0E]">GEO(LLMO) リポート</span>
+        <span className="text-[13px] font-bold text-[#0B0B0E]">例）サンプル企業</span>
+        <span className="text-[13px] font-bold text-[#0B0B0E]">GEO・LLMO診断レポート</span>
       </div>
 
       <div className="flex gap-3 flex-1 min-h-0">
