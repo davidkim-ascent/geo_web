@@ -428,14 +428,14 @@ h4 {
 }
 .ui-footer-heading {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: white;
 }
 .ui-footer-link {
-  font-size: 14px;
+  font-size: 16px;
   color: white;
   transition: color 0.2s ease;
 }
