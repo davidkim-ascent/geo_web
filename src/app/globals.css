@@ -1826,6 +1826,13 @@ span.accent {
   transition: border-color 0.2s;
   appearance: none;
 }
+select.field {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+select.field option {
+  padding: 10px 14px;
+}
 .field:focus { border-color: #1452FF; background: white; }
 .field:disabled { opacity: 0.4; cursor: not-allowed; }
 .field-error { font-size: 12px; color: #ef4444; margin-top: 4px; }
