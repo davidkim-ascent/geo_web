@@ -76,7 +76,7 @@ function HeroSection() {
           <div className="hero-solution-card relative flex flex-col items-center gap-6 rounded-2xl p-8 pt-9">
             <span className="hero-solution-card__eyebrow absolute -top-3 left-1/2 -translate-x-1/2 bg-white px-3 font-medium text-[#003393] whitespace-nowrap" style={{ fontSize: "var(--fs-label)" }}>企業のマーケティング・ブランド担当者向け</span>
             <div className="flex flex-col items-center gap-2 text-center">
-              <h3 className="font-bold text-[#003393] leading-snug" style={{ fontSize: "var(--fs-h3)" }}><span className="text-marker-highlight-blue">AI対策ツール「GEO Watcher」</span></h3>
+              <h3 className="font-bold text-[#003393] leading-snug" style={{ fontSize: "var(--fs-h3)" }}><span className="text-marker-highlight-blue">GEO・LLMO対策ツール「GEO Watcher」</span></h3>
               <p className="font-bold text-[#0B0B0E] leading-[1.45]" style={{ fontSize: "var(--fs-body)" }}>国内最大、7つの主要AIモデルをカバー</p>
               <p className="font-bold text-[#0B0B0E] leading-[1.45]" style={{ fontSize: "var(--fs-body)" }}>料金も、使える範囲も、最初から明確に</p>
             </div>

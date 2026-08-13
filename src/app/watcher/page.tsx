@@ -82,7 +82,7 @@ function HeroSection() {
           className="font-bold max-w-[48ch] mx-auto mt-4"
           style={{ fontSize: "53px", lineHeight: "1.5", letterSpacing: "-0.035em", fontFamily: "'NiveauGrotesk', sans-serif" }}
         >
-          AI<span style={{ marginLeft: "3px", fontSize: "49px", fontFamily: "'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif" }}>対策ツール</span> <span style={{ color: "#003393" }}>GEO Watcher</span>
+GEO・LLMO<span style={{ marginLeft: "3px", fontSize: "49px", fontFamily: "'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif" }}>対策ツール</span> <span style={{ color: "#003393" }}>GEO Watcher</span>
         </h1>
 
         {/* Subcopy Section */}

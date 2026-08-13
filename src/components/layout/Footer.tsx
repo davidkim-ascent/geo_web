@@ -43,7 +43,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-3">
               {[
                 { label: "Home", href: "/" },
-                { label: "AI対策ツール", href: "/watcher" },
+                { label: "GEO Watcher", href: "/watcher" },
                 { label: "GEO・LLMO診断ツール", href: "/shindan" },
                 { label: "GEO Lab", href: "/lab" },
               ].map((item) => (
@@ -69,11 +69,6 @@ export default function Footer() {
                 <Link href={getCalendarBookingHref()} className="ui-footer-link" {...getCalendarBookingLinkProps()}>
                   無料相談予約（Googleカレンダー）
                 </Link>
-              </li>
-              <li>
-                <a href="/whitepaper" className="ui-footer-link">
-                  資料ダウンロード
-                </a>
               </li>
             </ul>
           </div>
