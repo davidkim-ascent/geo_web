@@ -104,6 +104,7 @@ function NavigationSection() {
     { label: "PRICING", ja: "料金プラン", href: "#pricing" },
     { label: "SPOT SUPPORT", ja: "スポットサポート", href: "#support" },
     { label: "VOICE", ja: "顧客の声", href: "#testimonials" },
+    { label: "CONTACT", ja: "お問い合わせ", href: "#contact" },
     { label: "FAQ", ja: "FAQ", href: "#faq" },
   ];
 
@@ -664,6 +665,7 @@ function SpotSupportSection() {
 function ContactSection() {
   return (
     <section
+      id="contact"
       className="relative py-10 lg:py-14 overflow-hidden"
       style={{ background: "linear-gradient(180deg, #e8f4fb 0%, #d4e8f7 50%, #c8dff5 100%)" }}
     >

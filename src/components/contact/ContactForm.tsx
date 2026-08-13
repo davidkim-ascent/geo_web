@@ -24,6 +24,14 @@ const INDUSTRIES = [
   'その他',
 ]
 
+const INQUIRY_TYPES = [
+  'サービス紹介を詳しく聞きたい',
+  'お支払い方法について相談したい',
+  'カスタマイズプランに関するお問い合わせ',
+  'スポットサポートに関するお問い合わせ',
+  'その他',
+]
+
 const PHONE_RE = /^[\d\-\+\(\)\s]{10,15}$/
 const schema = z.object({
   company: z.string().min(1, '会社名を入力してください'),
@@ -35,7 +43,8 @@ const schema = z.object({
   website: z.string().refine(v => v === '' || isValidWebsiteValue(v), {
     message: 'WebサイトURL を正しい形式で入力してください。',
   }),
-  challenge: z.string().min(10, '10文字以上で入力してください'),
+  inquiryType: z.string().min(1, 'お問い合わせ項目を選択してください'),
+  challenge: z.string().min(1, 'ご相談内容を入力してください'),
   human: z.boolean().refine(v => v === true, 'チェックしてください'),
   agree: z.boolean().refine(v => v === true, '個人情報保護方針への同意が必要です'),
 })
@@ -67,6 +76,7 @@ export function ContactForm({ blockedEmailDomains }: Props) {
       email: '',
       industry: '',
       website: '',
+      inquiryType: '',
       challenge: '',
       human: false,
       agree: false,
@@ -101,6 +111,7 @@ export function ContactForm({ blockedEmailDomains }: Props) {
         email: values.email,
         industry: values.industry,
         website: values.website,
+        inquiryType: values.inquiryType,
         challenge: values.challenge,
       }),
     })
@@ -158,9 +169,6 @@ export function ContactForm({ blockedEmailDomains }: Props) {
           <input className="field" type="email" placeholder="例）taro@example.com" {...register('email')} />
           {errors.email && <p className="field-error">{errors.email.message}</p>}
         </div>
-      </div>
-
-      <div className="field-row">
         <div>
           <label><span>業種</span><span className="req">必須</span></label>
           <select className="field" {...register('industry')}>
@@ -189,11 +197,24 @@ export function ContactForm({ blockedEmailDomains }: Props) {
 
       <div className="field-row">
         <div>
-          <label><span>現在の課題</span><span className="req">必須</span></label>
+          <label><span>お問い合わせ項目</span><span className="req">必須</span></label>
+          <select className="field" {...register('inquiryType')}>
+            <option value="">お問い合わせ項目を選択</option>
+            {INQUIRY_TYPES.map(type => (
+              <option key={type} value={type}>{type}</option>
+            ))}
+          </select>
+          {errors.inquiryType && <p className="field-error">{errors.inquiryType.message}</p>}
+        </div>
+      </div>
+
+      <div className="field-row">
+        <div>
+          <label><span>ご相談内容</span><span className="req">必須</span></label>
           <textarea
             className="field"
             rows={2}
-            placeholder="10文字以上で入力してください / 例：AI検索からの流入が減少しており、GEO対策をどこから始めればよいか分からない"
+            placeholder="例：プロンプト数：70個、Claudeモデルの追加、プロジェクト数は3個が必要ですが、カスタマイズは可能でしょうか？"
             {...register('challenge')}
           />
           {errors.challenge && <p className="field-error">{errors.challenge.message}</p>}

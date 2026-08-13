@@ -44,9 +44,13 @@ const plans = [
 
 const customPlan = {
   name: "カスタマイズプラン",
-  prompts: "自由選択",
-  models: "アドバンスに準ずる",
   tagline: "規模に合わせて柔軟に設計",
+  conditions: [
+    "登録プロンプト数：50個以上から",
+    "AIモデル：6モデル＋Claude追加も可能",
+    "プロジェクト数：3個以上",
+  ],
+  note: "上記のような条件が必要な場合は、カスタマイズプランをご利用いただけます。お問い合わせフォームよりお申し込みください。担当者よりご連絡いたします。",
 };
 
 const ALL_MODELS = [
@@ -114,9 +118,10 @@ export function PricingSection() {
           </div>
 
           <div className="mt-5 flex items-center justify-center text-center">
-            <p className="text-[#6B6B73]" style={{ fontSize: "var(--fs-label)" }}>
+            <p className="text-[#4e4e51]" style={{ fontSize: "var(--fs-body-xsm)" }}>
               お支払いは<span className="font-bold" style={{ color: "#003393" }}>Stripe</span>の安全な決済システムを利用しています。<br />
-              カード情報は当社サーバーに保存されず、Stripe上で暗号化して管理されます。
+              カード情報は当社サーバーに保存されず、Stripe上で暗号化して管理されます。<br />
+              クレジットカード決済のほか、請求書払いなどのお支払い方法もご相談いただけます。<a href="#contact" className="font-bold underline hover:opacity-80" style={{ color: "#1452FF" }}>お問い合わせ</a>ください。
             </p>
           </div>
 
@@ -294,17 +299,25 @@ export function PricingSection() {
             <p className="text-[#6B6B73] mb-3" style={{ fontSize: "var(--fs-label-sm)" }}>
               {customPlan.tagline}
             </p>
-            <div className="flex flex-wrap gap-x-6 gap-y-1 text-[#4e4e51]" style={{ fontSize: "var(--fs-body-xsm)" }}>
-              <span>登録プロンプト数：{customPlan.prompts}</span>
-              <span>AIモデル：{customPlan.models}</span>
-              <span>競合登録：20個</span>
-              <span>データ保存期間：1年間</span>
+            <p className="text-[#4e4e51] mb-3" style={{ fontSize: "var(--fs-body-xsm)" }}>
+              カスタマイズプランは、<span style={{ backgroundImage: "linear-gradient(transparent 55%, #fff176 55%, #fff176 92%, transparent 92%)", paddingBottom: "2px" }}>スタンダードプラン以上の要件が必要なお客様向けのオーダーメイドプラン</span>です。
+            </p>
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[#4e4e51] mb-3" style={{ fontSize: "var(--fs-body-xsm)" }}>
+              {customPlan.conditions.map((c, i) => (
+                <span key={c} className="flex items-center gap-2">
+                  {i > 0 && <span className="text-[#9A9AA0]">/</span>}
+                  {c}
+                </span>
+              ))}
             </div>
+            <p className="text-[#4e4e51]" style={{ fontSize: "var(--fs-body-xsm)" }}>
+              {customPlan.note}
+            </p>
           </div>
           <a
-            href="/contact"
-            className="shrink-0 rounded-lg bg-[#0B0B0E] text-white px-6 py-3 text-center font-bold tracking-[0.02em] hover:bg-black/[0.85] transition-colors"
-            style={{ fontSize: "var(--fs-label-sm)" }}
+            href="#contact"
+            className="shrink-0 rounded-lg text-white px-6 py-3 text-center font-bold tracking-[0.02em] transition-colors hover:bg-[#1452FF]/90"
+            style={{ backgroundColor: "#1452FF", fontSize: "var(--fs-label-sm)" }}
           >
             お問い合わせ
           </a>
