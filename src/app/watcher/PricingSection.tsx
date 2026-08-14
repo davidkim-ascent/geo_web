@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 const WATCHER_APP_URL = "https://geo-watcher.ascentnet.co.jp";
+const PROMPT_ADDON_MONTHLY_JPY = 5000;
 
 const plans = [
   {
@@ -79,6 +80,9 @@ const comparisonRows = [
 
 export function PricingSection() {
   const [annual, setAnnual] = useState(false);
+  const [addonEnabled, setAddonEnabled] = useState(false);
+
+  const addonPrice = annual ? PROMPT_ADDON_MONTHLY_JPY * 12 : PROMPT_ADDON_MONTHLY_JPY;
 
   return (
     <section id="pricing" className="bg-white pt-12 pb-12">
@@ -160,12 +164,31 @@ export function PricingSection() {
               </span>
             </button>
           </div>
+
+          {/* プロンプト追加オプション */}
+          <div className="mt-4 flex items-center justify-center">
+            <label
+              className="inline-flex items-center gap-2.5 cursor-pointer rounded-xl px-5 py-3"
+              style={{ border: "1.5px solid #003393", backgroundColor: "#F6F7FB" }}
+            >
+              <input
+                type="checkbox"
+                checked={addonEnabled}
+                onChange={(e) => setAddonEnabled(e.target.checked)}
+                className="h-4 w-4 accent-[#003393]"
+              />
+              <span className="font-bold" style={{ fontSize: "var(--fs-label)", color: "#003393" }}>
+                プロンプト追加オプション：プロンプトを10個まで追加可能です。（+{addonPrice.toLocaleString()}円 / {annual ? "年" : "月"}）
+              </span>
+            </label>
+          </div>
         </div>
 
         <div className="mt-10 grid grid-cols-1 md:grid-cols-[160px_1fr_1fr_1fr] gap-4 items-stretch">
           <div className="hidden md:block" />
           {plans.map((p) => {
-            const totalPrice = annual ? p.annualPrice : p.monthlyPrice;
+            const basePrice = annual ? p.annualPrice : p.monthlyPrice;
+            const totalPrice = basePrice + (addonEnabled ? addonPrice : 0);
             return (
               <div
                 key={p.name}
@@ -193,7 +216,7 @@ export function PricingSection() {
                 <div className="mb-4" />
                 <ul className={`flex flex-1 flex-col gap-2.5 leading-[1.5] ${p.featured ? "text-white/80" : "text-[#4e4e51]"}`} style={{ fontSize: "var(--fs-label)" }}>
                   {[
-                    `登録プロンプト数：${p.prompts}`,
+                    `登録プロンプト数：${p.prompts}${addonEnabled ? "＋10" : ""}`,
                     "競合登録：20個",
                     `AIモデル：${p.models}`,
                     "データ保存期間：1年間",
@@ -210,7 +233,7 @@ export function PricingSection() {
                   ))}
                 </ul>
                 <a
-                  href={`${WATCHER_APP_URL}/signup?plan=${p.planKey}&annual=${annual}`}
+                  href={`${WATCHER_APP_URL}/signup?plan=${p.planKey}&annual=${annual}&promptAddonEnabled=${addonEnabled}`}
                   className="mt-6 block rounded-lg py-2.5 text-center font-bold tracking-[0.02em] text-white transition-colors hover:bg-[#1452FF]/90"
                   style={{ backgroundColor: "#1452FF", fontSize: "var(--fs-label-sm)" }}
                 >
