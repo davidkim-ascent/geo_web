@@ -10,13 +10,13 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { Button } from "@/components/ui/button";
 import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 import { buildPageMetadata } from "@/lib/seo";
-import mktStressImage from "../../Design/mkt-stress.png";
-import salesStressImage from "../../Design/sales-stress.png";
-import salesSuccessImage from "../../Design/salessucccess.png";
-import teamMeetImage from "../../Design/teammeet.png";
-import voice1Image from "../../Design/voice1.png";
-import voice2Image from "../../Design/voice2.png";
-import voice3Image from "../../Design/voice3.png";
+const mktStressImage = "/design-assets/mkt-stress.png";
+const salesStressImage = "/design-assets/sales-stress.png";
+const salesSuccessImage = "/design-assets/salessucccess.png";
+const teamMeetImage = "/design-assets/teammeet.png";
+const voice1Image = "/design-assets/voice1.png";
+const voice2Image = "/design-assets/voice2.png";
+const voice3Image = "/design-assets/voice3.png";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "GEO・LLMO・AIO対策ツール｜Ascent GEO",

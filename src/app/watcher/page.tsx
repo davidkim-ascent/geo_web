@@ -11,9 +11,9 @@ import { PricingSection } from "./PricingSection";
 import { Button } from "@/components/ui/button";
 import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
 import { HeroLogoMark } from "@/components/layout/HeroLogoMark";
-import voice1Image from "../../../Design/voice1.png";
-import voice2Image from "../../../Design/voice2.png";
-import voice3Image from "../../../Design/voice3.png";
+const voice1Image = "/design-assets/voice1.png";
+const voice2Image = "/design-assets/voice2.png";
+const voice3Image = "/design-assets/voice3.png";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "GEO Watcher｜GEO・LLMO対策モニタリングツール",
