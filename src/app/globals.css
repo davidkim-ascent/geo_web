@@ -2458,3 +2458,44 @@ a.ct-channel-card:hover {
   .ct-faq-wrap { padding: 0 20px; }
   .ct-faq-qtext { font-size: 15px; }
 }
+
+/* Watcher/Shindan H1: match index H1 on mobile only */
+@media (max-width: 768px) {
+  h1.hero-h1-match-index {
+    font-size: var(--fs-display) !important;
+    line-height: var(--lh-display) !important;
+  }
+  h1.hero-h1-match-index span {
+    font-size: var(--fs-display) !important;
+  }
+}
+
+/* Watcher/Shindan anchor nav: stack one item per row on mobile */
+@media (max-width: 640px) {
+  .nav-anchor-section {
+    border-top-color: #003393 !important;
+    border-bottom-color: #003393 !important;
+  }
+  .nav-anchor-list {
+    width: 100%;
+  }
+  .nav-anchor-item {
+    width: 100%;
+    flex-direction: column;
+  }
+  .nav-anchor-divider {
+    width: 100% !important;
+    height: 1px !important;
+    margin: 0 !important;
+    background-color: #003393 !important;
+    transform: scaleY(0.25);
+    transform-origin: center;
+  }
+  .nav-anchor-label,
+  .nav-anchor-dot {
+    display: none;
+  }
+  .nav-anchor-ja {
+    font-size: calc(var(--fs-body) - 2px) !important;
+  }
+}

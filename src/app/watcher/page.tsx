@@ -79,7 +79,7 @@ function HeroSection() {
 
         {/* H1 Title */}
         <h1
-          className="font-bold max-w-[48ch] mx-auto mt-4"
+          className="hero-h1-match-index font-bold max-w-[48ch] mx-auto mt-4"
           style={{ fontSize: "53px", lineHeight: "1.5", letterSpacing: "-0.035em", fontFamily: "'NiveauGrotesk', sans-serif" }}
         >
 GEO・LLMO<span style={{ marginLeft: "3px", fontSize: "49px", fontFamily: "'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif" }}>対策ツール</span> <span style={{ color: "#003393" }}>GEO Watcher</span>
@@ -109,22 +109,22 @@ function NavigationSection() {
   ];
 
   return (
-    <section className="bg-white py-0 border-t border-b border-black/[0.06]">
+    <section className="nav-anchor-section bg-white py-0 border-t border-b border-black/[0.06]">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="flex flex-wrap justify-center">
+        <div className="nav-anchor-list flex flex-col sm:flex-row flex-wrap justify-center">
           {items.map((item, idx) => (
-            <div key={item.href} className="flex items-center">
+            <div key={item.href} className="nav-anchor-item flex items-center">
               <a
                 href={item.href}
-                className="px-4 sm:px-6 py-4 text-center hover:opacity-80 transition-opacity"
+                className="px-4 sm:px-6 py-4 text-center hover:opacity-80 transition-opacity w-full sm:w-auto"
                 style={{ minWidth: "140px" }}
               >
-                <div className="text-[11px] font-bold tracking-widest uppercase mb-1" style={{ color: "#003393" }}>{item.label}</div>
-                <div style={{ fontSize: "var(--fs-body)", fontWeight: "600", color: "#003393" }}>{item.ja}</div>
-                <div className="text-[10px] mt-1" style={{ color: "#003393" }}>•</div>
+                <div className="nav-anchor-label text-[11px] font-bold tracking-widest uppercase mb-1" style={{ color: "#003393" }}>{item.label}</div>
+                <div className="nav-anchor-ja" style={{ fontSize: "var(--fs-body)", fontWeight: "600", color: "#003393" }}>{item.ja}</div>
+                <div className="nav-anchor-dot text-[10px] mt-1" style={{ color: "#003393" }}>•</div>
               </a>
               {idx < items.length - 1 && (
-                <div style={{ width: "1px", height: "60px", backgroundColor: "#003393", margin: "0 0" }} />
+                <div className="nav-anchor-divider" style={{ width: "1px", height: "60px", backgroundColor: "#003393", margin: "0 0" }} />
               )}
             </div>
           ))}
