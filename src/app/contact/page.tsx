@@ -30,10 +30,6 @@ const FAQS = [
     a: "はい。GEO は既存の SEO オーガニック施策と競合しません。AI 検索への露出を新たなレイヤーとして積み上げるアプローチです。",
   },
   {
-    q: "海外マーケットにも対応していますか？",
-    a: "英語・韓国語市場への対応が可能です。各言語の AI 検索行動分析と GEO 設計を行います。",
-  },
-  {
     q: "対象となる AI 検索エンジンは？",
     a: "ChatGPT・Perplexity・Google AI Overviews・Google AI Mode・Gemini・Copilotを標準対象とします。Claude はオプションで対応可能です。",
   },
