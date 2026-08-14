@@ -15,7 +15,7 @@ type Props = {
   data: ContactFormData
 }
 
-const fieldLabels: Array<[keyof Pick<ContactFormData, 'company' | 'role' | 'name' | 'phone' | 'email' | 'industry' | 'website' | 'challenge'>, string]> = [
+const fieldLabels: Array<[keyof Pick<ContactFormData, 'company' | 'role' | 'name' | 'phone' | 'email' | 'industry' | 'website' | 'inquiryType' | 'challenge'>, string]> = [
   ['company', '会社名'],
   ['role', '役職'],
   ['name', 'お名前'],
@@ -23,7 +23,8 @@ const fieldLabels: Array<[keyof Pick<ContactFormData, 'company' | 'role' | 'name
   ['email', 'メールアドレス'],
   ['industry', '業種'],
   ['website', 'Webサイト'],
-  ['challenge', '現在の課題'],
+  ['inquiryType', 'お問い合わせ項目'],
+  ['challenge', 'ご相談内容'],
 ]
 
 export function ContactConfirmEmail({ data }: Props) {

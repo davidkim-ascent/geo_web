@@ -22,10 +22,10 @@ export async function POST(req: NextRequest) {
   } catch {
     return NextResponse.json({ error: 'invalid_request' }, { status: 400 })
   }
-  const { company, role, name, phone, email, industry, website, challenge } = body as Record<string, string>
+  const { company, role, name, phone, email, industry, website, inquiryType, challenge } = body as Record<string, string>
 
   // 필수 필드 검증
-  if (!company || !role || !name || !phone || !email || !industry || !challenge) {
+  if (!company || !role || !name || !phone || !email || !industry || !inquiryType || !challenge) {
     return NextResponse.json({ error: 'missing_required_fields' }, { status: 400 })
   }
 
@@ -45,7 +45,7 @@ export async function POST(req: NextRequest) {
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   )
   const { error: dbError } = await supabase.from('contact_submissions').insert({
-    company, role, name, phone, email, industry, website, challenge,
+    company, role, name, phone, email, industry, website, inquiry_type: inquiryType, challenge,
   })
 
   if (dbError) {
@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
 
   const receivedAt = new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })
 
-  const formData: ContactFormData = { company, role, name, phone, email, industry, website, challenge, receivedAt }
+  const formData: ContactFormData = { company, role, name, phone, email, industry, website, inquiryType, challenge, receivedAt }
 
   // 사용자 확인 메일
   const { error: confirmError } = await resend.emails.send({

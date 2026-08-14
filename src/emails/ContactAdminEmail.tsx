@@ -16,6 +16,7 @@ export type ContactFormData = {
   email: string
   industry: string
   website: string
+  inquiryType: string
   challenge: string
   receivedAt: string
 }
@@ -54,6 +55,7 @@ export function ContactAdminEmail({ data, isFallback = false }: Props) {
               ['メールアドレス', data.email],
               ['業種', data.industry],
               ['Webサイト', data.website],
+              ['お問い合わせ項目', data.inquiryType],
             ] as [string, string][]
           ).map(([label, value]) => (
             <Section key={label} style={{ marginBottom: 12 }}>
