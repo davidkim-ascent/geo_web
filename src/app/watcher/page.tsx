@@ -35,7 +35,7 @@ function SectionLabel({ title, dark = false }: { title: string; dark?: boolean }
 
 function HeroSection() {
   return (
-    <section className="relative bg-white py-12 pb-0">
+    <section id="top" className="relative bg-white py-12 pb-0">
       <div className="relative max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 w-full flex flex-col items-center text-center">
         {/* Label */}
         <div className="mb-8 border border-[#003393] rounded-full px-6 py-2 inline-block">
@@ -74,7 +74,7 @@ function HeroSection() {
           className="font-bold max-w-[60ch] mx-auto"
           style={{ fontSize: "var(--fs-h3)", lineHeight: "1.5", letterSpacing: "-0.035em" }}
         >
-          <span style={{ color: "#003393" }}>GEO・LLMO・AIO 対策</span>は<span style={{ backgroundImage: "linear-gradient(transparent 55%, #fff176 55%, #fff176 92%, transparent 92%)", paddingBottom: "4px" }}>月額コンサルなしで、</span>これひとつ。
+          <span style={{ color: "#003393" }}>AI時代のGEO・LLMO・AIO対策</span>は<span style={{ backgroundImage: "linear-gradient(transparent 55%, #fff176 55%, #fff176 92%, transparent 92%)", paddingBottom: "4px" }}>月額コンサルなしで、</span>これひとつ。
         </h3>
 
         {/* H1 Title */}
@@ -175,33 +175,33 @@ function StepsSection() {
   const steps = [
     {
       number: "1",
-      title: "測る",
-      description: "まず、AI検索上の現在地を把握",
-      detail: "ブランド名やWebサイトを登録すると、AI検索上での言及や引用の計測を開始できます。プロンプトは自動で生成されるため、専門的な設定をしなくても始められます。"
-    },
-    {
-      number: "2",
       title: "知る",
       description: "自社と競合の違いを把握",
       detail: "AIごとの言及率、回答内容、引用URLを確認し、自社がどのように扱われているかを把握します。競合と比較することで、強みと弱みが見えてきます。"
     },
     {
-      number: "3",
+      number: "2",
       title: "設計する",
       description: "次に取り組むべきテーマを明確に",
       detail: "競合は表示されているのに、自社は表示されていない質問を確認します。優先して改善すべきテーマやコンテンツを絞り込めます。"
     },
     {
-      number: "4",
+      number: "3",
       title: "改善する",
       description: "サイトやコンテンツを見直す",
       detail: "引用されている競合ページや情報源を参考に、自社サイトやコンテンツを改善します。何を直すべきか迷う場合は、コンテンツ改善のスポットサポートも利用できます。"
     },
     {
-      number: "5",
+      number: "4",
       title: "確かめる",
       description: "施策後の変化を毎日追う",
       detail: "改善後に、言及率や引用状況がどう変わったかを確認します。施策前後を比較しながら、次の改善につなげます。"
+    },
+    {
+      number: "5",
+      title: "測る",
+      description: "まず、AI検索上の現在地を把握",
+      detail: "ブランド名やWebサイトを登録すると、AI検索上での言及や引用の計測を開始できます。プロンプトは自動で生成されるため、専門的な設定をしなくても始められます。"
     }
   ];
 
@@ -692,7 +692,7 @@ function ContactSection() {
               variant="cta"
               className="flex-1 !w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !bg-[#003393] hover:!bg-[#0f3de0]" style={{ fontSize: "var(--fs-body-xsm)" }}
             >
-              <Link href="/watcher">GEO Watcherを見る →</Link>
+              <Link href="/watcher#top" scroll={true}>GEO Watcherを見る →</Link>
             </Button>
             <Button
               asChild

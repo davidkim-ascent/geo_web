@@ -134,22 +134,39 @@ export function ShindanGuidedDemo() {
               className="w-full h-auto block"
             />
             <div
-              className="absolute text-white font-bold rounded-lg whitespace-nowrap"
-              style={{ top: "0.9%", left: "27%", background: "#003393", fontSize: "12px", padding: "8px 14px", boxShadow: "0 8px 20px -6px rgba(0,51,147,0.6)" }}
+              className="absolute text-white rounded-lg"
+              style={{ top: "0.3%", left: "24%", background: "#0B1A4D", fontSize: "26px", lineHeight: "1.6", padding: "12px 18px", boxShadow: "0 8px 24px -6px rgba(0,51,147,0.5)" }}
             >
-              ロゴは自社仕様にカスタマイズ可能
+              <div className="font-bold" style={{ color: "#7DD3FC" }}>ポイント①</div>
+              <div className="font-bold whitespace-nowrap">ロゴは自社仕様にカスタマイズ可能</div>
+              <svg
+                width="26"
+                height="14"
+                viewBox="0 0 26 14"
+                style={{ position: "absolute", left: "-24px", top: "10px" }}
+              >
+                <polygon points="0,7 26,0 26,14" fill="#0B1A4D" />
+              </svg>
             </div>
             <div
               className="absolute text-white font-bold rounded-lg whitespace-nowrap"
-              style={{ top: "10.7%", left: "37%", background: "#003393", fontSize: "12px", padding: "8px 14px", boxShadow: "0 8px 20px -6px rgba(0,51,147,0.6)" }}
+              style={{ top: "10.7%", left: "37%", background: "#003393", fontSize: "24px", padding: "8px 14px", boxShadow: "0 8px 20px -6px rgba(0,51,147,0.6)" }}
             >
               担当者からのコメントを記載できます
             </div>
             <div
               className="absolute text-white font-bold rounded-lg whitespace-nowrap"
-              style={{ top: "94%", left: "29%", background: "#003393", fontSize: "12px", padding: "8px 14px", boxShadow: "0 8px 20px -6px rgba(0,51,147,0.6)" }}
+              style={{ top: "94%", left: "29%", background: "#003393", fontSize: "24px", padding: "8px 14px", boxShadow: "0 8px 20px -6px rgba(0,51,147,0.6)" }}
             >
               CTAは自社仕様にカスタマイズ可能
+              <svg
+                width="14"
+                height="10"
+                viewBox="0 0 14 10"
+                style={{ position: "absolute", left: "50%", transform: "translateX(-50%)", bottom: "-10px" }}
+              >
+                <polygon points="0,0 14,0 7,10" fill="#003393" />
+              </svg>
             </div>
           </div>
         </div>

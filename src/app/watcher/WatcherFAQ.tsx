@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const WATCHER_FAQS = [
-  { q: "対応しているAIモデルは？", a: "Chat GPT、Gemini、Google AI モード、AI Overview、Perplexty、Compilot、Claudeの7つに対応しています。Claudeを選択する場合はオプションとなります。" },
+  { q: "対応しているAIモデルは？", a: "Chat GPT、Gemini、Google AI モード、AI Overviews、Perplexity、Copilot、Claudeの7つに対応しています。Claudeを選択する場合はオプションとなります。" },
   { q: "競合ブランドは何社と比較できますか？", a: "最大20社まで比較可能です。自社ブランドと同じ項目で比較できます。競合ブランド登録数は全プラン共通して最大20社となっております。" },
   { q: "データはどのくらいの期間保存されますか？", a: "過去1年分のデータが保存されます。" },
   { q: "プロンプトの更新頻度はどれくらいですか？", a: "全プラン共通して毎日更新されます。更新日時も各プロンプトごとに確認可能です。" },

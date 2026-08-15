@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Calendar, ChevronRight, Gauge, Eye, Lightbulb, Phone } from "lucide-react";
+import { Calendar, ChevronRight, Gauge, Eye, Lightbulb, TrendingUp } from "lucide-react";
 import type { Metadata } from "next";
 import { ArticleThumbnail } from "@/components/lab/ArticleThumbnail";
 import { HeroShindanAnimated } from "@/components/home/HeroShindanAnimated";
@@ -70,7 +70,10 @@ function HeroSection() {
           <span className="text-blue-gradient">2つのソリューション</span>
         </h1>
         <p className="mt-6 text-[#0B0B0E] leading-[1.6] max-w-[810px] mx-auto" style={{ fontSize: "var(--fs-body)" }}>
-          自社・競合の変化を継続的に追いたい企業には、<span className="text-marker-highlight">モニタリングツール「GEO Watcher」</span>。見込み顧客の課題を可視化し、<span className="text-marker-highlight">営業提案につなげたい企業には「GEO診断レポート」</span>。Ascent GEOは、自社ブランドの継続的な改善と、見込み顧客への営業提案。2つの目的に応えるソリューションを提供します。
+          自社・競合の変化を継続的に追いたい企業には、<span className="text-marker-highlight">モニタリングツール「GEO Watcher」</span>。<br />
+          見込み顧客の課題を可視化し、<span className="text-marker-highlight">営業提案につなげたい企業には「GEO診断レポート」</span>。<br />
+          Ascent GEOは、自社ブランドの継続的な改善と、見込み顧客への営業提案。<br />
+          2つの目的に応えるソリューションを提供します。
         </p>
         <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 gap-8 w-full max-w-[1232px] mx-auto">
           <div className="hero-solution-card relative flex flex-col items-center gap-6 rounded-2xl p-8 pt-9">
@@ -319,7 +322,7 @@ function SolutionsSection() {
                         case "gauge": return <Gauge {...iconProps} />;
                         case "eye": return <Eye {...iconProps} />;
                         case "lightbulb": return <Lightbulb {...iconProps} />;
-                        case "check": return <Phone {...iconProps} />;
+                        case "check": return <TrendingUp {...iconProps} />;
                         default: return null;
                       }
                     };

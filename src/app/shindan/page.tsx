@@ -27,7 +27,7 @@ function HeroSection() {
       <div className="relative max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 w-full flex flex-col items-center text-center">
         {/* Label */}
         <div className="mb-8 border border-[#003393] rounded-full px-6 py-2 inline-block">
-          <p className="text-[#003393] font-bold" style={{ fontSize: "var(--fs-label)" }}>SEO・Webエージェンシの法人営業向け</p>
+          <p className="text-[#003393] font-bold" style={{ fontSize: "var(--fs-label)" }}>SEO・Webマーケティング会社の法人営業向け</p>
         </div>
 
         {/* AI Model Logos */}

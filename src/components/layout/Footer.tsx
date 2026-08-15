@@ -44,7 +44,7 @@ export default function Footer() {
               {[
                 { label: "Home", href: "/" },
                 { label: "GEO Watcher", href: "/watcher" },
-                { label: "GEO・LLMO診断ツール", href: "/shindan" },
+                { label: "GEO診断", href: "/shindan" },
                 { label: "GEO Lab", href: "/lab" },
               ].map((item) => (
                 <li key={item.label}>
@@ -58,7 +58,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <p className="ui-footer-heading mb-5">Contact</p>
+            <Link href="/contact" className="ui-footer-heading mb-5 block hover:opacity-80 transition-opacity">Contact</Link>
             <ul className="flex flex-col gap-3">
               <li>
                 <a href="tel:+81335273963" className="ui-footer-link">
@@ -76,7 +76,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-6 border-t border-black/10 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="ui-footer-meta">
-            © 2026 ASCENT NETWORK
+            © 2026 ASCENT NETWORKS
           </p>
           <a href="/privacy" className="ui-footer-link">
             プライバシーポリシー

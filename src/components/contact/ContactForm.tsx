@@ -153,7 +153,7 @@ export function ContactForm({ blockedEmailDomains }: Props) {
 
       <div className="field-row two">
         <div>
-          <label><span>名</span><span className="req">必須</span></label>
+          <label><span>お名前</span><span className="req">必須</span></label>
           <input className="field" placeholder="例）太郎" {...register('name')} />
           {errors.name && <p className="field-error">{errors.name.message}</p>}
         </div>
@@ -200,7 +200,7 @@ export function ContactForm({ blockedEmailDomains }: Props) {
         <div>
           <label><span>お問い合わせ項目</span><span className="req">必須</span></label>
           <select className="field" {...register('inquiryType')}>
-            <option value="">お問い合わせ項目を選択</option>
+            <option value="" hidden>お問い合わせ項目を選択</option>
             {INQUIRY_TYPES.map(type => (
               <option key={type} value={type}>{type}</option>
             ))}
@@ -224,7 +224,7 @@ export function ContactForm({ blockedEmailDomains }: Props) {
 
       <div className="check">
         <input type="checkbox" id="human" {...register('human')} />
-        <label htmlFor="human">私はロボットではありません</label>
+        <label htmlFor="human">私はロボットではありません。</label>
       </div>
       {errors.human && <p className="field-error" style={{ marginTop: -14, marginBottom: 10 }}>{errors.human.message}</p>}
 

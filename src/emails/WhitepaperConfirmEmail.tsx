@@ -67,7 +67,7 @@ export function WhitepaperConfirmEmail({ company, name, downloadUrl }: Props) {
 
           <Section style={{ backgroundColor: '#f4f4f5', padding: '20px 32px', borderTop: '1px solid #e4e4e7' }}>
             <Text style={{ margin: 0, fontSize: 12, color: '#71717a' }}>
-              ASCENT NETWORK · このメールは自動送信です。返信はお受けできません。
+              ASCENT NETWORKS · このメールは自動送信です。返信はお受けできません。
             </Text>
           </Section>
         </Container>
