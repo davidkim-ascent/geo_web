@@ -156,7 +156,7 @@ export default function WatcherTermsPage() {
         ))}
       </div>
 
-      <p className="mt-10 text-[14px] text-[#4e4e51]">制定日：2026年7月14日</p>
+      <p className="mt-10 text-[14px] text-[#4e4e51]">制定日：2026年8月17日</p>
     </div>
   )
 }
