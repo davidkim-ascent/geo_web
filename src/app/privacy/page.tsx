@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: '個人情報保護方針 - 株式会社アセントネットワークス',
+  title: '個人情報保護方針 - 株式会社 Ascent Networks',
   description: 'Ascent GEO の個人情報保護方針です。',
   path: '/privacy',
 })
@@ -53,7 +53,7 @@ const sections = [
   {
     article: '第9条',
     title: 'お問い合わせ窓口',
-    body: '本ポリシーに関するお問い合わせ、個人情報の開示・訂正等のご請求は、以下の窓口までご連絡ください。\n\n事業者名：株式会社アセントネットワークス\n代表者：金 志勲\n所在地：東京都中央区晴海1-8-10晴海アイランドトリトンスクエア オフィスタワーX棟8階\n個人情報管理責任者：山本百合子\n連絡先メールアドレス：privacy@ascentnet.co.jp',
+    body: '本ポリシーに関するお問い合わせ、個人情報の開示・訂正等のご請求は、以下の窓口までご連絡ください。\n\n事業者名：株式会社 Ascent Networks\n代表者：金 志勲\n所在地：東京都中央区晴海1-8-10晴海アイランドトリトンスクエア オフィスタワーX棟8階\n個人情報管理責任者：山本百合子\n連絡先メールアドレス：privacy@ascentnet.co.jp',
   },
 ]
 
@@ -66,7 +66,7 @@ export default function PrivacyPage() {
           個人情報保護方針
         </h2>
         <p className="mt-4 max-w-2xl text-[17px] leading-[1.6] text-[#4e4e51]">
-          株式会社アセントネットワークス（以下「当社」といいます。）は、当社が提供するサービス（GEO Watcher、GEO-Shindan、その他当社が提供する一切のサービスを含み、以下「本サービス」といいます。）における、ユーザーの個人情報を含むプライバシー情報の取扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます。）を定め、その適切な保護に努めます。
+          株式会社 Ascent Networks（以下「当社」といいます。）は、当社が提供するサービス（GEO Watcher、GEO-Shindan、その他当社が提供する一切のサービスを含み、以下「本サービス」といいます。）における、ユーザーの個人情報を含むプライバシー情報の取扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます。）を定め、その適切な保護に努めます。
         </p>
       </div>
 
