@@ -148,7 +148,7 @@ export default function ShindanTermsPage() {
     <div className="mx-auto max-w-4xl px-6 py-20">
       <div className="mb-10">
         <p className="font-['JetBrains_Mono',monospace] text-[11px] tracking-[0.2em] text-[#1452FF]">TERMS OF SERVICE</p>
-        <h2 className="mt-4 font-bold text-[#0B0B0E]" style={{ fontSize: "clamp(44px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em" }}>
+        <h2 className="mt-4 font-bold text-[#0B0B0E]" style={{ letterSpacing: "-0.035em" }}>
           GEO-Shindan 利用規約
         </h2>
       </div>

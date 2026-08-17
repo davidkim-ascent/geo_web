@@ -62,7 +62,7 @@ export default function PrivacyPage() {
     <div className="mx-auto max-w-4xl px-6 py-20">
       <div className="mb-10">
         <p className="font-['JetBrains_Mono',monospace] text-[11px] tracking-[0.2em] text-[#1452FF]">PRIVACY POLICY</p>
-        <h2 className="mt-4 font-bold text-[#0B0B0E]" style={{ fontSize: "clamp(44px, 4.86vw, 65px)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em" }}>
+        <h2 className="mt-4 font-bold text-[#0B0B0E]" style={{ letterSpacing: "-0.035em" }}>
           個人情報保護方針
         </h2>
         <p className="mt-4 max-w-2xl text-[17px] leading-[1.6] text-[#4e4e51]">
