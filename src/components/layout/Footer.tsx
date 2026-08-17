@@ -58,7 +58,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <Link href="/contact" className="ui-footer-heading mb-5 block hover:opacity-80 transition-opacity">Contact</Link>
+            <p className="ui-footer-heading mb-5">Contact</p>
             <ul className="flex flex-col gap-3">
               <li>
                 <a href="tel:+81335273963" className="ui-footer-link">
@@ -78,9 +78,17 @@ export default function Footer() {
           <p className="ui-footer-meta">
             © 2026 ASCENT NETWORKS
           </p>
-          <a href="/privacy" className="ui-footer-link">
-            プライバシーポリシー
-          </a>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <a href="/watcher-terms" className="ui-footer-link">
+              GEO Watcher 利用規約
+            </a>
+            <a href="/shindan-terms" className="ui-footer-link">
+              GEO-Shindan 利用規約
+            </a>
+            <a href="/privacy" className="ui-footer-link">
+              プライバシーポリシー
+            </a>
+          </div>
         </div>
       </div>
     </footer>
