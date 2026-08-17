@@ -223,16 +223,16 @@ function StepsSection() {
 
         {/* Cycle Layout */}
         <div className="hidden lg:block w-full max-w-[1320px] mx-auto">
-          {/* 上段: 5 → 1 → 2 */}
+          {/* 上段: 1 → 2 → 3 */}
           <div className="flex items-stretch">
-            <StepCard step={steps[4]} />
-            <ArrowH />
             <StepCard step={steps[0]} />
             <ArrowH />
             <StepCard step={steps[1]} />
+            <ArrowH />
+            <StepCard step={steps[2]} />
           </div>
 
-          {/* 中段: 縦矢印 (左: 4→5 上向き / 右: 2→3 下向き) */}
+          {/* 中段: 縦矢印 (左: 5→1 上向き / 右: 3→4 下向き) */}
           <div className="flex items-center" style={{ height: "90px" }}>
             <div style={{ flex: "1 1 0" }} className="flex justify-center">
               <ArrowV direction="up" />
@@ -243,11 +243,11 @@ function StepsSection() {
             </div>
           </div>
 
-          {/* 下段: 4 ← 3 (上段の左右端カード中心に合わせる) */}
+          {/* 下段: 5 ← 4 (上段の左右端カード中心に合わせる) */}
           <div className="flex items-stretch" style={{ paddingLeft: "8%", paddingRight: "8%" }}>
-            <StepCard step={steps[3]} />
+            <StepCard step={steps[4]} />
             <ArrowH direction="left" />
-            <StepCard step={steps[2]} />
+            <StepCard step={steps[3]} />
           </div>
         </div>
 
