@@ -11,7 +11,7 @@ import { createAdminClient } from '@/lib/supabase/admin'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-const FROM = process.env.RESEND_FROM_EMAIL?.trim() || 'no-reply@ascentnet.co.jp'
+const FROM = process.env.RESEND_FROM_EMAIL?.trim() || 'geo@ascentnet.co.jp'
 const ADMIN_EMAIL = process.env.CONTACT_ADMIN_EMAIL?.trim() || 'geo@ascentnet.co.jp'
 const BLOCKED_DOMAINS = (process.env.BLOCKED_EMAIL_DOMAINS ?? '').split(',').map((d) => d.trim()).filter(Boolean)
 
