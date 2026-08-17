@@ -116,11 +116,11 @@ function NavigationSection() {
             <div key={item.href} className="nav-anchor-item flex items-center">
               <a
                 href={item.href}
-                className="px-4 sm:px-6 py-4 text-center hover:opacity-80 transition-opacity w-full sm:w-auto"
-                style={{ minWidth: "140px" }}
+                className="px-3 sm:px-4 py-4 text-center hover:opacity-80 transition-opacity w-full sm:w-auto"
+                style={{ minWidth: "120px" }}
               >
-                <div className="nav-anchor-label text-[11px] font-bold tracking-widest uppercase mb-1" style={{ color: "#003393" }}>{item.label}</div>
-                <div className="nav-anchor-ja" style={{ fontSize: "var(--fs-body)", fontWeight: "600", color: "#003393" }}>{item.ja}</div>
+                <div className="nav-anchor-label font-bold tracking-widest uppercase mb-1" style={{ color: "#003393", fontSize: "10px" }}>{item.label}</div>
+                <div className="nav-anchor-ja" style={{ fontSize: "17px", fontWeight: "600", color: "#003393" }}>{item.ja}</div>
                 <div className="nav-anchor-dot text-[10px] mt-1" style={{ color: "#003393" }}>•</div>
               </a>
               {idx < items.length - 1 && (
