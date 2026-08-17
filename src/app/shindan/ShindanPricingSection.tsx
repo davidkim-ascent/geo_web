@@ -50,6 +50,29 @@ export function ShindanPricingSection() {
           >
             <span style={{ fontSize: "28px", color: "#7DD3FC" }}>✦</span> 料金プラン <span style={{ fontSize: "28px", color: "#7DD3FC" }}>✦</span>
           </h2>
+
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-2 gap-y-3">
+            {[
+              "プランを選択",
+              "「このプランで始める」をクリック",
+              "会員登録",
+              "お支払い情報を入力",
+              "利用開始",
+            ].map((step, i, arr) => (
+              <div key={step} className="flex items-center gap-2">
+                <span
+                  className="rounded-full px-4 py-2 font-bold whitespace-nowrap"
+                  style={{ fontSize: "var(--fs-label)", backgroundColor: "#F6F7FB", color: "#003393" }}
+                >
+                  {step}
+                </span>
+                {i < arr.length - 1 && (
+                  <span className="text-[#9A9AA0]" style={{ fontSize: "var(--fs-label)" }}>→</span>
+                )}
+              </div>
+            ))}
+          </div>
+
           <p className="mt-4 text-[#4e4e51] max-w-[680px] mx-auto" style={{ fontSize: "var(--fs-body-xsm)" }}>
             見込み顧客へのアプローチ数や、診断レポートの利用頻度に合わせて選べる3つのプランをご用意しています。主要機能は共通で、月間のレポート生成数とプロンプト数に応じて選択できます。
           </p>
