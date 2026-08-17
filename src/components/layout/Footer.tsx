@@ -78,14 +78,16 @@ export default function Footer() {
           <p className="ui-footer-meta">
             © 2026 ASCENT NETWORKS
           </p>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <a href="/watcher-terms" className="ui-footer-link">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+            <a href="/watcher-terms" className="ui-footer-link" style={{ fontSize: "15px" }}>
               GEO Watcher 利用規約
             </a>
-            <a href="/shindan-terms" className="ui-footer-link">
+            <span className="text-white/30" style={{ fontSize: "15px" }}>|</span>
+            <a href="/shindan-terms" className="ui-footer-link" style={{ fontSize: "15px" }}>
               GEO-Shindan 利用規約
             </a>
-            <a href="/privacy" className="ui-footer-link">
+            <span className="text-white/30" style={{ fontSize: "15px" }}>|</span>
+            <a href="/privacy" className="ui-footer-link" style={{ fontSize: "15px" }}>
               プライバシーポリシー
             </a>
           </div>
