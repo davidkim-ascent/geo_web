@@ -90,6 +90,10 @@ export default function Footer() {
             <a href="/privacy" className="ui-footer-link" style={{ fontSize: "15px" }}>
               プライバシーポリシー
             </a>
+            <span className="text-white/30" style={{ fontSize: "15px" }}>|</span>
+            <a href="/tokushoho" className="ui-footer-link" style={{ fontSize: "15px" }}>
+              特定商取引法に基づく表記
+            </a>
           </div>
         </div>
       </div>
