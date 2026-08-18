@@ -1,57 +1,116 @@
-import { CTASection } from "@/components/layout/CTASection";
+import Link from "next/link";
+import Image from "next/image";
+import { Calendar } from "lucide-react";
+import { CalendarBookingButton } from "@/components/contact/CalendarBookingButton";
+import { ContactForm } from "@/components/contact/ContactForm";
+import { Button } from "@/components/ui/button";
+import { DEFAULT_BLOCKED_EMAIL_DOMAINS } from "@/lib/contact-blocking";
 
-const WATCHER_CONTACT_URL = "https://geo.ascentnet.co.jp/watcher#contact";
+const voice1Image = "/design-assets/voice1.png";
+const voice2Image = "/design-assets/voice2.png";
+const voice3Image = "/design-assets/voice3.png";
 
 export function LabArticleCTASection() {
   return (
-    <div className="article-cta">
-      <CTASection
-        kicker="GEO(LLMO)対策、専門コンサルタントにご相談ください"
-        title={
-          <>
-            GEO(LLMO)対策、
-            <br />
-            <span style={{ position: "relative", display: "inline-block" }}>
-              <svg viewBox="0 0 260 28" preserveAspectRatio="none" style={{ position: "absolute", bottom: "-12px", left: 0, width: "100%", height: "28px", overflow: "visible", zIndex: 0 }}>
-                <defs>
-                  <linearGradient id="underlineGrad2" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stopColor="#7ab6ff" />
-                    <stop offset="100%" stopColor="#0070f3" />
-                  </linearGradient>
-                  <filter id="brush2" x="-5%" y="-80%" width="110%" height="260%">
-                    <feTurbulence type="fractalNoise" baseFrequency="0.65 0.4" numOctaves="4" seed="7" result="noise" />
-                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G" result="displaced" />
-                    <feComposite in="displaced" in2="SourceGraphic" operator="over" />
-                  </filter>
-                  <filter id="brushEdge2" x="-5%" y="-80%" width="110%" height="260%">
-                    <feTurbulence type="fractalNoise" baseFrequency="0.9 0.6" numOctaves="3" seed="2" result="noise" />
-                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G" />
-                  </filter>
-                </defs>
-                <path d="M2,14 C20,10 45,16 75,12 C105,8 130,15 158,12 C186,9 210,15 240,11 C250,9 256,13 259,12" fill="none" stroke="url(#underlineGrad2)" strokeWidth="28" strokeLinecap="butt" opacity="0.08" filter="url(#brush2)" />
-                <path d="M1,13 C18,10 42,16 68,12 C98,8 122,15 150,12 C178,9 205,15 232,11 C245,9 254,13 259,11" fill="none" stroke="url(#underlineGrad2)" strokeWidth="16" strokeLinecap="butt" opacity="0.45" filter="url(#brush2)" />
-                <path d="M4,10 C30,8 60,13 90,10 C120,7 148,13 175,10 C200,7 228,12 256,9" fill="none" stroke="url(#underlineGrad2)" strokeWidth="3" strokeLinecap="round" opacity="0.2" filter="url(#brushEdge2)" />
-              </svg>
-              <span style={{ position: "relative", zIndex: 1, color: "#ffffff" }}>専門コンサルタント</span>
-            </span>にご相談ください
-          </>
-        }
-        description={
-          <>
-            「自社コンテンツはGEO(LLMO)に対応できているか？」「どの質問からGEO(LLMO)対策を始めるべきか？」
-            そのような疑問・課題をお持ちの方に向けて、弊社では無料の初回相談を受け付けています。
-            <br />
-            <br />
-            GEO(LLMO)戦略の立案から、リスニングマインドを活用した質問クラスター設計、コンテンツ改善の優先順位付けまで、
-            御社の状況に合わせた具体的なアドバイスをご提供します。お問い合わせから24時間以内にご返信いたします。
-          </>
-        }
-        primaryButton={{ href: WATCHER_CONTACT_URL, label: "相談する", target: "_blank", rel: "noopener noreferrer" }}
-        secondaryButtons={[
-          { href: WATCHER_CONTACT_URL, label: "サービス資料をダウンロード", target: "_blank", rel: "noopener noreferrer" },
-          { href: WATCHER_CONTACT_URL, label: "無料相談予約（Googleカレンダー）", target: "_blank", rel: "noopener noreferrer" },
-        ]}
-      />
-    </div>
+    <section
+      id="contact"
+      className="relative py-10 lg:py-20 overflow-hidden"
+      style={{ background: "linear-gradient(180deg, #e8f4fb 0%, #d4e8f7 50%, #c8dff5 100%)" }}
+    >
+      <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-14 items-start">
+        <div>
+          <div className="font-mono tracking-[0.18em] uppercase text-[#003393] mb-5" style={{ fontSize: "var(--fs-label-xxs)" }}>
+            AI検索で選ばれるための一歩を、ここから
+          </div>
+          <h2
+            className="text-[#0B0B0E] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
+            style={{ fontSize: "var(--fs-section-title)" }}
+          >
+            <span className="text-marker-highlight">AI検索で選ばれるための</span><br />一歩を、ここから。
+          </h2>
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <Button
+              asChild
+              variant="cta"
+              className="flex-1 !w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !bg-[#003393] hover:!bg-[#0f3de0]" style={{ fontSize: "var(--fs-label)" }}
+            >
+              <Link href="/watcher">GEO Watcherを見る →</Link>
+            </Button>
+            <Button
+              asChild
+              variant="cta"
+              className="flex-1 !w-auto !min-w-0 !max-w-none !h-[52px] justify-center text-center px-6 !bg-[#003393] hover:!bg-[#0f3de0]" style={{ fontSize: "var(--fs-label)" }}
+            >
+              <Link href="/shindan">GEO診断レポートを見る →</Link>
+            </Button>
+          </div>
+          <div className="mt-3">
+            <CalendarBookingButton className="!w-full !min-w-0 !max-w-none !h-[52px] !justify-start text-left px-6 gap-2 !bg-transparent !border !border-[#003393] !text-[#003393] hover:!bg-[#003393] hover:!text-white hover:!border-[#003393]">
+              <Calendar size={16} />
+              無料相談予約（Googleカレンダー）
+            </CalendarBookingButton>
+          </div>
+
+          {/* Reviews */}
+          <div className="mt-8 grid grid-cols-1 gap-4">
+              {[
+                {
+                  name: "EC運営担当者",
+                  role: "化粧品・自社EC",
+                  review: "GEO Watcherは、主要な計測機能をツール内で利用でき、苦手だったプロンプト設計だけを、1回単位で依頼できました。毎月の追加費用が発生しないため、社内でも説明しやすく、導入までスムーズに進められました。",
+                  image: voice1Image,
+                  rating: 5,
+                },
+                {
+                  name: "広報・マーケティング担当者",
+                  role: "地方製造業",
+                  review: "GEO Watcherは、検索データやビッグデータを長年扱ってきた企業が開発しているため、計測データの信頼性にも安心感がありました。複数のAIにおける自社と競合の変化を、継続的に確認できる点も、社内で導入を決める後押しになりました。",
+                  image: voice2Image,
+                  rating: 5,
+                },
+                {
+                  name: "マーケティングマネージャー",
+                  role: "BtoB SaaS企業",
+                  review: "GEO Watcherに切り替えてからは、毎日のデータで言及率や引用URLの変化を追えるため、施策後の反応を早い段階で確認できます。複数のAIの回答原文やグラフもまとめて共有でき、社内報告の根拠として使いやすくなりました。",
+                  image: voice3Image,
+                  rating: 5,
+                },
+              ].map((reviewer) => (
+                <div key={reviewer.name} className="rounded-lg bg-white p-4 flex gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="h-[80px] w-[80px] rounded-full overflow-hidden bg-gray-200">
+                      {reviewer.image && (
+                        <Image
+                          src={reviewer.image}
+                          alt={reviewer.name}
+                          width={80}
+                          height={80}
+                          className={`h-full w-full object-cover ${reviewer.name === "広報・マーケティング担当者" ? "scale-200 -translate-y-1" : ""}`}
+                        />
+                      )}
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <p className="mb-2 text-[14px] leading-[1.5] text-[#4e4e51]">
+                      {reviewer.review}
+                    </p>
+                    <div className="border-t border-[#e0e0e0] pt-2">
+                      <p className="font-bold text-[#0B0B0E] leading-[1.2]" style={{ fontSize: "var(--fs-body-xsm)" }}>
+                        {reviewer.name}
+                      </p>
+                      <p className="text-[#999] leading-[1.2]" style={{ fontSize: "var(--fs-label-xs)" }}>
+                        {reviewer.role}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+        <div className="w-full max-w-[560px] mx-auto lg:ml-auto lg:mr-0">
+          <ContactForm blockedEmailDomains={DEFAULT_BLOCKED_EMAIL_DOMAINS} />
+        </div>
+      </div>
+    </section>
   );
 }
