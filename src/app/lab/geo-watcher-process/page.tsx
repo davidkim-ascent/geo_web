@@ -322,7 +322,7 @@ export default function GeoWatcherProcessPage() {
                 </p>
                 <p className="article-prose">
                   今すぐできるプロンプトの設計方法は、基準となるKW「〜 おすすめ」などのカスタマージャーニーマップを作成したあと、トピックKWを分類します。トピックKWが出たら検索ボリュームを調査して、1番検索ボリュームの多いKWに対してプロンプトを作成します。必要であればGEO Watcherの「
-                  <Link href="/watcher" className="font-bold underline hover:opacity-80" style={{ color: "#1452FF" }}>スポットサポート（オプション）</Link>
+                  <Link href="https://geo.ascentnet.co.jp/watcher#support" className="font-bold underline hover:opacity-80" style={{ color: "#1452FF" }}>スポットサポート（オプション）</Link>
                   」で、データ根拠に基づくプロンプト設計ができます。担当者がブランド、商品、ターゲットについてヒアリングし、検索ビッグデータに基づき消費者が実際に検索しているテーマから、計測すべき最適なプロンプトを設計します。単に質問文（プロンプト）を作るのではなく、「なぜこの質問を追うのか」まで整理した状態で納品します。
                 </p>
                 <p className="article-prose">
@@ -387,7 +387,7 @@ export default function GeoWatcherProcessPage() {
                 </p>
                 <p className="article-prose">
                   もしGEO・LLMOに特化した専門的なコンテンツ改修サポートが必要なら、GEO Watcherの「
-                  <Link href="/watcher" className="font-bold underline hover:opacity-80" style={{ color: "#1452FF" }}>スポットサポート（オプション）</Link>
+                  <Link href="https://geo.ascentnet.co.jp/watcher#support" className="font-bold underline hover:opacity-80" style={{ color: "#1452FF" }}>スポットサポート（オプション）</Link>
                   」をご利用ください。AIに引用されている競合ページと自社ページを比較し、改善すべきページと優先順位を整理します。感覚ではなく、現在の引用状況や競合との差をもとに、次に取り組むべき改善の方向性を明確にします。
                 </p>
               </section>
@@ -445,7 +445,7 @@ export default function GeoWatcherProcessPage() {
                 <h3 className="article-h3">プロンプト設計を自社で行うのが難しい場合はどうすればよいですか？</h3>
                 <p className="article-prose">
                   GEO Watcherの「
-                  <Link href="/watcher" className="font-bold underline hover:opacity-80" style={{ color: "#1452FF" }}>スポットサポート（オプション）</Link>
+                  <Link href="https://geo.ascentnet.co.jp/watcher#support" className="font-bold underline hover:opacity-80" style={{ color: "#1452FF" }}>スポットサポート（オプション）</Link>
                   」をご利用いただくと、検索ビッグデータに基づき、消費者が実際に検索しているテーマから計測すべき最適なプロンプトを設計します。コンテンツ改善についても、同様にスポットサポートで対応可能です。
                 </p>
 
