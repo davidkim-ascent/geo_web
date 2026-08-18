@@ -309,8 +309,8 @@ function SolutionsSection() {
                 <p className="text-[#4e4e51] leading-[1.6]" style={{ fontSize: "var(--fs-body-xsm)" }}>{s.desc}</p>
               </div>
               {s.image && (
-                <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden mb-6">
-                  <Image src={s.image} alt={s.label} fill className="object-cover" />
+                <div className="relative w-full rounded-xl overflow-hidden mb-6" style={{ aspectRatio: "4 / 2.4" }}>
+                  <Image src={s.image} alt={s.label} fill className="object-cover object-top" />
                 </div>
               )}
               <div className="mb-8">
