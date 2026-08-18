@@ -21,20 +21,20 @@ export const dynamic = "force-static";
 
 const featuredSide = [
   {
-    cat: "HOW TO / GEO Watcher",
-    title: "自社でできる！GEO Watcherを使った具体的なGEO・LLMO対策プロセスを解説",
-    desc: "GEO Watcherを使ったGEO・LLMO対策の実践プロセスを紹介。現状分析、モニタリング、プロンプト設計、コンテンツ改善の進め方を解説します。",
-    meta: "2026.08.18 · 9 MIN",
-    thumbVariant: "geo-watcher-process" as const,
-    href: "/lab/geo-watcher-process",
-  },
-  {
     cat: "GEO / LLMO",
     title: "GEO/LLMO対策におすすめの会社7選を徹底比較",
     desc: "GEO対策会社7社を4つの型で比較し、費用相場・選び方・FAQまで整理した比較記事。",
     meta: "2026.05.19 · 8 MIN",
     thumbVariant: "geo-llmo-company" as const,
     href: "/lab/geo-llmo-company",
+  },
+  {
+    cat: "SEO vs GEO",
+    title: "SEOとGEOは何が違うのか？検索最適化と生成AI最適化を比較",
+    desc: "SEOは検索エンジンの上位表示を狙う施策、GEOは生成AIに引用されるための施策。違いと実践方法を比較表でわかりやすく整理する。",
+    meta: "2026.05.13 · 8 MIN",
+    thumbVariant: "seo-geo" as const,
+    href: "/lab/seo-geo",
   },
 ];
 
@@ -151,32 +151,32 @@ export default function LabPage() {
           </h2>
           <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-stretch">
             {/* Main featured */}
-            <Link href="/lab/seo-geo" className="block h-full">
+            <Link href="/lab/geo-watcher-process" className="block h-full">
               <article className="relative flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl bg-[#0B0B0E] text-[#FAFAF7] transition-opacity hover:opacity-90">
                 <ArticleThumbnail
-                  variant="seo-geo"
-                  eyebrow="FEATURED RESEARCH · SEO / GEO"
+                  variant="geo-watcher-process"
+                  eyebrow="FEATURED RESEARCH · HOW TO"
                   className="h-[240px] w-full"
                 />
                 <div className="relative z-10 flex flex-1 flex-col justify-between p-10 lg:p-14">
                   <div>
                     <div className="mb-6 font-mono text-[11px] tracking-[0.18em] text-[#1452FF]">
-                      FEATURED · 2026.04.12
+                      FEATURED · 2026.08.18
                     </div>
                     <h3
                       className="max-w-[18ch] tracking-[-0.025em] leading-[1.1]"
                       style={{ fontSize: "clamp(28px, 3.4vw, 44px)" }}
                     >
-                      SEOとGEOは何が違うのか？
-                      <em className="text-[#1452FF] not-italic">検索最適化と生成AI最適化を比較</em>
+                      自社でできる！GEO Watcherを使った
+                      <em className="text-[#1452FF] not-italic">具体的なGEO・LLMO対策プロセス</em>
                     </h3>
                     <p className="mt-5 max-w-[52ch] text-[16px] leading-[1.65] text-[#9A9AA0]">
-                      SEOは検索エンジンの上位表示を狙う施策、GEOは生成AIに引用されるための施策。違いと実践方法を比較表を用いてわかりやすく解説します。
+                      GEO Watcherを使ったGEO・LLMO対策の実践プロセスを紹介。現状分析、モニタリング、プロンプト設計、コンテンツ改善の進め方を解説します。
                     </p>
                   </div>
                   <div className="mt-8 flex items-center gap-6 border-t border-white/[0.12] pt-6 font-mono text-[11px] tracking-[0.12em] text-[#9A9AA0]">
                     <span>Ascent Research · GEO(LLMO) LAB</span>
-                    <span className="text-[#FAFAF7]">READ · 8 MIN →</span>
+                    <span className="text-[#FAFAF7]">READ · 9 MIN →</span>
                   </div>
                 </div>
               </article>

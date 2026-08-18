@@ -382,26 +382,26 @@ function SolutionsSection() {
 function GeoLabSection() {
   const articles = [
     {
+      tag: "HOW TO",
+      num: "04",
+      title: "自社でできる！GEO Watcherを使った具体的なGEO・LLMO対策プロセス",
+      desc: "GEO Watcherを使ったGEO・LLMO対策の実践プロセスを紹介。現状分析、モニタリング、プロンプト設計、コンテンツ改善の進め方を解説します。",
+      date: "08.18",
+      readTime: "9 MIN READ",
+      size: "large",
+      thumbVariant: "geo-watcher-process" as const,
+      href: "/lab/geo-watcher-process",
+    },
+    {
       tag: "STRATEGY",
       num: "03",
       title: "AI検索時代のブランド戦略：キーワードではなく、CEPを制覇せよ",
       desc: "消費者がAIに状況を話しかける時代、ブランド競争の本質はキーワード順位からCEP（カテゴリーエントリーポイント）の占有へ移行している。GEO戦略の核心を解説する。",
       date: "05.18",
       readTime: "10 MIN READ",
-      size: "large",
+      size: "small",
       thumbVariant: "brand-cep" as const,
       href: "/lab/brand-cep",
-    },
-    {
-      tag: "COMPARE",
-      num: "02",
-      title: "SEOとGEOは何が違うのか？検索最適化と生成AI最適化を比較",
-      desc: "SEOは検索エンジンの上位表示を狙う施策、GEOは生成AIに引用されるための施策。違いと実践方法を比較表でわかりやすく整理する。",
-      date: "05.13",
-      readTime: "8 MIN READ",
-      size: "small",
-      thumbVariant: "seo-geo" as const,
-      href: "/lab/seo-geo",
     },
     {
       tag: "GEO / LLMO",
