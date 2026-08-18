@@ -164,10 +164,8 @@ export default function GeoWatcherProcessPage() {
                   まずは自社やクライアントのブランド名を入力して、AI検索上における現状分析から始めましょう。AI検索においての現状分析に必要な情報は、以下の4つです。
                 </p>
 
-                <div className="my-8 overflow-hidden rounded-xl border border-[#E6E4DD]">
-                  <div className="bg-[#F2F0EA] px-5 py-3 font-mono text-[11px] tracking-[0.18em] text-[#6B6B73] uppercase">
-                    現状分析に必要な4つの情報
-                  </div>
+                <p className="mt-8 mb-3 font-bold text-[15px] text-[#0B0B0E]">現状分析に必要な4つの情報</p>
+                <div className="overflow-hidden rounded-xl border border-[#E6E4DD]">
                   <div className="article-table article-table--2col" style={{ margin: 0 }}>
                     <div className="article-table__head">
                       <div>項目</div>
@@ -226,10 +224,8 @@ export default function GeoWatcherProcessPage() {
                   準備が整ったら、実際にAI検索上での露出状況をモニタリングします。モニタリングする指標は主に4つあり、この4つはGEO Watcherでも計測が可能です。
                 </p>
 
-                <div className="my-8 overflow-hidden rounded-xl border border-[#E6E4DD]">
-                  <div className="bg-[#F2F0EA] px-5 py-3 font-mono text-[11px] tracking-[0.18em] text-[#6B6B73] uppercase">
-                    モニタリングする4つの指標
-                  </div>
+                <p className="mt-8 mb-3 font-bold text-[15px] text-[#0B0B0E]">モニタリングする4つの指標</p>
+                <div className="overflow-hidden rounded-xl border border-[#E6E4DD]">
                   <div className="article-table article-table--2col" style={{ margin: 0 }}>
                     <div className="article-table__head">
                       <div>項目</div>
@@ -326,7 +322,7 @@ export default function GeoWatcherProcessPage() {
                 </p>
                 <p className="article-prose">
                   今すぐできるプロンプトの設計方法は、基準となるKW「〜 おすすめ」などのカスタマージャーニーマップを作成したあと、トピックKWを分類します。トピックKWが出たら検索ボリュームを調査して、1番検索ボリュームの多いKWに対してプロンプトを作成します。必要であればGEO Watcherの「
-                  <Link href="https://geo.ascentnet.co.jp/watcher#support" className="font-bold underline hover:opacity-80" style={{ color: "#1452FF" }}>スポットサポート（オプション）</Link>
+                  <Link href="/watcher" className="font-bold underline hover:opacity-80" style={{ color: "#1452FF" }}>スポットサポート（オプション）</Link>
                   」で、データ根拠に基づくプロンプト設計ができます。担当者がブランド、商品、ターゲットについてヒアリングし、検索ビッグデータに基づき消費者が実際に検索しているテーマから、計測すべき最適なプロンプトを設計します。単に質問文（プロンプト）を作るのではなく、「なぜこの質問を追うのか」まで整理した状態で納品します。
                 </p>
                 <p className="article-prose">
@@ -391,7 +387,7 @@ export default function GeoWatcherProcessPage() {
                 </p>
                 <p className="article-prose">
                   もしGEO・LLMOに特化した専門的なコンテンツ改修サポートが必要なら、GEO Watcherの「
-                  <Link href="https://geo.ascentnet.co.jp/watcher#support" className="font-bold underline hover:opacity-80" style={{ color: "#1452FF" }}>スポットサポート（オプション）</Link>
+                  <Link href="/watcher" className="font-bold underline hover:opacity-80" style={{ color: "#1452FF" }}>スポットサポート（オプション）</Link>
                   」をご利用ください。AIに引用されている競合ページと自社ページを比較し、改善すべきページと優先順位を整理します。感覚ではなく、現在の引用状況や競合との差をもとに、次に取り組むべき改善の方向性を明確にします。
                 </p>
               </section>
@@ -409,10 +405,8 @@ export default function GeoWatcherProcessPage() {
                   制作・改修したコンテンツの成果は、モニタリング結果に現れます。言及回数（シェア・オブ・ボイス）は増えたか、引用は獲得できたか、弱点だったプロンプトでの扱いは変わったか。改善が確認できた領域は維持し、改善ができていない領域はプロンプトの設計（ステップ3）に立ち返って見直します。この判断を、計測データに基づいて繰り返します。KPIとしては、次の4つを軸に据えます。
                 </p>
 
-                <div className="my-8 overflow-hidden rounded-xl border border-[#E6E4DD]">
-                  <div className="bg-[#F2F0EA] px-5 py-3 font-mono text-[11px] tracking-[0.18em] text-[#6B6B73] uppercase">
-                    継続モニタリングのKPI
-                  </div>
+                <p className="mt-8 mb-3 font-bold text-[15px] text-[#0B0B0E]">継続モニタリングのKPI</p>
+                <div className="overflow-hidden rounded-xl border border-[#E6E4DD]">
                   <div className="article-table article-table--2col" style={{ margin: 0 }}>
                     <div className="article-table__head">
                       <div>KPI</div>
@@ -451,7 +445,7 @@ export default function GeoWatcherProcessPage() {
                 <h3 className="article-h3">プロンプト設計を自社で行うのが難しい場合はどうすればよいですか？</h3>
                 <p className="article-prose">
                   GEO Watcherの「
-                  <Link href="https://geo.ascentnet.co.jp/watcher#support" className="font-bold underline hover:opacity-80" style={{ color: "#1452FF" }}>スポットサポート（オプション）</Link>
+                  <Link href="/watcher" className="font-bold underline hover:opacity-80" style={{ color: "#1452FF" }}>スポットサポート（オプション）</Link>
                   」をご利用いただくと、検索ビッグデータに基づき、消費者が実際に検索しているテーマから計測すべき最適なプロンプトを設計します。コンテンツ改善についても、同様にスポットサポートで対応可能です。
                 </p>
 

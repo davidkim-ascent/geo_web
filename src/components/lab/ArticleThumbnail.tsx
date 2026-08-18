@@ -244,32 +244,17 @@ export function ArticleThumbnail({ variant, className = "", eyebrow }: ArticleTh
       ) : variant === "geo-watcher-process" ? (
         <>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(20,82,255,0.26),transparent_36%),radial-gradient(circle_at_82%_78%,rgba(20,82,255,0.14),transparent_32%)]" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            {["測る", "知る", "設計する", "改善する", "確かめる"].map((label, i, arr) => {
-              const angle = (i / arr.length) * Math.PI * 2 - Math.PI / 2;
-              const r = 78;
-              const x = 50 + (r * Math.cos(angle)) / 2.2;
-              const y = 50 + (r * Math.sin(angle)) / 2.2;
-              return (
-                <div
-                  key={label}
-                  className="absolute flex flex-col items-center gap-1"
-                  style={{ left: `${x}%`, top: `${y}%`, transform: "translate(-50%, -50%)" }}
-                >
-                  <span
-                    className="flex h-8 w-8 items-center justify-center rounded-full font-mono text-[11px] font-bold text-white"
-                    style={{ background: i === 0 ? "#1452FF" : "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)" }}
-                  >
-                    {i + 1}
-                  </span>
-                  <span className="font-bold text-white/85 whitespace-nowrap" style={{ fontSize: "12px" }}>{label}</span>
-                </div>
-              );
-            })}
+          <div className="absolute left-6 top-1/2 h-20 w-20 -translate-y-1/2 overflow-hidden rounded-full border-2 border-white/25 sm:h-24 sm:w-24">
+            <Image src="/design-assets/avatars/avatar-a-curious.png" alt="質問者" width={96} height={96} className="h-full w-full object-cover" />
           </div>
-          <div className="absolute left-5 bottom-5 font-bold text-white/90" style={{ fontSize: "clamp(24px, 3.4vw, 36px)", lineHeight: 1.15, letterSpacing: "-0.03em" }}>
-            GEO Watcherで回す<br />
-            <span className="text-[#1452FF]">対策サイクル</span>
+          <div className="absolute right-6 top-1/2 h-20 w-20 -translate-y-1/2 overflow-hidden rounded-full border-2 border-white/25 sm:h-24 sm:w-24">
+            <Image src="/design-assets/avatars/avatar-s-explaining.png" alt="島田" width={96} height={96} className="h-full w-full object-cover" />
+          </div>
+          <div className="absolute inset-0 flex items-center justify-center px-28 text-center sm:px-32">
+            <p className="font-bold text-white" style={{ fontSize: "clamp(25px, 3.1vw, 33px)", lineHeight: 1.4, letterSpacing: "-0.02em" }}>
+              自社でできる！GEO Watcherを使った<br />
+              <span className="text-[#1452FF]">具体的なGEO・LLMO対策プロセス</span>
+            </p>
           </div>
         </>
       ) : variant === "abstract" ? (

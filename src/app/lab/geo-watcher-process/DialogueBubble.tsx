@@ -31,7 +31,7 @@ export function DialogueBubble({ speaker, emotion, children }: DialogueBubblePro
   return (
     <div className={`article-dialogue ${isRight ? "article-dialogue--right" : ""}`}>
       <div className="article-dialogue__avatar article-dialogue__avatar--photo">
-        <Image src={avatarSrc} alt={meta.label} width={52} height={52} className="h-full w-full object-cover" />
+        <Image src={avatarSrc} alt={meta.label} width={78} height={78} className="h-full w-full object-cover" />
       </div>
       <div className={`article-dialogue__bubble ${isRight ? "article-dialogue__bubble--right" : ""}`}>
         <span className="article-dialogue__label">{meta.label}</span>
