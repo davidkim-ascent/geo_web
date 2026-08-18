@@ -148,16 +148,9 @@ export default function GeoWatcherProcessPage() {
               {/* Section 1: 結論 */}
               <section id="s1" className="article-section">
                 <span className="article-kicker">01</span>
-                <h2 className="article-h2">結論：GEO・LLMO対策は「測る→知る→設計する→改善する→確かめる」の5ステップで回す</h2>
-                <blockquote className="article-quote article-quote--wide">
-                  <p className="article-quote__text">
-                    GEO・LLMO対策に「やり切って終わり」はない。現状分析とモニタリングの仕組みさえ整えれば、変化は必ず数字として把握でき、継続的な改善につなげられる。
-                  </p>
-                  <span className="article-quote__note">RESEARCH NOTE</span>
-                </blockquote>
-                <DialogueBubble speaker="A">GEO・LLMO対策をしたいけど、まず何からしたらいいか分からない。</DialogueBubble>
-                <DialogueBubble speaker="A">重要なのは分かっているけど具体的な方法はあるの？</DialogueBubble>
-                <DialogueBubble speaker="S">そんなお悩みをお持ちの担当者も多いと思います。GEO・LLMO対策は現状分析から行います！自社がAI検索において、まずどの状況なのか確かめましょう。</DialogueBubble>
+                <h2 className="article-h2" style={{ maxWidth: "none", whiteSpace: "normal" }}>GEO・LLMO対策は「測る→知る→設計する→改善する→確かめる」の5ステップで回す</h2>
+                <DialogueBubble speaker="A" emotion="thinking">GEO・LLMO対策をしたいけど、まず何からしたらいいか分からない。重要なのは分かっているけど具体的な方法はあるの？</DialogueBubble>
+                <DialogueBubble speaker="S" emotion="explaining">そんなお悩みをお持ちの担当者も多いと思います。GEO・LLMO対策は現状分析から行います！自社がAI検索において、まずどの状況なのか確かめましょう。</DialogueBubble>
                 <p className="article-prose">
                   本記事では、GEO Watcherを使って現状分析からモニタリング、プロンプト設計、コンテンツ改善までを回す具体的なプロセスを、実際の管理画面を交えて解説します。
                 </p>
@@ -175,7 +168,7 @@ export default function GeoWatcherProcessPage() {
                   <div className="bg-[#F2F0EA] px-5 py-3 font-mono text-[11px] tracking-[0.18em] text-[#6B6B73] uppercase">
                     現状分析に必要な4つの情報
                   </div>
-                  <div className="article-table article-table--2col">
+                  <div className="article-table article-table--2col" style={{ margin: 0 }}>
                     <div className="article-table__head">
                       <div>項目</div>
                       <div>意味</div>
@@ -237,7 +230,7 @@ export default function GeoWatcherProcessPage() {
                   <div className="bg-[#F2F0EA] px-5 py-3 font-mono text-[11px] tracking-[0.18em] text-[#6B6B73] uppercase">
                     モニタリングする4つの指標
                   </div>
-                  <div className="article-table article-table--2col">
+                  <div className="article-table article-table--2col" style={{ margin: 0 }}>
                     <div className="article-table__head">
                       <div>項目</div>
                       <div>意味</div>
@@ -304,9 +297,8 @@ export default function GeoWatcherProcessPage() {
               <section id="s9" className="article-section">
                 <span className="article-kicker">09</span>
                 <h2 className="article-h2">ステップ3：最適なプロンプトを設計する</h2>
-                <DialogueBubble speaker="A">モニタリングツールを使って数値として自社ブランド現状が把握できました！</DialogueBubble>
-                <DialogueBubble speaker="A">AI検索における指標も分かったので、これをモニタリングしていけばいいですね？</DialogueBubble>
-                <DialogueBubble speaker="S">ありがとうございます。このままモニタリングしてもいいですが、今のプロンプトは自動で生成されたものです。もっと精度を上げるには「最適なプロンプト設計」をしましょう！</DialogueBubble>
+                <DialogueBubble speaker="A" emotion="curious">モニタリングツールを使って数値として自社ブランド現状が把握できました！AI検索における指標も分かったので、これをモニタリングしていけばいいですね？</DialogueBubble>
+                <DialogueBubble speaker="S" emotion="proposing">ありがとうございます。このままモニタリングしてもいいですが、今のプロンプトは自動で生成されたものです。もっと精度を上げるには「最適なプロンプト設計」をしましょう！</DialogueBubble>
                 <p className="article-prose">
                   現状の把握が見えたら、次は本命のプロンプトを設計します。問いは「自社のビジネスにとって、どんな質問をされたときに、自社ブランドが回答に登場してほしいか」です。ここがGEOとSEOの実務が最も大きく分かれるポイントです。
                 </p>
@@ -333,7 +325,9 @@ export default function GeoWatcherProcessPage() {
                   ひとつのトピックの下で、消費者は必ず質問を続けます。この質問の連なりのどこに自社が回答者として登場できるかが、プロンプト設計の重要ポイントです。プロンプトは担当者が考えて作るのも問題ありませんが、それだとバイアスがかかります。SEOであれば検索ボリュームという定量的な判断ができましたが、GEO・LLMOでは定量的に判断できる材料がありません。
                 </p>
                 <p className="article-prose">
-                  今すぐできるプロンプトの設計方法は、基準となるKW「〜 おすすめ」などのカスタマージャーニーマップを作成したあと、トピックKWを分類します。トピックKWが出たら検索ボリュームを調査して、1番検索ボリュームの多いKWに対してプロンプトを作成します。必要であればGEO Watcherの「スポットサポート（オプション）」で、データ根拠に基づくプロンプト設計ができます。担当者がブランド、商品、ターゲットについてヒアリングし、検索ビッグデータに基づき消費者が実際に検索しているテーマから、計測すべき最適なプロンプトを設計します。単に質問文（プロンプト）を作るのではなく、「なぜこの質問を追うのか」まで整理した状態で納品します。
+                  今すぐできるプロンプトの設計方法は、基準となるKW「〜 おすすめ」などのカスタマージャーニーマップを作成したあと、トピックKWを分類します。トピックKWが出たら検索ボリュームを調査して、1番検索ボリュームの多いKWに対してプロンプトを作成します。必要であればGEO Watcherの「
+                  <Link href="https://geo.ascentnet.co.jp/watcher#support" className="font-bold underline hover:opacity-80" style={{ color: "#1452FF" }}>スポットサポート（オプション）</Link>
+                  」で、データ根拠に基づくプロンプト設計ができます。担当者がブランド、商品、ターゲットについてヒアリングし、検索ビッグデータに基づき消費者が実際に検索しているテーマから、計測すべき最適なプロンプトを設計します。単に質問文（プロンプト）を作るのではなく、「なぜこの質問を追うのか」まで整理した状態で納品します。
                 </p>
                 <p className="article-prose">
                   最適なプロンプトに設計したあと、改めてモニタリングを開始します。目的は、「どのプロンプトで自社が露出されていないのか」という弱点の特定です。再設計したプロンプトは、AIが自社のブランドをどのように紹介するか／しないかを測るベンチマークです。これを継続的にモニタリングすることで、以下のような問題が特定できます。
@@ -366,9 +360,8 @@ export default function GeoWatcherProcessPage() {
               <section id="s10" className="article-section">
                 <span className="article-kicker">10</span>
                 <h2 className="article-h2">ステップ4：GEO・LLMOに特化したコンテンツ改善</h2>
-                <DialogueBubble speaker="A">確かに、ユーザーがどんな質問をするかを再設計するのは大切ですね。</DialogueBubble>
-                <DialogueBubble speaker="A">なぜこの質問を追うのか？ここまで考えてプロンプトを考えてモニタリングすると、より精度が高くなりますね！</DialogueBubble>
-                <DialogueBubble speaker="S">はい、アセントネットワークスでは検索ビッグデータに基づいたプロンプト設計サポートも行っています。ここまで来たら、次はAIに引用されるようにコンテンツを改善しましょう。</DialogueBubble>
+                <DialogueBubble speaker="A" emotion="understanding">確かに、ユーザーがどんな質問をするかを再設計するのは大切ですね。なぜこの質問を追うのか？ここまで考えてプロンプトを考えてモニタリングすると、より精度が高くなりますね！</DialogueBubble>
+                <DialogueBubble speaker="S" emotion="guiding">はい、アセントネットワークスでは検索ビッグデータに基づいたプロンプト設計サポートも行っています。ここまで来たら、次はAIに引用されるようにコンテンツを改善しましょう。</DialogueBubble>
                 <p className="article-prose">
                   特定した弱点プロンプトに対して、その「答え」となるコンテンツを制作・改修します。ここで制作するコンテンツは、SEO対策を意識した記事作成と重なりつつも異なります。AIは、質問に対して明確・簡潔に回答し、根拠を伴い、ページ単体で完結しているコンテンツを優先的に引用します。「キーワードを含む網羅的な長文」というSEO的発想のままでは、AIにとって引用しやすい情報源にはなりません。具体的には、次の7つの設計ルールに沿ってコンテンツを組み立てます。
                 </p>
@@ -397,7 +390,9 @@ export default function GeoWatcherProcessPage() {
                   この7つのルールのうち中心にあるのは「H2はフォローアップ質問と1:1で対応させる」です。再設計したフォローアップ質問のリストが、そのまま見出し設計・FAQ設計の骨格になるため、「何を書くか」をゼロから考える必要はありません。質問リストを介して直結しているのです。そのうえで、既存コンテンツで対応できるものは7つのルールに沿ったリライトで、存在しないものは新規制作で対応し、限られた制作リソースを弱点の大きい順に投じていきます。
                 </p>
                 <p className="article-prose">
-                  もしGEO・LLMOに特化した専門的なコンテンツ改修サポートが必要なら、GEO Watcherの「スポットサポート（オプション）」をご利用ください。AIに引用されている競合ページと自社ページを比較し、改善すべきページと優先順位を整理します。感覚ではなく、現在の引用状況や競合との差をもとに、次に取り組むべき改善の方向性を明確にします。
+                  もしGEO・LLMOに特化した専門的なコンテンツ改修サポートが必要なら、GEO Watcherの「
+                  <Link href="https://geo.ascentnet.co.jp/watcher#support" className="font-bold underline hover:opacity-80" style={{ color: "#1452FF" }}>スポットサポート（オプション）</Link>
+                  」をご利用ください。AIに引用されている競合ページと自社ページを比較し、改善すべきページと優先順位を整理します。感覚ではなく、現在の引用状況や競合との差をもとに、次に取り組むべき改善の方向性を明確にします。
                 </p>
               </section>
 
@@ -405,9 +400,8 @@ export default function GeoWatcherProcessPage() {
               <section id="s11" className="article-section">
                 <span className="article-kicker">11</span>
                 <h2 className="article-h2">ステップ5：モニタリングと再設計を繰り返し次の改善へ</h2>
-                <DialogueBubble speaker="A">GEO・LLMOの最適化7原則は分かりやすいですね！</DialogueBubble>
-                <DialogueBubble speaker="A">SEOとは、また違う視点でのページ設計が必要だと感じました。改修サポートの利用も考えてみます。</DialogueBubble>
-                <DialogueBubble speaker="S">GEO・LLMOはSEOとは違った視点での対策が必要です。最後はこれまでのプロセスを測る、比べる、改善する、確かめるサイクルで回していきましょう。</DialogueBubble>
+                <DialogueBubble speaker="A" emotion="impressed">GEO・LLMOの最適化7原則は分かりやすいですね！SEOとは、また違う視点でのページ設計が必要だと感じました。改修サポートの利用も考えてみます。</DialogueBubble>
+                <DialogueBubble speaker="S" emotion="closing">GEO・LLMOはSEOとは違った視点での対策が必要です。最後はこれまでのプロセスを測る、比べる、改善する、確かめるサイクルで回していきましょう。</DialogueBubble>
                 <p className="article-prose">
                   最後のステップは、特別な作業ではありません。ここまでの流れを、サイクルとして回し続けることです。
                 </p>
@@ -419,7 +413,7 @@ export default function GeoWatcherProcessPage() {
                   <div className="bg-[#F2F0EA] px-5 py-3 font-mono text-[11px] tracking-[0.18em] text-[#6B6B73] uppercase">
                     継続モニタリングのKPI
                   </div>
-                  <div className="article-table article-table--2col">
+                  <div className="article-table article-table--2col" style={{ margin: 0 }}>
                     <div className="article-table__head">
                       <div>KPI</div>
                       <div>内容</div>
@@ -456,7 +450,9 @@ export default function GeoWatcherProcessPage() {
 
                 <h3 className="article-h3">プロンプト設計を自社で行うのが難しい場合はどうすればよいですか？</h3>
                 <p className="article-prose">
-                  GEO Watcherの「スポットサポート（オプション）」をご利用いただくと、検索ビッグデータに基づき、消費者が実際に検索しているテーマから計測すべき最適なプロンプトを設計します。コンテンツ改善についても、同様にスポットサポートで対応可能です。
+                  GEO Watcherの「
+                  <Link href="https://geo.ascentnet.co.jp/watcher#support" className="font-bold underline hover:opacity-80" style={{ color: "#1452FF" }}>スポットサポート（オプション）</Link>
+                  」をご利用いただくと、検索ビッグデータに基づき、消費者が実際に検索しているテーマから計測すべき最適なプロンプトを設計します。コンテンツ改善についても、同様にスポットサポートで対応可能です。
                 </p>
 
                 <h3 className="article-h3">どのくらいの頻度でモニタリングすればよいですか？</h3>
@@ -524,12 +520,6 @@ export default function GeoWatcherProcessPage() {
 
                 <p className="article-prose">
                   計測（現状把握）→設計（プロンプト）→計測（弱点特定）→制作（コンテンツ）→計測（効果検証）という往復こそが、データに根拠を持つ、再現性のあるGEO・LLMO対策です。
-                </p>
-
-                <p className="article-prose">
-                  <Link href="/watcher#pricing" className="font-bold underline hover:opacity-80" style={{ color: "#1452FF" }}>
-                    GEO Watcherの詳細料金プランを見る
-                  </Link>
                 </p>
               </section>
             </article>
