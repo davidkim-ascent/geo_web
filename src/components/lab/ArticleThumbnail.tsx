@@ -7,7 +7,7 @@ import aiAgentSiteImage from "@/app/lab/ai-agent-site/ai-agent-site.png";
 import aiShoppingImage from "@/app/lab/ai-shopping-agent/ai-shopping.png";
 import { TypingPromptCard } from "@/app/lab/brand-cep/TypingPromptCard";
 
-type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "ai-shopping-agent" | "llmo-eeat" | "entity" | "ai-cited-article" | "abstract";
+type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "ai-shopping-agent" | "llmo-eeat" | "entity" | "ai-cited-article" | "geo-watcher-process" | "abstract";
 
 type ArticleThumbnailProps = {
   variant: ArticleThumbnailVariant;
@@ -15,7 +15,7 @@ type ArticleThumbnailProps = {
   eyebrow?: string;
 };
 
-const IMAGE_BY_VARIANT: Record<Exclude<ArticleThumbnailVariant, "abstract" | "adobe-ai-traffic" | "brand-cep" | "llmo-eeat" | "entity" | "ai-cited-article">, typeof seoGeoImage> = {
+const IMAGE_BY_VARIANT: Record<Exclude<ArticleThumbnailVariant, "abstract" | "adobe-ai-traffic" | "brand-cep" | "llmo-eeat" | "entity" | "ai-cited-article" | "geo-watcher-process">, typeof seoGeoImage> = {
   "seo-geo": seoGeoImage,
   "geo-llmo-company": geoLlmoCompanyImage,
   "ai-agent-site": aiAgentSiteImage,
@@ -32,6 +32,7 @@ const labelByVariant: Record<ArticleThumbnailVariant, string> = {
   "llmo-eeat": "LLMO / E-E-A-T",
   entity: "エンティティ / GEO・LLMO",
   "ai-cited-article": "GEO / LLMO",
+  "geo-watcher-process": "GEO Watcher",
   abstract: "RESEARCH NOTE",
 };
 
@@ -238,6 +239,37 @@ export function ArticleThumbnail({ variant, className = "", eyebrow }: ArticleTh
           <div className="absolute left-5 bottom-5 font-bold text-white/90" style={{ fontSize: "clamp(28px, 4vw, 42px)", lineHeight: 1, letterSpacing: "-0.04em" }}>
             AI引用<br />
             <span className="text-[#1452FF]">7つの特徴</span>
+          </div>
+        </>
+      ) : variant === "geo-watcher-process" ? (
+        <>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(20,82,255,0.26),transparent_36%),radial-gradient(circle_at_82%_78%,rgba(20,82,255,0.14),transparent_32%)]" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            {["測る", "知る", "設計する", "改善する", "確かめる"].map((label, i, arr) => {
+              const angle = (i / arr.length) * Math.PI * 2 - Math.PI / 2;
+              const r = 78;
+              const x = 50 + (r * Math.cos(angle)) / 2.2;
+              const y = 50 + (r * Math.sin(angle)) / 2.2;
+              return (
+                <div
+                  key={label}
+                  className="absolute flex flex-col items-center gap-1"
+                  style={{ left: `${x}%`, top: `${y}%`, transform: "translate(-50%, -50%)" }}
+                >
+                  <span
+                    className="flex h-8 w-8 items-center justify-center rounded-full font-mono text-[11px] font-bold text-white"
+                    style={{ background: i === 0 ? "#1452FF" : "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)" }}
+                  >
+                    {i + 1}
+                  </span>
+                  <span className="font-bold text-white/85 whitespace-nowrap" style={{ fontSize: "12px" }}>{label}</span>
+                </div>
+              );
+            })}
+          </div>
+          <div className="absolute left-5 bottom-5 font-bold text-white/90" style={{ fontSize: "clamp(24px, 3.4vw, 36px)", lineHeight: 1.15, letterSpacing: "-0.03em" }}>
+            GEO Watcherで回す<br />
+            <span className="text-[#1452FF]">対策サイクル</span>
           </div>
         </>
       ) : variant === "abstract" ? (

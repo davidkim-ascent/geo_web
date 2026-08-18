@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArticleThumbnail } from "@/components/lab/ArticleThumbnail";
 
 const POSTS = [
+  { cat: "HOW TO / GEO Watcher", date: "2026.08.18", read: "9 min", t: "自社でできる！GEO Watcherを使った具体的なGEO・LLMO対策プロセスを解説", d: "GEO Watcherを使ったGEO・LLMO対策の実践プロセスを紹介。現状分析、モニタリング、プロンプト設計、コンテンツ改善の進め方を解説します。", href: "/lab/geo-watcher-process", thumbVariant: "geo-watcher-process" as const },
   { cat: "GEO / LLMO", date: "2026.05.19", read: "8 min", t: "GEO/LLMO対策におすすめの会社7選を徹底比較", d: "GEO対策会社7社を4つの型で比較し、費用相場・選び方・FAQまで整理した比較記事。", href: "/lab/geo-llmo-company", thumbVariant: "geo-llmo-company" as const },
   { cat: "SEO vs GEO", date: "2026.05.13", read: "8 min", t: "SEOとGEOは何が違うのか？検索最適化と生成AI最適化を比較", d: "SEOは検索エンジンの上位表示を狙う施策、GEOは生成AIに引用されるための施策。違いと実践方法を比較表でわかりやすく整理する。", href: "/lab/seo-geo", thumbVariant: "seo-geo" as const },
   { cat: "ブランド戦略", date: "2026.05.18", read: "10 min", t: "AI検索時代のブランド戦略：キーワードではなく、CEPを制覇せよ", d: "消費者がAIに状況を話しかける時代、ブランド競争の本質はキーワード順位からCEP（カテゴリーエントリーポイント）の占有へ移行している。GEO戦略の核心を解説する。", href: "/lab/brand-cep", thumbVariant: "brand-cep" as const },

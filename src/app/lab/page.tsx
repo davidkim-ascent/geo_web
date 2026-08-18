@@ -21,20 +21,20 @@ export const dynamic = "force-static";
 
 const featuredSide = [
   {
+    cat: "HOW TO / GEO Watcher",
+    title: "自社でできる！GEO Watcherを使った具体的なGEO・LLMO対策プロセスを解説",
+    desc: "GEO Watcherを使ったGEO・LLMO対策の実践プロセスを紹介。現状分析、モニタリング、プロンプト設計、コンテンツ改善の進め方を解説します。",
+    meta: "2026.08.18 · 9 MIN",
+    thumbVariant: "geo-watcher-process" as const,
+    href: "/lab/geo-watcher-process",
+  },
+  {
     cat: "GEO / LLMO",
     title: "GEO/LLMO対策におすすめの会社7選を徹底比較",
     desc: "GEO対策会社7社を4つの型で比較し、費用相場・選び方・FAQまで整理した比較記事。",
     meta: "2026.05.19 · 8 MIN",
     thumbVariant: "geo-llmo-company" as const,
     href: "/lab/geo-llmo-company",
-  },
-  {
-    cat: "ブランド戦略",
-    title: "AI検索時代のブランド戦略：キーワードではなく、CEPを制覇せよ",
-    desc: "消費者がAIに状況を話しかける時代、ブランド競争の本質はキーワード順位からCEP（カテゴリーエントリーポイント）の占有へ移行している。GEO戦略の核心を解説する。",
-    meta: "2026.05.18 · 10 MIN",
-    thumbVariant: "brand-cep" as const,
-    href: "/lab/brand-cep",
   },
 ];
 
