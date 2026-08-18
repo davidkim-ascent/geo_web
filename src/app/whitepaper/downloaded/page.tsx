@@ -23,7 +23,7 @@ export default async function WhitepaperDownloadedPage() {
   }
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#0B0B0E] text-[#FAFAF7]">
+    <div className="relative min-h-screen overflow-hidden bg-[#0B0B0E] text-[#FDFDFB]">
       {/* Background */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -98,7 +98,7 @@ export default async function WhitepaperDownloadedPage() {
             <div className="mb-3 font-mono text-[11px] tracking-[0.2em] text-[#1452FF]">
               [ CALL US DIRECTLY ]
             </div>
-            <h3 className="mb-2 text-[24px] font-bold tracking-[-0.015em] text-[#FAFAF7]">
+            <h3 className="mb-2 text-[24px] font-bold tracking-[-0.015em] text-[#FDFDFB]">
               資料の内容について、直接質問する。
             </h3>
             <p className="max-w-[48ch] text-[14px] leading-[1.6] text-white/60">
@@ -106,7 +106,7 @@ export default async function WhitepaperDownloadedPage() {
             </p>
           </div>
           <div>
-            <div className="text-right font-mono text-[36px] font-semibold leading-none tracking-tight text-[#FAFAF7]">
+            <div className="text-right font-mono text-[36px] font-semibold leading-none tracking-tight text-[#FDFDFB]">
               03 3527 3963
             </div>
             <div className="mt-2 text-right font-mono text-[10px] tracking-[0.18em] text-white/50">

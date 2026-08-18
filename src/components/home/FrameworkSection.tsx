@@ -61,7 +61,7 @@ export default function FrameworkSection() {
         <div className="mt-12 fw-grid">
           <div>
             <h2
-              className="text-[#FAFAF7] font-bold leading-[1.08] tracking-[-0.025em]"
+              className="text-[#FDFDFB] font-bold leading-[1.08] tracking-[-0.025em]"
               style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
             >
               5ステップで回す、<br />
@@ -93,14 +93,14 @@ export default function FrameworkSection() {
                 <circle className="fw-ripple-2" cx="270" cy="270" r="65" fill="none" stroke="#4a90d9" strokeWidth="6" mask="url(#fw-ripple-mask)" style={{ filter: "blur(12px)" }} />
                 <circle className="fw-ripple-3" cx="270" cy="270" r="65" fill="none" stroke="#4a90d9" strokeWidth="6" mask="url(#fw-ripple-mask)" style={{ filter: "blur(12px)" }} />
 
-                <circle cx="270" cy="270" r="224" fill="none" stroke="#FAFAF7" strokeOpacity="0.28" strokeWidth="1" strokeDasharray="8 10" strokeLinecap="round" />
-                <circle cx="270" cy="270" r="200" fill="none" stroke="#FAFAF7" strokeOpacity="0.24" strokeWidth="1.25" />
-                <circle cx="270" cy="270" r="140" fill="none" stroke="#FAFAF7" strokeOpacity="0.18" strokeWidth="1" strokeDasharray="8 10" strokeLinecap="round" />
-                <path d="M 305.806,73.231 A 200,200 0 0,1 446.074,175.142" fill="none" stroke="#FAFAF7" strokeOpacity="0.24" strokeWidth="1.2" markerEnd="url(#ar)" />
-                <path d="M 468.203,243.249 A 200,200 0 0,1 414.625,408.143" fill="none" stroke="#FAFAF7" strokeOpacity="0.24" strokeWidth="1.2" markerEnd="url(#ar)" />
-                <path d="M 356.690,450.235 A 200,200 0 0,1 183.310,450.235" fill="none" stroke="#FAFAF7" strokeOpacity="0.24" strokeWidth="1.2" markerEnd="url(#ar)" />
-                <path d="M 125.375,408.143 A 200,200 0 0,1 71.797,243.249" fill="none" stroke="#FAFAF7" strokeOpacity="0.24" strokeWidth="1.2" markerEnd="url(#ar)" />
-                <path d="M 93.926,175.142 A 200,200 0 0,1 234.194,73.231" fill="none" stroke="#FAFAF7" strokeOpacity="0.24" strokeWidth="1.2" markerEnd="url(#ar)" />
+                <circle cx="270" cy="270" r="224" fill="none" stroke="#FDFDFB" strokeOpacity="0.28" strokeWidth="1" strokeDasharray="8 10" strokeLinecap="round" />
+                <circle cx="270" cy="270" r="200" fill="none" stroke="#FDFDFB" strokeOpacity="0.24" strokeWidth="1.25" />
+                <circle cx="270" cy="270" r="140" fill="none" stroke="#FDFDFB" strokeOpacity="0.18" strokeWidth="1" strokeDasharray="8 10" strokeLinecap="round" />
+                <path d="M 305.806,73.231 A 200,200 0 0,1 446.074,175.142" fill="none" stroke="#FDFDFB" strokeOpacity="0.24" strokeWidth="1.2" markerEnd="url(#ar)" />
+                <path d="M 468.203,243.249 A 200,200 0 0,1 414.625,408.143" fill="none" stroke="#FDFDFB" strokeOpacity="0.24" strokeWidth="1.2" markerEnd="url(#ar)" />
+                <path d="M 356.690,450.235 A 200,200 0 0,1 183.310,450.235" fill="none" stroke="#FDFDFB" strokeOpacity="0.24" strokeWidth="1.2" markerEnd="url(#ar)" />
+                <path d="M 125.375,408.143 A 200,200 0 0,1 71.797,243.249" fill="none" stroke="#FDFDFB" strokeOpacity="0.24" strokeWidth="1.2" markerEnd="url(#ar)" />
+                <path d="M 93.926,175.142 A 200,200 0 0,1 234.194,73.231" fill="none" stroke="#FDFDFB" strokeOpacity="0.24" strokeWidth="1.2" markerEnd="url(#ar)" />
                 {nodeData.map((node, i) => {
                   const isActive = active === i;
                   const lines = node.label.split("\n");
@@ -157,7 +157,7 @@ export default function FrameworkSection() {
                 <Link href="/framework">
                   <span className="n">{step.id}</span>
                   <div>
-                    <h5 className={active === i ? "text-[#FAFAF7]" : "text-white/80"}>{step.title}</h5>
+                    <h5 className={active === i ? "text-[#FDFDFB]" : "text-white/80"}>{step.title}</h5>
                     <div className="meta">{step.sub}</div>
                   </div>
                   <span className={`more text-[17px] ${active === i ? "text-[#1452FF]" : "text-white/20"}`}>→</span>

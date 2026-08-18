@@ -531,7 +531,7 @@ function GeoLabSection() {
             },
           ].map((a) => (
             <Link key={a.href} href={a.href} className="block group">
-              <article className="flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border border-[#E6E4DD] bg-[#FAFAF7] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#003393] hover:shadow-[0_12px_32px_-16px_rgba(0,51,147,0.2)]">
+              <article className="flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border border-[#E6E4DD] bg-[#FDFDFB] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#003393] hover:shadow-[0_12px_32px_-16px_rgba(0,51,147,0.2)]">
                 <ArticleThumbnail variant={a.thumbVariant} eyebrow={a.tag} className="h-[140px] w-full" />
                 <div className="flex flex-1 flex-col p-5">
                   <div className="mb-2 flex items-center justify-between font-mono tracking-[0.12em] text-[#6B6B73]" style={{ fontSize: "var(--fs-caption)" }}>
@@ -566,7 +566,7 @@ function GeoLabSection() {
 ───────────────────────────────────────────── */
 function AscentStrengthsSection() {
   return (
-    <section className="bg-[#FAFAF7] border-t border-b border-black/[0.08] py-12 lg:py-16">
+    <section className="bg-[#FDFDFB] border-t border-b border-black/[0.08] py-12 lg:py-16">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
         <div className="text-center mb-12">
           <h2

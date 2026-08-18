@@ -40,7 +40,7 @@ const featuredSide = [
 
 export default function LabPage() {
   return (
-    <div className="bg-[#FAFAF7]">
+    <div className="bg-[#FDFDFB]">
       {/* Hero */}
       <section
         className="hero-fixed relative py-12 lg:py-16"
@@ -152,7 +152,7 @@ export default function LabPage() {
           <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-stretch">
             {/* Main featured */}
             <Link href="/lab/geo-watcher-process" className="block h-full">
-              <article className="relative flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl bg-[#0B0B0E] text-[#FAFAF7] transition-opacity hover:opacity-90">
+              <article className="relative flex h-full cursor-pointer flex-col overflow-hidden rounded-2xl bg-[#0B0B0E] text-[#FDFDFB] transition-opacity hover:opacity-90">
                 <ArticleThumbnail
                   variant="geo-watcher-process"
                   eyebrow="FEATURED RESEARCH · HOW TO"
@@ -176,7 +176,7 @@ export default function LabPage() {
                   </div>
                   <div className="mt-8 flex items-center gap-6 border-t border-white/[0.12] pt-6 font-mono text-[11px] tracking-[0.12em] text-[#9A9AA0]">
                     <span>Ascent Research · GEO(LLMO) LAB</span>
-                    <span className="text-[#FAFAF7]">READ · 9 MIN →</span>
+                    <span className="text-[#FDFDFB]">READ · 9 MIN →</span>
                   </div>
                 </div>
               </article>
@@ -186,7 +186,7 @@ export default function LabPage() {
             <div className="flex flex-col gap-4">
               {featuredSide.map((item, i) => (
                 <Link key={i} href={item.href} className="flex flex-1 flex-col min-h-0">
-                  <article className="group flex flex-1 flex-col cursor-pointer overflow-hidden rounded-xl border border-[#E6E4DD] bg-[#FAFAF7] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1452FF]">
+                  <article className="group flex flex-1 flex-col cursor-pointer overflow-hidden rounded-xl border border-[#E6E4DD] bg-[#FDFDFB] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1452FF]">
                     <ArticleThumbnail variant={item.thumbVariant} eyebrow={item.cat} className="h-[176px] w-full" />
                     <div className="p-6">
                       <span className="font-mono text-[10px] tracking-[0.14em] text-[#1452FF]">

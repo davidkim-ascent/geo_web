@@ -85,7 +85,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#FAFAF7] border-t border-black/[0.06] px-6 py-5 flex flex-col gap-4">
+        <div className="md:hidden bg-[#FDFDFB] border-t border-black/[0.06] px-6 py-5 flex flex-col gap-4">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.label}

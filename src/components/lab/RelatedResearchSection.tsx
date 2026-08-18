@@ -87,7 +87,7 @@ export function RelatedResearchSection({ currentSlug }: RelatedResearchSectionPr
         <div className="grid gap-6 md:grid-cols-3">
           {items.map((post) => (
             <Link key={post.slug} href={post.href} className="block">
-              <article className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border border-[#E6E4DD] bg-[#FAFAF7] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1452FF] hover:shadow-[0_12px_32px_-16px_rgba(20,82,255,0.2)]">
+              <article className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border border-[#E6E4DD] bg-[#FDFDFB] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1452FF] hover:shadow-[0_12px_32px_-16px_rgba(20,82,255,0.2)]">
                 <ArticleThumbnail variant={post.thumbVariant} eyebrow={post.cat} className="h-[190px] w-full" />
                 <div className="flex flex-1 flex-col p-7">
                   <div className="mb-4 flex items-center justify-between font-mono text-[11px] tracking-[0.12em] text-[#6B6B73]">

@@ -396,7 +396,7 @@ const packages = [
 
 export default function ServicesPage() {
   return (
-    <div className="bg-[#FAFAF7]">
+    <div className="bg-[#FDFDFB]">
       {/* Hero */}
       <section
         className="hero-fixed relative py-12 lg:py-16"
@@ -475,7 +475,7 @@ export default function ServicesPage() {
       {services.map((svc) => (
         <section
           key={svc.ix}
-          className={`border-b border-[#E6E4DD] py-[112px] ${svc.alt ? "bg-[#F2F0EA]" : "bg-[#FAFAF7]"}`}
+          className={`border-b border-[#E6E4DD] py-[112px] ${svc.alt ? "bg-[#F2F0EA]" : "bg-[#FDFDFB]"}`}
         >
           <div className="mx-auto max-w-[var(--ui-content-width)] px-10">
             <div className="mb-4 font-mono text-[12px] tracking-[0.18em] text-[#1452FF]">
@@ -530,7 +530,7 @@ export default function ServicesPage() {
             [ PLANS ]
           </div>
           <h2
-            className="mb-4 max-w-[24ch] text-[#FAFAF7] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
+            className="mb-4 max-w-[24ch] text-[#FDFDFB] font-bold leading-[var(--lh-heading)] tracking-[-0.02em]"
             style={{ fontSize: "clamp(32px, 3.2vw, 48px)" }}
           >
             サービスプランと<em className="text-[#1452FF] not-italic">対応範囲</em>
@@ -558,7 +558,7 @@ export default function ServicesPage() {
                     {pkg.icon}
                   </div>
                   <div>
-                    <h4 className="text-[24px] font-bold tracking-[-0.02em] text-[#FAFAF7]">
+                    <h4 className="text-[24px] font-bold tracking-[-0.02em] text-[#FDFDFB]">
                       {pkg.name}
                     </h4>
                     <div className="mt-0.5 font-mono text-[11px] tracking-[0.12em] text-[#9A9AA0]">

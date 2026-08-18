@@ -29,7 +29,7 @@ export function CTASection({
   secondaryButtons,
 }: CTASectionProps) {
   return (
-    <section id={sectionId} className="bg-[#FAFAF7] pb-24">
+    <section id={sectionId} className="bg-[#FDFDFB] pb-24">
       <div className="max-w-[var(--ui-content-width)] mx-auto px-4 sm:px-6 lg:px-10">
         <div className="bg-[#0B0B0E] rounded-2xl p-6 sm:p-8 lg:p-12 relative overflow-hidden">
           <div

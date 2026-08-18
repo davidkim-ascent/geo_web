@@ -110,7 +110,7 @@ function SectionKicker({
 
 export default async function WhyAscentPage() {
   return (
-    <div className="overflow-x-clip bg-[#FAFAF7] text-[#0B0B0E]">
+    <div className="overflow-x-clip bg-[#FDFDFB] text-[#0B0B0E]">
       <section
         className="hero-fixed relative overflow-hidden text-white py-12 lg:py-16"
         style={{
@@ -196,7 +196,7 @@ export default async function WhyAscentPage() {
         </div>
       </section>
 
-      <section className="bg-[#FAFAF7] py-24 md:py-28">
+      <section className="bg-[#FDFDFB] py-24 md:py-28">
         <div className="mx-auto max-w-[var(--ui-content-width)] px-6 md:px-10">
           <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             <div>
@@ -357,7 +357,7 @@ export default async function WhyAscentPage() {
       </section>
 
       {/* Section 3: W/02·C — CEP × GEO(LLMO) */}
-      <section className="bg-[#FAFAF7] py-24 md:py-28">
+      <section className="bg-[#FDFDFB] py-24 md:py-28">
         <div className="mx-auto max-w-[var(--ui-content-width)] px-6 md:px-10">
           <SectionKicker overline="W/02·C — INTENT INTELLIGENCE" label="文脈 — CEP × GEO(LLMO)" />
           <div className="mt-5 h-px bg-black/10" />

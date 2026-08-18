@@ -141,15 +141,15 @@ export default function GeoLlmoCompanyArticlePage() {
           <div className="article-hero__grid pt-8 pb-4">
             <div>
               <div className="mb-8 flex items-center gap-2.5 font-mono text-[11px] tracking-[0.16em] text-[#9A9AA0] uppercase">
-                <Link href="/" className="transition-colors hover:text-[#FAFAF7]">
+                <Link href="/" className="transition-colors hover:text-[#FDFDFB]">
                   HOME
                 </Link>
                 <span className="text-white/30">/</span>
-                <Link href="/lab" className="transition-colors hover:text-[#FAFAF7]">
+                <Link href="/lab" className="transition-colors hover:text-[#FDFDFB]">
                   GEO LAB
                 </Link>
                 <span className="text-white/30">/</span>
-                <span className="text-[#FAFAF7]">GEO LLMO 会社比較</span>
+                <span className="text-[#FDFDFB]">GEO LLMO 会社比較</span>
               </div>
 
               <div className="mb-4 inline-flex items-center gap-2.5 font-mono text-[10px] tracking-[0.24em] text-[#1452FF] uppercase">

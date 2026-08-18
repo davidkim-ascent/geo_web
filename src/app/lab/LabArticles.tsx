@@ -18,7 +18,7 @@ const POSTS = [
 
 function PostCard({ p, large = false }: { p: (typeof POSTS)[number]; large?: boolean }) {
   const card = (
-    <article className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border border-[#E6E4DD] bg-[#FAFAF7] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1452FF] hover:shadow-[0_12px_32px_-16px_rgba(20,82,255,0.2)]">
+    <article className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border border-[#E6E4DD] bg-[#FDFDFB] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1452FF] hover:shadow-[0_12px_32px_-16px_rgba(20,82,255,0.2)]">
       <ArticleThumbnail
         variant={p.thumbVariant}
         eyebrow={p.cat}

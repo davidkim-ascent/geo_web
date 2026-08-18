@@ -7,7 +7,7 @@ type Props = {
 
 export function DeniedAccess({ backHref, backLabel }: Props) {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[#0B0B0E] px-6 py-16 text-[#FAFAF7]">
+    <main className="flex min-h-screen items-center justify-center bg-[#0B0B0E] px-6 py-16 text-[#FDFDFB]">
       <section className="w-full max-w-xl rounded-[28px] border border-white/10 bg-white/[0.04] p-8 text-center shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
         <div className="mx-auto mb-4 inline-flex items-center rounded-full border border-[#1452FF]/30 bg-[#1452FF]/10 px-3 py-1 font-mono text-[11px] tracking-[0.2em] text-[#1452FF]">
           ACCESS DENIED

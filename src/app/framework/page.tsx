@@ -292,7 +292,7 @@ function FrameworkHero() {
             <span className="h-2 w-2 rounded-full bg-[#1452FF]" />
             GEO(LLMO) FRAMEWORK
           </div>
-          <h1 className="font-bold text-[#FAFAF7]" style={{ fontSize: "var(--fs-display)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em" }}>
+          <h1 className="font-bold text-[#FDFDFB]" style={{ fontSize: "var(--fs-display)", lineHeight: "var(--lh-display)", letterSpacing: "-0.035em" }}>
             質問から最適化までが
             <br />
             <span className="text-[#6fa0ff]">一貫した設計</span>
@@ -338,7 +338,7 @@ function FrameworkHero() {
 
 function FrameworkOverview() {
   return (
-    <section className="bg-[#FAFAF7] py-[100px]">
+    <section className="bg-[#FDFDFB] py-[100px]">
       <div className="mx-auto max-w-[var(--ui-content-width)] px-4 sm:px-6 lg:px-10">
         <div className="font-mono text-[12px] tracking-[0.18em] text-[#6B6B73] uppercase mb-6">
           [ 01 ] FRAMEWORK · LOOP
@@ -359,7 +359,7 @@ function FrameworkOverview() {
 
 function FrameworkSteps() {
   return (
-    <section className="bg-[#FAFAF7] pb-20">
+    <section className="bg-[#FDFDFB] pb-20">
       <div className="mx-auto max-w-[var(--ui-content-width)] px-4 sm:px-6 lg:px-10">
         <SectionLabel title="Phase Breakdown" />
         <h2 className="mt-4 font-bold leading-[1.08] tracking-[-0.03em] text-[#0B0B0E] text-[clamp(32px,3.2vw,48px)]">
@@ -409,7 +409,7 @@ function FrameworkSteps() {
 
 export default function FrameworkPage() {
   return (
-    <div className="bg-[#FAFAF7] text-[#0B0B0E]">
+    <div className="bg-[#FDFDFB] text-[#0B0B0E]">
       <FrameworkHero />
       <FrameworkOverview />
       <FrameworkSteps />

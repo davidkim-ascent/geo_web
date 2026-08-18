@@ -204,7 +204,7 @@ export function AgentFlowChart() {
             </div>
 
             {/* Merchant */}
-            <div className="rounded-xl border border-[#E6E4DD] bg-[#FAFAF7] p-4 text-center">
+            <div className="rounded-xl border border-[#E6E4DD] bg-[#FDFDFB] p-4 text-center">
               <div className="mb-1 font-mono text-[9px] tracking-[0.18em] text-[#9A9AA0] uppercase">Merchant of Record</div>
               <div className="font-bold text-[14px] text-[#0B0B0E]">販売者</div>
               <div className="mt-2 space-y-1">
@@ -456,7 +456,7 @@ export function EcosystemMapChart() {
       </div>
 
       {/* Adapters & Enablers */}
-      <div className="border-t border-[#E6E4DD] bg-[#FAFAF7] px-6 sm:px-8 py-5">
+      <div className="border-t border-[#E6E4DD] bg-[#FDFDFB] px-6 sm:px-8 py-5">
         <div className="mb-3 flex items-center gap-3">
           <div className="h-px flex-1 bg-[#E6E4DD]" />
           <span className="font-mono text-[10px] tracking-[0.18em] font-bold text-[#6B6B73] uppercase">Adapters &amp; Enablers</span>
