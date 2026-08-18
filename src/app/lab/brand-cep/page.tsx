@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { SeoGeoCTASection } from "@/components/layout/SeoGeoCTASection";
+import { LabArticleCTASection } from "@/components/layout/LabArticleCTASection";
 import { ArticleTOC } from "./ArticleTOC";
 import { RelatedResearchSection } from "@/components/lab/RelatedResearchSection";
 import lmCepFinderImage from "./lm-cep-finder.png";
@@ -369,7 +369,7 @@ export default function BrandCepArticlePage() {
       </section>
 
       <RelatedResearchSection currentSlug="brand-cep" />
-      <SeoGeoCTASection />
+      <LabArticleCTASection />
     </div>
   );
 }

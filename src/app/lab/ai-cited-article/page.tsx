@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { SeoGeoCTASection } from "@/components/layout/SeoGeoCTASection";
+import { LabArticleCTASection } from "@/components/layout/LabArticleCTASection";
 import { ArticleTOC } from "../llmo-eeat/ArticleTOC";
 import { ArticleThumbnail } from "@/components/lab/ArticleThumbnail";
 import { buildPageMetadata } from "@/lib/seo";
@@ -600,7 +600,7 @@ export default function AiCitedArticlePage() {
         </div>
       </section>
 
-      <SeoGeoCTASection />
+      <LabArticleCTASection />
     </div>
   );
 }

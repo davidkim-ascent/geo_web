@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { SeoGeoCTASection } from "@/components/layout/SeoGeoCTASection";
+import { LabArticleCTASection } from "@/components/layout/LabArticleCTASection";
 import { buildPageMetadata } from "@/lib/seo";
 import { ArticleTOC } from "./ArticleTOC";
 import { RelatedResearchSection } from "@/components/lab/RelatedResearchSection";
@@ -439,7 +439,7 @@ export default function AdobeAiTrafficPage() {
       </section>
 
       <RelatedResearchSection currentSlug="adobe-ai-traffic" />
-      <SeoGeoCTASection />
+      <LabArticleCTASection />
     </div>
   );
 }
