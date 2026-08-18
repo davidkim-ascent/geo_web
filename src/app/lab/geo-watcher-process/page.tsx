@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { LabArticleCTASection } from "@/components/layout/LabArticleCTASection";
 import { ArticleTOC } from "./ArticleTOC";
+import { DialogueBubble } from "./DialogueBubble";
 import { ArticleThumbnail } from "@/components/lab/ArticleThumbnail";
 import { buildPageMetadata } from "@/lib/seo";
 import stepBrand from "./step1-brand.png";
@@ -154,9 +155,9 @@ export default function GeoWatcherProcessPage() {
                   </p>
                   <span className="article-quote__note">RESEARCH NOTE</span>
                 </blockquote>
-                <p className="article-prose">
-                  「GEO・LLMO対策をしたいけど、まず何からしたらいいか分からない」「重要なのは分かっているけど具体的な方法はあるの？」という担当者の悩みは少なくありません。GEO・LLMO対策は、まず自社がAI検索においてどのような状況にあるかを把握する現状分析から始まります。
-                </p>
+                <DialogueBubble speaker="A">GEO・LLMO対策をしたいけど、まず何からしたらいいか分からない。</DialogueBubble>
+                <DialogueBubble speaker="A">重要なのは分かっているけど具体的な方法はあるの？</DialogueBubble>
+                <DialogueBubble speaker="S">そんなお悩みをお持ちの担当者も多いと思います。GEO・LLMO対策は現状分析から行います！自社がAI検索において、まずどの状況なのか確かめましょう。</DialogueBubble>
                 <p className="article-prose">
                   本記事では、GEO Watcherを使って現状分析からモニタリング、プロンプト設計、コンテンツ改善までを回す具体的なプロセスを、実際の管理画面を交えて解説します。
                 </p>
@@ -303,8 +304,11 @@ export default function GeoWatcherProcessPage() {
               <section id="s9" className="article-section">
                 <span className="article-kicker">09</span>
                 <h2 className="article-h2">ステップ3：最適なプロンプトを設計する</h2>
+                <DialogueBubble speaker="A">モニタリングツールを使って数値として自社ブランド現状が把握できました！</DialogueBubble>
+                <DialogueBubble speaker="A">AI検索における指標も分かったので、これをモニタリングしていけばいいですね？</DialogueBubble>
+                <DialogueBubble speaker="S">ありがとうございます。このままモニタリングしてもいいですが、今のプロンプトは自動で生成されたものです。もっと精度を上げるには「最適なプロンプト設計」をしましょう！</DialogueBubble>
                 <p className="article-prose">
-                  モニタリングツールを使って数値として自社ブランドの現状が把握できたら、次は本命のプロンプトを設計します。問いは「自社にとって、どんな質問をされたときに、自社ブランドが回答に登場してほしいか」です。ここがGEOとSEOの実務が最も大きく分かれるポイントです。
+                  現状の把握が見えたら、次は本命のプロンプトを設計します。問いは「自社のビジネスにとって、どんな質問をされたときに、自社ブランドが回答に登場してほしいか」です。ここがGEOとSEOの実務が最も大きく分かれるポイントです。
                 </p>
                 <p className="article-prose">
                   SEOのキーワード調査が「検索される語」を集めるのに対し、GEOでは「AIに投げかけられる質問」を設計します。そしてAI検索の特徴は、最初の質問で終わらず、回答を受けてさらに質問を重ねるフォローアップ質問の連なりになることです。たとえば、ある製品カテゴリについて消費者は次のように質問を重ねます。
@@ -362,6 +366,9 @@ export default function GeoWatcherProcessPage() {
               <section id="s10" className="article-section">
                 <span className="article-kicker">10</span>
                 <h2 className="article-h2">ステップ4：GEO・LLMOに特化したコンテンツ改善</h2>
+                <DialogueBubble speaker="A">確かに、ユーザーがどんな質問をするかを再設計するのは大切ですね。</DialogueBubble>
+                <DialogueBubble speaker="A">なぜこの質問を追うのか？ここまで考えてプロンプトを考えてモニタリングすると、より精度が高くなりますね！</DialogueBubble>
+                <DialogueBubble speaker="S">はい、アセントネットワークスでは検索ビッグデータに基づいたプロンプト設計サポートも行っています。ここまで来たら、次はAIに引用されるようにコンテンツを改善しましょう。</DialogueBubble>
                 <p className="article-prose">
                   特定した弱点プロンプトに対して、その「答え」となるコンテンツを制作・改修します。ここで制作するコンテンツは、SEO対策を意識した記事作成と重なりつつも異なります。AIは、質問に対して明確・簡潔に回答し、根拠を伴い、ページ単体で完結しているコンテンツを優先的に引用します。「キーワードを含む網羅的な長文」というSEO的発想のままでは、AIにとって引用しやすい情報源にはなりません。具体的には、次の7つの設計ルールに沿ってコンテンツを組み立てます。
                 </p>
@@ -398,8 +405,11 @@ export default function GeoWatcherProcessPage() {
               <section id="s11" className="article-section">
                 <span className="article-kicker">11</span>
                 <h2 className="article-h2">ステップ5：モニタリングと再設計を繰り返し次の改善へ</h2>
+                <DialogueBubble speaker="A">GEO・LLMOの最適化7原則は分かりやすいですね！</DialogueBubble>
+                <DialogueBubble speaker="A">SEOとは、また違う視点でのページ設計が必要だと感じました。改修サポートの利用も考えてみます。</DialogueBubble>
+                <DialogueBubble speaker="S">GEO・LLMOはSEOとは違った視点での対策が必要です。最後はこれまでのプロセスを測る、比べる、改善する、確かめるサイクルで回していきましょう。</DialogueBubble>
                 <p className="article-prose">
-                  GEO・LLMOはSEOとは違った視点での対策が必要です。最後は、これまでのプロセスを「測る、比べる、改善する、確かめる」のサイクルで回していきます。最後のステップは、特別な作業ではありません。ここまでの流れを、サイクルとして回し続けることです。
+                  最後のステップは、特別な作業ではありません。ここまでの流れを、サイクルとして回し続けることです。
                 </p>
                 <p className="article-prose">
                   制作・改修したコンテンツの成果は、モニタリング結果に現れます。言及回数（シェア・オブ・ボイス）は増えたか、引用は獲得できたか、弱点だったプロンプトでの扱いは変わったか。改善が確認できた領域は維持し、改善ができていない領域はプロンプトの設計（ステップ3）に立ち返って見直します。この判断を、計測データに基づいて繰り返します。KPIとしては、次の4つを軸に据えます。

@@ -1105,6 +1105,65 @@ body.tweak-norotate .fw-ring g.node text {
   border-left: 4px solid #1452FF;
 }
 
+.article-dialogue {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.article-dialogue__avatar {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.article-dialogue__bubble {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #E6E4DD;
+  border-radius: 16px;
+  background: #FAFAF7;
+  padding: 16px 20px;
+}
+
+.article-dialogue__bubble::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 18px;
+  width: 16px;
+  height: 16px;
+  background: #FAFAF7;
+  border-left: 1px solid #E6E4DD;
+  border-bottom: 1px solid #E6E4DD;
+  transform: rotate(45deg);
+}
+
+.article-dialogue__label {
+  display: block;
+  margin-bottom: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.article-dialogue__text {
+  margin: 0;
+  font-size: var(--fs-body-sm);
+  line-height: 1.7;
+  color: #0B0B0E;
+}
+
 .article-quote__text {
   max-width: 22ch;
   margin: 0;
