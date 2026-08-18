@@ -72,18 +72,6 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-H7YRT79KK0"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-H7YRT79KK0');
-          `}
-        </Script>
         <ScrollToTop />
         <Header />
         <main className="flex-1 pt-14">
