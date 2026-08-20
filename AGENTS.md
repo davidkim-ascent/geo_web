@@ -94,10 +94,32 @@ origin/main과 로컬 변경사항을 전체 비교한 뒤, 누락 없이 검토
    - 카드가 3개 미만이면 빈 칸으로 유지 (중복 콘텐츠 넣지 말 것)
 
 ## 새 아티클 추가 시
+- **작성 전에 반드시 메타 제목(title)과 메타 디스크립션(description)을 먼저 제시하고 사용자 컨펌을 받은 후 본문을 작성한다.**
 - `LabArticles.tsx`의 `POSTS` 배열에 추가 (index 3 이후)
 - Featured 섹션에 올릴 경우 `page.tsx`의 `featuredSide` 배열 수정
+- Featured 배치(왼쪽 큰 카드 + 오른쪽 2개)는 사용자 지시가 없는 한 그대로 유지한다
+- 하단 그리드(`LabArticles.tsx`)는 Featured에 노출된 것을 제외하고, 날짜 내림차순(최신순)으로 자동 정렬한다 (`POSTS` 배열 순서에 의존하지 말 것 — `gridPosts`는 `date` 기준 정렬 로직으로 처리)
 
 # アーティクルページ作成ガイドライン
+
+## h2見出しの折り返し（再発バグ）
+- グローバルCSSの `.article-h2` は `max-width: 24ch; white-space: nowrap` が設定されているため、**24文字を超える見出しは画面右にはみ出して切れる**
+- 24文字を超える `<h2 className="article-h2">` には必ず `style={{ maxWidth: "none", whiteSpace: "normal" }}` を追加すること
+  ```tsx
+  <h2 className="article-h2" style={{ maxWidth: "none", whiteSpace: "normal" }}>長い見出しテキスト</h2>
+  ```
+- グローバルCSS自体は変更しない（他ページへの影響を避けるため、該当h2にインラインで上書きする）
+
+## テーブル・カード群の見出しはキャプションボックスにしない
+- `bg-[#F2F0EA] px-5 py-3 font-mono text-[11px] tracking-[0.18em] text-[#6B6B73] uppercase` の**グレー背景キャプションボックスは使用しない**（テーブルやカードリストと二重の箱に見えてしまうバグの原因）
+- 代わりに、見出しはテーブル・カード群の直前に**太字テキスト**として配置する
+  ```tsx
+  <p className="mt-8 mb-3 font-bold text-[15px] text-[#0B0B0E]">見出しテキスト</p>
+  <div className="overflow-hidden rounded-xl border border-[#E6E4DD]">
+    <div className="article-table" style={{ margin: 0 }}>...</div>
+  </div>
+  ```
+- `.article-table` 自体に `margin: 32px 0` が設定されているため、直前に見出しを置く場合は `style={{ margin: 0 }}` で上書きし、余白の二重発生を防ぐこと
 
 ## テーブルのカラム幅
 - `article-table` は div ベースの構造を使う（`<table>` HTML は使用禁止）
