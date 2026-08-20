@@ -7,7 +7,7 @@ import aiAgentSiteImage from "@/app/lab/ai-agent-site/ai-agent-site.png";
 import aiShoppingImage from "@/app/lab/ai-shopping-agent/ai-shopping.png";
 import { TypingPromptCard } from "@/app/lab/brand-cep/TypingPromptCard";
 
-type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "ai-shopping-agent" | "llmo-eeat" | "entity" | "ai-cited-article" | "geo-watcher-process" | "abstract";
+type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "ai-shopping-agent" | "llmo-eeat" | "entity" | "ai-cited-article" | "geo-watcher-process" | "chatgpt-vs-google-seo" | "ai-citation-comparison" | "ecommerce-aeo-geo" | "abstract";
 
 type ArticleThumbnailProps = {
   variant: ArticleThumbnailVariant;
@@ -15,7 +15,7 @@ type ArticleThumbnailProps = {
   eyebrow?: string;
 };
 
-const IMAGE_BY_VARIANT: Record<Exclude<ArticleThumbnailVariant, "abstract" | "adobe-ai-traffic" | "brand-cep" | "llmo-eeat" | "entity" | "ai-cited-article" | "geo-watcher-process">, typeof seoGeoImage> = {
+const IMAGE_BY_VARIANT: Record<Exclude<ArticleThumbnailVariant, "abstract" | "adobe-ai-traffic" | "brand-cep" | "llmo-eeat" | "entity" | "ai-cited-article" | "geo-watcher-process" | "chatgpt-vs-google-seo" | "ai-citation-comparison" | "ecommerce-aeo-geo">, typeof seoGeoImage> = {
   "seo-geo": seoGeoImage,
   "geo-llmo-company": geoLlmoCompanyImage,
   "ai-agent-site": aiAgentSiteImage,
@@ -33,6 +33,9 @@ const labelByVariant: Record<ArticleThumbnailVariant, string> = {
   entity: "エンティティ / GEO・LLMO",
   "ai-cited-article": "GEO / LLMO",
   "geo-watcher-process": "GEO Watcher",
+  "chatgpt-vs-google-seo": "COMPARE",
+  "ai-citation-comparison": "GEO / LLMO",
+  "ecommerce-aeo-geo": "EC / RETAIL",
   abstract: "RESEARCH NOTE",
 };
 
@@ -255,6 +258,57 @@ export function ArticleThumbnail({ variant, className = "", eyebrow }: ArticleTh
               自社でできる！GEO Watcherを使った<br />
               <span className="text-[#1452FF]">具体的なGEO・LLMO対策プロセス</span>
             </p>
+          </div>
+        </>
+      ) : variant === "chatgpt-vs-google-seo" ? (
+        <>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_25%,rgba(20,82,255,0.24),transparent_38%),radial-gradient(circle_at_82%_75%,rgba(255,255,255,0.08),transparent_30%)]" />
+          <div className="absolute inset-0 flex items-center justify-center gap-8 px-6">
+            <div className="flex flex-col items-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-6 py-5">
+              <span className="font-mono text-[10px] tracking-[0.18em] text-white/60 uppercase">Google</span>
+              <span className="font-bold text-white" style={{ fontSize: "clamp(18px, 2.2vw, 24px)" }}>SEO</span>
+            </div>
+            <span className="font-bold text-[#1452FF]" style={{ fontSize: "clamp(20px, 2.6vw, 28px)" }}>vs</span>
+            <div className="flex flex-col items-center gap-2 rounded-xl border border-[#1452FF]/40 bg-[#1452FF]/10 px-6 py-5">
+              <span className="font-mono text-[10px] tracking-[0.18em] text-[#1452FF] uppercase">ChatGPT</span>
+              <span className="font-bold text-white" style={{ fontSize: "clamp(18px, 2.2vw, 24px)" }}>最適化</span>
+            </div>
+          </div>
+        </>
+      ) : variant === "ai-citation-comparison" ? (
+        <>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(20,82,255,0.24),transparent_36%),radial-gradient(circle_at_85%_80%,rgba(255,255,255,0.08),transparent_30%)]" />
+          <div className="absolute inset-0 flex items-center justify-center gap-5 px-6">
+            {["ChatGPT", "Perplexity", "Gemini"].map((name, i) => (
+              <div
+                key={name}
+                className="flex flex-col items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-5 py-5"
+                style={{ opacity: 0.5 + i * 0.25 }}
+              >
+                <span className="h-2 w-2 rounded-full bg-[#1452FF]" />
+                <span className="whitespace-nowrap font-bold text-white" style={{ fontSize: "13px" }}>{name}</span>
+              </div>
+            ))}
+          </div>
+          <div className="absolute left-6 bottom-5 font-bold text-white/90" style={{ fontSize: "clamp(20px, 2.8vw, 30px)", lineHeight: 1.3, letterSpacing: "-0.03em" }}>
+            モデルごとに異なる<br />
+            <span className="text-[#1452FF]">ブランド引用</span>
+          </div>
+        </>
+      ) : variant === "ecommerce-aeo-geo" ? (
+        <>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_22%,rgba(20,82,255,0.22),transparent_34%),radial-gradient(circle_at_22%_78%,rgba(255,255,255,0.07),transparent_30%)]" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span
+              className="font-bold text-white/10 select-none"
+              style={{ fontSize: "clamp(90px, 11vw, 140px)", lineHeight: 1, letterSpacing: "-0.05em" }}
+            >
+              EC
+            </span>
+          </div>
+          <div className="absolute left-6 bottom-5 font-bold text-white/90" style={{ fontSize: "clamp(20px, 2.8vw, 30px)", lineHeight: 1.3, letterSpacing: "-0.03em" }}>
+            ECサイトのための<br />
+            <span className="text-[#1452FF]">AEO・GEO最適化</span>
           </div>
         </>
       ) : variant === "abstract" ? (
