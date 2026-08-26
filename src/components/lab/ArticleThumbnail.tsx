@@ -5,9 +5,10 @@ import seoGeoImage from "@/app/lab/seo-geo/seo-geo.png";
 import geoLlmoCompanyImage from "@/app/lab/geo-llmo-company/company-comparison.png";
 import aiAgentSiteImage from "@/app/lab/ai-agent-site/ai-agent-site.png";
 import aiShoppingImage from "@/app/lab/ai-shopping-agent/ai-shopping.png";
+import geoLlmoToolsImage from "@/app/lab/geo-llmo-tools/hero-collage.png";
 import { TypingPromptCard } from "@/app/lab/brand-cep/TypingPromptCard";
 
-type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "ai-shopping-agent" | "llmo-eeat" | "entity" | "ai-cited-article" | "geo-watcher-process" | "chatgpt-vs-google-seo" | "ai-citation-comparison" | "ecommerce-aeo-geo" | "abstract";
+type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "ai-shopping-agent" | "llmo-eeat" | "entity" | "ai-cited-article" | "geo-watcher-process" | "chatgpt-vs-google-seo" | "ai-citation-comparison" | "ecommerce-aeo-geo" | "geo-llmo-tools" | "abstract";
 
 type ArticleThumbnailProps = {
   variant: ArticleThumbnailVariant;
@@ -20,6 +21,7 @@ const IMAGE_BY_VARIANT: Record<Exclude<ArticleThumbnailVariant, "abstract" | "ad
   "geo-llmo-company": geoLlmoCompanyImage,
   "ai-agent-site": aiAgentSiteImage,
   "ai-shopping-agent": aiShoppingImage,
+  "geo-llmo-tools": geoLlmoToolsImage,
 };
 
 const labelByVariant: Record<ArticleThumbnailVariant, string> = {
@@ -36,6 +38,7 @@ const labelByVariant: Record<ArticleThumbnailVariant, string> = {
   "chatgpt-vs-google-seo": "COMPARE",
   "ai-citation-comparison": "GEO / LLMO",
   "ecommerce-aeo-geo": "EC / RETAIL",
+  "geo-llmo-tools": "GEO / LLMO TOOLS",
   abstract: "RESEARCH NOTE",
 };
 
