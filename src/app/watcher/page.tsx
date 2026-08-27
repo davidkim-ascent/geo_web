@@ -561,13 +561,13 @@ function SpotSupportSection() {
     {
       title: "コンテンツ改善診断",
       image: "/spot02.png",
-      tagline: "どこから直すべきかを、データから整理",
-      body: "AIに引用されている競合ページと自社ページを比較し、改善すべきページと優先順位を整理します。感覚ではなく、現在の引用状況や競合との差をもとに、GEO・LLMO対策で次に取り組むべき改善の方向性を明確にします。",
-      price: "50,000〜100,000円　※診断するページ数に応じて、申し込み前に確定します",
-      duration: "10営業日以内",
+      tagline: "AI引用に特化した具体的なコンテンツ改善",
+      body: "プロンプトと自社ページを分析し、改善すべきページと整理。GoogleとMicrosoftが保有する検索関連の特許をベースに、AI引用に特化した具体的なコンテンツ改善施策をレポート化して納品いたします。",
+      price: "80,000円〜　1コンテンツあたり8,000円　※改善対象のページ数に応じて、価格を確定します",
+      duration: "10営業日以内　※ページ数に応じて、変動いたします",
       hearing: "30分",
-      deliverable: "改善優先度レポート",
-      useCases: ["計測結果を見ても、次の施策が決まらない", "競合との差をコンテンツ改善につなげたい", "優先して直すページを絞り込みたい"],
+      deliverable: "コンテンツ改善施策レポート",
+      useCases: ["具体的なコンテンツ改善のやり方がわからない", "優先して改善するページを絞り込みたい", "単発で専門的なサポートをしてほしい"],
     },
   ];
 
@@ -594,7 +594,7 @@ function SpotSupportSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {spotSupports.map((s, i) => (
-            <div key={s.title} className="bg-white rounded-2xl overflow-hidden">
+            <div key={s.title} className="bg-white rounded-2xl overflow-hidden flex flex-col">
               {"image" in s && s.image && (
                 <div className="w-full relative" style={{ aspectRatio: "16 / 9" }}>
                   <Image
@@ -605,7 +605,7 @@ function SpotSupportSection() {
                   />
                 </div>
               )}
-              <div className="p-8">
+              <div className="p-8 flex flex-col flex-1">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="flex-shrink-0 rounded-full flex items-center justify-center" style={{ width: "36px", height: "36px", backgroundColor: "#003393" }}>
                     <span className="font-bold text-white" style={{ fontSize: "var(--fs-body-xsm)" }}>{String(i + 1).padStart(2, "0")}</span>
@@ -615,7 +615,7 @@ function SpotSupportSection() {
                   </h3>
                 </div>
                 <p className="font-bold mb-4" style={{ fontSize: "var(--fs-body-sm)", color: "#003393" }}>{s.tagline}</p>
-                <p className="text-[#4e4e51] leading-[1.7] mb-6" style={{ fontSize: "var(--fs-body-sm)" }}>{s.body}</p>
+                <p className="text-[#4e4e51] leading-[1.7] mb-6 flex-1" style={{ fontSize: "var(--fs-body-sm)" }}>{s.body}</p>
 
                 <div className="mb-6 rounded-lg overflow-hidden border border-black/[0.1]">
                   {[
@@ -631,7 +631,7 @@ function SpotSupportSection() {
                   ))}
                 </div>
 
-                <div className="pt-4 border-t border-black/[0.08]">
+                <div>
                   <div className="relative inline-block mb-4 rounded-xl px-4 py-2" style={{ backgroundColor: "#003393" }}>
                     <span className="font-bold text-white" style={{ fontSize: "var(--fs-body-xsm)" }}>こんなときに</span>
                     <div
