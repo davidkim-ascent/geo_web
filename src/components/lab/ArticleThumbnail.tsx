@@ -8,7 +8,7 @@ import aiShoppingImage from "@/app/lab/ai-shopping-agent/ai-shopping.png";
 import geoLlmoToolsImage from "@/app/lab/geo-llmo-tools/hero-collage.png";
 import { TypingPromptCard } from "@/app/lab/brand-cep/TypingPromptCard";
 
-type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "ai-shopping-agent" | "llmo-eeat" | "entity" | "ai-cited-article" | "geo-watcher-process" | "chatgpt-vs-google-seo" | "ai-citation-comparison" | "ecommerce-aeo-geo" | "geo-llmo-tools" | "abstract";
+type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "ai-shopping-agent" | "llmo-eeat" | "entity" | "ai-cited-article" | "geo-watcher-process" | "chatgpt-vs-google-seo" | "ai-citation-comparison" | "ecommerce-aeo-geo" | "geo-llmo-tools" | "self-check" | "abstract";
 
 type ArticleThumbnailProps = {
   variant: ArticleThumbnailVariant;
@@ -16,7 +16,7 @@ type ArticleThumbnailProps = {
   eyebrow?: string;
 };
 
-const IMAGE_BY_VARIANT: Record<Exclude<ArticleThumbnailVariant, "abstract" | "adobe-ai-traffic" | "brand-cep" | "llmo-eeat" | "entity" | "ai-cited-article" | "geo-watcher-process" | "chatgpt-vs-google-seo" | "ai-citation-comparison" | "ecommerce-aeo-geo">, typeof seoGeoImage> = {
+const IMAGE_BY_VARIANT: Record<Exclude<ArticleThumbnailVariant, "abstract" | "adobe-ai-traffic" | "brand-cep" | "llmo-eeat" | "entity" | "ai-cited-article" | "geo-watcher-process" | "chatgpt-vs-google-seo" | "ai-citation-comparison" | "ecommerce-aeo-geo" | "self-check">, typeof seoGeoImage> = {
   "seo-geo": seoGeoImage,
   "geo-llmo-company": geoLlmoCompanyImage,
   "ai-agent-site": aiAgentSiteImage,
@@ -39,6 +39,7 @@ const labelByVariant: Record<ArticleThumbnailVariant, string> = {
   "ai-citation-comparison": "GEO / LLMO",
   "ecommerce-aeo-geo": "EC / RETAIL",
   "geo-llmo-tools": "GEO / LLMO TOOLS",
+  "self-check": "SELF CHECK",
   abstract: "RESEARCH NOTE",
 };
 
@@ -312,6 +313,37 @@ export function ArticleThumbnail({ variant, className = "", eyebrow }: ArticleTh
           <div className="absolute left-6 bottom-5 font-bold text-white/90" style={{ fontSize: "clamp(20px, 2.8vw, 30px)", lineHeight: 1.3, letterSpacing: "-0.03em" }}>
             ECサイトのための<br />
             <span className="text-[#1452FF]">AEO・GEO最適化</span>
+          </div>
+        </>
+      ) : variant === "self-check" ? (
+        <>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_22%,rgba(20,82,255,0.28),transparent_38%),radial-gradient(circle_at_85%_78%,rgba(255,255,255,0.08),transparent_30%)]" />
+          <div className="absolute inset-0 flex items-center justify-center gap-5 px-6">
+            {["ChatGPT", "Gemini", "Perplexity", "Copilot"].map((name, i) => (
+              <div
+                key={name}
+                className="relative flex flex-col items-center justify-center gap-2.5 rounded-2xl border bg-[#12141C] px-5 py-6"
+                style={{
+                  borderColor: "rgba(20,82,255,0.5)",
+                  boxShadow: "0 0 0 1px rgba(20,82,255,0.12), 0 12px 24px -12px rgba(20,82,255,0.4)",
+                  opacity: 0.7 + i * 0.08,
+                }}
+              >
+                <span
+                  className="flex h-6 w-6 flex-none items-center justify-center rounded-md"
+                  style={{ background: "#1452FF" }}
+                >
+                  <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.5 5L4.8 8.3L11.5 1.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+                <span className="whitespace-nowrap font-bold text-white" style={{ fontSize: "14px" }}>{name}</span>
+              </div>
+            ))}
+          </div>
+          <div className="absolute left-6 bottom-5 font-bold text-white/90" style={{ fontSize: "clamp(20px, 2.8vw, 30px)", lineHeight: 1.3, letterSpacing: "-0.03em" }}>
+            自社サイトの<br />
+            <span className="text-[#1452FF]">AI引用セルフチェック</span>
           </div>
         </>
       ) : variant === "abstract" ? (

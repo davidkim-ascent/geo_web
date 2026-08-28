@@ -155,6 +155,24 @@ origin/main과 로컬 변경사항을 전체 비교한 뒤, 누락 없이 검토
 - `<strong>カテゴリー名：</strong>属性1・属性2...` の形式は使用しない。代わりにテーブルで「カテゴリー | 属性リスト」として分離する
 - `<strong>` タグは `whitespace-nowrap` を付けてラベルが途中で折れないようにすること
 
+## 本文フォントサイズは必ずCSS変数を使う（再発バグ）
+
+**原因**: 既存アーティクルをテンプレートとしてコピーする際、`text-[13px]` `text-[14px]` `text-[15px]` のようなTailwindのハードコード値をそのまま持ち込むと、`globals.css` の `--fs-body`（18px）系変数より小さくなり、本文だけ不自然に文字が小さく見えるバグが再発する。
+
+- カード・リスト・テーブル見出しなど**本文相当のテキストには、px直書きではなく必ず `var(--fs-body)` 系のCSS変数を使うこと**
+  ```tsx
+  {/* 悪い例 */}
+  <div className="font-bold text-[14px] text-[#0B0B0E]">{item.title}</div>
+  <div className="text-[13px] text-[#6B6B73]">{item.desc}</div>
+
+  {/* 良い例 */}
+  <div className="font-bold text-[#0B0B0E]" style={{ fontSize: "var(--fs-body)" }}>{item.title}</div>
+  <div className="text-[#6B6B73]" style={{ fontSize: "var(--fs-body-sm)" }}>{item.desc}</div>
+  ```
+- 使い分けの目安: 見出し・強調テキスト → `var(--fs-body)`（18px）／補足・説明文 → `var(--fs-body-sm)`（17px）／ラベル → `var(--fs-label)`（15px）
+- 例外: パンくずリスト、eyebrowラベル、バッジ内の番号（丸背景の中の数字など）、出典・キャプションのような**明確に装飾/メタ情報とわかる要素**は、従来通り `text-[10px]`〜`text-[12px]` 程度の小さいpx直書きで問題ない
+- 判断基準：ユーザーが読む「本文の内容」であればCSS変数、デザイン上の装飾・メタ情報であれば px直書き可
+
 ## article-list__item 内の `<strong>` 禁止パターン（再発バグ）
 
 **原因**: `article-list__item` は `display: grid; grid-template-columns: 22px 1fr` のグリッドコンテナ。直接の子要素がすべてgrid itemになるため、`<strong>`が列2（1fr）を占有し、**後続テキストノードが列3（暗黙列・22px幅）に押し出されて1文字ずつ縦に並ぶ**。
