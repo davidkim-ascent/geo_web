@@ -31,7 +31,7 @@ function HeroSection() {
         </div>
 
         {/* AI Model Logos */}
-        <div className="flex items-center justify-center gap-12 flex-wrap mb-8">
+        <div className="flex items-center justify-center gap-8 flex-wrap mb-8">
           {[
             { src: "/ai-model-logos/chatgpt.png", alt: "ChatGPT", whiteBg: true, scale: false },
             { src: "/ai-model-logos/claude.png", alt: "Claude", whiteBg: false, scale: false },
