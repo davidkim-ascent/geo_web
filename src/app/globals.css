@@ -2557,6 +2557,13 @@ a.ct-channel-card:hover {
   h1.hero-h1-match-index span {
     font-size: var(--fs-display) !important;
   }
+  /* Shindan hero H1 only: -3px from --fs-display */
+  h1.hero-h1-match-index.shindan-hero-h1 {
+    font-size: calc(var(--fs-display) - 3px) !important;
+  }
+  h1.hero-h1-match-index.shindan-hero-h1 span {
+    font-size: calc(var(--fs-display) - 3px) !important;
+  }
 }
 
 /* Watcher/Shindan anchor nav: stack one item per row on mobile */

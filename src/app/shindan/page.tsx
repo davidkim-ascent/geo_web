@@ -59,7 +59,7 @@ function HeroSection() {
 
         {/* H1 Title */}
         <h1
-          className="hero-h1-match-index font-bold max-w-[48ch] mx-auto"
+          className="hero-h1-match-index shindan-hero-h1 font-bold max-w-[48ch] mx-auto"
           style={{ fontSize: "53px", lineHeight: "1.5", letterSpacing: "-0.035em", fontFamily: "'NiveauGrotesk', sans-serif" }}
         >
 GEO・LLMO<span style={{ marginLeft: "3px", fontSize: "49px", fontFamily: "'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif" }}>診断結果を、</span><br /><span style={{ color: "#003393" }}>商談と次の提案に</span>つなげる
@@ -80,8 +80,8 @@ GEO・LLMO<span style={{ marginLeft: "3px", fontSize: "49px", fontFamily: "'Pret
 
 function NavigationSection() {
   const items = [
-    { label: "FEATURES", ja: "主要機能", href: "#features" },
     { label: "USE CASES", ja: "活用場面", href: "#reasons" },
+    { label: "FEATURES", ja: "主要機能", href: "#features" },
     { label: "PRICING", ja: "料金プラン", href: "#pricing" },
     { label: "CONTACT", ja: "お問い合わせ", href: "#contact" },
     { label: "FAQ", ja: "FAQ", href: "#faq" },
@@ -443,8 +443,8 @@ export default function ShindanPage() {
       <HeroSection />
       <NavigationSection />
       <StepsSection />
-      <FeaturesSection />
       <ReasonsSection />
+      <FeaturesSection />
       <ShindanPricingSection />
       <ContactSection />
       <ShindanFAQ />
