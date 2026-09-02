@@ -1,3 +1,26 @@
+## 2026-09-02 00:40
+- 아티클 좌측 목차(TOC) 폰트 사이즈 전역 +2px 확대: `globals.css`의 `.article-toc__item`, `.article-toc__index` 11px → 13px (모든 lab 아티클 페이지 공통 적용, `.article-toc__title`은 inherit로 자동 반영)
+
+## 2026-09-02 00:30
+- query-fan-out 아티클 재검수 반영: 「AIによる概要とAIモードの違い」테이블 wrapper에 누락된 `my-6` 여백 클래스 추가(테이블 바로 아래 소제목이 붙어있던 문제 해결)
+- 出典・参考 리스트가 `article-list`(18px, 큰 파란 불릿)를 써서 감수자 텍스트보다 과도하게 커 보이던 문제 수정 → `article-note-panel__text--muted` 톤(13px, 작은 텍스트 불릿)으로 통일
+- 재발 방지를 위해 "아티클 테이블 하단 여백 / 감수자·출전 박스 포맷" 규칙을 메모리에 저장
+
+## 2026-09-02 00:20
+- query-fan-out 아티클 소제목 시맨틱 수정: `<p className="font-bold text-[15px]">`로 처리되던 10개 소제목(AIによる概要、ファンアウトの語源 등)을 `<h3 className="article-h4">`로 교체해 h2→h3 문서 구조를 올바르게 정리
+
+## 2026-09-02 00:10
+- query-fan-out 아티클 검수 반영: 히어로 아래 커스텀 감수자 박스 제거, まとめ 섹션 하단에 geo-llmo-tools와 동일한 `article-note-panel` 2열 레이아웃(감수자 사진 포함 + 출전・参考 리스트)으로 교체
+- shimada.png 아바타 이미지를 query-fan-out 폴더에 복사해 사용
+
+## 2026-09-02 00:00
+- lab 아티클 신규 추가: 「クエリファンアウトとは？GEO・LLMO対策への活用方法も解説！」(`/lab/query-fan-out`)
+- docs 폴더의 원본 docx(クエリファンアウト.docx)를 기반으로 본문 작성, ArticleThumbnail에 `query-fan-out` variant 신규 추가
+- LabArticles.tsx POSTS 배열에 추가(날짜순 자동 정렬로 그리드 최상단 노출 확인)
+
+## 2026-09-01 13:21
+- `What Is LLMO_ Optimize Content for AI & Large Language Models.pdf`의 본문, 비교표, 체크리스트, 프롬프트 예시를 자연스러운 한국어 Markdown 번역본으로 정리
+
 ## 2026-08-13 00:40
 - Watcher スタンダードプラン 카드 배경색을 검정(#0B0B0E) → 네이비(#0a1a3d)로 변경
 - docs 정리: 오래된 임시 문서(01. GEO리뉴얼-홈.docx, new.docx) 삭제, watcher-lp.docx 갱신본 반영

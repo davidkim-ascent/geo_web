@@ -971,7 +971,7 @@ body.tweak-norotate .fw-ring g.node text {
 .article-toc__item {
   border-left: 1px solid #E6E4DD;
   padding: 6px 0 6px 12px;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.55;
   letter-spacing: 0.04em;
   transition: all 0.2s ease;
@@ -993,7 +993,7 @@ body.tweak-norotate .fw-ring g.node text {
 
 .article-toc__index {
   color: #1452FF;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   line-height: 1.4;
   white-space: nowrap;

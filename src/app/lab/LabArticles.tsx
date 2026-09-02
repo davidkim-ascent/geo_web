@@ -19,6 +19,7 @@ const POSTS = [
   { cat: "AGENTIC COMMERCE", date: "2026.05.21", read: "10 min", t: "AIショッピングの登場とエージェンティックコマース", d: "AIが購買を代行する時代の全体像。自動化6段階・OpenAI/Google/Shopifyのプロトコル競争・エコシステム14領域まで体系的に解説。", href: "/lab/ai-shopping-agent", thumbVariant: "ai-shopping-agent" as const },
   { cat: "エンティティ / GEO・LLMO", date: "2026.06.24", read: "8 min", t: "エンティティとは？LLMOやGEOなどAI検索の重要性について解説", d: "エンティティを基礎知識から解説。AI検索に引用されるための仕組みやEEATとの関係、自社で可能な対策まで網羅。独自調査：5つのAIエンジンでブランド認識がどれだけ揃うかを検証。", href: "/lab/entity", thumbVariant: "entity" as const },
   { cat: "GEO / LLMO", date: "2026.07.01", read: "8 min", t: "AIに引用される記事の特徴とは？押さえるべき7つの特徴", d: "AIに引用されやすいコンテンツの特徴や設計ポイントを独自調査データ（52件の引用分析）を交えながら7つのポイントに絞って解説。", href: "/lab/ai-cited-article", thumbVariant: "ai-cited-article" as const },
+  { cat: "GEO / LLMO", date: "2026.09.02", read: "7 min", t: "クエリファンアウトとは？GEO・LLMO対策への活用方法も解説！", d: "クエリファンアウトとは、AIが検索クエリを複数のサブクエリに分解し統合して回答を生成する技術です。GEO・LLMO対策への活用方法も紹介します。", href: "/lab/query-fan-out", thumbVariant: "query-fan-out" as const },
 ];
 
 function PostCard({ p, large = false }: { p: (typeof POSTS)[number]; large?: boolean }) {

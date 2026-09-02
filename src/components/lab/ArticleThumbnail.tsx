@@ -8,7 +8,7 @@ import aiShoppingImage from "@/app/lab/ai-shopping-agent/ai-shopping.png";
 import geoLlmoToolsImage from "@/app/lab/geo-llmo-tools/hero-collage.png";
 import { TypingPromptCard } from "@/app/lab/brand-cep/TypingPromptCard";
 
-type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "ai-shopping-agent" | "llmo-eeat" | "entity" | "ai-cited-article" | "geo-watcher-process" | "chatgpt-vs-google-seo" | "ai-citation-comparison" | "ecommerce-aeo-geo" | "geo-llmo-tools" | "self-check" | "abstract";
+type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "ai-shopping-agent" | "llmo-eeat" | "entity" | "ai-cited-article" | "geo-watcher-process" | "chatgpt-vs-google-seo" | "ai-citation-comparison" | "ecommerce-aeo-geo" | "geo-llmo-tools" | "self-check" | "query-fan-out" | "abstract";
 
 type ArticleThumbnailProps = {
   variant: ArticleThumbnailVariant;
@@ -16,7 +16,7 @@ type ArticleThumbnailProps = {
   eyebrow?: string;
 };
 
-const IMAGE_BY_VARIANT: Record<Exclude<ArticleThumbnailVariant, "abstract" | "adobe-ai-traffic" | "brand-cep" | "llmo-eeat" | "entity" | "ai-cited-article" | "geo-watcher-process" | "chatgpt-vs-google-seo" | "ai-citation-comparison" | "ecommerce-aeo-geo" | "self-check">, typeof seoGeoImage> = {
+const IMAGE_BY_VARIANT: Record<Exclude<ArticleThumbnailVariant, "abstract" | "adobe-ai-traffic" | "brand-cep" | "llmo-eeat" | "entity" | "ai-cited-article" | "geo-watcher-process" | "chatgpt-vs-google-seo" | "ai-citation-comparison" | "ecommerce-aeo-geo" | "self-check" | "query-fan-out">, typeof seoGeoImage> = {
   "seo-geo": seoGeoImage,
   "geo-llmo-company": geoLlmoCompanyImage,
   "ai-agent-site": aiAgentSiteImage,
@@ -40,6 +40,7 @@ const labelByVariant: Record<ArticleThumbnailVariant, string> = {
   "ecommerce-aeo-geo": "EC / RETAIL",
   "geo-llmo-tools": "GEO / LLMO TOOLS",
   "self-check": "SELF CHECK",
+  "query-fan-out": "GEO / LLMO",
   abstract: "RESEARCH NOTE",
 };
 
@@ -344,6 +345,38 @@ export function ArticleThumbnail({ variant, className = "", eyebrow }: ArticleTh
           <div className="absolute left-6 bottom-5 font-bold text-white/90" style={{ fontSize: "clamp(20px, 2.8vw, 30px)", lineHeight: 1.3, letterSpacing: "-0.03em" }}>
             自社サイトの<br />
             <span className="text-[#1452FF]">AI引用セルフチェック</span>
+          </div>
+        </>
+      ) : variant === "query-fan-out" ? (
+        <>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(20,82,255,0.24),transparent_36%),radial-gradient(circle_at_85%_75%,rgba(255,255,255,0.08),transparent_30%)]" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <svg viewBox="0 0 400 200" width="88%" height="88%" xmlns="http://www.w3.org/2000/svg">
+              <g stroke="rgba(255,255,255,0.35)" strokeWidth="1.5">
+                <line x1="60" y1="100" x2="200" y2="40" />
+                <line x1="60" y1="100" x2="200" y2="100" />
+                <line x1="60" y1="100" x2="200" y2="160" />
+              </g>
+              <g stroke="rgba(20,82,255,0.5)" strokeWidth="1.5" strokeDasharray="3 3">
+                <line x1="200" y1="40" x2="330" y2="25" />
+                <line x1="200" y1="40" x2="330" y2="55" />
+                <line x1="200" y1="100" x2="330" y2="85" />
+                <line x1="200" y1="100" x2="330" y2="115" />
+                <line x1="200" y1="160" x2="330" y2="145" />
+                <line x1="200" y1="160" x2="330" y2="175" />
+              </g>
+              <circle cx="60" cy="100" r="16" fill="#1452FF" stroke="#fff" strokeWidth="2" />
+              {[40, 100, 160].map((y, i) => (
+                <circle key={i} cx="200" cy={y} r="10" fill="#FDFDFB" opacity="0.85" />
+              ))}
+              {[25, 55, 85, 115, 145, 175].map((y, i) => (
+                <circle key={i} cx="330" cy={y} r="5" fill="rgba(255,255,255,0.4)" />
+              ))}
+            </svg>
+          </div>
+          <div className="absolute left-6 bottom-5 font-bold text-white/90" style={{ fontSize: "clamp(20px, 2.8vw, 30px)", lineHeight: 1.3, letterSpacing: "-0.03em" }}>
+            クエリファンアウトとは<br />
+            <span className="text-[#1452FF]">GEO・LLMO対策への活用法</span>
           </div>
         </>
       ) : variant === "abstract" ? (
