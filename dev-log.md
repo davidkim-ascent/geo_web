@@ -1,3 +1,6 @@
+## 2026-09-02 20:00
+- lab 아티클 본문 폰트 사이즈 전역 -1px 축소: `globals.css`의 `--fs-body`(18→17px), `--fs-body-sm`(17→16px), `--fs-body-xsm`(16→15px)
+
 ## 2026-09-02 00:40
 - 아티클 좌측 목차(TOC) 폰트 사이즈 전역 +2px 확대: `globals.css`의 `.article-toc__item`, `.article-toc__index` 11px → 13px (모든 lab 아티클 페이지 공통 적용, `.article-toc__title`은 inherit로 자동 반영)
 
