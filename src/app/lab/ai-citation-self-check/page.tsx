@@ -160,7 +160,7 @@ export default function AiCitationSelfCheckPage() {
               <div className="article-meta">
                 {[
                   { l: "DATE", v: "2026.08.28" },
-                  { l: "LENGTH", v: "約3,000文字" },
+                  { l: "LENGTH", v: "約4,500文字" },
                   { l: "FORMAT", v: "HOW TO" },
                 ].map((meta, index) => (
                   <div key={meta.l} className={`article-meta__item ${index < 2 ? "pr-6" : ""}`}>

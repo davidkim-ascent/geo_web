@@ -76,7 +76,7 @@ export default function AdobeAiTrafficPage() {
               <div className="article-meta">
                 {[
                   { l: "DATE", v: "2026.05.19" },
-                  { l: "LENGTH", v: "約6,000文字" },
+                  { l: "LENGTH", v: "約5,000文字" },
                   { l: "FORMAT", v: "REPORT" },
                 ].map((meta, index) => (
                   <div key={meta.l} className={`article-meta__item ${index < 2 ? "pr-6" : ""}`}>

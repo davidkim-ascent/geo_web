@@ -83,7 +83,7 @@ export default function LlmoEeatArticlePage() {
               <div className="article-meta">
                 {[
                   { l: "DATE", v: "2026.06.22" },
-                  { l: "LENGTH", v: "約7,000文字" },
+                  { l: "LENGTH", v: "約4,000文字" },
                   { l: "FORMAT", v: "ARTICLE" },
                 ].map((meta, index) => (
                   <div key={meta.l} className={`article-meta__item ${index < 2 ? "pr-6" : ""}`}>

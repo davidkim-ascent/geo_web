@@ -77,7 +77,7 @@ export default function AiAgentSitePage() {
               <div className="article-meta">
                 {[
                   { l: "DATE", v: "2026.05.19" },
-                  { l: "LENGTH", v: "約5,000文字" },
+                  { l: "LENGTH", v: "約4,500文字" },
                   { l: "FORMAT", v: "TECHNICAL" },
                 ].map((meta, index) => (
                   <div key={meta.l} className={`article-meta__item ${index < 2 ? "pr-6" : ""}`}>

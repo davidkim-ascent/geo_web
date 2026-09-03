@@ -159,7 +159,7 @@ export default function WhatIsLlmoPage() {
               <div className="article-meta">
                 {[
                   { l: "DATE", v: "2026.09.03" },
-                  { l: "LENGTH", v: "約11,000文字" },
+                  { l: "LENGTH", v: "約30,000文字" },
                   { l: "FORMAT", v: "ARTICLE" },
                 ].map((meta, index) => (
                   <div key={meta.l} className={`article-meta__item ${index < 2 ? "pr-6" : ""}`}>

@@ -1,3 +1,10 @@
+## 2026-09-03 19:00
+- lab 아티클 전체(17개)의 히어로 "LENGTH" 표시값을 실제 렌더링된 본문 글자수(Playwright로 .article-body innerText 측정) 기준 500자 단위 반올림으로 재보정
+  - what-is-llmo: 約11,000文字 → 約30,000文字 (원문 복원 이후 대폭 누락되어 있던 값)
+  - ai-agent-site 約5,000→約4,500, geo-llmo-company 約8,000→約5,000, entity 約8,000→約6,500, ai-citation-self-check 約3,000→約4,500, adobe-ai-traffic 約6,000→約5,000, geo-watcher-process 約6,000→約6,500, llmo-eeat 約7,000→約4,000, geo-llmo-tools 約6,500→約10,500
+  - 나머지 8개(chatgpt-vs-google-seo/seo-geo/brand-cep/query-fan-out/ai-cited-article/ai-citation-comparison/ai-shopping-agent/ecommerce-aeo-geo)는 반올림 결과 기존값과 동일해 변경 없음
+  - 이 필드는 프로젝트 전체가 자동 계산 없이 수동 하드코딩하는 기존 패턴이라, 구조는 유지하고 값만 실측치로 보정
+
 ## 2026-09-03 18:30
 - 사이트 전역에서 본문 중 "LLMO" 텍스트를 찾아 `/lab/what-is-llmo`로 내부링크 추가 (총 14곳)
   - lab 아티클 10개: chatgpt-vs-google-seo, entity, geo-llmo-company, query-fan-out, ai-cited-article, geo-watcher-process, llmo-eeat, ai-citation-comparison, geo-llmo-tools, ecommerce-aeo-geo
