@@ -8,7 +8,7 @@ import aiShoppingImage from "@/app/lab/ai-shopping-agent/ai-shopping.png";
 import geoLlmoToolsImage from "@/app/lab/geo-llmo-tools/hero-collage.png";
 import { TypingPromptCard } from "@/app/lab/brand-cep/TypingPromptCard";
 
-type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "ai-shopping-agent" | "llmo-eeat" | "entity" | "ai-cited-article" | "geo-watcher-process" | "chatgpt-vs-google-seo" | "ai-citation-comparison" | "ecommerce-aeo-geo" | "geo-llmo-tools" | "self-check" | "query-fan-out" | "abstract";
+type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "ai-shopping-agent" | "llmo-eeat" | "entity" | "ai-cited-article" | "geo-watcher-process" | "chatgpt-vs-google-seo" | "ai-citation-comparison" | "ecommerce-aeo-geo" | "geo-llmo-tools" | "self-check" | "query-fan-out" | "what-is-llmo" | "abstract";
 
 type ArticleThumbnailProps = {
   variant: ArticleThumbnailVariant;
@@ -16,7 +16,7 @@ type ArticleThumbnailProps = {
   eyebrow?: string;
 };
 
-const IMAGE_BY_VARIANT: Record<Exclude<ArticleThumbnailVariant, "abstract" | "adobe-ai-traffic" | "brand-cep" | "llmo-eeat" | "entity" | "ai-cited-article" | "geo-watcher-process" | "chatgpt-vs-google-seo" | "ai-citation-comparison" | "ecommerce-aeo-geo" | "self-check" | "query-fan-out">, typeof seoGeoImage> = {
+const IMAGE_BY_VARIANT: Record<Exclude<ArticleThumbnailVariant, "abstract" | "adobe-ai-traffic" | "brand-cep" | "llmo-eeat" | "entity" | "ai-cited-article" | "geo-watcher-process" | "chatgpt-vs-google-seo" | "ai-citation-comparison" | "ecommerce-aeo-geo" | "self-check" | "query-fan-out" | "what-is-llmo">, typeof seoGeoImage> = {
   "seo-geo": seoGeoImage,
   "geo-llmo-company": geoLlmoCompanyImage,
   "ai-agent-site": aiAgentSiteImage,
@@ -41,6 +41,7 @@ const labelByVariant: Record<ArticleThumbnailVariant, string> = {
   "geo-llmo-tools": "GEO / LLMO TOOLS",
   "self-check": "SELF CHECK",
   "query-fan-out": "GEO / LLMO",
+  "what-is-llmo": "LLMO",
   abstract: "RESEARCH NOTE",
 };
 
@@ -377,6 +378,22 @@ export function ArticleThumbnail({ variant, className = "", eyebrow }: ArticleTh
           <div className="absolute left-6 bottom-5 font-bold text-white/90" style={{ fontSize: "clamp(20px, 2.8vw, 30px)", lineHeight: 1.3, letterSpacing: "-0.03em" }}>
             クエリファンアウトとは<br />
             <span className="text-[#1452FF]">GEO・LLMO対策への活用法</span>
+          </div>
+        </>
+      ) : variant === "what-is-llmo" ? (
+        <>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(20,82,255,0.28),transparent_38%),radial-gradient(circle_at_80%_80%,rgba(255,255,255,0.08),transparent_32%)]" />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span
+              className="font-bold text-white/10 select-none"
+              style={{ fontSize: "clamp(72px, 9vw, 120px)", lineHeight: 1, letterSpacing: "-0.05em" }}
+            >
+              LLMO
+            </span>
+          </div>
+          <div className="absolute left-6 bottom-5 font-bold text-white/90" style={{ fontSize: "clamp(20px, 2.8vw, 30px)", lineHeight: 1.3, letterSpacing: "-0.03em" }}>
+            LLMOとは？<br />
+            <span className="text-[#1452FF]">完全ガイド</span>
           </div>
         </>
       ) : variant === "abstract" ? (

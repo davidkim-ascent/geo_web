@@ -929,6 +929,12 @@ body.tweak-norotate .fw-ring g.node text {
   color: var(--ink);
 }
 
+@media (min-width: 1024px) {
+  .article-body {
+    padding-right: 48px;
+  }
+}
+
 .article-body img,
 .article-body picture,
 .article-body video,
@@ -1025,7 +1031,7 @@ body.tweak-norotate .fw-ring g.node text {
 
 .article-h3 {
   margin: 40px 0 14px;
-  font-size: 21px;
+  font-size: 23px;
   line-height: 1.35;
   letter-spacing: -0.015em;
   font-weight: 700;
@@ -1033,7 +1039,7 @@ body.tweak-norotate .fw-ring g.node text {
 
 .article-h4 {
   margin: 0 0 12px;
-  font-size: var(--fs-body);
+  font-size: calc(var(--fs-body) + 2px);
   line-height: 1.5;
   font-weight: 700;
   letter-spacing: -0.015em;
@@ -1062,7 +1068,7 @@ body.tweak-norotate .fw-ring g.node text {
 }
 
 .article-list__bullet {
-  margin-top: 2px;
+  margin-top: 9px;
   width: 18px;
   height: 18px;
   border-radius: 4px;
@@ -1197,7 +1203,7 @@ body.tweak-norotate .fw-ring g.node text {
 .article-quote__text {
   max-width: 22ch;
   margin: 0;
-  font-size: clamp(26px, 3vw, 34px);
+  font-size: clamp(21px, 3vw, 29px);
   line-height: 1.4;
   letter-spacing: -0.03em;
   font-style: italic;
@@ -1313,6 +1319,11 @@ body.tweak-norotate .fw-ring g.node text {
   line-height: 1.55;
 }
 
+.article-table__head > div + div {
+  border-left: 1px solid rgba(253, 253, 251, 0.2);
+  padding-left: 16px;
+}
+
 .article-table__row {
   display: grid;
   grid-template-columns: var(--table-cols, 0.82fr 1.09fr 1.09fr);
@@ -1321,6 +1332,11 @@ body.tweak-norotate .fw-ring g.node text {
   border-bottom: 1px solid #E6E4DD;
   background: #FDFDFB;
   transition: background 0.2s ease;
+}
+
+.article-table__row > .article-table__cell + .article-table__cell {
+  border-left: 1px solid #E6E4DD;
+  padding-left: 16px;
 }
 
 .article-table__row:hover {

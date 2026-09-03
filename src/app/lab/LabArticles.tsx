@@ -20,6 +20,7 @@ const POSTS = [
   { cat: "エンティティ / GEO・LLMO", date: "2026.06.24", read: "8 min", t: "エンティティとは？LLMOやGEOなどAI検索の重要性について解説", d: "エンティティを基礎知識から解説。AI検索に引用されるための仕組みやEEATとの関係、自社で可能な対策まで網羅。独自調査：5つのAIエンジンでブランド認識がどれだけ揃うかを検証。", href: "/lab/entity", thumbVariant: "entity" as const },
   { cat: "GEO / LLMO", date: "2026.07.01", read: "8 min", t: "AIに引用される記事の特徴とは？押さえるべき7つの特徴", d: "AIに引用されやすいコンテンツの特徴や設計ポイントを独自調査データ（52件の引用分析）を交えながら7つのポイントに絞って解説。", href: "/lab/ai-cited-article", thumbVariant: "ai-cited-article" as const },
   { cat: "GEO / LLMO", date: "2026.09.02", read: "7 min", t: "クエリファンアウトとは？GEO・LLMO対策への活用方法も解説！", d: "クエリファンアウトとは、AIが検索クエリを複数のサブクエリに分解し統合して回答を生成する技術です。GEO・LLMO対策への活用方法も紹介します。", href: "/lab/query-fan-out", thumbVariant: "query-fan-out" as const },
+  { cat: "LLMO", date: "2026.09.03", read: "16 min", t: "LLMOとは？意味・SEOとの違いから対策方法まで完全ガイド", d: "LLMO（大規模言語モデル最適化）の意味、SEO・AIO・AEO・GEOとの違い、具体的な対策5ステップ、KPI測定方法までを完全解説。", href: "/lab/what-is-llmo", thumbVariant: "what-is-llmo" as const },
 ];
 
 function PostCard({ p, large = false }: { p: (typeof POSTS)[number]; large?: boolean }) {
