@@ -1,3 +1,6 @@
+## 2026-09-03 11:30
+- 아티클 페이지 배경색을 #FDFDFB → #FFFFFE로 미세 조정 (`.article-page`, `.article-shell`만 변경, 사이트 전역 --bg 변수는 유지)
+
 ## 2026-09-02 00:40
 - 아티클 좌측 목차(TOC) 폰트 사이즈 전역 +2px 확대: `globals.css`의 `.article-toc__item`, `.article-toc__index` 11px → 13px (모든 lab 아티클 페이지 공통 적용, `.article-toc__title`은 inherit로 자동 반영)
 

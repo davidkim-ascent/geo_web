@@ -837,7 +837,7 @@ body.tweak-norotate .fw-ring g.node text {
 
 /* ===== ARTICLE CSS ===== */
 .article-page {
-  background: var(--bg);
+  background: #FFFFFE;
   color: var(--fg);
   overflow-x: clip;
 }
@@ -911,7 +911,7 @@ body.tweak-norotate .fw-ring g.node text {
 }
 
 .article-shell {
-  background: var(--bg);
+  background: #FFFFFE;
   padding: 88px 0;
 }
 
