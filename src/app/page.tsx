@@ -431,7 +431,7 @@ function GeoLabSection() {
           </div>
           <div className="flex items-end">
             <p className="text-[#4e4e51] leading-[1.6] font-[inherit]" style={{ fontSize: "var(--fs-body-sm)" }}>
-              Ascent GEO LABは、AI検索時代の変化を、調査と実践から読み解くリサーチハブです。検索行動の変化、SEOとGEO・LLMOの違い、AIに引用されるコンテンツの条件、効果測定の考え方など、実務に役立つ知見を公開します。
+              Ascent GEO LABは、AI検索時代の変化を、調査と実践から読み解くリサーチハブです。検索行動の変化、SEOとGEO・<Link href="/lab/what-is-llmo" className="underline decoration-current/30 underline-offset-4">LLMO</Link>の違い、AIに引用されるコンテンツの条件、効果測定の考え方など、実務に役立つ知見を公開します。
             </p>
           </div>
         </div>
@@ -512,13 +512,13 @@ function GeoLabSection() {
               href: "/lab/adobe-ai-traffic",
             },
             {
-              tag: "TECHNICAL GEO",
-              title: "AIエージェントはウェブサイトをどう見るのか — 3つの方法とセマンティックHTMLの重要性",
-              desc: "画面画像・構造読み取り・組み合わせの3方式を解説。セマンティックHTML・ラベル設計・SSRの実装ポイントまで、AI対応サイト設計の基本を整理します。",
-              date: "05.19",
-              readTime: "7 MIN",
-              thumbVariant: "ai-agent-site" as const,
-              href: "/lab/ai-agent-site",
+              tag: "LLMO",
+              title: "LLMOとは？意味・SEOとの違いから対策方法まで完全ガイド",
+              desc: "LLMO（大規模言語モデル最適化）の意味、SEO・AIO・AEO・GEOとの違い、具体的な対策5ステップ、KPI測定方法までを完全解説。",
+              date: "09.03",
+              readTime: "16 MIN",
+              thumbVariant: "what-is-llmo" as const,
+              href: "/lab/what-is-llmo",
             },
             {
               tag: "AGENTIC COMMERCE",

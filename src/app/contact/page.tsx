@@ -91,7 +91,7 @@ export default function ContactPage() {
             </h1>
             <p className="ct-hero-desc">
               自社ブランドの変化を継続的に捉えるなら、GEO Watcher。見込み顧客への提案を具体化するなら、GEO診断レポート。<br /><br />
-              診断する。変化を追う。課題を次の改善へつなげる。目的に合った方法で、GEO・LLMO対策を始めましょう。
+              診断する。変化を追う。課題を次の改善へつなげる。目的に合った方法で、GEO・<Link href="/lab/what-is-llmo" className="underline decoration-current/30 underline-offset-4">LLMO</Link>対策を始めましょう。
             </p>
 
             {/* Channel cards */}

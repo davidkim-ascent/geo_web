@@ -484,7 +484,7 @@ export default function GeoLlmoToolsPage() {
                 <h2 className="article-h2">GEO・LLMOとは？違いはある？</h2>
                 <h3 className="article-h3">GEO・LLMOとはAIに引用される最適化施策のこと</h3>
                 <p className="article-prose">
-                  GEO（Generative Engine Optimization）とLLMO（Large Language Model Optimization）は、いずれもChatGPTやGemini、Perplexity、Google AI OverviewsなどのAI検索エンジンに対して、自社のブランドや製品が競合よりも多く引用・推薦されるよう、コンテンツや情報構造を最適化する施策を指します。呼び方は異なりますが目指すゴールは同じで、「AIの回答文の中で自社が名指しで紹介される状態」をつくることです。検索結果ページの上位表示を狙う従来のSEOに対し、GEO・LLMOはAIの回答そのものに引用される状態を目指す点が特徴です。
+                  GEO（Generative Engine Optimization）と<Link href="/lab/what-is-llmo" className="text-[#1452FF] underline decoration-[#1452FF]/30 underline-offset-4">LLMO（Large Language Model Optimization）</Link>は、いずれもChatGPTやGemini、Perplexity、Google AI OverviewsなどのAI検索エンジンに対して、自社のブランドや製品が競合よりも多く引用・推薦されるよう、コンテンツや情報構造を最適化する施策を指します。呼び方は異なりますが目指すゴールは同じで、「AIの回答文の中で自社が名指しで紹介される状態」をつくることです。検索結果ページの上位表示を狙う従来のSEOに対し、GEO・LLMOはAIの回答そのものに引用される状態を目指す点が特徴です。
                 </p>
               </section>
 

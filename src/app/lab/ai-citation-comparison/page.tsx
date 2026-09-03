@@ -287,7 +287,7 @@ export default function AiCitationComparisonPage() {
 
                 <h3 className="article-h3">AIごとに推薦ブランドが違う中で、すべてに対応するにはどうすればよいですか？</h3>
                 <p className="article-prose">
-                  まず目標とする質問セットを定め、各質問をモデルごとに投げかけて、現在自社ブランドがどこで言及され、どこで抜け落ちているかを診断する必要があります。GEO Watcherでは、主要6モデルを対象に、プロンプトごとの可視性・言及・引用といったGEO・LLMOの主要指標を、モデル別にフィルタリングして把握できます。
+                  まず目標とする質問セットを定め、各質問をモデルごとに投げかけて、現在自社ブランドがどこで言及され、どこで抜け落ちているかを診断する必要があります。GEO Watcherでは、主要6モデルを対象に、プロンプトごとの可視性・言及・引用といったGEO・<Link href="/lab/what-is-llmo" className="text-[#1452FF] underline decoration-[#1452FF]/30 underline-offset-4">LLMO</Link>の主要指標を、モデル別にフィルタリングして把握できます。
                 </p>
 
                 <h3 className="article-h3">GeminiとGoogle AI Overviewsは同じものですか？</h3>

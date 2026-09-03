@@ -1,11 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
-const SVC_FAQS = [
+const SVC_FAQS: { q: string; a: React.ReactNode }[] = [
   {
     q: "GEO(LLMO)とSEOは何が違うのですか？",
-    a: "GEO(LLMO)はSEOの「次バージョン」ではなく、評価軸そのものが異なる別領域です。SEOが検索結果ページの上位表示を目指すのに対し、GEO(LLMO)はChatGPT・Gemini・Perplexityなど生成AIの回答文そのものに引用される状態を目指します。最適化の対象・ゴール・評価単位がすべて異なるため、既存のSEO手法をそのまま流用しても効果は出ません。両者は対立ではなく補完関係です。",
+    a: (
+      <>
+        GEO(<Link href="/lab/what-is-llmo" className="text-[#1452FF] underline decoration-[#1452FF]/30 underline-offset-4">LLMO</Link>)はSEOの「次バージョン」ではなく、評価軸そのものが異なる別領域です。SEOが検索結果ページの上位表示を目指すのに対し、GEO(LLMO)はChatGPT・Gemini・Perplexityなど生成AIの回答文そのものに引用される状態を目指します。最適化の対象・ゴール・評価単位がすべて異なるため、既存のSEO手法をそのまま流用しても効果は出ません。両者は対立ではなく補完関係です。
+      </>
+    ),
   },
   {
     q: "他社のGEO(LLMO)サービスと何が違うのですか？",

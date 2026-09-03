@@ -592,7 +592,7 @@ export default function AiCitedArticlePage() {
                   AIに引用される記事には、①結論ファーストの構成、②質問にそのまま答えるパッセージ設計、③具体的な数値や一次データの提示、④FAQによる質問と回答の明確な対応、⑤意味的に網羅性のある見出し設計、⑥セマンティックHTMLによる構造化、⑦根拠と出典の明示、という7つの特徴があります。
                 </p>
                 <p className="article-prose">
-                  Ascent GEO・LLMOでは、これらの特徴に加えて、特許分析・実消費者インテント・質問クラスター・GAP分析・GEOコンテンツ制作・AI Visibilityモニタリングを組み合わせて、AI検索時代のブランド戦略を支援しています。
+                  Ascent GEO・<Link href="/lab/what-is-llmo" className="text-[#1452FF] underline decoration-[#1452FF]/30 underline-offset-4">LLMO</Link>では、これらの特徴に加えて、特許分析・実消費者インテント・質問クラスター・GAP分析・GEOコンテンツ制作・AI Visibilityモニタリングを組み合わせて、AI検索時代のブランド戦略を支援しています。
                 </p>
               </section>
             </article>

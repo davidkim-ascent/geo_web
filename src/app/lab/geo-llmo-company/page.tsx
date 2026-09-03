@@ -215,7 +215,7 @@ export default function GeoLlmoCompanyArticlePage() {
                 <span className="article-kicker">02</span>
                 <h2 className="article-h2">そもそもGEO対策とは何か</h2>
                 <p className="article-prose">
-                  GEO(Generative Engine Optimization)とは、ChatGPT、Gemini、Perplexity、Google AI Overviewなどの生成AIに、自社のコンテンツを引用・推薦してもらうための最適化施策を指します。LLMO(Large Language Model Optimization)もほぼ同義で使われます。
+                  GEO(Generative Engine Optimization)とは、ChatGPT、Gemini、Perplexity、Google AI Overviewなどの生成AIに、自社のコンテンツを引用・推薦してもらうための最適化施策を指します。<Link href="/lab/what-is-llmo" className="text-[#1452FF] underline decoration-[#1452FF]/30 underline-offset-4">LLMO(Large Language Model Optimization)</Link>もほぼ同義で使われます。
                 </p>
                 <p className="article-prose">
                   従来のSEOが「検索結果ページの上位表示」を目指す施策であるのに対し、GEOは「AIの回答文に自社が組み込まれる」状態を目指します。クリックされて訪問されるのではなく、AIの回答そのものに引用されることが新しい露出の形になります。

@@ -148,7 +148,7 @@ export default function EcommerceAeoGeoPage() {
                   <span className="article-quote__note">RESEARCH NOTE</span>
                 </blockquote>
                 <p className="article-prose">
-                  ECサイトのAEO・GEO最適化とは、ユーザーがAIにショップ・ブランド・商品のおすすめを尋ねた際に、自社ブランドが回答の中で言及・推薦される可能性を高める取り組みです。Ascent GEO（LLMO）では、カテゴリ・商品群・価格帯・配送・信頼シグナルを、AIが引用しやすい形に整理していきます。
+                  ECサイトのAEO・GEO最適化とは、ユーザーがAIにショップ・ブランド・商品のおすすめを尋ねた際に、自社ブランドが回答の中で言及・推薦される可能性を高める取り組みです。Ascent GEO（<Link href="/lab/what-is-llmo" className="text-[#1452FF] underline decoration-[#1452FF]/30 underline-offset-4">LLMO</Link>）では、カテゴリ・商品群・価格帯・配送・信頼シグナルを、AIが引用しやすい形に整理していきます。
                 </p>
               </section>
 

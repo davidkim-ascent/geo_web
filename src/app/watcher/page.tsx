@@ -88,7 +88,7 @@ GEO・LLMO<span style={{ marginLeft: "3px", fontSize: "49px", fontFamily: "'Pret
         {/* Subcopy Section */}
         <div className="mt-6 max-w-[720px] mb-8">
           <p className="text-[#0B0B0E] leading-[1.8] mb-0 font-medium" style={{ fontSize: "var(--fs-body)" }}>
-            GEO Watcherは、AIにおける自社・競合の言及、引用、露出の変化を毎日計測するGEO・LLMO対策のモニタリングツールです。AIごとの比較から施策後の効果確認まで、GEO・LLMO対策に必要なデータをひとつの画面に集約。料金体系は3つのプランを用意。プロの専門支援が必要な時だけ、月額縛りのない「スポットサポート」を利用できます。
+            GEO Watcherは、AIにおける自社・競合の言及、引用、露出の変化を毎日計測するGEO・<Link href="/lab/what-is-llmo" className="underline decoration-current/30 underline-offset-4">LLMO</Link>対策のモニタリングツールです。AIごとの比較から施策後の効果確認まで、GEO・LLMO対策に必要なデータをひとつの画面に集約。料金体系は3つのプランを用意。プロの専門支援が必要な時だけ、月額縛りのない「スポットサポート」を利用できます。
           </p>
         </div>
 

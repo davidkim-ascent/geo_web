@@ -256,7 +256,7 @@ export default function EntityArticlePage() {
                   AI検索の回答に引用・推奨されるかどうかが、「どのエンティティが発信した情報か」で決まるようになってきたためです。ChatGPTやGeminiなどの生成AIは、回答を作る際に「誰が言っているのか」を重視します。
                 </p>
                 <p className="article-prose">
-                  従来のSEOがキーワード中心だったのに対し、GEO（生成エンジン最適化）やLLMO（大規模言語モデル最適化）では、発信者の実体そのものが評価軸になりつつあります。AIに自社ブランドを言及・推奨してもらうには、エンティティの確立が何よりも重要です。
+                  従来のSEOがキーワード中心だったのに対し、GEO（生成エンジン最適化）や<Link href="/lab/what-is-llmo" className="text-[#1452FF] underline decoration-[#1452FF]/30 underline-offset-4">LLMO（大規模言語モデル最適化）</Link>では、発信者の実体そのものが評価軸になりつつあります。AIに自社ブランドを言及・推奨してもらうには、エンティティの確立が何よりも重要です。
                 </p>
                 <p className="article-prose">
                   たとえば「東京のおすすめのLLMO会社は？」という質問でAIに自社が推薦されれば、たとえ全体の流入数が減っても、検討度の高い見込み客を集客できます。AI検索は、量より質の集客に向いているのです。

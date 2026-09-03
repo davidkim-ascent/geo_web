@@ -299,7 +299,7 @@ function FrameworkHero() {
             。
           </h1>
           <p className="mt-7 max-w-[54ch] text-[17px] leading-[1.7] text-[#d3d3d8]">
-            質問分析、GAP分析、GEO(LLMO)に特化したコンテンツ対策、モニタリング、Optimization Loop。
+            質問分析、GAP分析、GEO(<Link href="/lab/what-is-llmo" className="underline decoration-current/30 underline-offset-4">LLMO</Link>)に特化したコンテンツ対策、モニタリング、Optimization Loop。
             5つのフェーズを連動させ、AI 検索時代に「引用され続ける」状態をつくるための Ascent の設計です。
           </p>
 

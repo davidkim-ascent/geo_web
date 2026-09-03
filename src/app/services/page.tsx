@@ -449,7 +449,7 @@ export default function ServicesPage() {
                 <span className="block">サービス。</span>
               </h1>
               <p className="mt-7 max-w-[52ch] text-[17px] leading-[1.75] text-white/[0.68]">
-                診断・分析・制作・モニタリング。Ascent の GEO(LLMO) サービスは、4
+                診断・分析・制作・モニタリング。Ascent の GEO(<Link href="/lab/what-is-llmo" className="underline decoration-current/30 underline-offset-4">LLMO</Link>) サービスは、4
                 つのフェーズで切り出すこともできれば、ループとしてフルパッケージで運用することもできる。
               </p>
 

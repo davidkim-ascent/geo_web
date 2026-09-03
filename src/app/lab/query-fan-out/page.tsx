@@ -252,7 +252,7 @@ export default function QueryFanOutPage() {
                 <span className="article-kicker">05</span>
                 <h2 className="article-h2">クエリファンアウトを活用した具体的なGEO・LLMO対策</h2>
                 <p className="article-prose">
-                  クエリファンアウトに対応するには、従来のSEO対策に加えて、GEO・LLMOの視点を取り入れる必要があります。
+                  クエリファンアウトに対応するには、従来のSEO対策に加えて、GEO・<Link href="/lab/what-is-llmo" className="text-[#1452FF] underline decoration-[#1452FF]/30 underline-offset-4">LLMO</Link>の視点を取り入れる必要があります。
                 </p>
 
                 <h3 className="article-h4">トピッククラスターでサブクエリを網羅する</h3>

@@ -69,7 +69,7 @@ GEO・LLMO<span style={{ marginLeft: "3px", fontSize: "49px", fontFamily: "'Pret
         <div className="mt-6 max-w-[720px] mb-8">
           <p className="text-[#0B0B0E] leading-[1.8] mb-0 font-medium" style={{ fontSize: "var(--fs-body)" }}>
             見込み顧客のAI検索上の現在地と競合との差を、提案につながる診断レポートで可視化。<br />
-            ブランド名とURLを入力するだけで、GEO・LLMO提案のきっかけを数分でつくる。
+            ブランド名とURLを入力するだけで、GEO・<Link href="/lab/what-is-llmo" className="underline decoration-current/30 underline-offset-4">LLMO</Link>提案のきっかけを数分でつくる。
           </p>
         </div>
 

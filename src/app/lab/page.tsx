@@ -104,7 +104,7 @@ export default function LabPage() {
                 <span className="block text-[#003393]">リサーチハブ。</span>
               </h1>
               <p className="mt-7 max-w-[52ch] text-[17px] leading-[1.75] text-[#4e4e51]">
-                検索の変化、SEO と GEO(LLMO) の差、AI が引用する条件、GEO(LLMO) Writing の実装、KPI の測り方。Ascent が日々のクライアントワークから抽出した知見を、リサーチノートとして公開する。
+                検索の変化、SEO と GEO(<Link href="/lab/what-is-llmo" className="underline decoration-current/30 underline-offset-4">LLMO</Link>) の差、AI が引用する条件、GEO(LLMO) Writing の実装、KPI の測り方。Ascent が日々のクライアントワークから抽出した知見を、リサーチノートとして公開する。
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Button

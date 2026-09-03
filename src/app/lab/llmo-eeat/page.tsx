@@ -140,7 +140,7 @@ export default function LlmoEeatArticlePage() {
                 <span className="article-kicker">02</span>
                 <h2 className="article-h2">なぜLLMOでE-E-A-Tが重要なのか</h2>
                 <p className="article-prose">
-                  従来のSEOでは、ユーザーは検索結果を見て複数ページを比較していました。しかし LLMO では、ChatGPT、Perplexity、Gemini、AI Overview のようなAIが複数ソースを要約し、ひとつの「答え」として提示します。
+                  従来のSEOでは、ユーザーは検索結果を見て複数ページを比較していました。しかし <Link href="/lab/what-is-llmo" className="text-[#1452FF] underline decoration-[#1452FF]/30 underline-offset-4">LLMO</Link> では、ChatGPT、Perplexity、Gemini、AI Overview のようなAIが複数ソースを要約し、ひとつの「答え」として提示します。
                 </p>
                 <p className="article-prose">
                   そのため、単に上位表示されるだけでは足りません。AIに次のように判断される必要があります。

@@ -257,7 +257,7 @@ export default function ChatGptVsGoogleSeoPage() {
                 <span className="article-kicker">06</span>
                 <h2 className="article-h2" style={{ maxWidth: "none", whiteSpace: "normal" }}>ChatGPT最適化とSEOエージェンシーを併走させる体制</h2>
                 <p className="article-prose">
-                  ChatGPT最適化はGoogle SEOを代替するものではなく、その領域を拡張するものです。ただし、ChatGPTの回答に入り込めなければ、SEOだけではユーザーとの最初の接点を取りこぼしかねません。Ascent GEO（LLMO）のクライアントでは、一般的に次のような運用体制が組まれています。
+                  ChatGPT最適化はGoogle SEOを代替するものではなく、その領域を拡張するものです。ただし、ChatGPTの回答に入り込めなければ、SEOだけではユーザーとの最初の接点を取りこぼしかねません。Ascent GEO（<Link href="/lab/what-is-llmo" className="text-[#1452FF] underline decoration-[#1452FF]/30 underline-offset-4">LLMO</Link>）のクライアントでは、一般的に次のような運用体制が組まれています。
                 </p>
 
                 <ul className="article-list">

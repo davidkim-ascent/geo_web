@@ -177,7 +177,7 @@ export default async function WhyAscentPage() {
                 <span className="block">設計の科学である。</span>
               </h1>
               <p className="mt-7 max-w-[52ch] text-[17px] leading-[1.75] text-white/68">
-                AI は「どこから、なぜ」引用するのか。Ascent は特許ベースGEO(LLMO)施策・消費者インテント(本音)・スコアリングという 3本の柱で、データを解明しAIに選ばれるブランドをつくります。
+                AI は「どこから、なぜ」引用するのか。Ascent は特許ベースGEO(<Link href="/lab/what-is-llmo" className="underline decoration-current/30 underline-offset-4">LLMO</Link>)施策・消費者インテント(本音)・スコアリングという 3本の柱で、データを解明しAIに選ばれるブランドをつくります。
               </p>
 
               <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-[640px]">

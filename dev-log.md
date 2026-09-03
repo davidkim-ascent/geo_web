@@ -1,3 +1,11 @@
+## 2026-09-03 18:30
+- 사이트 전역에서 본문 중 "LLMO" 텍스트를 찾아 `/lab/what-is-llmo`로 내부링크 추가 (총 14곳)
+  - lab 아티클 10개: chatgpt-vs-google-seo, entity, geo-llmo-company, query-fan-out, ai-cited-article, geo-watcher-process, llmo-eeat, ai-citation-comparison, geo-llmo-tools, ecommerce-aeo-geo
+  - 그 외 페이지 4개: contact, framework, services(hero+FAQ 2곳), shindan, watcher, why-ascent, 홈(page.tsx), lab 랜딩(lab/page.tsx)
+  - services/ServicesFAQ.tsx는 FAQ 데이터가 문자열 배열이라 `a` 필드 타입을 React.ReactNode로 변경해 링크 삽입
+  - TOC 컴포넌트(ArticleTOC 3종), PositioningMap.tsx, ai-citation-self-check, LabArticles.tsx는 본문 문장 후보가 없어 제외
+- 홈페이지 하단 3카드 그리드의 "AIエージェントはウェブサイトをどう見るのか" 카드를 what-is-llmo 아티클 카드로 교체
+
 ## 2026-09-03 17:30
 - what-is-llmo "LLMO専任組織に必要な4つの役割" 섹션: 4개 역할(SEO・コンテンツ/デジタルPR/プロダクト・営業/Webエンジニアリング)의 主な役割/主なタスク를 텍스트+리스트에서 2열 article-table(article-table--2col)로 변경
 - globals.css의 .article-table__head, .article-table__row에 열 구분선(border-left) 추가 — 전역 클래스라 15개 아티클(query-fan-out, brand-cep, entity 등) 전체 테이블에 적용됨
