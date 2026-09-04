@@ -1,3 +1,10 @@
+## 2026-09-04 11:00
+- 사이트맵을 정적 파일에서 Next.js 동적 `src/app/sitemap.ts`로 전환 — 앞선 사이트맵 누락 문제(수동 관리로 8개 아티클 누락)의 재발 방지
+  - `src/lib/lab-articles.ts` 신규 생성: `LAB_ARTICLES` 배열과 `ArticleThumbnailVariant` 타입을 `LabArticles.tsx`/`ArticleThumbnail.tsx`에서 분리해 서버(sitemap.ts)에서도 안전하게 import 가능하도록 함
+  - `LabArticles.tsx`, `ArticleThumbnail.tsx`는 새 공용 파일을 참조하도록 리팩터링 (동작 변화 없음)
+  - `public/sitemap.xml` 정적 파일 삭제, 이제 `/lab-articles.ts`의 `LAB_ARTICLES`에 새 아티클을 등록하기만 하면 사이트맵에 자동 반영됨 — AGENTS.md의 "새 아티클 추가 시" 섹션에도 명시
+  - `scripts/sitemap-static.test.mjs`를 정적 파일 대신 `sitemap()` 함수를 직접 호출해 검증하도록 갱신 (`node --import tsx scripts/sitemap-static.test.mjs`로 실행)
+
 ## 2026-09-04 10:00
 **원인**
 - `public/sitemap.xml`이 정적 파일로 수동 관리되고 있었는데, 최근 신규 아티클 추가 시 갱신이 누락되어 9개 URL만 등록된 상태로 방치됨(lab 아티클 8개, services/shindan/framework/why-ascent 페이지 4개 누락, what-is-llmo 포함)

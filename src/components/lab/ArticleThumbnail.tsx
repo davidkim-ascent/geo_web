@@ -7,8 +7,9 @@ import aiAgentSiteImage from "@/app/lab/ai-agent-site/ai-agent-site.png";
 import aiShoppingImage from "@/app/lab/ai-shopping-agent/ai-shopping.png";
 import geoLlmoToolsImage from "@/app/lab/geo-llmo-tools/hero-collage.png";
 import { TypingPromptCard } from "@/app/lab/brand-cep/TypingPromptCard";
+import type { ArticleThumbnailVariant as BaseArticleThumbnailVariant } from "@/lib/lab-articles";
 
-type ArticleThumbnailVariant = "seo-geo" | "brand-cep" | "geo-llmo-company" | "adobe-ai-traffic" | "ai-agent-site" | "ai-shopping-agent" | "llmo-eeat" | "entity" | "ai-cited-article" | "geo-watcher-process" | "chatgpt-vs-google-seo" | "ai-citation-comparison" | "ecommerce-aeo-geo" | "geo-llmo-tools" | "self-check" | "query-fan-out" | "what-is-llmo" | "abstract";
+type ArticleThumbnailVariant = BaseArticleThumbnailVariant | "abstract";
 
 type ArticleThumbnailProps = {
   variant: ArticleThumbnailVariant;

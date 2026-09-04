@@ -95,10 +95,10 @@ origin/main과 로컬 변경사항을 전체 비교한 뒤, 누락 없이 검토
 
 ## 새 아티클 추가 시
 - **작성 전에 반드시 메타 제목(title)과 메타 디스크립션(description)을 먼저 제시하고 사용자 컨펌을 받은 후 본문을 작성한다.**
-- `LabArticles.tsx`의 `POSTS` 배열에 추가 (index 3 이후)
+- `src/lib/lab-articles.ts`의 `LAB_ARTICLES` 배열에 추가 (index 3 이후) — `LabArticles.tsx`와 사이트맵(`src/app/sitemap.ts`)이 공통으로 이 배열을 참조하므로, 여기에 등록하면 사이트맵도 자동으로 갱신된다 (별도로 sitemap 파일을 손대지 않는다)
 - Featured 섹션에 올릴 경우 `page.tsx`의 `featuredSide` 배열 수정
 - Featured 배치(왼쪽 큰 카드 + 오른쪽 2개)는 사용자 지시가 없는 한 그대로 유지한다
-- 하단 그리드(`LabArticles.tsx`)는 Featured에 노출된 것을 제외하고, 날짜 내림차순(최신순)으로 자동 정렬한다 (`POSTS` 배열 순서에 의존하지 말 것 — `gridPosts`는 `date` 기준 정렬 로직으로 처리)
+- 하단 그리드(`LabArticles.tsx`)는 Featured에 노출된 것을 제외하고, 날짜 내림차순(최신순)으로 자동 정렬한다 (`LAB_ARTICLES` 배열 순서에 의존하지 말 것 — `gridPosts`는 `date` 기준 정렬 로직으로 처리)
 
 # アーティクルページ作成ガイドライン
 
