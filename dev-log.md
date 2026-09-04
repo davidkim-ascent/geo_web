@@ -1,3 +1,20 @@
+## 2026-09-04 10:00
+**원인**
+- `public/sitemap.xml`이 정적 파일로 수동 관리되고 있었는데, 최근 신규 아티클 추가 시 갱신이 누락되어 9개 URL만 등록된 상태로 방치됨(lab 아티클 8개, services/shindan/framework/why-ascent 페이지 4개 누락, what-is-llmo 포함)
+
+**영향 범위**
+1. `/lab/what-is-llmo` 등 8개 lab 아티클과 주요 마케팅 페이지 4개가 구글 검색에 발견·재크롤링되는 속도가 느려짐
+2. 사이트 전체의 색인 우선순위 신호(sitemap 내 priority/changefreq)가 최신 콘텐츠에 반영되지 않음
+3. GEO/LLMO 최적화를 표방하는 사이트 자체가 AI/검색엔진에 구조를 제대로 노출하지 못하는 상태였음
+
+**재발 방지 테스트**
+- 신규 lab 아티클 추가 시 `public/sitemap.xml`에도 함께 등록하는 것을 체크리스트화 (AGENTS.md의 "새 아티클 추가 시" 섹션에 추가 필요)
+
+- sitemap.xml 전체 재구성: 공개 페이지 26개 전부 등록(기존 9개 → 26개), lastmod는 각 파일의 git 마지막 커밋일 기준, 약관/프라이버시/특정상거래법 페이지는 SEO가치 낮아 제외
+- what-is-llmo 페이지에 JSON-LD 구조화 데이터 3종 추가(Article, FAQPage, BreadcrumbList) — 사이트 전체에 JSON-LD가 전무했던 문제의 첫 적용 사례
+  - `src/lib/seo.ts`에 `buildArticleJsonLd`/`buildFaqJsonLd`/`buildBreadcrumbJsonLd` 헬퍼 신규 추가 (다른 아티클에도 재사용 가능)
+  - FAQPage는 기존 FAQ_ITEMS 배열 재사용, `</script>` 이스케이프 처리로 XSS 방지
+
 ## 2026-09-03 19:00
 - lab 아티클 전체(17개)의 히어로 "LENGTH" 표시값을 실제 렌더링된 본문 글자수(Playwright로 .article-body innerText 측정) 기준 500자 단위 반올림으로 재보정
   - what-is-llmo: 約11,000文字 → 約30,000文字 (원문 복원 이후 대폭 누락되어 있던 값)

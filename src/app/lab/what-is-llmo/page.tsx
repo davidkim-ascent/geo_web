@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { LabArticleCTASection } from "@/components/layout/LabArticleCTASection";
 import { ArticleTOC } from "./ArticleTOC";
 import { ArticleThumbnail } from "@/components/lab/ArticleThumbnail";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata, buildArticleJsonLd, buildFaqJsonLd, buildBreadcrumbJsonLd } from "@/lib/seo";
 import shimadaImage from "../geo-llmo-tools/shimada.png";
 import chatgptExampleImage from "./chatgpt-example.png";
 import appleKnowledgePanelImage from "./apple-knowledge-panel.png";
@@ -113,9 +113,36 @@ const FAQ_ITEMS = [
   },
 ];
 
+const ARTICLE_JSON_LD = buildArticleJsonLd({
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  path: "/lab/what-is-llmo",
+  datePublished: "2026-09-03",
+});
+
+const FAQ_JSON_LD = buildFaqJsonLd(FAQ_ITEMS);
+
+const BREADCRUMB_JSON_LD = buildBreadcrumbJsonLd([
+  { name: "HOME", path: "/" },
+  { name: "GEO LAB", path: "/lab" },
+  { name: "LLMOとは", path: "/lab/what-is-llmo" },
+]);
+
 export default function WhatIsLlmoPage() {
   return (
     <div className="article-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ARTICLE_JSON_LD).replace(/</g, "\\u003c") }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD).replace(/</g, "\\u003c") }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_JSON_LD).replace(/</g, "\\u003c") }}
+      />
       <section className="hero-fixed article-hero relative" style={{ background: "var(--hero-gradient)", minHeight: "0" }}>
         <div
           className="absolute inset-0 opacity-[0.04]"

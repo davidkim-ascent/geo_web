@@ -85,3 +85,78 @@ export const defaultSiteMetadata = {
   ogImageWidth: DEFAULT_OG_IMAGE_WIDTH,
   ogImageHeight: DEFAULT_OG_IMAGE_HEIGHT,
 } as const;
+
+type ArticleJsonLdOptions = {
+  title: string;
+  description: string;
+  path: string;
+  datePublished: string;
+  dateModified?: string;
+};
+
+export function buildArticleJsonLd({
+  title,
+  description,
+  path,
+  datePublished,
+  dateModified,
+}: ArticleJsonLdOptions) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    url: `${siteUrl}${path}`,
+    datePublished,
+    dateModified: dateModified ?? datePublished,
+    author: {
+      "@type": "Organization",
+      name: "株式会社 Ascent Networks",
+      url: siteUrl,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteUrl}${DEFAULT_OG_IMAGE}`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${siteUrl}${path}`,
+    },
+  };
+}
+
+type FaqJsonLdItem = { q: string; a: string };
+
+export function buildFaqJsonLd(items: FaqJsonLdItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+}
+
+type BreadcrumbJsonLdItem = { name: string; path: string };
+
+export function buildBreadcrumbJsonLd(items: BreadcrumbJsonLdItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${siteUrl}${item.path}`,
+    })),
+  };
+}
