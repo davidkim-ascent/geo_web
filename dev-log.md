@@ -1,3 +1,6 @@
+## 2026-09-06 09:00
+- 푸터 소개 문구 변경: "AI検索上の課題を、提案と改善の根拠に。" → "AI検索時代のGEO・LLMO対策。" (`src/components/layout/Footer.tsx`)
+
 ## 2026-09-04 11:00
 - 사이트맵을 정적 파일에서 Next.js 동적 `src/app/sitemap.ts`로 전환 — 앞선 사이트맵 누락 문제(수동 관리로 8개 아티클 누락)의 재발 방지
   - `src/lib/lab-articles.ts` 신규 생성: `LAB_ARTICLES` 배열과 `ArticleThumbnailVariant` 타입을 `LabArticles.tsx`/`ArticleThumbnail.tsx`에서 분리해 서버(sitemap.ts)에서도 안전하게 import 가능하도록 함

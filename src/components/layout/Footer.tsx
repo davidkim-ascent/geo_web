@@ -19,7 +19,7 @@ export default function Footer() {
               />
             </Link>
             <p className="mt-4 ui-body-copy">
-              AI検索上の課題を、提案と改善の根拠に。<br />
+              AI検索時代のGEO・LLMO対策。<br />
               Ascent GEOは、診断とモニタリングで、次の一手を明確にします。
             </p>
             <p className="mt-4 ui-body-copy-sm whitespace-pre-line">
