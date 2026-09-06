@@ -1,3 +1,6 @@
+## 2026-09-06 09:30
+- Microsoft Clarity 트래킹 스크립트 설치 (`src/app/layout.tsx`, 프로젝트 ID: ydwlnvqg9h) — 기존 GTM 스크립트와 동일하게 `next/script`의 Script 컴포넌트로 삽입, strategy="afterInteractive"
+
 ## 2026-09-06 09:00
 - 푸터 소개 문구 변경: "AI検索上の課題を、提案と改善の根拠に。" → "AI検索時代のGEO・LLMO対策。" (`src/components/layout/Footer.tsx`)
 
