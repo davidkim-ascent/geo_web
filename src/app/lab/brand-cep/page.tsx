@@ -67,7 +67,7 @@ export default function BrandCepArticlePage() {
 
               <h1 className="article-hero__title mb-7">
                 <span className="block">AI検索時代のブランド戦略：</span>
-                <span className="block text-[#1452FF]">キーワードではなく、CEPを制覇せよ。</span>
+                <span className="block">キーワードではなく、CEPを制覇せよ。</span>
               </h1>
 
               <p className="article-hero__lede">

@@ -162,7 +162,7 @@ export default function GeoLlmoCompanyArticlePage() {
 
               <h1 className="article-hero__title mb-7">
                 <span className="block">GEO/LLMO対策におすすめの会社</span>
-                <span className="block text-[#1452FF]">7選を徹底比較</span>
+                <span className="block">7選を徹底比較</span>
               </h1>
 
               <p className="article-hero__lede">

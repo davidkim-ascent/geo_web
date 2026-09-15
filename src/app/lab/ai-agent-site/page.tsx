@@ -67,7 +67,7 @@ export default function AiAgentSitePage() {
 
               <h1 className="article-hero__title mb-7">
                 <span className="block">AIエージェントは</span>
-                <span className="block text-[#1452FF]">ウェブサイトをどう見るのか</span>
+                <span className="block">ウェブサイトをどう見るのか</span>
               </h1>
 
               <p className="article-hero__lede">

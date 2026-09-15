@@ -92,7 +92,7 @@ export default function AiCitedArticlePage() {
 
               <h1 className="article-hero__title mb-7">
                 <span className="block">AIに引用される記事の</span>
-                <span className="block text-[#1452FF]">7つの特徴</span>
+                <span className="block">7つの特徴</span>
               </h1>
 
               <p className="article-hero__lede">

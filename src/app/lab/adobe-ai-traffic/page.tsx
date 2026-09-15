@@ -66,7 +66,7 @@ export default function AdobeAiTrafficPage() {
 
               <h1 className="article-hero__title mb-7">
                 <span className="block">業界別AIトラフィックレポート</span>
-                <span className="block text-[#1452FF]">2026 Q1 — Adobeレポート</span>
+                <span className="block">2026 Q1 — Adobeレポート</span>
               </h1>
 
               <p className="article-hero__lede">

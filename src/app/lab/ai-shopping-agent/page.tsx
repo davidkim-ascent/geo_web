@@ -83,7 +83,7 @@ export default function AiShoppingAgentPage() {
 
               <h1 className="article-hero__title mb-7">
                 <span className="block">AIショッピングの登場と</span>
-                <span className="block text-[#1452FF]">エージェンティックコマース</span>
+                <span className="block">エージェンティックコマース</span>
               </h1>
 
               <p className="article-hero__lede">

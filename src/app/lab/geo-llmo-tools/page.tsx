@@ -380,7 +380,7 @@ export default function GeoLlmoToolsPage() {
 
               <h1 className="article-hero__title mb-7">
                 <span className="block">GEO・LLMO対策ツール15選</span>
-                <span className="block text-[#1452FF]">料金や機能などを徹底比較</span>
+                <span className="block">料金や機能などを徹底比較</span>
               </h1>
 
               <p className="article-hero__lede">

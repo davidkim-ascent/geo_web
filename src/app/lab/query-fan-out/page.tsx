@@ -103,7 +103,7 @@ export default function QueryFanOutPage() {
 
               <h1 className="article-hero__title mb-7">
                 <span className="block">クエリファンアウトとは？</span>
-                <span className="block text-[#1452FF]">GEO・LLMO対策への活用方法</span>
+                <span className="block">GEO・LLMO対策への活用方法</span>
               </h1>
 
               <p className="article-hero__lede">

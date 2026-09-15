@@ -100,7 +100,7 @@ export default function ChatGptVsGoogleSeoPage() {
 
               <h1 className="article-hero__title mb-7">
                 <span className="block">ChatGPT最適化とGoogle SEOは</span>
-                <span className="block text-[#1452FF]">何が違うのか</span>
+                <span className="block">何が違うのか</span>
               </h1>
 
               <p className="article-hero__lede">

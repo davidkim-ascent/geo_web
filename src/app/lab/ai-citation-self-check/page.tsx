@@ -150,7 +150,7 @@ export default function AiCitationSelfCheckPage() {
 
               <h1 className="article-hero__title mb-7">
                 <span className="block">自社サイトはAIにどれだけ</span>
-                <span className="block text-[#1452FF]">引用されている？セルフチェック方法</span>
+                <span className="block">引用されている？セルフチェック方法</span>
               </h1>
 
               <p className="article-hero__lede">

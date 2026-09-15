@@ -126,7 +126,7 @@ export default function SeoGeoArticlePage() {
 
               <h1 className="article-hero__title mb-7">
                 <span className="block">SEOとGEOは何が違うのか？</span>
-                <span className="block text-[#1452FF]">検索最適化と生成AI最適化を比較。</span>
+                <span className="block">検索最適化と生成AI最適化を比較。</span>
               </h1>
 
               <p className="article-hero__lede">

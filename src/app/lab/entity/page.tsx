@@ -73,7 +73,7 @@ export default function EntityArticlePage() {
 
               <h1 className="article-hero__title mb-7">
                 <span className="block">エンティティとは？</span>
-                <span className="block text-[#1452FF]">AI検索時代の重要性を解説</span>
+                <span className="block">AI検索時代の重要性を解説</span>
               </h1>
 
               <p className="article-hero__lede">

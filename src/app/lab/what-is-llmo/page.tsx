@@ -176,7 +176,7 @@ export default function WhatIsLlmoPage() {
 
               <h1 className="article-hero__title mb-7">
                 <span className="block">LLMOとは何か</span>
-                <span className="block text-[#1452FF]">意味・SEOとの違いから対策方法まで完全ガイド</span>
+                <span className="block">意味・SEOとの違いから対策方法まで完全ガイド</span>
               </h1>
 
               <p className="article-hero__lede">

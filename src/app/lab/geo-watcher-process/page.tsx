@@ -109,7 +109,7 @@ export default function GeoWatcherProcessPage() {
 
               <h1 className="article-hero__title mb-7">
                 <span className="block">自社でできる！GEO Watcherを使った</span>
-                <span className="block text-[#1452FF]">具体的なGEO・LLMO対策プロセス</span>
+                <span className="block">具体的なGEO・LLMO対策プロセス</span>
               </h1>
 
               <p className="article-hero__lede">

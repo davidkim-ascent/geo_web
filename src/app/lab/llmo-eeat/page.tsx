@@ -73,7 +73,7 @@ export default function LlmoEeatArticlePage() {
 
               <h1 className="article-hero__title mb-7">
                 <span className="block">LLMOにおける</span>
-                <span className="block text-[#1452FF]">E-E-A-Tの重要性</span>
+                <span className="block">E-E-A-Tの重要性</span>
               </h1>
 
               <p className="article-hero__lede">

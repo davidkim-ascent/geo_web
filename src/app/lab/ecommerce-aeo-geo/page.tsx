@@ -101,7 +101,7 @@ export default function EcommerceAeoGeoPage() {
 
               <h1 className="article-hero__title mb-7">
                 <span className="block">ECサイトのための</span>
-                <span className="block text-[#1452FF]">AEO・GEO最適化</span>
+                <span className="block">AEO・GEO最適化</span>
               </h1>
 
               <p className="article-hero__lede">

@@ -83,7 +83,7 @@ export default function AiCitationComparisonPage() {
 
               <h1 className="article-hero__title mb-7">
                 <span className="block">ChatGPT・Perplexity・Geminiは</span>
-                <span className="block text-[#1452FF]">ブランドをどう違って引用・推薦するのか</span>
+                <span className="block">ブランドをどう違って引用・推薦するのか</span>
               </h1>
 
               <p className="article-hero__lede">
