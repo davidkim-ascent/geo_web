@@ -59,6 +59,7 @@ type Props = {
 export function ContactForm({ blockedEmailDomains }: Props) {
   const router = useRouter()
   const [serverError, setServerError] = useState<string | null>(null)
+  const [honeypot, setHoneypot] = useState('')
 
   const {
     register,
@@ -84,6 +85,7 @@ export function ContactForm({ blockedEmailDomains }: Props) {
     },
   })
   const emailValue = useWatch({ control, name: 'email' })
+  const [formRenderedAt] = useState(() => Date.now())
 
   useEffect(() => {
     const blockedEmailError = getBlockedEmailDomainError(emailValue ?? '', blockedEmailDomains)
@@ -114,6 +116,8 @@ export function ContactForm({ blockedEmailDomains }: Props) {
         website: values.website,
         inquiryType: values.inquiryType,
         challenge: values.challenge,
+        honeypot,
+        formRenderedAt,
       }),
     })
 
@@ -137,6 +141,19 @@ export function ContactForm({ blockedEmailDomains }: Props) {
       <p className="sub">
         <span className="req">必須</span> は必須項目です。
       </p>
+
+      <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, overflow: 'hidden' }}>
+        <label htmlFor="company_url">Company URL</label>
+        <input
+          id="company_url"
+          name="company_url"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+        />
+      </div>
 
       <div className="field-row two">
         <div>

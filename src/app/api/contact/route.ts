@@ -4,6 +4,7 @@ import { createClient } from '@supabase/supabase-js'
 import { ContactConfirmEmail } from '@/emails/ContactConfirmEmail'
 import { ContactAdminEmail, type ContactFormData } from '@/emails/ContactAdminEmail'
 import { isBlockedEmailDomain } from '@/lib/contact-blocking'
+import { isSpamSubmission } from '@/lib/spam-protection'
 import { COMPLETION_COOKIE_MAX_AGE, CONTACT_THANKS_COOKIE } from '@/lib/completion-access'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
@@ -22,7 +23,13 @@ export async function POST(req: NextRequest) {
   } catch {
     return NextResponse.json({ error: 'invalid_request' }, { status: 400 })
   }
-  const { company, role, name, phone, email, industry, website, inquiryType, challenge } = body as Record<string, string>
+  const { company, role, name, phone, email, industry, website, inquiryType, challenge, honeypot, formRenderedAt } = body as Record<string, string> & { formRenderedAt?: number }
+
+  // 봇 스팸 체크 (허니팟 + 제출 시간)
+  if (isSpamSubmission({ honeypot: honeypot ?? '', formRenderedAt: Number(formRenderedAt) })) {
+    // 봇에게 정상 응답처럼 보이도록 성공 응답 반환 (재시도 방지)
+    return NextResponse.json({ ok: true })
+  }
 
   // 필수 필드 검증
   if (!company || !role || !name || !phone || !email || !industry || !inquiryType || !challenge) {
