@@ -7,6 +7,7 @@ import { buildPageMetadata } from "@/lib/seo";
 import shimadaImage from "./shimada.png";
 import heroCollage from "./hero-collage.png";
 import geoWatcherShot from "./tool-shots/geo-watcher.png";
+import searchWriteShot from "./tool-shots/search-write.png";
 import aisearchmapShot from "./tool-shots/aisearchmap.png";
 import semrushShot from "./tool-shots/semrush.png";
 import mierukaGeoShot from "./tool-shots/mieruka-geo.png";
@@ -21,9 +22,9 @@ import geoHackSuiteShot from "./tool-shots/geo-hack-suite.png";
 import superActShot from "./tool-shots/super-act.png";
 import ahrefsBrandRadarShot from "./tool-shots/ahrefs-brand-radar.png";
 
-const PAGE_TITLE = "GEO・LLMO対策ツール15選！料金や機能などを徹底比較";
+const PAGE_TITLE = "GEO・LLMO対策ツール16選！料金や機能などを徹底比較";
 const PAGE_DESCRIPTION =
-  "GEO・LLMO対策ツール15個を料金プラン・対応AIモデル数・機能などの観点から徹底比較。失敗しない選び方から具体的な対策プロセスまで解説。";
+  "GEO・LLMO対策ツール16個を料金プラン・対応AIモデル数・機能などの観点から徹底比較。失敗しない選び方から具体的な対策プロセスまで解説。";
 
 const _base = buildPageMetadata({
   title: `${PAGE_TITLE} - Ascent GEO`,
@@ -51,6 +52,7 @@ export const dynamic = "force-static";
 
 const COMPARISON_TABLE = [
   ["GEO Watcher", "29,800円〜/月", "20〜100", "6（Claudeはオプション）", "毎日"],
+  ["SEARCH WRITE", "100,000円/月", "60", "3", "毎月"],
   ["AIsearchmap", "無料（フリープラン）", "25", "最大5", "非公開"],
   ["Semrush", "16,335円〜/月", "25〜200", "最大3", "毎日（上位プラン）"],
   ["ミエルカGEO", "54,780円〜", "100〜", "最大6", "一部日次"],
@@ -97,6 +99,22 @@ const TOOLS = [
       ["更新頻度", "毎日"],
       ["データ保存期間", "過去365日分"],
       ["特徴", "最大20社の競合比較、CSVエクスポート、プロンプト設計・コンテンツ改善診断のスポットサポートあり"],
+    ],
+  },
+  {
+    name: "SEARCH WRITE",
+    url: "https://searchwrite.jp/",
+    image: searchWriteShot,
+    lede:
+      "株式会社PLAN-Bが提供するLLMO（AI検索・GEO・AIO）対策ツール。SEO事業19年の支援実績をもとに、AI検索での言及状況の計測から改善施策の実行までを1つのツールで扱える。競合は言及されているのに自社が言及されていないプロンプトを特定する「LLMOダッシュボード」と、キーワード戦略の立案から記事作成までを担う「SEOエージェント」が特徴。",
+    rows: [
+      ["運営会社", "株式会社PLAN-B"],
+      ["料金プラン", "100,000円/月（税抜）、無料トライアルあり"],
+      ["プロンプト数", "60"],
+      ["対応AIモデル", "ChatGPT・Gemini・Claude"],
+      ["更新頻度", "毎月"],
+      ["データ保存期間", "非公開"],
+      ["特徴", "「LLMOダッシュボード」でAI検索上の言及状況を可視化、競合は言及されているのに自社が言及されていないプロンプトの特定が可能。また改善すべきページの提案、「SEOエージェント」によるキーワード戦略の立案と記事の自動作成にも対応。"],
     ],
   },
   {
@@ -367,7 +385,7 @@ export default function GeoLlmoToolsPage() {
                 <span className="text-white/30">/</span>
                 <Link href="/lab" className="transition-colors hover:text-[#FDFDFB]">GEO LAB</Link>
                 <span className="text-white/30">/</span>
-                <span className="text-[#FDFDFB]">GEO・LLMO対策ツール15選</span>
+                <span className="text-[#FDFDFB]">GEO・LLMO対策ツール16選</span>
               </div>
 
               <div className="mb-4 inline-flex items-center gap-2.5 font-mono text-[10px] tracking-[0.24em] text-[#1452FF] uppercase">
@@ -379,12 +397,12 @@ export default function GeoLlmoToolsPage() {
               </div>
 
               <h1 className="article-hero__title mb-7">
-                <span className="block">GEO・LLMO対策ツール15選</span>
+                <span className="block">GEO・LLMO対策ツール16選</span>
                 <span className="block">料金や機能などを徹底比較</span>
               </h1>
 
               <p className="article-hero__lede">
-                GEO・LLMO対策ツールは、料金プランや対応AIモデル数、更新頻度、改善提案の有無などによって特徴が大きく異なります。15個のツールを比較し、失敗しない選び方から具体的な対策プロセスまで解説します。
+                GEO・LLMO対策ツールは、料金プランや対応AIモデル数、更新頻度、改善提案の有無などによって特徴が大きく異なります。16個のツールを比較し、失敗しない選び方から具体的な対策プロセスまで解説します。
               </p>
 
               <div className="article-meta">
@@ -415,7 +433,7 @@ export default function GeoLlmoToolsPage() {
               <figure className="relative mb-10 h-[260px] w-full overflow-hidden rounded-2xl border border-[#E6E4DD] shadow-[0_18px_40px_-24px_rgba(11,11,14,0.28)]">
                 <Image
                   src={heroCollage}
-                  alt="GEO・LLMO対策ツール15選のスクリーンショットコラージュ"
+                  alt="GEO・LLMO対策ツール16選のスクリーンショットコラージュ"
                   fill
                   className="object-cover"
                   priority
@@ -436,7 +454,7 @@ export default function GeoLlmoToolsPage() {
                   <span className="article-quote__note">RESEARCH NOTE</span>
                 </blockquote>
                 <p className="article-prose">
-                  GEO・LLMO対策ツールは、料金プランや対応AIモデル数、更新頻度、改善提案の有無などによって特徴が大きく異なります。15個のツールの特徴を、料金・プロンプト数・対応AIモデル数・更新頻度の軸で一覧にまとめました。自社の目的に近いツールを探す際の参考にしてください。
+                  GEO・LLMO対策ツールは、料金プランや対応AIモデル数、更新頻度、改善提案の有無などによって特徴が大きく異なります。16個のツールの特徴を、料金・プロンプト数・対応AIモデル数・更新頻度の軸で一覧にまとめました。自社の目的に近いツールを探す際の参考にしてください。
                 </p>
 
                 <h3 className="article-h3" style={{ color: "#1452FF" }}>GEO・LLMO対策ツールの一覧比較表</h3>
@@ -570,12 +588,12 @@ export default function GeoLlmoToolsPage() {
                 </div>
               </section>
 
-              {/* Section 6: 15個を詳しく紹介 */}
+              {/* Section 6: 16個を詳しく紹介 */}
               <section id="s6" className="article-section" style={{ marginTop: "56px" }}>
-                <span className="article-kicker" style={{ fontSize: "14px" }}>06 15個を詳しく紹介</span>
-                <h2 className="article-h2">GEO・LLMO対策ツール15個を詳しく紹介</h2>
+                <span className="article-kicker" style={{ fontSize: "14px" }}>06 16個を詳しく紹介</span>
+                <h2 className="article-h2">GEO・LLMO対策ツール16個を詳しく紹介</h2>
                 <p className="article-prose">
-                  ここからは、GEO・LLMO対策に活用できる15個のツールを、料金プランや対応AIモデル、機能などの観点から詳しく紹介します。
+                  ここからは、GEO・LLMO対策に活用できる16個のツールを、料金プランや対応AIモデル、機能などの観点から詳しく紹介します。
                 </p>
 
                 {TOOLS.map((tool) => (
@@ -682,7 +700,7 @@ export default function GeoLlmoToolsPage() {
               {/* Section 10: まとめ */}
               <section id="s10" className="article-section" style={{ marginTop: "56px" }}>
                 <span className="article-kicker" style={{ fontSize: "14px" }}>10 まとめ</span>
-                <h2 className="article-h2">まとめ：GEO・LLMO対策におすすめのツール15選</h2>
+                <h2 className="article-h2">まとめ：GEO・LLMO対策におすすめのツール16選</h2>
                 <blockquote className="article-quote article-quote--wide">
                   <p className="article-quote__text">
                     価格よりも「見たい指標を分析できるか」「社内で継続して使える体制があるか」を優先して比較するのが失敗しないコツ。

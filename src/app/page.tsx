@@ -395,8 +395,8 @@ function GeoLabSection() {
     {
       tag: "GEO / LLMO TOOLS",
       num: "05",
-      title: "GEO・LLMO対策ツール15選！料金や機能などを徹底比較",
-      desc: "GEO・LLMO対策ツール15個を料金プラン・対応AIモデル数・機能などの観点から徹底比較。失敗しない選び方から具体的な対策プロセスまで解説。",
+      title: "GEO・LLMO対策ツール16選！料金や機能などを徹底比較",
+      desc: "GEO・LLMO対策ツール16個を料金プラン・対応AIモデル数・機能などの観点から徹底比較。失敗しない選び方から具体的な対策プロセスまで解説。",
       date: "08.26",
       readTime: "10 MIN READ",
       size: "small",
