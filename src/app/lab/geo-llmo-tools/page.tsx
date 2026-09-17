@@ -603,7 +603,7 @@ export default function GeoLlmoToolsPage() {
                       <a
                         href={tool.url}
                         target="_blank"
-                        rel="noopener noreferrer nofollow"
+                        rel="noopener noreferrer"
                         className="mb-4 flex w-fit items-center gap-1 text-[14px] text-[#1452FF] hover:underline"
                       >
                         公式サイトを見る
