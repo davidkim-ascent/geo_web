@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/layout/ScrollToTop";
+import { DeferredStylesheet } from "@/components/layout/DeferredStylesheet";
 import { defaultSiteMetadata, metadataBase } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -58,16 +59,16 @@ export default function RootLayout({
               y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
           })(window, document, "clarity", "script", "ydwlnvqg9h");`}
         </Script>
-        <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-        <link
-          rel="stylesheet"
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+        <DeferredStylesheet
+          id="pretendard-jp-css"
           href="https://cdnjs.cloudflare.com/ajax/libs/pretendard-jp/1.3.9/variable/pretendardvariable-jp.min.css"
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
+        <DeferredStylesheet
+          id="jetbrains-mono-css"
           href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
-          rel="stylesheet"
         />
       </head>
       <body className="min-h-full flex flex-col">
