@@ -46,10 +46,23 @@ export default function RootLayout({
     <html lang="ja" className="h-full antialiased">
       <head>
         <Script id="gtm-script" strategy="afterInteractive">
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          {`(function(w,d,s,l,i){
+            w[l]=w[l]||[];
+            function loadGtm(){
+              if (w.__gtmLoaded) return;
+              w.__gtmLoaded = true;
+              w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+              var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            }
+            var events = ['scroll','click','touchstart','mousemove','keydown'];
+            function onInteract(){
+              events.forEach(function(e){ w.removeEventListener(e, onInteract); });
+              loadGtm();
+            }
+            events.forEach(function(e){ w.addEventListener(e, onInteract, { passive: true, once: true }); });
+            setTimeout(loadGtm, 5000);
             })(window,document,'script','dataLayer','GTM-P7QHGQVS');`}
         </Script>
         <Script id="clarity-script" strategy="lazyOnload">
