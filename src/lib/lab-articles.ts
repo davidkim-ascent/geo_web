@@ -46,4 +46,5 @@ export const LAB_ARTICLES: LabArticle[] = [
   { cat: "GEO / LLMO", date: "2026.07.01", read: "8 min", t: "AIに引用される記事の特徴とは？押さえるべき7つの特徴", d: "AIに引用されやすいコンテンツの特徴や設計ポイントを独自調査データ（52件の引用分析）を交えながら7つのポイントに絞って解説。", href: "/lab/ai-cited-article", thumbVariant: "ai-cited-article" },
   { cat: "GEO / LLMO", date: "2026.09.02", read: "7 min", t: "クエリファンアウトとは？GEO・LLMO対策への活用方法も解説！", d: "クエリファンアウトとは、AIが検索クエリを複数のサブクエリに分解し統合して回答を生成する技術です。GEO・LLMO対策への活用方法も紹介します。", href: "/lab/query-fan-out", thumbVariant: "query-fan-out" },
   { cat: "LLMO", date: "2026.09.03", read: "16 min", t: "LLMOとは？意味・SEOとの違いから対策方法まで完全ガイド", d: "LLMO（大規模言語モデル最適化）の意味、SEO・AIO・AEO・GEOとの違い、具体的な対策5ステップ、KPI測定方法までを完全解説。", href: "/lab/what-is-llmo", thumbVariant: "what-is-llmo" },
+  { cat: "TECHNICAL GEO", date: "2026.09.23", read: "7 min", t: "Reciprocal Rank Fusion（RRF）とは？LLMが1つの質問で複数回検索する理由", d: "LLMは1つの質問に対し複数の検索クエリを実行し、RRF（Reciprocal Rank Fusion）で結果を統合しています。ChatGPTの実装例やスコア計算、トピッククラスターが効果的な理由まで解説。", href: "/lab/reciprocal-rank-fusion", thumbVariant: "abstract" },
 ];
