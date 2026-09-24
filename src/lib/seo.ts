@@ -45,6 +45,10 @@ export function buildPageMetadata({
     keywords,
     alternates: {
       canonical: path,
+      languages: {
+        "ja-JP": path,
+        "x-default": path,
+      },
     },
     robots: noIndex
       ? {
