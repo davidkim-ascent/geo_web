@@ -1,3 +1,12 @@
+## 2026-09-30 16:23
+- Google Ads API 접속 확인 (Explorer 등급 승인 후 계정 176-640-0641 Ascent GEO 조회 성공)
+- Watcher 캠페인 검색어 분석 후 캠페인 단위 제외 키워드 33개(구문 일치) 등록 — 무관 주제(ローカルllm, テキストマイニング, ラッコ 등) 및 비경쟁 타사명 제외, GEO/LLMO 경쟁사(akarumi, noimosai, profound, ミエルカ 등)는 노출 유지
+- Watcher 키워드 정비: 부분일치 `llmo`(비용 약 50% 차지) 일시정지 → 구문일치 `llmo` 신규 추가, 범용어 10개(seo, ai, キーワード, 生成 ai 등) 완전일치 제외 등록(제외 키워드 총 43개). とは 정보형·llmo/aio 단일어는 유지
+- 제외 키워드 `キーワード` 구문일치 추가 (완전일치와 병행, 총 44개). seo/ai는 핵심 키워드 차단 우려로 완전일치 제외만 유지
+- Watcher 광고 일정 설정 (전 요일): 0–7시 광고 중지, 7–22시 기본 입찰, 22–24시 입찰 -30% — 새벽 CTR 이상치(봇 의심)·심야 CPC 1.7배, 예산 제한(예산손실 IS 17%) 근거
+- Watcher 캠페인 재구성: 기존 광고그룹(対策・ツール・モニタリング) 일시정지 → 주제별 5개 광고그룹 신설(競合/LLMO/AIO/GEO/AI検索・AEO), 각 RSA 제목15·설명4(고정 없음). `llmo`·`aio`는 카테고리어로 부분일치 유지. 경쟁사 37개 키워드(lab/geo-llmo-tools, geo-llmo-company 기준) 구문일치 등록. 지역 타겟팅 '所在地のみ(PRESENCE)'로 변경
+- LP 속도 개선: Pretendard JP 폰트를 전체본(5.2MB)→dynamic-subset CSS로 교체 (`src/app/layout.tsx`). 로컬 Lighthouse 모바일 /watcher: 점수 81→93, 총 용량 5.9MB→707KB, LCP 4.1s→3.0s
+
 ## 2026-09-06 09:30
 - Microsoft Clarity 트래킹 스크립트 설치 (`src/app/layout.tsx`, 프로젝트 ID: ydwlnvqg9h) — 기존 GTM 스크립트와 동일하게 `next/script`의 Script 컴포넌트로 삽입, strategy="afterInteractive"
 

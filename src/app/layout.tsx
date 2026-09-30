@@ -75,7 +75,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
         <DeferredStylesheet
           id="pretendard-jp-css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/pretendard-jp/1.3.9/variable/pretendardvariable-jp.min.css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/pretendard-jp/1.3.9/variable/pretendardvariable-jp-dynamic-subset.min.css"
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
