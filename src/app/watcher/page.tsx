@@ -16,9 +16,9 @@ const voice2Image = "/design-assets/voice2.png";
 const voice3Image = "/design-assets/voice3.png";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "GEO Watcher｜GEO・LLMO対策モニタリングツール",
+  title: "GEO・LLMO・AIO対策ツール｜AI検索モニタリングのGEO Watcher",
   description:
-    "GEO Watcherは、主要AIにおける自社・競合の言及や露出の変化を毎日計測するGEO・LLMO対策のモニタリングツール。必要な時だけ専門支援も可能",
+    "GEO Watcherは、ChatGPT・Gemini・AI Overviewsなど主要7AIで自社・競合の言及や引用の変化を毎日計測するGEO・LLMO・AIO対策モニタリングツール。必要な時だけ専門支援も可能",
   path: "/watcher",
 });
 
@@ -82,7 +82,7 @@ function HeroSection() {
           className="hero-h1-match-index font-bold max-w-[48ch] mx-auto mt-4"
           style={{ fontSize: "53px", lineHeight: "1.5", letterSpacing: "-0.035em", fontFamily: "'NiveauGrotesk', sans-serif" }}
         >
-GEO・LLMO<span style={{ marginLeft: "3px", fontSize: "49px", fontFamily: "'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif" }}>対策ツール</span> <span style={{ color: "#003393" }}>GEO Watcher</span>
+GEO・LLMO・AIO<span style={{ marginLeft: "3px", fontSize: "49px", whiteSpace: "nowrap", fontFamily: "'Pretendard JP Variable', 'Pretendard JP', Pretendard, sans-serif" }}>対策ツール</span> <span style={{ color: "#003393" }}>GEO Watcher</span>
         </h1>
 
         {/* Subcopy Section */}

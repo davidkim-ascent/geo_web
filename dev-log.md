@@ -1,3 +1,6 @@
+## 2026-09-30 17:03
+- /watcher 메타 타이틀·디스크립션·H1에 AIO·AI検索 반영 (광고그룹 5개 주제와 LP 관련성 정합): title「GEO・LLMO・AIO対策ツール｜AI検索モニタリングのGEO Watcher」. H1 모바일 줄바꿈이 '対策/ツール'로 끊기지 않도록 '対策ツール' span에 nowrap 적용
+
 ## 2026-09-30 16:23
 - Google Ads API 접속 확인 (Explorer 등급 승인 후 계정 176-640-0641 Ascent GEO 조회 성공)
 - Watcher 캠페인 검색어 분석 후 캠페인 단위 제외 키워드 33개(구문 일치) 등록 — 무관 주제(ローカルllm, テキストマイニング, ラッコ 등) 및 비경쟁 타사명 제외, GEO/LLMO 경쟁사(akarumi, noimosai, profound, ミエルカ 등)는 노출 유지
