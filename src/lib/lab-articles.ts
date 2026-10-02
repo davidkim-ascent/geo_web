@@ -47,4 +47,5 @@ export const LAB_ARTICLES: LabArticle[] = [
   { cat: "GEO / LLMO", date: "2026.09.02", read: "7 min", t: "クエリファンアウトとは？GEO・LLMO対策への活用方法も解説！", d: "クエリファンアウトとは、AIが検索クエリを複数のサブクエリに分解し統合して回答を生成する技術です。GEO・LLMO対策への活用方法も紹介します。", href: "/lab/query-fan-out", thumbVariant: "query-fan-out" },
   { cat: "LLMO", date: "2026.09.03", read: "16 min", t: "LLMOとは？意味・SEOとの違いから対策方法まで完全ガイド", d: "LLMO（大規模言語モデル最適化）の意味、SEO・AIO・AEO・GEOとの違い、具体的な対策5ステップ、KPI測定方法までを完全解説。", href: "/lab/what-is-llmo", thumbVariant: "what-is-llmo" },
   { cat: "TECHNICAL GEO", date: "2026.09.23", read: "7 min", t: "Reciprocal Rank Fusion（RRF）とは？LLMが1つの質問で複数回検索する理由", d: "LLMは1つの質問に対し複数の検索クエリを実行し、RRF（Reciprocal Rank Fusion）で結果を統合しています。ChatGPTの実装例やスコア計算、トピッククラスターが効果的な理由まで解説。", href: "/lab/reciprocal-rank-fusion", thumbVariant: "abstract" },
+  { cat: "DATA REPORT", date: "2026.10.02", read: "9 min", t: "日本の生成AI利用率は低いのか？海外のデータと比較して考察", d: "2026年2月時点で、日本のAI検索利用率は37.0%。アメリカ・イギリス・韓国と比較しながら、日本のAI検索利用の実態と今後の展望を解説します。", href: "/lab/japan-generative-ai-usage-rate", thumbVariant: "abstract" },
 ];
