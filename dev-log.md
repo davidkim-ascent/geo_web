@@ -1,3 +1,6 @@
+## 2026-10-07 18:02
+- 신규 아티클 추가: /lab/geo-llmo-tool-selection「GEO・LLMO対策ツールの選び方|活用シーン別の例を解説」(docx 원문 그대로 이식, 표7·이미지3·FAQ6·참고문헌3·CTA3, Article/FAQ/Breadcrumb JSON-LD), LAB_ARTICLES 등록(사이트맵 자동 반영)
+
 ## 2026-10-02 19:19
 - 신규 아티클 추가: /lab/japan-generative-ai-usage-rate「日本の生成AI利用率は低いのか？海外のデータと比較して考察」(docx 원문 그대로 이식, 표4·그래프1·FAQ5·참고문헌7, Article/FAQ/Breadcrumb JSON-LD), LAB_ARTICLES 등록(사이트맵 자동 반영)
 
