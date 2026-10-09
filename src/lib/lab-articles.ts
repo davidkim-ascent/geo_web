@@ -49,4 +49,5 @@ export const LAB_ARTICLES: LabArticle[] = [
   { cat: "TECHNICAL GEO", date: "2026.09.23", read: "7 min", t: "Reciprocal Rank Fusion（RRF）とは？LLMが1つの質問で複数回検索する理由", d: "LLMは1つの質問に対し複数の検索クエリを実行し、RRF（Reciprocal Rank Fusion）で結果を統合しています。ChatGPTの実装例やスコア計算、トピッククラスターが効果的な理由まで解説。", href: "/lab/reciprocal-rank-fusion", thumbVariant: "abstract" },
   { cat: "DATA REPORT", date: "2026.10.02", read: "9 min", t: "日本の生成AI利用率は低いのか？海外のデータと比較して考察", d: "2026年2月時点で、日本のAI検索利用率は37.0%。アメリカ・イギリス・韓国と比較しながら、日本のAI検索利用の実態と今後の展望を解説します。", href: "/lab/japan-generative-ai-usage-rate", thumbVariant: "abstract" },
   { cat: "GEO / LLMO TOOLS", date: "2026.10.07", read: "8 min", t: "GEO・LLMO対策ツールの選び方|活用シーン別の例を解説", d: "GEO・LLMO対策ツールの選び方を5つのチェックポイントで解説。Ascent GEOのGEO WatcherとGEO診断レポートの機能を活用シーンを交えて紹介。", href: "/lab/geo-llmo-tool-selection", thumbVariant: "abstract" },
+  { cat: "AEO", date: "2026.10.09", read: "20 min", t: "AEO（回答エンジン最適化）とは？SEOとの違いも徹底解説", d: "AEO（回答エンジン最適化）とは、AI検索の回答に自社の情報が採用されるよう最適化する施策です。SEOとAEOの違いも含めて解説します。", href: "/lab/what-is-aeo", thumbVariant: "abstract" },
 ];
