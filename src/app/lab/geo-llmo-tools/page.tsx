@@ -21,10 +21,11 @@ import llmoinsightShot from "./tool-shots/llmoinsight.png";
 import geoHackSuiteShot from "./tool-shots/geo-hack-suite.png";
 import superActShot from "./tool-shots/super-act.png";
 import ahrefsBrandRadarShot from "./tool-shots/ahrefs-brand-radar.png";
+import chaosMapShot from "./chaos-map.jpg";
 
-const PAGE_TITLE = "GEO・LLMO対策ツール16選！料金や機能などを徹底比較";
+const PAGE_TITLE = "GEO・LLMO対策ツール15選！料金や機能などを徹底比較";
 const PAGE_DESCRIPTION =
-  "GEO・LLMO対策ツール16個を料金プラン・対応AIモデル数・機能などの観点から徹底比較。失敗しない選び方から具体的な対策プロセスまで解説。";
+  "GEO・LLMO対策ツール15個を料金プラン・対応AIモデル数・機能などの観点から徹底比較。失敗しない選び方から具体的な対策プロセスまで解説。";
 
 const _base = buildPageMetadata({
   title: `${PAGE_TITLE} - Ascent GEO`,
@@ -64,7 +65,7 @@ const COMPARISON_TABLE = [
   ["HubSpot AEO", "6,000円〜/月", "25", "3", "毎日"],
   ["LLMOinsight", "0円〜", "6〜20", "5", "非公開"],
   ["GEO Hack Suite", "14,800円〜/年払い", "30〜1,000", "最大5", "毎日"],
-  ["AIタナドリ", "0円（無料診断）", "非公開", "1〜4", "都度実行"],
+
   ["SUPER ACT", "15,000円〜", "10〜", "6", "非公開"],
   ["Ahrefs Brand Radar", "107,800円〜", "2,500", "6", "非公開"],
 ];
@@ -91,6 +92,7 @@ const TOOLS = [
     image: geoWatcherShot,
     lede:
       "株式会社Ascent Networksが提供するGEO・LLMO対策のモニタリングツール。ChatGPT、Gemini、Perplexity、Google AI Overviews、AI Mode、Microsoft Copilotの主要6AIに標準対応し（Claudeはオプション）、自社・競合ブランドの言及や引用状況を毎日自動で計測する。ブランド名とURLを登録するだけでプロンプトや競合他社が自動生成されるため、専門知識がなくてもすぐに運用を開始できる。月額プランに加えて、プロンプト設計やコンテンツ改善診断を単発で依頼できる「スポットサポート」も用意されている。",
+    recommend: "初めてGEO・LLMO対策に取り組むマーケティング担当者や、専門知識がなくてもすぐに運用を始めたい企業のWeb担当者におすすめ。スポットサポートがあるため、社内にGEO専任者がいない中小企業にも向いている。",
     rows: [
       ["運営会社", "株式会社Ascent Networks"],
       ["料金プラン", "ライト29,800円/月、スタンダード39,800円/月、アドバンス79,800円/月（年払いは2か月分お得）"],
@@ -107,6 +109,7 @@ const TOOLS = [
     image: searchWriteShot,
     lede:
       "株式会社PLAN-Bが提供するLLMO（AI検索・GEO・AIO）対策ツール。SEO事業19年の支援実績をもとに、AI検索での言及状況の計測から改善施策の実行までを1つのツールで扱える。競合は言及されているのに自社が言及されていないプロンプトを特定する「LLMOダッシュボード」と、キーワード戦略の立案から記事作成までを担う「SEOエージェント」が特徴。",
+    recommend: "SEO施策と並行してLLMO対策を進めたいSEO担当者や、コンテンツ制作チームにおすすめ。記事作成まで一気通貫で対応できるため、SEOとLLMOを一元管理したい企業に向いている。",
     rows: [
       ["運営会社", "株式会社PLAN-B"],
       ["料金プラン", "100,000円/月（税抜）、無料トライアルあり"],
@@ -123,6 +126,7 @@ const TOOLS = [
     image: aisearchmapShot,
     lede:
       "株式会社CINCが提供するAI検索最適化（GEO/LLMO）の現在地を分析・モニタリングするツール。AIモデル別のブランド露出シェアや言及の時系列グラフ、引用URLドメインの可視化などができる。無料のフリープランに加え、プロンプト数・対応AIモデル・分析対象ブランド数を柔軟にカスタマイズできるエンタープライズプラン（月額5万円〜）が用意されており、代理店やマーケティング支援会社が顧客向けレポートに活用することも可能。",
+    recommend: "まずは無料でGEO・LLMOの現状を把握したいマーケティング担当者や、クライアント向けレポートにAI検索データを活用したい代理店・コンサルタントにおすすめ。",
     rows: [
       ["運営会社", "株式会社CINC"],
       ["料金プラン", "フリー0円/月、エンタープライズ5万円〜/月（個別見積）"],
@@ -138,6 +142,7 @@ const TOOLS = [
     image: semrushShot,
     lede:
       "世界1,000万ユーザーが利用するSEO・広告・SNS分析を含むオールインワン型の競合分析ツール。日本では株式会社オロが正規代理店として提供しており、AIモデル別のブランド言及分析やポジネガ判定、引用サイトのコンテンツ分析まで一括で行える。",
+    recommend: "SEO・広告・SNSを含む包括的なデジタルマーケティング戦略を統括するマーケティングマネージャーや、既にSemrushを導入済みでGEO対策を追加したい企業におすすめ。",
     rows: [
       ["運営会社", "株式会社オロ（正規代理店）"],
       ["料金プラン", "Starter 32,835円/月、Pro 49,335円/月、ADVANCED 90,585円/月、AI Visibility 16,335円/月"],
@@ -153,6 +158,7 @@ const TOOLS = [
     image: mierukaGeoShot,
     lede:
       "株式会社Faber Companyが提供するGEO（AI検索・LLMO・AIO）対策・診断ツール。累計1,900社以上のSEO支援実績をもとに、AI検索時代に必要な機能を厳選して提供している。AIOに生成されたテキスト内容の計測や、クエリファンアウト分析（関連検索クエリの分析）が特徴。",
+    recommend: "すでにSEOに取り組んでおり、GEO・AIO対策を本格的に拡張したいSEOチームリーダーや、コンサル支援を受けながら施策を進めたい中〜大規模企業におすすめ。",
     rows: [
       ["運営会社", "株式会社Faber Company"],
       ["料金プラン", "単一サイト54,780円、複数サイト109,780円、AI検索シェアモニタリングは基本料金＋50,000円〜/月"],
@@ -168,6 +174,7 @@ const TOOLS = [
     image: tactSeoShot,
     lede:
       "株式会社ウィルゲートが提供するAIO（AI Overviews）モニタリングサービス。週次でのAIO出現数やキーワード引用状況、競合比較をモニタリングできるほか、GA4と連携することでAI経由の流入をグラフ化できる点が特徴。",
+    recommend: "Google AI Overviewsの影響を重点的に把握したいSEO担当者や、既にTACT SEOを利用中でAIO対策を追加したい企業におすすめ。",
     rows: [
       ["運営会社", "株式会社ウィルゲート"],
       ["料金プラン", "基本契約は要問い合わせ（参考：週1回更新プランで50,000円）"],
@@ -183,6 +190,7 @@ const TOOLS = [
     image: geoSignalsShot,
     lede:
       "株式会社コーボーが提供するAI回答の言及・引用を定点観測するSaaS。海外製の多機能・エンタープライズ向けツールが多いなか、必要な機能を絞り込むことで金額面のコストパフォーマンスを重視した設計になっている。",
+    recommend: "コストを抑えてGEO・LLMOモニタリングを始めたいスタートアップや中小企業のWeb担当者におすすめ。必要最低限の機能に絞って運用したい方に向いている。",
     rows: [
       ["運営会社", "株式会社コーボー"],
       ["料金プラン", "Standard 10,780円/月、Pro 21,780円/月"],
@@ -199,6 +207,7 @@ const TOOLS = [
     image: akarumiShot,
     lede:
       "株式会社ipeが提供するLLM時代のブランド「AI認識」を可視化する戦略プラットフォーム。ブランド言及順位や自社URL引用状況に加え、AIクローラーのアクセスログ分析やチームアカウント管理機能まで備えている。",
+    recommend: "ブランドがAIにどう認識されているかを戦略的に管理したいブランドマネージャーや、チームで複数ブランドを運用する大企業のマーケティング部門におすすめ。",
     rows: [
       ["運営会社", "株式会社ipe"],
       ["料金プラン", "ライト・スタンダード・エキスパートの3プラン（いずれも個別見積）"],
@@ -214,6 +223,7 @@ const TOOLS = [
     image: dolphinxAioShot,
     lede:
       "国産のAI支援型SEO・AIO（LLMO）対策プラットフォーム。データをAIが読み解き、優先順位付きで施策を提案してくれる点が特徴で、FAQ記事などのAI記事自動生成機能も備えている。6か月契約（年払い）でライト・プロ・ビジネスの3プランを用意。",
+    recommend: "施策の優先順位付けからコンテンツ作成までAIに任せたいコンテンツ担当者や、人手が限られる中でAIO対策を効率的に進めたい企業におすすめ。",
     rows: [
       ["料金プラン", "ライト33,000円、プロ55,000円、ビジネス110,000円（いずれも6か月契約・年払い）"],
       ["プロンプト数", "20〜80"],
@@ -228,6 +238,7 @@ const TOOLS = [
     image: llmoCompassShot,
     lede:
       "AIツールグランプリ2024で最優秀賞を獲得したLLMO対策分析ツール。自社・競合ブランドの言及順位やAIモデル別の参照URL、ブランドクエリの検索ボリューム（GA4連携）などを分析できる。フリープランから始められる料金体系も特徴。",
+    recommend: "まずは無料でLLMO分析を試したい個人事業主やスタートアップのマーケティング担当者におすすめ。スモールスタートから段階的にスケールさせたい企業に向いている。",
     rows: [
       ["運営会社", "Bring Ritera"],
       ["料金プラン", "フリー0円、スタンダード3,000円/月（年払い）、プロ9,000円/月（年払い）、エンタープライズ30,000円/月（年払い）"],
@@ -243,6 +254,7 @@ const TOOLS = [
     image: hubspotAeoShot,
     lede:
       "HubSpotが提供するAIプレゼンス追跡機能。自社・競合ブランドの言及に加え、言及内容のセンチメント（好意・中立・否定）分類や、ページ作成・技術的修正・動画制作といった具体的な推奨アクションの提示まで対応している。",
+    recommend: "既にHubSpotのCRM・MAツールを導入済みで、既存の基盤にGEO対策を追加したいマーケティングオペレーション担当者におすすめ。",
     rows: [
       ["運営会社", "HubSpot"],
       ["料金プラン", "6,000円/月（年払い、1ブランドにつき）"],
@@ -258,6 +270,7 @@ const TOOLS = [
     image: llmoinsightShot,
     lede:
       "AI回答におけるブランド露出・推薦順位・引用元・競合比較を計測し、「なぜ選ばれているのか」まで可視化するLLMO/GEO分析プラットフォーム。改善提案をスコア化してカード形式で提示する機能や、月数本のコンテンツ生成機能も備えている。",
+    recommend: "「なぜAIに選ばれているか」の要因分析まで踏み込みたいコンテンツストラテジストや、改善提案と記事生成をセットで活用したい編集チームにおすすめ。",
     rows: [
       ["料金プラン", "Free 0円、Standard 9,800円、Business 29,800円"],
       ["プロンプト数", "6〜20"],
@@ -273,6 +286,7 @@ const TOOLS = [
     image: geoHackSuiteShot,
     lede:
       "ChatGPT・Perplexity・Gemini・Google AI概要での自社引用を毎日自動計測し、診断からリライト優先度の判定、記事制作、効果測定までを一気通貫で行えるフルスタックGEOプラットフォーム。APIキー持ち込みによる割安プランも用意されている。",
+    recommend: "診断からコンテンツ制作・効果測定までをワンストップで完結させたいWebディレクターや、APIキー持ち込みでコストを抑えたいエンジニア兼マーケターにおすすめ。",
     rows: [
       ["料金プラン", "ライト14,800円、スタンダード39,800円、プロ89,800円（いずれも年払い）。APIキー持ち込みプランは9,800円〜も選択可"],
       ["プロンプト数", "30〜1,000"],
@@ -281,25 +295,14 @@ const TOOLS = [
       ["特徴", "サイト診断（robots.txt・llms.txt）、Search Console連携によるコンテンツ改善提案、AI記事自動生成"],
     ],
   },
-  {
-    name: "AIタナドリ",
-    url: "https://retailer.orosy.com/",
-    lede:
-      "B2B卸・D2Cブランドに特化したLLMOツール。ChatGPTやGeminiに「小ロットで仕入れられる〇〇」といったバイヤー視点の質問を投げかけ、AIが推薦するブランドを分析できる。無料診断から始められ、4AI横断のフルレポートは買い切り課金で利用できる。",
-    rows: [
-      ["料金プラン", "無料診断0円、4AI横断レポート550円/回（買い切り・期間限定価格）"],
-      ["プロンプト数", "非公開"],
-      ["対応AIモデル", "ChatGPT（無料診断）、ChatGPT・Gemini・Perplexity・Claudeの4モデル（横断レポート）"],
-      ["更新頻度", "診断・レポート実行時"],
-      ["特徴", "都度課金型、センチメント分析にも対応"],
-    ],
-  },
+
   {
     name: "SUPER ACT",
     url: "https://superact.ai/",
     image: superActShot,
     lede:
       "ChatGPT・Gemini・Claude・Grok・Perplexityなど幅広いAIモデルにおけるメンション率・センチメントの分析から、LLMO・AIO施策の管理までをワンストップで支援するツール。プロンプトやブランドはオプションで追加できる。",
+    recommend: "Grokを含む幅広いAIモデルでの言及を一括管理したいデジタルマーケティング担当者や、ブランド単位でレポートを出したい複数ブランド運用企業におすすめ。",
     rows: [
       ["料金プラン", "Standardプラン15,000円、カスタマイズプランは要相談"],
       ["プロンプト数", "10（追加オプションあり：6,800円で10プロンプト＋2ブランド追加）"],
@@ -314,6 +317,7 @@ const TOOLS = [
     image: ahrefsBrandRadarShot,
     lede:
       "世界的なSEOツールAhrefsが提供するAI可視性分析機能。Ahrefsが保有する膨大なデータセットから月あたり411Mものプロンプトを追跡しており、AI回答内でのブランド言及トラッキングやAIに引用されやすいソースの発見に強みがある。YouTube・TikTok・Redditの横断調査ができる点も特徴。",
+    recommend: "大規模なプロンプトデータに基づくAI可視性分析を求めるエンタープライズ企業のSEO責任者や、YouTube・TikTokを含むマルチチャネルでのブランド可視性を把握したい経営層におすすめ。",
     rows: [
       ["運営会社", "Ahrefs Japan合同会社"],
       ["料金プラン", "107,800円〜"],
@@ -385,7 +389,7 @@ export default function GeoLlmoToolsPage() {
                 <span className="text-white/30">/</span>
                 <Link href="/lab" className="transition-colors hover:text-[#FDFDFB]">GEO LAB</Link>
                 <span className="text-white/30">/</span>
-                <span className="text-[#FDFDFB]">GEO・LLMO対策ツール16選</span>
+                <span className="text-[#FDFDFB]">GEO・LLMO対策ツール15選</span>
               </div>
 
               <div className="mb-4 inline-flex items-center gap-2.5 font-mono text-[10px] tracking-[0.24em] text-[#1452FF] uppercase">
@@ -397,12 +401,12 @@ export default function GeoLlmoToolsPage() {
               </div>
 
               <h1 className="article-hero__title mb-7">
-                <span className="block">GEO・LLMO対策ツール16選</span>
+                <span className="block">GEO・LLMO対策ツール15選</span>
                 <span className="block">料金や機能などを徹底比較</span>
               </h1>
 
               <p className="article-hero__lede">
-                GEO・LLMO対策ツールは、料金プランや対応AIモデル数、更新頻度、改善提案の有無などによって特徴が大きく異なります。16個のツールを比較し、失敗しない選び方から具体的な対策プロセスまで解説します。
+                GEO・LLMO対策ツールは、料金プランや対応AIモデル数、更新頻度、改善提案の有無などによって特徴が大きく異なります。15個のツールを比較し、失敗しない選び方から具体的な対策プロセスまで解説します。
               </p>
 
               <div className="article-meta">
@@ -433,7 +437,7 @@ export default function GeoLlmoToolsPage() {
               <figure className="relative mb-10 h-[260px] w-full overflow-hidden rounded-2xl border border-[#E6E4DD] shadow-[0_18px_40px_-24px_rgba(11,11,14,0.28)]">
                 <Image
                   src={heroCollage}
-                  alt="GEO・LLMO対策ツール16選のスクリーンショットコラージュ"
+                  alt="GEO・LLMO対策ツール15選のスクリーンショットコラージュ"
                   fill
                   className="object-cover"
                   priority
@@ -454,7 +458,7 @@ export default function GeoLlmoToolsPage() {
                   <span className="article-quote__note">RESEARCH NOTE</span>
                 </blockquote>
                 <p className="article-prose">
-                  GEO・LLMO対策ツールは、料金プランや対応AIモデル数、更新頻度、改善提案の有無などによって特徴が大きく異なります。16個のツールの特徴を、料金・プロンプト数・対応AIモデル数・更新頻度の軸で一覧にまとめました。自社の目的に近いツールを探す際の参考にしてください。
+                  GEO・LLMO対策ツールは、料金プランや対応AIモデル数、更新頻度、改善提案の有無などによって特徴が大きく異なります。15個のツールの特徴を、料金・プロンプト数・対応AIモデル数・更新頻度の軸で一覧にまとめました。自社の目的に近いツールを探す際の参考にしてください。
                 </p>
 
                 <h3 className="article-h3" style={{ color: "#1452FF" }}>GEO・LLMO対策ツールの一覧比較表</h3>
@@ -493,6 +497,17 @@ export default function GeoLlmoToolsPage() {
                       ))}
                     </tbody>
                   </table>
+                </div>
+
+                <div className="mt-8 mb-4">
+                  <h4 className="mb-3 font-bold text-[16px] text-[#0B0B0E]">GEO・LLMO対策ツール カオスマップ（2026年最新）</h4>
+                  <figure className="overflow-hidden rounded-xl border border-[#E6E4DD] bg-[#0B0B0E]">
+                    <Image
+                      src={chaosMapShot}
+                      alt="GEO・LLMO対策ツール カオスマップ 2026"
+                      className="h-auto w-full"
+                    />
+                  </figure>
                 </div>
               </section>
 
@@ -588,12 +603,12 @@ export default function GeoLlmoToolsPage() {
                 </div>
               </section>
 
-              {/* Section 6: 16個を詳しく紹介 */}
+              {/* Section 6: 15個を詳しく紹介 */}
               <section id="s6" className="article-section" style={{ marginTop: "56px" }}>
-                <span className="article-kicker" style={{ fontSize: "14px" }}>06 16個を詳しく紹介</span>
-                <h2 className="article-h2">GEO・LLMO対策ツール16個を詳しく紹介</h2>
+                <span className="article-kicker" style={{ fontSize: "14px" }}>06 15個を詳しく紹介</span>
+                <h2 className="article-h2">GEO・LLMO対策ツール15個を詳しく紹介</h2>
                 <p className="article-prose">
-                  ここからは、GEO・LLMO対策に活用できる16個のツールを、料金プランや対応AIモデル、機能などの観点から詳しく紹介します。
+                  ここからは、GEO・LLMO対策に活用できる15個のツールを、料金プランや対応AIモデル、機能などの観点から詳しく紹介します。
                 </p>
 
                 {TOOLS.map((tool) => (
@@ -620,6 +635,15 @@ export default function GeoLlmoToolsPage() {
                       </figure>
                     )}
                     <p className="article-prose">{tool.lede}</p>
+                    {tool.recommend && (
+                      <div className="my-4 flex items-start gap-3 rounded-xl border border-[#1452FF]/15 bg-[#1452FF]/[0.04] px-5 py-4">
+                        <span className="mt-0.5 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#1452FF] text-[12px] text-white">★</span>
+                        <div>
+                          <div className="mb-1 font-bold" style={{ fontSize: "var(--fs-label)" }}>おすすめの担当者</div>
+                          <div style={{ fontSize: "var(--fs-body-sm)" }} className="text-[#3D3D45]">{tool.recommend}</div>
+                        </div>
+                      </div>
+                    )}
                     <div className="article-table article-table--2col">
                       <div className="article-table__head">
                         <div>項目</div>
@@ -700,7 +724,7 @@ export default function GeoLlmoToolsPage() {
               {/* Section 10: まとめ */}
               <section id="s10" className="article-section" style={{ marginTop: "56px" }}>
                 <span className="article-kicker" style={{ fontSize: "14px" }}>10 まとめ</span>
-                <h2 className="article-h2">まとめ：GEO・LLMO対策におすすめのツール16選</h2>
+                <h2 className="article-h2">まとめ：GEO・LLMO対策におすすめのツール15選</h2>
                 <blockquote className="article-quote article-quote--wide">
                   <p className="article-quote__text">
                     価格よりも「見たい指標を分析できるか」「社内で継続して使える体制があるか」を優先して比較するのが失敗しないコツ。
