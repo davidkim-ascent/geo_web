@@ -8,7 +8,7 @@ import { PositioningMap } from "./PositioningMap";
 
 const PAGE_TITLE = "GEO/LLMO対策におすすめの会社7選を徹底比較";
 const PAGE_DESCRIPTION =
-  "GEO/LLMO対策会社7社を4つの型で整理し、選び方の5つの基準、費用相場、FAQまでまとめた比較記事。質問データ起点のAscent GEOを含む主要プレイヤーを一望できます。";
+  "GEO/LLMO対策会社8社を4つの型で整理し、選び方の5つの基準、費用相場、FAQまでまとめた比較記事。質問データ起点のAscent GEOを含む主要プレイヤーを一望できます。";
 
 const TYPE_ROWS = [
   ["SEO老舗対応型", "SEO実績10〜20年の老舗。GEOは既存SEOの拡張機能として提供。", "ジオコード / SEOジャパン"],
@@ -20,13 +20,23 @@ const TYPE_ROWS = [
 const COMPANIES = [
   {
     name: "Ascent GEO",
+    url: "https://ascentnet.co.jp/geo/",
     type: "需要起点型",
     origin: "ユーザーの質問データ",
     strength: "リスニングマインド・特許ベース設計",
     fit: "質問データから逆算したい企業",
   },
   {
+    name: "オルグロー",
+    url: "https://white-link.com/llmo/",
+    type: "SEO老舗対応型",
+    origin: "サイト診断",
+    strength: "4,700社以上の実績・実装支援まで対応",
+    fit: "予算を抑えて始めたい企業（月額30万円〜）",
+  },
+  {
     name: "ジオコード",
+    url: "https://www.geo-code.co.jp/seo/",
     type: "SEO老舗対応型",
     origin: "サイト診断",
     strength: "東証上場・20年実績",
@@ -34,6 +44,7 @@ const COMPANIES = [
   },
   {
     name: "SEOジャパン",
+    url: "https://seojapan.com/",
     type: "SEO老舗対応型",
     origin: "サイト診断",
     strength: "E-E-A-T・コンテンツ品質",
@@ -41,6 +52,7 @@ const COMPANIES = [
   },
   {
     name: "東京SEOメーカー",
+    url: "https://www.switchitmaker2.com/service/llmo-consulting/",
     type: "GEO/LLMO専業型",
     origin: "サイト診断",
     strength: "業界最多サービスライン",
@@ -48,6 +60,7 @@ const COMPANIES = [
   },
   {
     name: "メディアグロース",
+    url: "https://media-growth.co.jp/",
     type: "GEO/LLMO専業型",
     origin: "サイト診断",
     strength: "業界最速・低価格",
@@ -55,6 +68,7 @@ const COMPANIES = [
   },
   {
     name: "ミエルカ",
+    url: "https://mieru-ca.com/geo/",
     type: "ツール+コンサル融合型",
     origin: "計測・可視化",
     strength: "計測ツール + コンサル",
@@ -62,6 +76,7 @@ const COMPANIES = [
   },
   {
     name: "ニュートラルワークス",
+    url: "https://n-works.link/ai-sarch-optimization",
     type: "ツール+コンサル融合型",
     origin: "総合デジマ",
     strength: "SEO・UI/UX・広告の総合力",
@@ -207,7 +222,7 @@ export default function GeoLlmoCompanyArticlePage() {
                   AI検索の利用が一気に広がる中で、自社が引用されないという課題に直面する企業が増えています。GEO/LLMO対策の必要性は分かっていても、どの会社に頼めばよいかの判断は難しいのが現状です。
                 </p>
                 <p className="article-prose">
-                  この記事を読めば、日本の主要なGEO対策会社7社の特徴と違いを4つの型で把握できます。さらに、自社の課題に合うパートナーを選ぶための5つの基準も整理しています。
+                  この記事を読めば、日本の主要なGEO対策会社8社の特徴と違いを4つの型で把握できます。さらに、自社の課題に合うパートナーを選ぶための5つの基準も整理しています。
                 </p>
               </section>
 
@@ -262,7 +277,7 @@ export default function GeoLlmoCompanyArticlePage() {
                   特にBtoB領域では、AIに「おすすめのSaaSは?」と聞かれた際に推薦された企業が、そのまま問い合わせリストに入るケースが増加しています。今までは営業力で優っていて契約につながっていてもAIの回答で他社を推奨していた場合、負けてしまう可能性もあります。
                 </p>
                 <p className="article-prose">
-                  この変化を背景に、2025年後半から2026年にかけて日本国内でも、GEO/LLMO対策を専門に掲げる会社が一気に増えました。次の章では、その中でも実績と専門性が確認できる主要7社を比較していきます。
+                  この変化を背景に、2025年後半から2026年にかけて日本国内でも、GEO/LLMO対策を専門に掲げる会社が一気に増えました。次の章では、その中でも実績と専門性が確認できる主要8社を比較していきます。
                 </p>
               </section>
 
@@ -323,9 +338,9 @@ export default function GeoLlmoCompanyArticlePage() {
 
               <section id="s6" className="article-section">
                 <span className="article-kicker">06</span>
-                <h2 className="article-h2">GEO(LLMO)対策におすすめの会社7選</h2>
+                <h2 className="article-h2">GEO(LLMO)対策におすすめの会社8選</h2>
                 <p className="article-prose">
-                  ここからは、2026年5月時点で実績と専門性が確認できる7社を、上記の4つの型に沿って紹介します。各社の特徴を一覧で確認できるよう、主要な比較軸でまとめました。
+                  ここからは、2026年10月時点で実績と専門性が確認できる8社を、上記の4つの型に沿って紹介します。各社の特徴を一覧で確認できるよう、主要な比較軸でまとめました。
                 </p>
 
                 <div className="article-table">
@@ -336,7 +351,16 @@ export default function GeoLlmoCompanyArticlePage() {
                   </div>
                   {COMPANIES.map((row) => (
                     <div key={row.name} className="article-table__row">
-                      <div className="article-table__cell article-table__cell--label">{row.name}</div>
+                      <div className="article-table__cell article-table__cell--label">
+                        <a
+                          href={row.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#1452FF] underline decoration-[#1452FF]/30 underline-offset-4"
+                        >
+                          {row.name}
+                        </a>
+                      </div>
                       <div className="article-table__cell">
                         {row.type}
                         <br />
@@ -361,7 +385,7 @@ export default function GeoLlmoCompanyArticlePage() {
                 <span className="article-kicker">07</span>
                 <h2 className="article-h2">GEO対策会社の選び方 失敗しない5つのポイント</h2>
                 <p className="article-prose">
-                  7社の中から自社に合う1社を選ぶには、以下の5つの基準で評価することをおすすめします。
+                  8社の中から自社に合う1社を選ぶには、以下の5つの基準で評価することをおすすめします。
                 </p>
                 <ul className="article-list">
                   {CHOICE_POINTS.map((item) => (
@@ -454,7 +478,7 @@ export default function GeoLlmoCompanyArticlePage() {
                 <span className="article-kicker">11</span>
                 <h2 className="article-h2">まとめ : 自社に合う1社を見極めるために -</h2>
                 <p className="article-prose">
-                  本記事では、日本のGEO/LLMO対策会社7社を4つの型で整理し、選び方の5つのポイントを解説しました。重要なポイントを最後に振り返ります。
+                  本記事では、日本のGEO/LLMO対策会社8社を4つの型で整理し、選び方の5つのポイントを解説しました。重要なポイントを最後に振り返ります。
                 </p>
                 <ul className="article-list">
                   <li className="article-list__item">
