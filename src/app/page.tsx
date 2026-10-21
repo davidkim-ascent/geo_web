@@ -406,7 +406,7 @@ function GeoLabSection() {
     {
       tag: "GEO / LLMO",
       num: "01",
-      title: "GEO/LLMO対策におすすめの会社7選を徹底比較",
+      title: "GEO/LLMO対策におすすめの会社8選を徹底比較",
       desc: "GEO対策会社7社を4つの型で比較し、費用相場・選び方・FAQまで整理した比較記事。",
       date: "05.19",
       readTime: "8 MIN READ",

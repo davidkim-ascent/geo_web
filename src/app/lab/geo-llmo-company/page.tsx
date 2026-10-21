@@ -6,7 +6,7 @@ import { ArticleTOC } from "./ArticleTOC";
 import { RelatedResearchSection } from "@/components/lab/RelatedResearchSection";
 import { PositioningMap } from "./PositioningMap";
 
-const PAGE_TITLE = "GEO/LLMO対策におすすめの会社7選を徹底比較";
+const PAGE_TITLE = "GEO/LLMO対策におすすめの会社8選を徹底比較";
 const PAGE_DESCRIPTION =
   "GEO/LLMO対策会社8社を4つの型で整理し、選び方の5つの基準、費用相場、FAQまでまとめた比較記事。質問データ起点のAscent GEOを含む主要プレイヤーを一望できます。";
 
@@ -177,7 +177,7 @@ export default function GeoLlmoCompanyArticlePage() {
 
               <h1 className="article-hero__title mb-7">
                 <span className="block">GEO/LLMO対策におすすめの会社</span>
-                <span className="block">7選を徹底比較</span>
+                <span className="block">8選を徹底比較</span>
               </h1>
 
               <p className="article-hero__lede">

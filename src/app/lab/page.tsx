@@ -22,7 +22,7 @@ export const dynamic = "force-static";
 const featuredSide = [
   {
     cat: "GEO / LLMO",
-    title: "GEO/LLMO対策におすすめの会社7選を徹底比較",
+    title: "GEO/LLMO対策におすすめの会社8選を徹底比較",
     desc: "GEO対策会社7社を4つの型で比較し、費用相場・選び方・FAQまで整理した比較記事。",
     meta: "2026.05.19 · 8 MIN",
     thumbVariant: "geo-llmo-company" as const,

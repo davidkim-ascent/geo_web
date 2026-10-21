@@ -33,7 +33,7 @@ const POSTS = [
     cat: "GEO / LLMO",
     date: "2026.05.19",
     read: "8 MIN",
-    title: "GEO/LLMO対策におすすめの会社7選を徹底比較",
+    title: "GEO/LLMO対策におすすめの会社8選を徹底比較",
     desc: "GEO対策会社7社を4つの型で比較し、費用相場・選び方・FAQまで整理した比較記事。",
     thumbVariant: "geo-llmo-company" as const,
     href: "/lab/geo-llmo-company",

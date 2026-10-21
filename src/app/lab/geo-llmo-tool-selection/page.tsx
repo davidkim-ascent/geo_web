@@ -572,7 +572,7 @@ export default function GeoLlmoToolSelectionPage() {
                     <span>
                       <strong>戦略立案からコンテンツ制作・実行まで一括で外部に任せたい場合：</strong>
                       GEO・LLMO対策会社への依頼も選択肢になります。各社の特徴は「
-                      <Link href="/lab/geo-llmo-company" className={LINK_CLASS}>GEO/LLMO対策におすすめの会社7選を徹底比較</Link>
+                      <Link href="/lab/geo-llmo-company" className={LINK_CLASS}>GEO/LLMO対策におすすめの会社8選を徹底比較</Link>
                       」で整理しています。
                     </span>
                   </li>

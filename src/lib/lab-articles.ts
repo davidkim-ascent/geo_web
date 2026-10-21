@@ -30,7 +30,7 @@ export type LabArticle = {
 
 export const LAB_ARTICLES: LabArticle[] = [
   { cat: "HOW TO / GEO Watcher", date: "2026.08.18", read: "9 min", t: "自社でできる！GEO Watcherを使った具体的なGEO・LLMO対策プロセスを解説", d: "GEO Watcherを使ったGEO・LLMO対策の実践プロセスを紹介。現状分析、モニタリング、プロンプト設計、コンテンツ改善の進め方を解説します。", href: "/lab/geo-watcher-process", thumbVariant: "geo-watcher-process" },
-  { cat: "GEO / LLMO", date: "2026.05.19", read: "8 min", t: "GEO/LLMO対策におすすめの会社7選を徹底比較", d: "GEO対策会社7社を4つの型で比較し、費用相場・選び方・FAQまで整理した比較記事。", href: "/lab/geo-llmo-company", thumbVariant: "geo-llmo-company" },
+  { cat: "GEO / LLMO", date: "2026.05.19", read: "8 min", t: "GEO/LLMO対策におすすめの会社8選を徹底比較", d: "GEO対策会社7社を4つの型で比較し、費用相場・選び方・FAQまで整理した比較記事。", href: "/lab/geo-llmo-company", thumbVariant: "geo-llmo-company" },
   { cat: "SEO vs GEO", date: "2026.05.13", read: "8 min", t: "SEOとGEOは何が違うのか？検索最適化と生成AI最適化を比較", d: "SEOは検索エンジンの上位表示を狙う施策、GEOは生成AIに引用されるための施策。違いと実践方法を比較表でわかりやすく整理する。", href: "/lab/seo-geo", thumbVariant: "seo-geo" },
   { cat: "SELF CHECK", date: "2026.08.28", read: "6 min", t: "自社サイトはAIにどれだけ引用されている？セルフチェック方法", d: "ChatGPT・Gemini・Perplexity・Copilotなどの主要AIモデルに自社サイトはどれだけ引用されるかのセルフチェック方法を分かりやすく解説します。", href: "/lab/ai-citation-self-check", thumbVariant: "self-check" },
   { cat: "GEO / LLMO TOOLS", date: "2026.08.26", read: "10 min", t: "GEO・LLMO対策ツール15選！料金や機能などを徹底比較", d: "GEO・LLMO対策ツール15個を料金プラン・対応AIモデル数・機能などの観点から徹底比較。失敗しない選び方から具体的な対策プロセスまで解説。", href: "/lab/geo-llmo-tools", thumbVariant: "geo-llmo-tools" },
