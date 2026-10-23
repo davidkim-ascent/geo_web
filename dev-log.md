@@ -1,3 +1,6 @@
+## 2026-10-23 14:56
+- 신규 아티클 추가: /lab/ai-share-of-voice「AIのシェア・オブ・ボイス（SOV）とは？計算方法と低い時の確認ポイント」(docx 원문 그대로 이식, 표6·이미지2(ChatGPT/Gemini SOV 화면)·FAQ5, Article/FAQ/Breadcrumb JSON-LD), LAB_ARTICLES 등록(사이트맵 자동 반영)
+
 ## 2026-10-21 17:02
 - /lab/geo-llmo-company 부분 수정(オルグロー 피링크 대응): 06섹션 H2「7選」→「8選」, 리드문 2026年5月・7社→2026年10月・8社, 비교표에 オルグロー 행 추가(Ascent GEO 다음)
 - 회사명 8곳에 원고 docx의 공식 URL 링크 추가(새 탭, noopener), 메타 디스크립션·도입부·s3·07섹션·まとめ·목차의「7社」→「8社」
